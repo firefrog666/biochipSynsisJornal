@@ -1,0 +1,16 @@
+Maximize
+ 
+Subject To
+ R156523: co25o27firststart >= 330
+ R156524: co25o27firstend - co25o27storageend <= 0
+ R156525: - co25o27firststart + co25o27firstend >= 1
+ R156528: co25o27storageend - co25o27endend = 0
+ R156530: co25o27endend <= 330
+Bounds
+ co25o27firststart free
+ co25o27firstend free
+ co25o27storageend free
+ co25o27endend free
+Semi-continuous
+ co25o27firststart co25o27firstend co25o27storageend co25o27endend
+End

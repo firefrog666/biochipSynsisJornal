@@ -1,0 +1,43 @@
+SUBJECT TO
+co1o3firsty4 - co1o3storagey2 + 10000 co1o3StorageSeg0Upco1o3co1o3StorageSeg2 >= 1
+co1o3firsty4 - co1o3storagey3 + 10000 co1o3StorageSeg0Upco1o3co1o3StorageSeg2 >= 1
+co1o3storagey1 - co1o3storagey2 + 10000 co1o3StorageSeg0Upco1o3co1o3StorageSeg2 >= 1
+co1o3storagey1 - co1o3storagey3 + 10000 co1o3StorageSeg0Upco1o3co1o3StorageSeg2 >= 1
+co1o3firsty4 - co1o3storagey2 - 10000 co1o3StorageSeg0Downco1o3co1o3StorageSeg2 <= -1
+co1o3firsty4 - co1o3storagey3 - 10000 co1o3StorageSeg0Downco1o3co1o3StorageSeg2 <= -1
+co1o3storagey1 - co1o3storagey2 - 10000 co1o3StorageSeg0Downco1o3co1o3StorageSeg2 <= -1
+co1o3storagey1 - co1o3storagey3 - 10000 co1o3StorageSeg0Downco1o3co1o3StorageSeg2 <= -1
+co1o3firstx4 - co1o3storagex2 + 10000 co1o3StorageSeg0Rightco1o3co1o3StorageSeg2 >= 1
+co1o3firstx4 - co1o3storagex3 + 10000 co1o3StorageSeg0Rightco1o3co1o3StorageSeg2 >= 1
+co1o3storagex1 - co1o3storagex2 + 10000 co1o3StorageSeg0Rightco1o3co1o3StorageSeg2 >= 1
+co1o3storagex1 - co1o3storagex3 + 10000 co1o3StorageSeg0Rightco1o3co1o3StorageSeg2 >= 1
+co1o3firstx4 - co1o3storagex2 - 10000 co1o3StorageSeg0Leftco1o3co1o3StorageSeg2 <= -1
+co1o3firstx4 - co1o3storagex3 - 10000 co1o3StorageSeg0Leftco1o3co1o3StorageSeg2 <= -1
+co1o3storagex1 - co1o3storagex2 - 10000 co1o3StorageSeg0Leftco1o3co1o3StorageSeg2 <= -1
+co1o3storagex1 - co1o3storagex3 - 10000 co1o3StorageSeg0Leftco1o3co1o3StorageSeg2 <= -1
+co1o3StorageSeg0Upco1o3co1o3StorageSeg2 + co1o3StorageSeg0Downco1o3co1o3StorageSeg2 + co1o3StorageSeg0Leftco1o3co1o3StorageSeg2 + co1o3StorageSeg0Rightco1o3co1o3StorageSeg2 <= 3
+co1o3firstx4 = 1
+co1o3firsty4 = 2
+
+
+co1o3storagex2 = 2
+co1o3storagey2 = 2
+
+
+
+
+
+BINARY
+co1o3StorageSeg0Upco1o3co1o3StorageSeg2
+co1o3StorageSeg0Downco1o3co1o3StorageSeg2
+co1o3StorageSeg0Rightco1o3co1o3StorageSeg2
+co1o3StorageSeg0Leftco1o3co1o3StorageSeg2
+General
+co1o3firsty4
+co1o3storagey1
+co1o3storagey2
+co1o3storagey3
+co1o3firstx4
+co1o3storagex1
+co1o3storagex2
+co1o3storagex3

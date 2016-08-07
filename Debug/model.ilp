@@ -1,0 +1,42 @@
+Maximize
+ 
+Subject To
+ R2013: co4o6storagey4 - co4o6endy1 + 10000 co4o6storagey4Lessco4o6endy1
+   >= 1
+ R2472: co4o6storagey3 - co4o6endy1 - 10000 co4o6storagey3Biggerco4o6endy1
+   <= -10000
+ R2524: co4o6storagey4 - co4o6endy1 - 10000 co4o6storagey4Lessco4o6endy1
+   >= -10000
+ R5600: - co4o6storagex4 + co4o6storagex3
+   - 10000 co4o6storagex3Biggerco4o6storagex4 <= -10000
+ R9624: - co4o6storagey4 + co4o6storagey3
+   + 10000 co4o6StoreSeg3Upco4o6StoreSeg3 >= 1
+ R9629: co4o6storagey4 - co4o6storagey3
+   - 10000 co4o6StoreEndSeg3Downco4o6StoreSeg3 <= -1
+ R9632: - co4o6storagex4 + co4o6storagex3
+   + 10000 co4o6StoreSeg3Rightco4o6StoreSeg3 >= 1
+ R9635: - 10000 co4o6StoreSeg3Leftco4o6StoreSeg3 <= -1
+ R9639: co4o6StoreSeg3Upco4o6StoreSeg3
+   + co4o6StoreEndSeg3Downco4o6StoreSeg3
+   + co4o6StoreSeg3Rightco4o6StoreSeg3 + co4o6StoreSeg3Leftco4o6StoreSeg3
+   <= 3
+Bounds
+ co4o6storagex4 free
+ co4o6storagey4 free
+ co4o6storagex3 free
+ co4o6storagey3 free
+ co4o6endy1 free
+ -infinity <= co4o6storagex3Biggerco4o6storagex4 <= 1
+ co4o6storagey4Lessco4o6endy1 free
+ -infinity <= co4o6storagey3Biggerco4o6endy1 <= 1
+ co4o6StoreSeg3Upco4o6StoreSeg3 free
+ co4o6StoreEndSeg3Downco4o6StoreSeg3 free
+ co4o6StoreSeg3Rightco4o6StoreSeg3 free
+ co4o6StoreSeg3Leftco4o6StoreSeg3 free
+Generals
+ co4o6storagex4 co4o6storagey4 co4o6storagex3 co4o6storagey3 co4o6endy1
+ co4o6storagex3Biggerco4o6storagex4 co4o6storagey4Lessco4o6endy1
+ co4o6storagey3Biggerco4o6endy1 co4o6StoreSeg3Upco4o6StoreSeg3
+ co4o6StoreEndSeg3Downco4o6StoreSeg3 co4o6StoreSeg3Rightco4o6StoreSeg3
+ co4o6StoreSeg3Leftco4o6StoreSeg3
+End
