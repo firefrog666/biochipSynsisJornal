@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sequenceGraph>
+    <operation name="o1" start = "0" end = "10">
+        <child name="o9" ></child>
+        <device name="d1" x = "1" y = "1"></device>        
+    </operation>
+
+     <operation name="o2" start = "0" end = "10">
+        <child name="o9" ></child>
+        <device name="d2" x = "1" y = "1"></device>        
+    </operation>
+
+    <operation name="o3" start = "40" end = "50">
+        <child name="o10" ></child>
+        <device name="d1" x = "1" y = "1"></device>        
+    </operation>
+
+     <operation name="o4" start = "40" end = "50">
+        <child name="o10" ></child>
+        <device name="d2" x = "1" y = "1"></device>        
+    </operation>
+
+    <operation name="o5" start = "80" end = "90">
+        <child name="o11" ></child>
+        <device name="d1" x = "1" y = "1"></device>        
+    </operation>
+
+     <operation name="o6" start = "80" end = "90">
+        <child name="o11" ></child>
+        <device name="d2" x = "1" y = "1"></device>        
+    </operation>
+
+    <operation name="o7" start = "120" end = "130">
+        <child name="o12" ></child>
+        <device name="d1" x = "1" y = "1"></device>        
+    </operation>
+
+     <operation name="o8" start = "120" end = "130">
+        <child name="o12" ></child>
+        <device name="d2" x = "1" y = "1"></device>        
+    </operation>
+
+     <operation name="o9" start = "20" end = "30">
+        <child name="o13" ></child>
+	<parent name = "o1"></child>
+	<parent name = "o2"></child>
+        <device name="d3" x = "1" y = "1"></device>        
+    </operation>
+
+     <operation name="o10" start = "60" end = "70">
+        <child name="o13" ></child>
+	<parent name = "o3"></child>
+	<parent name = "o4"></child>
+        <device name="d3" x = "1" y = "1"></device>        
+    </operation>
+
+         <operation name="o11" start = "100" end = "110">
+        <child name="o14" ></child>
+	<parent name = "o5"></child>
+	<parent name = "o6"></child>
+        <device name="d3" x = "1" y = "1"></device>        
+    </operation>
+
+     <operation name="o12" start = "140" end = "150">
+        <child name="o14" ></child>
+	<parent name = "o7"></child>
+	<parent name = "o8"></child>
+        <device name="d3" x = "1" y = "1"></device>        
+    </operation>
+
+         <operation name="o13" start = "160" end = "170">
+        <child name="o15" ></child>
+	<parent name = "o9"></child>
+	<parent name = "o10"></child>
+        <device name="d1" x = "1" y = "1"></device>        
+    </operation>
+
+     <operation name="o14" start = "160" end = "170">
+        <child name="o15" ></child>
+	<parent name = "o11"></child>
+	<parent name = "o12"></child>
+        <device name="d2" x = "1" y = "1"></device>        
+    </operation>
+    
+     <operation name="o15" start = "180" end = "190">
+	<parent name = "o13"></child>
+	<parent name = "o14"></child>
+        <device name="d3" x = "1" y = "1"></device>        
+    </operation>
+
+    
+   
+    
+    
+  
+</sequenceGraph>

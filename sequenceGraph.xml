@@ -1,18 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<MyBeerJournal>
-    <Brewery name="Founders Brewing Company" location="Grand Rapids, MI">
-        <Beer name="Centennial" description="IPA" rating="A+" dateSampled="01/02/2011">
-            "What an excellent IPA. This is the most delicious beer I have ever tasted!"
-        </Beer>
-    </Brewery>
-    <Brewery name="Brewery Vivant" location="Grand Rapids, MI">
-        <Beer name="Farmhouse Ale" description="Belgian Ale" rating="B" dateSampled="02/07/2015">
-            This beer is not so good... but I am not that big of a fan of english style ales.
-        </Beer>
-    </Brewery>
-    <Brewery name="Bells Brewery" location="Kalamazoo, MI">
-        <Beer name="Two Hearted Ale" description="IPA" rating="A" dateSampled="03/15/2012">
-            Another execllent brew. Two Hearted gives Founders Centennial a run for it's money.
-        </Beer>
-    </Brewery>
-</MyBeerJournal>
+<sequenceGraph>
+
+    <operation name="o1" duration = "10" type = "mix">
+        <child name="o3" ></child>            
+    </operation>
+
+     <operation name="o2" duration = "10" type = "mix">
+        <child name="o3" ></child>
+      
+    </operation> 
+
+   
+
+     <operation name="o3" duration = "10" type = "heat" >
+       
+	<parent name = "o1"></parent>
+	<parent name = "o2"></parent>
+         
+    </operation>
+
+  <operation name="o4" duration = "10" type = "mix">
+        <child name="o6" ></child>            
+    </operation>
+
+     <operation name="o5" duration = "10" type = "mix">
+        <child name="o6" ></child>
+       
+    </operation>    
+
+     <operation name="o6" duration = "10" type = "heat" >       
+	<parent name = "o4"></parent>
+	<parent name = "o5"></parent>         
+    </operation>
+
+ 	<operation name="o7" duration = "10" type = "mix">
+        <child name="o9" ></child>            
+    </operation>
+
+     <operation name="o8" duration = "10" type = "mix">
+        <child name="o9" ></child>
+       
+    </operation>    
+
+     <operation name="o9" duration = "10" type = "heat" >       
+	<parent name = "o7"></parent>
+	<parent name = "o8"></parent>         
+    </operation>
+
+
+
+    
+
+    
+
+
+   <device name = "d1" x = "1" y = "1" type = "mix"></device>
+   <device name = "d2" x = "1" y = "1" type = "mix"></device>
+   <device name = "d3" x = "1" y = "1" type = "heat"></device>
+   <device name = "d4" x = "1" y = "1" type = "mix"></device>
+   <device name = "d5" x = "1" y = "1" type = "mix"></device>
+   <device name = "d6" x = "1" y = "1" type = "heat"></device>
+
+
+
+
+   
+ 
+     
+
+    
+    
+   
+    
+    
+  
+</sequenceGraph>

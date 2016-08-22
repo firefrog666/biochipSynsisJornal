@@ -85,14 +85,14 @@ public:
 					it = find_if(ops.begin(),ops.end(), [&name](const Op& obj) {return obj.name == name;});
 					cout << it->name<<endl;
 					Op childOperation = *it;
-					operation.children.push_back(childOperation);
+					//operation.children.push_back(childOperation);
 				}
 				if(childNodeName == "parent"){
 					name = childNode->first_attribute("name")->value();
 					it = find_if(ops.begin(),ops.end(), [&name](const Op& obj) {return obj.name == name;});
 					cout << it->name<<endl;
 					Op parentOperation = *it;
-					operation.parents.push_back(parentOperation);
+					//operation.parents.push_back(parentOperation);
 				}
 
 				if(childNodeName == "device"){
@@ -101,7 +101,7 @@ public:
 					cout << it->name<<endl;
 					Device bindDevice= *devIt;
 
-					operation.bindDevice = bindDevice;
+					//operation.bindDevice = bindDevice;
 				}
 
 
@@ -114,7 +114,7 @@ public:
 
 		}
 
-		for(int i = 0; i <= devs.size()-1; i++){
+		/*for(int i = 0; i <= devs.size()-1; i++){
 			cout<<"dev "<<i <<" name is "<<devs.at(i).name <<endl;
 			cout<<"dev "<<i <<" sizeX is "<<devs.at(i).sizeX<<endl;
 			cout<<"dev "<<i <<" sizeY is "<<devs.at(i).sizeY<<endl;
@@ -123,7 +123,7 @@ public:
 			cout<<"ops "<<i <<" name is "<<ops.at(i).name <<endl;
 			cout<<"ops "<<i <<" start is "<<ops.at(i).startTime<<endl;
 			cout<<"ops "<<i <<" end is "<<ops.at(i).endTime <<endl;
-		}
+		}*/
 
 	}
 

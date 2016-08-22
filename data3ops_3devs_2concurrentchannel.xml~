@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sequenceGraph>
+    <operation name="o1" start = "0" end = "10">
+        <child name="o3" ></child>
+        <device name="d1" x = "1" y = "1"></device>        
+    </operation>
+
+     <operation name="o2" start = "0" end = "10">
+        <child name="o3" ></child>
+        <device name="d2" x = "1" y = "1"></device>    
+    </operation> 
+
+   
+
+     <operation name="o3" start = "60" end = "70">
+       
+	<parent name = "o1"></child>
+	<parent name = "o2"></child>
+        <device name="d3" x = "1" y = "1"></device>        
+    </operation>
+
+
+    <operation name="o4" start = "20" end = "30">
+        <child name="o6" ></child>
+        <device name="d1" x = "1" y = "1"></device>        
+    </operation>
+
+     <operation name="o5" start = "20" end = "30">
+        <child name="o6" ></child>
+        <device name="d2" x = "1" y = "1"></device>    
+    </operation> 
+
+   
+
+     <operation name="o6" start = "80" end = "90">
+       
+	<parent name = "o4"></child>
+	<parent name = "o5"></child>
+        <device name="d3" x = "1" y = "1"></device>        
+    </operation>
+
+
+
+
+    <operation name="o7" start = "100" end = "110">
+        <child name="o9" ></child>
+        <device name="d1" x = "1" y = "1"></device>        
+    </operation>
+
+     <operation name="o8" start = "100" end = "110">
+        <child name="o9" ></child>
+        <device name="d2" x = "1" y = "1"></device>    
+    </operation> 
+
+   
+
+     <operation name="o9" start = "120" end = "130">
+       
+	<parent name = "o7"></child>
+	<parent name = "o8"></child>
+        <device name="d3" x = "1" y = "1"></device>        
+    </operation>
+     
+
+    
+    
+   
+    
+    
+  
+</sequenceGraph>

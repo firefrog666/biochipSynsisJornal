@@ -8,14 +8,16 @@
 
 #include <iostream>
 #include <string>
+#include "../header/ListAlgorithm.h"
 #include "../header/Int4.h"
 #include "../header/Node.h"
 #include "..//header/plate.h"
+#include "../header/ListAlgorithm.h"
 #include <iostream>
 
 #include "../header/ILP.h"
-#include "../header/writeILP.h"
-#include "../header/sequenceGraph.h"
+//#include "../header/writeILP.h"
+//#include "../header/sequenceGraph.h"
 #include "../rapidxml-1.13/rapidxml.hpp"
 #include <vector>
 #include <fstream>
@@ -25,25 +27,46 @@ using namespace std;
 
 int main(int   argc,
 	     char *argv[]) {
+
+
+
+
 /*
 	if (argc < 2) {
 			cout << "Usage: lp_c++ filename" << endl;
 			return 1;
 		}*/
 #if 1
-	SequenceGraph seq("data20.xml");
+	//SequenceGraph seq("data3ops_3devs_2concurrentchannel.xml");
 	//SequenceGraph seq(argv[1]);
+	ListAlgorithm L;
+	//L.readFromXml("sequenceGraph16ops6devs.xml");
+	//L.readFromXml("sequenceGraph.xml");
+	L.readFromXml("lostsops.xml");
+	L.listAlgorithm();
 	Plate plate;
-	plate.setSequenceGraph(seq);
-	plate.devicePlacementConstraint();
-	plate.channelPlaceConstraint();
-	plate.channeTimeConstraint();
-	//plate.ValveObject();
-	plate.writeToFile();
-	map<string,int> results = ILP("ilp.lp");
-	plate.readFromSolver(results);
-	plate.writeGraphFile(-1);
+	//plate.setSequenceGraph(seq);
+
+	//plate.getBindingFromList(L);
+	int step = 51;
+	for(int i = 0; i<L.ops.size(); i += step){
+
+		plate.constraintClear();
+
+		plate.getPartInfoFromList(L,step);
+		plate.devicePlacementConstraint();
+		plate.channelPlaceConstraint();
+		plate.channeTimeConstraint();
+
+		//plate.ValveObject();
+		plate.writeToFile();
+		map<string,int> results = ILP("ilp.lp" );
+		plate.readFromSolver(results);
+		plate.writeGraphFile(-1);
+	}
 #endif
+
+	//map<string,int> results = ILP("ilp.lp");
 
 #if 0
 	Plate plate;

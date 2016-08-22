@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sequenceGraph>
+    <operation name="o1" start = "0" end = "10">
+        <child name="o9" ></child>
+        <device name="d1" x = "1" y = "1"></device>        
+    </operation>
+
+     <operation name="o2" start = "0" end = "10">
+        <child name="o9" ></child>
+        <device name="d2" x = "1" y = "1"></device>        
+    </operation>
+
+    <operation name="o3" start = "40" end = "50">
+        <child name="o10" ></child>
+        <device name="d1" x = "1" y = "1"></device>        
+    </operation>
+
+     <operation name="o4" start = "40" end = "50">
+        <child name="o10" ></child>
+        <device name="d2" x = "1" y = "1"></device>        
+    </operation>
+
+    <operation name="o5" start = "80" end = "90">
+        <child name="o11" ></child>
+        <device name="d1" x = "1" y = "1"></device>        
+    </operation>
+
+     <operation name="o6" start = "80" end = "90">
+        <child name="o11" ></child>
+        <device name="d2" x = "1" y = "1"></device>        
+    </operation>
+
+    <operation name="o7" start = "120" end = "130">
+        <child name="o12" ></child>
+        <device name="d1" x = "1" y = "1"></device>        
+    </operation>
+
+     <operation name="o8" start = "120" end = "130">
+        <child name="o12" ></child>
+        <device name="d2" x = "1" y = "1"></device>        
+    </operation>
+
+     <operation name="o9" start = "20" end = "30">
+        <child name="o13" ></child>
+	<parent name = "o1"></child>
+	<parent name = "o2"></child>
+        <device name="d3" x = "1" y = "1"></device>        
+    </operation>
+
+     <operation name="o10" start = "60" end = "70">
+        <child name="o13" ></child>
+	<parent name = "o3"></child>
+	<parent name = "o4"></child>
+        <device name="d3" x = "1" y = "1"></device>        
+    </operation>
+
+         <operation name="o11" start = "100" end = "110">
+        <child name="o14" ></child>
+	<parent name = "o5"></child>
+	<parent name = "o6"></child>
+        <device name="d3" x = "1" y = "1"></device>        
+    </operation>
+
+     <operation name="o12" start = "140" end = "150">
+        <child name="o14" ></child>
+	<parent name = "o7"></child>
+	<parent name = "o8"></child>
+        <device name="d3" x = "1" y = "1"></device>        
+    </operation>
+
+         <operation name="o13" start = "160" end = "170">
+        <child name="o15" ></child>
+	<parent name = "o9"></child>
+	<parent name = "o10"></child>
+        <device name="d1" x = "1" y = "1"></device>        
+    </operation>
+
+     <operation name="o14" start = "160" end = "170">
+        <child name="o15" ></child>
+	<parent name = "o11"></child>
+	<parent name = "o12"></child>
+        <device name="d2" x = "1" y = "1"></device>        
+    </operation>
+    
+     <operation name="o15" start = "180" end = "190">
+	<parent name = "o13"></child>
+	<parent name = "o14"></child>
+        <device name="d3" x = "1" y = "1"></device>        
+    </operation>
+
+ <operation name="o21" start = "20" end = "120">
+        <child name="o29" ></child>
+        <device name="d1" x = "1" y = "1"></device>        
+    </operation>
+
+     <operation name="o22" start = "20" end = "120">
+        <child name="o29" ></child>
+        <device name="d2" x = "1" y = "1"></device>        
+    </operation>
+
+    <operation name="o23" start = "420" end = "520">
+        <child name="o2120" ></child>
+        <device name="d1" x = "1" y = "1"></device>        
+    </operation>
+
+     <operation name="o24" start = "420" end = "520">
+        <child name="o2120" ></child>
+        <device name="d2" x = "1" y = "1"></device>        
+    </operation>
+
+    <operation name="o25" start = "820" end = "920">
+        <child name="o211" ></child>
+        <device name="d1" x = "1" y = "1"></device>        
+    </operation>
+
+     <operation name="o26" start = "820" end = "920">
+        <child name="o211" ></child>
+        <device name="d2" x = "1" y = "1"></device>        
+    </operation>
+
+    <operation name="o27" start = "1220" end = "1320">
+        <child name="o212" ></child>
+        <device name="d1" x = "1" y = "1"></device>        
+    </operation>
+
+     <operation name="o28" start = "1220" end = "1320">
+        <child name="o212" ></child>
+        <device name="d2" x = "1" y = "1"></device>        
+    </operation>
+
+     <operation name="o29" start = "220" end = "320">
+        <child name="o213" ></child>
+	<parent name = "o21"></child>
+	<parent name = "o22"></child>
+        <device name="d3" x = "1" y = "1"></device>        
+    </operation>
+
+     <operation name="o2120" start = "620" end = "720">
+        <child name="o213" ></child>
+	<parent name = "o23"></child>
+	<parent name = "o24"></child>
+        <device name="d3" x = "1" y = "1"></device>        
+    </operation>
+
+         <operation name="o211" start = "1020" end = "1120">
+        <child name="o214" ></child>
+	<parent name = "o25"></child>
+	<parent name = "o26"></child>
+        <device name="d3" x = "1" y = "1"></device>        
+    </operation>
+
+     <operation name="o212" start = "1420" end = "1520">
+        <child name="o214" ></child>
+	<parent name = "o27"></child>
+	<parent name = "o28"></child>
+        <device name="d3" x = "1" y = "1"></device>        
+    </operation>
+
+         <operation name="o213" start = "1620" end = "1720">
+        <child name="o215" ></child>
+	<parent name = "o29"></child>
+	<parent name = "o2120"></child>
+        <device name="d1" x = "1" y = "1"></device>        
+    </operation>
+
+     <operation name="o214" start = "1620" end = "1720">
+        <child name="o215" ></child>
+	<parent name = "o211"></child>
+	<parent name = "o212"></child>
+        <device name="d2" x = "1" y = "1"></device>        
+    </operation>
+    
+     <operation name="o215" start = "1820" end = "1920">
+	<parent name = "o213"></child>
+	<parent name = "o214"></child>
+        <device name="d3" x = "1" y = "1"></device>        
+    </operation>
+
+    
+    <operation name="o321" start = "220" end = "1220">
+        <child name="o329" ></child>
+        <device name="d4" x = "1" y = "1"></device>        
+    </operation>
+
+     <operation name="o322" start = "220" end = "1220">
+        <child name="o329" ></child>
+        <device name="d5" x = "1" y = "1"></device>        
+    </operation>
+
+    <operation name="o323" start = "4220" end = "5220">
+        <child name="o32120" ></child>
+        <device name="d4" x = "1" y = "1"></device>        
+    </operation>
+
+     <operation name="o324" start = "4220" end = "5220">
+        <child name="o32120" ></child>
+        <device name="d5" x = "1" y = "1"></device>        
+    </operation>
+
+    <operation name="o325" start = "8220" end = "9220">
+        <child name="o3211" ></child>
+        <device name="d4" x = "1" y = "1"></device>        
+    </operation>
+
+     <operation name="o326" start = "8220" end = "9220">
+        <child name="o3211" ></child>
+        <device name="d5" x = "1" y = "1"></device>        
+    </operation>
+
+    <operation name="o327" start = "12220" end = "13220">
+        <child name="o3212" ></child>
+        <device name="d4" x = "1" y = "1"></device>        
+    </operation>
+
+     <operation name="o328" start = "12220" end = "13220">
+        <child name="o3212" ></child>
+        <device name="d5" x = "1" y = "1"></device>        
+    </operation>
+
+     <operation name="o329" start = "2220" end = "3220">
+        <child name="o3213" ></child>
+	<parent name = "o321"></child>
+	<parent name = "o322"></child>
+        <device name="d6" x = "1" y = "1"></device>        
+    </operation>
+
+     <operation name="o3210" start = "6220" end = "7220">
+        <child name="o3213" ></child>
+	<parent name = "o323"></child>
+	<parent name = "o324"></child>
+        <device name="d6" x = "1" y = "1"></device>        
+    </operation>
+
+         <operation name="o3211" start = "10220" end = "11220">
+        <child name="o3214" ></child>
+	<parent name = "o325"></child>
+	<parent name = "o326"></child>
+        <device name="d6" x = "1" y = "1"></device>        
+    </operation>
+
+     <operation name="o3212" start = "14220" end = "15220">
+        <child name="o3214" ></child>
+	<parent name = "o327"></child>
+	<parent name = "o328"></child>
+        <device name="d6" x = "1" y = "1"></device>        
+    </operation>
+
+         <operation name="o3213" start = "16220" end = "17220">
+        <child name="o3215" ></child>
+	<parent name = "o329"></child>
+	<parent name = "o3210"></child>
+        <device name="d4" x = "1" y = "1"></device>        
+    </operation>
+
+     <operation name="o3214" start = "16220" end = "17220">
+        <child name="o3215" ></child>
+	<parent name = "o3211"></child>
+	<parent name = "o3212"></child>
+        <device name="d5" x = "1" y = "1"></device>        
+    </operation>
+    
+     <operation name="o3215" start = "18220" end = "19220">
+	<parent name = "o3213"></child>
+	<parent name = "o3214"></child>
+        <device name="d6" x = "1" y = "1"></device>        
+    </operation>
+
+    
+    
+   
+    
+    
+
+
+    
+    
+   
+    
+    
+  
+</sequenceGraph>

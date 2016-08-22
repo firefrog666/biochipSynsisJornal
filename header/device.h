@@ -1,8 +1,20 @@
 #ifndef DEVICE_H
 #define DEVICE_H
 
+#include <string>
+#include <vector>
+#include <boost/shared_ptr.hpp>
+
+
+
+#include <boost/shared_ptr.hpp>
 using namespace std;
 
+enum operationType {
+	mix,
+	heat,
+	detect
+};
 
 
 
@@ -15,6 +27,7 @@ public:
 		t = d;
 		startTime = 0;
 		endTime	= 0;
+		availeble = true;
 	}
 
 	Device(){
@@ -26,11 +39,14 @@ public:
 		endTime	= 0;
 		portXOffset = -1;
 		portYOffset = -1;
+		availeble = true;
 	}
 private:
 	int x,y,s,t;
 
 public:
+	operationType type;
+	bool availeble;
 	string name;
 	int id;
 	int startTime;
@@ -46,7 +62,8 @@ public:
 						this->sizeX == rhs.sizeX &&
 						this->sizeY == rhs.sizeY &&
 						this->startTime == rhs.startTime &&
-						this->endTime == rhs.endTime
+						this->endTime == rhs.endTime &&
+						this->type == rhs.type
 						)
 					return true;
 				else
@@ -57,14 +74,15 @@ public:
 
 };
 
-
+typedef boost::shared_ptr<Device> Dev_ptr;
 //Operation in a sequence graph
 class Op {
+	typedef boost::shared_ptr<Op> Op_ptr;
 public:
 	Op(){
 		startTime = 0;
 		endTime = 0;
-
+		done = false;
 	}
 
 	//compare each operation by startTime
@@ -83,7 +101,8 @@ public:
 					this->parents == rhs.parents &&
 					this->children == rhs.children &&
 					this->startTime == rhs.startTime &&
-					this->endTime == rhs.endTime
+					this->endTime == rhs.endTime &&
+					this->type == rhs.type
 					)
 				return true;
 			else
@@ -91,10 +110,14 @@ public:
 
 		}
 public:
+    bool done; //if all
+    bool running;//if an operation is running
+	operationType type;
 	string name;
-	Device bindDevice;
-	vector<Op> parents;
-	vector<Op> children;
+	Dev_ptr bindDevice;
+	vector<Op_ptr> parents;
+	vector<Op_ptr> children;
+	int duration;
 	int startTime;
 	int endTime;
 };

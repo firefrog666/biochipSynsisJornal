@@ -47,6 +47,9 @@ ILP(char* argv)
   try {
     GRBEnv env = GRBEnv();
     GRBModel model = GRBModel(env, argv);
+
+    model.getEnv().set(GRB_DoubleParam_TimeLimit, 600.0);
+    model.getEnv().set(GRB_DoubleParam_MIPGap, 0.1);
     vars = model.getVars();
     model.optimize();
 
@@ -109,6 +112,39 @@ ILP(char* argv)
     } else {
       cout << "Optimization was stopped with status = "
            << optimstatus << endl;
+
+      double objval = model.get(GRB_DoubleAttr_ObjVal);
+           cout << "Optimal objective: " << objval << endl;
+           for(int i =0; i<model.get(GRB_IntAttr_NumVars);i++){
+         	  	string varName = vars[i].get(GRB_StringAttr_VarName);
+         	  	results[varName] = vars[i].get(GRB_DoubleAttr_X);
+
+         	 // 	cout << vars[i].get(GRB_StringAttr_VarName) << " " << vars[i].get(GRB_DoubleAttr_X) << endl;
+
+           }
+           ofstream varNames;
+           ofstream varResults;
+           varNames.open("varName.txt");
+           varResults.open("varResults.txt");
+
+
+           for(int i =0; i<model.get(GRB_IntAttr_NumVars);i++){
+               	  	string varName = vars[i].get(GRB_StringAttr_VarName);
+               	  	results[varName] = vars[i].get(GRB_DoubleAttr_X)+0.5; // +0.5 to make sure its round
+
+               	  if(varName == "co2o3storagey3" ){
+               	  				cout << "gotte ya" <<endl;
+               	  }
+
+               	  	varNames << varName << "\n";
+               	  	varResults << varName << "     "<< results[varName] << "\n";
+
+               	  	cout << vars[i].get(GRB_StringAttr_VarName) << " " << vars[i].get(GRB_DoubleAttr_X) << endl;
+
+                 }
+
+           varNames.close();
+           varResults.close();
     }
 
   } catch(GRBException e) {

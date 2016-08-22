@@ -5,16 +5,19 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
 ../src/ILP.cpp \
+../src/ListAlgorithm.cpp \
 ../src/goodLuck.cpp \
 ../src/plate.cpp 
 
 OBJS += \
 ./src/ILP.o \
+./src/ListAlgorithm.o \
 ./src/goodLuck.o \
 ./src/plate.o 
 
 CPP_DEPS += \
 ./src/ILP.d \
+./src/ListAlgorithm.d \
 ./src/goodLuck.d \
 ./src/plate.d 
 

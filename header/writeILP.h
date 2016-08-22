@@ -120,6 +120,21 @@ public:
 		}
 
 	}
+
+	 void writeResult(vector<string> result,const char* fileName){
+	 		//ofstream file;
+	 		if(!file.is_open())
+	 			file.open(fileName);
+
+
+	 		for(int i = 0; i<= result.size()-1; i++)
+	 		{
+	 			file<<result.at(i)<<endl;
+	 		}
+
+	 	}
+
+
 };
 
 #endif

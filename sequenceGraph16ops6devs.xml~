@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sequenceGraph>
+    <operation name="o1" duration = "10" type = "mix">
+        <child name="o3" ></child>            
+    </operation>
+
+     <operation name="o2" duration = "10" type = "mix">
+        <child name="o3" ></child>
+      
+    </operation> 
+
+   
+
+     <operation name="o3" duration = "10" type = "heat" >
+       
+	<parent name = "o1"></parent>
+	<parent name = "o2"></parent>
+         
+    </operation>
+
+  <operation name="o4" duration = "10" type = "mix">
+        <child name="o6" ></child>            
+    </operation>
+
+     <operation name="o5" duration = "10" type = "mix">
+        <child name="o6" ></child>
+       
+    </operation>    
+
+     <operation name="o6" duration = "10" type = "heat" >       
+	<parent name = "o4"></parent>
+	<parent name = "o5"></parent>         
+    </operation>
+
+ 	<operation name="o7" duration = "10" type = "mix">
+        <child name="o9" ></child>            
+    </operation>
+
+     <operation name="o8" duration = "10" type = "mix">
+        <child name="o9" ></child>
+       
+    </operation>    
+
+     <operation name="o9" duration = "10" type = "heat" >       
+	<parent name = "o7"></parent>
+	<parent name = "o8"></parent>         
+    </operation>
+
+   	<operation name="o10" duration = "10" type = "mix">
+        <child name="o12" ></child>            
+    </operation>
+
+     <operation name="o11" duration = "10" type = "mix">
+        <child name="o12" ></child>
+       
+    </operation>    
+
+     <operation name="o12" duration = "10" type = "heat" >       
+	<parent name = "o10"></parent>
+	<parent name = "o11"></parent>         
+    </operation>
+
+    <operation name="o1" duration = "10" type = "mix">
+        <child name="o3" ></child>            
+    </operation>
+
+     <operation name="o2" duration = "10" type = "mix">
+        <child name="o3" ></child>
+      
+    </operation> 
+
+   
+<operation name="o11" duration = "10" type = "mix">
+        <child name="o13" ></child>            
+    </operation>
+
+     <operation name="o12" duration = "10" type = "mix">
+        <child name="o13" ></child>
+      
+    </operation> 
+ 
+     <operation name="o13" duration = "10" type = "heat" >
+       
+	<parent name = "o11"></parent>
+	<parent name = "o12"></parent>
+         
+    </operation>
+
+  <operation name="o14" duration = "10" type = "mix">
+        <child name="o16" ></child>            
+    </operation>
+
+     <operation name="o15" duration = "10" type = "mix">
+        <child name="o16" ></child>
+       
+    </operation>    
+
+     <operation name="o16" duration = "10" type = "heat" >       
+	<parent name = "o14"></parent>
+	<parent name = "o15"></parent>         
+    </operation>
+
+ 	<operation name="o17" duration = "10" type = "mix">
+        <child name="o19" ></child>            
+    </operation>
+
+     <operation name="o18" duration = "10" type = "mix">
+        <child name="o19" ></child>
+       
+    </operation>    
+
+     <operation name="o19" duration = "10" type = "heat" >       
+	<parent name = "o17"></parent>
+	<parent name = "o18"></parent>         
+    </operation>
+ <operation name="o21" duration = "10" type = "mix">
+        <child name="o23" ></child>            
+    </operation>
+
+     <operation name="o22" duration = "10" type = "mix">
+        <child name="o23" ></child>
+      
+    </operation> 
+ 
+     <operation name="o23" duration = "10" type = "heat" >
+       
+	<parent name = "o21"></parent>
+	<parent name = "o22"></parent>
+         
+    </operation>
+
+  <operation name="o24" duration = "10" type = "mix">
+        <child name="o26" ></child>            
+    </operation>
+
+     <operation name="o25" duration = "10" type = "mix">
+        <child name="o26" ></child>
+       
+    </operation>    
+
+     <operation name="o26" duration = "10" type = "heat" >       
+	<parent name = "o24"></parent>
+	<parent name = "o25"></parent>         
+    </operation>
+
+ 	<operation name="o27" duration = "10" type = "mix">
+        <child name="o29" ></child>            
+    </operation>
+
+     <operation name="o28" duration = "10" type = "mix">
+        <child name="o29" ></child>
+       
+    </operation>    
+
+     <operation name="o29" duration = "10" type = "heat" >       
+	<parent name = "o27"></parent>
+	<parent name = "o28"></parent>         
+    </operation>
+  
+   <operation name="o31" duration = "10" type = "mix">
+        <child name="o33" ></child>            
+    </operation>
+
+     <operation name="o32" duration = "10" type = "mix">
+        <child name="o33" ></child>
+      
+    </operation> 
+ 
+     <operation name="o33" duration = "10" type = "heat" >
+       
+	<parent name = "o31"></parent>
+	<parent name = "o32"></parent>
+         
+    </operation>
+
+  <operation name="o34" duration = "10" type = "mix">
+        <child name="o36" ></child>            
+    </operation>
+
+     <operation name="o35" duration = "10" type = "mix">
+        <child name="o36" ></child>
+       
+    </operation>    
+
+     <operation name="o36" duration = "10" type = "heat" >       
+	<parent name = "o34"></parent>
+	<parent name = "o35"></parent>         
+    </operation>
+
+ 	<operation name="o37" duration = "10" type = "mix">
+        <child name="o39" ></child>            
+    </operation>
+
+     <operation name="o38" duration = "10" type = "mix">
+        <child name="o39" ></child>
+       
+    </operation>    
+
+     <operation name="o39" duration = "10" type = "heat" >       
+	<parent name = "o37"></parent>
+	<parent name = "o38"></parent>         
+    </operation>
+ 
+   <operation name="o41" duration = "10" type = "mix">
+        <child name="o43" ></child>            
+    </operation>
+
+     <operation name="o42" duration = "10" type = "mix">
+        <child name="o43" ></child>
+      
+    </operation> 
+ 
+     <operation name="o43" duration = "10" type = "heat" >
+       
+	<parent name = "o41"></parent>
+	<parent name = "o42"></parent>
+         
+    </operation>
+
+  <operation name="o44" duration = "10" type = "mix">
+        <child name="o46" ></child>            
+    </operation>
+
+     <operation name="o45" duration = "10" type = "mix">
+        <child name="o46" ></child>
+       
+    </operation>    
+
+     <operation name="o46" duration = "10" type = "heat" >       
+	<parent name = "o44"></parent>
+	<parent name = "o45"></parent>         
+    </operation>
+
+ 	<operation name="o47" duration = "10" type = "mix">
+        <child name="o49" ></child>            
+    </operation>
+
+     <operation name="o48" duration = "10" type = "mix">
+        <child name="o49" ></child>
+       
+    </operation>    
+
+     <operation name="o49" duration = "10" type = "heat" >       
+	<parent name = "o47"></parent>
+	<parent name = "o48"></parent>         
+    </operation>
+  
+   <operation name="o51" duration = "10" type = "mix">
+        <child name="o53" ></child>            
+    </operation>
+
+     <operation name="o52" duration = "10" type = "mix">
+        <child name="o53" ></child>
+      
+    </operation> 
+ 
+     <operation name="o53" duration = "10" type = "heat" >
+       
+	<parent name = "o51"></parent>
+	<parent name = "o52"></parent>
+         
+    </operation>
+
+  <operation name="o54" duration = "10" type = "mix">
+        <child name="o56" ></child>            
+    </operation>
+
+     <operation name="o55" duration = "10" type = "mix">
+        <child name="o56" ></child>
+       
+    </operation>    
+
+     <operation name="o56" duration = "10" type = "heat" >       
+	<parent name = "o54"></parent>
+	<parent name = "o55"></parent>         
+    </operation>
+
+ 	<operation name="o57" duration = "10" type = "mix">
+        <child name="o59" ></child>            
+    </operation>
+
+     <operation name="o58" duration = "10" type = "mix">
+        <child name="o59" ></child>
+       
+    </operation>    
+
+     <operation name="o59" duration = "10" type = "heat" >       
+	<parent name = "o57"></parent>
+	<parent name = "o58"></parent>         
+    </operation>
+   <operation name="o61" duration = "10" type = "mix">
+        <child name="o63" ></child>            
+    </operation>
+
+     <operation name="o62" duration = "10" type = "mix">
+        <child name="o63" ></child>
+      
+    </operation> 
+ 
+     <operation name="o63" duration = "10" type = "heat" >
+       
+	<parent name = "o61"></parent>
+	<parent name = "o62"></parent>
+         
+    </operation>
+
+  <operation name="o64" duration = "10" type = "mix">
+        <child name="o66" ></child>            
+    </operation>
+
+     <operation name="o65" duration = "10" type = "mix">
+        <child name="o66" ></child>
+       
+    </operation>    
+
+     <operation name="o66" duration = "10" type = "heat" >       
+	<parent name = "o64"></parent>
+	<parent name = "o65"></parent>         
+    </operation>
+
+ 	<operation name="o67" duration = "10" type = "mix">
+        <child name="o69" ></child>            
+    </operation>
+
+     <operation name="o68" duration = "10" type = "mix">
+        <child name="o69" ></child>
+       
+    </operation>    
+
+     <operation name="o69" duration = "10" type = "heat" >       
+	<parent name = "o67"></parent>
+	<parent name = "o68"></parent>         
+    </operation>
+ 
+    
+
+
+  
+   
+	
+
+    
+
+   <device name = "d1" x = "1" y = "1" type = "mix"></device>
+   <device name = "d2" x = "1" y = "1" type = "mix"></device>
+   <device name = "d3" x = "1" y = "1" type = "heat"></device>
+   <device name = "d4" x = "1" y = "1" type = "mix"></device>
+   <device name = "d5" x = "1" y = "1" type = "mix"></device>
+   <device name = "d6" x = "1" y = "1" type = "heat"></device>
+
+
+   
+ 
+     
+
+    
+    
+   
+    
+    
+  
+</sequenceGraph>
