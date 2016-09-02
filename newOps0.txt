@@ -1,0 +1,84 @@
+new Op o1  bind to d1 type 1
+--------------------
+new Op o14  bind to d2 type 2
+parent o1 type 1
+new Channel from o1 to o14 from d1 1 to d2 2
+--------------------
+new Op o2  bind to d5 type 1
+--------------------
+new Op o19  bind to d2 type 2
+parent o14 type 2
+new Channel from o14 to o19 from d2 2 to d2 2
+--------------------
+new Op o12  bind to d3 type 3
+parent o1 type 1
+new Channel from o1 to o12 from d1 1 to d3 3
+--------------------
+new Op o13  bind to d2 type 2
+parent o2 type 1
+new Channel from o2 to o13 from d5 1 to d2 2
+--------------------
+new Op o0  bind to d3 type 3
+--------------------
+new Op o21  bind to d2 type 2
+parent o14 type 2
+new Channel from o14 to o21 from d2 2 to d2 2
+--------------------
+new Op o23  bind to d4 type 0
+parent o13 type 2
+new Channel from o13 to o23 from d2 2 to d4 0
+--------------------
+new Op o11  bind to d2 type 2
+parent o0 type 3
+new Channel from o0 to o11 from d3 3 to d2 2
+--------------------
+new Op o17  bind to d0 type 0
+parent o12 type 3
+new Channel from o12 to o17 from d3 3 to d0 0
+parent o13 type 2
+new Channel from o13 to o17 from d2 2 to d0 0
+--------------------
+new Op o18  bind to d5 type 1
+parent o12 type 3
+new Channel from o12 to o18 from d3 3 to d5 1
+--------------------
+new Op o20  bind to d2 type 2
+parent o11 type 2
+new Channel from o11 to o20 from d2 2 to d2 2
+--------------------
+new Op o33  bind to d0 type 0
+parent o17 type 0
+new Channel from o17 to o33 from d0 0 to d0 0
+parent o18 type 1
+new Channel from o18 to o33 from d5 1 to d0 0
+--------------------
+new Op o34  bind to d2 type 2
+parent o17 type 0
+new Channel from o17 to o34 from d0 0 to d2 2
+--------------------
+new Op o10  bind to d3 type 3
+parent o0 type 3
+new Channel from o0 to o10 from d3 3 to d3 3
+--------------------
+new Op o41  bind to d0 type 0
+parent o33 type 0
+new Channel from o33 to o41 from d0 0 to d0 0
+parent o34 type 2
+new Channel from o34 to o41 from d2 2 to d0 0
+--------------------
+new Op o42  bind to d2 type 2
+parent o34 type 2
+new Channel from o34 to o42 from d2 2 to d2 2
+--------------------
+new Op o15  bind to d4 type 0
+parent o10 type 3
+new Channel from o10 to o15 from d3 3 to d4 0
+parent o11 type 2
+new Channel from o11 to o15 from d2 2 to d4 0
+--------------------
+new Op o16  bind to d2 type 2
+parent o10 type 3
+new Channel from o10 to o16 from d3 3 to d2 2
+--------------------
+channelCount 21
+OpsCount20

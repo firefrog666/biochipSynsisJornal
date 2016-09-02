@@ -1,0 +1,10 @@
+new Op o65  bind to d3 type 3
+parent o55 type 2
+new Channel from o55 to o65 from d2 2 to d3 3
+--------------------
+new Op o67  bind to d2 type 2
+parent o55 type 2
+new Channel from o55 to o67 from d2 2 to d2 2
+--------------------
+channelCount 2
+OpsCount2

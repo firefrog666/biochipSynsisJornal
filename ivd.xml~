@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sequenceGraph>
+
+     <operation name="o1" duration = "40" type = "mix">
+        <child name="o7" ></child>
+    </operation>
+	
+      <operation name="o2" duration = "40" type = "mix">
+        <child name="o8" ></child>                   
+    </operation>
+  <operation name="o3" duration = "40" type = "mix">
+        <child name="o9" ></child>
+    </operation>
+  <operation name="o4" duration = "40" type = "mix">
+        <child name="o10" ></child>
+    </operation>
+<operation name="o5" duration = "40" type = "mix">
+        <child name="o11" ></child>
+    </operation>
+  <operation name="o6" duration = "40" type = "mix">
+        <child name="o12" ></child>
+    </operation>
+  <operation name="o7" duration = "70" type = "detect">
+        <parent name="o1" ></parent>
+    </operation>
+ <operation name="o8" duration = "70" type = "detect">
+        <parent name="o2" ></parent>
+    </operation>
+
+ <operation name="o9" duration = "70" type = "detect">
+        <parent name="o3" ></parent>
+    </operation>
+
+ <operation name="o10" duration = "70" type = "detect">
+        <parent name="o4" ></parent>
+    </operation>
+
+ <operation name="o11" duration = "70" type = "detect">
+        <parent name="o5" ></parent>
+    </operation>
+
+ <operation name="o12" duration = "70" type = "detect">
+        <parent name="o6" ></parent>
+    </operation>
+
+
+
+
+
+
+
+
+
+
+   <device name = "d1" x = "1" y = "1" type = "mix"></device>
+   <device name = "d2" x = "1" y = "1" type = "mix"></device>
+<device name = "d3" x = "1" y = "1" type = "mix"></device>
+<device name = "d4" x = "1" y = "1" type = "mix"></device>
+<device name = "d5" x = "1" y = "1" type = "mix"></device>
+ 
+ 
+
+
+   
+ 
+     
+
+    
+    
+   
+    
+    
+  
+</sequenceGraph>

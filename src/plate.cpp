@@ -16,15 +16,19 @@
 using namespace std;
 
 #define jointStr(s1...)
-#define M 10000
-#define TRANSTIME 1
+#define M 100
+#define TRANSTIME 10
 #define CHIPSIZE 10
 #define LIQUIDESIZE 1
 #define DEVICESTEP 3
+#define SOURCEX 0
+#define SOURCEY 0
 
 typedef boost::shared_ptr<Op> Op_ptr;
 typedef boost::shared_ptr<Device> Dev_ptr;
 
+#ifndef SSTRING
+#define SSTRING
 string S(int i){
 	stringstream ss;
 	ss<<i;
@@ -40,6 +44,7 @@ string S(string s){
 	ss<<s;
 	return ss.str();
 }
+#endif
 
 void Plate::setSequenceGraph(const SequenceGraph& thatSeq)
 {
@@ -53,8 +58,66 @@ void Plate::getBindingFromList(const ListAlgorithm& L){
 	operations = L.ops;
 	devices = L.devices;
 }
+
+void Plate::getPartInfoFromListByTime(const ListAlgorithm& L, int numberOfOps){
+	string fileNameOps = "newOps" + S(itrTimes) + ".txt";
+	ofstream fileOps;
+	fileOps.open(fileNameOps.c_str());
+
+
+
+	int newOpNumber = 0;
+	int channelCount = 0;
+	int opCount = 0;
+	for(int time = 0; ;time++){
+		for(Op_ptr op:L.ops){
+			auto it = find(operations.begin(),operations.end(),op);
+			//op is already in operations
+			if(it != operations.end())
+				continue;
+
+			if(op->endTime == time){
+				operations.push_back(op);
+				fileOps << "new Op " << op->name << "  bind to " << op->bindDevice->name << " type "<<op->type <<endl;
+				opCount++;
+				for(Op_ptr parent:op->parents){
+
+					fileOps << "parent " << parent->name<< " type "<<parent->type << endl;
+					fileOps << "new Channel from " << parent->name <<" to " <<op->name << " from " << parent->bindDevice->name << " " << parent->bindDevice->type
+							<< " to " << op->bindDevice->name << " " << op->bindDevice->type << endl;
+					channelCount++;
+				}
+				fileOps << "--------------------" << endl;
+
+
+
+				Dev_ptr bindDev = op->bindDevice;
+				auto bindItr = find(devices.begin(),devices.end(),bindDev);
+				if(bindItr == devices.end()){
+					devices.push_back(bindDev);
+				}
+
+				newOpNumber++;
+			}
+		}
+
+		if(newOpNumber >= numberOfOps)
+			break;
+
+		if(operations.size() >= L.ops.size())
+			break;
+	}
+
+	fileOps << "channelCount " << channelCount <<endl;
+	fileOps << "OpsCount" << opCount <<endl;
+	fileOps.close();
+
+	itrTimes++;
+}
 void Plate::getPartInfoFromList(const ListAlgorithm& L, int numberOfOps){
 	int i = 0;
+
+
 	while(i < numberOfOps){
 		if(i >= L.ops.size())
 			break;
@@ -291,12 +354,49 @@ void Plate::readFromSolver(map<string,int> const & input){
 	for(auto const &iter : ILPResults){
 		string varname = iter.first;
 		int result = iter.second;
-		resultsFromLastItr.push_back(varname + " = " + S(result));
+		int isObjName = false;
+		for(string objname:varNameObj){
+			if(varname == objname){
+				isObjName = true;
+				break;
+			}
+		}
+		if(!isObjName){
+			resultsFromLastItr.push_back(varname + " = " + S(result));
+		}
 	}
+
+
+}
+
+void Plate::readFromSolverDevice(map<string,int> const & input){
+	ILPResults = input;
+	resultsFromLastItr.clear();
+
+
+	for(Dev_ptr d:devices){
+		string x = S(d->name) + S("x");
+		string y = S(d->name) + S("y");
+		string s = S(d->name) + S("s");
+		string t = S(d->name) + S("t");
+
+		int xV = ILPResults.at(x);
+		int yV = ILPResults.at(y);
+		int sV = ILPResults.at(s);
+		int tV = ILPResults.at(t);
+		resultsFromLastItr.push_back(x + " = " + S(xV));
+		resultsFromLastItr.push_back(y + " = " + S(yV));
+		resultsFromLastItr.push_back(s + " = " + S(sV));
+		resultsFromLastItr.push_back(t + " = " + S(tV));
+
+	}
+
+
 }
 
 void Plate::writeToFile(){
 	writeILP write;
+
 	write.writeOBJ(OBJ,"ilp.lp");
 	write.writeConstraint(ILP,"ilp.lp");
 	resultsFromLastItr.push_back(" ");
@@ -350,7 +450,11 @@ void Plate::channeTimeConstraint(){
 	//time constraint for a single channel
 	//c0 start d0 end with d1, c1 start with c0end , end with c2start, c2  start with c1end, start with c1;
 
-	for(Channel c:channels){
+	/*for(Channel c:channels){
+		if(c.fatherOp->name == "source"){
+			continue;
+		}
+
 		string firststart = c.name + S("first") + S("start");varName.push_back(firststart);varType.push_back("2");
 		string firstend = c.name + S("first") + S("end");varName.push_back(firstend);varType.push_back("2");
 		string storagestart = c.name + S("storage") + S("start");varName.push_back(storagestart);varType.push_back("2");
@@ -386,23 +490,40 @@ void Plate::channeTimeConstraint(){
 
 
 		//end.end >= child.device.previousOp.first.end
-		/*if(childDevicePreviousOp != nullptr){
+		if(childDevicePreviousOp != nullptr){
 			//string childDevicePreviousOpFirst
 			ILP.push_back(endstart + S(" - ") + )
-		}*/
+		}
 
 
 
-	}
+	}*/
 
 
 
 	//if two channels may concurrent with each other, set constraint
 	for(int i = 0; i < channels.size();i++){
 
+
+
 		Channel c0 = channels[i];
+		if(c0.fatherOp->name == "source"){
+			continue;
+		}
+
+		//if is not storage
+		if(c0.childOp->endTime - c0.fatherOp->startTime == TRANSTIME){
+			continue;
+		}
 		for(int j = i+1; j < channels.size();j++){
 			Channel c1 = channels[j];
+			if(c1.fatherOp->name == "source"){
+				continue;
+			}
+			//if is not Channel
+			if(c1.childOp->endTime - c1.fatherOp->startTime == TRANSTIME){
+				continue;
+			}
 
 			if(c0.startTime > c1.endTime || c0.endTime < c1.startTime)
 				break;
@@ -557,6 +678,7 @@ string inline pointNameStr(int i,int j){
 void Plate::ValveObject(){
 	//minimize intersections
 	string obj;
+
 	for(int i = 0; i <= CHIPSIZE-1;i++){
 		for(int j = 0; j<= CHIPSIZE-1;j++){
 
@@ -564,6 +686,11 @@ void Plate::ValveObject(){
 			string pointOnVerticalSeg = pointName + S("VerticalSeg"); varName.push_back(pointOnVerticalSeg); varType.push_back("1");
 			string pointOnHorSeg = pointName + S("HorSeg"); varName.push_back(pointOnHorSeg); varType.push_back("1");
 			string pointUsed = pointName +S("Used");  varName.push_back(pointUsed); varType.push_back("1");
+			varNameObj.push_back(pointOnHorSeg);
+			varNameObj.push_back(pointOnVerticalSeg);
+			varNameObj.push_back(pointUsed);
+
+
 			ILP.push_back(pointOnVerticalSeg + S(" + ") + pointOnHorSeg + S(" - ") + pointUsed + S(" >= 0"));
 			 obj += S(" + ") + pointUsed;
 
@@ -592,8 +719,8 @@ void Plate::ValveObject(){
 
 					//if x0 = x1 && y0 >= j && y1 <=j then pointOnVertical = 0
 					// x0 < x1 or x0 > x1 or y0<j or y1>j or poitnV
-					string y1BiggerJ = y1+S("Bigger") + S(j); varName.push_back(y0BiggerJ);varType.push_back("1");
-					string y0LessJ =  y0+S("Less")+S(j); varName.push_back(y1LessJ); varType.push_back("1");
+					string y1BiggerJ = y1+S("Bigger") + S(j); varName.push_back(y1BiggerJ);varType.push_back("1");
+					string y0LessJ =  y0+S("Less")+S(j); varName.push_back(y0LessJ); varType.push_back("1");
 
 					ILP.push_back(y1 + S(" + ") + S(M) +S(" ") + y1BiggerJ +S(" >= ") + S(j+1));
 					ILP.push_back(y0 + S(" - ") + S(M) +S(" ") + y0LessJ +S(" <= ") + S(j-1));
@@ -632,7 +759,7 @@ void Plate::ValveObject(){
 
 		}
 	}
-
+	OBJ.push_back("Maximize");
 	OBJ.push_back(obj);
 
 
@@ -644,6 +771,7 @@ void Plate::constraintClear(){
 	varName.clear();
 	varType.clear();
 	ILP.clear();
+	varNameObj.clear();
 	//resultsFromLastItr.clear();
 	bounds.clear();
 }
@@ -673,12 +801,12 @@ void Plate::channelPlaceConstraint(){
 			varName.push_back(evx); varType.push_back("0");
 			varName.push_back(evy); varType.push_back("0");
 
-			bounds.push_back(S("0 <= ") + fvx + S(" <= ") + S(CHIPSIZE));
-			bounds.push_back(S("0 <= ") + fvy + S(" <= ") + S(CHIPSIZE));
-			bounds.push_back(S("0 <= ") + svx + S(" <= ") + S(CHIPSIZE));
-			bounds.push_back(S("0 <= ") + svy + S(" <= ") + S(CHIPSIZE));
-			bounds.push_back(S("0 <= ") + evx + S(" <= ") + S(CHIPSIZE));
-			bounds.push_back(S("0 <= ") + evy + S(" <= ") + S(CHIPSIZE));
+			bounds.push_back(S(-CHIPSIZE) + S(" <= ") + fvx + S(" <= ") + S(CHIPSIZE*2));
+			bounds.push_back(S(-CHIPSIZE) + S(" <= ") + fvy + S(" <= ") + S(CHIPSIZE*2));
+			bounds.push_back(S(-CHIPSIZE) + S(" <= ") + svx + S(" <= ") + S(CHIPSIZE*2));
+			bounds.push_back(S(-CHIPSIZE) + S(" <= ") + svy + S(" <= ") + S(CHIPSIZE*2));
+			bounds.push_back(S(-CHIPSIZE) + S(" <= ") + evx + S(" <= ") + S(CHIPSIZE*2));
+			bounds.push_back(S(-CHIPSIZE) + S(" <= ") + evy + S(" <= ") + S(CHIPSIZE*2));
 
 
 		}
@@ -734,7 +862,28 @@ void Plate::channelPlaceConstraint(){
 		varName.push_back(channelEndDevicePort1);varType.push_back("1");
 
 		//if d0 != d1 then start with d0 end with d1
-		if(d0->name != d1->name){
+
+		if(d0->name == "source"){
+			//start frome source
+			ILP.push_back(S(fx0) + S(" = ") + S(SOURCEX));
+			ILP.push_back(fy0 + S(" = " ) + S(SOURCEY));
+
+			//end with device
+			ILP.push_back(S(exn) + S(" - ") + S(d1Port0X) + S(" + ") + S(M) +S(" ") + channelEndDevicePort0 +S(" >= 0"));
+			ILP.push_back(S(exn) + S(" - ") + S(d1Port0X) + S(" - ") + S(M) +S(" ") + channelEndDevicePort0 +S(" <= 0"));
+
+			ILP.push_back(S(eyn) + S(" - ") + S(d1Port0Y) + S(" + ") + S(M) +S(" ") + channelEndDevicePort0 +S(" >= 0"));
+			ILP.push_back(S(eyn) + S(" - ") + S(d1Port0Y) + S(" - ") + S(M) +S(" ") + channelEndDevicePort0 +S(" <= 0"));
+
+			ILP.push_back(S(exn) + S(" - ") + S(d1Port1X) + S(" + ") + S(M) +S(" ") + channelEndDevicePort1 +S(" >= 0"));
+			ILP.push_back(S(exn) + S(" - ") + S(d1Port1X) + S(" - ") + S(M) +S(" ") + channelEndDevicePort1 +S(" <= 0"));
+
+			ILP.push_back(S(eyn) + S(" - ") + S(d1Port1Y) + S(" + ") + S(M) +S(" ") + channelEndDevicePort1 +S(" >= 0"));
+			ILP.push_back(S(eyn) + S(" - ") + S(d1Port1Y) + S(" - ") + S(M) +S(" ") + channelEndDevicePort1 +S(" <= 0"));
+			ILP.push_back(channelEndDevicePort0 +S(" + ") + channelEndDevicePort1 + S(" = 1"));
+
+		}
+		else if(d0->name != d1->name){
 
 			ILP.push_back(S(fx0) + S(" - ") + S(d0Port0X) + S(" + ") + S(M) +S(" ") + channelStartDevicePort0 +S(" >= 0"));
 			ILP.push_back(S(fx0) + S(" - ") + S(d0Port0X) + S(" - ") + S(M) +S(" ") + channelStartDevicePort0 +S(" <= 0"));
@@ -764,6 +913,7 @@ void Plate::channelPlaceConstraint(){
 			ILP.push_back(channelEndDevicePort0 +S(" + ") + channelEndDevicePort1 + S(" = 1"));
 		}
 		//else d0 == d1 then only start from d0
+		else
 		{
 			ILP.push_back(S(fx0) + S(" - ") + S(d0Port0X) + S(" + ") + S(M) +S(" ") + channelStartDevicePort0 +S(" >= 0"));
 			ILP.push_back(S(fx0) + S(" - ") + S(d0Port0X) + S(" - ") + S(M) +S(" ") + channelStartDevicePort0 +S(" <= 0"));
@@ -889,7 +1039,7 @@ void Plate::channelPlaceConstraint(){
 				 * 				or y3 == y2 && x3 > x2
 				 * translated
 				 * !(x1 == x2 && y1 == y2 && y0 == y1 && x0 < x1 ) or x3 == x2 or (y3 == y2 && x2 >x1)
-				 * => x1 < x2 or x1 > x2 or y1 < y2 or y1>y2 or y0 > y1 or y0< y1 or x0 >= x1 or x3 == x2 or (y3 == y2 && x2 > x1)
+				 * => x1 < x2 or x1 > x2 or y1 < y2 or y1>y2 or y0 > y1 or y0< y1 or x0 >= x1 or x3 == x2 or (y3 == y2 && x	3 > x2)
 				 */
 
 				//x1 < x2 or x1 >x2
@@ -898,6 +1048,7 @@ void Plate::channelPlaceConstraint(){
 
 
 				//if b = 0 then x1 < x2
+				//x1 - x2 - M * b <= -1
 				//if b = 1 then x1 >= x2
 				//x1 - x2 + M(1-b) > =0
 				// x1 - x2 - M *b >= -M
@@ -906,25 +1057,26 @@ void Plate::channelPlaceConstraint(){
 				//ILP.push_back()
 
 				//if b = 0 then x1 > x2
+				//x1- x2 + M * b >= 1
 				//if b = 1 then x1 <= x2
-				//x1 - x2 + M(1-b) <= 0
-				// x1 - x2 - M *b <= -M
+				//x1 - x2 - M(1- b) <= 0
+				// x1 - x2 + M *b <= M
 				ILP.push_back(x1 + S(" - ") + x2 + S(" + ")+ S(M) + S(" ") + x1Biggerx2 + S(" >= 1"));
-				ILP.push_back(x1 + S(" - ") + x2 + S(" - ") + S(M) + S(" ") + x1Biggerx2 + S(" <= ") + S(-M));
+				ILP.push_back(x1 + S(" - ") + x2 + S(" + ") + S(M) + S(" ") + x1Biggerx2 + S(" <= ") + S(M));
 				// y1 < y2 or y1 > y2
 				string y1Lessy2 = y1 + S("Less") + y2; varName.push_back(y1Lessy2); varType.push_back("1");
 				string y1Biggery2 = y1 + S("Bigger") + y2;varName.push_back(y1Biggery2); varType.push_back("1");
 				ILP.push_back(y1 + S(" - ") + y2 + S(" - ")+ S(M) + S(" ") + y1Lessy2 + S(" <= -1"));
 				ILP.push_back(y1 + S(" - ") + y2 + S(" - ") + S(M) + S(" ") + y1Lessy2 + S(" >= ") + S(-M));
 				ILP.push_back(y1 + S(" - ") + y2 + S(" + ")+ S(M) + S(" ") + y1Biggery2 + S(" >= 1"));
-				ILP.push_back(y1 + S(" - ") + y2 + S(" - ") + S(M) + S(" ") + y1Biggery2 + S(" <= ") + S(-M));
+				ILP.push_back(y1 + S(" - ") + y2 + S(" + ") + S(M) + S(" ") + y1Biggery2 + S(" <= ") + S(M));
 
 				// y0 < y1 or y0>y1
 				string y0Lessy1 = y0 + S("Less") + y1; varName.push_back(y0Lessy1); varType.push_back("1");
 				string y0Biggery1 = y0 + S("Bigger") + y1;varName.push_back(y0Biggery1); varType.push_back("1");
 				ILP.push_back(y0 + S(" - ") + y1 + S(" - ")+ S(M) + S(" ") + y0Lessy1 + S(" <= -1"));
 				ILP.push_back(y0 + S(" - ") + y1+ S(" + ") + S(M) + S(" ") + y0Biggery1 + S(" >= 1"));
-				// x0 <= x1
+				// x0 >= x1
 				string x0BiggerEqualx1 = x0 + S("BiggerEqual") + x1;varName.push_back(x0BiggerEqualx1); varType.push_back("1");
 				ILP.push_back(x0 + S(" - ") + x1 + S(" + ") +  S(M) + S(" ")+ x0BiggerEqualx1 + S(" >= 0"));
 
@@ -942,6 +1094,7 @@ void Plate::channelPlaceConstraint(){
 				ILP.push_back(y2 + S(" - ") + y3 + S(" + ") + S(M) + S(" ") + y2Equaly3 + S(" >= 0"));
 				ILP.push_back(x2 + S(" - ") + x3 + S(" - ") + S(M) + S(" ") + x2Lessx3 +S(" <= -1"));
 				// at least one of them is true y2==y3
+				// => x1 < x2 or x1 > x2 or y1 < y2 or y1>y2 or y0 > y1 or y0< y1 or x0 >= x1 or x3 == x2 or (y3 == y2 && x	3 > x2)
 				ILP.push_back(x1Lessx2 + S(" + ") + x1Biggerx2 + S(" + ") + y1Lessy2 + S(" + ") + y1Biggery2 + S(" + ")
 						+ y0Lessy1 + S(" + ")+ y0Biggery1+ S(" + ") + x0BiggerEqualx1 + S(" + ") + x2Equalx3+ S(" + ") + y2Equaly3+ S(" <= 8"));
 				// && x2<x3
@@ -1098,6 +1251,11 @@ void Plate::channelPlaceConstraint(){
 	for(Channel c:channels){
 		//any vertex besides firstx0 firsty0 and endxn endyn must be outside any devices
 		for(Dev_ptr d:devices){
+
+			if(d->name == "source"){
+				continue;
+			}
+
 				string dx = S(d->name) + S("x");
 				string dy = S(d->name) + S("y");
 				string ds = S(d->name) + S("s");
@@ -1140,7 +1298,18 @@ void Plate::channelPlaceConstraint(){
 
 	//channels storage >= liquidsize
 
+
 	for(Channel c:channels){
+
+		if(c.fatherOp->name == "source"){
+			continue;
+		}
+
+		//if channel is not store continue;
+		if(c.childOp->endTime - c.fatherOp->startTime == TRANSTIME)
+			continue;
+
+
 		for(int i = c.vertexNum; i<=2*(c.vertexNum-1);i++){
 			string x0 = getVertexNameX(c,i-1);
 			string y0 = getVertexNameY(c,i-1);
@@ -1176,7 +1345,11 @@ void Plate::devicePlacementConstraint()
 		stringstream ss;
 
 		for(int i = 0; i < devices.size();i++){
+
 			Dev_ptr d0 = devices.at(i);
+			if(d0->name == "source"){
+				continue;
+			}
 			//push binaries name into vector
 			x0 = S(d0->name) + S("x");
 			y0 = S(d0->name) + S("y");
@@ -1200,6 +1373,7 @@ void Plate::devicePlacementConstraint()
 
 
 
+
 			//set x y s t boundry
 			bounds.push_back(S("0 <= ") + x0 + S(" <= ") + S(CHIPSIZE));
 			bounds.push_back(S("0 <= ") + y0 + S(" <= ") + S(CHIPSIZE));
@@ -1210,6 +1384,9 @@ void Plate::devicePlacementConstraint()
 
 			for(int j = i+1; j<devices.size();j++){
 				Dev_ptr d1 = devices.at(j);
+				if(d1->name == "source"){
+					continue;
+				}
 				b0  = S(d0->name) + S("R") + S(d1->name);
 				b1  = S(d0->name) + S("L") + S(d1->name);
 				b2  = S(d0->name) + S("U" ) + S(d1->name);
@@ -1224,6 +1401,9 @@ void Plate::devicePlacementConstraint()
 
 		for(int i = 0; i < devices.size();i++){
 			Dev_ptr d0 = devices.at(i);
+			if(d0->name == "source"){
+				continue;
+			}
 
 			x0 = S(d0->name) + S("x");
 			y0 = S(d0->name) + S("y");
@@ -1254,7 +1434,9 @@ void Plate::devicePlacementConstraint()
 			for(int j = i+1; j<devices.size();j++){
 				Dev_ptr d1 = devices.at(j);
 
-
+				if(d1->name == "source"){
+					continue;
+				}
 
 
 				x1 = S(d1->name) + S("x");
@@ -1310,31 +1492,46 @@ void Plate::setChannelsTime()
 {
 	channels.clear();
 	//for each parent of each Operation, generate 3 Channel, in/out/storage
-	for(Op_ptr childs:operations)
+	for(Op_ptr child:operations)
 	{
 
-		Dev_ptr childDevice = childs->bindDevice;
-		for(Op_ptr parent:childs->parents){
+
+
+		Dev_ptr childDevice = child->bindDevice;
+		for(Op_ptr parent:child->parents){
+
+
 			Channel c;
-			Dev_ptr fatherDevice = childs->bindDevice;
-			//tmpChannel leftEnd,rightEnd;
-			//storage store;
+
+			if(parent->name == "source"){
+				c.fatherOp = parent;
+				c.childOp = child;
+
+				c.name = S("c") + S(parent->name) + S(child->name);
+
+				channels.push_back(c);
+			}
+			else{
+				Dev_ptr fatherDevice = child->bindDevice;
+				//tmpChannel leftEnd,rightEnd;
+				//storage store;
 
 
-			c.ends[0] = fatherDevice;
-			c.ends[1] = childDevice;
-			c.startTime = parent->endTime;
-			c.endTime = childs->startTime;
-			c.fatherOp = parent;
-			c.childOp = childs;
+				c.ends[0] = fatherDevice;
+				c.ends[1] = childDevice;
+				c.startTime = parent->endTime;
+				c.endTime = child->startTime;
+				c.fatherOp = parent;
+				c.childOp = child;
 
-			c.name = S("c") + S(parent->name) + S(childs->name);
+				c.name = S("c") + S(parent->name) + S(child->name);
 
-			channels.push_back(c);
-
+				channels.push_back(c);
+			}
 		}
 
 	}
+
 }
 
 

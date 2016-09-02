@@ -44,6 +44,8 @@ private:
 	vector<string> bounds;
 	vector<string> varName;
 	vector<string> varType;
+	vector<string> varNameObj;
+	int itrTimes = 0;
 	vector<string> resultsFromLastItr; //results from last time
 	map<string,int> ILPResults;
 
@@ -55,9 +57,11 @@ public:
 	void setSequenceGraph(const SequenceGraph& thatSeq);
 	void getBindingFromList(const ListAlgorithm& L);
 	void getPartInfoFromList(const ListAlgorithm& L, int numberOfOps);
+	void getPartInfoFromListByTime(const ListAlgorithm& L, int numberOfOps);
 
 	void writeToFile();
 	void readFromSolver( map<string,int> const  & results);
+	void readFromSolverDevice( map<string,int> const  & results);
 	void writeGraphFile(int pathNumber);
 	void constraintClear();
 	vector<string> getILP();

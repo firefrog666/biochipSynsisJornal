@@ -1,0 +1,14 @@
+new Op o36  bind to d3 type 3
+parent o30 type 2
+new Channel from o30 to o36 from d2 2 to d3 3
+--------------------
+new Op o55  bind to d2 type 2
+parent o40 type 2
+new Channel from o40 to o55 from d2 2 to d2 2
+--------------------
+new Op o72  bind to d1 type 1
+parent o59 type 1
+new Channel from o59 to o72 from d1 1 to d1 1
+--------------------
+channelCount 3
+OpsCount3

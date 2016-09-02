@@ -13,7 +13,10 @@ using namespace std;
 enum operationType {
 	mix,
 	heat,
-	detect
+	detect,
+	filter,
+	source,
+	last
 };
 
 
@@ -112,6 +115,7 @@ public:
 public:
     bool done; //if all
     bool running;//if an operation is running
+
 	operationType type;
 	string name;
 	Dev_ptr bindDevice;
@@ -120,6 +124,8 @@ public:
 	int duration;
 	int startTime;
 	int endTime;
+	int parentSize;
+	int childSize;
 };
 
 #endif

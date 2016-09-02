@@ -1,0 +1,8 @@
+new Op o39  bind to d4 type 0
+parent o32 type 0
+new Channel from o32 to o39 from d4 0 to d4 0
+parent o33 type 2
+new Channel from o33 to o39 from d2 2 to d4 0
+--------------------
+channelCount 2
+OpsCount1

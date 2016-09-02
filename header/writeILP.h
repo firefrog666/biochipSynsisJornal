@@ -29,9 +29,11 @@ public:
 		 //ofstream file;
 		 if(!file.is_open())
 			 file.open(fileName);
-		 file<<"Maximize"<<endl;
+		 if(OBJ.size() > 0)
+			 file<<OBJ.at(0)<<endl;
+		 //file <<"Maximize"<<endl;
 
-		 for(int i = 0; i<= int(OBJ.size()-1); i++)
+		 for(int i = 1; i<= int(OBJ.size()-1); i++)
 		 {
 			 file<<OBJ.at(i)<<endl;
 		 }

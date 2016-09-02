@@ -8,6 +8,8 @@
 #include <functional>
 #include <fstream>
 using namespace std;
+int ilpGap;
+int timeMax;
 
 struct eqstr
 {
@@ -32,6 +34,13 @@ void toFile(map<string,int>& varMap, size_t size){
 	fs.close();
 }
 
+void setGap(double i){
+	ilpGap = i;
+}
+void setTime(double i){
+	timeMax = i;
+}
+
 std::map<std::string,int>
 ILP(char* argv)
 {
@@ -47,9 +56,9 @@ ILP(char* argv)
   try {
     GRBEnv env = GRBEnv();
     GRBModel model = GRBModel(env, argv);
-
-    model.getEnv().set(GRB_DoubleParam_TimeLimit, 600.0);
-    model.getEnv().set(GRB_DoubleParam_MIPGap, 0.1);
+    //model.getEnv().set(GRB_DoubleParam_IntFeasTol,1e-6);
+    model.getEnv().set(GRB_DoubleParam_TimeLimit,timeMax);
+    model.getEnv().set(GRB_DoubleParam_MIPGap, ilpGap);
     vars = model.getVars();
     model.optimize();
 
@@ -88,7 +97,7 @@ ILP(char* argv)
           	  	varNames << varName << "\n";
           	  	varResults << varName << "     "<< results[varName] << "\n";
 
-          	  	cout << vars[i].get(GRB_StringAttr_VarName) << " " << vars[i].get(GRB_DoubleAttr_X) << endl;
+          	  	//cout << vars[i].get(GRB_StringAttr_VarName) << " " << vars[i].get(GRB_DoubleAttr_X) << endl;
 
             }
 
@@ -105,8 +114,8 @@ ILP(char* argv)
 
       // compute and write out IIS
 
-      model.computeIIS();
-      model.write("model.ilp");
+      //model.computeIIS();
+      //model.write("model.ilp");
     } else if (optimstatus == GRB_UNBOUNDED) {
       cout << "Model is unbounded" << endl;
     } else {

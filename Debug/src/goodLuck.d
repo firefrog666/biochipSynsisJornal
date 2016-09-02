@@ -8,8 +8,8 @@ src/goodLuck.o: ../src/goodLuck.cpp ../src/../header/ListAlgorithm.h \
  ../src/..//header/../header/sequenceGraph.h \
  ../src/..//header/../header/../rapidxml-1.13/rapidxml.hpp \
  ../src/..//header/../header/Algorithm.h \
- ../src/..//header/../header/ListAlgorithm.h ../src/../header/ILP.h \
- ../src/../rapidxml-1.13/rapidxml.hpp
+ ../src/..//header/../header/ListAlgorithm.h ../src/../header/randomSeq.h \
+ ../src/../header/ILP.h ../src/../rapidxml-1.13/rapidxml.hpp
 
 ../src/../header/ListAlgorithm.h:
 
@@ -38,6 +38,8 @@ src/goodLuck.o: ../src/goodLuck.cpp ../src/../header/ListAlgorithm.h \
 ../src/..//header/../header/Algorithm.h:
 
 ../src/..//header/../header/ListAlgorithm.h:
+
+../src/../header/randomSeq.h:
 
 ../src/../header/ILP.h:
 

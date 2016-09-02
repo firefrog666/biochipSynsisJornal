@@ -7,19 +7,22 @@ CPP_SRCS += \
 ../src/ILP.cpp \
 ../src/ListAlgorithm.cpp \
 ../src/goodLuck.cpp \
-../src/plate.cpp 
+../src/plate.cpp \
+../src/randomSeq.cpp 
 
 OBJS += \
 ./src/ILP.o \
 ./src/ListAlgorithm.o \
 ./src/goodLuck.o \
-./src/plate.o 
+./src/plate.o \
+./src/randomSeq.o 
 
 CPP_DEPS += \
 ./src/ILP.d \
 ./src/ListAlgorithm.d \
 ./src/goodLuck.d \
-./src/plate.d 
+./src/plate.d \
+./src/randomSeq.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

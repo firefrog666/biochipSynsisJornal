@@ -1,12 +1,15 @@
 Maximize
  
 Subject To
- R16556: co2o3endy1 + 10000 co2o3endy1Bigger9 >= 10
- R17010: co2o3endy1 = 0
- R17020: co2o3endy1Bigger9 = 0
+ R3358: co0o10firstx1 - co0o10storagex1
+   + 100 co0o10firstx1Biggerco0o10storagex1 >= 1
+ R113043: co0o10firstx1 = 0
+ R113056: co0o10firstx1Biggerco0o10storagex1 = 0
+ R113127: co0o10storagex1 = 0
 Bounds
- co2o3endy1 free
- co2o3endy1Bigger9 free
+ co0o10firstx1 free
+ co0o10storagex1 free
+ co0o10firstx1Biggerco0o10storagex1 free
 Generals
- co2o3endy1
+ co0o10firstx1 co0o10storagex1 co0o10firstx1Biggerco0o10storagex1
 End
