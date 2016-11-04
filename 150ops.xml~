@@ -1,0 +1,701 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sequenceGraph>
+
+     <operation name="o1" duration = "40" type = "mix">
+        <child name="o2" ></child>
+        <child name="o3" ></child>                   
+    </operation>
+	
+      <operation name="o2" duration = "40" type = "mix">
+	<parent name = "o1"></parent>	
+        <child name="o4" ></child>
+        <child name="o5" ></child>                   
+    </operation>
+  <operation name="o3" duration = "40" type = "mix">
+	<parent name = "o1"></parent>	
+        <child name="o6" ></child>
+        <child name="o7" ></child>                   
+    </operation>
+  <operation name="o4" duration = "40" type = "mix">
+<parent name = "o2"></parent>	
+        <child name="o8" ></child>
+        <child name="o9" ></child>                   
+    </operation>
+
+  <operation name="o5" duration = "40" type = "mix">
+<parent name = "o2"></parent>	
+        <child name="o10" ></child>
+        <child name="o11" ></child>                   
+    </operation>
+
+  <operation name="o6" duration = "40" type = "mix">
+<parent name = "o3"></parent>	
+        <child name="o12" ></child>
+        <child name="o13" ></child>                   
+    </operation>
+
+  <operation name="o7" duration = "40" type = "mix">
+<parent name = "o3"></parent>	
+        <child name="o14" ></child>
+        <child name="o15" ></child>                   
+    </operation>
+
+
+<operation name="o8" duration = "70" type = "detect">
+<parent name = "o4"></parent>	
+        <child name="o16" ></child>     
+               
+    </operation>
+
+<operation name="o9" duration = "40" type = "detect">
+	<parent name = "o4"></parent>	
+        <child name="o17" ></child>     
+               
+    </operation>
+<operation name="o10" duration = "40" type = "detect">
+	<parent name = "o5"></parent>	
+        <child name="o18" ></child>     
+               
+    </operation>
+<operation name="o11" duration = "40" type = "detect">
+	<parent name = "o5"></parent>	
+        <child name="o19" ></child>     
+               
+    </operation>
+<operation name="o12" duration = "40" type = "detect">
+	<parent name = "o6"></parent>	
+        <child name="o20" ></child>     
+               
+    </operation>
+
+<operation name="o13" duration = "40" type = "detect">
+	<parent name = "o6"></parent>	
+        <child name="o21" ></child>     
+               
+    </operation>
+
+<operation name="o14" duration = "40" type = "detect">
+	<parent name = "o7"></parent>	
+        <child name="o22" ></child>     
+               
+    </operation>
+
+<operation name="o15" duration = "40" type = "detect">
+	<parent name = "o7"></parent>	
+        <child name="o23" ></child>     
+               
+    </operation>
+<operation name="o16" duration = "40" type = "mix">
+	<parent name = "o8"></parent>	
+           <child name="o24" ></child>        
+    </operation>
+<operation name="o17" duration = "40" type = "mix">
+	<parent name = "o9"></parent>	
+                 <child name="o25" ></child>  
+    </operation>
+
+<operation name="o18" duration = "40" type = "mix">
+	<parent name = "o10"></parent>	
+                 <child name="o26" ></child>  
+    </operation>
+
+<operation name="o19" duration = "40" type = "mix">
+	<parent name = "o11"></parent>	
+                 <child name="o27" ></child>  
+    </operation>
+<operation name="o20" duration = "40" type = "mix">
+	<parent name = "o12"></parent>	
+                 <child name="o28" ></child>  
+    </operation>
+<operation name="o21" duration = "40" type = "mix">
+	<parent name = "o13"></parent>	
+                 <child name="o29" ></child>  
+    </operation>
+<operation name="o22" duration = "40" type = "mix">
+	<parent name = "o14"></parent>	
+                 <child name="o30" ></child>  
+    </operation>
+<operation name="o23" duration = "40" type = "mix">
+	<parent name = "o15"></parent>	
+                 <child name="o31" ></child>  
+    </operation>
+<operation name="o24" duration = "40" type = "mix">
+	<parent name = "o16"></parent>	
+        <child name="o32" ></child>     
+               
+    </operation>
+<operation name="o25" duration = "40" type = "mix">
+	<parent name = "o17"></parent>	
+        <child name="o33" ></child>     
+               
+    </operation>
+<operation name="o26" duration = "40" type = "mix">
+	<parent name = "o18"></parent>	
+        <child name="o34" ></child>     
+               
+    </operation>
+
+<operation name="o27" duration = "40" type = "mix">
+	<parent name = "o17"></parent>	
+        <child name="o35" ></child>     
+               
+    </operation>
+<operation name="o28" duration = "40" type = "mix">
+	<parent name = "o20"></parent>	
+        <child name="o36" ></child>     
+               
+    </operation>
+<operation name="o29" duration = "40" type = "mix">
+	<parent name = "o21"></parent>	
+        <child name="o37" ></child>     
+               
+    </operation>
+<operation name="o30" duration = "40" type = "mix">
+	<parent name = "o22"></parent>	
+        <child name="o38" ></child>     
+               
+    </operation>
+<operation name="o31" duration = "40" type = "mix">
+	<parent name = "o23"></parent>	
+        <child name="o39" ></child>     
+               
+    </operation>
+
+<operation name="o32" duration = "40" type = "mix">
+	<parent name = "o24"></parent>	
+        <child name="o40" ></child>     
+               
+    </operation>
+
+
+<operation name="o33" duration = "40" type = "mix">
+	<parent name = "o25"></parent>	
+        <child name="o41" ></child>     
+               
+    </operation>
+<operation name="o34" duration = "40" type = "mix">
+	<parent name = "o26"></parent>	
+        <child name="o42" ></child>     
+               
+    </operation>
+<operation name="o35" duration = "40" type = "mix">
+	<parent name = "o27"></parent>	
+        <child name="o43" ></child>     
+               
+    </operation>
+<operation name="o36" duration = "40" type = "mix">
+	<parent name = "o28"></parent>	
+        <child name="o44" ></child>     
+               
+    </operation>
+<operation name="o37" duration = "40" type = "mix">
+	<parent name = "o29"></parent>	
+        <child name="o45" ></child>     
+               
+    </operation>
+<operation name="o38" duration = "40" type = "mix">
+	<parent name = "o30"></parent>	
+        <child name="o46" ></child>     
+               
+    </operation>
+<operation name="o39" duration = "40" type = "mix">
+	<parent name = "o31"></parent>	
+        <child name="o47" ></child>     
+               
+    </operation>
+<operation name="o40" duration = "40" type = "mix">
+	<parent name = "o32"></parent>	
+        <child name="o48" ></child>     
+               
+    </operation>
+<operation name="o41" duration = "40" type = "mix">
+	<parent name = "o33"></parent>	
+        <child name="o49" ></child>     
+               
+    </operation>
+<operation name="o42" duration = "40" type = "mix">
+	<parent name = "o34"></parent>	
+        <child name="o50" ></child>     
+               
+    </operation>
+<operation name="o43" duration = "40" type = "mix">
+	<parent name = "o35"></parent>	
+        <child name="o51" ></child>     
+               
+    </operation>
+<operation name="o44" duration = "40" type = "mix">
+	<parent name = "o36"></parent>	
+        <child name="o52" ></child>     
+               
+    </operation>
+<operation name="o45" duration = "40" type = "mix">
+	<parent name = "o37"></parent>	
+        <child name="o53" ></child>     
+               
+    </operation>
+<operation name="o46" duration = "40" type = "mix">
+	<parent name = "o38"></parent>	
+        <child name="o54" ></child>     
+               
+    </operation>
+<operation name="o47" duration = "40" type = "mix">
+	<parent name = "o39"></parent>	
+        <child name="o55" ></child>     
+               
+    </operation>
+<operation name="o48" duration = "70" type = "detect">
+	
+	<parent name = "o40"></parent>	
+          <child name="o56" ></child>       
+    </operation>
+
+<operation name="o49" duration = "70" type = "detect">
+	
+	<parent name = "o41"></parent>	
+           <child name="o57" ></child>      
+    </operation>
+<operation name="o50" duration = "70" type = "detect">
+	
+	<parent name = "o42"></parent>	
+          <child name="o58" ></child>       
+    </operation>
+<operation name="o51" duration = "70" type = "detect">
+	
+	<parent name = "o43"></parent>	
+          <child name="o59" ></child>       
+    </operation>
+<operation name="o52" duration = "70" type = "detect">
+	
+	<parent name = "o44"></parent>	
+         <child name="o60" ></child>        
+    </operation>
+<operation name="o53" duration = "70" type = "detect">
+	
+	<parent name = "o45"></parent>	
+           <child name="o61" ></child>      
+    </operation>
+<operation name="o54" duration = "70" type = "detect">
+	
+	<parent name = "o46"></parent>	
+         <child name="o62" ></child>        
+    </operation>
+<operation name="o55" duration = "70" type = "detect">
+	
+	<parent name = "o47"></parent>	
+          <child name="o63" ></child>       
+    </operation>
+<operation name="o56" duration = "40" type = "mix">
+	<parent name = "o48"></parent>	
+           <child name="o64" ></child>        
+    </operation>
+<operation name="o57" duration = "40" type = "mix">
+	<parent name = "o49"></parent>	
+                 <child name="o65" ></child>  
+    </operation>
+<operation name="o58" duration = "40" type = "mix">
+	<parent name = "o50"></parent>	
+                 <child name="o66" ></child>  
+    </operation>
+<operation name="o59" duration = "40" type = "mix">
+	<parent name = "o51"></parent>	
+                 <child name="o67" ></child>  
+    </operation>
+<operation name="o60" duration = "40" type = "mix">
+	<parent name = "o52"></parent>	
+                 <child name="o68" ></child>  
+    </operation>
+<operation name="o61" duration = "40" type = "mix">
+	<parent name = "o53"></parent>	
+                 <child name="o69" ></child>  
+    </operation>
+<operation name="o62" duration = "40" type = "mix">
+	<parent name = "o54"></parent>	
+                 <child name="o70" ></child>  
+    </operation>
+<operation name="o63" duration = "40" type = "mix">
+	<parent name = "o55"></parent>	
+                 <child name="o71" ></child>  
+    </operation>
+<operation name="o64" duration = "40" type = "mix">
+	<parent name = "o56"></parent>	
+        <child name="o72" ></child>     
+               
+    </operation>
+<operation name="o65" duration = "40" type = "mix">
+	<parent name = "o57"></parent>	
+        <child name="o73" ></child>     
+               
+    </operation>
+<operation name="o66" duration = "40" type = "mix">
+	<parent name = "o58"></parent>	
+        <child name="o74" ></child>     
+               
+    </operation>
+<operation name="o67" duration = "40" type = "mix">
+	<parent name = "o57"></parent>	
+        <child name="o75" ></child>     
+               
+    </operation>
+<operation name="o68" duration = "40" type = "mix">
+	<parent name = "o60"></parent>	
+        <child name="o76" ></child>     
+               
+    </operation>
+<operation name="o69" duration = "40" type = "mix">
+	<parent name = "o61"></parent>	
+        <child name="o77" ></child>     
+               
+    </operation>
+<operation name="o70" duration = "40" type = "mix">
+	<parent name = "o62"></parent>	
+        <child name="o78" ></child>     
+               
+    </operation>
+<operation name="o71" duration = "40" type = "mix">
+	<parent name = "o63"></parent>	
+        <child name="o79" ></child>     
+               
+    </operation>
+<operation name="o72" duration = "40" type = "mix">
+	<parent name = "o64"></parent>	
+        <child name="o80" ></child>     
+               
+    </operation>
+<operation name="o73" duration = "40" type = "mix">
+	<parent name = "o65"></parent>	
+        <child name="o81" ></child>     
+               
+    </operation>
+<operation name="o74" duration = "40" type = "mix">
+	<parent name = "o66"></parent>	
+        <child name="o82" ></child>     
+               
+    </operation>
+<operation name="o75" duration = "40" type = "mix">
+	<parent name = "o67"></parent>	
+        <child name="o83" ></child>     
+               
+    </operation>
+<operation name="o76" duration = "40" type = "mix">
+	<parent name = "o68"></parent>	
+        <child name="o84" ></child>     
+               
+    </operation>
+<operation name="o77" duration = "40" type = "mix">
+	<parent name = "o69"></parent>	
+        <child name="o85" ></child>     
+               
+    </operation>
+<operation name="o78" duration = "40" type = "mix">
+	<parent name = "o70"></parent>	
+        <child name="o86" ></child>     
+               
+    </operation>
+<operation name="o79" duration = "40" type = "mix">
+	<parent name = "o71"></parent>	
+        <child name="o87" ></child>     
+               
+    </operation>
+<operation name="o80" duration = "40" type = "mix">
+	<parent name = "o72"></parent>	
+           <child name="o88" ></child>        
+    </operation>
+<operation name="o81" duration = "40" type = "mix">
+	<parent name = "o73"></parent>	
+           <child name="o89" ></child>        
+    </operation>
+<operation name="o82" duration = "40" type = "mix">
+	<parent name = "o74"></parent>	
+           <child name="o90" ></child>        
+    </operation>
+<operation name="o83" duration = "40" type = "mix">
+	<parent name = "o75"></parent>	
+           <child name="o91" ></child>        
+    </operation>
+<operation name="o84" duration = "40" type = "mix">
+	<parent name = "o76"></parent>	
+           <child name="o92" ></child>        
+    </operation>
+<operation name="o85" duration = "40" type = "mix">
+	<parent name = "o77"></parent>	
+           <child name="o93" ></child>        
+    </operation>
+<operation name="o86" duration = "40" type = "mix">
+	<parent name = "o78"></parent>	
+           <child name="o94" ></child>        
+    </operation>
+<operation name="o87" duration = "40" type = "mix">
+	<parent name = "o79"></parent>	
+           <child name="o95" ></child>        
+    </operation>
+<operation name="o88" duration = "40" type = "mix">
+	<parent name = "o80"></parent>	
+           <child name="o96" ></child>        
+    </operation>
+<operation name="o89" duration = "40" type = "mix">
+	<parent name = "o81"></parent>	
+           <child name="o97" ></child>        
+    </operation>
+<operation name="o90" duration = "40" type = "mix">
+	<parent name = "o82"></parent>	
+           <child name="o98" ></child>        
+    </operation>
+<operation name="o91" duration = "40" type = "mix">
+	<parent name = "o83"></parent>	
+           <child name="o99" ></child>        
+    </operation>
+<operation name="o92" duration = "40" type = "mix">
+	<parent name = "o84"></parent>	
+           <child name="o100" ></child>        
+    </operation>
+<operation name="o93" duration = "40" type = "mix">
+	<parent name = "o85"></parent>	
+           <child name="o101" ></child>        
+    </operation>
+<operation name="o94" duration = "40" type = "mix">
+	<parent name = "o86"></parent>	
+           <child name="o102" ></child>        
+    </operation>
+<operation name="o95" duration = "40" type = "mix">
+	<parent name = "o87"></parent>	
+           <child name="o103" ></child>        
+    </operation>
+<operation name="o96" duration = "40" type = "mix">
+	<parent name = "o88"></parent>	
+           <child name="o104" ></child>        
+    </operation>
+<operation name="o97" duration = "40" type = "mix">
+	<parent name = "o89"></parent>	
+           <child name="o105" ></child>        
+    </operation>
+<operation name="o98" duration = "40" type = "mix">
+	<parent name = "o90"></parent>	
+           <child name="o106" ></child>        
+    </operation>
+<operation name="o99" duration = "40" type = "mix">
+	<parent name = "o91"></parent>	
+           <child name="o107" ></child>        
+    </operation>
+<operation name="o100" duration = "40" type = "mix">
+	<parent name = "o92"></parent>	
+           <child name="o108" ></child>        
+    </operation>
+<operation name="o101" duration = "40" type = "mix">
+	<parent name = "o93"></parent>	
+           <child name="o109" ></child>        
+    </operation>
+<operation name="o102" duration = "40" type = "mix">
+	<parent name = "o94"></parent>	
+           <child name="o110" ></child>        
+    </operation>
+<operation name="o103" duration = "40" type = "mix">
+	<parent name = "o95"></parent>	
+           <child name="o111" ></child>        
+    </operation>
+<operation name="o104" duration = "40" type = "mix">
+	<parent name = "o96"></parent>	
+           <child name="o112" ></child>        
+    </operation>
+<operation name="o105" duration = "40" type = "mix">
+	<parent name = "o97"></parent>	
+           <child name="o113" ></child>        
+    </operation>
+<operation name="o106" duration = "40" type = "mix">
+	<parent name = "o98"></parent>	
+           <child name="o114" ></child>        
+    </operation>
+<operation name="o107" duration = "40" type = "mix">
+	<parent name = "o99"></parent>	
+           <child name="o115" ></child>        
+    </operation>
+<operation name="o108" duration = "40" type = "mix">
+	<parent name = "o100"></parent>	
+           <child name="o116" ></child>        
+    </operation>
+<operation name="o109" duration = "40" type = "mix">
+	<parent name = "o101"></parent>	
+           <child name="o117" ></child>        
+    </operation>
+<operation name="o110" duration = "40" type = "mix">
+	<parent name = "o102"></parent>	
+           <child name="o118" ></child>        
+    </operation>
+<operation name="o111" duration = "40" type = "mix">
+	<parent name = "o103"></parent>	
+           <child name="o119" ></child>        
+    </operation>
+<operation name="o112" duration = "40" type = "mix">
+	<parent name = "o104"></parent>	
+           <child name="o120" ></child>        
+    </operation>
+<operation name="o113" duration = "40" type = "mix">
+	<parent name = "o105"></parent>	
+           <child name="o121" ></child>        
+    </operation>
+<operation name="o114" duration = "40" type = "mix">
+	<parent name = "o106"></parent>	
+           <child name="o122" ></child>        
+    </operation>
+<operation name="o115" duration = "40" type = "mix">
+	<parent name = "o107"></parent>	
+           <child name="o123" ></child>        
+    </operation>
+<operation name="o116" duration = "40" type = "mix">
+	<parent name = "o108"></parent>	
+           <child name="o124" ></child>        
+    </operation>
+<operation name="o117" duration = "40" type = "mix">
+	<parent name = "o109"></parent>	
+           <child name="o125" ></child>        
+    </operation>
+<operation name="o118" duration = "40" type = "mix">
+	<parent name = "o110"></parent>	
+           <child name="o126" ></child>        
+    </operation>
+<operation name="o119" duration = "40" type = "mix">
+	<parent name = "o111"></parent>	
+           <child name="o127" ></child>        
+    </operation>
+<operation name="o120" duration = "40" type = "mix">
+	<parent name = "o112"></parent>	
+           <child name="o128" ></child>        
+    </operation>
+<operation name="o121" duration = "40" type = "mix">
+	<parent name = "o113"></parent>	
+           <child name="o129" ></child>        
+    </operation>
+<operation name="o122" duration = "40" type = "mix">
+	<parent name = "o114"></parent>	
+           <child name="o130" ></child>        
+    </operation>
+<operation name="o123" duration = "40" type = "mix">
+	<parent name = "o115"></parent>	
+           <child name="o131" ></child>        
+    </operation>
+<operation name="o124" duration = "40" type = "mix">
+	<parent name = "o116"></parent>	
+           <child name="o132" ></child>        
+    </operation>
+<operation name="o125" duration = "40" type = "mix">
+	<parent name = "o117"></parent>	
+           <child name="o133" ></child>        
+    </operation>
+<operation name="o126" duration = "40" type = "mix">
+	<parent name = "o118"></parent>	
+           <child name="o134" ></child>        
+    </operation>
+<operation name="o127" duration = "40" type = "mix">
+	<parent name = "o119"></parent>	
+           <child name="o135" ></child>        
+    </operation>
+<operation name="o128" duration = "40" type = "mix">
+	<parent name = "o120"></parent>	
+           <child name="o136" ></child>        
+    </operation>
+<operation name="o129" duration = "40" type = "mix">
+	<parent name = "o121"></parent>	
+           <child name="o137" ></child>        
+    </operation>
+<operation name="o130" duration = "40" type = "mix">
+	<parent name = "o122"></parent>	
+           <child name="o138" ></child>        
+    </operation>
+<operation name="o131" duration = "40" type = "mix">
+	<parent name = "o123"></parent>	
+           <child name="o139" ></child>        
+    </operation>
+<operation name="o132" duration = "40" type = "mix">
+	<parent name = "o124"></parent>	
+           <child name="o140" ></child>        
+    </operation>
+<operation name="o133" duration = "40" type = "mix">
+	<parent name = "o125"></parent>	
+           <child name="o141" ></child>        
+    </operation>
+<operation name="o134" duration = "40" type = "mix">
+	<parent name = "o126"></parent>	
+           <child name="o142" ></child>        
+    </operation>
+<operation name="o135" duration = "40" type = "mix">
+	<parent name = "o127"></parent>	
+           <child name="o143" ></child>        
+    </operation>
+<operation name="o136" duration = "40" type = "mix">
+	<parent name = "o128"></parent>	
+           <child name="o144" ></child>        
+    </operation>
+<operation name="o137" duration = "40" type = "mix">
+	<parent name = "o129"></parent>	
+           <child name="o145" ></child>        
+    </operation>
+<operation name="o138" duration = "40" type = "mix">
+	<parent name = "o130"></parent>	
+           <child name="o146" ></child>        
+    </operation>
+<operation name="o139" duration = "40" type = "mix">
+	<parent name = "o131"></parent>	
+           <child name="o147" ></child>        
+    </operation>
+<operation name="o140" duration = "40" type = "mix">
+	<parent name = "o132"></parent>	
+           <child name="o148" ></child>        
+    </operation>
+<operation name="o141" duration = "40" type = "mix">
+	<parent name = "o133"></parent>	
+           <child name="o149" ></child>        
+    </operation>
+<operation name="o142" duration = "40" type = "mix">
+	<parent name = "o134"></parent>	
+           <child name="o150" ></child>        
+    </operation>
+<operation name="o143" duration = "40" type = "mix">
+	<parent name = "o135"></parent>	
+    </operation>
+<operation name="o144" duration = "40" type = "mix">
+	<parent name = "o136"></parent>	
+    </operation>
+<operation name="o145" duration = "40" type = "mix">
+	<parent name = "o137"></parent>	
+    </operation>
+<operation name="o146" duration = "40" type = "mix">
+	<parent name = "o138"></parent>	
+    </operation>
+<operation name="o147" duration = "40" type = "mix">
+	<parent name = "o139"></parent>	
+    </operation>
+<operation name="o148" duration = "40" type = "mix">
+	<parent name = "o140"></parent>	
+    </operation>
+<operation name="o149" duration = "40" type = "mix">
+	<parent name = "o141"></parent>	
+    </operation>
+<operation name="o150" duration = "40" type = "mix">
+	<parent name = "o142"></parent>	
+    </operation>
+
+
+
+
+
+
+
+   <device name = "d1" x = "5" y = "5" type = "mix"></device>
+   <device name = "d2" x = "5" y = "5" type = "mix"></device>
+<device name = "d5" x = "5" y = "5" type = "mix"></device>
+  <device name = "d3" x = "5" y = "5" type = "detect"></device>
+   <device name = "d4" x = "5" y = "5" type = "detect"></device>
+ 
+ 
+
+
+   
+ 
+     
+
+    
+    
+   
+    
+    
+  
+</sequenceGraph>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sequenceGraph>
+
+<operation name="o1" duration = "40" type = "mix">
+	<child name="o2" ></child>
+</operation>
+<operation name="o2" duration = "40" type = "heat">
+	<parent name = "o1"></parent>
+	<child name="o5" ></child>
+</operation>
+
+<operation name="o3" duration = "40" type = "mix">
+	<child name="o4" ></child>
+</operation>
+<operation name="o4" duration = "40" type = "heat">
+	<parent name = "o3"></parent>
+	<child name="o5" ></child>
+</operation>
+
+<operation name="o5" duration = "40" type = "detect">
+	<parent name="o2" ></child>
+	<parent name="o4" ></child>                   
+   
+</operation>
+
+
+
+
+
+
+
+
+
+
+
+   <device name = "d1" x = "5" y = "5" type = "mix"></device>
+<device name = "d3" x = "5" y = "5" type = "heat"></device>
+
+<device name = "d2" x = "5" y = "5" type = "detect"></device>
+ 
+ 
+
+
+   
+ 
+     
+
+    
+    
+   
+    
+    
+  
+</sequenceGraph>

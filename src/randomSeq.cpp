@@ -20,6 +20,7 @@
 #include <boost/shared_ptr.hpp>
 #include <cstring>
 
+
 #include <string>
 #include <sstream>
 
@@ -91,7 +92,7 @@ Dev_ptr RandomSeq::genRandomDev(){
 
 	dev->sizeX = rand() % maxDevSize +1;
 	dev->sizeY = rand()% maxDevSize +1;
-	dev->type =static_cast<operationType>( rand()%operationType::last);
+	dev->type =static_cast<operationType>( rand()%operationType::last-1);
 
 	return dev;
 }

@@ -8,6 +8,9 @@
 
 
 #include <boost/shared_ptr.hpp>
+
+class Channel;
+class Op;
 using namespace std;
 
 enum operationType {
@@ -15,7 +18,7 @@ enum operationType {
 	heat,
 	detect,
 	filter,
-	source,
+	//source,
 	last
 };
 
@@ -49,11 +52,21 @@ private:
 
 public:
 	operationType type;
+	bool injectingSth;
+	bool ejectingSth;
+	boost::shared_ptr<Op> runningOp;
+	boost::shared_ptr<Channel> injectingChannel;
+	boost::shared_ptr<Channel> ejectingChannel;
+	bool injecting;
+	bool ejecting;
+	bool isRunning;
 	bool availeble;
 	string name;
 	int id;
+	int injectTime;
 	int startTime;
 	int endTime;
+	int ejectTime;
 	int sizeX,sizeY;
 	int portXOffset;
 	int portYOffset;
@@ -122,6 +135,8 @@ public:
 	vector<Op_ptr> parents;
 	vector<Op_ptr> children;
 	int duration;
+	int injecTime; //when to first inject liquid
+	int ejectTime; // when to eject Time
 	int startTime;
 	int endTime;
 	int parentSize;

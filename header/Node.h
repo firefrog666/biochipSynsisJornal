@@ -3,23 +3,33 @@
 using namespace std;
 
 
-#include <iostream>
 #include <vector>
-#include "../header/Int4.h"
+#include "../header/edge.h"
+#include <boost/shared_ptr.hpp>
 
-
+class Edge;
 
 class Node {
 
 	//protected Edge[] adjEdges;
 
-	vector<Node> adjNodesList;
 public:
+	vector<boost::shared_ptr<Node>> adjNodesList;
+	vector<boost::shared_ptr<Edge>> adjEdgesList;
+	bool isDev = false;
 	int number;
-	Int4 coord;
+	int x;
+	int y;
+
+
 public:
 	Node(){
 		number = 0;
+
+	}
+	Node(int i, int j){
+		x = i;
+		y = j;
 
 	}
 
@@ -36,42 +46,41 @@ public:
 
 
 
-	vector<Node> getAdjNodes(){
-		return adjNodesList;
-	}
 
-	void setAdjNodes(Node node) {
+
+	void setAdjNodes(boost::shared_ptr<Node> node) {
 		adjNodesList.push_back(node);
 		//adjNodes = adjNodesList.toArray(new Node[adjNodesList.size()]);
 	}
 
 	void setCoord(int a, int b, int c, int d){
-		coord.x = a;
-		coord.y = b;
-		coord.s = c;
-		coord.t = d;
+		x = a;
+		y = b;
+
 	}
 
 	void setCoord(int a, int b){
-		coord.x = a;
-		coord.y = b;
-	}
-
-	void setCoord(Int4 a){
-		coord = a;
+		x = a;
+		y = b;
 	}
 
 
-	Int4 getCoordinate(){
-		return coord;
-	}
 
-	static bool aLeftOrUnderb(Node a, Node b){
-		if(a.coord.x < b.coord.x || a.coord.y < b.coord.y )
+
+
+
+	static bool aLeftOrUnderb(boost::shared_ptr<Node> a, boost::shared_ptr<Node> b){
+		if(a->x < b->x || a->y < b->y )
 			return true;
 		else
 			return false;
 	}
+	static bool aLeftOrUnderb(Node a, Node b){
+			if(a.x < b.x || a.y < b.y )
+				return true;
+			else
+				return false;
+		}
 
 	static int hash2Int(int a, int b){
 		return a * 100 + b;
@@ -83,29 +92,17 @@ public:
 
 	static int hash2Nodes(Node& a,Node& b){
 		if(aLeftOrUnderb(a,b))
-			return hash4int(a.coord.x,a.coord.y,b.coord.x,b.coord.y);
+			return hash4int(a.x,a.y,b.x,b.y);
 
-			return hash4int(b.coord.x,b.coord.y,a.coord.x,a.coord.y);
+			return hash4int(b.x,b.y,a.x,a.y);
 	}
 	int hashValue(){
-		return hash2Int(coord.x, coord.y);
+		return hash2Int(x, y);
 	}
 };
 
 
 
-struct Vertex {
-	int x;
-	int y;
-};
-class Line {
-public:
-	vector<Vertex> v;
-public:
-	Line(vector<Vertex> source){
-		v = source;
-	}
 
-};
 
 #endif

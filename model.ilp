@@ -1,15 +1,24 @@
-Maximize
+Minimize
  
 Subject To
- R3358: co0o10firstx1 - co0o10storagex1
-   + 100 co0o10firstx1Biggerco0o10storagex1 >= 1
- R113043: co0o10firstx1 = 0
- R113056: co0o10firstx1Biggerco0o10storagex1 = 0
- R113127: co0o10storagex1 = 0
+ R0: d1Bindnx0y0 + d1Bindnx1y0 = 1
+ R1: d2Bindnx0y0 + d2Bindnx1y0 = 1
+ R3: d1Bindnx1y0 + d2Bindnx1y0 <= 1
+ R4: - 100 d1Bindnx0y0 + co1o2Uex0y0s1t0 >= -99
+ R6: - 100 d2Bindnx0y0 + co1o2Uex0y0s1t0 >= -99
+ R12: 100 d1Bindnx0y0 + co1o2Uex0y0s1t0 - 2 co1o2Unx0y0 >= -0
+ R13: - 100 d1Bindnx0y0 + co1o2Uex0y0s1t0 - 2 co1o2Unx0y0 <= 0
+ R16: 100 d1Bindnx1y0 + co1o2Uex0y0s1t0 - 2 co1o2Unx1y0 >= -0
+ R17: - 100 d1Bindnx1y0 + co1o2Uex0y0s1t0 - 2 co1o2Unx1y0 <= 0
 Bounds
- co0o10firstx1 free
- co0o10storagex1 free
- co0o10firstx1Biggerco0o10storagex1 free
+ d1Bindnx0y0 free
+ d1Bindnx1y0 free
+ d2Bindnx0y0 free
+ d2Bindnx1y0 free
+ -infinity <= co1o2Uex0y0s1t0 <= 1
+ co1o2Unx0y0 free
+ co1o2Unx1y0 free
 Generals
- co0o10firstx1 co0o10storagex1 co0o10firstx1Biggerco0o10storagex1
+ d1Bindnx0y0 d1Bindnx1y0 d2Bindnx0y0 d2Bindnx1y0 co1o2Uex0y0s1t0
+ co1o2Unx0y0 co1o2Unx1y0
 End

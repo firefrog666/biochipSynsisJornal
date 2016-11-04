@@ -161,36 +161,127 @@
                
     </operation>
 
-<operation name="o32" duration = "70" type = "detect">
+<operation name="o32" duration = "40" type = "mix">
 	<parent name = "o24"></parent>	
+        <child name="o40" ></child>     
                
     </operation>
-<operation name="o33" duration = "70" type = "detect">
+
+
+<operation name="o33" duration = "40" type = "mix">
 	<parent name = "o25"></parent>	
+        <child name="o41" ></child>     
                
     </operation>
-<operation name="o34" duration = "70" type = "detect">
+<operation name="o34" duration = "40" type = "mix">
 	<parent name = "o26"></parent>	
+        <child name="o42" ></child>     
                
     </operation>
-<operation name="o35" duration = "70" type = "detect">
+<operation name="o35" duration = "40" type = "mix">
 	<parent name = "o27"></parent>	
+        <child name="o43" ></child>     
                
     </operation>
-<operation name="o36" duration = "70" type = "detect">
+<operation name="o36" duration = "40" type = "mix">
 	<parent name = "o28"></parent>	
+        <child name="o44" ></child>     
                
     </operation>
-<operation name="o37" duration = "70" type = "detect">
+<operation name="o37" duration = "40" type = "mix">
 	<parent name = "o29"></parent>	
+        <child name="o45" ></child>     
                
     </operation>
-<operation name="o38" duration = "70" type = "detect">
+<operation name="o38" duration = "40" type = "mix">
 	<parent name = "o30"></parent>	
+        <child name="o46" ></child>     
                
     </operation>
-<operation name="o39" duration = "70" type = "detect">
+<operation name="o39" duration = "40" type = "mix">
 	<parent name = "o31"></parent>	
+        <child name="o47" ></child>     
+               
+    </operation>
+<operation name="o40" duration = "40" type = "mix">
+	<parent name = "o32"></parent>	
+        <child name="o48" ></child>     
+               
+    </operation>
+<operation name="o41" duration = "40" type = "mix">
+	<parent name = "o33"></parent>	
+        <child name="o49" ></child>     
+               
+    </operation>
+<operation name="o42" duration = "40" type = "mix">
+	<parent name = "o34"></parent>	
+        <child name="o50" ></child>     
+               
+    </operation>
+<operation name="o43" duration = "40" type = "mix">
+	<parent name = "o35"></parent>	
+        <child name="o51" ></child>     
+               
+    </operation>
+<operation name="o44" duration = "40" type = "mix">
+	<parent name = "o36"></parent>	
+        <child name="o52" ></child>     
+               
+    </operation>
+<operation name="o45" duration = "40" type = "mix">
+	<parent name = "o37"></parent>	
+        <child name="o53" ></child>     
+               
+    </operation>
+<operation name="o46" duration = "40" type = "mix">
+	<parent name = "o38"></parent>	
+        <child name="o54" ></child>     
+               
+    </operation>
+<operation name="o47" duration = "40" type = "mix">
+	<parent name = "o39"></parent>	
+        <child name="o55" ></child>     
+               
+    </operation>
+<operation name="o48" duration = "70" type = "detect">
+	
+	<parent name = "o40"></parent>	
+               
+    </operation>
+
+<operation name="o49" duration = "70" type = "detect">
+	
+	<parent name = "o41"></parent>	
+               
+    </operation>
+<operation name="o50" duration = "70" type = "detect">
+	
+	<parent name = "o42"></parent>	
+               
+    </operation>
+<operation name="o51" duration = "70" type = "detect">
+	
+	<parent name = "o43"></parent>	
+               
+    </operation>
+<operation name="o52" duration = "70" type = "detect">
+	
+	<parent name = "o44"></parent>	
+               
+    </operation>
+<operation name="o53" duration = "70" type = "detect">
+	
+	<parent name = "o45"></parent>	
+               
+    </operation>
+<operation name="o54" duration = "70" type = "detect">
+	
+	<parent name = "o46"></parent>	
+               
+    </operation>
+<operation name="o55" duration = "70" type = "detect">
+	
+	<parent name = "o47"></parent>	
                
     </operation>
 
@@ -198,11 +289,11 @@
 
 
 
-   <device name = "d1" x = "1" y = "1" type = "mix"></device>
-   <device name = "d2" x = "1" y = "1" type = "mix"></device>
-<device name = "d2" x = "1" y = "1" type = "mix"></device>
-  <device name = "d3" x = "1" y = "1" type = "detect"></device>
-   <device name = "d4" x = "1" y = "1" type = "detect"></device>
+   <device name = "d1" x = "5" y = "5" type = "mix"></device>
+   <device name = "d2" x = "5" y = "5" type = "mix"></device>
+<device name = "d5" x = "5" y = "5" type = "mix"></device>
+  <device name = "d3" x = "5" y = "5" type = "detect"></device>
+   <device name = "d4" x = "5" y = "5" type = "detect"></device>
  
  
 
