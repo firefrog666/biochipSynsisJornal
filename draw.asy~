@@ -22,8 +22,6 @@ string fname = stdin;
 //file finPath = input ("pathCoord.txt");
 //file finPath = input ("cutCoord.txt");
 //file finSquares = input("valvesCoord.txt");
-
-file finLabelPos = input("labepos.txt");
 file finDevices = input("devices.txt");
 file finEdgeInfo = input("edgesInfo.txt");
 file finEdges = input("edges.txt");
@@ -35,7 +33,7 @@ real[] devices = finDevices;
 real[] edges = finEdges;
 string[] edgeInfo = finEdgeInfo;
 string[] deviceName = finDeviceName;
-real[] labelPos = finLabelPos;
+//real[] labelPos = finLabelPos;
 
 /*for (int i = 0; i < labels.length;i+=1)
 {

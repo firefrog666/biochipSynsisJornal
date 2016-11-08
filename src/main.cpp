@@ -65,18 +65,19 @@ int main(int   argc,
 #if 1
 
 	ListAlgorithm L;
-#if 1
+#if 0
 	//L.readFromXml("simpleStore.xml");
 	//L.readFromXml("simple.xml");
-	//L.readFromXml("cpa20opsnosource.xml");
+	L.readFromXml("cpa20opsnosource.xml");
 	//L.readFromXml("pcr.xml");
 	//L.readFromXml("ivd.xml");
 	//L.readFromXml("random30ops.xml");
 	//L.readFromXml("150ops.xml");
-	L.readFromXml("70ops.xml");
+	//L.readFromXml("70ops.xml");
 #else
 	RandomSeq seq;
-	vector<int> v {10,5,15,5,15,10,15,5,15,10,15,10}; //100 ops
+	//vector<int> v {10,5,15,5,15,10,15,5,15,10,15,10}; //100 ops
+	vector<int> v {6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6}; //narrow 100 ops
 	//seq.genDevs(5);
 	//vector<int> v {3,6,6};
 	seq.genSeqByLayer(v);
@@ -93,26 +94,28 @@ int main(int   argc,
 	cout << "emmm" << endl;
 	//return 0;
 	setGap(0.1);
-	setTime(1800.0);
+	setTime(60.0);
 	map<string,int> results;
 
 #if 1
 	L.readResultFromFile();
+	L.writeTimeline();
 #else
 	results = ILP("seq.lp" );
 	L.writeResultToFile(results);
 	L.readFromSolver(results);
-	return 0;
+	//return 0;
 #endif
 	//return 0;
 
 	Plate plate = Plate();
 
-	Grid g(4,4);
+	Grid g(5,5);
 	plate.setGrid(g);
-
+#define notarchitecutal 0
+#if notarchitecutal
 	//gen flow plan
-	int step = 30;
+	int step = 2;
 
 
 	plate.getPartInfoFromList(L,step);
@@ -125,23 +128,71 @@ int main(int   argc,
 	plate.channelTimeConfict();
 	plate.objective();
 	setGap(0.1);
-	setTime(20);
+	setTime(60);
 	plate.writeToFile("ilp.lp");
-	//results = ILP("ilp.lp");
-	//plate.writeDeviceLoc(results);
-
+	results = ILP("ilp.lp");
+	plate.writeDeviceLoc(results);
+	return 0;
 	//simulation anealing
+#else
+
 	srand (time(NULL));
 	vector<int> howManyEdges;
-	for(int i = 0; i <= 100; i++){
+	int step = 20;
+	for(int i = 0; i <= 10 ; i++){
+		if( i > 0)
+			step = 70;
+			plate.constraintClear();
+			plate.getPartInfoFromList(L,step);
+			//plate.
+			plate.setChannelsTime();
+			plate.devicePlacement();
+
+			plate.channelStartEnd();
+			plate.channelSimplePath();
+			plate.channelFirstStoreLast();
+			plate.channelTimeConfict();
+			plate.objective();
+			/*plate.readDeviceLoc();
+			if(i%2 == 0)
+				plate.moveDeviceLoc();
+			else
+				plate.switchDeviceLoc();
+	*/
+			//plate.writeDevLocToILP();
+			plate.writeToFile("arc.lp");
+			setGap(0.1);
+			if(i == 0)
+			setTime(1800);
+			else
+				setTime(7200);
+			results = ILP("arc.lp");
+			if(results.size()>0){
+				plate.writeDeviceLoc(results);
+				plate.readFromSolver(results);
+				plate.writeGraphFile();
+				int edgeUseNum = plate.calEdgeUseNum();
+				howManyEdges.push_back(edgeUseNum);
+			}
+			else{
+				plate.clearLastResult();
+			}
+
+		}
+#endif
+
+/*
+
+	for(int i = 0; i <= 10000; i++){
 		plate.constraintClear();
 		plate.getBindingFromList(L);
+		plate.genRandomDevLoc();
 		plate.setChannelsTime();
-		plate.devicePlacement();
+		//plate.devicePlacement();
 
-		plate.channelStartEnd();
-		plate.channelSimplePath();
-		plate.channelFirstStoreLast();
+		plate.channelStartEndFloorPlan();
+		plate.channelSimplePathFloorPlan();
+		plate.channelFirstStoreLastFloorPlan();
 		plate.channelTimeConfict();
 		plate.objective();
 		plate.readDeviceLoc();
@@ -153,7 +204,7 @@ int main(int   argc,
 		plate.writeDevLocToILP();
 		plate.writeToFile("sa.lp");
 		setGap(0.1);
-		setTime(100);
+		setTime(3600);
 		results = ILP("sa.lp");
 		if(results.size()>0){
 			plate.writeDeviceLoc(results);
@@ -169,6 +220,7 @@ int main(int   argc,
 	}
 
 	plate.writeGraphFile();
+*/
 
 
 #endif

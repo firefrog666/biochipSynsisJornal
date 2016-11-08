@@ -422,8 +422,12 @@ void Plate::writeGraphFile(int moment){
 	fileName = S("devices") + S(moment)+S(".txt");
 
 	file.open(fileName.c_str());
+	string deviceName = S("deviceName") + S(".txt");
+		ofstream deviceNameFile;
+		deviceNameFile.open(deviceName.c_str());
 	double deviceR = 0.2;
 		for(Dev_ptr d:devices){
+			deviceNameFile << d->name << endl;
 			for(Node_ptr n:g.nodes){
 				string dbindN = d->name + S("Bind") + getNodeName(n);
 				int dBindNValue = ILPResults[dbindN];
@@ -440,7 +444,7 @@ void Plate::writeGraphFile(int moment){
 			}
 
 		}
-
+		deviceNameFile.close();
 		file.close();
 }
 
@@ -482,8 +486,12 @@ void Plate::writeGraphFile(){
 	edgeInfo.close();
 
 	file.open("devices.txt");
+	string deviceName = S("deviceName") + S(".txt");
+		ofstream deviceNameFile;
+		deviceNameFile.open(deviceName.c_str());
 	double deviceR = 0.2;
 		for(Dev_ptr d:devices){
+			deviceNameFile<<d->name<<endl;
 			for(Node_ptr n:g.nodes){
 				string dbindN = d->name + S("Bind") + getNodeName(n);
 				int dBindNValue = ILPResults[dbindN];
@@ -500,7 +508,7 @@ void Plate::writeGraphFile(){
 			}
 
 		}
-
+		deviceNameFile.close();
 		file.close();
 }
 
@@ -601,6 +609,25 @@ void Plate::writeDeviceLoc(map<string,int> const & inputResult){
 	}
 	file1.close();
 	file2.close();
+}
+
+void Plate::genRandomDevLoc(){
+
+	vector<int> existedNodesPos;
+
+	for(Dev_ptr d:devices){
+		int randNodePos = rand()%g.nodes.size();
+		while(find(existedNodesPos.begin(),existedNodesPos.end(),randNodePos) != existedNodesPos.end()){
+			randNodePos = rand()%g.nodes.size();
+		}
+
+		existedNodesPos.push_back(randNodePos);
+		Node_ptr n  = g.nodes.at(randNodePos);
+		devBindNode[d] = n;
+		cout << d->name << "is bind to " << getNodeName(n) << endl;
+	}
+
+
 }
 
 void Plate::readDeviceLoc(){
@@ -1003,6 +1030,89 @@ void Plate::channelStartEnd(){
 	}
 }
 
+void Plate::channelStartEndFloorPlan(){
+	//channel are formed by edges, there is at least one edge
+	for(Ch_ptr c:channels){
+		if(!c->isNormal)
+			continue;
+		string str = "";
+		for(Edge_ptr e:g.edges){
+			string eName = getEdgeName(e);
+			string cUsedEdge = S(c->name) +S("U")+S(eName);
+			varName.push_back(cUsedEdge);varType.push_back("1");
+			str += S(" + ") + cUsedEdge;
+		}
+		ILP.push_back(str + S(" >= 1"));
+	}
+
+
+
+	//channel start with father end with child
+	for(Ch_ptr c:channels){
+		if(!c->isNormal)
+			continue;
+		Dev_ptr father = c->fatherOp->bindDevice;
+		Node_ptr fatherNode = devBindNode[father];
+
+		Dev_ptr son = c->childOp->bindDevice;
+		Node_ptr sonNode = devBindNode[son];
+
+		//if device is bind to a node, edge aroud it must be used
+			Node_ptr n;
+			n = fatherNode;
+
+
+			//if father bind to N, edge0 + edge1 + edge2 + edge 3 = 1
+			// edge0 + edge1 + edge2 + edge3 + M(1-fatherB) >= 1
+			//edge0 + edge1 + edge2 + edge 3 - M(1-fatherB) <= 1
+			string edgeAroudFUsed = "";
+			for(Edge_ptr e:n->adjEdgesList){
+				string eName = getEdgeName(e);
+				string cUsedEdge = S(c->name) +S("U")+S(eName);
+				edgeAroudFUsed += S(" + ") + cUsedEdge;
+			}
+
+			ILP.push_back(edgeAroudFUsed + S(" = 1"));
+
+			n = sonNode;
+			//if son bind To
+			// edge0 + edge1 + edge2 + edge3 + M(1-fatherB) >= 1
+			//edge0 + edge1 + edge2 + edge 3 - M(1-fatherB) <= 1
+			string edgeAroudSUsed = "";
+			for(Edge_ptr e:n->adjEdgesList){
+				string eName = getEdgeName(e);
+				string cUsedEdge = S(c->name) +S("U")+S(eName);
+				edgeAroudSUsed += S(" + ") + cUsedEdge;
+			}
+
+			ILP.push_back(edgeAroudSUsed + S(" = 1"));
+
+			//for device other father and son, if this device bind to node, edge around it cannot be used
+			for(Node_ptr n:g.nodes){
+				for(Dev_ptr d:devices){
+					if(d == father || d == son )
+						continue;
+
+					Node_ptr dNode = devBindNode[d];
+
+					if(n != dNode)
+						continue;
+
+					string edgeAroudDUsed = "";
+					for(Edge_ptr e:n->adjEdgesList){
+						string eName = getEdgeName(e);
+						string cUsedEdge = S(c->name) +S("U")+S(eName);
+						edgeAroudDUsed += S(" + ") + cUsedEdge;
+					}
+
+					//if dbindN = 1 then edge = 0
+					ILP.push_back(edgeAroudDUsed +  S(" = 0") );
+
+				}
+			}
+	}
+}
+
 void Plate::channelSimplePath(){
 	for(Channel_ptr c:channels){
 		if(!c->isNormal)
@@ -1039,6 +1149,52 @@ void Plate::channelSimplePath(){
 			//edgeUsde - 2 * nodeUsedInC - M * father <= 0
 			ILP.push_back(edgeAroudUsed + S(" - ") + S(2) +S(" ") +S(nodeUsedInC)+ S(" + ") + S(M) + S(" ") + S(fatherBindN) +S(" + ")+S(M) + S(" ") + S(sonBindN) + S(" >= ") + S(0));
 			ILP.push_back(edgeAroudUsed + S(" - ") + S(2) +S(" ") +S(nodeUsedInC) + S(" - ") + S(M) + S(" ") + S(fatherBindN)+S(" - ")+S(M) + S(" ") + S(sonBindN) + S(" <= ") + S(0));
+
+		}
+	}
+
+
+}
+
+void Plate::channelSimplePathFloorPlan(){
+	for(Channel_ptr c:channels){
+		if(!c->isNormal)
+			continue;
+		for(Node_ptr n:g.nodes){
+			string nName = getNodeName(n);
+			string nodeUsedInC = c->name + S("U") + nName;
+			varName.push_back(nodeUsedInC); varType.push_back("1");
+		}
+	}
+
+	for(Channel_ptr c:channels){
+		if(!c->isNormal)
+			continue;
+		Dev_ptr father = c->fatherOp->bindDevice;
+		Node_ptr fatherNode = devBindNode[father];
+		Dev_ptr son = c->childOp->bindDevice;
+		Node_ptr sonNode = devBindNode[son];
+
+
+		for(Node_ptr n:g.nodes){
+
+			if(n == fatherNode || n == sonNode )
+				continue;
+			string nName = getNodeName(n);
+			string nodeUsedInC =  c->name + S("U") +nName;
+
+
+
+			string edgeAroudUsed = "";
+			for(Edge_ptr e:n->adjEdgesList){
+				string eName = getEdgeName(e);
+				string cUsedEdge = S(c->name) +S("U")+S(eName);
+				edgeAroudUsed += S(" + ") + cUsedEdge;
+			}
+			//if fatherBindN = 0 && sonBind = 0, edge used = 2 or 0
+			//edgeUsed - 2 * nodeUsedInC + M * father >= 0
+			//edgeUsde - 2 * nodeUsedInC - M * father <= 0
+			ILP.push_back(edgeAroudUsed + S(" - ") + S(2) +S(" ") +S(nodeUsedInC)+   S(" = 0"));
 
 		}
 	}
@@ -1303,6 +1459,269 @@ void Plate::channelFirstStoreLast(){
 
 
 }
+
+void Plate::channelFirstStoreLastFloorPlan(){
+
+	for(Ch_ptr c:channels){
+		if(c->isNormal)
+			continue;
+		string storedEdge = "";
+		for(Edge_ptr e:g.edges){
+			string eName = getEdgeName(e);
+			string cUsedEdge = S(c->name) + S("U") +(eName);
+			varName.push_back(cUsedEdge);varType.push_back("1");
+
+
+		}
+
+		string oneStartNode = "";
+		string oneEndNode = "";
+		for(Node_ptr n:g.nodes){
+			string storeStartNode = S(c->belongTo) + S("SS") + getNodeName(n);
+			varName.push_back(storeStartNode);varType.push_back("1");
+			string storeEndNode = S(c->belongTo) + S("SE") + getNodeName(n);
+			varName.push_back(storeEndNode);varType.push_back("1");
+
+
+			string nodeUsedInC= S(c->name) + S("U") + getNodeName(n);
+			varName.push_back(nodeUsedInC);varType.push_back("1");
+
+			oneStartNode += S(" + ") + storeStartNode;
+			oneEndNode += S(" + ") + storeEndNode;
+		}
+
+		//there is only one store end node and one store start node
+		ILP.push_back(oneStartNode + S(" = 1"));
+		ILP.push_back(oneEndNode + S(" = 1"));
+
+
+	}
+
+	//first
+	for(Ch_ptr c:channels){
+		if(!c->isFirst)
+			continue;
+		Dev_ptr father = c->fatherOp->bindDevice;
+		Node_ptr fatherNode = devBindNode[father];
+
+		string edgeAroudFUsed = "";
+		for(Edge_ptr e:fatherNode->adjEdgesList){
+			string eName = getEdgeName(e);
+			string cFirstEdge = S(c->name) +S("U")+S(eName);
+			edgeAroudFUsed += S(" + ") + cFirstEdge;
+		}
+
+		ILP.push_back(edgeAroudFUsed +  S(" = 1"));
+
+		for(Node_ptr n:g.nodes){
+			if(n == fatherNode)
+				continue;
+
+			string nName = getNodeName(n);
+			string nodeUsedInC = S(c->name) + S("U") + getNodeName(n);
+			string storeEndNode = S(c->belongTo) + S("SE") + getNodeName(n);
+			string storeStartNode = S(c->belongTo) + S("SE") + getNodeName(n);
+
+			string edgeAroudUsedF = "";
+			for(Edge_ptr e:n->adjEdgesList){
+				string eName = getEdgeName(e);
+				string cFirstEdge = S(c->name) +S("U")+S(eName);
+				edgeAroudUsedF += S(" + ") + cFirstEdge;
+			}
+			//if fatherBindN = 0 && storeStart = 0, edge used = 2 or 0
+			//edgeUsed - 2 * nodeUsedInC + M * father >= 0
+			//edgeUsde - 2 * nodeUsedInC - M * father <= 0
+			ILP.push_back(edgeAroudUsedF + S(" - ") + S(2) +S(" ") +S(nodeUsedInC)+S(" + ") + S(M) + S(" ") + S(storeEndNode) + S(" >= ") + S(0));
+			ILP.push_back(edgeAroudUsedF + S(" - ") + S(2) +S(" ") +S(nodeUsedInC) + S(" - ") + S(M) + S(" ") + S(storeEndNode) + S(" <= ") + S(0));
+
+
+
+
+			//if store end bind To node
+			// edge0 + edge1 + edge2 + edge3 + M(1-storeStart) >= 1
+			//edge0 + edge1 + edge2 + edge 3 - M(1-storeStart) <= 1
+			string edgeAroudSUsed = "";
+			for(Edge_ptr e:n->adjEdgesList){
+				string eName = getEdgeName(e);
+				string cFirstEdge = S(c->name) +S("U")+S(eName);
+				edgeAroudSUsed += S(" + ") + cFirstEdge;
+			}
+
+			ILP.push_back(edgeAroudSUsed + S(" - ") + S(M) + S(" ") + S(storeEndNode) + S(" >= ") + S(1-M));
+			ILP.push_back(edgeAroudSUsed + S(" + ") + S(M) + S(" ") + S(storeEndNode) + S(" <= ") + S(1+M));
+
+
+
+
+			//for device other father, if this device bind to node, edge around it cannot be used
+
+			for(Dev_ptr d:devices){
+				if(d == father)
+					continue;
+
+				Node_ptr dNode = devBindNode[d];
+				if(dNode != n)
+					continue;
+
+				string edgeAroudDUsedF = "";
+				for(Edge_ptr e:n->adjEdgesList){
+					string eName = getEdgeName(e);
+					string cFirstEdge = S(c->name) +S("U")+S(eName);
+					edgeAroudDUsedF += S(" + ") + cFirstEdge;
+				}
+
+				//if dbindN = 1 then edge = 0
+				ILP.push_back(edgeAroudDUsedF + S(" = 0"));
+
+			}
+
+		}
+
+		//store start must be bond to channel
+		string ssandnodesharenode = "";
+		for(Node_ptr n:g.nodes){
+			string nodeUsedInC = S(c->name) + S("U") + getNodeName(n);
+			string storeStartNode = S(c->belongTo) + S("SS") + getNodeName(n);
+			string nodeBothStoreStartN = S(c->belongTo) + S("SSN") +S(c->name) + ("U") + getNodeName(n);
+			varName.push_back(nodeBothStoreStartN); varType.push_back("1");
+			ILP.push_back(S(2) + S(" ") + nodeBothStoreStartN + S(" - ") + storeStartNode + S(" - ") + nodeUsedInC + S(" <= 0"));
+			ssandnodesharenode += S(" + ")+ nodeBothStoreStartN;
+		}
+		ILP.push_back(ssandnodesharenode + S(" = 1"));
+
+
+	}
+	//last
+	for(Ch_ptr c:channels){
+		if(!c->isLast)
+			continue;
+
+		Dev_ptr son = c->childOp->bindDevice;
+		Node_ptr sonNode = devBindNode[son];
+		//if son bind to N, edge0 + edge1 + edge2 + edge 3 = 1
+		// edge0 + edge1 + edge2 + edge3 + M(1-fatherB) >= 1
+		//edge0 + edge1 + edge2 + edge 3 - M(1-fatherB) <= 1
+		string edgeAroudSonDevUsed = "";
+		for(Edge_ptr e:sonNode->adjEdgesList){
+			string eName = getEdgeName(e);
+			string cLastEdge = S(c->name) +S("U")+S(eName);
+			edgeAroudSonDevUsed += S(" + ") + cLastEdge;
+		}
+
+		ILP.push_back(edgeAroudSonDevUsed + S(" = 1"));
+
+		for(Node_ptr n:g.nodes){
+
+			if(n == sonNode)
+				continue;
+			string nName = getNodeName(n);
+			string nodeUsedInLast = S(c->name) + S("U") + getNodeName(n);
+			string storeStartNode = S(c->belongTo) + S("SS") + getNodeName(n);
+
+			string edgeAroudUsedSon = "";
+			for(Edge_ptr e:n->adjEdgesList){
+				string eName = getEdgeName(e);
+				string cLastEdge = S(c->name) +S("U")+S(eName);
+				edgeAroudUsedSon += S(" + ") + cLastEdge;
+			}
+			//if sonBindNode = 0 and storeEnd = 0, edge used = 2 or 0
+			//edgeUsed - 2 * nodeUsedInC + M * son >= 0
+			//edgeUsde - 2 * nodeUsedInC - M * son <= 0
+			ILP.push_back(edgeAroudUsedSon + S(" - ") + S(2) +S(" ") +S(nodeUsedInLast) + S(" + ") + S(M) + S(" ") + S(storeStartNode) + S(" >= ") + S(0));
+			ILP.push_back(edgeAroudUsedSon + S(" - ") + S(2) +S(" ") +S(nodeUsedInLast) + S(" - ") + S(M) + S(" ") + S(storeStartNode)  + S(" <= ") + S(0));
+
+
+			//first must start with father and end with store start
+
+
+
+			//if storeEnd bind To node
+			// edge0 + edge1 + edge2 + edge3 + M(1-storeEnd) >= 1
+			//edge0 + edge1 + edge2 + edge 3 - M(1-storeEnd) <= 1
+			string edgeAroudStoreEndUsed = "";
+			for(Edge_ptr e:n->adjEdgesList){
+				string eName = getEdgeName(e);
+				string cLastEdge = S(c->name) +S("U")+S(eName);
+				edgeAroudStoreEndUsed += S(" + ") + cLastEdge;
+			}
+
+			ILP.push_back(edgeAroudStoreEndUsed + S(" - ") + S(M) + S(" ") + S(storeStartNode) + S(" >= ") + S(1-M));
+			ILP.push_back(edgeAroudStoreEndUsed + S(" + ") + S(M) + S(" ") + S(storeStartNode) + S(" <= ") + S(1+M));
+
+			//for device other son, if this device bind to node, edge around it cannot be used
+
+			for(Dev_ptr d:devices){
+				if( d == son )
+					continue;
+
+				Node_ptr dNode = devBindNode[d];
+
+				if(dNode != n)
+					continue;
+
+				//dnode == n
+				string edgeAroudDUsed = "";
+				for(Edge_ptr e:n->adjEdgesList){
+					string eName = getEdgeName(e);
+					string cLastEdge = S(c->name) +S("U")+S(eName);
+					edgeAroudDUsed += S(" + ") + cLastEdge;
+				}
+
+				//if dbindN = 1 then edge = 0
+				ILP.push_back(edgeAroudDUsed + S(" = 0"));
+
+			}
+
+		}
+		//store start must be bond to channel
+		string seandnodesharenode = "";
+		for(Node_ptr n:g.nodes){
+			string nodeUsedInC = S(c->name) + S("U") + getNodeName(n);
+			string storeEndNode = S(c->belongTo) + S("SE") + getNodeName(n);
+			string nodeBothStoreEndN = S(c->belongTo) + S("SEN") +S(c->name) + ("U") + getNodeName(n);
+			varName.push_back(nodeBothStoreEndN); varType.push_back("1");
+			ILP.push_back(S(2) + S(" ") + nodeBothStoreEndN + S(" - ") + storeEndNode + S(" - ") + nodeUsedInC + S(" <= 0"));
+			seandnodesharenode += S(" + ")+ nodeBothStoreEndN;
+		}
+		ILP.push_back(seandnodesharenode + S(" = 1"));
+
+
+	}
+
+	//store
+	for(Channel_ptr c:channels){
+		if(!c->isStore)
+			continue;
+		string allEdge = "";
+		for(Edge_ptr e:g.edges){
+			string cStoredEdge = S(c->name) + S("U") + getEdgeName(e);
+			Node_ptr n0 = g.hashNodes[Node::hash2Int(e->x,e->y)];
+			Node_ptr n1 = g.hashNodes[Node::hash2Int(e->s,e->t)];
+
+			string storeEndN0 = S(c->belongTo) + S("SE") + getNodeName(n0);
+			string storeStartN0 = S(c->belongTo) + S("SS") + getNodeName(n0);
+			string storeEndN1 = S(c->belongTo) + S("SE") + getNodeName(n1);
+			string storeStartN1 = S(c->belongTo) + S("SS") + getNodeName(n1);
+			//if cStoredEdge = 1 then storeStartN0 = 1 and storeEndN1 = 1 or storeStartN1 = 1 and storeEndN0 = 1
+			//sN0 + sN1 - (1-sE)M <= 1 sN0+sN1 + (1-sE)M >= 1
+			ILP.push_back(storeStartN0 + S(" + ") + storeStartN1  + S(" + ") + S(M) + S(" ") + cStoredEdge  + S(" <= ") + S(1+M));
+			ILP.push_back(storeStartN0 + S(" + ") + storeStartN1  + S(" - ") + S(M) + S(" ") + cStoredEdge  + S(" >= ") + S(1-M));
+			ILP.push_back(storeEndN0 + S(" + ") + storeEndN1  + S(" + ") + S(M) + S(" ") + cStoredEdge  + S(" <= ") + S(1+M));
+			ILP.push_back(storeEndN0 + S(" + ") + storeEndN1  + S(" - ") + S(M) + S(" ") + cStoredEdge  + S(" >= ") + S(1-M));
+			ILP.push_back(storeStartN0 + S(" + ") + storeEndN0 + S(" <= 1"));
+			ILP.push_back( storeStartN1+S(" + ") + storeEndN1 + S(" <= 1"));
+			allEdge += S(" + ")+cStoredEdge;
+		}
+		//there must be an storage
+		ILP.push_back(allEdge + S(" = 1"));
+
+	}
+
+	//
+
+
+
+}
 void Plate::channelTimeConfict(){
 	//2 conflict channels
 	for(Channel_ptr c1:channels){
@@ -1364,6 +1783,7 @@ void Plate::objective(){
 		string eName = getEdgeName(e);
 		string eUsed = getEdgeName(e) + S("U");
 		varName.push_back(eUsed);varType.push_back("1");
+		varNameObj.push_back(eUsed);
 
 		string allCUsedEdge = "";
 		for(Channel_ptr c:channels){

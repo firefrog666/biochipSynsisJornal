@@ -858,10 +858,11 @@ void ListAlgorithm::readFromXml(const char* xmlFilename){
 		else if(type == "detect"){
 			operation->type = operationType::detect;
 		}
+		/*
 		else if(type == "filter"){
 			operation->type = operationType::filter;
 		}
-		/*else if(type == "source"){
+		else if(type == "source"){
 			operation->type = operationType::source;
 		}
 */
@@ -895,9 +896,10 @@ void ListAlgorithm::readFromXml(const char* xmlFilename){
 		else if(type == "detect"){
 			device->type = operationType::detect;
 		}
+		/*
 		else if(type == "filter"){
 			device->type = operationType::filter;
-				}/*
+				}
 		else if(type == "source"){
 			device->type = operationType::source;
 		}*/

@@ -61,11 +61,11 @@ private:
 
 
 	int itrTimes = 0;
-	vector<string> resultsFromLastItr; //results from last time
 	map<string,int> ILPResults;
 	map<Dev_ptr,Node_ptr> devBindNode;
 
 	Grid g;
+	vector<string> resultsFromLastItr; //results from last time
 
 	//for concise seq;
 	vector<Op_ptr> concise_ops;
@@ -74,6 +74,7 @@ private:
 	vector<int> channels_count;
 
 public:
+	void clearLastResult(){resultsFromLastItr.clear();}
 	void setGrid(Grid& grid){g = grid;}
 
 	void devicePlacement();
@@ -82,6 +83,14 @@ public:
 	void channelFirstStoreLast();
 	void channelTimeConfict();
 	void objective();
+
+
+	void channelStartEndFloorPlan();
+	void channelSimplePathFloorPlan();
+	void channelFirstStoreLastFloorPlan();
+	void channelTimeConfictFloorPlan();
+
+
 	void textReplaceILP();
 
 	string textReplacement(const string& target, const string& source,const  string& replace);
@@ -117,6 +126,7 @@ public:
 	void switchDeviceLoc();
 	void moveDeviceLoc();
 	void writeDevLocToILP();
+	void genRandomDevLoc();
 	//void writeDeviceLoc();
 	int calEdgeUseNum();
 
