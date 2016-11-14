@@ -381,13 +381,14 @@ void ListAlgorithm::ilpObj(){
 		ILP.push_back(maxChannelTime + s(" - ") + cFinish + s(" + ") + cStart + s(" >= 0"));
 	}
 	obj +=  s(" + ") + maxChannelTime;*/
-
+#define optchannel 1
+#if optchannel
 	for(Ch_ptr c:channels){
 		string cStart = c->name + s("Start");
 		string cFinish = c->name + s("Finish");
 		obj+= s(" + ") + cFinish + s(" - ")  + cStart;
 	}
-
+#endif
 	OBJ.push_back("Minimize");
 	OBJ.push_back(obj);
 
@@ -858,10 +859,10 @@ void ListAlgorithm::readFromXml(const char* xmlFilename){
 		else if(type == "detect"){
 			operation->type = operationType::detect;
 		}
-		/*
 		else if(type == "filter"){
 			operation->type = operationType::filter;
 		}
+		/*
 		else if(type == "source"){
 			operation->type = operationType::source;
 		}
@@ -896,10 +897,10 @@ void ListAlgorithm::readFromXml(const char* xmlFilename){
 		else if(type == "detect"){
 			device->type = operationType::detect;
 		}
-		/*
 		else if(type == "filter"){
 			device->type = operationType::filter;
 				}
+		/*
 		else if(type == "source"){
 			device->type = operationType::source;
 		}*/

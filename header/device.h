@@ -17,7 +17,7 @@ enum operationType {
 	mix,
 	heat,
 	detect,
-	//filter,
+	filter,
 	//source,
 	last
 };

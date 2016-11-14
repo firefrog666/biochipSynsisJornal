@@ -148,6 +148,32 @@ public:
 		Grid g(X,Y);
 		grid = g;
 	}
+
+	void getCornerPos(){
+		left = 10000;
+		down = 10000;
+		right = 0;
+		up = 0;
+		for(Node_ptr node:nodes){
+			int x = node->x;
+			int y = node->y;
+
+			if(x <= left)
+				left = x;
+			if(x >= right)
+				right = x;
+
+			if(y <= down)
+				down = y;
+
+			if(y >= up)
+				up = y;
+		}
+	}
+
+public:
+	int left,down,up,right;
+
 public:
 	int minX,minY;
 	int rowNum;
@@ -174,6 +200,7 @@ public:
 public:
 
 	vector<Sqr_ptr> squaresInput;
+	map<int,Sqr_ptr> hashInputSquare;
 	vector<Grid> squareGrid;
 	map<string,int> ILPresults;
 
@@ -185,8 +212,11 @@ public:
 	vector<string> OBJ;
 
 	vector<Pd_ptr> phyDevs;
+	vector<Pd_ptr> verPhyDevs;
+	vector<Pd_ptr> horPhyDevs;
 	map<Node_ptr,Pd_ptr> nodesDev;
-
+	map<Node_ptr,Pd_ptr> nodesVerDev;
+	map<Node_ptr,Pd_ptr> nodesHorDev;
 
 	//for
 
@@ -207,6 +237,7 @@ public:
 	void nodeBindSqaure();
 	void pathSquare();
 	void pathSquareWithDev();
+	void pathSquareFixCrossDev();
 	void writeGraphFile();
 	vector<int> setDeviceLocation(Node_ptr devNodeInputgrid);
 
@@ -214,9 +245,16 @@ public:
 	vector<Edge_ptr> availebleEdges(const vector<Sqr_ptr>& squares);
 	vector<Edge_ptr> getLegitEdges(Edge_ptr e); //all the legit edges from output grid a path from a input grid can hold
 	vector<Node_ptr> getLegitNodes(Edge_ptr e);//all the legit nodes from output grid a path from a input grid can hold
+	vector<Node_ptr> getLegitNodesForDev(Node_ptr devNode);
+	vector<Node_ptr> devLegitNodes(const vector<Sqr_ptr>& squares);
+
 	vector<int> squareLocOutputgrid(Sqr_ptr square);
 	vector<Sqr_ptr> getLegitSquareInOutputGrid(Edge_ptr e);
+	vector<Sqr_ptr> getSquareOutputGridContainNode(Node_ptr node);
+	vector<Sqr_ptr> getSquareInputGridContainNode(Node_ptr node);
 	vector<int> nodeLocInOutputgrid(Node_ptr node);
+
+	void setDevPos(Node_ptr inputDevNode);
 	void writeToFile(string fileName);
 	void setRowColumnRank();
 

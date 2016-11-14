@@ -35,7 +35,9 @@ using namespace std;
 #define M 10000
 #ifndef	 STORAGESIZE
 #define STORAGESIZE 5
+
 #endif
+#define NODESOFFSITE 2
 typedef boost::shared_ptr<Node> Node_ptr;
 typedef boost::shared_ptr<Edge> Edge_ptr;
 typedef boost::shared_ptr<phyDev>  Pd_ptr;
@@ -56,6 +58,14 @@ string a(string s){
 	return ss.str();
 }
 
+__inline__ bool flowComeInNode(Edge_ptr flow,Node_ptr node){
+	bool result = true;
+	if(flow->x == node->x && flow->y == node->y)
+		return false;
+	return true;
+
+}
+
 __inline__ string nodeName(Node_ptr n){
 	return a("n") + a("x") +a(n->x)+ a("y") + a(n->y);
 }
@@ -63,15 +73,47 @@ __inline__ string edgeName(Edge_ptr e){
 	return a("e") + a("x") +a(e->x)+ a("y") + a(e->y)+ a("s") +a(e->s)+ a("t") + a(e->t);
 }
 
+__inline__ string devHor(Node_ptr devNode){
+	return nodeName(devNode) + a("Hor");
+}
+
+__inline__ string devVer(Node_ptr devNode){
+	return nodeName(devNode)+a("Ver");
+}
+
+__inline__ string pathSuperFlow(Edge_ptr path){
+	return edgeName(path) + a("SuperFlow");
+}
+__inline__ string pathUseVerDev(Edge_ptr path, Node_ptr devNode){
+	return edgeName(path) + a("U") +nodeName(devNode) + a("VerDev");
+}
+
+__inline__ string pathUseHorDev(Edge_ptr path, Node_ptr devNode){
+	return edgeName(path) + a("U") +nodeName(devNode) + a("HorDev");
+}
+
+__inline__ string pathUseDevPort0(Edge_ptr path, Node_ptr devNode){
+	return edgeName(path) + a("U")+ nodeName(devNode) + a("Port0");
+}
+
+__inline__ string pathUseDevPort1(Edge_ptr path, Node_ptr devNode){
+	return edgeName(path) + a("U")+ nodeName(devNode) + a("Port1");
+}
+
+
 __inline__ string nodeBNode(Node_ptr nFrom, Node_ptr nTo){
 	return  nodeName(nFrom) + a("B") + nodeName(nTo);
 }
+
 
 __inline__ string edgeUseEdge(Edge_ptr eFrom, Edge_ptr eTo){
 	return  edgeName(eFrom) + a("U") + edgeName(eTo);
 }
 __inline__ string edgeUseNode(Edge_ptr eFrom, Node_ptr nTo){
 	return  edgeName(eFrom) + a("U") + nodeName(nTo);
+}
+__inline__ string  flowOnEdge(Edge_ptr path, Edge_ptr edge){
+	return edgeName(path) + a("FlowOn") + edgeName(edge);
 }
 
 __inline__ string edgeStartNode(Edge_ptr eFrom, Node_ptr nTo){
@@ -91,12 +133,20 @@ __inline__ int hash2Int(int i, int j){
 __inline__ int getDistance(Node_ptr n0,Node_ptr n1){
 	return (n0->x-n1->x)*(n0->x-n1->x)+(n0->y-n1->y)*(n0->y-n1->y);
 }
+bool ifContainNode(vector<Node_ptr>& v, Node_ptr n){
+	for(Node_ptr t:v){
+		if(n == t)
+			return true;
+	}
+
+	return false;
+}
 
 void PhysicalDesign::nodeBindSqaure(){
 
 }
 
-bool ifContainsEdge(const vector<Edge_ptr> edgesV, Edge_ptr edge){
+bool ifContainEdge(const vector<Edge_ptr> edgesV, Edge_ptr edge){
 
 	for(Edge_ptr e:edgesV){
 		if(e->x == edge->x && e->y == edge->y && e->s == edge->s && e->t == edge->t)
@@ -272,10 +322,13 @@ vector<Edge_ptr> PhysicalDesign::availebleEdges(const vector<Sqr_ptr>& squares){
 		int s = loc[2];
 		int t = loc[3];
 		for(Edge_ptr e:outputGrid.edges){
-			if(e->x >= x && e->x <=s
+			if((e->x >= x && e->x <=s
 				&& e->s>=x && e->s <=s
 				&& e->y>=y && e->y <= t
-				&& e->t>=y && e->t <= t){
+				&& e->t>=y && e->t <= t)&&
+				(e->x <= x+NODESOFFSITE || e->x >= s-NODESOFFSITE || e->y <= y+NODESOFFSITE || e->y >= t-NODESOFFSITE)&&
+				(e->s <= x+NODESOFFSITE || e->s >= s-NODESOFFSITE || e->t <= y+NODESOFFSITE || e->t >= t-NODESOFFSITE)
+				){
 
 				//not in any dev
 				bool edgeInDev = false;
@@ -316,7 +369,8 @@ vector<Edge_ptr> PhysicalDesign::availebleEdges(const vector<Sqr_ptr>& squares){
 	return result;
 }
 
-vector<Node_ptr> PhysicalDesign::availebleNodes(const vector<Sqr_ptr>& squares){
+//where are device can be put
+vector<Node_ptr> PhysicalDesign::devLegitNodes(const vector<Sqr_ptr>& squares){
 	vector<Node_ptr> result;
 	for(Sqr_ptr sqr:squares){
 		vector<int> loc = squareLocOutputgrid(sqr);
@@ -325,15 +379,17 @@ vector<Node_ptr> PhysicalDesign::availebleNodes(const vector<Sqr_ptr>& squares){
 		int s = loc[2];
 		int t = loc[3];
 		for(Node_ptr n:outputGrid.nodes){
-			if(n->x >= x && n->x <=s
-				&& n->y>=y && n->y <= t){
+			if(n->x == x || n->x ==s
+				|| n->y==y || n->y == t){
 
 				//node in dev
 				bool nodeInDev = false;
 				for(Pd_ptr pd: phyDevs){
 					if(find(pd->nodes.begin(),pd->nodes.end(),n)!=pd->nodes.end()){
-						nodeInDev = true;
-						break;
+						if(!(n == pd->port0Node || n == pd->port1Node)){
+							nodeInDev = true;
+							break;
+						}
 					}
 				}
 				if(find(result.begin(),result.end(),n) == result.end() && !nodeInDev)
@@ -345,6 +401,72 @@ vector<Node_ptr> PhysicalDesign::availebleNodes(const vector<Sqr_ptr>& squares){
 	}
 
 	return result;
+}
+
+vector<Node_ptr> PhysicalDesign::availebleNodes(const vector<Sqr_ptr>& squares){
+	vector<Node_ptr> result;
+	for(Sqr_ptr sqr:squares){
+		vector<int> loc = squareLocOutputgrid(sqr);
+		int x = loc[0];
+		int y = loc[1];
+		int s = loc[2];
+		int t = loc[3];
+		for(Node_ptr n:outputGrid.nodes){
+			if((n->x >= x && n->x <=s
+				&& n->y>=y && n->y <= t)
+					&&((n->x <= x+NODESOFFSITE || n->x >= s-NODESOFFSITE) || (n->y <= y+NODESOFFSITE || n->y >= t-NODESOFFSITE))
+
+
+			){
+
+				//node in dev
+				bool nodeInDev = false;
+				for(Pd_ptr pd: phyDevs){
+					if(find(pd->nodes.begin(),pd->nodes.end(),n)!=pd->nodes.end()){
+						if(!(n == pd->port0Node || n == pd->port1Node)){
+							nodeInDev = true;
+							break;
+						}
+					}
+				}
+				if(find(result.begin(),result.end(),n) == result.end() && !nodeInDev)
+					result.push_back(n);
+			}
+		}
+
+
+	}
+
+	return result;
+}
+
+vector<Sqr_ptr> PhysicalDesign::getSquareOutputGridContainNode(Node_ptr node){
+	vector<Sqr_ptr> result;
+	for(Sqr_ptr sqr:squaresInput){
+		//if(find(sqr->edges.begin(),sqr->edges.end(),e) != sqr->edges.end()){
+		if(ifContainNode(sqr->nodes,node)){
+			result.push_back(sqr);
+		}
+	}
+	return result;
+}
+
+vector<Sqr_ptr> PhysicalDesign::getSquareInputGridContainNode(Node_ptr node){
+	vector<Sqr_ptr> result;
+	for(Sqr_ptr sqr:squaresInput){
+		//if(find(sqr->edges.begin(),sqr->edges.end(),e) != sqr->edges.end()){
+		if(ifContainNode(sqr->nodes,node)){
+			result.push_back(sqr);
+		}
+	}
+	return result;
+}
+
+vector<Node_ptr> PhysicalDesign::getLegitNodesForDev(Node_ptr devNode){
+	vector<Node_ptr> result;
+		vector<Sqr_ptr> sqrsContainNode = getSquareInputGridContainNode(devNode);
+		result = devLegitNodes(sqrsContainNode);
+		return result;
 }
 
 
@@ -371,14 +493,7 @@ bool ifContain(vector<Edge_ptr>& v, Edge_ptr e){
 	return false;
 }
 
-bool ifContainNode(vector<Node_ptr>& v, Node_ptr n){
-	for(Node_ptr t:v){
-		if(n == t)
-			return true;
-	}
 
-	return false;
-}
 
 //a collection of sqrs which contain e
 vector<Sqr_ptr> PhysicalDesign::getLegitSquareInOutputGrid(Edge_ptr e){
@@ -391,6 +506,1153 @@ vector<Sqr_ptr> PhysicalDesign::getLegitSquareInOutputGrid(Edge_ptr e){
 	}
 	return result;
 }
+
+void PhysicalDesign::pathSquareFixCrossDev(){
+	for(Edge_ptr path:inputGrid.edges){
+		for(Edge_ptr eTo:getLegitEdges(path)){
+			string pathUseE = edgeUseEdge(path,eTo);
+			varName.push_back(pathUseE); varType.push_back("1");
+			string flowEdge = flowOnEdge(path,eTo);
+			varName.push_back(flowEdge); varType.push_back("0");
+			//if pathUseE = 0 then flowEdge = 0
+
+			constraint.push_back(flowEdge + a(" + ") + a(M) + a(" ") + pathUseE + a(" >= ") + a(0));
+			constraint.push_back(flowEdge + a(" - ") + a(M) + a(" ") + pathUseE + a(" <= ") + a(0));
+
+		}
+
+		for(Node_ptr nTo:getLegitNodes(path)){
+			string pathUseNode = edgeUseNode(path,nTo);
+			cout<< "path " << path->x << path->y << path->s << path->t<<" availe nodes are" << nTo->x << nTo->y<<endl;
+			varName.push_back(pathUseNode); varType.push_back("1");
+		}
+
+
+
+		/*for(Node_ptr nTo:getLegitNodes(path)){
+			string pathStartNode = edgeStartNode(path,nTo);
+			varName.push_back(pathStartNode); varType.push_back("1");
+		}
+
+		for(Node_ptr nTo:getLegitNodes(path)){
+			string pathEndNode = edgeEndNode(path,nTo);
+			varName.push_back(pathEndNode); varType.push_back("1");
+		}*/
+	}
+
+	//decide awre devices are ver or hor
+	for(Node_ptr n:inputGrid.nodes){
+		if(!n->isDev)
+			continue;
+
+		string devIsHor = devHor(n);
+		varName.push_back(devIsHor); varType.push_back("1");
+		string devIsVer = devVer(n);
+		varName.push_back(devIsVer); varType.push_back("1");
+		constraint.push_back(devIsVer + a(" + ") + devIsHor + a(" = 1"));
+	}
+	for(Edge_ptr path:inputGrid.edges){
+			Node_ptr n0 = inputGrid.hashNodes.at(Node::hash2Int(path->x,path->y));
+			Node_ptr n1 = inputGrid.hashNodes.at(Node::hash2Int(path->s,path->t));
+
+			string flowFromSuper = pathSuperFlow(path);
+			varName.push_back(flowFromSuper); varType.push_back("0");
+
+			vector<Edge_ptr> pathLegitEdges = getLegitEdges(path);
+			vector<Node_ptr> pathLegitNodes = getLegitNodes(path);
+			for(Edge_ptr legtE : getLegitEdges(path)){
+				cout<<" legit e " << "x" << legtE->x << "y" << legtE->y<< "s" <<legtE->s << "t" << legtE->t<<endl;
+			}
+			//vector<Node_ptr> pathLegitNodes = getLegitNodes(path);
+			if(!n0->isDev && !n1->isDev){
+
+
+				vector<int> n0Loc = nodeLocInOutputgrid(n0);
+				vector<int> n1Loc = nodeLocInOutputgrid(n1);
+				cout << "n0Loc[0] " << n0Loc[0] << endl;
+				cout << "n0Loc[1] " << n0Loc[1] << endl;
+				cout << "n1Loc[0] " <<  n1Loc[0] << endl;
+				cout << "n1Loc[1] " <<  n1Loc[1] << endl;
+				Node_ptr node0Outgrid = outputGrid.getNode(n0Loc[0],n0Loc[1]);
+				Node_ptr node1Outgrid = outputGrid.getNode(n1Loc[0],n1Loc[1]);
+
+				//path must start n0 and end with n1
+				string edgeAroudN0Used = "";
+				vector<Edge_ptr> legitEdges = getLegitEdges(path);
+				for(Edge_ptr eTo:node0Outgrid->adjEdgesList){
+					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
+							continue;
+					string eBindE= edgeUseEdge(path,eTo);
+					edgeAroudN0Used += a(" + ") + eBindE;
+				}
+
+				constraint.push_back(edgeAroudN0Used + (" = 1"));
+
+				string edgeAroudN1Used = "";
+				for(Edge_ptr eTo:node1Outgrid->adjEdgesList){
+					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
+							continue;
+					string eBindE = edgeUseEdge(path,eTo);
+					edgeAroudN1Used += a(" + ") + eBindE;
+				}
+
+				constraint.push_back(edgeAroudN1Used + (" = 1"));
+
+				//must be a simple path
+				for(Node_ptr nTo:getLegitNodes(path)){
+					if(nTo == node0Outgrid || nTo == node1Outgrid)
+						continue;
+					string eUseNode = edgeUseNode(path,nTo);
+					string edgeAroudUsed = "";
+					for(Edge_ptr eTo:nTo->adjEdgesList){
+						//eTo must be a legit Edge
+						if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
+							continue;
+						string eBindE= edgeUseEdge(path,eTo);
+						edgeAroudUsed += a(" + ") + eBindE;
+					}
+
+					//if n0BindN = 0 && n1Bind = 0, edge used = 2 or 0
+
+					constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" = ") + a(0));
+
+				}
+
+				//flow to no circle
+				string flowOnOneNode = "";
+				Node_ptr superNode = node0Outgrid;
+
+				for(Edge_ptr e:superNode->adjEdgesList){
+					if(!ifContainEdge(pathLegitEdges,e))
+						continue;
+					string flowEdge = flowOnEdge(path,e);
+
+					if(flowComeInNode(e,superNode)){
+						flowOnOneNode += a(" + ")  + flowEdge;
+					}
+					else{
+						flowOnOneNode += a(" - ") + flowEdge;
+					}
+				}
+				constraint.push_back(flowOnOneNode + a(" + ") + flowFromSuper + a(" = 1"));
+
+
+				for(Node_ptr n:outputGrid.nodes){
+					if(!ifContainNode(pathLegitNodes,n))
+						continue;
+					string pathUseNode = edgeUseNode(path,n);
+					if(n == superNode)
+						continue;
+					flowOnOneNode = "";
+
+					for(Edge_ptr e:n->adjEdgesList){
+						if(!ifContainEdge(pathLegitEdges,e))
+							continue;
+						string flowEdge = flowOnEdge(path,e);
+
+						if(flowComeInNode(e,n)){
+							flowOnOneNode += a(" + ")  + flowEdge;
+						}
+						else{
+							flowOnOneNode += a(" - ") + flowEdge;
+						}
+					}
+					if(n == node1Outgrid)
+						constraint.push_back(flowOnOneNode + a(" = 1"));
+					else
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode +  a(" = 0"));
+				}
+
+				//all superFlow = edgeNumber + 1
+				string edgeNumber = "";
+				for(Edge_ptr e:pathLegitEdges){
+					edgeNumber +=a(" + ") + edgeUseEdge(path,e);
+				}
+				constraint.push_back(edgeNumber + a(" - ") + flowFromSuper + a(" = -1"));
+			}
+
+			else if (n0->isDev && !n1->isDev){
+
+				vector<int> n0Loc = nodeLocInOutputgrid(n0);
+				vector<int> n1Loc = nodeLocInOutputgrid(n1);
+				cout << "n0Loc[0] " << n0Loc[0] << endl;
+				cout << "n0Loc[1] " << n0Loc[1] << endl;
+				cout << "n1Loc[0] " <<  n1Loc[0] << endl;
+				cout << "n1Loc[1] " <<  n1Loc[1] << endl;
+				Node_ptr node1Outgrid = outputGrid.getNode(n1Loc[0],n1Loc[1]);
+
+				Pd_ptr verPd = nodesVerDev[n0];
+				Pd_ptr horPd = nodesHorDev[n0];
+
+				Node_ptr n0Port0Ver = verPd->port0Node;
+				Node_ptr n0Port1Ver = verPd->port1Node;
+
+				Node_ptr n0Port0Hor = horPd->port0Node;
+				Node_ptr n0Port1Hor = horPd->port1Node;
+
+				string N0Ver = devVer(n0);
+				string N0Hor = devHor(n0);
+
+				string pathUseN0Port0 = pathUseDevPort0(path,n0);
+				varName.push_back(pathUseN0Port0); varType.push_back("1");
+				string pathUseN0Port1 = pathUseDevPort1(path,n0);
+				varName.push_back(pathUseN0Port1);varType.push_back("1");
+				constraint.push_back(pathUseN0Port0+ a(" + ") + pathUseN0Port1+ a(" = 1"));
+
+				//path must start n0 and end with n1
+				string edgeAroudUsed = "";
+
+				vector<Edge_ptr> legitEdges = getLegitEdges(path);
+				for(Edge_ptr eTo:n0Port0Ver->adjEdgesList){
+					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
+							continue;
+					string eBindE= edgeUseEdge(path,eTo);
+					edgeAroudUsed += a(" + ") + eBindE;
+				}
+
+				//if pathUseN0Ver and pathUseN0Port0
+
+				constraint.push_back(edgeAroudUsed + a(" + ") + a(M) + a(" ") + a(N0Ver) + a(" + ") + a(M) + a(" ") + a(pathUseN0Port0)  + (" <= ") + a(1+2*M));
+				constraint.push_back(edgeAroudUsed + a(" - ") + a(M) + a(" ") + a(N0Ver) + a(" - ") + a(M) + a(" ") + a(pathUseN0Port0)  + (" >= ") + a(1-2*M));
+
+				//path must start n0 and end with n1
+				edgeAroudUsed = "";
+
+				for(Edge_ptr eTo:n0Port0Hor->adjEdgesList){
+					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
+							continue;
+					string eBindE= edgeUseEdge(path,eTo);
+					edgeAroudUsed += a(" + ") + eBindE;
+				}
+
+				//if pathUseN0Hor and pathUseN0Port0
+				constraint.push_back(edgeAroudUsed + a(" + ") + a(M) + a(" ") + a(N0Hor) + a(" + ") + a(M) + a(" ") + a(pathUseN0Port0)  + (" <= ") + a(1+2*M));
+				constraint.push_back(edgeAroudUsed + a(" - ") + a(M) + a(" ") + a(N0Hor) + a(" - ") + a(M) + a(" ") + a(pathUseN0Port0)  + (" >= ") + a(1-2*M));
+
+				edgeAroudUsed = "";
+
+				for(Edge_ptr eTo:n0Port1Ver->adjEdgesList){
+					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
+							continue;
+					string eBindE= edgeUseEdge(path,eTo);
+					edgeAroudUsed += a(" + ") + eBindE;
+				}
+
+				//if pathUseN0Ver and pathUseN0Port1
+				constraint.push_back(edgeAroudUsed + a(" + ") + a(M) + a(" ") + a(N0Ver) + a(" + ") + a(M) + a(" ") + a(pathUseN0Port1)  + (" <= ") + a(1+2*M));
+				constraint.push_back(edgeAroudUsed + a(" - ") + a(M) + a(" ") + a(N0Ver) + a(" - ") + a(M) + a(" ") + a(pathUseN0Port1)  + (" >= ") + a(1-2*M));
+
+				edgeAroudUsed = "";
+
+				for(Edge_ptr eTo:n0Port1Hor->adjEdgesList){
+					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
+							continue;
+					string eBindE= edgeUseEdge(path,eTo);
+					edgeAroudUsed += a(" + ") + eBindE;
+				}
+
+				//if pathUseN0hor and pathUseN0Port1
+				constraint.push_back(edgeAroudUsed + a(" + ") + a(M) + a(" ") + a(N0Hor) + a(" + ") + a(M) + a(" ") + a(pathUseN0Port1)  + (" <= ") + a(1+2*M));
+				constraint.push_back(edgeAroudUsed + a(" - ") + a(M) + a(" ") + a(N0Hor) + a(" - ") + a(M) + a(" ") + a(pathUseN0Port1)  + (" >= ") + a(1-2*M));
+
+
+
+
+
+				string edgeAroudN1Used = "";
+				for(Edge_ptr eTo:node1Outgrid->adjEdgesList){
+					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
+							continue;
+					string eBindE = edgeUseEdge(path,eTo);
+					edgeAroudN1Used += a(" + ") + eBindE;
+				}
+
+				constraint.push_back(edgeAroudN1Used + (" = 1"));
+
+				//must be a simple path
+				for(Node_ptr nTo:getLegitNodes(path)){
+					if(nTo == node1Outgrid)
+						continue;
+
+					string eUseNode = edgeUseNode(path,nTo);
+					string edgeAroudUsed = "";
+					for(Edge_ptr eTo:nTo->adjEdgesList){
+						//eTo must be a legit Edge
+						if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
+							continue;
+						string eBindE= edgeUseEdge(path,eTo);
+						edgeAroudUsed += a(" + ") + eBindE;
+					}
+
+					//if n0BindN = 0 && n1Bind = 0, edge used = 2 or 0
+
+					if( nTo == n0Port0Ver){
+						//if not use n0Port0Ver what ever
+						//if pathUseN0Ver = 0 then = 2
+						//if pathUseN0Port0 = 0 then = 2
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" + ") + a(M) + a(" ") + a(N0Ver) +a(" >= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" - ") + a(M) + a(" ") + a(N0Ver) + a(" <= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" + ") + a(M) + a(" ") + a(pathUseN0Port0) +a(" >= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" - ") + a(M) + a(" ") + a(pathUseN0Port0) + a(" <= ") + a(0));
+					}
+					else if(nTo == n0Port1Ver){
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" + ") + a(M) + a(" ") + a(N0Ver) +a(" >= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" - ") + a(M) + a(" ") + a(N0Ver) + a(" <= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" + ") + a(M) + a(" ") + a(pathUseN0Port1) +a(" >= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" - ") + a(M) + a(" ") + a(pathUseN0Port1) + a(" <= ") + a(0));
+
+					}
+					else if(nTo == n0Port0Hor){
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" + ") + a(M) + a(" ") + a(N0Hor) +a(" >= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" - ") + a(M) + a(" ") + a(N0Hor) + a(" <= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" + ") + a(M) + a(" ") + a(pathUseN0Port0) +a(" >= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" - ") + a(M) + a(" ") + a(pathUseN0Port0) + a(" <= ") + a(0));
+
+					}
+					else if(nTo == n0Port1Hor){
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" + ") + a(M) + a(" ") + a(N0Hor) +a(" >= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" - ") + a(M) + a(" ") + a(N0Hor) + a(" <= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" + ") + a(M) + a(" ") + a(pathUseN0Port1) +a(" >= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" - ") + a(M) + a(" ") + a(pathUseN0Port1) + a(" <= ") + a(0));
+
+					}
+					else{
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode) +a(" = ") + a(0));
+
+					}
+
+				}
+
+				//flow to no circle
+				string flowOnOneNode = "";
+				Node_ptr superNode = node1Outgrid;
+
+				for(Edge_ptr e:superNode->adjEdgesList){
+					if(!ifContainEdge(pathLegitEdges,e))
+						continue;
+					string flowEdge = flowOnEdge(path,e);
+
+					if(flowComeInNode(e,superNode)){
+						flowOnOneNode += a(" + ")  + flowEdge;
+					}
+					else{
+						flowOnOneNode += a(" - ") + flowEdge;
+					}
+				}
+				constraint.push_back(flowOnOneNode + a(" + ") + flowFromSuper + a(" = 1"));
+
+
+				for(Node_ptr n:outputGrid.nodes){
+					if(!ifContainNode(pathLegitNodes,n))
+						continue;
+					if(n == superNode)
+						continue;
+
+					string pathUseNode = edgeUseNode(path,n);
+					flowOnOneNode = "";
+
+					for(Edge_ptr e:n->adjEdgesList){
+						if(!ifContainEdge(pathLegitEdges,e))
+							continue;
+						string flowEdge = flowOnEdge(path,e);
+
+						if(flowComeInNode(e,n)){
+							flowOnOneNode += a(" + ")  + flowEdge;
+						}
+						else{
+							flowOnOneNode += a(" - ") + flowEdge;
+						}
+					}
+
+					if( n== n0Port0Ver){
+						//if use n0Port0Ver then pathusenode = 0 flow = 1
+						constraint.push_back(flowOnOneNode +  a(" + ") + a(M) + a(" ") + a(N0Ver) + a(" + ") + a(M) + a(" ") + a(pathUseN0Port0)+(" <= ") + a(2*M + 1));
+						constraint.push_back(flowOnOneNode +  a(" - ") + a(M) + a(" ") + a(N0Ver) + a(" - ") + a(M) + a(" ") + a(pathUseN0Port0)+(" >= ") + a(-2*M + 1));
+						// else pathusenode = 1	 flow = 0
+						constraint.push_back(flowOnOneNode + a(" + ") + a(M) + a(" ") + a(N0Ver) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + a(M) + a(" ") + a(N0Ver) + a(" <= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" + ") + a(M) + a(" ") + a(pathUseN0Port0) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + a(M) + a(" ") + a(pathUseN0Port0) + a(" <= ") + a(0));
+
+
+										}
+					else if(n== n0Port1Ver){
+						//if use n0Port0Ver then pathusenode = 0 flow = 1
+						constraint.push_back(flowOnOneNode +  a(" + ") + a(M) + a(" ") + a(N0Ver) + a(" + ") + a(M) + a(" ") + a(pathUseN0Port1)+(" <= ") + a(2*M + 1));
+						constraint.push_back(flowOnOneNode +  a(" - ") + a(M) + a(" ") + a(N0Ver) + a(" - ") + a(M) + a(" ") + a(pathUseN0Port1)+(" >= ") + a(-2*M + 1));
+						// else pathusenode = 1	 flow = 0
+						constraint.push_back(flowOnOneNode + a(" + ") + a(M) + a(" ") + a(N0Ver) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + a(M) + a(" ") + a(N0Ver) + a(" <= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" + ") + a(M) + a(" ") + a(pathUseN0Port1) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + a(M) + a(" ") + a(pathUseN0Port1) + a(" <= ") + a(0));
+
+					}
+					else if(n == n0Port0Hor){
+						//if use n0Port0Ver then pathusenode = 0 flow = 1
+						constraint.push_back(flowOnOneNode +  a(" + ") + a(M) + a(" ") + a(N0Hor) + a(" + ") + a(M) + a(" ") + a(pathUseN0Port0)+(" <= ") + a(2*M + 1));
+						constraint.push_back(flowOnOneNode +  a(" - ") + a(M) + a(" ") + a(N0Hor) + a(" - ") + a(M) + a(" ") + a(pathUseN0Port0)+(" >= ") + a(-2*M + 1));
+						// else pathusenode = 1	 flow = 0
+						constraint.push_back(flowOnOneNode + a(" + ") + a(M) + a(" ") + a(N0Hor) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + a(M) + a(" ") + a(N0Hor) + a(" <= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" + ") + a(M) + a(" ") + a(pathUseN0Port0) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + a(M) + a(" ") + a(pathUseN0Port0) + a(" <= ") + a(0));
+
+					}
+					else if(n == n0Port1Hor){
+						//if use n0Port0Ver then pathusenode = 0 flow = 1
+						constraint.push_back(flowOnOneNode +  a(" + ") + a(M) + a(" ") + a(N0Hor) + a(" + ") + a(M) + a(" ") + a(pathUseN0Port1)+(" <= ") + a(2*M + 1));
+						constraint.push_back(flowOnOneNode +  a(" - ") + a(M) + a(" ") + a(N0Hor) + a(" - ") + a(M) + a(" ") + a(pathUseN0Port1)+(" >= ") + a(-2*M + 1));
+						// else pathusenode = 1	 flow = 0
+						constraint.push_back(flowOnOneNode + a(" + ") + a(M) + a(" ") + a(N0Hor) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + a(M) + a(" ") + a(N0Hor) + a(" <= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" + ") + a(M) + a(" ") + a(pathUseN0Port1) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + a(M) + a(" ") + a(pathUseN0Port1) + a(" <= ") + a(0));
+
+					}
+					else{
+						constraint.push_back(flowOnOneNode +  a(" - ") + pathUseNode + a(" = 0"));
+					}
+
+
+				}
+
+				//all superFlow = edgeNumber + 1
+				string edgeNumber = "";
+				for(Edge_ptr e:pathLegitEdges){
+					edgeNumber +=a(" + ") + edgeUseEdge(path,e);
+				}
+				constraint.push_back(edgeNumber + a(" - ") + flowFromSuper + a(" = -1"));
+				//flow no circle end
+
+
+
+			}
+			else if (!n0->isDev && n1->isDev){
+				vector<int> n1Loc = nodeLocInOutputgrid(n1);
+				vector<int> n0Loc = nodeLocInOutputgrid(n0);
+				cout << "n1Loc[0] " << n1Loc[0] << endl;
+				cout << "n1Loc[1] " << n1Loc[1] << endl;
+				cout << "n0Loc[0] " <<  n0Loc[0] << endl;
+				cout << "n0Loc[1] " <<  n0Loc[1] << endl;
+				Node_ptr node1Outgrid = outputGrid.getNode(n0Loc[0],n0Loc[1]);
+
+				Pd_ptr verPd = nodesVerDev[n1];
+				Pd_ptr horPd = nodesHorDev[n1];
+
+				Node_ptr n1Port0Ver = verPd->port0Node;
+				Node_ptr n1Port1Ver = verPd->port1Node;
+
+				Node_ptr n1Port0Hor = horPd->port0Node;
+				Node_ptr n1Port1Hor = horPd->port1Node;
+
+				string N1Ver = devVer(n1);
+				string N1Hor = devHor(n1);
+
+				string pathUseN1Port0 = pathUseDevPort0(path,n1);
+				varName.push_back(pathUseN1Port0); varType.push_back("1");
+				string pathUseN1Port1 = pathUseDevPort1(path,n1);
+				varName.push_back(pathUseN1Port1);varType.push_back("1");
+				constraint.push_back(pathUseN1Port0+ a(" + ") + pathUseN1Port1+ a(" = 1"));
+
+				//path must start n1 and end with n0
+				string edgeAroudUsed = "";
+
+				vector<Edge_ptr> legitEdges = getLegitEdges(path);
+				for(Edge_ptr eTo:n1Port0Ver->adjEdgesList){
+					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
+							continue;
+					string eBindE= edgeUseEdge(path,eTo);
+					edgeAroudUsed += a(" + ") + eBindE;
+				}
+
+				//if pathUseN1Ver and pathUseN1Port0
+
+				constraint.push_back(edgeAroudUsed + a(" + ") + a(M) + a(" ") + a(N1Ver) + a(" + ") + a(M) + a(" ") + a(pathUseN1Port0)  + (" <= ") + a(1+2*M));
+				constraint.push_back(edgeAroudUsed + a(" - ") + a(M) + a(" ") + a(N1Ver) + a(" - ") + a(M) + a(" ") + a(pathUseN1Port0)  + (" >= ") + a(1-2*M));
+
+				//path must start n1 and end with n0
+				edgeAroudUsed = "";
+
+				for(Edge_ptr eTo:n1Port0Hor->adjEdgesList){
+					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
+							continue;
+					string eBindE= edgeUseEdge(path,eTo);
+					edgeAroudUsed += a(" + ") + eBindE;
+				}
+
+				//if pathUseN1Hor and pathUseN1Port0
+				constraint.push_back(edgeAroudUsed + a(" + ") + a(M) + a(" ") + a(N1Hor) + a(" + ") + a(M) + a(" ") + a(pathUseN1Port0)  + (" <= ") + a(1+2*M));
+				constraint.push_back(edgeAroudUsed + a(" - ") + a(M) + a(" ") + a(N1Hor) + a(" - ") + a(M) + a(" ") + a(pathUseN1Port0)  + (" >= ") + a(1-2*M));
+
+				edgeAroudUsed = "";
+
+				for(Edge_ptr eTo:n1Port1Ver->adjEdgesList){
+					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
+							continue;
+					string eBindE= edgeUseEdge(path,eTo);
+					edgeAroudUsed += a(" + ") + eBindE;
+				}
+
+				//if pathUseN1Ver and pathUseN1Port1
+				constraint.push_back(edgeAroudUsed + a(" + ") + a(M) + a(" ") + a(N1Ver) + a(" + ") + a(M) + a(" ") + a(pathUseN1Port1)  + (" <= ") + a(1+2*M));
+				constraint.push_back(edgeAroudUsed + a(" - ") + a(M) + a(" ") + a(N1Ver) + a(" - ") + a(M) + a(" ") + a(pathUseN1Port1)  + (" >= ") + a(1-2*M));
+
+				edgeAroudUsed = "";
+
+				for(Edge_ptr eTo:n1Port1Hor->adjEdgesList){
+					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
+							continue;
+					string eBindE= edgeUseEdge(path,eTo);
+					edgeAroudUsed += a(" + ") + eBindE;
+				}
+
+				//if pathUseN1hor and pathUseN1Port1
+				constraint.push_back(edgeAroudUsed + a(" + ") + a(M) + a(" ") + a(N1Hor) + a(" + ") + a(M) + a(" ") + a(pathUseN1Port1)  + (" <= ") + a(1+2*M));
+				constraint.push_back(edgeAroudUsed + a(" - ") + a(M) + a(" ") + a(N1Hor) + a(" - ") + a(M) + a(" ") + a(pathUseN1Port1)  + (" >= ") + a(1-2*M));
+
+
+
+
+
+				string edgeAroudN1Used = "";
+				for(Edge_ptr eTo:node1Outgrid->adjEdgesList){
+					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
+							continue;
+					string eBindE = edgeUseEdge(path,eTo);
+					edgeAroudN1Used += a(" + ") + eBindE;
+				}
+
+				constraint.push_back(edgeAroudN1Used + (" = 1"));
+
+				//must be a simple path
+				for(Node_ptr nTo:getLegitNodes(path)){
+					if(nTo == node1Outgrid)
+						continue;
+
+					string eUseNode = edgeUseNode(path,nTo);
+					string edgeAroudUsed = "";
+					for(Edge_ptr eTo:nTo->adjEdgesList){
+						//eTo must be a legit Edge
+						if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
+							continue;
+						string eBindE= edgeUseEdge(path,eTo);
+						edgeAroudUsed += a(" + ") + eBindE;
+					}
+
+					//if n1BindN = 0 && n0Bind = 0, edge used = 2 or 0
+
+					if( nTo == n1Port0Ver){
+						//if not use n1Port0Ver what ever
+						//if pathUseN1Ver = 0 then = 2
+						//if pathUseN1Port0 = 0 then = 2
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" + ") + a(M) + a(" ") + a(N1Ver) +a(" >= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" - ") + a(M) + a(" ") + a(N1Ver) + a(" <= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" + ") + a(M) + a(" ") + a(pathUseN1Port0) +a(" >= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" - ") + a(M) + a(" ") + a(pathUseN1Port0) + a(" <= ") + a(0));
+					}
+					else if(nTo == n1Port1Ver){
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" + ") + a(M) + a(" ") + a(N1Ver) +a(" >= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" - ") + a(M) + a(" ") + a(N1Ver) + a(" <= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" + ") + a(M) + a(" ") + a(pathUseN1Port1) +a(" >= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" - ") + a(M) + a(" ") + a(pathUseN1Port1) + a(" <= ") + a(0));
+
+					}
+					else if(nTo == n1Port0Hor){
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" + ") + a(M) + a(" ") + a(N1Hor) +a(" >= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" - ") + a(M) + a(" ") + a(N1Hor) + a(" <= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" + ") + a(M) + a(" ") + a(pathUseN1Port0) +a(" >= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" - ") + a(M) + a(" ") + a(pathUseN1Port0) + a(" <= ") + a(0));
+
+					}
+					else if(nTo == n1Port1Hor){
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" + ") + a(M) + a(" ") + a(N1Hor) +a(" >= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" - ") + a(M) + a(" ") + a(N1Hor) + a(" <= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" + ") + a(M) + a(" ") + a(pathUseN1Port1) +a(" >= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" - ") + a(M) + a(" ") + a(pathUseN1Port1) + a(" <= ") + a(0));
+
+					}
+					else{
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+a(" = ") + a(0));
+
+						}
+
+					}
+
+		/*		//flow to no circle
+				string flowOnOneNode = "";
+				Node_ptr superNode = node1Outgrid;
+
+				for(Edge_ptr e:superNode->adjEdgesList){
+					if(!ifContainEdge(pathLegitEdges,e))
+						continue;
+					string flowEdge = flowOnEdge(path,e);
+
+					if(flowComeInNode(e,superNode)){
+						flowOnOneNode += a(" + ")  + flowEdge;
+					}
+					else{
+						flowOnOneNode += a(" - ") + flowEdge;
+					}
+				}
+				constraint.push_back(flowOnOneNode + a(" + ") + flowFromSuper + a(" = 1"));
+
+
+				for(Node_ptr n:outputGrid.nodes){
+					if(!ifContainNode(pathLegitNodes,n))
+						continue;
+					if(n == superNode)
+						continue;
+
+					string pathUseNode = edgeUseNode(path,n);
+					flowOnOneNode = "";
+
+					for(Edge_ptr e:n->adjEdgesList){
+						if(!ifContainEdge(pathLegitEdges,e))
+							continue;
+						string flowEdge = flowOnEdge(path,e);
+
+						if(flowComeInNode(e,n)){
+							flowOnOneNode += a(" + ")  + flowEdge;
+						}
+						else{
+							flowOnOneNode += a(" - ") + flowEdge;
+						}
+					}
+
+					if( n== n0Port0Ver){
+						//if use n0Port0Ver then pathusenode = 0 flow = 1
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode +  a(" + ") + a(M) + a(" ") + a(N0Ver) + a(" + ") + a(M) + a(" ") + a(pathUseN0Port0)+(" <= ") + a(2*M + 1));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode +  a(" - ") + a(M) + a(" ") + a(N0Ver) + a(" - ") + a(M) + a(" ") + a(pathUseN0Port0)+(" >= ") + a(-2*M + 1));
+						// else pathusenode = 1	 flow = 0
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(N0Ver) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(N0Ver) + a(" <= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(pathUseN0Port0) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(pathUseN0Port0) + a(" <= ") + a(0));
+
+
+										}
+					else if(n== n0Port1Ver){
+						//if use n0Port0Ver then pathusenode = 0 flow = 1
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode +  a(" + ") + a(M) + a(" ") + a(N0Ver) + a(" + ") + a(M) + a(" ") + a(pathUseN0Port1)+(" <= ") + a(2*M + 1));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode +  a(" - ") + a(M) + a(" ") + a(N0Ver) + a(" - ") + a(M) + a(" ") + a(pathUseN0Port1)+(" >= ") + a(-2*M + 1));
+						// else pathusenode = 1	 flow = 0
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(N0Ver) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(N0Ver) + a(" <= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(pathUseN0Port1) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(pathUseN0Port1) + a(" <= ") + a(0));
+
+					}
+					else if(n == n0Port0Hor){
+						//if use n0Port0Ver then pathusenode = 0 flow = 1
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode +  a(" + ") + a(M) + a(" ") + a(N0Hor) + a(" + ") + a(M) + a(" ") + a(pathUseN0Port0)+(" <= ") + a(2*M + 1));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode +  a(" - ") + a(M) + a(" ") + a(N0Hor) + a(" - ") + a(M) + a(" ") + a(pathUseN0Port0)+(" >= ") + a(-2*M + 1));
+						// else pathusenode = 1	 flow = 0
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(N0Hor) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(N0Hor) + a(" <= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(pathUseN0Port0) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(pathUseN0Port0) + a(" <= ") + a(0));
+
+					}
+					else if(n == n0Port1Hor){
+						//if use n0Port0Ver then pathusenode = 0 flow = 1
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode +  a(" + ") + a(M) + a(" ") + a(N0Hor) + a(" + ") + a(M) + a(" ") + a(pathUseN0Port1)+(" <= ") + a(2*M + 1));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode +  a(" - ") + a(M) + a(" ") + a(N0Hor) + a(" - ") + a(M) + a(" ") + a(pathUseN0Port1)+(" >= ") + a(-2*M + 1));
+						// else pathusenode = 1	 flow = 0
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(N0Hor) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(N0Hor) + a(" <= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(pathUseN0Port1) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(pathUseN0Port1) + a(" <= ") + a(0));
+
+					}
+					else{
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" = 0"));
+					}
+
+
+				}
+
+				//all superFlow = edgeNumber + 1
+				string edgeNumber = "";
+				for(Edge_ptr e:pathLegitEdges){
+					edgeNumber +=a(" + ") + edgeUseEdge(path,e);
+				}
+				constraint.push_back(edgeNumber + a(" - ") + flowFromSuper + a(" = -1"));
+				//flow no circle end*/
+
+			}
+			else if(n0->isDev && n1->isDev){
+				vector<int> n1Loc = nodeLocInOutputgrid(n1);
+				vector<int> n0Loc = nodeLocInOutputgrid(n0);
+				cout << "n1Loc[0] " << n1Loc[0] << endl;
+				cout << "n1Loc[1] " << n1Loc[1] << endl;
+				cout << "n0Loc[0] " <<  n0Loc[0] << endl;
+				cout << "n0Loc[1] " <<  n0Loc[1] << endl;
+				Node_ptr node1Outgrid = outputGrid.getNode(n0Loc[0],n0Loc[1]);
+
+				Pd_ptr verPd0 = nodesVerDev[n0];
+				Pd_ptr horPd0 = nodesHorDev[n0];
+
+				Node_ptr n0Port0Ver = verPd0->port0Node;
+				Node_ptr n0Port1Ver = verPd0->port1Node;
+
+				Node_ptr n0Port0Hor = horPd0->port0Node;
+				Node_ptr n0Port1Hor = horPd0->port1Node;
+
+				string N0Ver = devVer(n0);
+				string N0Hor = devHor(n0);
+
+				string pathUseN0Port0 = pathUseDevPort0(path,n0);
+				varName.push_back(pathUseN0Port0); varType.push_back("1");
+				string pathUseN0Port1 = pathUseDevPort1(path,n0);
+				varName.push_back(pathUseN0Port1);varType.push_back("1");
+				constraint.push_back(pathUseN0Port0+ a(" + ") + pathUseN0Port1+ a(" = 1"));
+
+				Pd_ptr verPd1 = nodesVerDev[n1];
+				Pd_ptr horPd1 = nodesHorDev[n1];
+
+				Node_ptr n1Port0Ver = verPd1->port0Node;
+				Node_ptr n1Port1Ver = verPd1->port1Node;
+
+				Node_ptr n1Port0Hor = horPd1->port0Node;
+				Node_ptr n1Port1Hor = horPd1->port1Node;
+
+				string N1Ver = devVer(n1);
+				string N1Hor = devHor(n1);
+
+				string pathUseN1Port0 = pathUseDevPort0(path,n1);
+				varName.push_back(pathUseN1Port0); varType.push_back("1");
+				string pathUseN1Port1 = pathUseDevPort1(path,n1);
+				varName.push_back(pathUseN1Port1);varType.push_back("1");
+				constraint.push_back(pathUseN1Port0+ a(" + ") + pathUseN1Port1+ a(" = 1"));
+
+				//path must start n0 and end with n1
+				string edgeAroudUsed = "";
+
+				vector<Edge_ptr> legitEdges = getLegitEdges(path);
+				for(Edge_ptr eTo:n0Port0Ver->adjEdgesList){
+					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
+							continue;
+					string eBindE= edgeUseEdge(path,eTo);
+					edgeAroudUsed += a(" + ") + eBindE;
+				}
+
+				//if pathUseN0Ver and pathUseN0Port0
+
+				constraint.push_back(edgeAroudUsed + a(" + ") + a(M) + a(" ") + a(N0Ver) + a(" + ") + a(M) + a(" ") + a(pathUseN0Port0)  + (" <= ") + a(1+2*M));
+				constraint.push_back(edgeAroudUsed + a(" - ") + a(M) + a(" ") + a(N0Ver) + a(" - ") + a(M) + a(" ") + a(pathUseN0Port0)  + (" >= ") + a(1-2*M));
+
+				//path must start n0 and end with n1
+				edgeAroudUsed = "";
+
+				for(Edge_ptr eTo:n0Port0Hor->adjEdgesList){
+					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
+							continue;
+					string eBindE= edgeUseEdge(path,eTo);
+					edgeAroudUsed += a(" + ") + eBindE;
+				}
+
+				//if pathUseN0Hor and pathUseN0Port0
+				constraint.push_back(edgeAroudUsed + a(" + ") + a(M) + a(" ") + a(N0Hor) + a(" + ") + a(M) + a(" ") + a(pathUseN0Port0)  + (" <= ") + a(1+2*M));
+				constraint.push_back(edgeAroudUsed + a(" - ") + a(M) + a(" ") + a(N0Hor) + a(" - ") + a(M) + a(" ") + a(pathUseN0Port0)  + (" >= ") + a(1-2*M));
+
+				edgeAroudUsed = "";
+
+				for(Edge_ptr eTo:n0Port1Ver->adjEdgesList){
+					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
+							continue;
+					string eBindE= edgeUseEdge(path,eTo);
+					edgeAroudUsed += a(" + ") + eBindE;
+				}
+
+				//if pathUseN0Ver and pathUseN0Port1
+				constraint.push_back(edgeAroudUsed + a(" + ") + a(M) + a(" ") + a(N0Ver) + a(" + ") + a(M) + a(" ") + a(pathUseN0Port1)  + (" <= ") + a(1+2*M));
+				constraint.push_back(edgeAroudUsed + a(" - ") + a(M) + a(" ") + a(N0Ver) + a(" - ") + a(M) + a(" ") + a(pathUseN0Port1)  + (" >= ") + a(1-2*M));
+
+				edgeAroudUsed = "";
+
+				for(Edge_ptr eTo:n0Port1Hor->adjEdgesList){
+					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
+							continue;
+					string eBindE= edgeUseEdge(path,eTo);
+					edgeAroudUsed += a(" + ") + eBindE;
+				}
+
+				//if pathUseN0hor and pathUseN0Port1
+				constraint.push_back(edgeAroudUsed + a(" + ") + a(M) + a(" ") + a(N0Hor) + a(" + ") + a(M) + a(" ") + a(pathUseN0Port1)  + (" <= ") + a(1+2*M));
+				constraint.push_back(edgeAroudUsed + a(" - ") + a(M) + a(" ") + a(N0Hor) + a(" - ") + a(M) + a(" ") + a(pathUseN0Port1)  + (" >= ") + a(1-2*M));
+
+
+
+
+				//path must start n1 and end with n0
+				edgeAroudUsed = "";
+
+				for(Edge_ptr eTo:n1Port0Ver->adjEdgesList){
+					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
+							continue;
+					string eBindE= edgeUseEdge(path,eTo);
+					edgeAroudUsed += a(" + ") + eBindE;
+				}
+
+				//if pathUseN1Ver and pathUseN1Port0
+
+				constraint.push_back(edgeAroudUsed + a(" + ") + a(M) + a(" ") + a(N1Ver) + a(" + ") + a(M) + a(" ") + a(pathUseN1Port0)  + (" <= ") + a(1+2*M));
+				constraint.push_back(edgeAroudUsed + a(" - ") + a(M) + a(" ") + a(N1Ver) + a(" - ") + a(M) + a(" ") + a(pathUseN1Port0)  + (" >= ") + a(1-2*M));
+
+				//path must start n1 and end with n0
+				edgeAroudUsed = "";
+
+				for(Edge_ptr eTo:n1Port0Hor->adjEdgesList){
+					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
+							continue;
+					string eBindE= edgeUseEdge(path,eTo);
+					edgeAroudUsed += a(" + ") + eBindE;
+				}
+
+				//if pathUseN1Hor and pathUseN1Port0
+				constraint.push_back(edgeAroudUsed + a(" + ") + a(M) + a(" ") + a(N1Hor) + a(" + ") + a(M) + a(" ") + a(pathUseN1Port0)  + (" <= ") + a(1+2*M));
+				constraint.push_back(edgeAroudUsed + a(" - ") + a(M) + a(" ") + a(N1Hor) + a(" - ") + a(M) + a(" ") + a(pathUseN1Port0)  + (" >= ") + a(1-2*M));
+
+				edgeAroudUsed = "";
+
+				for(Edge_ptr eTo:n1Port1Ver->adjEdgesList){
+					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
+							continue;
+					string eBindE= edgeUseEdge(path,eTo);
+					edgeAroudUsed += a(" + ") + eBindE;
+				}
+
+				//if pathUseN1Ver and pathUseN1Port1
+				constraint.push_back(edgeAroudUsed + a(" + ") + a(M) + a(" ") + a(N1Ver) + a(" + ") + a(M) + a(" ") + a(pathUseN1Port1)  + (" <= ") + a(1+2*M));
+				constraint.push_back(edgeAroudUsed + a(" - ") + a(M) + a(" ") + a(N1Ver) + a(" - ") + a(M) + a(" ") + a(pathUseN1Port1)  + (" >= ") + a(1-2*M));
+
+				edgeAroudUsed = "";
+
+				for(Edge_ptr eTo:n1Port1Hor->adjEdgesList){
+					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
+							continue;
+					string eBindE= edgeUseEdge(path,eTo);
+					edgeAroudUsed += a(" + ") + eBindE;
+				}
+
+				//if pathUseN1hor and pathUseN1Port1
+				constraint.push_back(edgeAroudUsed + a(" + ") + a(M) + a(" ") + a(N1Hor) + a(" + ") + a(M) + a(" ") + a(pathUseN1Port1)  + (" <= ") + a(1+2*M));
+				constraint.push_back(edgeAroudUsed + a(" - ") + a(M) + a(" ") + a(N1Hor) + a(" - ") + a(M) + a(" ") + a(pathUseN1Port1)  + (" >= ") + a(1-2*M));
+
+
+
+
+				//must be a simple path
+				for(Node_ptr nTo:getLegitNodes(path)){
+
+					string eUseNode = edgeUseNode(path,nTo);
+					string edgeAroudUsed = "";
+					for(Edge_ptr eTo:nTo->adjEdgesList){
+						//eTo must be a legit Edge
+						if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
+							continue;
+						string eBindE= edgeUseEdge(path,eTo);
+						edgeAroudUsed += a(" + ") + eBindE;
+					}
+
+					//if n1BindN = 0 && n0Bind = 0, edge used = 2 or 0
+
+					//if n0BindN = 0 && n1Bind = 0, edge used = 2 or 0
+
+					if( nTo == n0Port0Ver){
+						//if not use n0Port0Ver what ever
+						//if pathUseN0Ver = 0 then = 2
+						//if pathUseN0Port0 = 0 then = 2
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" + ") + a(M) + a(" ") + a(N0Ver) +a(" >= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" - ") + a(M) + a(" ") + a(N0Ver) + a(" <= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" + ") + a(M) + a(" ") + a(pathUseN0Port0) +a(" >= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" - ") + a(M) + a(" ") + a(pathUseN0Port0) + a(" <= ") + a(0));
+					}
+					else if(nTo == n0Port1Ver){
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" + ") + a(M) + a(" ") + a(N0Ver) +a(" >= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" - ") + a(M) + a(" ") + a(N0Ver) + a(" <= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" + ") + a(M) + a(" ") + a(pathUseN0Port1) +a(" >= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" - ") + a(M) + a(" ") + a(pathUseN0Port1) + a(" <= ") + a(0));
+
+					}
+					else if(nTo == n0Port0Hor){
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" + ") + a(M) + a(" ") + a(N0Hor) +a(" >= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" - ") + a(M) + a(" ") + a(N0Hor) + a(" <= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" + ") + a(M) + a(" ") + a(pathUseN0Port0) +a(" >= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" - ") + a(M) + a(" ") + a(pathUseN0Port0) + a(" <= ") + a(0));
+
+					}
+					else if(nTo == n0Port1Hor){
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" + ") + a(M) + a(" ") + a(N0Hor) +a(" >= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" - ") + a(M) + a(" ") + a(N0Hor) + a(" <= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" + ") + a(M) + a(" ") + a(pathUseN0Port1) +a(" >= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" - ") + a(M) + a(" ") + a(pathUseN0Port1) + a(" <= ") + a(0));
+
+					}
+
+
+					else if( nTo == n1Port0Ver){
+						//if not use n1Port0Ver what ever
+						//if pathUseN1Ver = 0 then = 2
+						//if pathUseN1Port0 = 0 then = 2
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" + ") + a(M) + a(" ") + a(N1Ver) +a(" >= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" - ") + a(M) + a(" ") + a(N1Ver) + a(" <= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" + ") + a(M) + a(" ") + a(pathUseN1Port0) +a(" >= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" - ") + a(M) + a(" ") + a(pathUseN1Port0) + a(" <= ") + a(0));
+					}
+					else if(nTo == n1Port1Ver){
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" + ") + a(M) + a(" ") + a(N1Ver) +a(" >= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" - ") + a(M) + a(" ") + a(N1Ver) + a(" <= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" + ") + a(M) + a(" ") + a(pathUseN1Port1) +a(" >= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" - ") + a(M) + a(" ") + a(pathUseN1Port1) + a(" <= ") + a(0));
+
+					}
+					else if(nTo == n1Port0Hor){
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" + ") + a(M) + a(" ") + a(N1Hor) +a(" >= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" - ") + a(M) + a(" ") + a(N1Hor) + a(" <= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" + ") + a(M) + a(" ") + a(pathUseN1Port0) +a(" >= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" - ") + a(M) + a(" ") + a(pathUseN1Port0) + a(" <= ") + a(0));
+
+					}
+					else if(nTo == n1Port1Hor){
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" + ") + a(M) + a(" ") + a(N1Hor) +a(" >= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" - ") + a(M) + a(" ") + a(N1Hor) + a(" <= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" + ") + a(M) + a(" ") + a(pathUseN1Port1) +a(" >= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)+ a(" - ") + a(M) + a(" ") + a(pathUseN1Port1) + a(" <= ") + a(0));
+
+					}
+					else{
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode) +a(" = ") + a(0));
+
+						}
+
+					}
+
+
+			}
+
+
+			//path cannot tress pass any dev
+			//path cannot use any node in side a dev
+			for(Node_ptr dev:inputGrid.nodes){
+				if(!dev->isDev)
+					continue;
+
+				Pd_ptr horDev = nodesHorDev[dev];
+				Pd_ptr verDev = nodesVerDev[dev];
+				string devIsHor = devHor(dev);
+				string devIsVer = devVer(dev);
+				vector<Node_ptr> horDevNodes = horDev->nodes;
+				vector<Node_ptr> verDevNodes = verDev->nodes;
+
+				for(Node_ptr horDevNode:horDevNodes){
+					if(!ifContainNode(pathLegitNodes,horDevNode))
+						continue;
+
+					string pathUseNode = edgeUseNode(path,horDevNode);
+					//if dev is hor, cannot use any node in this
+
+					constraint.push_back(pathUseNode + a(" - ") + a(M) + a(" ") + devIsHor + a(" >= ")  + a(-M));
+					constraint.push_back(pathUseNode + a(" + ") + a(M) + a(" ") + devIsHor + a(" <= ") + a(M));
+
+				}
+
+
+				for(Node_ptr verDevNode:verDevNodes){
+					if(!ifContainNode(pathLegitNodes,verDevNode))
+						continue;
+
+					string pathUseNode = edgeUseNode(path,verDevNode);
+					//if dev is hor, cannot use any node in this
+
+					constraint.push_back(pathUseNode + a(" - ") + a(M) + a(" ") + devIsVer+ a(" >= ")  + a(-M));
+					constraint.push_back(pathUseNode + a(" + ") + a(M) + a(" ") + devIsVer + a(" <= ") + a(M));
+
+				}
+
+
+
+
+			}
+
+			/*	//edge number = node number -1
+				vector<Edge_ptr> legitEdges = getLegitEdges(path);
+				string alledge = "";
+				for(Edge_ptr e:legitEdges){
+					alledge += a(" - ")+ edgeName(e);
+				}
+
+				vector<Node_ptr> legitNodes = getLegitNodes(path);
+				string allnode = "";
+				for(Node_ptr n:legitNodes){
+					allnode += a(" + ") + nodeName(n);
+				}
+
+				constraint.push_back(allnode + alledge + a(" = 1"));
+	*/
+	}// for path must start n0 and end with n1z
+
+
+
+	//one node can only be used in one path
+	for(Node_ptr nTo:outputGrid.nodes){
+
+
+		bool isDevNode = false;
+		for(Pd_ptr pd:verPhyDevs){
+			Node_ptr port0 = pd->port0Node;
+			Node_ptr port1 = pd->port1Node;
+			if(port0 == nTo){
+				isDevNode = true;
+				break;
+			}
+			if(port1 == nTo){
+				isDevNode = true;
+				break;
+			}
+
+		}
+		for(Pd_ptr pd:horPhyDevs){
+			Node_ptr port0 = pd->port0Node;
+			Node_ptr port1 = pd->port1Node;
+			if(port0 == nTo){
+				isDevNode = true;
+				break;
+			}
+			if(port1 == nTo){
+				isDevNode = true;
+				break;
+			}
+
+		}
+
+		if(isDevNode)
+			continue;
+
+		string nodeUsedInAllE = "";
+		for(Edge_ptr path:inputGrid.edges){
+			vector<Sqr_ptr> sqrsContainE = getLegitSquareInOutputGrid(path);
+			vector<Edge_ptr> legitEdges = availebleEdges(sqrsContainE);
+			vector<Node_ptr> legitNodes = availebleNodes(sqrsContainE);
+			//if path's legit nodes doesnt contain nTo; continue
+			if(!ifContainNode(legitNodes,nTo))
+					continue;
+
+
+
+
+
+			string pathUseNode = edgeUseNode(path,nTo);
+			nodeUsedInAllE += a(" + ") +pathUseNode;
+		}
+		constraint.push_back(nodeUsedInAllE + a(" <= 1"));
+	}
+
+	// edge number == node number - 1
+
+/*	//no small loop
+	for(int i = 0; i<= outputGrid.sizeX-2; i++){
+		for(int j = 0; j<=outputGrid.sizeY-2;j++){
+			Node_ptr n0 = outputGrid.getNode(i,j);
+			Node_ptr n1 = outputGrid.getNode(i,j+1);
+			Node_ptr n2 = outputGrid.getNode(i+1,j+1);
+			Node_ptr n3 = outputGrid.getNode(i+1,j);
+
+			Edge_ptr e0 = outputGrid.getEdge(i,j,i,j+1);
+			Edge_ptr e1 = outputGrid.getEdge(i,j+1,i+1,j+1);
+			Edge_ptr e2 = outputGrid.getEdge(i+1,j,i+1,j+1);
+			Edge_ptr e3 = outputGrid.getEdge(i,j,i+1,j);
+
+			for(Edge_ptr path:inputGrid.edges){
+				vector<Node_ptr> pathLNodes = getLegitNodes(path);
+				vector<Edge_ptr> pathLEdges = getLegitEdges(path);
+				if(!ifContainNode(pathLNodes,n0))
+					continue;
+				if(!ifContainNode(pathLNodes,n1))
+					continue;
+				if(!ifContainNode(pathLNodes,n2))
+					continue;
+				if(!ifContainNode(pathLNodes,n3))
+					continue;
+
+				if(!ifContain(pathLEdges,e0))
+					continue;
+				if(!ifContain(pathLEdges,e1))
+					continue;
+
+				if(!ifContain(pathLEdges,e2))
+					continue;
+				if(!ifContain(pathLEdges,e3))
+					continue;
+
+				string pathUe0 = edgeUseEdge(path,e0);
+				string pathUe1 = edgeUseEdge(path,e1);
+				string pathUe2 = edgeUseEdge(path,e2);
+				string pathUe3 = edgeUseEdge(path,e2);
+
+				constraint.push_back(pathUe0 + a(" + ") +pathUe1 + a(" + ") +pathUe2 + a(" + ") +pathUe3 + a(" <= 3 "));
+			}
+		}
+	}*/
+
+	/*//one Edge can only be used in one path
+	for(Edge_ptr eTo:outputGrid.edges){
+
+		bool legitEdge = false;
+
+		for(Edge_ptr path:inputGrid.edges){
+			vector<Edge_ptr> pathLegitEdges = getLegitEdges(path);
+			if(ifContain(pathLegitEdges,eTo)){
+				legitEdge = true;
+				break;
+			}
+		}
+
+		if(!legitEdge)
+			continue;
+
+		string pathsUseEdge= "";
+		for(Edge_ptr path:inputGrid.edges){
+			vector<Edge_ptr> pathLegitEdges = getLegitEdges(path);
+			if(!ifContain(pathLegitEdges,eTo))
+				continue;
+			string pathUseEdge= edgeUseEdge(path,eTo);
+			pathsUseEdge += a(" + ") + pathUseEdge;
+		}
+		constraint.push_back(pathsUseEdge + a(" <= 1"));
+	}*/
+
+
+	//path is longer than storage
+	for(Edge_ptr path:inputGrid.edges){
+		if(!path->isStorage)
+			continue;
+		string str = "";
+		vector<Sqr_ptr> sqrsContainE = getLegitSquareInOutputGrid(path);
+		vector<Edge_ptr> legitEdges = availebleEdges(sqrsContainE);
+		for(Edge_ptr eTo:legitEdges){
+			string eBindE= edgeUseEdge(path,eTo);
+			str+= a(" + ") + a(eBindE);
+		}
+		str += a(" >= ") + a(STORAGESIZE);
+		constraint.push_back(str);
+	}
+
+	//OBJ
+/*	OBJ.push_back("Minimize");
+	string str = "";
+	for(Edge_ptr path:inputGrid.edges){
+
+			vector<Sqr_ptr> sqrsContainE = getLegitSquareInOutputGrid(path);
+			vector<Edge_ptr> legitEdges = availebleEdges(sqrsContainE);
+			for(Edge_ptr eTo:legitEdges){
+				string eBindE= edgeUseEdge(path,eTo);
+				str+= a(" + ") + a(eBindE);
+			}
+	}
+	OBJ.push_back(str);*/
+}
+
 void PhysicalDesign::pathSquare(){
 
 
@@ -567,7 +1829,7 @@ void PhysicalDesign::pathSquareWithDev(){
 			if(!n0->isDev && !n1->isDev){
 				//n1 use one node
 				string n0useOneNode ="";
-				for(Node_ptr nTo:getLegitNodes(path)){
+				for(Node_ptr nTo:getLegitNodesForDev(n0)){
 					string n0UseNto = nodeUseNode(n0,nTo);
 					varName.push_back(n0UseNto);varType.push_back("1");
 					n0useOneNode += a(" + ") + n0UseNto;
@@ -578,7 +1840,7 @@ void PhysicalDesign::pathSquareWithDev(){
 
 				//n1 use one node
 				string n1useOneNode ="";
-				for(Node_ptr nTo:getLegitNodes(path)){
+				for(Node_ptr nTo:getLegitNodesForDev(n1)){
 					string n1UseNto = nodeUseNode(n1,nTo);
 					varName.push_back(n1UseNto);varType.push_back("1");
 					n1useOneNode += a(" + ") + n1UseNto;
@@ -591,7 +1853,7 @@ void PhysicalDesign::pathSquareWithDev(){
 				//path must start n0 and end with n1
 
 				//if n0 use nTo
-				for(Node_ptr nTo:getLegitNodes(path)){
+				for(Node_ptr nTo:getLegitNodesForDev(n0)){
 					string n0UseNto = nodeUseNode(n0,nTo);
 					string edgeAroudNToUsed = "";
 					for(Edge_ptr eTo:nTo->adjEdgesList){
@@ -609,7 +1871,7 @@ void PhysicalDesign::pathSquareWithDev(){
 				}
 
 				//if n1 use nTo
-				for(Node_ptr nTo:getLegitNodes(path)){
+				for(Node_ptr nTo:getLegitNodesForDev(n1)){
 					string n1UseNto = nodeUseNode(n1,nTo);
 					string edgeAroudNToUsed = "";
 					for(Edge_ptr eTo:nTo->adjEdgesList){
@@ -626,31 +1888,105 @@ void PhysicalDesign::pathSquareWithDev(){
 
 
 				//must be a simple path
+				vector<Node_ptr> n0LegitNodes = getLegitNodesForDev(n0);
+				vector<Node_ptr> n1LegitNodes = getLegitNodesForDev(n1);
 				for(Node_ptr nTo:getLegitNodes(path)){
-
-
-					string n0UseNto = nodeUseNode(n0,nTo);
-					string n1UseNto = nodeUseNode(n1,nTo);
-					string eUseNode = edgeUseNode(path,nTo);
-					string edgeAroudUsed = "";
-					for(Edge_ptr eTo:nTo->adjEdgesList){
-						//eTo must be a legit Edge
-						if(!ifContain(pathLegitEdges,eTo))
-							continue;
-						string eBindE= edgeUseEdge(path,eTo);
-						edgeAroudUsed += a(" + ") + eBindE;
+					bool nToMayN0 = false;
+					bool nToMayN1 = false;
+					if(ifContainNode(n0LegitNodes,nTo) ){
+						nToMayN0 = true;
+					}
+					if(ifContainNode(n1LegitNodes,nTo)){
+						nToMayN1 = true;
 					}
 
-					//if not port0 or port1 and not n1UseThisNode, edge used = 2 or 0
+					//if nTo can be used as n0
 
-					constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)  + a(" + ")  + a(M) + a(" ") + a(n1UseNto)+a(" + ")  + a(M) + a(" ") + a(n0UseNto) + a(" >= ") + a(0));
-					constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)  + a(" - ")+a(M) + a(" ") + a(n1UseNto)+ a(" - ")+a(M) + a(" ") + a(n0UseNto)+ a(" <= ") + a(0));
+					if(nToMayN0 && !nToMayN1){
+						string n0UseNto = nodeUseNode(n0,nTo);
+						string eUseNode = edgeUseNode(path,nTo);
+						string edgeAroudUsed = "";
+						for(Edge_ptr eTo:nTo->adjEdgesList){
+							//eTo must be a legit Edge
+							if(!ifContain(pathLegitEdges,eTo))
+								continue;
+							string eBindE= edgeUseEdge(path,eTo);
+							edgeAroudUsed += a(" + ") + eBindE;
+						}
 
-				}
+						//if not port0 or port1 and not n1UseThisNode, edge used = 2 or 0
+
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)  + a(" + ")+ a(M) + a(" ") + a(n0UseNto) + a(" >= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)  + a(" - ")+a(M) + a(" ") + a(n0UseNto)+ a(" <= ") + a(0));
+
+					}
+
+					//else if nTo can be used as n1
+					else if(!nToMayN0 && nToMayN1){
+						string n1UseNto = nodeUseNode(n1,nTo);
+						string eUseNode = edgeUseNode(path,nTo);
+						string edgeAroudUsed = "";
+						for(Edge_ptr eTo:nTo->adjEdgesList){
+							//eTo must be a legit Edge
+							if(!ifContain(pathLegitEdges,eTo))
+								continue;
+							string eBindE= edgeUseEdge(path,eTo);
+							edgeAroudUsed += a(" + ") + eBindE;
+						}
+
+						//if not port0 or port1 and not n1UseThisNode, edge used = 2 or 0
+
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)  + a(" + ")+ a(M) + a(" ") + a(n1UseNto) + a(" >= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)  + a(" - ")+a(M) + a(" ") + a(n1UseNto)+ a(" <= ") + a(0));
+
+					}
+					//else if nTo can be used as n0 and n1
+					else if(nToMayN0 && nToMayN1){
+						string n0UseNto = nodeUseNode(n0,nTo);
+						string n1UseNto = nodeUseNode(n1,nTo);
+						string eUseNode = edgeUseNode(path,nTo);
+						string edgeAroudUsed = "";
+						for(Edge_ptr eTo:nTo->adjEdgesList){
+							//eTo must be a legit Edge
+							if(!ifContain(pathLegitEdges,eTo))
+								continue;
+							string eBindE= edgeUseEdge(path,eTo);
+							edgeAroudUsed += a(" + ") + eBindE;
+						}
+
+						//if not port0 or port1 and not n1UseThisNode, edge used = 2 or 0
+
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)  + a(" + ")  + a(M) + a(" ") + a(n1UseNto)+a(" + ")  + a(M) + a(" ") + a(n0UseNto) + a(" >= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)  + a(" - ")+a(M) + a(" ") + a(n1UseNto)+ a(" - ")+a(M) + a(" ") + a(n0UseNto)+ a(" <= ") + a(0));
+
+					}
+					//else if nTo can be used as none
+					else {
+
+						string eUseNode = edgeUseNode(path,nTo);
+						string edgeAroudUsed = "";
+						for(Edge_ptr eTo:nTo->adjEdgesList){
+							//eTo must be a legit Edge
+							if(!ifContain(pathLegitEdges,eTo))
+								continue;
+							string eBindE= edgeUseEdge(path,eTo);
+							edgeAroudUsed += a(" + ") + eBindE;
+						}
+
+						//if not port0 or port1 and not n1UseThisNode, edge used = 2 or 0
+
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)   + a(" = ") + a(0));
+
+
+
+
+					}
+
+		}
 			}
 
 			else if (n0->isDev && !n1->isDev){
-
+				vector<Node_ptr> n1LegitNodes = getLegitNodesForDev(n1);
 				//path use port 0 or port 1
 				Pd_ptr pd = nodesDev[n0];
 				Node_ptr port0 = pd->port0Node;
@@ -666,7 +2002,7 @@ void PhysicalDesign::pathSquareWithDev(){
 
 				//n1 use one node
 				string n1useOneNode ="";
-				for(Node_ptr nTo:getLegitNodes(path)){
+				for(Node_ptr nTo:n1LegitNodes){
 					string n1UseNto = nodeUseNode(n1,nTo);
 					varName.push_back(n1UseNto);varType.push_back("1");
 					n1useOneNode += a(" + ") + n1UseNto;
@@ -710,7 +2046,7 @@ void PhysicalDesign::pathSquareWithDev(){
 				constraint.push_back(edgeAroudPort1Used + a(" + ") + a(M) + a(" ") + a(pathEndPort0) + a(" <= ") + a(+M));
 
 				//if use nTo
-				for(Node_ptr nTo:getLegitNodes(path)){
+				for(Node_ptr nTo:n1LegitNodes){
 					string n1UseNto = nodeUseNode(n1,nTo);
 					string edgeAroudNToUsed = "";
 					for(Edge_ptr eTo:nTo->adjEdgesList){
@@ -733,21 +2069,49 @@ void PhysicalDesign::pathSquareWithDev(){
 					if(nTo == port0 || nTo == port1)
 						continue;
 
-					string n1UseNto = nodeUseNode(n1,nTo);
-					string eUseNode = edgeUseNode(path,nTo);
-					string edgeAroudUsed = "";
-					for(Edge_ptr eTo:nTo->adjEdgesList){
-						//eTo must be a legit Edge
-						if(!ifContain(pathLegitEdges,eTo))
-							continue;
-						string eBindE= edgeUseEdge(path,eTo);
-						edgeAroudUsed += a(" + ") + eBindE;
+
+						bool nToMayN1 = false;
+
+						if(ifContainNode(n1LegitNodes,nTo)){
+							nToMayN1 = true;
+						}
+					// if n1 may use nTo
+					if(nToMayN1){
+						string n1UseNto = nodeUseNode(n1,nTo);
+						string eUseNode = edgeUseNode(path,nTo);
+						string edgeAroudUsed = "";
+						for(Edge_ptr eTo:nTo->adjEdgesList){
+							//eTo must be a legit Edge
+							if(!ifContain(pathLegitEdges,eTo))
+								continue;
+							string eBindE= edgeUseEdge(path,eTo);
+							edgeAroudUsed += a(" + ") + eBindE;
+						}
+
+						//if not port0 or port1 and not n1UseThisNode, edge used = 2 or 0
+
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)  + a(" + ")  + a(M) + a(" ") + a(n1UseNto)+ a(" >= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)  + a(" - ")+a(M) + a(" ") + a(n1UseNto)+ a(" <= ") + a(0));
+
+					}
+					//
+					else{
+						string eUseNode = edgeUseNode(path,nTo);
+						string edgeAroudUsed = "";
+						for(Edge_ptr eTo:nTo->adjEdgesList){
+							//eTo must be a legit Edge
+							if(!ifContain(pathLegitEdges,eTo))
+								continue;
+							string eBindE= edgeUseEdge(path,eTo);
+							edgeAroudUsed += a(" + ") + eBindE;
+						}
+
+						//if not port0 or port1 and not n1UseThisNode, edge used = 2 or 0
+
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)  + a(" = ") + a(0));
+
 					}
 
-					//if not port0 or port1 and not n1UseThisNode, edge used = 2 or 0
-
-					constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)  + a(" + ")  + a(M) + a(" ") + a(n1UseNto)+ a(" >= ") + a(0));
-					constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)  + a(" - ")+a(M) + a(" ") + a(n1UseNto)+ a(" <= ") + a(0));
 
 				}
 
@@ -756,6 +2120,7 @@ void PhysicalDesign::pathSquareWithDev(){
 
 			}
 			else if (!n0->isDev && n1->isDev){
+				vector<Node_ptr> n0LegitNodes = getLegitNodesForDev(n0);
 				//path use port 0 or port 1
 				Pd_ptr pd = nodesDev[n1];
 				Node_ptr port0 = pd->port0Node;
@@ -771,7 +2136,7 @@ void PhysicalDesign::pathSquareWithDev(){
 
 				//n0 use one node
 				string n0useOneNode ="";
-				for(Node_ptr nTo:getLegitNodes(path)){
+				for(Node_ptr nTo:n0LegitNodes){
 					string n0UseNto = nodeUseNode(n0,nTo);
 					varName.push_back(n0UseNto);varType.push_back("1");
 					n0useOneNode += a(" + ") + n0UseNto;
@@ -815,10 +2180,13 @@ void PhysicalDesign::pathSquareWithDev(){
 				constraint.push_back(edgeAroudPort1Used + a(" + ") + a(M) + a(" ") + a(pathEndPort0) + a(" <= ") + a(+M));
 
 				//if use nTo
-				for(Node_ptr nTo:getLegitNodes(path)){
+				for(Node_ptr nTo:n0LegitNodes){
 					string n0UseNto = nodeUseNode(n0,nTo);
 					string edgeAroudNToUsed = "";
 					for(Edge_ptr eTo:nTo->adjEdgesList){
+						if(eTo->x == 1 && eTo->y == 2 && eTo->s == 1 && eTo->t == 3){
+							cout << "got ya" << endl;
+						}
 						if(!ifContain(pathLegitEdges,eTo))
 							continue;
 						string eBindE= edgeUseEdge(path,eTo);
@@ -835,26 +2203,53 @@ void PhysicalDesign::pathSquareWithDev(){
 					if(nTo == port0 || nTo == port1)
 						continue;
 
-					string n0UseNto = nodeUseNode(n0,nTo);
-					string eUseNode = edgeUseNode(path,nTo);
-					string edgeAroudUsed = "";
-					for(Edge_ptr eTo:nTo->adjEdgesList){
-						//eTo must be a legit Edge
-						if(!ifContain(pathLegitEdges,eTo))
-							continue;
-						string eBindE= edgeUseEdge(path,eTo);
-						edgeAroudUsed += a(" + ") + eBindE;
+
+						bool nToMayN1 = false;
+
+						if(ifContainNode(n0LegitNodes,nTo)){
+							nToMayN1 = true;
+						}
+					// if n0 may use nTo
+					if(nToMayN1){
+						string n0UseNto = nodeUseNode(n0,nTo);
+						string eUseNode = edgeUseNode(path,nTo);
+						string edgeAroudUsed = "";
+						for(Edge_ptr eTo:nTo->adjEdgesList){
+							//eTo must be a legit Edge
+							if(!ifContain(pathLegitEdges,eTo))
+								continue;
+							string eBindE= edgeUseEdge(path,eTo);
+							edgeAroudUsed += a(" + ") + eBindE;
+						}
+
+						//if not port0 or port1 and not n0UseThisNode, edge used = 2 or 0
+
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)  + a(" + ")  + a(M) + a(" ") + a(n0UseNto)+ a(" >= ") + a(0));
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)  + a(" - ")+a(M) + a(" ") + a(n0UseNto)+ a(" <= ") + a(0));
+
+					}
+					//
+					else{
+						string eUseNode = edgeUseNode(path,nTo);
+						string edgeAroudUsed = "";
+						for(Edge_ptr eTo:nTo->adjEdgesList){
+							//eTo must be a legit Edge
+							if(!ifContain(pathLegitEdges,eTo))
+								continue;
+							string eBindE= edgeUseEdge(path,eTo);
+							edgeAroudUsed += a(" + ") + eBindE;
+						}
+
+						//if not port0 or port1 and not n0UseThisNode, edge used = 2 or 0
+
+						constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)  + a(" = ") + a(0));
+
 					}
 
-					//if not port0 or port1 and not n0UseThisNode, edge used = 2 or 0
-
-					constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)  + a(" + ")  +a(M) + a(" ") + a(n0UseNto)+ a(" >= ") + a(0));
-					constraint.push_back(edgeAroudUsed + a(" - ") + a(2) +a(" ") +a(eUseNode)  + a(" - ")+a(M) + a(" ") + a(n0UseNto)+ a(" <= ") + a(0));
 
 				}
-
-
 			}
+
 
 
 	}// for path must start n0 and end with n1z
@@ -1186,19 +2581,145 @@ void PhysicalDesign::paths(){
 
 }
 
+
+
+void PhysicalDesign::setDevPos(Node_ptr inputDevNode){
+	vector<int> outputNodePos = nodeLocInOutputgrid(inputDevNode);
+	int outX = outputNodePos.at(0);
+	int outY = outputNodePos.at(1);
+
+	boost::shared_ptr<phyDev> pDVer(new phyDev());
+	pDVer->vertical = true;
+	pDVer->horizontal = false;
+	verPhyDevs.push_back(pDVer);
+	nodesVerDev[inputDevNode] = pDVer;
+	pDVer->setGrid(outputGrid);
+
+	boost::shared_ptr<phyDev> pDHor(new phyDev());
+	pDHor->vertical = false;
+	pDHor->horizontal = true;
+	pDHor->setGrid(outputGrid);
+	horPhyDevs.push_back(pDHor);
+	nodesHorDev[inputDevNode] = pDHor;
+
+	vector<Sqr_ptr> sqrContainV = getSquareInputGridContainNode(inputDevNode);
+	//if dev is in the corner, shared by 1 square
+	if(sqrContainV.size() == 1){
+		Sqr_ptr sqr = sqrContainV.at(0);
+		sqr->getCornerPos();
+		//left down
+		if(inputDevNode->x == sqr->left && inputDevNode->y == sqr->down){
+			//ver
+			pDVer->setDevCenterofGrid(outX + 1,outY  + 2);
+			//hor
+			pDHor->setDevCenterofGrid(outX + 2,outY  + 1);
+		}
+		//left up
+		else if(inputDevNode->x == sqr->left && inputDevNode->y == sqr->up){
+			//ver
+			pDVer->setDevCenterofGrid(outX + 1,outY  - 2);
+			//hor
+			pDHor->setDevCenterofGrid(outX + 2,outY  - 1);
+		}
+		//right down
+		else if(inputDevNode->x == sqr->right && inputDevNode->y == sqr->down){
+			//ver
+			pDVer->setDevCenterofGrid(outX - 1,outY  + 2);
+			//hor
+			pDHor->setDevCenterofGrid(outX - 2,outY  + 1);
+
+		}
+		//right up
+		else if(inputDevNode->x == sqr->right && inputDevNode->y == sqr->up){
+			//ver
+			pDVer->setDevCenterofGrid(outX - 1,outY - 2);
+			//hor
+			pDHor->setDevCenterofGrid(outX - 2,outY - 1);
+
+		}
+
+
+	}
+	//if dev is on the edge, shared by two squares
+	else if(sqrContainV.size() == 2){
+		int xMoveR = inputDevNode->x + 1;
+		int xMoveL = inputDevNode->x - 1;
+		int yMoveU = inputDevNode->y + 1;
+		int yMoveD = inputDevNode->y - 1;
+
+		Sqr_ptr sqr0 = sqrContainV.at(0);
+		Sqr_ptr sqr1 = sqrContainV.at(1);
+
+		sqr0->getCornerPos();
+		sqr1->getCornerPos();
+
+
+		//when node move 1 unit right, if it is out of both square, means node is
+		if(xMoveR > sqr0->right && xMoveR > sqr1->right){
+			//ver
+			pDVer->setDevCenterofGrid(outX - 1,outY);
+			//hor
+			pDHor->setDevCenterofGrid(outX - 2,outY);
+		}
+		//move left
+		if(xMoveL < sqr0->left && xMoveL < sqr1->left){
+			//ver
+			pDVer->setDevCenterofGrid(outX + 1,outY);
+			//hor
+			pDHor->setDevCenterofGrid(outX + 2,outY);
+		}
+		// move up
+		if(yMoveU > sqr0->up && yMoveU > sqr1->up){
+			//ver
+			pDVer->setDevCenterofGrid(outX,outY - 2);
+			//hor
+			pDHor->setDevCenterofGrid(outX,outY - 1);
+		}
+
+		//move down
+		if(yMoveD < sqr0->down && yMoveD < sqr1->down){
+			//ver
+			pDVer->setDevCenterofGrid(outX,outY + 2);
+			//hor
+			pDHor->setDevCenterofGrid(outX,outY + 1);
+		}
+
+
+
+
+	}
+	//if dev is is shared by 3 or more squares
+	else if(sqrContainV.size() == 3 || sqrContainV.size() == 4){
+		//ver
+		pDVer->setDevCenterofGrid(outX,outY);
+		//hor
+		pDHor->setDevCenterofGrid(outX,outY);
+	}
+
+
+
+
+
+
+	//set pD nodes and edges
+	pDVer->setNodesOffsetFromCenter();
+	pDVer->setNodesInGrid();
+	pDHor->setNodesOffsetFromCenter();
+	pDHor->setNodesInGrid();
+
+}
+
 void PhysicalDesign::genILP(){
 
 	//set rank of each square
-	bool verticalPress = true;
-	int pX = 0;
-	int pY = 0;
 
-#if 1
+
+#if 0
 
 	squaresInput[0]->minX = 5;
-	squaresInput[0]->minY = 4;
+	squaresInput[0]->minY = 5;
 	inputGrid.getNode(0,0)->isDev = true;
-	Grid g(6,5);
+	Grid g(6,6);
 	outputGrid = g;
 	Grid squareG = getGridFromSquare(squaresInput[0]);
 	boost::shared_ptr<phyDev> pD(new phyDev());
@@ -1224,8 +2745,60 @@ void PhysicalDesign::genILP(){
 	return;
 #endif
 
+// 3*3 input grid, each grid has each individual
+#if 1
+	hashInputSquare[hash2Int(0,0)]->minY = 6;
+	hashInputSquare[hash2Int(0,0)]->minX = 6;
+/*	hashInputSquare[hash2Int(0,0)]->minX = 6;
+	hashInputSquare[hash2Int(0,1)]->minY = 6;
+	hashInputSquare[hash2Int(1,0)]->minX = 6;
+	hashInputSquare[hash2Int(1,0)]->minY = 6;
+	hashInputSquare[hash2Int(1,1)]->minX = 6;
+	hashInputSquare[hash2Int(1,1)]->minY = 6;*/
 
-#if 0
+	int outputGridX = 0;
+	cout << " inputGrid size X "<<inputGrid.sizeX << endl;
+	int index = 0;
+	for(int i = 0; i <= inputGrid.sizeX -2 ;i++){
+		//chose a square on row 0
+		//cout <<"i is "<< index << endl;
+		int temp = hash2Int(index,0);
+		cout <<"hash is "<< hash2Int(index,0) <<  endl;
+		cout << "hashInputSquare minx is "<<hashInputSquare[temp]->minX <<endl;
+		Sqr_ptr sqr = hashInputSquare[hash2Int(index,0)];
+		outputGridX += sqr->minX;
+	}
+	int outputGridY = 0;
+	for(int j = 0; j <= inputGrid.sizeY-2;j++){
+		//chose a square on row 0
+		Sqr_ptr sqr = hashInputSquare[hash2Int(0,j)];
+		outputGridY += sqr->minY;
+	}
+
+
+
+	Grid g(outputGridX+1,outputGridY+1);
+	outputGrid = g;
+	cout << "im here" << endl;
+
+	//set device position in output grid;
+	for(Node_ptr n:(inputGrid.nodes)){
+		if(n->isDev){
+			setDevPos(n);
+		}
+	}
+
+	setTime(60);
+	setGap(0.1);
+	pathSquareFixCrossDev();
+	writeToFile("squareILP.lp");
+	ILPresults = ILP("squareILP.lp");
+	writeGraphFile();
+	return;
+#endif
+
+
+#if 1
 	for(Sqr_ptr sqr:squaresInput){
 		if(sqr->rowNum == 0){
 			sqr->minX = STORAGESIZE-1;
@@ -1238,7 +2811,7 @@ void PhysicalDesign::genILP(){
 	}
 
 
-	Grid g(9,8);
+	//Grid g(9,8);
 	outputGrid = g;
 
 	setTime(60);
@@ -1249,68 +2822,7 @@ void PhysicalDesign::genILP(){
 	writeGraphFile();
 	return;
 #endif
-	for(;;){
-		//if ver, choose a row of squares, minus rank by 1
-		if(verticalPress){
-			int rowNum = pY % (inputGrid.sizeY);
-			for(Sqr_ptr sqr:squaresInput){
-				if(rowNum == sqr->rowNum){
-					sqr->minY = sqr->minY -1;
-					inputGrid.sqaureRankY[rowNum]--;
-				}
-			}
-			pY = pY + 1;
 
-			/*int outGridX = 0;
-			int outGridY = 0;
-			for(int i = 0; i < inputGrid.sizeX-1; i++){
-				cout << inputGrid.sqaureRankX[hash2Int(i,0)] << endl;
-				int rankX = inputGrid.sqaureRankX[hash2Int(i,0)];
-				outGridX += rankX;
-			}
-			for(int i = 0; i < inputGrid.sizeY-1; i++){
-				int rankY = inputGrid.sqaureRankY[hash2Int(i,0)];
-				outGridY += rankY;
-			}
-			Grid g(outGridX,outGridY);
-			*/
-			Grid g(6,5);
-			outputGrid = g;
-
-			setTime(60);
-			setGap(0.1);
-			pathSquare();
-			writeToFile("squareILP.lp");
-			ILPresults = ILP("squareILP.lp");
-			writeGraphFile();
-
-			//no answer, reverse hahahaha
-			if(ILPresults.size() == 0){
-				for(Sqr_ptr sqr:squaresInput){
-					if(rowNum == sqr->rowNum){
-						sqr->minY = sqr->minY +1;
-						inputGrid.sqaureRankY[rowNum]++;
-					}
-				}
-			}
-
-
-
-		}
-		else{
-			int columnNum = pX % (inputGrid.sizeX);
-			for(Sqr_ptr sqr:squaresInput){
-				if(columnNum== sqr->columnNum){
-					sqr->minY = sqr->minX -1;
-					inputGrid.sqaureRankX[columnNum]--;
-				}
-			}
-			pY = pY + 1;
-		}
-
-		verticalPress = !verticalPress;
-		break;
-	}
 
 
 }
@@ -1346,7 +2858,7 @@ void PhysicalDesign::writeGraphFile(){
 			}
 
 	}
-	/*for(Pd_ptr pd:phyDevs){
+	for(Pd_ptr pd:phyDevs){
 
 		for(Edge_ptr e:pd->edges){
 			file << e->x << endl;
@@ -1355,7 +2867,72 @@ void PhysicalDesign::writeGraphFile(){
 			file << e->t << endl;
 		}
 
-	}*/
+	}
+
+	for(Node_ptr devNode:inputGrid.nodes){
+		if(!devNode->isDev)
+			continue;
+
+		Pd_ptr horDev = nodesHorDev[devNode];
+		Pd_ptr verDev = nodesVerDev[devNode];
+
+		string devIsHor = devHor(devNode);
+
+		int devHorValue = ILPresults[devIsHor];
+
+		if(devHorValue == 1){
+			for(Edge_ptr e:horDev->edges){
+				file << e->x << endl;
+				file << e->y << endl;
+				file << e->s << endl;
+				file << e->t << endl;
+			}
+		}
+		else{
+			for(Edge_ptr e:verDev->edges){
+				file << e->x << endl;
+				file << e->y << endl;
+				file << e->s << endl;
+				file << e->t << endl;
+			}
+		}
+
+	}
+
+
+	file.close();
+
+
+	file.open("nodePhyDesign.txt");
+
+
+	for(Node_ptr n:inputGrid.nodes){
+		if(n->isDev)
+				continue;
+		for(Node_ptr nTo:outputGrid.nodes){
+			string nodeUNode = nodeUseNode(n,nTo);
+			int edgeUsedValue = ILPresults[nodeUNode];
+			if(edgeUsedValue == 0)
+				continue;
+			//cout << edgeUsedInC << " is 1" << endl;
+
+
+			file << nTo->x << endl;
+			file << nTo->y << endl;
+			//cout << " color is" << color << endl;
+		}
+
+	}
+	for(Pd_ptr pd:phyDevs){
+		Node_ptr n0 = pd->port0Node;
+		Node_ptr n1 = pd->port1Node;
+		file<<n0->x << endl;
+		file << n0 ->y << endl;
+		file<< n1->x << endl;
+		file << n1->y<<endl;
+
+	}
+
 
 	file.close();
 
@@ -1370,6 +2947,7 @@ void PhysicalDesign::fromGridToSqaures(){
 		for(int j = 0; j <= inputGrid.sizeY -2; j++){
 			Sqr_ptr sqr(new Square());
 			squaresInput.push_back(sqr);
+			hashInputSquare[hash2Int(i,j)] = sqr;
 			sqr->rowNum = j;
 			sqr->columnNum = i;
 
@@ -1401,31 +2979,20 @@ void PhysicalDesign::fromGridToSqaures(){
 		}
 	}
 
+	for(int i = 0; i <= inputGrid.sizeX -2; i++ ){
+			for(int j = 0; j <= inputGrid.sizeY -2; j++){
 
-}
+				Sqr_ptr sqr = hashInputSquare[hash2Int(i,j)];
+				cout << "sqr " << i << j << " size x is " << sqr->minX;
+				cout << "sqr " << i << j << " size y is " << sqr->minY;
 
-
-
-void bendPath(Grid& g,vector<Edge_ptr> path, dir d){
-
-}
-
-void pressGridVerBy1(Grid& grid){
-	//choose a row in the grid
-	//choose an edge, bend the edge, shorter
-	//if the bubble squeeze others, try to move other bubble, if cannot move other bubbles. bending fails
+			}
+		}
 
 
 }
 
-void pressGridHorBy1(Grid& grid){
 
-}
-
-
-void PhysicalDesign::pressGrid(bool vertical){
-
-}
 
 
 

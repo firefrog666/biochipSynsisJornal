@@ -47,6 +47,27 @@ int main(int   argc,
 			cout << "Usage: lp_c++ filename" << endl;
 			return 1;
 		}*/
+#if 1
+
+	Grid inputGrid(2,2);
+	/*for(Edge_ptr e:inputGrid.edges){
+		e->isStorage = false;
+	}*/
+	inputGrid.edges[2]->isStorage = false;
+	//inputGrid.edges[5]->isStorage =false;
+	inputGrid.nodes[0]->isDev = true;
+	//inputGrid.nodes[4]->isDev = true;
+	//inputGrid.nodes[7]->isDev = true;
+
+	PhysicalDesign p;
+
+	p.inputGrid = inputGrid;
+	p.fromGridToSqaures();
+	p.genILP();
+
+	return 0;
+#endif
+
 #if 0
 
 	Grid inputGrid(2,2);
@@ -65,7 +86,7 @@ int main(int   argc,
 #if 1
 
 	ListAlgorithm L;
-#if 0
+#if 1
 	//L.readFromXml("simpleStore.xml");
 	//L.readFromXml("simple.xml");
 	L.readFromXml("cpa20opsnosource.xml");
@@ -94,10 +115,10 @@ int main(int   argc,
 	cout << "emmm" << endl;
 	//return 0;
 	setGap(0.1);
-	setTime(60.0);
+	setTime(600.0);
 	map<string,int> results;
 
-#if 1
+#if 0
 	L.readResultFromFile();
 	L.writeTimeline();
 #else
@@ -110,12 +131,12 @@ int main(int   argc,
 
 	Plate plate = Plate();
 
-	Grid g(5,5);
+	Grid g(4,4);
 	plate.setGrid(g);
 #define notarchitecutal 0
 #if notarchitecutal
 	//gen flow plan
-	int step = 2;
+	int step = 30;
 
 
 	plate.getPartInfoFromList(L,step);
@@ -128,10 +149,12 @@ int main(int   argc,
 	plate.channelTimeConfict();
 	plate.objective();
 	setGap(0.1);
-	setTime(60);
+	setTime(1200);
 	plate.writeToFile("ilp.lp");
 	results = ILP("ilp.lp");
 	plate.writeDeviceLoc(results);
+	plate.readFromSolver(results);
+	plate.writeGraphFile();
 	return 0;
 	//simulation anealing
 #else
@@ -141,7 +164,7 @@ int main(int   argc,
 	int step = 20;
 	for(int i = 0; i <= 10 ; i++){
 		if( i > 0)
-			step = 70;
+			step = 35;
 			plate.constraintClear();
 			plate.getPartInfoFromList(L,step);
 			//plate.
@@ -163,9 +186,9 @@ int main(int   argc,
 			plate.writeToFile("arc.lp");
 			setGap(0.1);
 			if(i == 0)
-			setTime(1800);
+			setTime(900);
 			else
-				setTime(7200);
+				setTime(1800);
 			results = ILP("arc.lp");
 			if(results.size()>0){
 				plate.writeDeviceLoc(results);

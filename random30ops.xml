@@ -8,7 +8,7 @@
       <operation name="o2" duration = "30" type = "mix">
         <child name="o13" ></child>                   
     </operation>
-  <operation name="o3" duration = "50" type = "heat">
+  <operation name="o3" duration = "50" type = "mix">
         <child name="o14" ></child>
     </operation>
   <operation name="o4" duration = "40" type = "filter">
@@ -20,10 +20,10 @@
   <operation name="o6" duration = "30" type = "filter">
         <child name="o16" ></child>
     </operation>
-  <operation name="o7" duration = "40" type = "heat">
+  <operation name="o7" duration = "40" type = "mix">
 	<child name="o16" ></child>
     </operation>
- <operation name="o8" duration = "40" type = "heat">
+ <operation name="o8" duration = "40" type = "mix">
 	<child name="o17" ></child>
     </operation>
 
@@ -68,7 +68,7 @@
         <child name="o23" ></child>    
     </operation>
 
-  <operation name="o18" duration = "10" type = "heat">
+  <operation name="o18" duration = "10" type = "mix">
         <parent name="o10" ></parent>
         <child name="o24" ></child>    
     </operation>
@@ -87,7 +87,7 @@
         <parent name="o14" ></parent>
         <child name="o25" ></child>    
     </operation>
- <operation name="o22" duration = "20" type = "heat">
+ <operation name="o22" duration = "20" type = "mix">
         <parent name="o15" ></parent>
         <child name="o26" ></child>    
     </operation>
@@ -112,7 +112,7 @@
         <parent name="o23" ></parent>
         <child name="o28" ></child>    
     </operation>
-  <operation name="o27" duration = "40" type = "heat">
+  <operation name="o27" duration = "40" type = "mix">
         <parent name="o24" ></parent>
         <child name="o29" ></child>    
     </operation>
@@ -140,7 +140,7 @@
 
 
 <device name = "d1" x = "5" y = "5" type = "mix"></device>
-<device name = "d2" x = "5" y = "5" type = "heat"></device>
+<device name = "d2" x = "5" y = "5" type = "mix"></device>
 <device name = "d3" x = "5" y = "5" type = "filter"></device>
 <device name = "d4" x = "5" y = "5" type = "mix"></device>
 <device name = "d5" x = "5" y = "5" type = "detect"></device>
