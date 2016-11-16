@@ -523,7 +523,7 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 
 		for(Node_ptr nTo:getLegitNodes(path)){
 			string pathUseNode = edgeUseNode(path,nTo);
-			cout<< "path " << path->x << path->y << path->s << path->t<<" availe nodes are" << nTo->x << nTo->y<<endl;
+			//cout<< "path " << path->x << path->y << path->s << path->t<<" availe nodes are" << nTo->x << nTo->y<<endl;
 			varName.push_back(pathUseNode); varType.push_back("1");
 		}
 
@@ -560,6 +560,9 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 
 			vector<Edge_ptr> pathLegitEdges = getLegitEdges(path);
 			vector<Node_ptr> pathLegitNodes = getLegitNodes(path);
+			for(Node_ptr nTo:pathLegitNodes){
+				cout<< "path " << path->x << path->y << path->s << path->t<<" availe nodes are" << nTo->x << nTo->y<<endl;
+			}
 			for(Edge_ptr legtE : getLegitEdges(path)){
 				cout<<" legit e " << "x" << legtE->x << "y" << legtE->y<< "s" <<legtE->s << "t" << legtE->t<<endl;
 			}
@@ -575,6 +578,7 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 				cout << "n1Loc[1] " <<  n1Loc[1] << endl;
 				Node_ptr node0Outgrid = outputGrid.getNode(n0Loc[0],n0Loc[1]);
 				Node_ptr node1Outgrid = outputGrid.getNode(n1Loc[0],n1Loc[1]);
+
 
 				//path must start n0 and end with n1
 				string edgeAroudN0Used = "";
@@ -869,10 +873,10 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 						constraint.push_back(flowOnOneNode +  a(" + ") + a(M) + a(" ") + a(N0Ver) + a(" + ") + a(M) + a(" ") + a(pathUseN0Port0)+(" <= ") + a(2*M + 1));
 						constraint.push_back(flowOnOneNode +  a(" - ") + a(M) + a(" ") + a(N0Ver) + a(" - ") + a(M) + a(" ") + a(pathUseN0Port0)+(" >= ") + a(-2*M + 1));
 						// else pathusenode = 1	 flow = 0
-						constraint.push_back(flowOnOneNode + a(" + ") + a(M) + a(" ") + a(N0Ver) +a(" >= ") + a(0));
-						constraint.push_back(flowOnOneNode + a(" - ") + a(M) + a(" ") + a(N0Ver) + a(" <= ") + a(0));
-						constraint.push_back(flowOnOneNode + a(" + ") + a(M) + a(" ") + a(pathUseN0Port0) +a(" >= ") + a(0));
-						constraint.push_back(flowOnOneNode + a(" - ") + a(M) + a(" ") + a(pathUseN0Port0) + a(" <= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(N0Ver) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode+ a(" - ") + a(M) + a(" ") + a(N0Ver) + a(" <= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode+ a(" + ") + a(M) + a(" ") + a(pathUseN0Port0) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode+ a(" - ") + a(M) + a(" ") + a(pathUseN0Port0) + a(" <= ") + a(0));
 
 
 										}
@@ -881,10 +885,10 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 						constraint.push_back(flowOnOneNode +  a(" + ") + a(M) + a(" ") + a(N0Ver) + a(" + ") + a(M) + a(" ") + a(pathUseN0Port1)+(" <= ") + a(2*M + 1));
 						constraint.push_back(flowOnOneNode +  a(" - ") + a(M) + a(" ") + a(N0Ver) + a(" - ") + a(M) + a(" ") + a(pathUseN0Port1)+(" >= ") + a(-2*M + 1));
 						// else pathusenode = 1	 flow = 0
-						constraint.push_back(flowOnOneNode + a(" + ") + a(M) + a(" ") + a(N0Ver) +a(" >= ") + a(0));
-						constraint.push_back(flowOnOneNode + a(" - ") + a(M) + a(" ") + a(N0Ver) + a(" <= ") + a(0));
-						constraint.push_back(flowOnOneNode + a(" + ") + a(M) + a(" ") + a(pathUseN0Port1) +a(" >= ") + a(0));
-						constraint.push_back(flowOnOneNode + a(" - ") + a(M) + a(" ") + a(pathUseN0Port1) + a(" <= ") + a(0));
+						constraint.push_back(flowOnOneNode+ a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(N0Ver) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode+ a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(N0Ver) + a(" <= ") + a(0));
+						constraint.push_back(flowOnOneNode+ a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(pathUseN0Port1) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode+ a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(pathUseN0Port1) + a(" <= ") + a(0));
 
 					}
 					else if(n == n0Port0Hor){
@@ -892,10 +896,10 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 						constraint.push_back(flowOnOneNode +  a(" + ") + a(M) + a(" ") + a(N0Hor) + a(" + ") + a(M) + a(" ") + a(pathUseN0Port0)+(" <= ") + a(2*M + 1));
 						constraint.push_back(flowOnOneNode +  a(" - ") + a(M) + a(" ") + a(N0Hor) + a(" - ") + a(M) + a(" ") + a(pathUseN0Port0)+(" >= ") + a(-2*M + 1));
 						// else pathusenode = 1	 flow = 0
-						constraint.push_back(flowOnOneNode + a(" + ") + a(M) + a(" ") + a(N0Hor) +a(" >= ") + a(0));
-						constraint.push_back(flowOnOneNode + a(" - ") + a(M) + a(" ") + a(N0Hor) + a(" <= ") + a(0));
-						constraint.push_back(flowOnOneNode + a(" + ") + a(M) + a(" ") + a(pathUseN0Port0) +a(" >= ") + a(0));
-						constraint.push_back(flowOnOneNode + a(" - ") + a(M) + a(" ") + a(pathUseN0Port0) + a(" <= ") + a(0));
+						constraint.push_back(flowOnOneNode+ a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(N0Hor) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode+ a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(N0Hor) + a(" <= ") + a(0));
+						constraint.push_back(flowOnOneNode+ a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(pathUseN0Port0) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode+ a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(pathUseN0Port0) + a(" <= ") + a(0));
 
 					}
 					else if(n == n0Port1Hor){
@@ -903,10 +907,10 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 						constraint.push_back(flowOnOneNode +  a(" + ") + a(M) + a(" ") + a(N0Hor) + a(" + ") + a(M) + a(" ") + a(pathUseN0Port1)+(" <= ") + a(2*M + 1));
 						constraint.push_back(flowOnOneNode +  a(" - ") + a(M) + a(" ") + a(N0Hor) + a(" - ") + a(M) + a(" ") + a(pathUseN0Port1)+(" >= ") + a(-2*M + 1));
 						// else pathusenode = 1	 flow = 0
-						constraint.push_back(flowOnOneNode + a(" + ") + a(M) + a(" ") + a(N0Hor) +a(" >= ") + a(0));
-						constraint.push_back(flowOnOneNode + a(" - ") + a(M) + a(" ") + a(N0Hor) + a(" <= ") + a(0));
-						constraint.push_back(flowOnOneNode + a(" + ") + a(M) + a(" ") + a(pathUseN0Port1) +a(" >= ") + a(0));
-						constraint.push_back(flowOnOneNode + a(" - ") + a(M) + a(" ") + a(pathUseN0Port1) + a(" <= ") + a(0));
+						constraint.push_back(flowOnOneNode+ a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(N0Hor) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode+ a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(N0Hor) + a(" <= ") + a(0));
+						constraint.push_back(flowOnOneNode+ a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(pathUseN0Port1) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode+ a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(pathUseN0Port1) + a(" <= ") + a(0));
 
 					}
 					else{
@@ -917,6 +921,7 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 				}
 
 				//all superFlow = edgeNumber + 1
+
 				string edgeNumber = "";
 				for(Edge_ptr e:pathLegitEdges){
 					edgeNumber +=a(" + ") + edgeUseEdge(path,e);
@@ -1498,7 +1503,7 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 	for(Node_ptr nTo:outputGrid.nodes){
 
 
-		bool isDevNode = false;
+		/*bool isDevNode = false;
 		for(Pd_ptr pd:verPhyDevs){
 			Node_ptr port0 = pd->port0Node;
 			Node_ptr port1 = pd->port1Node;
@@ -1527,7 +1532,7 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 		}
 
 		if(isDevNode)
-			continue;
+			continue;*/
 
 		string nodeUsedInAllE = "";
 		for(Edge_ptr path:inputGrid.edges){
@@ -2747,7 +2752,7 @@ void PhysicalDesign::genILP(){
 
 // 3*3 input grid, each grid has each individual
 #if 1
-	hashInputSquare[hash2Int(0,0)]->minY = 6;
+	hashInputSquare[hash2Int(0,0)]->minY = 5;
 	hashInputSquare[hash2Int(0,0)]->minX = 6;
 /*	hashInputSquare[hash2Int(0,0)]->minX = 6;
 	hashInputSquare[hash2Int(0,1)]->minY = 6;
@@ -2830,8 +2835,18 @@ void PhysicalDesign::genILP(){
 void PhysicalDesign::writeToFile(string fileName){
 	writeILP write;
 	const char* f = fileName.c_str();
+
+	for(int i = 0; i <= varName.size() -1 ;i++){
+		string name = varName.at(i);
+		string type = varType.at(i);
+
+		if(type == "0")
+			bounds.push_back(a(-M) + a(" <= ") + name + a(" <= ") + a(M));
+	}
+
 	write.writeOBJ(OBJ,f);
 	write.writeConstraint(constraint,f);
+	write.writeBounds(bounds,f);
 	write.writeVarNames(varName,varType,f);
 
 }

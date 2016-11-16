@@ -194,6 +194,11 @@ void Plate::getPartInfoFromListByTime(const ListAlgorithm& L, int numberOfOps){
 
 	itrTimes++;
 }
+void Plate::clearInforFromL(){
+	operations.clear();
+	devices.clear();
+	Lchannels.clear();
+}
 void Plate::getPartInfoFromList(const ListAlgorithm& L, int numberOfOps){
 	int i = 0;
 
@@ -662,7 +667,7 @@ void Plate::readDeviceLoc(){
 }
 
 void Plate::switchDeviceLoc(){
-	srand (time(NULL));
+	//srand (time(NULL));
 	int randDev0Pos = rand()%(devices.size());
 	int randDev1Pos = rand()%(devices.size());
 	Dev_ptr randD0 = devices[randDev0Pos];

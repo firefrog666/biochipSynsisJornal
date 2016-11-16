@@ -47,14 +47,16 @@ int main(int   argc,
 			cout << "Usage: lp_c++ filename" << endl;
 			return 1;
 		}*/
-#if 1
 
+#define physicalDesgin 1
+
+#if physicalDesgin
 	Grid inputGrid(2,2);
 	/*for(Edge_ptr e:inputGrid.edges){
 		e->isStorage = false;
 	}*/
-	inputGrid.edges[2]->isStorage = false;
 	//inputGrid.edges[5]->isStorage =false;
+	//inputGrid.edges[2]->isStorage = false;
 	inputGrid.nodes[0]->isDev = true;
 	//inputGrid.nodes[4]->isDev = true;
 	//inputGrid.nodes[7]->isDev = true;
@@ -118,7 +120,7 @@ int main(int   argc,
 	setTime(600.0);
 	map<string,int> results;
 
-#if 0
+#if 1
 	L.readResultFromFile();
 	L.writeTimeline();
 #else
@@ -136,7 +138,7 @@ int main(int   argc,
 #define notarchitecutal 0
 #if notarchitecutal
 	//gen flow plan
-	int step = 30;
+	int step = 20;
 
 
 	plate.getPartInfoFromList(L,step);
@@ -149,20 +151,20 @@ int main(int   argc,
 	plate.channelTimeConfict();
 	plate.objective();
 	setGap(0.1);
-	setTime(1200);
+	setTime(600);
 	plate.writeToFile("ilp.lp");
 	results = ILP("ilp.lp");
 	plate.writeDeviceLoc(results);
 	plate.readFromSolver(results);
 	plate.writeGraphFile();
 	return 0;
+	vector<int> howManyEdges;
 	//simulation anealing
 #else
-
-	srand (time(NULL));
 	vector<int> howManyEdges;
+	srand (time(NULL));
 	int step = 20;
-	for(int i = 0; i <= 10 ; i++){
+	/*for(int i = 0; i <= 10 ; i++){
 		if( i > 0)
 			step = 35;
 			plate.constraintClear();
@@ -176,12 +178,12 @@ int main(int   argc,
 			plate.channelFirstStoreLast();
 			plate.channelTimeConfict();
 			plate.objective();
-			/*plate.readDeviceLoc();
+			plate.readDeviceLoc();
 			if(i%2 == 0)
 				plate.moveDeviceLoc();
 			else
 				plate.switchDeviceLoc();
-	*/
+
 			//plate.writeDevLocToILP();
 			plate.writeToFile("arc.lp");
 			setGap(0.1);
@@ -201,39 +203,189 @@ int main(int   argc,
 				plate.clearLastResult();
 			}
 
+		}*/
+#endif
+#define twostep 1
+#if twostep
+
+		/*	if(i > 0)
+				step = 35;*/
+			//step 1 gen
+			step = 35;
+
+			//plate.genRandomDevLoc();
+		bool readDevLoc = true;
+		for(int i = 0; i <= 1000; i++){
+			int haha = 0;
+			while(results.size() <= 0){
+				cout << "on step 1 iteration " << haha <<endl;
+				plate.getPartInfoFromList(L,step);
+				if(readDevLoc)
+					plate.readDeviceLoc();
+
+				plate.constraintClear();
+				plate.setChannelsTime();
+				plate.devicePlacement();
+				plate.channelStartEnd();
+				plate.channelSimplePath();
+				plate.channelFirstStoreLast();
+				plate.channelTimeConfict();
+				plate.objective();
+				/*if(needReadDevLoc){
+					plate.readDeviceLoc();
+				}*/
+				plate.writeDevLocToILP();
+				plate.writeToFile("sastep1.lp");
+				setTime(600);
+				results = ILP("sastep1.lp");
+				if(results.size()>0){
+					plate.writeDeviceLoc(results);
+					plate.readFromSolver(results);
+					//int edgeUseNum = plate.calEdgeUseNum();
+					//howManyEdges.push_back(edgeUseNum);
+
+				}
+
+				else{
+					if(haha%2 == 0)
+						plate.moveDeviceLoc();
+					else
+						plate.switchDeviceLoc();
+				}
+				haha++;
+			}
+
+			//step 2
+			int step2 = 20;
+			plate.getPartInfoFromList(L,step2);
+			plate.constraintClear();
+			plate.setChannelsTime();
+			plate.devicePlacement();
+			plate.channelStartEnd();
+			plate.channelSimplePath();
+			plate.channelFirstStoreLast();
+			plate.channelTimeConfict();
+			plate.objective();
+			//plate.writeToFile("sastep2.lp");
+			results = ILP("sastep2.lp");
+
+			if(results.size()>0){
+
+
+				plate.readFromSolver(results);
+				plate.writeGraphFile();
+				int edgeUseNum = plate.calEdgeUseNum();
+				howManyEdges.push_back(edgeUseNum);
+				if(haha%2 == 0)
+					plate.moveDeviceLoc();
+				else
+					plate.switchDeviceLoc();
+				readDevLoc = false;
+				plate.clearLastResult();
+				plate.clearInforFromL();
+				break;
+			}
+			else{
+				if(haha%2 == 0)
+					plate.moveDeviceLoc();
+				else
+					plate.switchDeviceLoc();
+				readDevLoc = false;
+				plate.clearInforFromL();
+				plate.clearLastResult();
+
+			}
+			cout << "now have " << howManyEdges.size() << " result"<<endl;
 		}
+
+		for(int num:howManyEdges){
+			cout << "use " << num << " edges" << endl;
+		}
+
+		return 0;
 #endif
 
-/*
 
-	for(int i = 0; i <= 10000; i++){
+/*	step = 20;
+	plate.constraintClear();
+	plate.getPartInfoFromList(L,step);
+				//plate.
+	plate.setChannelsTime();
+	plate.devicePlacement();
+
+	plate.channelStartEnd();
+	plate.channelSimplePath();
+	plate.channelFirstStoreLast();
+	plate.channelTimeConfict();
+	plate.objective();
+	//plate.readDeviceLoc();
+	plate.writeToFile("arc.lp");
+		setGap(0.1);
+
+		setTime(1800);
+		results = ILP("arc.lp");
+		if(results.size()>0){
+			plate.writeDeviceLoc(results);
+			plate.readFromSolver(results);
+			plate.writeGraphFile();
+			int edgeUseNum = plate.calEdgeUseNum();
+			howManyEdges.push_back(edgeUseNum);
+		}
+		else{
+			plate.clearLastResult();
+		}
+		return 0 ;*/
+	step = 65;
+	bool needMoreOps = true;
+	bool needReadDevLoc = true;
+	for(int i = 0; i <= 1000; i++){
+	/*	if(i > 0)
+			step = 35;*/
 		plate.constraintClear();
-		plate.getBindingFromList(L);
-		plate.genRandomDevLoc();
+		if(needMoreOps){
+			plate.getPartInfoFromList(L,step);
+		}
+		//plate.genRandomDevLoc();
 		plate.setChannelsTime();
-		//plate.devicePlacement();
+		plate.devicePlacement();
 
-		plate.channelStartEndFloorPlan();
-		plate.channelSimplePathFloorPlan();
-		plate.channelFirstStoreLastFloorPlan();
+		plate.channelStartEnd();
+		plate.channelSimplePath();
+		plate.channelFirstStoreLast();
 		plate.channelTimeConfict();
 		plate.objective();
-		plate.readDeviceLoc();
-		if(i%2 == 0)
-			plate.moveDeviceLoc();
-		else
-			plate.switchDeviceLoc();
-
+		if(needReadDevLoc){
+			plate.readDeviceLoc();
+		}
 		plate.writeDevLocToILP();
 		plate.writeToFile("sa.lp");
 		setGap(0.1);
-		setTime(3600);
+		if(i == 0)
+		setTime(1800);
+		else
+			setTime(3600);
 		results = ILP("sa.lp");
 		if(results.size()>0){
+			needReadDevLoc = false;
 			plate.writeDeviceLoc(results);
 			plate.readFromSolver(results);
 			int edgeUseNum = plate.calEdgeUseNum();
 			howManyEdges.push_back(edgeUseNum);
+			needReadDevLoc = false;
+		}
+		else{
+			if(i%2 == 0)
+				plate.moveDeviceLoc();
+			else
+				plate.switchDeviceLoc();
+
+			plate.clearLastResult();
+			plate.clearInforFromL();
+
+			needReadDevLoc = false;
+			//ops clear read new ops
+			needMoreOps = true;
+
 		}
 
 	}
@@ -243,7 +395,7 @@ int main(int   argc,
 	}
 
 	plate.writeGraphFile();
-*/
+
 
 
 #endif

@@ -57,7 +57,7 @@ ILP(char* argv)
     GRBEnv env = GRBEnv();
     GRBModel model = GRBModel(env, argv);
     //model.getEnv().set(GRB_DoubleParam_IntFeasTol,1e-6);
-   //model.getEnv().set(GRB_DoubleParam_Heuristics,0.8);
+   model.getEnv().set(GRB_DoubleParam_Heuristics,0.95);
     model.getEnv().set(GRB_DoubleParam_TimeLimit,timeMax);
     model.getEnv().set(GRB_DoubleParam_MIPGap, ilpGap);
     vars = model.getVars();
@@ -89,16 +89,19 @@ ILP(char* argv)
 
       for(int i =0; i<model.get(GRB_IntAttr_NumVars);i++){
           	  	string varName = vars[i].get(GRB_StringAttr_VarName);
-          	  	results[varName] = vars[i].get(GRB_DoubleAttr_X)+0.5; // +0.5 to make sure its round
+          	  	if(vars[i].get(GRB_DoubleAttr_X) >= 0)
+          	  		results[varName] = vars[i].get(GRB_DoubleAttr_X)+0.5; // +0.5 to make sure its round
+          	  	else
+          	  	results[varName] = vars[i].get(GRB_DoubleAttr_X)-0.5; // +0.5 to make sure its round
 
-          	  if(varName == "co2o3storagey3" ){
+          	  	if(varName == "co2o3storagey3" ){
           	  				cout << "gotte ya" <<endl;
           	  }
 
           	  	varNames << varName << "\n";
           	  	varResults << varName << "     "<< results[varName] << "\n";
 
-          	  	//cout << vars[i].get(GRB_StringAttr_VarName) << " " << vars[i].get(GRB_DoubleAttr_X) << endl;
+          	  	cout << vars[i].get(GRB_StringAttr_VarName) << " " << vars[i].get(GRB_DoubleAttr_X) << endl;
 
             }
 
@@ -123,13 +126,15 @@ ILP(char* argv)
       cout << "Optimization was stopped with status = "
            << optimstatus << endl;
 
+
+
       double objval = model.get(GRB_DoubleAttr_ObjVal);
            cout << "Optimal objective: " << objval << endl;
            for(int i =0; i<model.get(GRB_IntAttr_NumVars);i++){
          	  	string varName = vars[i].get(GRB_StringAttr_VarName);
          	  	results[varName] = vars[i].get(GRB_DoubleAttr_X);
 
-         	 // 	cout << vars[i].get(GRB_StringAttr_VarName) << " " << vars[i].get(GRB_DoubleAttr_X) << endl;
+         	  	cout << vars[i].get(GRB_StringAttr_VarName) << " " << vars[i].get(GRB_DoubleAttr_X) << endl;
 
            }
            ofstream varNames;
@@ -149,7 +154,7 @@ ILP(char* argv)
                	  	varNames << varName << "\n";
                	  	varResults << varName << " = "<< results[varName] << "\n";
 
-               	  	//cout << vars[i].get(GRB_StringAttr_VarName) << " " << vars[i].get(GRB_DoubleAttr_X) << endl;
+               	  	cout << vars[i].get(GRB_StringAttr_VarName) << " " << vars[i].get(GRB_DoubleAttr_X) << endl;
 
                  }
 

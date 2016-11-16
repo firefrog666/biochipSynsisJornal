@@ -101,6 +101,7 @@ public:
 	void getBindingFromList(const ListAlgorithm& L);
 	void getPartInfoFromList(const ListAlgorithm& L, int numberOfOps);
 	void getPartInfoFromListByTime(const ListAlgorithm& L, int numberOfOps);
+	void clearInforFromL();
 
 
 	void writeToFile(string fileName);

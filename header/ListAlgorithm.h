@@ -49,6 +49,7 @@ private:
 	void setPriorityList();
 	void addToAvailableDevice(Device& d);
 	void removeFromAvaailableDevice(Device& d);
+	void outerMemilpConstraint();
 	void ilpConstraint();
 	void ilpObj();
 	void writeToFile();

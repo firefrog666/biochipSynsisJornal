@@ -210,6 +210,7 @@ public:
 	vector<string> varName;
 	vector<string> varType;
 	vector<string> OBJ;
+	vector<string> bounds;
 
 	vector<Pd_ptr> phyDevs;
 	vector<Pd_ptr> verPhyDevs;

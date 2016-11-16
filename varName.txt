@@ -611,6 +611,7 @@ ex0y0s1t0Unx6y2
 ex0y0s1t0Unx6y3
 ex0y0s1t0Unx6y4
 ex0y0s1t0Unx6y5
+ex0y0s1t0SuperFlow
 ex0y0s0t1Unx0y0Port0
 ex0y0s0t1Unx0y0Port1
 ex0y0s0t1Unx0y0
@@ -654,6 +655,7 @@ ex0y0s0t1Unx6y2
 ex0y0s0t1Unx6y3
 ex0y0s0t1Unx6y4
 ex0y0s0t1Unx6y5
+ex0y0s0t1SuperFlow
 ex0y1s1t1Unx0y0
 ex0y1s1t1Unx0y1
 ex0y1s1t1Unx0y2
@@ -742,5 +744,3 @@ ex0y0s1t0Unx6y0
 ex1y0s1t1Unx6y0
 ex0y1s1t1Unx6y5
 ex1y0s1t1Unx6y5
-ex0y0s1t0SuperFlow
-ex0y0s0t1SuperFlow

@@ -103,6 +103,289 @@ void ListAlgorithm::writeTimeline(){
 		file.close();
 }
 
+void ListAlgorithm::outerMemilpConstraint(){
+	//create var
+		for(Op_ptr op:ops){
+			string opName = op->name;
+			string opStart = opName + s("Start");
+			string opFinish = opName + s("Finish");
+			string opInj = opName + s("Inj");
+			string opEj = opName + s("Ej");
+			varName.push_back(opStart);varType.push_back("2");
+			varName.push_back(opFinish);varType.push_back("2");
+			varName.push_back(opInj);varType.push_back("2");
+			varName.push_back(opEj);varType.push_back("2");
+			//if op bind to dev
+			for(Dev_ptr dev:devices){
+				string devName = dev->name;
+				string opBindDev = opName + s("Bind") + devName;
+				varName.push_back(opBindDev);varType.push_back("1");
+
+			}
+
+		}
+
+		//create channels
+		for(Op_ptr child:ops){
+			for(Op_ptr parent:child->parents){
+				Ch_ptr c(new Channel);
+				channels.push_back(c);
+				c->name = s("c") + parent->name + child->name;
+				string cStart = c->name + s("Start");
+				string cFinish = c->name + s("Finish");
+				c->fatherOp = parent;
+				c->childOp = child;
+				varName.push_back(cStart);varType.push_back("2");
+				varName.push_back(cFinish);varType.push_back("2");
+			}
+		}
+
+		//ops finsh -begin >= duration
+		//ops after his parent
+		for(Op_ptr op:ops){
+			string opStart = op->name + s("Start");
+			string opFinish = op->name + s("Finish");
+
+			ILP.push_back(opFinish + s(" - ") + opStart + s(" >= ") +s(op->duration));
+		}
+
+		for(Op_ptr op:ops){
+			string opName = op->name;
+			string opStart = opName + s("Start");
+			string opFinish = opName + s("Finish");
+			string opInj = opName + s("Inj");
+			string opEj = opName + s("Ej");
+			ILP.push_back(opInj + s(" - ") + opStart + s(" <= 0"));
+			ILP.push_back(opEj + s(" - ") + opFinish + s(" >= 0"));
+
+		}
+
+		//ops after his parent
+		for(Op_ptr child:ops){
+			string childStart = child->name + s("Start");
+			string childFinish = child->name + s("Finish");
+			string childInj = child->name + s("Inj");
+			string childEj = child->name + s("Ej");
+			for(Op_ptr parent:child->parents){
+				string parentStart = parent->name +s("Start");
+				string parentFinish = parent->name + s("Finish");
+				string parentInj = parent->name + s("Inj");
+				string parentEj = parent->name + s("Ej");
+				string cName = s("c") + parent->name + child->name;
+				string cStart = cName + s("Start");
+				string cFinish = cName+ s("Finish");
+				//channel start after parent end and channel before
+				ILP.push_back(cStart + s(" - ") + parentFinish + s(" >= 0"));
+				ILP.push_back(childStart + s(" - ") + cFinish + s(" >= 0"));
+				//child op inject before each channel finish
+				ILP.push_back(childInj + s(" - ") + cFinish + s(" <= ") +s(-TRANSTIME));
+				//father op eject after each channel start
+				ILP.push_back(parentEj + s(" - ") + cStart + s(" >= ") + s(TRANSTIME));
+			}
+		}
+
+
+		//if several channel meets on the same operation, they must queue
+		for(Op_ptr child:ops){
+			for(Op_ptr father0:child->parents){
+				for(Op_ptr father1:child->parents){
+
+
+					if(father0 == father1)
+						continue;
+
+					string c0Name = s("c") + father0->name + child->name;
+					string c0Start = c0Name + s("Start");
+					string c0Finish = c0Name+ s("Finish");
+
+					string c1Name = s("c") + father1->name + child->name;
+					string c1Start = c1Name + s("Start");
+					string c1Finish = c1Name+ s("Finish");
+
+					string c0Beforec1 = c0Name + s("BF") + c1Name;
+					varName.push_back(c0Beforec1); varType.push_back("1");
+					//if c0bc1 = 0 then c0f - c1f <= -trantime
+					ILP.push_back(c0Finish + s(" - ") + c1Finish + s(" - ") + s(M) + s(" ") + c0Beforec1 +s(" <= ") + s(-TRANSTIME));
+					//if c0bc1 = 1 then c0f-c1f >= transtime
+					//c0f - c1f + (1-c0b1f)M >= transtime
+					ILP.push_back(c0Finish + s(" - ") + c1Finish + s(" - ") + s(M) + s(" ") + c0Beforec1 +s(" >= ") + s(TRANSTIME-M));
+
+
+				}
+			}
+		}
+
+		//if  channels stores or from on the same operation, they must queue
+		for(Ch_ptr c0:channels){
+			string c0Name = s("c") + c0->fatherOp->name + c0->childOp->name;
+			string c0Start = c0Name + s("Start");
+			string c0Finish = c0Name+ s("Finish");
+			//if c0Finish - c1Start > Trans
+
+
+			for(Ch_ptr c1:channels){
+				if (c0 == c1)
+					continue;
+
+
+
+					string c1Name = s("c") + c1->fatherOp->name + c1->childOp->name;
+					string c1Start = c1Name + s("Start");
+					string c1Finish = c1Name+ s("Finish");
+
+					string c0Beforec1 = c0Name + s("BF") + c1Name;
+					varName.push_back(c0Beforec1); varType.push_back("1");
+					//if c0bc1 = 0 then c0f - c1f <= trantime
+					ILP.push_back(c0Finish + s(" - ") + c1Finish + s(" - ") + s(M) + s(" ") + c0Beforec1 +s(" <= ") + s(-TRANSTIME));
+					//if c0bc1 = 1 then c0f-c1f >= transtime
+					//c0f - c1f + (1-c0b1f)M >= transtime
+					ILP.push_back(c0Finish + s(" - ") + c1Finish + s(" - ") + s(M) + s(" ") + c0Beforec1 +s(" >= ") + s(TRANSTIME-M));
+
+
+				}
+			}
+
+
+
+		//if operation runs on the same device, channel start time = channel end time
+		// or channel time > transtime
+		for(Ch_ptr c:channels){
+			string channelStartEndSame  = c->name + s("SES");
+			varName.push_back(channelStartEndSame);varType.push_back("1");
+
+			Op_ptr father = c->fatherOp;
+			Op_ptr son = c->childOp;
+			string cStart = c->name + s("Start");
+			string cFinish = c->name + s("Finish");
+
+			for(Dev_ptr dev:devices){
+
+				string channelStartEndSameDev = c->name +s("SES") + dev->name;
+				varName.push_back(channelStartEndSameDev);varType.push_back("1");
+
+				string childBindDev = father->name + s("Bind") + dev->name;
+				string parentBindDev = son->name + s("Bind") + dev->name;
+
+
+				//if child = 0 and parent = 0 then sameDev = 0
+				//if child = 1 or parent = 1 then sameDev = 1
+				ILP.push_back( channelStartEndSameDev+ s(" - ")+ s(M) + s(" ") + childBindDev+ s(" - ") + s(M) + s(" ") + parentBindDev + s(" <= 0"));
+				ILP.push_back( channelStartEndSameDev+ s(" + ") + s(M) + s(" ") + childBindDev+ s(" + ") + s(M) + s(" ") + parentBindDev + s(" >= 0"));
+				ILP.push_back(channelStartEndSameDev + s(" - ") + childBindDev + s(" >= 0"));
+				ILP.push_back(channelStartEndSameDev + s(" - ") + parentBindDev + s(" >= 0"));
+
+			}
+			//if dev1 = 0 or dev2 = 0 then same = 0
+			//if dev1 =1 and dev2 =1 then same = 1
+			string allDevSamePlus = "";
+			string allDevSameMinus = "";
+			for(Dev_ptr dev:devices){
+				string channelStartEndSameDev = c->name +s("SES") + dev->name;
+				ILP.push_back(channelStartEndSame + s(" - ") + channelStartEndSameDev + s(" <= 0"));
+				allDevSamePlus += s(" + ") + s(M) + s(" ") + s(channelStartEndSameDev);
+				allDevSameMinus += s(" - ") + s(M) + s(" ") + s(channelStartEndSameDev);
+			}
+			ILP.push_back(channelStartEndSame + allDevSameMinus + s(" >= ") + s(1 - M * devices.size()));
+			ILP.push_back(channelStartEndSame + allDevSamePlus + s(" <= ") + s(1+ M * devices.size()));
+
+			// if channelStartEndSame = 0 then channel start = end
+
+			ILP.push_back(cFinish + s(" - ") + cStart + s(" - ")+ s(M) + s(" ") + channelStartEndSame + s(" <= 0"));
+			ILP.push_back(cFinish + s(" - ") + cStart + s(" + ") + s(M) + s(" ") + channelStartEndSame + s( " >= 0"));
+
+			// if channelSatartEndSame = 1 then channel end - start > transtime
+			// end - start + (1-s) M  >= trasTime ----> end - start -Ms >= trasTime-M
+
+
+			ILP.push_back(cFinish + s(" - ") + cStart + s(" - ")+ s(M) + s(" ") + channelStartEndSame + s(" >= ")+ s(TRANSTIME - M));
+			//ILP.push_back(cFinish + s(" - ") + cStart + s(" + ") + s(M) + s(" ") + channelStartEndSame + s( " <= ") + s(TRANSTIME + M));
+
+
+
+		}
+
+
+
+
+
+		//dev op type match
+		for(Op_ptr op:ops){
+			string bindTo1Dev = "";
+			int devCount = 0;
+			for(Dev_ptr dev:devices){
+				string opBindDev = op->name + s("Bind") + dev->name;
+				bindTo1Dev += s(" + ") + opBindDev;
+				devCount ++;
+
+				if(op->type != dev->type){
+					ILP.push_back(opBindDev + s(" = 1"));
+				}
+			}
+
+			ILP.push_back(bindTo1Dev + s(" = ") + s(devCount-1));
+
+		}
+
+		//when 2 ops bind to 1 dev, they must seprate
+
+		for(Dev_ptr dev:devices){
+			string devName = dev->name;
+			for(int i = 0; i < ops.size();i++){
+				Op_ptr op0 = ops.at(i);
+
+				string op0Inj = op0->name + s("Inj");
+				string op0Ej = op0->name + s("Ej");
+				for(int j = 0; j < i; j++){
+
+					Op_ptr op1 = ops.at(j);
+
+
+
+					if(op0->type != op1->type){
+						continue;
+					}
+
+					string op1Inj = op1->name + s("Inj");
+					string op1Ej = op1->name + s("Ej");
+
+					string op0BeforeOp1 = op0->name +s("Before") + op1->name;
+					string op1BeforeOp0 = op1->name + s("Before") + op0->name;
+					varName.push_back(op0BeforeOp1); varType.push_back("1");
+					varName.push_back(op1BeforeOp0); varType.push_back("1");
+					string op0BindDev = op0->name + s("Bind") + devName;
+					string op1BindDev = op1->name + s("Bind") + devName;
+
+					//if op0bind == 0 and op1bind == 0 then op1before = 0 or op1befor 0
+
+					//if op0before = 0 then op1start - op1finish >= trans
+					ILP.push_back(op1Inj + s(" - ") + op0Ej + s(" + ") +s(M) + s(" ") + op0BeforeOp1 + s(" >= ") + s(0));
+
+
+					//if op1before = 0 then op0start - op10Finish >= trans
+					ILP.push_back(op0Inj + s(" - ") + op1Ej + s(" + ") + s(M) + s(" ") + op1BeforeOp0 + s(" >= ") + s(0)) ;
+
+					// op0Bind = 1 or op1Bind = 1 or op0b = 0 or op1b = 0
+					//(1-op0) + (1-op1) + op0b + op1b <=3; -op0 - op1 + op0b + op1b <= 1
+					ILP.push_back(s(" - ") + op0BindDev + s(" - ") + op1BindDev + s(" + ") + op0BeforeOp1 + s(" + ") + op1BeforeOp0+ s(" <= 1"));
+
+				}
+			}
+		}
+
+		/*//for a parent and a child, they must use different devices
+		for(Op_ptr child:ops){
+			for(Op_ptr parent:child->parents){
+				for(Dev_ptr dev:devices){
+					string childBindDev = child->name + s("Bind") + dev->name;
+					string parentBindDev = parent->name + s("Bind") + dev->name;
+
+					//only one operation can bind to here
+					ILP.push_back(childBindDev + " + " + parentBindDev + " >= 1");
+				}
+			}
+		}*/
+}
+
 void ListAlgorithm::ilpConstraint(){
 	//create var
 	for(Op_ptr op:ops){

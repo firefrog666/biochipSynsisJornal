@@ -21,10 +21,6 @@ ex0y0s1t0FlowOnex0y4s0t5 + 10000 ex0y0s1t0Uex0y4s0t5 >= 0
 ex0y0s1t0FlowOnex0y4s0t5 - 10000 ex0y0s1t0Uex0y4s0t5 <= 0
 ex0y0s1t0FlowOnex0y5s1t5 + 10000 ex0y0s1t0Uex0y5s1t5 >= 0
 ex0y0s1t0FlowOnex0y5s1t5 - 10000 ex0y0s1t0Uex0y5s1t5 <= 0
-ex0y0s1t0FlowOnex0y5s0t6 + 10000 ex0y0s1t0Uex0y5s0t6 >= 0
-ex0y0s1t0FlowOnex0y5s0t6 - 10000 ex0y0s1t0Uex0y5s0t6 <= 0
-ex0y0s1t0FlowOnex0y6s1t6 + 10000 ex0y0s1t0Uex0y6s1t6 >= 0
-ex0y0s1t0FlowOnex0y6s1t6 - 10000 ex0y0s1t0Uex0y6s1t6 <= 0
 ex0y0s1t0FlowOnex1y0s2t0 + 10000 ex0y0s1t0Uex1y0s2t0 >= 0
 ex0y0s1t0FlowOnex1y0s2t0 - 10000 ex0y0s1t0Uex1y0s2t0 <= 0
 ex0y0s1t0FlowOnex1y0s1t1 + 10000 ex0y0s1t0Uex1y0s1t1 >= 0
@@ -47,10 +43,6 @@ ex0y0s1t0FlowOnex1y4s1t5 + 10000 ex0y0s1t0Uex1y4s1t5 >= 0
 ex0y0s1t0FlowOnex1y4s1t5 - 10000 ex0y0s1t0Uex1y4s1t5 <= 0
 ex0y0s1t0FlowOnex1y5s2t5 + 10000 ex0y0s1t0Uex1y5s2t5 >= 0
 ex0y0s1t0FlowOnex1y5s2t5 - 10000 ex0y0s1t0Uex1y5s2t5 <= 0
-ex0y0s1t0FlowOnex1y5s1t6 + 10000 ex0y0s1t0Uex1y5s1t6 >= 0
-ex0y0s1t0FlowOnex1y5s1t6 - 10000 ex0y0s1t0Uex1y5s1t6 <= 0
-ex0y0s1t0FlowOnex1y6s2t6 + 10000 ex0y0s1t0Uex1y6s2t6 >= 0
-ex0y0s1t0FlowOnex1y6s2t6 - 10000 ex0y0s1t0Uex1y6s2t6 <= 0
 ex0y0s1t0FlowOnex2y0s3t0 + 10000 ex0y0s1t0Uex2y0s3t0 >= 0
 ex0y0s1t0FlowOnex2y0s3t0 - 10000 ex0y0s1t0Uex2y0s3t0 <= 0
 ex0y0s1t0FlowOnex2y0s2t1 + 10000 ex0y0s1t0Uex2y0s2t1 >= 0
@@ -63,6 +55,8 @@ ex0y0s1t0FlowOnex2y2s3t2 + 10000 ex0y0s1t0Uex2y2s3t2 >= 0
 ex0y0s1t0FlowOnex2y2s3t2 - 10000 ex0y0s1t0Uex2y2s3t2 <= 0
 ex0y0s1t0FlowOnex2y2s2t3 + 10000 ex0y0s1t0Uex2y2s2t3 >= 0
 ex0y0s1t0FlowOnex2y2s2t3 - 10000 ex0y0s1t0Uex2y2s2t3 <= 0
+ex0y0s1t0FlowOnex2y3s3t3 + 10000 ex0y0s1t0Uex2y3s3t3 >= 0
+ex0y0s1t0FlowOnex2y3s3t3 - 10000 ex0y0s1t0Uex2y3s3t3 <= 0
 ex0y0s1t0FlowOnex2y3s2t4 + 10000 ex0y0s1t0Uex2y3s2t4 >= 0
 ex0y0s1t0FlowOnex2y3s2t4 - 10000 ex0y0s1t0Uex2y3s2t4 <= 0
 ex0y0s1t0FlowOnex2y4s3t4 + 10000 ex0y0s1t0Uex2y4s3t4 >= 0
@@ -71,10 +65,6 @@ ex0y0s1t0FlowOnex2y4s2t5 + 10000 ex0y0s1t0Uex2y4s2t5 >= 0
 ex0y0s1t0FlowOnex2y4s2t5 - 10000 ex0y0s1t0Uex2y4s2t5 <= 0
 ex0y0s1t0FlowOnex2y5s3t5 + 10000 ex0y0s1t0Uex2y5s3t5 >= 0
 ex0y0s1t0FlowOnex2y5s3t5 - 10000 ex0y0s1t0Uex2y5s3t5 <= 0
-ex0y0s1t0FlowOnex2y5s2t6 + 10000 ex0y0s1t0Uex2y5s2t6 >= 0
-ex0y0s1t0FlowOnex2y5s2t6 - 10000 ex0y0s1t0Uex2y5s2t6 <= 0
-ex0y0s1t0FlowOnex2y6s3t6 + 10000 ex0y0s1t0Uex2y6s3t6 >= 0
-ex0y0s1t0FlowOnex2y6s3t6 - 10000 ex0y0s1t0Uex2y6s3t6 <= 0
 ex0y0s1t0FlowOnex3y0s4t0 + 10000 ex0y0s1t0Uex3y0s4t0 >= 0
 ex0y0s1t0FlowOnex3y0s4t0 - 10000 ex0y0s1t0Uex3y0s4t0 <= 0
 ex0y0s1t0FlowOnex3y0s3t1 + 10000 ex0y0s1t0Uex3y0s3t1 >= 0
@@ -85,16 +75,18 @@ ex0y0s1t0FlowOnex3y1s3t2 + 10000 ex0y0s1t0Uex3y1s3t2 >= 0
 ex0y0s1t0FlowOnex3y1s3t2 - 10000 ex0y0s1t0Uex3y1s3t2 <= 0
 ex0y0s1t0FlowOnex3y2s4t2 + 10000 ex0y0s1t0Uex3y2s4t2 >= 0
 ex0y0s1t0FlowOnex3y2s4t2 - 10000 ex0y0s1t0Uex3y2s4t2 <= 0
+ex0y0s1t0FlowOnex3y2s3t3 + 10000 ex0y0s1t0Uex3y2s3t3 >= 0
+ex0y0s1t0FlowOnex3y2s3t3 - 10000 ex0y0s1t0Uex3y2s3t3 <= 0
+ex0y0s1t0FlowOnex3y3s4t3 + 10000 ex0y0s1t0Uex3y3s4t3 >= 0
+ex0y0s1t0FlowOnex3y3s4t3 - 10000 ex0y0s1t0Uex3y3s4t3 <= 0
+ex0y0s1t0FlowOnex3y3s3t4 + 10000 ex0y0s1t0Uex3y3s3t4 >= 0
+ex0y0s1t0FlowOnex3y3s3t4 - 10000 ex0y0s1t0Uex3y3s3t4 <= 0
 ex0y0s1t0FlowOnex3y4s4t4 + 10000 ex0y0s1t0Uex3y4s4t4 >= 0
 ex0y0s1t0FlowOnex3y4s4t4 - 10000 ex0y0s1t0Uex3y4s4t4 <= 0
 ex0y0s1t0FlowOnex3y4s3t5 + 10000 ex0y0s1t0Uex3y4s3t5 >= 0
 ex0y0s1t0FlowOnex3y4s3t5 - 10000 ex0y0s1t0Uex3y4s3t5 <= 0
 ex0y0s1t0FlowOnex3y5s4t5 + 10000 ex0y0s1t0Uex3y5s4t5 >= 0
 ex0y0s1t0FlowOnex3y5s4t5 - 10000 ex0y0s1t0Uex3y5s4t5 <= 0
-ex0y0s1t0FlowOnex3y5s3t6 + 10000 ex0y0s1t0Uex3y5s3t6 >= 0
-ex0y0s1t0FlowOnex3y5s3t6 - 10000 ex0y0s1t0Uex3y5s3t6 <= 0
-ex0y0s1t0FlowOnex3y6s4t6 + 10000 ex0y0s1t0Uex3y6s4t6 >= 0
-ex0y0s1t0FlowOnex3y6s4t6 - 10000 ex0y0s1t0Uex3y6s4t6 <= 0
 ex0y0s1t0FlowOnex4y0s5t0 + 10000 ex0y0s1t0Uex4y0s5t0 >= 0
 ex0y0s1t0FlowOnex4y0s5t0 - 10000 ex0y0s1t0Uex4y0s5t0 <= 0
 ex0y0s1t0FlowOnex4y0s4t1 + 10000 ex0y0s1t0Uex4y0s4t1 >= 0
@@ -117,10 +109,6 @@ ex0y0s1t0FlowOnex4y4s4t5 + 10000 ex0y0s1t0Uex4y4s4t5 >= 0
 ex0y0s1t0FlowOnex4y4s4t5 - 10000 ex0y0s1t0Uex4y4s4t5 <= 0
 ex0y0s1t0FlowOnex4y5s5t5 + 10000 ex0y0s1t0Uex4y5s5t5 >= 0
 ex0y0s1t0FlowOnex4y5s5t5 - 10000 ex0y0s1t0Uex4y5s5t5 <= 0
-ex0y0s1t0FlowOnex4y5s4t6 + 10000 ex0y0s1t0Uex4y5s4t6 >= 0
-ex0y0s1t0FlowOnex4y5s4t6 - 10000 ex0y0s1t0Uex4y5s4t6 <= 0
-ex0y0s1t0FlowOnex4y6s5t6 + 10000 ex0y0s1t0Uex4y6s5t6 >= 0
-ex0y0s1t0FlowOnex4y6s5t6 - 10000 ex0y0s1t0Uex4y6s5t6 <= 0
 ex0y0s1t0FlowOnex5y0s6t0 + 10000 ex0y0s1t0Uex5y0s6t0 >= 0
 ex0y0s1t0FlowOnex5y0s6t0 - 10000 ex0y0s1t0Uex5y0s6t0 <= 0
 ex0y0s1t0FlowOnex5y0s5t1 + 10000 ex0y0s1t0Uex5y0s5t1 >= 0
@@ -143,10 +131,6 @@ ex0y0s1t0FlowOnex5y4s5t5 + 10000 ex0y0s1t0Uex5y4s5t5 >= 0
 ex0y0s1t0FlowOnex5y4s5t5 - 10000 ex0y0s1t0Uex5y4s5t5 <= 0
 ex0y0s1t0FlowOnex5y5s6t5 + 10000 ex0y0s1t0Uex5y5s6t5 >= 0
 ex0y0s1t0FlowOnex5y5s6t5 - 10000 ex0y0s1t0Uex5y5s6t5 <= 0
-ex0y0s1t0FlowOnex5y5s5t6 + 10000 ex0y0s1t0Uex5y5s5t6 >= 0
-ex0y0s1t0FlowOnex5y5s5t6 - 10000 ex0y0s1t0Uex5y5s5t6 <= 0
-ex0y0s1t0FlowOnex5y6s6t6 + 10000 ex0y0s1t0Uex5y6s6t6 >= 0
-ex0y0s1t0FlowOnex5y6s6t6 - 10000 ex0y0s1t0Uex5y6s6t6 <= 0
 ex0y0s1t0FlowOnex6y0s6t1 + 10000 ex0y0s1t0Uex6y0s6t1 >= 0
 ex0y0s1t0FlowOnex6y0s6t1 - 10000 ex0y0s1t0Uex6y0s6t1 <= 0
 ex0y0s1t0FlowOnex6y1s6t2 + 10000 ex0y0s1t0Uex6y1s6t2 >= 0
@@ -157,8 +141,6 @@ ex0y0s1t0FlowOnex6y3s6t4 + 10000 ex0y0s1t0Uex6y3s6t4 >= 0
 ex0y0s1t0FlowOnex6y3s6t4 - 10000 ex0y0s1t0Uex6y3s6t4 <= 0
 ex0y0s1t0FlowOnex6y4s6t5 + 10000 ex0y0s1t0Uex6y4s6t5 >= 0
 ex0y0s1t0FlowOnex6y4s6t5 - 10000 ex0y0s1t0Uex6y4s6t5 <= 0
-ex0y0s1t0FlowOnex6y5s6t6 + 10000 ex0y0s1t0Uex6y5s6t6 >= 0
-ex0y0s1t0FlowOnex6y5s6t6 - 10000 ex0y0s1t0Uex6y5s6t6 <= 0
 ex0y0s0t1FlowOnex0y0s1t0 + 10000 ex0y0s0t1Uex0y0s1t0 >= 0
 ex0y0s0t1FlowOnex0y0s1t0 - 10000 ex0y0s0t1Uex0y0s1t0 <= 0
 ex0y0s0t1FlowOnex0y0s0t1 + 10000 ex0y0s0t1Uex0y0s0t1 >= 0
@@ -181,10 +163,6 @@ ex0y0s0t1FlowOnex0y4s0t5 + 10000 ex0y0s0t1Uex0y4s0t5 >= 0
 ex0y0s0t1FlowOnex0y4s0t5 - 10000 ex0y0s0t1Uex0y4s0t5 <= 0
 ex0y0s0t1FlowOnex0y5s1t5 + 10000 ex0y0s0t1Uex0y5s1t5 >= 0
 ex0y0s0t1FlowOnex0y5s1t5 - 10000 ex0y0s0t1Uex0y5s1t5 <= 0
-ex0y0s0t1FlowOnex0y5s0t6 + 10000 ex0y0s0t1Uex0y5s0t6 >= 0
-ex0y0s0t1FlowOnex0y5s0t6 - 10000 ex0y0s0t1Uex0y5s0t6 <= 0
-ex0y0s0t1FlowOnex0y6s1t6 + 10000 ex0y0s0t1Uex0y6s1t6 >= 0
-ex0y0s0t1FlowOnex0y6s1t6 - 10000 ex0y0s0t1Uex0y6s1t6 <= 0
 ex0y0s0t1FlowOnex1y0s2t0 + 10000 ex0y0s0t1Uex1y0s2t0 >= 0
 ex0y0s0t1FlowOnex1y0s2t0 - 10000 ex0y0s0t1Uex1y0s2t0 <= 0
 ex0y0s0t1FlowOnex1y0s1t1 + 10000 ex0y0s0t1Uex1y0s1t1 >= 0
@@ -207,10 +185,6 @@ ex0y0s0t1FlowOnex1y4s1t5 + 10000 ex0y0s0t1Uex1y4s1t5 >= 0
 ex0y0s0t1FlowOnex1y4s1t5 - 10000 ex0y0s0t1Uex1y4s1t5 <= 0
 ex0y0s0t1FlowOnex1y5s2t5 + 10000 ex0y0s0t1Uex1y5s2t5 >= 0
 ex0y0s0t1FlowOnex1y5s2t5 - 10000 ex0y0s0t1Uex1y5s2t5 <= 0
-ex0y0s0t1FlowOnex1y5s1t6 + 10000 ex0y0s0t1Uex1y5s1t6 >= 0
-ex0y0s0t1FlowOnex1y5s1t6 - 10000 ex0y0s0t1Uex1y5s1t6 <= 0
-ex0y0s0t1FlowOnex1y6s2t6 + 10000 ex0y0s0t1Uex1y6s2t6 >= 0
-ex0y0s0t1FlowOnex1y6s2t6 - 10000 ex0y0s0t1Uex1y6s2t6 <= 0
 ex0y0s0t1FlowOnex2y0s3t0 + 10000 ex0y0s0t1Uex2y0s3t0 >= 0
 ex0y0s0t1FlowOnex2y0s3t0 - 10000 ex0y0s0t1Uex2y0s3t0 <= 0
 ex0y0s0t1FlowOnex2y0s2t1 + 10000 ex0y0s0t1Uex2y0s2t1 >= 0
@@ -223,6 +197,8 @@ ex0y0s0t1FlowOnex2y2s3t2 + 10000 ex0y0s0t1Uex2y2s3t2 >= 0
 ex0y0s0t1FlowOnex2y2s3t2 - 10000 ex0y0s0t1Uex2y2s3t2 <= 0
 ex0y0s0t1FlowOnex2y2s2t3 + 10000 ex0y0s0t1Uex2y2s2t3 >= 0
 ex0y0s0t1FlowOnex2y2s2t3 - 10000 ex0y0s0t1Uex2y2s2t3 <= 0
+ex0y0s0t1FlowOnex2y3s3t3 + 10000 ex0y0s0t1Uex2y3s3t3 >= 0
+ex0y0s0t1FlowOnex2y3s3t3 - 10000 ex0y0s0t1Uex2y3s3t3 <= 0
 ex0y0s0t1FlowOnex2y3s2t4 + 10000 ex0y0s0t1Uex2y3s2t4 >= 0
 ex0y0s0t1FlowOnex2y3s2t4 - 10000 ex0y0s0t1Uex2y3s2t4 <= 0
 ex0y0s0t1FlowOnex2y4s3t4 + 10000 ex0y0s0t1Uex2y4s3t4 >= 0
@@ -231,10 +207,6 @@ ex0y0s0t1FlowOnex2y4s2t5 + 10000 ex0y0s0t1Uex2y4s2t5 >= 0
 ex0y0s0t1FlowOnex2y4s2t5 - 10000 ex0y0s0t1Uex2y4s2t5 <= 0
 ex0y0s0t1FlowOnex2y5s3t5 + 10000 ex0y0s0t1Uex2y5s3t5 >= 0
 ex0y0s0t1FlowOnex2y5s3t5 - 10000 ex0y0s0t1Uex2y5s3t5 <= 0
-ex0y0s0t1FlowOnex2y5s2t6 + 10000 ex0y0s0t1Uex2y5s2t6 >= 0
-ex0y0s0t1FlowOnex2y5s2t6 - 10000 ex0y0s0t1Uex2y5s2t6 <= 0
-ex0y0s0t1FlowOnex2y6s3t6 + 10000 ex0y0s0t1Uex2y6s3t6 >= 0
-ex0y0s0t1FlowOnex2y6s3t6 - 10000 ex0y0s0t1Uex2y6s3t6 <= 0
 ex0y0s0t1FlowOnex3y0s4t0 + 10000 ex0y0s0t1Uex3y0s4t0 >= 0
 ex0y0s0t1FlowOnex3y0s4t0 - 10000 ex0y0s0t1Uex3y0s4t0 <= 0
 ex0y0s0t1FlowOnex3y0s3t1 + 10000 ex0y0s0t1Uex3y0s3t1 >= 0
@@ -245,16 +217,18 @@ ex0y0s0t1FlowOnex3y1s3t2 + 10000 ex0y0s0t1Uex3y1s3t2 >= 0
 ex0y0s0t1FlowOnex3y1s3t2 - 10000 ex0y0s0t1Uex3y1s3t2 <= 0
 ex0y0s0t1FlowOnex3y2s4t2 + 10000 ex0y0s0t1Uex3y2s4t2 >= 0
 ex0y0s0t1FlowOnex3y2s4t2 - 10000 ex0y0s0t1Uex3y2s4t2 <= 0
+ex0y0s0t1FlowOnex3y2s3t3 + 10000 ex0y0s0t1Uex3y2s3t3 >= 0
+ex0y0s0t1FlowOnex3y2s3t3 - 10000 ex0y0s0t1Uex3y2s3t3 <= 0
+ex0y0s0t1FlowOnex3y3s4t3 + 10000 ex0y0s0t1Uex3y3s4t3 >= 0
+ex0y0s0t1FlowOnex3y3s4t3 - 10000 ex0y0s0t1Uex3y3s4t3 <= 0
+ex0y0s0t1FlowOnex3y3s3t4 + 10000 ex0y0s0t1Uex3y3s3t4 >= 0
+ex0y0s0t1FlowOnex3y3s3t4 - 10000 ex0y0s0t1Uex3y3s3t4 <= 0
 ex0y0s0t1FlowOnex3y4s4t4 + 10000 ex0y0s0t1Uex3y4s4t4 >= 0
 ex0y0s0t1FlowOnex3y4s4t4 - 10000 ex0y0s0t1Uex3y4s4t4 <= 0
 ex0y0s0t1FlowOnex3y4s3t5 + 10000 ex0y0s0t1Uex3y4s3t5 >= 0
 ex0y0s0t1FlowOnex3y4s3t5 - 10000 ex0y0s0t1Uex3y4s3t5 <= 0
 ex0y0s0t1FlowOnex3y5s4t5 + 10000 ex0y0s0t1Uex3y5s4t5 >= 0
 ex0y0s0t1FlowOnex3y5s4t5 - 10000 ex0y0s0t1Uex3y5s4t5 <= 0
-ex0y0s0t1FlowOnex3y5s3t6 + 10000 ex0y0s0t1Uex3y5s3t6 >= 0
-ex0y0s0t1FlowOnex3y5s3t6 - 10000 ex0y0s0t1Uex3y5s3t6 <= 0
-ex0y0s0t1FlowOnex3y6s4t6 + 10000 ex0y0s0t1Uex3y6s4t6 >= 0
-ex0y0s0t1FlowOnex3y6s4t6 - 10000 ex0y0s0t1Uex3y6s4t6 <= 0
 ex0y0s0t1FlowOnex4y0s5t0 + 10000 ex0y0s0t1Uex4y0s5t0 >= 0
 ex0y0s0t1FlowOnex4y0s5t0 - 10000 ex0y0s0t1Uex4y0s5t0 <= 0
 ex0y0s0t1FlowOnex4y0s4t1 + 10000 ex0y0s0t1Uex4y0s4t1 >= 0
@@ -277,10 +251,6 @@ ex0y0s0t1FlowOnex4y4s4t5 + 10000 ex0y0s0t1Uex4y4s4t5 >= 0
 ex0y0s0t1FlowOnex4y4s4t5 - 10000 ex0y0s0t1Uex4y4s4t5 <= 0
 ex0y0s0t1FlowOnex4y5s5t5 + 10000 ex0y0s0t1Uex4y5s5t5 >= 0
 ex0y0s0t1FlowOnex4y5s5t5 - 10000 ex0y0s0t1Uex4y5s5t5 <= 0
-ex0y0s0t1FlowOnex4y5s4t6 + 10000 ex0y0s0t1Uex4y5s4t6 >= 0
-ex0y0s0t1FlowOnex4y5s4t6 - 10000 ex0y0s0t1Uex4y5s4t6 <= 0
-ex0y0s0t1FlowOnex4y6s5t6 + 10000 ex0y0s0t1Uex4y6s5t6 >= 0
-ex0y0s0t1FlowOnex4y6s5t6 - 10000 ex0y0s0t1Uex4y6s5t6 <= 0
 ex0y0s0t1FlowOnex5y0s6t0 + 10000 ex0y0s0t1Uex5y0s6t0 >= 0
 ex0y0s0t1FlowOnex5y0s6t0 - 10000 ex0y0s0t1Uex5y0s6t0 <= 0
 ex0y0s0t1FlowOnex5y0s5t1 + 10000 ex0y0s0t1Uex5y0s5t1 >= 0
@@ -303,10 +273,6 @@ ex0y0s0t1FlowOnex5y4s5t5 + 10000 ex0y0s0t1Uex5y4s5t5 >= 0
 ex0y0s0t1FlowOnex5y4s5t5 - 10000 ex0y0s0t1Uex5y4s5t5 <= 0
 ex0y0s0t1FlowOnex5y5s6t5 + 10000 ex0y0s0t1Uex5y5s6t5 >= 0
 ex0y0s0t1FlowOnex5y5s6t5 - 10000 ex0y0s0t1Uex5y5s6t5 <= 0
-ex0y0s0t1FlowOnex5y5s5t6 + 10000 ex0y0s0t1Uex5y5s5t6 >= 0
-ex0y0s0t1FlowOnex5y5s5t6 - 10000 ex0y0s0t1Uex5y5s5t6 <= 0
-ex0y0s0t1FlowOnex5y6s6t6 + 10000 ex0y0s0t1Uex5y6s6t6 >= 0
-ex0y0s0t1FlowOnex5y6s6t6 - 10000 ex0y0s0t1Uex5y6s6t6 <= 0
 ex0y0s0t1FlowOnex6y0s6t1 + 10000 ex0y0s0t1Uex6y0s6t1 >= 0
 ex0y0s0t1FlowOnex6y0s6t1 - 10000 ex0y0s0t1Uex6y0s6t1 <= 0
 ex0y0s0t1FlowOnex6y1s6t2 + 10000 ex0y0s0t1Uex6y1s6t2 >= 0
@@ -317,8 +283,6 @@ ex0y0s0t1FlowOnex6y3s6t4 + 10000 ex0y0s0t1Uex6y3s6t4 >= 0
 ex0y0s0t1FlowOnex6y3s6t4 - 10000 ex0y0s0t1Uex6y3s6t4 <= 0
 ex0y0s0t1FlowOnex6y4s6t5 + 10000 ex0y0s0t1Uex6y4s6t5 >= 0
 ex0y0s0t1FlowOnex6y4s6t5 - 10000 ex0y0s0t1Uex6y4s6t5 <= 0
-ex0y0s0t1FlowOnex6y5s6t6 + 10000 ex0y0s0t1Uex6y5s6t6 >= 0
-ex0y0s0t1FlowOnex6y5s6t6 - 10000 ex0y0s0t1Uex6y5s6t6 <= 0
 ex0y1s1t1FlowOnex0y0s1t0 + 10000 ex0y1s1t1Uex0y0s1t0 >= 0
 ex0y1s1t1FlowOnex0y0s1t0 - 10000 ex0y1s1t1Uex0y0s1t0 <= 0
 ex0y1s1t1FlowOnex0y0s0t1 + 10000 ex0y1s1t1Uex0y0s0t1 >= 0
@@ -341,10 +305,6 @@ ex0y1s1t1FlowOnex0y4s0t5 + 10000 ex0y1s1t1Uex0y4s0t5 >= 0
 ex0y1s1t1FlowOnex0y4s0t5 - 10000 ex0y1s1t1Uex0y4s0t5 <= 0
 ex0y1s1t1FlowOnex0y5s1t5 + 10000 ex0y1s1t1Uex0y5s1t5 >= 0
 ex0y1s1t1FlowOnex0y5s1t5 - 10000 ex0y1s1t1Uex0y5s1t5 <= 0
-ex0y1s1t1FlowOnex0y5s0t6 + 10000 ex0y1s1t1Uex0y5s0t6 >= 0
-ex0y1s1t1FlowOnex0y5s0t6 - 10000 ex0y1s1t1Uex0y5s0t6 <= 0
-ex0y1s1t1FlowOnex0y6s1t6 + 10000 ex0y1s1t1Uex0y6s1t6 >= 0
-ex0y1s1t1FlowOnex0y6s1t6 - 10000 ex0y1s1t1Uex0y6s1t6 <= 0
 ex0y1s1t1FlowOnex1y0s2t0 + 10000 ex0y1s1t1Uex1y0s2t0 >= 0
 ex0y1s1t1FlowOnex1y0s2t0 - 10000 ex0y1s1t1Uex1y0s2t0 <= 0
 ex0y1s1t1FlowOnex1y0s1t1 + 10000 ex0y1s1t1Uex1y0s1t1 >= 0
@@ -367,10 +327,6 @@ ex0y1s1t1FlowOnex1y4s1t5 + 10000 ex0y1s1t1Uex1y4s1t5 >= 0
 ex0y1s1t1FlowOnex1y4s1t5 - 10000 ex0y1s1t1Uex1y4s1t5 <= 0
 ex0y1s1t1FlowOnex1y5s2t5 + 10000 ex0y1s1t1Uex1y5s2t5 >= 0
 ex0y1s1t1FlowOnex1y5s2t5 - 10000 ex0y1s1t1Uex1y5s2t5 <= 0
-ex0y1s1t1FlowOnex1y5s1t6 + 10000 ex0y1s1t1Uex1y5s1t6 >= 0
-ex0y1s1t1FlowOnex1y5s1t6 - 10000 ex0y1s1t1Uex1y5s1t6 <= 0
-ex0y1s1t1FlowOnex1y6s2t6 + 10000 ex0y1s1t1Uex1y6s2t6 >= 0
-ex0y1s1t1FlowOnex1y6s2t6 - 10000 ex0y1s1t1Uex1y6s2t6 <= 0
 ex0y1s1t1FlowOnex2y0s3t0 + 10000 ex0y1s1t1Uex2y0s3t0 >= 0
 ex0y1s1t1FlowOnex2y0s3t0 - 10000 ex0y1s1t1Uex2y0s3t0 <= 0
 ex0y1s1t1FlowOnex2y0s2t1 + 10000 ex0y1s1t1Uex2y0s2t1 >= 0
@@ -383,6 +339,8 @@ ex0y1s1t1FlowOnex2y2s3t2 + 10000 ex0y1s1t1Uex2y2s3t2 >= 0
 ex0y1s1t1FlowOnex2y2s3t2 - 10000 ex0y1s1t1Uex2y2s3t2 <= 0
 ex0y1s1t1FlowOnex2y2s2t3 + 10000 ex0y1s1t1Uex2y2s2t3 >= 0
 ex0y1s1t1FlowOnex2y2s2t3 - 10000 ex0y1s1t1Uex2y2s2t3 <= 0
+ex0y1s1t1FlowOnex2y3s3t3 + 10000 ex0y1s1t1Uex2y3s3t3 >= 0
+ex0y1s1t1FlowOnex2y3s3t3 - 10000 ex0y1s1t1Uex2y3s3t3 <= 0
 ex0y1s1t1FlowOnex2y3s2t4 + 10000 ex0y1s1t1Uex2y3s2t4 >= 0
 ex0y1s1t1FlowOnex2y3s2t4 - 10000 ex0y1s1t1Uex2y3s2t4 <= 0
 ex0y1s1t1FlowOnex2y4s3t4 + 10000 ex0y1s1t1Uex2y4s3t4 >= 0
@@ -391,10 +349,6 @@ ex0y1s1t1FlowOnex2y4s2t5 + 10000 ex0y1s1t1Uex2y4s2t5 >= 0
 ex0y1s1t1FlowOnex2y4s2t5 - 10000 ex0y1s1t1Uex2y4s2t5 <= 0
 ex0y1s1t1FlowOnex2y5s3t5 + 10000 ex0y1s1t1Uex2y5s3t5 >= 0
 ex0y1s1t1FlowOnex2y5s3t5 - 10000 ex0y1s1t1Uex2y5s3t5 <= 0
-ex0y1s1t1FlowOnex2y5s2t6 + 10000 ex0y1s1t1Uex2y5s2t6 >= 0
-ex0y1s1t1FlowOnex2y5s2t6 - 10000 ex0y1s1t1Uex2y5s2t6 <= 0
-ex0y1s1t1FlowOnex2y6s3t6 + 10000 ex0y1s1t1Uex2y6s3t6 >= 0
-ex0y1s1t1FlowOnex2y6s3t6 - 10000 ex0y1s1t1Uex2y6s3t6 <= 0
 ex0y1s1t1FlowOnex3y0s4t0 + 10000 ex0y1s1t1Uex3y0s4t0 >= 0
 ex0y1s1t1FlowOnex3y0s4t0 - 10000 ex0y1s1t1Uex3y0s4t0 <= 0
 ex0y1s1t1FlowOnex3y0s3t1 + 10000 ex0y1s1t1Uex3y0s3t1 >= 0
@@ -405,16 +359,18 @@ ex0y1s1t1FlowOnex3y1s3t2 + 10000 ex0y1s1t1Uex3y1s3t2 >= 0
 ex0y1s1t1FlowOnex3y1s3t2 - 10000 ex0y1s1t1Uex3y1s3t2 <= 0
 ex0y1s1t1FlowOnex3y2s4t2 + 10000 ex0y1s1t1Uex3y2s4t2 >= 0
 ex0y1s1t1FlowOnex3y2s4t2 - 10000 ex0y1s1t1Uex3y2s4t2 <= 0
+ex0y1s1t1FlowOnex3y2s3t3 + 10000 ex0y1s1t1Uex3y2s3t3 >= 0
+ex0y1s1t1FlowOnex3y2s3t3 - 10000 ex0y1s1t1Uex3y2s3t3 <= 0
+ex0y1s1t1FlowOnex3y3s4t3 + 10000 ex0y1s1t1Uex3y3s4t3 >= 0
+ex0y1s1t1FlowOnex3y3s4t3 - 10000 ex0y1s1t1Uex3y3s4t3 <= 0
+ex0y1s1t1FlowOnex3y3s3t4 + 10000 ex0y1s1t1Uex3y3s3t4 >= 0
+ex0y1s1t1FlowOnex3y3s3t4 - 10000 ex0y1s1t1Uex3y3s3t4 <= 0
 ex0y1s1t1FlowOnex3y4s4t4 + 10000 ex0y1s1t1Uex3y4s4t4 >= 0
 ex0y1s1t1FlowOnex3y4s4t4 - 10000 ex0y1s1t1Uex3y4s4t4 <= 0
 ex0y1s1t1FlowOnex3y4s3t5 + 10000 ex0y1s1t1Uex3y4s3t5 >= 0
 ex0y1s1t1FlowOnex3y4s3t5 - 10000 ex0y1s1t1Uex3y4s3t5 <= 0
 ex0y1s1t1FlowOnex3y5s4t5 + 10000 ex0y1s1t1Uex3y5s4t5 >= 0
 ex0y1s1t1FlowOnex3y5s4t5 - 10000 ex0y1s1t1Uex3y5s4t5 <= 0
-ex0y1s1t1FlowOnex3y5s3t6 + 10000 ex0y1s1t1Uex3y5s3t6 >= 0
-ex0y1s1t1FlowOnex3y5s3t6 - 10000 ex0y1s1t1Uex3y5s3t6 <= 0
-ex0y1s1t1FlowOnex3y6s4t6 + 10000 ex0y1s1t1Uex3y6s4t6 >= 0
-ex0y1s1t1FlowOnex3y6s4t6 - 10000 ex0y1s1t1Uex3y6s4t6 <= 0
 ex0y1s1t1FlowOnex4y0s5t0 + 10000 ex0y1s1t1Uex4y0s5t0 >= 0
 ex0y1s1t1FlowOnex4y0s5t0 - 10000 ex0y1s1t1Uex4y0s5t0 <= 0
 ex0y1s1t1FlowOnex4y0s4t1 + 10000 ex0y1s1t1Uex4y0s4t1 >= 0
@@ -437,10 +393,6 @@ ex0y1s1t1FlowOnex4y4s4t5 + 10000 ex0y1s1t1Uex4y4s4t5 >= 0
 ex0y1s1t1FlowOnex4y4s4t5 - 10000 ex0y1s1t1Uex4y4s4t5 <= 0
 ex0y1s1t1FlowOnex4y5s5t5 + 10000 ex0y1s1t1Uex4y5s5t5 >= 0
 ex0y1s1t1FlowOnex4y5s5t5 - 10000 ex0y1s1t1Uex4y5s5t5 <= 0
-ex0y1s1t1FlowOnex4y5s4t6 + 10000 ex0y1s1t1Uex4y5s4t6 >= 0
-ex0y1s1t1FlowOnex4y5s4t6 - 10000 ex0y1s1t1Uex4y5s4t6 <= 0
-ex0y1s1t1FlowOnex4y6s5t6 + 10000 ex0y1s1t1Uex4y6s5t6 >= 0
-ex0y1s1t1FlowOnex4y6s5t6 - 10000 ex0y1s1t1Uex4y6s5t6 <= 0
 ex0y1s1t1FlowOnex5y0s6t0 + 10000 ex0y1s1t1Uex5y0s6t0 >= 0
 ex0y1s1t1FlowOnex5y0s6t0 - 10000 ex0y1s1t1Uex5y0s6t0 <= 0
 ex0y1s1t1FlowOnex5y0s5t1 + 10000 ex0y1s1t1Uex5y0s5t1 >= 0
@@ -463,10 +415,6 @@ ex0y1s1t1FlowOnex5y4s5t5 + 10000 ex0y1s1t1Uex5y4s5t5 >= 0
 ex0y1s1t1FlowOnex5y4s5t5 - 10000 ex0y1s1t1Uex5y4s5t5 <= 0
 ex0y1s1t1FlowOnex5y5s6t5 + 10000 ex0y1s1t1Uex5y5s6t5 >= 0
 ex0y1s1t1FlowOnex5y5s6t5 - 10000 ex0y1s1t1Uex5y5s6t5 <= 0
-ex0y1s1t1FlowOnex5y5s5t6 + 10000 ex0y1s1t1Uex5y5s5t6 >= 0
-ex0y1s1t1FlowOnex5y5s5t6 - 10000 ex0y1s1t1Uex5y5s5t6 <= 0
-ex0y1s1t1FlowOnex5y6s6t6 + 10000 ex0y1s1t1Uex5y6s6t6 >= 0
-ex0y1s1t1FlowOnex5y6s6t6 - 10000 ex0y1s1t1Uex5y6s6t6 <= 0
 ex0y1s1t1FlowOnex6y0s6t1 + 10000 ex0y1s1t1Uex6y0s6t1 >= 0
 ex0y1s1t1FlowOnex6y0s6t1 - 10000 ex0y1s1t1Uex6y0s6t1 <= 0
 ex0y1s1t1FlowOnex6y1s6t2 + 10000 ex0y1s1t1Uex6y1s6t2 >= 0
@@ -477,8 +425,6 @@ ex0y1s1t1FlowOnex6y3s6t4 + 10000 ex0y1s1t1Uex6y3s6t4 >= 0
 ex0y1s1t1FlowOnex6y3s6t4 - 10000 ex0y1s1t1Uex6y3s6t4 <= 0
 ex0y1s1t1FlowOnex6y4s6t5 + 10000 ex0y1s1t1Uex6y4s6t5 >= 0
 ex0y1s1t1FlowOnex6y4s6t5 - 10000 ex0y1s1t1Uex6y4s6t5 <= 0
-ex0y1s1t1FlowOnex6y5s6t6 + 10000 ex0y1s1t1Uex6y5s6t6 >= 0
-ex0y1s1t1FlowOnex6y5s6t6 - 10000 ex0y1s1t1Uex6y5s6t6 <= 0
 ex1y0s1t1FlowOnex0y0s1t0 + 10000 ex1y0s1t1Uex0y0s1t0 >= 0
 ex1y0s1t1FlowOnex0y0s1t0 - 10000 ex1y0s1t1Uex0y0s1t0 <= 0
 ex1y0s1t1FlowOnex0y0s0t1 + 10000 ex1y0s1t1Uex0y0s0t1 >= 0
@@ -501,10 +447,6 @@ ex1y0s1t1FlowOnex0y4s0t5 + 10000 ex1y0s1t1Uex0y4s0t5 >= 0
 ex1y0s1t1FlowOnex0y4s0t5 - 10000 ex1y0s1t1Uex0y4s0t5 <= 0
 ex1y0s1t1FlowOnex0y5s1t5 + 10000 ex1y0s1t1Uex0y5s1t5 >= 0
 ex1y0s1t1FlowOnex0y5s1t5 - 10000 ex1y0s1t1Uex0y5s1t5 <= 0
-ex1y0s1t1FlowOnex0y5s0t6 + 10000 ex1y0s1t1Uex0y5s0t6 >= 0
-ex1y0s1t1FlowOnex0y5s0t6 - 10000 ex1y0s1t1Uex0y5s0t6 <= 0
-ex1y0s1t1FlowOnex0y6s1t6 + 10000 ex1y0s1t1Uex0y6s1t6 >= 0
-ex1y0s1t1FlowOnex0y6s1t6 - 10000 ex1y0s1t1Uex0y6s1t6 <= 0
 ex1y0s1t1FlowOnex1y0s2t0 + 10000 ex1y0s1t1Uex1y0s2t0 >= 0
 ex1y0s1t1FlowOnex1y0s2t0 - 10000 ex1y0s1t1Uex1y0s2t0 <= 0
 ex1y0s1t1FlowOnex1y0s1t1 + 10000 ex1y0s1t1Uex1y0s1t1 >= 0
@@ -527,10 +469,6 @@ ex1y0s1t1FlowOnex1y4s1t5 + 10000 ex1y0s1t1Uex1y4s1t5 >= 0
 ex1y0s1t1FlowOnex1y4s1t5 - 10000 ex1y0s1t1Uex1y4s1t5 <= 0
 ex1y0s1t1FlowOnex1y5s2t5 + 10000 ex1y0s1t1Uex1y5s2t5 >= 0
 ex1y0s1t1FlowOnex1y5s2t5 - 10000 ex1y0s1t1Uex1y5s2t5 <= 0
-ex1y0s1t1FlowOnex1y5s1t6 + 10000 ex1y0s1t1Uex1y5s1t6 >= 0
-ex1y0s1t1FlowOnex1y5s1t6 - 10000 ex1y0s1t1Uex1y5s1t6 <= 0
-ex1y0s1t1FlowOnex1y6s2t6 + 10000 ex1y0s1t1Uex1y6s2t6 >= 0
-ex1y0s1t1FlowOnex1y6s2t6 - 10000 ex1y0s1t1Uex1y6s2t6 <= 0
 ex1y0s1t1FlowOnex2y0s3t0 + 10000 ex1y0s1t1Uex2y0s3t0 >= 0
 ex1y0s1t1FlowOnex2y0s3t0 - 10000 ex1y0s1t1Uex2y0s3t0 <= 0
 ex1y0s1t1FlowOnex2y0s2t1 + 10000 ex1y0s1t1Uex2y0s2t1 >= 0
@@ -543,6 +481,8 @@ ex1y0s1t1FlowOnex2y2s3t2 + 10000 ex1y0s1t1Uex2y2s3t2 >= 0
 ex1y0s1t1FlowOnex2y2s3t2 - 10000 ex1y0s1t1Uex2y2s3t2 <= 0
 ex1y0s1t1FlowOnex2y2s2t3 + 10000 ex1y0s1t1Uex2y2s2t3 >= 0
 ex1y0s1t1FlowOnex2y2s2t3 - 10000 ex1y0s1t1Uex2y2s2t3 <= 0
+ex1y0s1t1FlowOnex2y3s3t3 + 10000 ex1y0s1t1Uex2y3s3t3 >= 0
+ex1y0s1t1FlowOnex2y3s3t3 - 10000 ex1y0s1t1Uex2y3s3t3 <= 0
 ex1y0s1t1FlowOnex2y3s2t4 + 10000 ex1y0s1t1Uex2y3s2t4 >= 0
 ex1y0s1t1FlowOnex2y3s2t4 - 10000 ex1y0s1t1Uex2y3s2t4 <= 0
 ex1y0s1t1FlowOnex2y4s3t4 + 10000 ex1y0s1t1Uex2y4s3t4 >= 0
@@ -551,10 +491,6 @@ ex1y0s1t1FlowOnex2y4s2t5 + 10000 ex1y0s1t1Uex2y4s2t5 >= 0
 ex1y0s1t1FlowOnex2y4s2t5 - 10000 ex1y0s1t1Uex2y4s2t5 <= 0
 ex1y0s1t1FlowOnex2y5s3t5 + 10000 ex1y0s1t1Uex2y5s3t5 >= 0
 ex1y0s1t1FlowOnex2y5s3t5 - 10000 ex1y0s1t1Uex2y5s3t5 <= 0
-ex1y0s1t1FlowOnex2y5s2t6 + 10000 ex1y0s1t1Uex2y5s2t6 >= 0
-ex1y0s1t1FlowOnex2y5s2t6 - 10000 ex1y0s1t1Uex2y5s2t6 <= 0
-ex1y0s1t1FlowOnex2y6s3t6 + 10000 ex1y0s1t1Uex2y6s3t6 >= 0
-ex1y0s1t1FlowOnex2y6s3t6 - 10000 ex1y0s1t1Uex2y6s3t6 <= 0
 ex1y0s1t1FlowOnex3y0s4t0 + 10000 ex1y0s1t1Uex3y0s4t0 >= 0
 ex1y0s1t1FlowOnex3y0s4t0 - 10000 ex1y0s1t1Uex3y0s4t0 <= 0
 ex1y0s1t1FlowOnex3y0s3t1 + 10000 ex1y0s1t1Uex3y0s3t1 >= 0
@@ -565,16 +501,18 @@ ex1y0s1t1FlowOnex3y1s3t2 + 10000 ex1y0s1t1Uex3y1s3t2 >= 0
 ex1y0s1t1FlowOnex3y1s3t2 - 10000 ex1y0s1t1Uex3y1s3t2 <= 0
 ex1y0s1t1FlowOnex3y2s4t2 + 10000 ex1y0s1t1Uex3y2s4t2 >= 0
 ex1y0s1t1FlowOnex3y2s4t2 - 10000 ex1y0s1t1Uex3y2s4t2 <= 0
+ex1y0s1t1FlowOnex3y2s3t3 + 10000 ex1y0s1t1Uex3y2s3t3 >= 0
+ex1y0s1t1FlowOnex3y2s3t3 - 10000 ex1y0s1t1Uex3y2s3t3 <= 0
+ex1y0s1t1FlowOnex3y3s4t3 + 10000 ex1y0s1t1Uex3y3s4t3 >= 0
+ex1y0s1t1FlowOnex3y3s4t3 - 10000 ex1y0s1t1Uex3y3s4t3 <= 0
+ex1y0s1t1FlowOnex3y3s3t4 + 10000 ex1y0s1t1Uex3y3s3t4 >= 0
+ex1y0s1t1FlowOnex3y3s3t4 - 10000 ex1y0s1t1Uex3y3s3t4 <= 0
 ex1y0s1t1FlowOnex3y4s4t4 + 10000 ex1y0s1t1Uex3y4s4t4 >= 0
 ex1y0s1t1FlowOnex3y4s4t4 - 10000 ex1y0s1t1Uex3y4s4t4 <= 0
 ex1y0s1t1FlowOnex3y4s3t5 + 10000 ex1y0s1t1Uex3y4s3t5 >= 0
 ex1y0s1t1FlowOnex3y4s3t5 - 10000 ex1y0s1t1Uex3y4s3t5 <= 0
 ex1y0s1t1FlowOnex3y5s4t5 + 10000 ex1y0s1t1Uex3y5s4t5 >= 0
 ex1y0s1t1FlowOnex3y5s4t5 - 10000 ex1y0s1t1Uex3y5s4t5 <= 0
-ex1y0s1t1FlowOnex3y5s3t6 + 10000 ex1y0s1t1Uex3y5s3t6 >= 0
-ex1y0s1t1FlowOnex3y5s3t6 - 10000 ex1y0s1t1Uex3y5s3t6 <= 0
-ex1y0s1t1FlowOnex3y6s4t6 + 10000 ex1y0s1t1Uex3y6s4t6 >= 0
-ex1y0s1t1FlowOnex3y6s4t6 - 10000 ex1y0s1t1Uex3y6s4t6 <= 0
 ex1y0s1t1FlowOnex4y0s5t0 + 10000 ex1y0s1t1Uex4y0s5t0 >= 0
 ex1y0s1t1FlowOnex4y0s5t0 - 10000 ex1y0s1t1Uex4y0s5t0 <= 0
 ex1y0s1t1FlowOnex4y0s4t1 + 10000 ex1y0s1t1Uex4y0s4t1 >= 0
@@ -597,10 +535,6 @@ ex1y0s1t1FlowOnex4y4s4t5 + 10000 ex1y0s1t1Uex4y4s4t5 >= 0
 ex1y0s1t1FlowOnex4y4s4t5 - 10000 ex1y0s1t1Uex4y4s4t5 <= 0
 ex1y0s1t1FlowOnex4y5s5t5 + 10000 ex1y0s1t1Uex4y5s5t5 >= 0
 ex1y0s1t1FlowOnex4y5s5t5 - 10000 ex1y0s1t1Uex4y5s5t5 <= 0
-ex1y0s1t1FlowOnex4y5s4t6 + 10000 ex1y0s1t1Uex4y5s4t6 >= 0
-ex1y0s1t1FlowOnex4y5s4t6 - 10000 ex1y0s1t1Uex4y5s4t6 <= 0
-ex1y0s1t1FlowOnex4y6s5t6 + 10000 ex1y0s1t1Uex4y6s5t6 >= 0
-ex1y0s1t1FlowOnex4y6s5t6 - 10000 ex1y0s1t1Uex4y6s5t6 <= 0
 ex1y0s1t1FlowOnex5y0s6t0 + 10000 ex1y0s1t1Uex5y0s6t0 >= 0
 ex1y0s1t1FlowOnex5y0s6t0 - 10000 ex1y0s1t1Uex5y0s6t0 <= 0
 ex1y0s1t1FlowOnex5y0s5t1 + 10000 ex1y0s1t1Uex5y0s5t1 >= 0
@@ -623,10 +557,6 @@ ex1y0s1t1FlowOnex5y4s5t5 + 10000 ex1y0s1t1Uex5y4s5t5 >= 0
 ex1y0s1t1FlowOnex5y4s5t5 - 10000 ex1y0s1t1Uex5y4s5t5 <= 0
 ex1y0s1t1FlowOnex5y5s6t5 + 10000 ex1y0s1t1Uex5y5s6t5 >= 0
 ex1y0s1t1FlowOnex5y5s6t5 - 10000 ex1y0s1t1Uex5y5s6t5 <= 0
-ex1y0s1t1FlowOnex5y5s5t6 + 10000 ex1y0s1t1Uex5y5s5t6 >= 0
-ex1y0s1t1FlowOnex5y5s5t6 - 10000 ex1y0s1t1Uex5y5s5t6 <= 0
-ex1y0s1t1FlowOnex5y6s6t6 + 10000 ex1y0s1t1Uex5y6s6t6 >= 0
-ex1y0s1t1FlowOnex5y6s6t6 - 10000 ex1y0s1t1Uex5y6s6t6 <= 0
 ex1y0s1t1FlowOnex6y0s6t1 + 10000 ex1y0s1t1Uex6y0s6t1 >= 0
 ex1y0s1t1FlowOnex6y0s6t1 - 10000 ex1y0s1t1Uex6y0s6t1 <= 0
 ex1y0s1t1FlowOnex6y1s6t2 + 10000 ex1y0s1t1Uex6y1s6t2 >= 0
@@ -637,8 +567,6 @@ ex1y0s1t1FlowOnex6y3s6t4 + 10000 ex1y0s1t1Uex6y3s6t4 >= 0
 ex1y0s1t1FlowOnex6y3s6t4 - 10000 ex1y0s1t1Uex6y3s6t4 <= 0
 ex1y0s1t1FlowOnex6y4s6t5 + 10000 ex1y0s1t1Uex6y4s6t5 >= 0
 ex1y0s1t1FlowOnex6y4s6t5 - 10000 ex1y0s1t1Uex6y4s6t5 <= 0
-ex1y0s1t1FlowOnex6y5s6t6 + 10000 ex1y0s1t1Uex6y5s6t6 >= 0
-ex1y0s1t1FlowOnex6y5s6t6 - 10000 ex1y0s1t1Uex6y5s6t6 <= 0
 nx0y0Ver + nx0y0Hor = 1
 ex0y0s1t0Unx0y0Port0 + ex0y0s1t0Unx0y0Port1 = 1
  + ex0y0s1t0Uex0y0s1t0 + ex0y0s1t0Uex1y0s2t0 + ex0y0s1t0Uex1y0s1t1 + 10000 nx0y0Ver + 10000 ex0y0s1t0Unx0y0Port0 <= 20001
@@ -658,8 +586,7 @@ ex0y0s1t0Unx0y0Port0 + ex0y0s1t0Unx0y0Port1 = 1
  + ex0y0s1t0Uex0y1s0t2 + ex0y0s1t0Uex0y2s1t2 + ex0y0s1t0Uex0y2s0t3 - 2 ex0y0s1t0Unx0y2 = 0
  + ex0y0s1t0Uex0y2s0t3 + ex0y0s1t0Uex0y3s1t3 + ex0y0s1t0Uex0y3s0t4 - 2 ex0y0s1t0Unx0y3 = 0
  + ex0y0s1t0Uex0y3s0t4 + ex0y0s1t0Uex0y4s1t4 + ex0y0s1t0Uex0y4s0t5 - 2 ex0y0s1t0Unx0y4 = 0
- + ex0y0s1t0Uex0y4s0t5 + ex0y0s1t0Uex0y5s1t5 + ex0y0s1t0Uex0y5s0t6 - 2 ex0y0s1t0Unx0y5 = 0
- + ex0y0s1t0Uex0y5s0t6 + ex0y0s1t0Uex0y6s1t6 - 2 ex0y0s1t0Unx0y6 = 0
+ + ex0y0s1t0Uex0y4s0t5 + ex0y0s1t0Uex0y5s1t5 - 2 ex0y0s1t0Unx0y5 = 0
  + ex0y0s1t0Uex0y0s1t0 + ex0y0s1t0Uex1y0s2t0 + ex0y0s1t0Uex1y0s1t1 - 2 ex0y0s1t0Unx1y0 + 10000 nx0y0Ver >= 0
  + ex0y0s1t0Uex0y0s1t0 + ex0y0s1t0Uex1y0s2t0 + ex0y0s1t0Uex1y0s1t1 - 2 ex0y0s1t0Unx1y0 - 10000 nx0y0Ver <= 0
  + ex0y0s1t0Uex0y0s1t0 + ex0y0s1t0Uex1y0s2t0 + ex0y0s1t0Uex1y0s1t1 - 2 ex0y0s1t0Unx1y0 + 10000 ex0y0s1t0Unx0y0Port0 >= 0
@@ -671,113 +598,102 @@ ex0y0s1t0Unx0y0Port0 + ex0y0s1t0Unx0y0Port1 = 1
  + ex0y0s1t0Uex0y4s1t4 + ex0y0s1t0Uex1y3s1t4 + ex0y0s1t0Uex1y4s2t4 + ex0y0s1t0Uex1y4s1t5 - 2 ex0y0s1t0Unx1y4 - 10000 nx0y0Ver <= 0
  + ex0y0s1t0Uex0y4s1t4 + ex0y0s1t0Uex1y3s1t4 + ex0y0s1t0Uex1y4s2t4 + ex0y0s1t0Uex1y4s1t5 - 2 ex0y0s1t0Unx1y4 + 10000 ex0y0s1t0Unx0y0Port1 >= 0
  + ex0y0s1t0Uex0y4s1t4 + ex0y0s1t0Uex1y3s1t4 + ex0y0s1t0Uex1y4s2t4 + ex0y0s1t0Uex1y4s1t5 - 2 ex0y0s1t0Unx1y4 - 10000 ex0y0s1t0Unx0y0Port1 <= 0
- + ex0y0s1t0Uex0y5s1t5 + ex0y0s1t0Uex1y4s1t5 + ex0y0s1t0Uex1y5s2t5 + ex0y0s1t0Uex1y5s1t6 - 2 ex0y0s1t0Unx1y5 = 0
- + ex0y0s1t0Uex0y6s1t6 + ex0y0s1t0Uex1y5s1t6 + ex0y0s1t0Uex1y6s2t6 - 2 ex0y0s1t0Unx1y6 = 0
+ + ex0y0s1t0Uex0y5s1t5 + ex0y0s1t0Uex1y4s1t5 + ex0y0s1t0Uex1y5s2t5 - 2 ex0y0s1t0Unx1y5 = 0
  + ex0y0s1t0Uex1y0s2t0 + ex0y0s1t0Uex2y0s3t0 + ex0y0s1t0Uex2y0s2t1 - 2 ex0y0s1t0Unx2y0 = 0
  + ex0y0s1t0Uex1y1s2t1 + ex0y0s1t0Uex2y0s2t1 + ex0y0s1t0Uex2y1s3t1 + ex0y0s1t0Uex2y1s2t2 - 2 ex0y0s1t0Unx2y1 = 0
  + ex0y0s1t0Uex1y2s2t2 + ex0y0s1t0Uex2y1s2t2 + ex0y0s1t0Uex2y2s3t2 + ex0y0s1t0Uex2y2s2t3 - 2 ex0y0s1t0Unx2y2 = 0
- + ex0y0s1t0Uex1y3s2t3 + ex0y0s1t0Uex2y2s2t3 + ex0y0s1t0Uex2y3s2t4 - 2 ex0y0s1t0Unx2y3 = 0
+ + ex0y0s1t0Uex1y3s2t3 + ex0y0s1t0Uex2y2s2t3 + ex0y0s1t0Uex2y3s3t3 + ex0y0s1t0Uex2y3s2t4 - 2 ex0y0s1t0Unx2y3 = 0
  + ex0y0s1t0Uex1y4s2t4 + ex0y0s1t0Uex2y3s2t4 + ex0y0s1t0Uex2y4s3t4 + ex0y0s1t0Uex2y4s2t5 - 2 ex0y0s1t0Unx2y4 = 0
- + ex0y0s1t0Uex1y5s2t5 + ex0y0s1t0Uex2y4s2t5 + ex0y0s1t0Uex2y5s3t5 + ex0y0s1t0Uex2y5s2t6 - 2 ex0y0s1t0Unx2y5 = 0
- + ex0y0s1t0Uex1y6s2t6 + ex0y0s1t0Uex2y5s2t6 + ex0y0s1t0Uex2y6s3t6 - 2 ex0y0s1t0Unx2y6 = 0
+ + ex0y0s1t0Uex1y5s2t5 + ex0y0s1t0Uex2y4s2t5 + ex0y0s1t0Uex2y5s3t5 - 2 ex0y0s1t0Unx2y5 = 0
  + ex0y0s1t0Uex2y0s3t0 + ex0y0s1t0Uex3y0s4t0 + ex0y0s1t0Uex3y0s3t1 - 2 ex0y0s1t0Unx3y0 = 0
  + ex0y0s1t0Uex2y1s3t1 + ex0y0s1t0Uex3y0s3t1 + ex0y0s1t0Uex3y1s4t1 + ex0y0s1t0Uex3y1s3t2 - 2 ex0y0s1t0Unx3y1 = 0
- + ex0y0s1t0Uex2y2s3t2 + ex0y0s1t0Uex3y1s3t2 + ex0y0s1t0Uex3y2s4t2 - 2 ex0y0s1t0Unx3y2 = 0
- + ex0y0s1t0Uex2y4s3t4 + ex0y0s1t0Uex3y4s4t4 + ex0y0s1t0Uex3y4s3t5 - 2 ex0y0s1t0Unx3y4 = 0
- + ex0y0s1t0Uex2y5s3t5 + ex0y0s1t0Uex3y4s3t5 + ex0y0s1t0Uex3y5s4t5 + ex0y0s1t0Uex3y5s3t6 - 2 ex0y0s1t0Unx3y5 = 0
- + ex0y0s1t0Uex2y6s3t6 + ex0y0s1t0Uex3y5s3t6 + ex0y0s1t0Uex3y6s4t6 - 2 ex0y0s1t0Unx3y6 = 0
+ + ex0y0s1t0Uex2y2s3t2 + ex0y0s1t0Uex3y1s3t2 + ex0y0s1t0Uex3y2s4t2 + ex0y0s1t0Uex3y2s3t3 - 2 ex0y0s1t0Unx3y2 = 0
+ + ex0y0s1t0Uex2y3s3t3 + ex0y0s1t0Uex3y2s3t3 + ex0y0s1t0Uex3y3s4t3 + ex0y0s1t0Uex3y3s3t4 - 2 ex0y0s1t0Unx3y3 = 0
+ + ex0y0s1t0Uex2y4s3t4 + ex0y0s1t0Uex3y3s3t4 + ex0y0s1t0Uex3y4s4t4 + ex0y0s1t0Uex3y4s3t5 - 2 ex0y0s1t0Unx3y4 = 0
+ + ex0y0s1t0Uex2y5s3t5 + ex0y0s1t0Uex3y4s3t5 + ex0y0s1t0Uex3y5s4t5 - 2 ex0y0s1t0Unx3y5 = 0
  + ex0y0s1t0Uex3y0s4t0 + ex0y0s1t0Uex4y0s5t0 + ex0y0s1t0Uex4y0s4t1 - 2 ex0y0s1t0Unx4y0 = 0
  + ex0y0s1t0Uex3y1s4t1 + ex0y0s1t0Uex4y0s4t1 + ex0y0s1t0Uex4y1s5t1 + ex0y0s1t0Uex4y1s4t2 - 2 ex0y0s1t0Unx4y1 + 10000 nx0y0Hor >= 0
  + ex0y0s1t0Uex3y1s4t1 + ex0y0s1t0Uex4y0s4t1 + ex0y0s1t0Uex4y1s5t1 + ex0y0s1t0Uex4y1s4t2 - 2 ex0y0s1t0Unx4y1 - 10000 nx0y0Hor <= 0
  + ex0y0s1t0Uex3y1s4t1 + ex0y0s1t0Uex4y0s4t1 + ex0y0s1t0Uex4y1s5t1 + ex0y0s1t0Uex4y1s4t2 - 2 ex0y0s1t0Unx4y1 + 10000 ex0y0s1t0Unx0y0Port1 >= 0
  + ex0y0s1t0Uex3y1s4t1 + ex0y0s1t0Uex4y0s4t1 + ex0y0s1t0Uex4y1s5t1 + ex0y0s1t0Uex4y1s4t2 - 2 ex0y0s1t0Unx4y1 - 10000 ex0y0s1t0Unx0y0Port1 <= 0
  + ex0y0s1t0Uex3y2s4t2 + ex0y0s1t0Uex4y1s4t2 + ex0y0s1t0Uex4y2s5t2 + ex0y0s1t0Uex4y2s4t3 - 2 ex0y0s1t0Unx4y2 = 0
- + ex0y0s1t0Uex4y2s4t3 + ex0y0s1t0Uex4y3s5t3 + ex0y0s1t0Uex4y3s4t4 - 2 ex0y0s1t0Unx4y3 = 0
+ + ex0y0s1t0Uex3y3s4t3 + ex0y0s1t0Uex4y2s4t3 + ex0y0s1t0Uex4y3s5t3 + ex0y0s1t0Uex4y3s4t4 - 2 ex0y0s1t0Unx4y3 = 0
  + ex0y0s1t0Uex3y4s4t4 + ex0y0s1t0Uex4y3s4t4 + ex0y0s1t0Uex4y4s5t4 + ex0y0s1t0Uex4y4s4t5 - 2 ex0y0s1t0Unx4y4 = 0
- + ex0y0s1t0Uex3y5s4t5 + ex0y0s1t0Uex4y4s4t5 + ex0y0s1t0Uex4y5s5t5 + ex0y0s1t0Uex4y5s4t6 - 2 ex0y0s1t0Unx4y5 = 0
- + ex0y0s1t0Uex3y6s4t6 + ex0y0s1t0Uex4y5s4t6 + ex0y0s1t0Uex4y6s5t6 - 2 ex0y0s1t0Unx4y6 = 0
+ + ex0y0s1t0Uex3y5s4t5 + ex0y0s1t0Uex4y4s4t5 + ex0y0s1t0Uex4y5s5t5 - 2 ex0y0s1t0Unx4y5 = 0
  + ex0y0s1t0Uex4y0s5t0 + ex0y0s1t0Uex5y0s6t0 + ex0y0s1t0Uex5y0s5t1 - 2 ex0y0s1t0Unx5y0 = 0
  + ex0y0s1t0Uex4y1s5t1 + ex0y0s1t0Uex5y0s5t1 + ex0y0s1t0Uex5y1s6t1 + ex0y0s1t0Uex5y1s5t2 - 2 ex0y0s1t0Unx5y1 = 0
  + ex0y0s1t0Uex4y2s5t2 + ex0y0s1t0Uex5y1s5t2 + ex0y0s1t0Uex5y2s6t2 + ex0y0s1t0Uex5y2s5t3 - 2 ex0y0s1t0Unx5y2 = 0
  + ex0y0s1t0Uex4y3s5t3 + ex0y0s1t0Uex5y2s5t3 + ex0y0s1t0Uex5y3s6t3 + ex0y0s1t0Uex5y3s5t4 - 2 ex0y0s1t0Unx5y3 = 0
  + ex0y0s1t0Uex4y4s5t4 + ex0y0s1t0Uex5y3s5t4 + ex0y0s1t0Uex5y4s6t4 + ex0y0s1t0Uex5y4s5t5 - 2 ex0y0s1t0Unx5y4 = 0
- + ex0y0s1t0Uex4y5s5t5 + ex0y0s1t0Uex5y4s5t5 + ex0y0s1t0Uex5y5s6t5 + ex0y0s1t0Uex5y5s5t6 - 2 ex0y0s1t0Unx5y5 = 0
- + ex0y0s1t0Uex4y6s5t6 + ex0y0s1t0Uex5y5s5t6 + ex0y0s1t0Uex5y6s6t6 - 2 ex0y0s1t0Unx5y6 = 0
+ + ex0y0s1t0Uex4y5s5t5 + ex0y0s1t0Uex5y4s5t5 + ex0y0s1t0Uex5y5s6t5 - 2 ex0y0s1t0Unx5y5 = 0
  + ex0y0s1t0Uex5y1s6t1 + ex0y0s1t0Uex6y0s6t1 + ex0y0s1t0Uex6y1s6t2 - 2 ex0y0s1t0Unx6y1 = 0
  + ex0y0s1t0Uex5y2s6t2 + ex0y0s1t0Uex6y1s6t2 + ex0y0s1t0Uex6y2s6t3 - 2 ex0y0s1t0Unx6y2 = 0
  + ex0y0s1t0Uex5y3s6t3 + ex0y0s1t0Uex6y2s6t3 + ex0y0s1t0Uex6y3s6t4 - 2 ex0y0s1t0Unx6y3 = 0
  + ex0y0s1t0Uex5y4s6t4 + ex0y0s1t0Uex6y3s6t4 + ex0y0s1t0Uex6y4s6t5 - 2 ex0y0s1t0Unx6y4 = 0
- + ex0y0s1t0Uex5y5s6t5 + ex0y0s1t0Uex6y4s6t5 + ex0y0s1t0Uex6y5s6t6 - 2 ex0y0s1t0Unx6y5 = 0
- + ex0y0s1t0Uex5y6s6t6 + ex0y0s1t0Uex6y5s6t6 - 2 ex0y0s1t0Unx6y6 = 0
+ + ex0y0s1t0Uex5y5s6t5 + ex0y0s1t0Uex6y4s6t5 - 2 ex0y0s1t0Unx6y5 = 0
  + ex0y0s1t0FlowOnex5y0s6t0 - ex0y0s1t0FlowOnex6y0s6t1 + ex0y0s1t0SuperFlow = 1
  - ex0y0s1t0FlowOnex0y0s1t0 - ex0y0s1t0FlowOnex0y0s0t1 - ex0y0s1t0Unx0y0 = 0
  + ex0y0s1t0FlowOnex0y0s0t1 - ex0y0s1t0FlowOnex0y1s1t1 - ex0y0s1t0FlowOnex0y1s0t2 + 10000 nx0y0Hor + 10000 ex0y0s1t0Unx0y0Port0 <= 20001
  + ex0y0s1t0FlowOnex0y0s0t1 - ex0y0s1t0FlowOnex0y1s1t1 - ex0y0s1t0FlowOnex0y1s0t2 - 10000 nx0y0Hor - 10000 ex0y0s1t0Unx0y0Port0 >= -19999
- + ex0y0s1t0FlowOnex0y0s0t1 - ex0y0s1t0FlowOnex0y1s1t1 - ex0y0s1t0FlowOnex0y1s0t2 + 10000 nx0y0Hor >= 0
- + ex0y0s1t0FlowOnex0y0s0t1 - ex0y0s1t0FlowOnex0y1s1t1 - ex0y0s1t0FlowOnex0y1s0t2 - 10000 nx0y0Hor <= 0
- + ex0y0s1t0FlowOnex0y0s0t1 - ex0y0s1t0FlowOnex0y1s1t1 - ex0y0s1t0FlowOnex0y1s0t2 + 10000 ex0y0s1t0Unx0y0Port0 >= 0
- + ex0y0s1t0FlowOnex0y0s0t1 - ex0y0s1t0FlowOnex0y1s1t1 - ex0y0s1t0FlowOnex0y1s0t2 - 10000 ex0y0s1t0Unx0y0Port0 <= 0
+ + ex0y0s1t0FlowOnex0y0s0t1 - ex0y0s1t0FlowOnex0y1s1t1 - ex0y0s1t0FlowOnex0y1s0t2 - ex0y0s1t0Unx0y1 + 10000 nx0y0Hor >= 0
+ + ex0y0s1t0FlowOnex0y0s0t1 - ex0y0s1t0FlowOnex0y1s1t1 - ex0y0s1t0FlowOnex0y1s0t2 - ex0y0s1t0Unx0y1 - 10000 nx0y0Hor <= 0
+ + ex0y0s1t0FlowOnex0y0s0t1 - ex0y0s1t0FlowOnex0y1s1t1 - ex0y0s1t0FlowOnex0y1s0t2 - ex0y0s1t0Unx0y1 + 10000 ex0y0s1t0Unx0y0Port0 >= 0
+ + ex0y0s1t0FlowOnex0y0s0t1 - ex0y0s1t0FlowOnex0y1s1t1 - ex0y0s1t0FlowOnex0y1s0t2 - ex0y0s1t0Unx0y1 - 10000 ex0y0s1t0Unx0y0Port0 <= 0
  + ex0y0s1t0FlowOnex0y1s0t2 - ex0y0s1t0FlowOnex0y2s1t2 - ex0y0s1t0FlowOnex0y2s0t3 - ex0y0s1t0Unx0y2 = 0
  + ex0y0s1t0FlowOnex0y2s0t3 - ex0y0s1t0FlowOnex0y3s1t3 - ex0y0s1t0FlowOnex0y3s0t4 - ex0y0s1t0Unx0y3 = 0
  + ex0y0s1t0FlowOnex0y3s0t4 - ex0y0s1t0FlowOnex0y4s1t4 - ex0y0s1t0FlowOnex0y4s0t5 - ex0y0s1t0Unx0y4 = 0
- + ex0y0s1t0FlowOnex0y4s0t5 - ex0y0s1t0FlowOnex0y5s1t5 - ex0y0s1t0FlowOnex0y5s0t6 - ex0y0s1t0Unx0y5 = 0
- + ex0y0s1t0FlowOnex0y5s0t6 - ex0y0s1t0FlowOnex0y6s1t6 - ex0y0s1t0Unx0y6 = 0
+ + ex0y0s1t0FlowOnex0y4s0t5 - ex0y0s1t0FlowOnex0y5s1t5 - ex0y0s1t0Unx0y5 = 0
  + ex0y0s1t0FlowOnex0y0s1t0 - ex0y0s1t0FlowOnex1y0s2t0 - ex0y0s1t0FlowOnex1y0s1t1 + 10000 nx0y0Ver + 10000 ex0y0s1t0Unx0y0Port0 <= 20001
  + ex0y0s1t0FlowOnex0y0s1t0 - ex0y0s1t0FlowOnex1y0s2t0 - ex0y0s1t0FlowOnex1y0s1t1 - 10000 nx0y0Ver - 10000 ex0y0s1t0Unx0y0Port0 >= -19999
- + ex0y0s1t0FlowOnex0y0s1t0 - ex0y0s1t0FlowOnex1y0s2t0 - ex0y0s1t0FlowOnex1y0s1t1 + 10000 nx0y0Ver >= 0
- + ex0y0s1t0FlowOnex0y0s1t0 - ex0y0s1t0FlowOnex1y0s2t0 - ex0y0s1t0FlowOnex1y0s1t1 - 10000 nx0y0Ver <= 0
- + ex0y0s1t0FlowOnex0y0s1t0 - ex0y0s1t0FlowOnex1y0s2t0 - ex0y0s1t0FlowOnex1y0s1t1 + 10000 ex0y0s1t0Unx0y0Port0 >= 0
- + ex0y0s1t0FlowOnex0y0s1t0 - ex0y0s1t0FlowOnex1y0s2t0 - ex0y0s1t0FlowOnex1y0s1t1 - 10000 ex0y0s1t0Unx0y0Port0 <= 0
+ + ex0y0s1t0FlowOnex0y0s1t0 - ex0y0s1t0FlowOnex1y0s2t0 - ex0y0s1t0FlowOnex1y0s1t1 - ex0y0s1t0Unx1y0 + 10000 nx0y0Ver >= 0
+ + ex0y0s1t0FlowOnex0y0s1t0 - ex0y0s1t0FlowOnex1y0s2t0 - ex0y0s1t0FlowOnex1y0s1t1 - ex0y0s1t0Unx1y0 - 10000 nx0y0Ver <= 0
+ + ex0y0s1t0FlowOnex0y0s1t0 - ex0y0s1t0FlowOnex1y0s2t0 - ex0y0s1t0FlowOnex1y0s1t1 - ex0y0s1t0Unx1y0 + 10000 ex0y0s1t0Unx0y0Port0 >= 0
+ + ex0y0s1t0FlowOnex0y0s1t0 - ex0y0s1t0FlowOnex1y0s2t0 - ex0y0s1t0FlowOnex1y0s1t1 - ex0y0s1t0Unx1y0 - 10000 ex0y0s1t0Unx0y0Port0 <= 0
  + ex0y0s1t0FlowOnex0y1s1t1 + ex0y0s1t0FlowOnex1y0s1t1 - ex0y0s1t0FlowOnex1y1s2t1 - ex0y0s1t0FlowOnex1y1s1t2 - ex0y0s1t0Unx1y1 = 0
  + ex0y0s1t0FlowOnex0y2s1t2 + ex0y0s1t0FlowOnex1y1s1t2 - ex0y0s1t0FlowOnex1y2s2t2 - ex0y0s1t0FlowOnex1y2s1t3 - ex0y0s1t0Unx1y2 = 0
  + ex0y0s1t0FlowOnex0y3s1t3 + ex0y0s1t0FlowOnex1y2s1t3 - ex0y0s1t0FlowOnex1y3s2t3 - ex0y0s1t0FlowOnex1y3s1t4 - ex0y0s1t0Unx1y3 = 0
  + ex0y0s1t0FlowOnex0y4s1t4 + ex0y0s1t0FlowOnex1y3s1t4 - ex0y0s1t0FlowOnex1y4s2t4 - ex0y0s1t0FlowOnex1y4s1t5 + 10000 nx0y0Ver + 10000 ex0y0s1t0Unx0y0Port1 <= 20001
  + ex0y0s1t0FlowOnex0y4s1t4 + ex0y0s1t0FlowOnex1y3s1t4 - ex0y0s1t0FlowOnex1y4s2t4 - ex0y0s1t0FlowOnex1y4s1t5 - 10000 nx0y0Ver - 10000 ex0y0s1t0Unx0y0Port1 >= -19999
- + ex0y0s1t0FlowOnex0y4s1t4 + ex0y0s1t0FlowOnex1y3s1t4 - ex0y0s1t0FlowOnex1y4s2t4 - ex0y0s1t0FlowOnex1y4s1t5 + 10000 nx0y0Ver >= 0
- + ex0y0s1t0FlowOnex0y4s1t4 + ex0y0s1t0FlowOnex1y3s1t4 - ex0y0s1t0FlowOnex1y4s2t4 - ex0y0s1t0FlowOnex1y4s1t5 - 10000 nx0y0Ver <= 0
- + ex0y0s1t0FlowOnex0y4s1t4 + ex0y0s1t0FlowOnex1y3s1t4 - ex0y0s1t0FlowOnex1y4s2t4 - ex0y0s1t0FlowOnex1y4s1t5 + 10000 ex0y0s1t0Unx0y0Port1 >= 0
- + ex0y0s1t0FlowOnex0y4s1t4 + ex0y0s1t0FlowOnex1y3s1t4 - ex0y0s1t0FlowOnex1y4s2t4 - ex0y0s1t0FlowOnex1y4s1t5 - 10000 ex0y0s1t0Unx0y0Port1 <= 0
- + ex0y0s1t0FlowOnex0y5s1t5 + ex0y0s1t0FlowOnex1y4s1t5 - ex0y0s1t0FlowOnex1y5s2t5 - ex0y0s1t0FlowOnex1y5s1t6 - ex0y0s1t0Unx1y5 = 0
- + ex0y0s1t0FlowOnex0y6s1t6 + ex0y0s1t0FlowOnex1y5s1t6 - ex0y0s1t0FlowOnex1y6s2t6 - ex0y0s1t0Unx1y6 = 0
+ + ex0y0s1t0FlowOnex0y4s1t4 + ex0y0s1t0FlowOnex1y3s1t4 - ex0y0s1t0FlowOnex1y4s2t4 - ex0y0s1t0FlowOnex1y4s1t5 - ex0y0s1t0Unx1y4 + 10000 nx0y0Ver >= 0
+ + ex0y0s1t0FlowOnex0y4s1t4 + ex0y0s1t0FlowOnex1y3s1t4 - ex0y0s1t0FlowOnex1y4s2t4 - ex0y0s1t0FlowOnex1y4s1t5 - ex0y0s1t0Unx1y4 - 10000 nx0y0Ver <= 0
+ + ex0y0s1t0FlowOnex0y4s1t4 + ex0y0s1t0FlowOnex1y3s1t4 - ex0y0s1t0FlowOnex1y4s2t4 - ex0y0s1t0FlowOnex1y4s1t5 - ex0y0s1t0Unx1y4 + 10000 ex0y0s1t0Unx0y0Port1 >= 0
+ + ex0y0s1t0FlowOnex0y4s1t4 + ex0y0s1t0FlowOnex1y3s1t4 - ex0y0s1t0FlowOnex1y4s2t4 - ex0y0s1t0FlowOnex1y4s1t5 - ex0y0s1t0Unx1y4 - 10000 ex0y0s1t0Unx0y0Port1 <= 0
+ + ex0y0s1t0FlowOnex0y5s1t5 + ex0y0s1t0FlowOnex1y4s1t5 - ex0y0s1t0FlowOnex1y5s2t5 - ex0y0s1t0Unx1y5 = 0
  + ex0y0s1t0FlowOnex1y0s2t0 - ex0y0s1t0FlowOnex2y0s3t0 - ex0y0s1t0FlowOnex2y0s2t1 - ex0y0s1t0Unx2y0 = 0
  + ex0y0s1t0FlowOnex1y1s2t1 + ex0y0s1t0FlowOnex2y0s2t1 - ex0y0s1t0FlowOnex2y1s3t1 - ex0y0s1t0FlowOnex2y1s2t2 - ex0y0s1t0Unx2y1 = 0
  + ex0y0s1t0FlowOnex1y2s2t2 + ex0y0s1t0FlowOnex2y1s2t2 - ex0y0s1t0FlowOnex2y2s3t2 - ex0y0s1t0FlowOnex2y2s2t3 - ex0y0s1t0Unx2y2 = 0
- + ex0y0s1t0FlowOnex1y3s2t3 + ex0y0s1t0FlowOnex2y2s2t3 - ex0y0s1t0FlowOnex2y3s2t4 - ex0y0s1t0Unx2y3 = 0
+ + ex0y0s1t0FlowOnex1y3s2t3 + ex0y0s1t0FlowOnex2y2s2t3 - ex0y0s1t0FlowOnex2y3s3t3 - ex0y0s1t0FlowOnex2y3s2t4 - ex0y0s1t0Unx2y3 = 0
  + ex0y0s1t0FlowOnex1y4s2t4 + ex0y0s1t0FlowOnex2y3s2t4 - ex0y0s1t0FlowOnex2y4s3t4 - ex0y0s1t0FlowOnex2y4s2t5 - ex0y0s1t0Unx2y4 = 0
- + ex0y0s1t0FlowOnex1y5s2t5 + ex0y0s1t0FlowOnex2y4s2t5 - ex0y0s1t0FlowOnex2y5s3t5 - ex0y0s1t0FlowOnex2y5s2t6 - ex0y0s1t0Unx2y5 = 0
- + ex0y0s1t0FlowOnex1y6s2t6 + ex0y0s1t0FlowOnex2y5s2t6 - ex0y0s1t0FlowOnex2y6s3t6 - ex0y0s1t0Unx2y6 = 0
+ + ex0y0s1t0FlowOnex1y5s2t5 + ex0y0s1t0FlowOnex2y4s2t5 - ex0y0s1t0FlowOnex2y5s3t5 - ex0y0s1t0Unx2y5 = 0
  + ex0y0s1t0FlowOnex2y0s3t0 - ex0y0s1t0FlowOnex3y0s4t0 - ex0y0s1t0FlowOnex3y0s3t1 - ex0y0s1t0Unx3y0 = 0
  + ex0y0s1t0FlowOnex2y1s3t1 + ex0y0s1t0FlowOnex3y0s3t1 - ex0y0s1t0FlowOnex3y1s4t1 - ex0y0s1t0FlowOnex3y1s3t2 - ex0y0s1t0Unx3y1 = 0
- + ex0y0s1t0FlowOnex2y2s3t2 + ex0y0s1t0FlowOnex3y1s3t2 - ex0y0s1t0FlowOnex3y2s4t2 - ex0y0s1t0Unx3y2 = 0
- + ex0y0s1t0FlowOnex2y4s3t4 - ex0y0s1t0FlowOnex3y4s4t4 - ex0y0s1t0FlowOnex3y4s3t5 - ex0y0s1t0Unx3y4 = 0
- + ex0y0s1t0FlowOnex2y5s3t5 + ex0y0s1t0FlowOnex3y4s3t5 - ex0y0s1t0FlowOnex3y5s4t5 - ex0y0s1t0FlowOnex3y5s3t6 - ex0y0s1t0Unx3y5 = 0
- + ex0y0s1t0FlowOnex2y6s3t6 + ex0y0s1t0FlowOnex3y5s3t6 - ex0y0s1t0FlowOnex3y6s4t6 - ex0y0s1t0Unx3y6 = 0
+ + ex0y0s1t0FlowOnex2y2s3t2 + ex0y0s1t0FlowOnex3y1s3t2 - ex0y0s1t0FlowOnex3y2s4t2 - ex0y0s1t0FlowOnex3y2s3t3 - ex0y0s1t0Unx3y2 = 0
+ + ex0y0s1t0FlowOnex2y3s3t3 + ex0y0s1t0FlowOnex3y2s3t3 - ex0y0s1t0FlowOnex3y3s4t3 - ex0y0s1t0FlowOnex3y3s3t4 - ex0y0s1t0Unx3y3 = 0
+ + ex0y0s1t0FlowOnex2y4s3t4 + ex0y0s1t0FlowOnex3y3s3t4 - ex0y0s1t0FlowOnex3y4s4t4 - ex0y0s1t0FlowOnex3y4s3t5 - ex0y0s1t0Unx3y4 = 0
+ + ex0y0s1t0FlowOnex2y5s3t5 + ex0y0s1t0FlowOnex3y4s3t5 - ex0y0s1t0FlowOnex3y5s4t5 - ex0y0s1t0Unx3y5 = 0
  + ex0y0s1t0FlowOnex3y0s4t0 - ex0y0s1t0FlowOnex4y0s5t0 - ex0y0s1t0FlowOnex4y0s4t1 - ex0y0s1t0Unx4y0 = 0
  + ex0y0s1t0FlowOnex3y1s4t1 + ex0y0s1t0FlowOnex4y0s4t1 - ex0y0s1t0FlowOnex4y1s5t1 - ex0y0s1t0FlowOnex4y1s4t2 + 10000 nx0y0Hor + 10000 ex0y0s1t0Unx0y0Port1 <= 20001
  + ex0y0s1t0FlowOnex3y1s4t1 + ex0y0s1t0FlowOnex4y0s4t1 - ex0y0s1t0FlowOnex4y1s5t1 - ex0y0s1t0FlowOnex4y1s4t2 - 10000 nx0y0Hor - 10000 ex0y0s1t0Unx0y0Port1 >= -19999
- + ex0y0s1t0FlowOnex3y1s4t1 + ex0y0s1t0FlowOnex4y0s4t1 - ex0y0s1t0FlowOnex4y1s5t1 - ex0y0s1t0FlowOnex4y1s4t2 + 10000 nx0y0Hor >= 0
- + ex0y0s1t0FlowOnex3y1s4t1 + ex0y0s1t0FlowOnex4y0s4t1 - ex0y0s1t0FlowOnex4y1s5t1 - ex0y0s1t0FlowOnex4y1s4t2 - 10000 nx0y0Hor <= 0
- + ex0y0s1t0FlowOnex3y1s4t1 + ex0y0s1t0FlowOnex4y0s4t1 - ex0y0s1t0FlowOnex4y1s5t1 - ex0y0s1t0FlowOnex4y1s4t2 + 10000 ex0y0s1t0Unx0y0Port1 >= 0
- + ex0y0s1t0FlowOnex3y1s4t1 + ex0y0s1t0FlowOnex4y0s4t1 - ex0y0s1t0FlowOnex4y1s5t1 - ex0y0s1t0FlowOnex4y1s4t2 - 10000 ex0y0s1t0Unx0y0Port1 <= 0
+ + ex0y0s1t0FlowOnex3y1s4t1 + ex0y0s1t0FlowOnex4y0s4t1 - ex0y0s1t0FlowOnex4y1s5t1 - ex0y0s1t0FlowOnex4y1s4t2 - ex0y0s1t0Unx4y1 + 10000 nx0y0Hor >= 0
+ + ex0y0s1t0FlowOnex3y1s4t1 + ex0y0s1t0FlowOnex4y0s4t1 - ex0y0s1t0FlowOnex4y1s5t1 - ex0y0s1t0FlowOnex4y1s4t2 - ex0y0s1t0Unx4y1 - 10000 nx0y0Hor <= 0
+ + ex0y0s1t0FlowOnex3y1s4t1 + ex0y0s1t0FlowOnex4y0s4t1 - ex0y0s1t0FlowOnex4y1s5t1 - ex0y0s1t0FlowOnex4y1s4t2 - ex0y0s1t0Unx4y1 + 10000 ex0y0s1t0Unx0y0Port1 >= 0
+ + ex0y0s1t0FlowOnex3y1s4t1 + ex0y0s1t0FlowOnex4y0s4t1 - ex0y0s1t0FlowOnex4y1s5t1 - ex0y0s1t0FlowOnex4y1s4t2 - ex0y0s1t0Unx4y1 - 10000 ex0y0s1t0Unx0y0Port1 <= 0
  + ex0y0s1t0FlowOnex3y2s4t2 + ex0y0s1t0FlowOnex4y1s4t2 - ex0y0s1t0FlowOnex4y2s5t2 - ex0y0s1t0FlowOnex4y2s4t3 - ex0y0s1t0Unx4y2 = 0
- + ex0y0s1t0FlowOnex4y2s4t3 - ex0y0s1t0FlowOnex4y3s5t3 - ex0y0s1t0FlowOnex4y3s4t4 - ex0y0s1t0Unx4y3 = 0
+ + ex0y0s1t0FlowOnex3y3s4t3 + ex0y0s1t0FlowOnex4y2s4t3 - ex0y0s1t0FlowOnex4y3s5t3 - ex0y0s1t0FlowOnex4y3s4t4 - ex0y0s1t0Unx4y3 = 0
  + ex0y0s1t0FlowOnex3y4s4t4 + ex0y0s1t0FlowOnex4y3s4t4 - ex0y0s1t0FlowOnex4y4s5t4 - ex0y0s1t0FlowOnex4y4s4t5 - ex0y0s1t0Unx4y4 = 0
- + ex0y0s1t0FlowOnex3y5s4t5 + ex0y0s1t0FlowOnex4y4s4t5 - ex0y0s1t0FlowOnex4y5s5t5 - ex0y0s1t0FlowOnex4y5s4t6 - ex0y0s1t0Unx4y5 = 0
- + ex0y0s1t0FlowOnex3y6s4t6 + ex0y0s1t0FlowOnex4y5s4t6 - ex0y0s1t0FlowOnex4y6s5t6 - ex0y0s1t0Unx4y6 = 0
+ + ex0y0s1t0FlowOnex3y5s4t5 + ex0y0s1t0FlowOnex4y4s4t5 - ex0y0s1t0FlowOnex4y5s5t5 - ex0y0s1t0Unx4y5 = 0
  + ex0y0s1t0FlowOnex4y0s5t0 - ex0y0s1t0FlowOnex5y0s6t0 - ex0y0s1t0FlowOnex5y0s5t1 - ex0y0s1t0Unx5y0 = 0
  + ex0y0s1t0FlowOnex4y1s5t1 + ex0y0s1t0FlowOnex5y0s5t1 - ex0y0s1t0FlowOnex5y1s6t1 - ex0y0s1t0FlowOnex5y1s5t2 - ex0y0s1t0Unx5y1 = 0
  + ex0y0s1t0FlowOnex4y2s5t2 + ex0y0s1t0FlowOnex5y1s5t2 - ex0y0s1t0FlowOnex5y2s6t2 - ex0y0s1t0FlowOnex5y2s5t3 - ex0y0s1t0Unx5y2 = 0
  + ex0y0s1t0FlowOnex4y3s5t3 + ex0y0s1t0FlowOnex5y2s5t3 - ex0y0s1t0FlowOnex5y3s6t3 - ex0y0s1t0FlowOnex5y3s5t4 - ex0y0s1t0Unx5y3 = 0
  + ex0y0s1t0FlowOnex4y4s5t4 + ex0y0s1t0FlowOnex5y3s5t4 - ex0y0s1t0FlowOnex5y4s6t4 - ex0y0s1t0FlowOnex5y4s5t5 - ex0y0s1t0Unx5y4 = 0
- + ex0y0s1t0FlowOnex4y5s5t5 + ex0y0s1t0FlowOnex5y4s5t5 - ex0y0s1t0FlowOnex5y5s6t5 - ex0y0s1t0FlowOnex5y5s5t6 - ex0y0s1t0Unx5y5 = 0
- + ex0y0s1t0FlowOnex4y6s5t6 + ex0y0s1t0FlowOnex5y5s5t6 - ex0y0s1t0FlowOnex5y6s6t6 - ex0y0s1t0Unx5y6 = 0
+ + ex0y0s1t0FlowOnex4y5s5t5 + ex0y0s1t0FlowOnex5y4s5t5 - ex0y0s1t0FlowOnex5y5s6t5 - ex0y0s1t0Unx5y5 = 0
  + ex0y0s1t0FlowOnex5y1s6t1 + ex0y0s1t0FlowOnex6y0s6t1 - ex0y0s1t0FlowOnex6y1s6t2 - ex0y0s1t0Unx6y1 = 0
  + ex0y0s1t0FlowOnex5y2s6t2 + ex0y0s1t0FlowOnex6y1s6t2 - ex0y0s1t0FlowOnex6y2s6t3 - ex0y0s1t0Unx6y2 = 0
  + ex0y0s1t0FlowOnex5y3s6t3 + ex0y0s1t0FlowOnex6y2s6t3 - ex0y0s1t0FlowOnex6y3s6t4 - ex0y0s1t0Unx6y3 = 0
  + ex0y0s1t0FlowOnex5y4s6t4 + ex0y0s1t0FlowOnex6y3s6t4 - ex0y0s1t0FlowOnex6y4s6t5 - ex0y0s1t0Unx6y4 = 0
- + ex0y0s1t0FlowOnex5y5s6t5 + ex0y0s1t0FlowOnex6y4s6t5 - ex0y0s1t0FlowOnex6y5s6t6 - ex0y0s1t0Unx6y5 = 0
- + ex0y0s1t0FlowOnex5y6s6t6 + ex0y0s1t0FlowOnex6y5s6t6 - ex0y0s1t0Unx6y6 = 0
- + ex0y0s1t0Uex0y0s1t0 + ex0y0s1t0Uex0y0s0t1 + ex0y0s1t0Uex0y1s1t1 + ex0y0s1t0Uex0y1s0t2 + ex0y0s1t0Uex0y2s1t2 + ex0y0s1t0Uex0y2s0t3 + ex0y0s1t0Uex0y3s1t3 + ex0y0s1t0Uex0y3s0t4 + ex0y0s1t0Uex0y4s1t4 + ex0y0s1t0Uex0y4s0t5 + ex0y0s1t0Uex0y5s1t5 + ex0y0s1t0Uex0y5s0t6 + ex0y0s1t0Uex0y6s1t6 + ex0y0s1t0Uex1y0s2t0 + ex0y0s1t0Uex1y0s1t1 + ex0y0s1t0Uex1y1s2t1 + ex0y0s1t0Uex1y1s1t2 + ex0y0s1t0Uex1y2s2t2 + ex0y0s1t0Uex1y2s1t3 + ex0y0s1t0Uex1y3s2t3 + ex0y0s1t0Uex1y3s1t4 + ex0y0s1t0Uex1y4s2t4 + ex0y0s1t0Uex1y4s1t5 + ex0y0s1t0Uex1y5s2t5 + ex0y0s1t0Uex1y5s1t6 + ex0y0s1t0Uex1y6s2t6 + ex0y0s1t0Uex2y0s3t0 + ex0y0s1t0Uex2y0s2t1 + ex0y0s1t0Uex2y1s3t1 + ex0y0s1t0Uex2y1s2t2 + ex0y0s1t0Uex2y2s3t2 + ex0y0s1t0Uex2y2s2t3 + ex0y0s1t0Uex2y3s2t4 + ex0y0s1t0Uex2y4s3t4 + ex0y0s1t0Uex2y4s2t5 + ex0y0s1t0Uex2y5s3t5 + ex0y0s1t0Uex2y5s2t6 + ex0y0s1t0Uex2y6s3t6 + ex0y0s1t0Uex3y0s4t0 + ex0y0s1t0Uex3y0s3t1 + ex0y0s1t0Uex3y1s4t1 + ex0y0s1t0Uex3y1s3t2 + ex0y0s1t0Uex3y2s4t2 + ex0y0s1t0Uex3y4s4t4 + ex0y0s1t0Uex3y4s3t5 + ex0y0s1t0Uex3y5s4t5 + ex0y0s1t0Uex3y5s3t6 + ex0y0s1t0Uex3y6s4t6 + ex0y0s1t0Uex4y0s5t0 + ex0y0s1t0Uex4y0s4t1 + ex0y0s1t0Uex4y1s5t1 + ex0y0s1t0Uex4y1s4t2 + ex0y0s1t0Uex4y2s5t2 + ex0y0s1t0Uex4y2s4t3 + ex0y0s1t0Uex4y3s5t3 + ex0y0s1t0Uex4y3s4t4 + ex0y0s1t0Uex4y4s5t4 + ex0y0s1t0Uex4y4s4t5 + ex0y0s1t0Uex4y5s5t5 + ex0y0s1t0Uex4y5s4t6 + ex0y0s1t0Uex4y6s5t6 + ex0y0s1t0Uex5y0s6t0 + ex0y0s1t0Uex5y0s5t1 + ex0y0s1t0Uex5y1s6t1 + ex0y0s1t0Uex5y1s5t2 + ex0y0s1t0Uex5y2s6t2 + ex0y0s1t0Uex5y2s5t3 + ex0y0s1t0Uex5y3s6t3 + ex0y0s1t0Uex5y3s5t4 + ex0y0s1t0Uex5y4s6t4 + ex0y0s1t0Uex5y4s5t5 + ex0y0s1t0Uex5y5s6t5 + ex0y0s1t0Uex5y5s5t6 + ex0y0s1t0Uex5y6s6t6 + ex0y0s1t0Uex6y0s6t1 + ex0y0s1t0Uex6y1s6t2 + ex0y0s1t0Uex6y2s6t3 + ex0y0s1t0Uex6y3s6t4 + ex0y0s1t0Uex6y4s6t5 + ex0y0s1t0Uex6y5s6t6 - ex0y0s1t0SuperFlow = -1
+ + ex0y0s1t0FlowOnex5y5s6t5 + ex0y0s1t0FlowOnex6y4s6t5 - ex0y0s1t0Unx6y5 = 0
+ + ex0y0s1t0Uex0y0s1t0 + ex0y0s1t0Uex0y0s0t1 + ex0y0s1t0Uex0y1s1t1 + ex0y0s1t0Uex0y1s0t2 + ex0y0s1t0Uex0y2s1t2 + ex0y0s1t0Uex0y2s0t3 + ex0y0s1t0Uex0y3s1t3 + ex0y0s1t0Uex0y3s0t4 + ex0y0s1t0Uex0y4s1t4 + ex0y0s1t0Uex0y4s0t5 + ex0y0s1t0Uex0y5s1t5 + ex0y0s1t0Uex1y0s2t0 + ex0y0s1t0Uex1y0s1t1 + ex0y0s1t0Uex1y1s2t1 + ex0y0s1t0Uex1y1s1t2 + ex0y0s1t0Uex1y2s2t2 + ex0y0s1t0Uex1y2s1t3 + ex0y0s1t0Uex1y3s2t3 + ex0y0s1t0Uex1y3s1t4 + ex0y0s1t0Uex1y4s2t4 + ex0y0s1t0Uex1y4s1t5 + ex0y0s1t0Uex1y5s2t5 + ex0y0s1t0Uex2y0s3t0 + ex0y0s1t0Uex2y0s2t1 + ex0y0s1t0Uex2y1s3t1 + ex0y0s1t0Uex2y1s2t2 + ex0y0s1t0Uex2y2s3t2 + ex0y0s1t0Uex2y2s2t3 + ex0y0s1t0Uex2y3s3t3 + ex0y0s1t0Uex2y3s2t4 + ex0y0s1t0Uex2y4s3t4 + ex0y0s1t0Uex2y4s2t5 + ex0y0s1t0Uex2y5s3t5 + ex0y0s1t0Uex3y0s4t0 + ex0y0s1t0Uex3y0s3t1 + ex0y0s1t0Uex3y1s4t1 + ex0y0s1t0Uex3y1s3t2 + ex0y0s1t0Uex3y2s4t2 + ex0y0s1t0Uex3y2s3t3 + ex0y0s1t0Uex3y3s4t3 + ex0y0s1t0Uex3y3s3t4 + ex0y0s1t0Uex3y4s4t4 + ex0y0s1t0Uex3y4s3t5 + ex0y0s1t0Uex3y5s4t5 + ex0y0s1t0Uex4y0s5t0 + ex0y0s1t0Uex4y0s4t1 + ex0y0s1t0Uex4y1s5t1 + ex0y0s1t0Uex4y1s4t2 + ex0y0s1t0Uex4y2s5t2 + ex0y0s1t0Uex4y2s4t3 + ex0y0s1t0Uex4y3s5t3 + ex0y0s1t0Uex4y3s4t4 + ex0y0s1t0Uex4y4s5t4 + ex0y0s1t0Uex4y4s4t5 + ex0y0s1t0Uex4y5s5t5 + ex0y0s1t0Uex5y0s6t0 + ex0y0s1t0Uex5y0s5t1 + ex0y0s1t0Uex5y1s6t1 + ex0y0s1t0Uex5y1s5t2 + ex0y0s1t0Uex5y2s6t2 + ex0y0s1t0Uex5y2s5t3 + ex0y0s1t0Uex5y3s6t3 + ex0y0s1t0Uex5y3s5t4 + ex0y0s1t0Uex5y4s6t4 + ex0y0s1t0Uex5y4s5t5 + ex0y0s1t0Uex5y5s6t5 + ex0y0s1t0Uex6y0s6t1 + ex0y0s1t0Uex6y1s6t2 + ex0y0s1t0Uex6y2s6t3 + ex0y0s1t0Uex6y3s6t4 + ex0y0s1t0Uex6y4s6t5 - ex0y0s1t0SuperFlow = -1
 ex0y0s1t0Unx1y0 - 10000 nx0y0Hor >= -10000
 ex0y0s1t0Unx1y0 + 10000 nx0y0Hor <= 10000
 ex0y0s1t0Unx2y0 - 10000 nx0y0Hor >= -10000
@@ -831,7 +747,7 @@ ex0y0s0t1Unx0y0Port0 + ex0y0s0t1Unx0y0Port1 = 1
  + ex0y0s0t1Uex0y4s1t4 + ex0y0s0t1Uex1y3s1t4 + ex0y0s0t1Uex1y4s2t4 + ex0y0s0t1Uex1y4s1t5 - 10000 nx0y0Ver - 10000 ex0y0s0t1Unx0y0Port1 >= -19999
  + ex0y0s0t1Uex3y1s4t1 + ex0y0s0t1Uex4y0s4t1 + ex0y0s0t1Uex4y1s5t1 + ex0y0s0t1Uex4y1s4t2 + 10000 nx0y0Hor + 10000 ex0y0s0t1Unx0y0Port1 <= 20001
  + ex0y0s0t1Uex3y1s4t1 + ex0y0s0t1Uex4y0s4t1 + ex0y0s0t1Uex4y1s5t1 + ex0y0s0t1Uex4y1s4t2 - 10000 nx0y0Hor - 10000 ex0y0s0t1Unx0y0Port1 >= -19999
- + ex0y0s0t1Uex0y5s0t6 + ex0y0s0t1Uex0y6s1t6 = 1
+ + ex0y0s0t1Uex0y4s0t5 + ex0y0s0t1Uex0y5s1t5 = 1
  + ex0y0s0t1Uex0y0s1t0 + ex0y0s0t1Uex0y0s0t1 - 2 ex0y0s0t1Unx0y0 = 0
  + ex0y0s0t1Uex0y0s0t1 + ex0y0s0t1Uex0y1s1t1 + ex0y0s0t1Uex0y1s0t2 - 2 ex0y0s0t1Unx0y1 + 10000 nx0y0Hor >= 0
  + ex0y0s0t1Uex0y0s0t1 + ex0y0s0t1Uex0y1s1t1 + ex0y0s0t1Uex0y1s0t2 - 2 ex0y0s0t1Unx0y1 - 10000 nx0y0Hor <= 0
@@ -840,7 +756,6 @@ ex0y0s0t1Unx0y0Port0 + ex0y0s0t1Unx0y0Port1 = 1
  + ex0y0s0t1Uex0y1s0t2 + ex0y0s0t1Uex0y2s1t2 + ex0y0s0t1Uex0y2s0t3 - 2 ex0y0s0t1Unx0y2 = 0
  + ex0y0s0t1Uex0y2s0t3 + ex0y0s0t1Uex0y3s1t3 + ex0y0s0t1Uex0y3s0t4 - 2 ex0y0s0t1Unx0y3 = 0
  + ex0y0s0t1Uex0y3s0t4 + ex0y0s0t1Uex0y4s1t4 + ex0y0s0t1Uex0y4s0t5 - 2 ex0y0s0t1Unx0y4 = 0
- + ex0y0s0t1Uex0y4s0t5 + ex0y0s0t1Uex0y5s1t5 + ex0y0s0t1Uex0y5s0t6 - 2 ex0y0s0t1Unx0y5 = 0
  + ex0y0s0t1Uex0y0s1t0 + ex0y0s0t1Uex1y0s2t0 + ex0y0s0t1Uex1y0s1t1 - 2 ex0y0s0t1Unx1y0 + 10000 nx0y0Ver >= 0
  + ex0y0s0t1Uex0y0s1t0 + ex0y0s0t1Uex1y0s2t0 + ex0y0s0t1Uex1y0s1t1 - 2 ex0y0s0t1Unx1y0 - 10000 nx0y0Ver <= 0
  + ex0y0s0t1Uex0y0s1t0 + ex0y0s0t1Uex1y0s2t0 + ex0y0s0t1Uex1y0s1t1 - 2 ex0y0s0t1Unx1y0 + 10000 ex0y0s0t1Unx0y0Port0 >= 0
@@ -852,114 +767,103 @@ ex0y0s0t1Unx0y0Port0 + ex0y0s0t1Unx0y0Port1 = 1
  + ex0y0s0t1Uex0y4s1t4 + ex0y0s0t1Uex1y3s1t4 + ex0y0s0t1Uex1y4s2t4 + ex0y0s0t1Uex1y4s1t5 - 2 ex0y0s0t1Unx1y4 - 10000 nx0y0Ver <= 0
  + ex0y0s0t1Uex0y4s1t4 + ex0y0s0t1Uex1y3s1t4 + ex0y0s0t1Uex1y4s2t4 + ex0y0s0t1Uex1y4s1t5 - 2 ex0y0s0t1Unx1y4 + 10000 ex0y0s0t1Unx0y0Port1 >= 0
  + ex0y0s0t1Uex0y4s1t4 + ex0y0s0t1Uex1y3s1t4 + ex0y0s0t1Uex1y4s2t4 + ex0y0s0t1Uex1y4s1t5 - 2 ex0y0s0t1Unx1y4 - 10000 ex0y0s0t1Unx0y0Port1 <= 0
- + ex0y0s0t1Uex0y5s1t5 + ex0y0s0t1Uex1y4s1t5 + ex0y0s0t1Uex1y5s2t5 + ex0y0s0t1Uex1y5s1t6 - 2 ex0y0s0t1Unx1y5 = 0
- + ex0y0s0t1Uex0y6s1t6 + ex0y0s0t1Uex1y5s1t6 + ex0y0s0t1Uex1y6s2t6 - 2 ex0y0s0t1Unx1y6 = 0
+ + ex0y0s0t1Uex0y5s1t5 + ex0y0s0t1Uex1y4s1t5 + ex0y0s0t1Uex1y5s2t5 - 2 ex0y0s0t1Unx1y5 = 0
  + ex0y0s0t1Uex1y0s2t0 + ex0y0s0t1Uex2y0s3t0 + ex0y0s0t1Uex2y0s2t1 - 2 ex0y0s0t1Unx2y0 = 0
  + ex0y0s0t1Uex1y1s2t1 + ex0y0s0t1Uex2y0s2t1 + ex0y0s0t1Uex2y1s3t1 + ex0y0s0t1Uex2y1s2t2 - 2 ex0y0s0t1Unx2y1 = 0
  + ex0y0s0t1Uex1y2s2t2 + ex0y0s0t1Uex2y1s2t2 + ex0y0s0t1Uex2y2s3t2 + ex0y0s0t1Uex2y2s2t3 - 2 ex0y0s0t1Unx2y2 = 0
- + ex0y0s0t1Uex1y3s2t3 + ex0y0s0t1Uex2y2s2t3 + ex0y0s0t1Uex2y3s2t4 - 2 ex0y0s0t1Unx2y3 = 0
+ + ex0y0s0t1Uex1y3s2t3 + ex0y0s0t1Uex2y2s2t3 + ex0y0s0t1Uex2y3s3t3 + ex0y0s0t1Uex2y3s2t4 - 2 ex0y0s0t1Unx2y3 = 0
  + ex0y0s0t1Uex1y4s2t4 + ex0y0s0t1Uex2y3s2t4 + ex0y0s0t1Uex2y4s3t4 + ex0y0s0t1Uex2y4s2t5 - 2 ex0y0s0t1Unx2y4 = 0
- + ex0y0s0t1Uex1y5s2t5 + ex0y0s0t1Uex2y4s2t5 + ex0y0s0t1Uex2y5s3t5 + ex0y0s0t1Uex2y5s2t6 - 2 ex0y0s0t1Unx2y5 = 0
- + ex0y0s0t1Uex1y6s2t6 + ex0y0s0t1Uex2y5s2t6 + ex0y0s0t1Uex2y6s3t6 - 2 ex0y0s0t1Unx2y6 = 0
+ + ex0y0s0t1Uex1y5s2t5 + ex0y0s0t1Uex2y4s2t5 + ex0y0s0t1Uex2y5s3t5 - 2 ex0y0s0t1Unx2y5 = 0
  + ex0y0s0t1Uex2y0s3t0 + ex0y0s0t1Uex3y0s4t0 + ex0y0s0t1Uex3y0s3t1 - 2 ex0y0s0t1Unx3y0 = 0
  + ex0y0s0t1Uex2y1s3t1 + ex0y0s0t1Uex3y0s3t1 + ex0y0s0t1Uex3y1s4t1 + ex0y0s0t1Uex3y1s3t2 - 2 ex0y0s0t1Unx3y1 = 0
- + ex0y0s0t1Uex2y2s3t2 + ex0y0s0t1Uex3y1s3t2 + ex0y0s0t1Uex3y2s4t2 - 2 ex0y0s0t1Unx3y2 = 0
- + ex0y0s0t1Uex2y4s3t4 + ex0y0s0t1Uex3y4s4t4 + ex0y0s0t1Uex3y4s3t5 - 2 ex0y0s0t1Unx3y4 = 0
- + ex0y0s0t1Uex2y5s3t5 + ex0y0s0t1Uex3y4s3t5 + ex0y0s0t1Uex3y5s4t5 + ex0y0s0t1Uex3y5s3t6 - 2 ex0y0s0t1Unx3y5 = 0
- + ex0y0s0t1Uex2y6s3t6 + ex0y0s0t1Uex3y5s3t6 + ex0y0s0t1Uex3y6s4t6 - 2 ex0y0s0t1Unx3y6 = 0
+ + ex0y0s0t1Uex2y2s3t2 + ex0y0s0t1Uex3y1s3t2 + ex0y0s0t1Uex3y2s4t2 + ex0y0s0t1Uex3y2s3t3 - 2 ex0y0s0t1Unx3y2 = 0
+ + ex0y0s0t1Uex2y3s3t3 + ex0y0s0t1Uex3y2s3t3 + ex0y0s0t1Uex3y3s4t3 + ex0y0s0t1Uex3y3s3t4 - 2 ex0y0s0t1Unx3y3 = 0
+ + ex0y0s0t1Uex2y4s3t4 + ex0y0s0t1Uex3y3s3t4 + ex0y0s0t1Uex3y4s4t4 + ex0y0s0t1Uex3y4s3t5 - 2 ex0y0s0t1Unx3y4 = 0
+ + ex0y0s0t1Uex2y5s3t5 + ex0y0s0t1Uex3y4s3t5 + ex0y0s0t1Uex3y5s4t5 - 2 ex0y0s0t1Unx3y5 = 0
  + ex0y0s0t1Uex3y0s4t0 + ex0y0s0t1Uex4y0s5t0 + ex0y0s0t1Uex4y0s4t1 - 2 ex0y0s0t1Unx4y0 = 0
  + ex0y0s0t1Uex3y1s4t1 + ex0y0s0t1Uex4y0s4t1 + ex0y0s0t1Uex4y1s5t1 + ex0y0s0t1Uex4y1s4t2 - 2 ex0y0s0t1Unx4y1 + 10000 nx0y0Hor >= 0
  + ex0y0s0t1Uex3y1s4t1 + ex0y0s0t1Uex4y0s4t1 + ex0y0s0t1Uex4y1s5t1 + ex0y0s0t1Uex4y1s4t2 - 2 ex0y0s0t1Unx4y1 - 10000 nx0y0Hor <= 0
  + ex0y0s0t1Uex3y1s4t1 + ex0y0s0t1Uex4y0s4t1 + ex0y0s0t1Uex4y1s5t1 + ex0y0s0t1Uex4y1s4t2 - 2 ex0y0s0t1Unx4y1 + 10000 ex0y0s0t1Unx0y0Port1 >= 0
  + ex0y0s0t1Uex3y1s4t1 + ex0y0s0t1Uex4y0s4t1 + ex0y0s0t1Uex4y1s5t1 + ex0y0s0t1Uex4y1s4t2 - 2 ex0y0s0t1Unx4y1 - 10000 ex0y0s0t1Unx0y0Port1 <= 0
  + ex0y0s0t1Uex3y2s4t2 + ex0y0s0t1Uex4y1s4t2 + ex0y0s0t1Uex4y2s5t2 + ex0y0s0t1Uex4y2s4t3 - 2 ex0y0s0t1Unx4y2 = 0
- + ex0y0s0t1Uex4y2s4t3 + ex0y0s0t1Uex4y3s5t3 + ex0y0s0t1Uex4y3s4t4 - 2 ex0y0s0t1Unx4y3 = 0
+ + ex0y0s0t1Uex3y3s4t3 + ex0y0s0t1Uex4y2s4t3 + ex0y0s0t1Uex4y3s5t3 + ex0y0s0t1Uex4y3s4t4 - 2 ex0y0s0t1Unx4y3 = 0
  + ex0y0s0t1Uex3y4s4t4 + ex0y0s0t1Uex4y3s4t4 + ex0y0s0t1Uex4y4s5t4 + ex0y0s0t1Uex4y4s4t5 - 2 ex0y0s0t1Unx4y4 = 0
- + ex0y0s0t1Uex3y5s4t5 + ex0y0s0t1Uex4y4s4t5 + ex0y0s0t1Uex4y5s5t5 + ex0y0s0t1Uex4y5s4t6 - 2 ex0y0s0t1Unx4y5 = 0
- + ex0y0s0t1Uex3y6s4t6 + ex0y0s0t1Uex4y5s4t6 + ex0y0s0t1Uex4y6s5t6 - 2 ex0y0s0t1Unx4y6 = 0
+ + ex0y0s0t1Uex3y5s4t5 + ex0y0s0t1Uex4y4s4t5 + ex0y0s0t1Uex4y5s5t5 - 2 ex0y0s0t1Unx4y5 = 0
  + ex0y0s0t1Uex4y0s5t0 + ex0y0s0t1Uex5y0s6t0 + ex0y0s0t1Uex5y0s5t1 - 2 ex0y0s0t1Unx5y0 = 0
  + ex0y0s0t1Uex4y1s5t1 + ex0y0s0t1Uex5y0s5t1 + ex0y0s0t1Uex5y1s6t1 + ex0y0s0t1Uex5y1s5t2 - 2 ex0y0s0t1Unx5y1 = 0
  + ex0y0s0t1Uex4y2s5t2 + ex0y0s0t1Uex5y1s5t2 + ex0y0s0t1Uex5y2s6t2 + ex0y0s0t1Uex5y2s5t3 - 2 ex0y0s0t1Unx5y2 = 0
  + ex0y0s0t1Uex4y3s5t3 + ex0y0s0t1Uex5y2s5t3 + ex0y0s0t1Uex5y3s6t3 + ex0y0s0t1Uex5y3s5t4 - 2 ex0y0s0t1Unx5y3 = 0
  + ex0y0s0t1Uex4y4s5t4 + ex0y0s0t1Uex5y3s5t4 + ex0y0s0t1Uex5y4s6t4 + ex0y0s0t1Uex5y4s5t5 - 2 ex0y0s0t1Unx5y4 = 0
- + ex0y0s0t1Uex4y5s5t5 + ex0y0s0t1Uex5y4s5t5 + ex0y0s0t1Uex5y5s6t5 + ex0y0s0t1Uex5y5s5t6 - 2 ex0y0s0t1Unx5y5 = 0
- + ex0y0s0t1Uex4y6s5t6 + ex0y0s0t1Uex5y5s5t6 + ex0y0s0t1Uex5y6s6t6 - 2 ex0y0s0t1Unx5y6 = 0
+ + ex0y0s0t1Uex4y5s5t5 + ex0y0s0t1Uex5y4s5t5 + ex0y0s0t1Uex5y5s6t5 - 2 ex0y0s0t1Unx5y5 = 0
  + ex0y0s0t1Uex5y0s6t0 + ex0y0s0t1Uex6y0s6t1 - 2 ex0y0s0t1Unx6y0 = 0
  + ex0y0s0t1Uex5y1s6t1 + ex0y0s0t1Uex6y0s6t1 + ex0y0s0t1Uex6y1s6t2 - 2 ex0y0s0t1Unx6y1 = 0
  + ex0y0s0t1Uex5y2s6t2 + ex0y0s0t1Uex6y1s6t2 + ex0y0s0t1Uex6y2s6t3 - 2 ex0y0s0t1Unx6y2 = 0
  + ex0y0s0t1Uex5y3s6t3 + ex0y0s0t1Uex6y2s6t3 + ex0y0s0t1Uex6y3s6t4 - 2 ex0y0s0t1Unx6y3 = 0
  + ex0y0s0t1Uex5y4s6t4 + ex0y0s0t1Uex6y3s6t4 + ex0y0s0t1Uex6y4s6t5 - 2 ex0y0s0t1Unx6y4 = 0
- + ex0y0s0t1Uex5y5s6t5 + ex0y0s0t1Uex6y4s6t5 + ex0y0s0t1Uex6y5s6t6 - 2 ex0y0s0t1Unx6y5 = 0
- + ex0y0s0t1Uex5y6s6t6 + ex0y0s0t1Uex6y5s6t6 - 2 ex0y0s0t1Unx6y6 = 0
- + ex0y0s0t1FlowOnex0y5s0t6 - ex0y0s0t1FlowOnex0y6s1t6 + ex0y0s0t1SuperFlow = 1
+ + ex0y0s0t1Uex5y5s6t5 + ex0y0s0t1Uex6y4s6t5 - 2 ex0y0s0t1Unx6y5 = 0
+ + ex0y0s0t1FlowOnex0y4s0t5 - ex0y0s0t1FlowOnex0y5s1t5 + ex0y0s0t1SuperFlow = 1
  - ex0y0s0t1FlowOnex0y0s1t0 - ex0y0s0t1FlowOnex0y0s0t1 - ex0y0s0t1Unx0y0 = 0
  + ex0y0s0t1FlowOnex0y0s0t1 - ex0y0s0t1FlowOnex0y1s1t1 - ex0y0s0t1FlowOnex0y1s0t2 + 10000 nx0y0Hor + 10000 ex0y0s0t1Unx0y0Port0 <= 20001
  + ex0y0s0t1FlowOnex0y0s0t1 - ex0y0s0t1FlowOnex0y1s1t1 - ex0y0s0t1FlowOnex0y1s0t2 - 10000 nx0y0Hor - 10000 ex0y0s0t1Unx0y0Port0 >= -19999
- + ex0y0s0t1FlowOnex0y0s0t1 - ex0y0s0t1FlowOnex0y1s1t1 - ex0y0s0t1FlowOnex0y1s0t2 + 10000 nx0y0Hor >= 0
- + ex0y0s0t1FlowOnex0y0s0t1 - ex0y0s0t1FlowOnex0y1s1t1 - ex0y0s0t1FlowOnex0y1s0t2 - 10000 nx0y0Hor <= 0
- + ex0y0s0t1FlowOnex0y0s0t1 - ex0y0s0t1FlowOnex0y1s1t1 - ex0y0s0t1FlowOnex0y1s0t2 + 10000 ex0y0s0t1Unx0y0Port0 >= 0
- + ex0y0s0t1FlowOnex0y0s0t1 - ex0y0s0t1FlowOnex0y1s1t1 - ex0y0s0t1FlowOnex0y1s0t2 - 10000 ex0y0s0t1Unx0y0Port0 <= 0
+ + ex0y0s0t1FlowOnex0y0s0t1 - ex0y0s0t1FlowOnex0y1s1t1 - ex0y0s0t1FlowOnex0y1s0t2 - ex0y0s0t1Unx0y1 + 10000 nx0y0Hor >= 0
+ + ex0y0s0t1FlowOnex0y0s0t1 - ex0y0s0t1FlowOnex0y1s1t1 - ex0y0s0t1FlowOnex0y1s0t2 - ex0y0s0t1Unx0y1 - 10000 nx0y0Hor <= 0
+ + ex0y0s0t1FlowOnex0y0s0t1 - ex0y0s0t1FlowOnex0y1s1t1 - ex0y0s0t1FlowOnex0y1s0t2 - ex0y0s0t1Unx0y1 + 10000 ex0y0s0t1Unx0y0Port0 >= 0
+ + ex0y0s0t1FlowOnex0y0s0t1 - ex0y0s0t1FlowOnex0y1s1t1 - ex0y0s0t1FlowOnex0y1s0t2 - ex0y0s0t1Unx0y1 - 10000 ex0y0s0t1Unx0y0Port0 <= 0
  + ex0y0s0t1FlowOnex0y1s0t2 - ex0y0s0t1FlowOnex0y2s1t2 - ex0y0s0t1FlowOnex0y2s0t3 - ex0y0s0t1Unx0y2 = 0
  + ex0y0s0t1FlowOnex0y2s0t3 - ex0y0s0t1FlowOnex0y3s1t3 - ex0y0s0t1FlowOnex0y3s0t4 - ex0y0s0t1Unx0y3 = 0
  + ex0y0s0t1FlowOnex0y3s0t4 - ex0y0s0t1FlowOnex0y4s1t4 - ex0y0s0t1FlowOnex0y4s0t5 - ex0y0s0t1Unx0y4 = 0
- + ex0y0s0t1FlowOnex0y4s0t5 - ex0y0s0t1FlowOnex0y5s1t5 - ex0y0s0t1FlowOnex0y5s0t6 - ex0y0s0t1Unx0y5 = 0
  + ex0y0s0t1FlowOnex0y0s1t0 - ex0y0s0t1FlowOnex1y0s2t0 - ex0y0s0t1FlowOnex1y0s1t1 + 10000 nx0y0Ver + 10000 ex0y0s0t1Unx0y0Port0 <= 20001
  + ex0y0s0t1FlowOnex0y0s1t0 - ex0y0s0t1FlowOnex1y0s2t0 - ex0y0s0t1FlowOnex1y0s1t1 - 10000 nx0y0Ver - 10000 ex0y0s0t1Unx0y0Port0 >= -19999
- + ex0y0s0t1FlowOnex0y0s1t0 - ex0y0s0t1FlowOnex1y0s2t0 - ex0y0s0t1FlowOnex1y0s1t1 + 10000 nx0y0Ver >= 0
- + ex0y0s0t1FlowOnex0y0s1t0 - ex0y0s0t1FlowOnex1y0s2t0 - ex0y0s0t1FlowOnex1y0s1t1 - 10000 nx0y0Ver <= 0
- + ex0y0s0t1FlowOnex0y0s1t0 - ex0y0s0t1FlowOnex1y0s2t0 - ex0y0s0t1FlowOnex1y0s1t1 + 10000 ex0y0s0t1Unx0y0Port0 >= 0
- + ex0y0s0t1FlowOnex0y0s1t0 - ex0y0s0t1FlowOnex1y0s2t0 - ex0y0s0t1FlowOnex1y0s1t1 - 10000 ex0y0s0t1Unx0y0Port0 <= 0
+ + ex0y0s0t1FlowOnex0y0s1t0 - ex0y0s0t1FlowOnex1y0s2t0 - ex0y0s0t1FlowOnex1y0s1t1 - ex0y0s0t1Unx1y0 + 10000 nx0y0Ver >= 0
+ + ex0y0s0t1FlowOnex0y0s1t0 - ex0y0s0t1FlowOnex1y0s2t0 - ex0y0s0t1FlowOnex1y0s1t1 - ex0y0s0t1Unx1y0 - 10000 nx0y0Ver <= 0
+ + ex0y0s0t1FlowOnex0y0s1t0 - ex0y0s0t1FlowOnex1y0s2t0 - ex0y0s0t1FlowOnex1y0s1t1 - ex0y0s0t1Unx1y0 + 10000 ex0y0s0t1Unx0y0Port0 >= 0
+ + ex0y0s0t1FlowOnex0y0s1t0 - ex0y0s0t1FlowOnex1y0s2t0 - ex0y0s0t1FlowOnex1y0s1t1 - ex0y0s0t1Unx1y0 - 10000 ex0y0s0t1Unx0y0Port0 <= 0
  + ex0y0s0t1FlowOnex0y1s1t1 + ex0y0s0t1FlowOnex1y0s1t1 - ex0y0s0t1FlowOnex1y1s2t1 - ex0y0s0t1FlowOnex1y1s1t2 - ex0y0s0t1Unx1y1 = 0
  + ex0y0s0t1FlowOnex0y2s1t2 + ex0y0s0t1FlowOnex1y1s1t2 - ex0y0s0t1FlowOnex1y2s2t2 - ex0y0s0t1FlowOnex1y2s1t3 - ex0y0s0t1Unx1y2 = 0
  + ex0y0s0t1FlowOnex0y3s1t3 + ex0y0s0t1FlowOnex1y2s1t3 - ex0y0s0t1FlowOnex1y3s2t3 - ex0y0s0t1FlowOnex1y3s1t4 - ex0y0s0t1Unx1y3 = 0
  + ex0y0s0t1FlowOnex0y4s1t4 + ex0y0s0t1FlowOnex1y3s1t4 - ex0y0s0t1FlowOnex1y4s2t4 - ex0y0s0t1FlowOnex1y4s1t5 + 10000 nx0y0Ver + 10000 ex0y0s0t1Unx0y0Port1 <= 20001
  + ex0y0s0t1FlowOnex0y4s1t4 + ex0y0s0t1FlowOnex1y3s1t4 - ex0y0s0t1FlowOnex1y4s2t4 - ex0y0s0t1FlowOnex1y4s1t5 - 10000 nx0y0Ver - 10000 ex0y0s0t1Unx0y0Port1 >= -19999
- + ex0y0s0t1FlowOnex0y4s1t4 + ex0y0s0t1FlowOnex1y3s1t4 - ex0y0s0t1FlowOnex1y4s2t4 - ex0y0s0t1FlowOnex1y4s1t5 + 10000 nx0y0Ver >= 0
- + ex0y0s0t1FlowOnex0y4s1t4 + ex0y0s0t1FlowOnex1y3s1t4 - ex0y0s0t1FlowOnex1y4s2t4 - ex0y0s0t1FlowOnex1y4s1t5 - 10000 nx0y0Ver <= 0
- + ex0y0s0t1FlowOnex0y4s1t4 + ex0y0s0t1FlowOnex1y3s1t4 - ex0y0s0t1FlowOnex1y4s2t4 - ex0y0s0t1FlowOnex1y4s1t5 + 10000 ex0y0s0t1Unx0y0Port1 >= 0
- + ex0y0s0t1FlowOnex0y4s1t4 + ex0y0s0t1FlowOnex1y3s1t4 - ex0y0s0t1FlowOnex1y4s2t4 - ex0y0s0t1FlowOnex1y4s1t5 - 10000 ex0y0s0t1Unx0y0Port1 <= 0
- + ex0y0s0t1FlowOnex0y5s1t5 + ex0y0s0t1FlowOnex1y4s1t5 - ex0y0s0t1FlowOnex1y5s2t5 - ex0y0s0t1FlowOnex1y5s1t6 - ex0y0s0t1Unx1y5 = 0
- + ex0y0s0t1FlowOnex0y6s1t6 + ex0y0s0t1FlowOnex1y5s1t6 - ex0y0s0t1FlowOnex1y6s2t6 - ex0y0s0t1Unx1y6 = 0
+ + ex0y0s0t1FlowOnex0y4s1t4 + ex0y0s0t1FlowOnex1y3s1t4 - ex0y0s0t1FlowOnex1y4s2t4 - ex0y0s0t1FlowOnex1y4s1t5 - ex0y0s0t1Unx1y4 + 10000 nx0y0Ver >= 0
+ + ex0y0s0t1FlowOnex0y4s1t4 + ex0y0s0t1FlowOnex1y3s1t4 - ex0y0s0t1FlowOnex1y4s2t4 - ex0y0s0t1FlowOnex1y4s1t5 - ex0y0s0t1Unx1y4 - 10000 nx0y0Ver <= 0
+ + ex0y0s0t1FlowOnex0y4s1t4 + ex0y0s0t1FlowOnex1y3s1t4 - ex0y0s0t1FlowOnex1y4s2t4 - ex0y0s0t1FlowOnex1y4s1t5 - ex0y0s0t1Unx1y4 + 10000 ex0y0s0t1Unx0y0Port1 >= 0
+ + ex0y0s0t1FlowOnex0y4s1t4 + ex0y0s0t1FlowOnex1y3s1t4 - ex0y0s0t1FlowOnex1y4s2t4 - ex0y0s0t1FlowOnex1y4s1t5 - ex0y0s0t1Unx1y4 - 10000 ex0y0s0t1Unx0y0Port1 <= 0
+ + ex0y0s0t1FlowOnex0y5s1t5 + ex0y0s0t1FlowOnex1y4s1t5 - ex0y0s0t1FlowOnex1y5s2t5 - ex0y0s0t1Unx1y5 = 0
  + ex0y0s0t1FlowOnex1y0s2t0 - ex0y0s0t1FlowOnex2y0s3t0 - ex0y0s0t1FlowOnex2y0s2t1 - ex0y0s0t1Unx2y0 = 0
  + ex0y0s0t1FlowOnex1y1s2t1 + ex0y0s0t1FlowOnex2y0s2t1 - ex0y0s0t1FlowOnex2y1s3t1 - ex0y0s0t1FlowOnex2y1s2t2 - ex0y0s0t1Unx2y1 = 0
  + ex0y0s0t1FlowOnex1y2s2t2 + ex0y0s0t1FlowOnex2y1s2t2 - ex0y0s0t1FlowOnex2y2s3t2 - ex0y0s0t1FlowOnex2y2s2t3 - ex0y0s0t1Unx2y2 = 0
- + ex0y0s0t1FlowOnex1y3s2t3 + ex0y0s0t1FlowOnex2y2s2t3 - ex0y0s0t1FlowOnex2y3s2t4 - ex0y0s0t1Unx2y3 = 0
+ + ex0y0s0t1FlowOnex1y3s2t3 + ex0y0s0t1FlowOnex2y2s2t3 - ex0y0s0t1FlowOnex2y3s3t3 - ex0y0s0t1FlowOnex2y3s2t4 - ex0y0s0t1Unx2y3 = 0
  + ex0y0s0t1FlowOnex1y4s2t4 + ex0y0s0t1FlowOnex2y3s2t4 - ex0y0s0t1FlowOnex2y4s3t4 - ex0y0s0t1FlowOnex2y4s2t5 - ex0y0s0t1Unx2y4 = 0
- + ex0y0s0t1FlowOnex1y5s2t5 + ex0y0s0t1FlowOnex2y4s2t5 - ex0y0s0t1FlowOnex2y5s3t5 - ex0y0s0t1FlowOnex2y5s2t6 - ex0y0s0t1Unx2y5 = 0
- + ex0y0s0t1FlowOnex1y6s2t6 + ex0y0s0t1FlowOnex2y5s2t6 - ex0y0s0t1FlowOnex2y6s3t6 - ex0y0s0t1Unx2y6 = 0
+ + ex0y0s0t1FlowOnex1y5s2t5 + ex0y0s0t1FlowOnex2y4s2t5 - ex0y0s0t1FlowOnex2y5s3t5 - ex0y0s0t1Unx2y5 = 0
  + ex0y0s0t1FlowOnex2y0s3t0 - ex0y0s0t1FlowOnex3y0s4t0 - ex0y0s0t1FlowOnex3y0s3t1 - ex0y0s0t1Unx3y0 = 0
  + ex0y0s0t1FlowOnex2y1s3t1 + ex0y0s0t1FlowOnex3y0s3t1 - ex0y0s0t1FlowOnex3y1s4t1 - ex0y0s0t1FlowOnex3y1s3t2 - ex0y0s0t1Unx3y1 = 0
- + ex0y0s0t1FlowOnex2y2s3t2 + ex0y0s0t1FlowOnex3y1s3t2 - ex0y0s0t1FlowOnex3y2s4t2 - ex0y0s0t1Unx3y2 = 0
- + ex0y0s0t1FlowOnex2y4s3t4 - ex0y0s0t1FlowOnex3y4s4t4 - ex0y0s0t1FlowOnex3y4s3t5 - ex0y0s0t1Unx3y4 = 0
- + ex0y0s0t1FlowOnex2y5s3t5 + ex0y0s0t1FlowOnex3y4s3t5 - ex0y0s0t1FlowOnex3y5s4t5 - ex0y0s0t1FlowOnex3y5s3t6 - ex0y0s0t1Unx3y5 = 0
- + ex0y0s0t1FlowOnex2y6s3t6 + ex0y0s0t1FlowOnex3y5s3t6 - ex0y0s0t1FlowOnex3y6s4t6 - ex0y0s0t1Unx3y6 = 0
+ + ex0y0s0t1FlowOnex2y2s3t2 + ex0y0s0t1FlowOnex3y1s3t2 - ex0y0s0t1FlowOnex3y2s4t2 - ex0y0s0t1FlowOnex3y2s3t3 - ex0y0s0t1Unx3y2 = 0
+ + ex0y0s0t1FlowOnex2y3s3t3 + ex0y0s0t1FlowOnex3y2s3t3 - ex0y0s0t1FlowOnex3y3s4t3 - ex0y0s0t1FlowOnex3y3s3t4 - ex0y0s0t1Unx3y3 = 0
+ + ex0y0s0t1FlowOnex2y4s3t4 + ex0y0s0t1FlowOnex3y3s3t4 - ex0y0s0t1FlowOnex3y4s4t4 - ex0y0s0t1FlowOnex3y4s3t5 - ex0y0s0t1Unx3y4 = 0
+ + ex0y0s0t1FlowOnex2y5s3t5 + ex0y0s0t1FlowOnex3y4s3t5 - ex0y0s0t1FlowOnex3y5s4t5 - ex0y0s0t1Unx3y5 = 0
  + ex0y0s0t1FlowOnex3y0s4t0 - ex0y0s0t1FlowOnex4y0s5t0 - ex0y0s0t1FlowOnex4y0s4t1 - ex0y0s0t1Unx4y0 = 0
  + ex0y0s0t1FlowOnex3y1s4t1 + ex0y0s0t1FlowOnex4y0s4t1 - ex0y0s0t1FlowOnex4y1s5t1 - ex0y0s0t1FlowOnex4y1s4t2 + 10000 nx0y0Hor + 10000 ex0y0s0t1Unx0y0Port1 <= 20001
  + ex0y0s0t1FlowOnex3y1s4t1 + ex0y0s0t1FlowOnex4y0s4t1 - ex0y0s0t1FlowOnex4y1s5t1 - ex0y0s0t1FlowOnex4y1s4t2 - 10000 nx0y0Hor - 10000 ex0y0s0t1Unx0y0Port1 >= -19999
- + ex0y0s0t1FlowOnex3y1s4t1 + ex0y0s0t1FlowOnex4y0s4t1 - ex0y0s0t1FlowOnex4y1s5t1 - ex0y0s0t1FlowOnex4y1s4t2 + 10000 nx0y0Hor >= 0
- + ex0y0s0t1FlowOnex3y1s4t1 + ex0y0s0t1FlowOnex4y0s4t1 - ex0y0s0t1FlowOnex4y1s5t1 - ex0y0s0t1FlowOnex4y1s4t2 - 10000 nx0y0Hor <= 0
- + ex0y0s0t1FlowOnex3y1s4t1 + ex0y0s0t1FlowOnex4y0s4t1 - ex0y0s0t1FlowOnex4y1s5t1 - ex0y0s0t1FlowOnex4y1s4t2 + 10000 ex0y0s0t1Unx0y0Port1 >= 0
- + ex0y0s0t1FlowOnex3y1s4t1 + ex0y0s0t1FlowOnex4y0s4t1 - ex0y0s0t1FlowOnex4y1s5t1 - ex0y0s0t1FlowOnex4y1s4t2 - 10000 ex0y0s0t1Unx0y0Port1 <= 0
+ + ex0y0s0t1FlowOnex3y1s4t1 + ex0y0s0t1FlowOnex4y0s4t1 - ex0y0s0t1FlowOnex4y1s5t1 - ex0y0s0t1FlowOnex4y1s4t2 - ex0y0s0t1Unx4y1 + 10000 nx0y0Hor >= 0
+ + ex0y0s0t1FlowOnex3y1s4t1 + ex0y0s0t1FlowOnex4y0s4t1 - ex0y0s0t1FlowOnex4y1s5t1 - ex0y0s0t1FlowOnex4y1s4t2 - ex0y0s0t1Unx4y1 - 10000 nx0y0Hor <= 0
+ + ex0y0s0t1FlowOnex3y1s4t1 + ex0y0s0t1FlowOnex4y0s4t1 - ex0y0s0t1FlowOnex4y1s5t1 - ex0y0s0t1FlowOnex4y1s4t2 - ex0y0s0t1Unx4y1 + 10000 ex0y0s0t1Unx0y0Port1 >= 0
+ + ex0y0s0t1FlowOnex3y1s4t1 + ex0y0s0t1FlowOnex4y0s4t1 - ex0y0s0t1FlowOnex4y1s5t1 - ex0y0s0t1FlowOnex4y1s4t2 - ex0y0s0t1Unx4y1 - 10000 ex0y0s0t1Unx0y0Port1 <= 0
  + ex0y0s0t1FlowOnex3y2s4t2 + ex0y0s0t1FlowOnex4y1s4t2 - ex0y0s0t1FlowOnex4y2s5t2 - ex0y0s0t1FlowOnex4y2s4t3 - ex0y0s0t1Unx4y2 = 0
- + ex0y0s0t1FlowOnex4y2s4t3 - ex0y0s0t1FlowOnex4y3s5t3 - ex0y0s0t1FlowOnex4y3s4t4 - ex0y0s0t1Unx4y3 = 0
+ + ex0y0s0t1FlowOnex3y3s4t3 + ex0y0s0t1FlowOnex4y2s4t3 - ex0y0s0t1FlowOnex4y3s5t3 - ex0y0s0t1FlowOnex4y3s4t4 - ex0y0s0t1Unx4y3 = 0
  + ex0y0s0t1FlowOnex3y4s4t4 + ex0y0s0t1FlowOnex4y3s4t4 - ex0y0s0t1FlowOnex4y4s5t4 - ex0y0s0t1FlowOnex4y4s4t5 - ex0y0s0t1Unx4y4 = 0
- + ex0y0s0t1FlowOnex3y5s4t5 + ex0y0s0t1FlowOnex4y4s4t5 - ex0y0s0t1FlowOnex4y5s5t5 - ex0y0s0t1FlowOnex4y5s4t6 - ex0y0s0t1Unx4y5 = 0
- + ex0y0s0t1FlowOnex3y6s4t6 + ex0y0s0t1FlowOnex4y5s4t6 - ex0y0s0t1FlowOnex4y6s5t6 - ex0y0s0t1Unx4y6 = 0
+ + ex0y0s0t1FlowOnex3y5s4t5 + ex0y0s0t1FlowOnex4y4s4t5 - ex0y0s0t1FlowOnex4y5s5t5 - ex0y0s0t1Unx4y5 = 0
  + ex0y0s0t1FlowOnex4y0s5t0 - ex0y0s0t1FlowOnex5y0s6t0 - ex0y0s0t1FlowOnex5y0s5t1 - ex0y0s0t1Unx5y0 = 0
  + ex0y0s0t1FlowOnex4y1s5t1 + ex0y0s0t1FlowOnex5y0s5t1 - ex0y0s0t1FlowOnex5y1s6t1 - ex0y0s0t1FlowOnex5y1s5t2 - ex0y0s0t1Unx5y1 = 0
  + ex0y0s0t1FlowOnex4y2s5t2 + ex0y0s0t1FlowOnex5y1s5t2 - ex0y0s0t1FlowOnex5y2s6t2 - ex0y0s0t1FlowOnex5y2s5t3 - ex0y0s0t1Unx5y2 = 0
  + ex0y0s0t1FlowOnex4y3s5t3 + ex0y0s0t1FlowOnex5y2s5t3 - ex0y0s0t1FlowOnex5y3s6t3 - ex0y0s0t1FlowOnex5y3s5t4 - ex0y0s0t1Unx5y3 = 0
  + ex0y0s0t1FlowOnex4y4s5t4 + ex0y0s0t1FlowOnex5y3s5t4 - ex0y0s0t1FlowOnex5y4s6t4 - ex0y0s0t1FlowOnex5y4s5t5 - ex0y0s0t1Unx5y4 = 0
- + ex0y0s0t1FlowOnex4y5s5t5 + ex0y0s0t1FlowOnex5y4s5t5 - ex0y0s0t1FlowOnex5y5s6t5 - ex0y0s0t1FlowOnex5y5s5t6 - ex0y0s0t1Unx5y5 = 0
- + ex0y0s0t1FlowOnex4y6s5t6 + ex0y0s0t1FlowOnex5y5s5t6 - ex0y0s0t1FlowOnex5y6s6t6 - ex0y0s0t1Unx5y6 = 0
+ + ex0y0s0t1FlowOnex4y5s5t5 + ex0y0s0t1FlowOnex5y4s5t5 - ex0y0s0t1FlowOnex5y5s6t5 - ex0y0s0t1Unx5y5 = 0
  + ex0y0s0t1FlowOnex5y0s6t0 - ex0y0s0t1FlowOnex6y0s6t1 - ex0y0s0t1Unx6y0 = 0
  + ex0y0s0t1FlowOnex5y1s6t1 + ex0y0s0t1FlowOnex6y0s6t1 - ex0y0s0t1FlowOnex6y1s6t2 - ex0y0s0t1Unx6y1 = 0
  + ex0y0s0t1FlowOnex5y2s6t2 + ex0y0s0t1FlowOnex6y1s6t2 - ex0y0s0t1FlowOnex6y2s6t3 - ex0y0s0t1Unx6y2 = 0
  + ex0y0s0t1FlowOnex5y3s6t3 + ex0y0s0t1FlowOnex6y2s6t3 - ex0y0s0t1FlowOnex6y3s6t4 - ex0y0s0t1Unx6y3 = 0
  + ex0y0s0t1FlowOnex5y4s6t4 + ex0y0s0t1FlowOnex6y3s6t4 - ex0y0s0t1FlowOnex6y4s6t5 - ex0y0s0t1Unx6y4 = 0
- + ex0y0s0t1FlowOnex5y5s6t5 + ex0y0s0t1FlowOnex6y4s6t5 - ex0y0s0t1FlowOnex6y5s6t6 - ex0y0s0t1Unx6y5 = 0
- + ex0y0s0t1FlowOnex5y6s6t6 + ex0y0s0t1FlowOnex6y5s6t6 - ex0y0s0t1Unx6y6 = 0
- + ex0y0s0t1Uex0y0s1t0 + ex0y0s0t1Uex0y0s0t1 + ex0y0s0t1Uex0y1s1t1 + ex0y0s0t1Uex0y1s0t2 + ex0y0s0t1Uex0y2s1t2 + ex0y0s0t1Uex0y2s0t3 + ex0y0s0t1Uex0y3s1t3 + ex0y0s0t1Uex0y3s0t4 + ex0y0s0t1Uex0y4s1t4 + ex0y0s0t1Uex0y4s0t5 + ex0y0s0t1Uex0y5s1t5 + ex0y0s0t1Uex0y5s0t6 + ex0y0s0t1Uex0y6s1t6 + ex0y0s0t1Uex1y0s2t0 + ex0y0s0t1Uex1y0s1t1 + ex0y0s0t1Uex1y1s2t1 + ex0y0s0t1Uex1y1s1t2 + ex0y0s0t1Uex1y2s2t2 + ex0y0s0t1Uex1y2s1t3 + ex0y0s0t1Uex1y3s2t3 + ex0y0s0t1Uex1y3s1t4 + ex0y0s0t1Uex1y4s2t4 + ex0y0s0t1Uex1y4s1t5 + ex0y0s0t1Uex1y5s2t5 + ex0y0s0t1Uex1y5s1t6 + ex0y0s0t1Uex1y6s2t6 + ex0y0s0t1Uex2y0s3t0 + ex0y0s0t1Uex2y0s2t1 + ex0y0s0t1Uex2y1s3t1 + ex0y0s0t1Uex2y1s2t2 + ex0y0s0t1Uex2y2s3t2 + ex0y0s0t1Uex2y2s2t3 + ex0y0s0t1Uex2y3s2t4 + ex0y0s0t1Uex2y4s3t4 + ex0y0s0t1Uex2y4s2t5 + ex0y0s0t1Uex2y5s3t5 + ex0y0s0t1Uex2y5s2t6 + ex0y0s0t1Uex2y6s3t6 + ex0y0s0t1Uex3y0s4t0 + ex0y0s0t1Uex3y0s3t1 + ex0y0s0t1Uex3y1s4t1 + ex0y0s0t1Uex3y1s3t2 + ex0y0s0t1Uex3y2s4t2 + ex0y0s0t1Uex3y4s4t4 + ex0y0s0t1Uex3y4s3t5 + ex0y0s0t1Uex3y5s4t5 + ex0y0s0t1Uex3y5s3t6 + ex0y0s0t1Uex3y6s4t6 + ex0y0s0t1Uex4y0s5t0 + ex0y0s0t1Uex4y0s4t1 + ex0y0s0t1Uex4y1s5t1 + ex0y0s0t1Uex4y1s4t2 + ex0y0s0t1Uex4y2s5t2 + ex0y0s0t1Uex4y2s4t3 + ex0y0s0t1Uex4y3s5t3 + ex0y0s0t1Uex4y3s4t4 + ex0y0s0t1Uex4y4s5t4 + ex0y0s0t1Uex4y4s4t5 + ex0y0s0t1Uex4y5s5t5 + ex0y0s0t1Uex4y5s4t6 + ex0y0s0t1Uex4y6s5t6 + ex0y0s0t1Uex5y0s6t0 + ex0y0s0t1Uex5y0s5t1 + ex0y0s0t1Uex5y1s6t1 + ex0y0s0t1Uex5y1s5t2 + ex0y0s0t1Uex5y2s6t2 + ex0y0s0t1Uex5y2s5t3 + ex0y0s0t1Uex5y3s6t3 + ex0y0s0t1Uex5y3s5t4 + ex0y0s0t1Uex5y4s6t4 + ex0y0s0t1Uex5y4s5t5 + ex0y0s0t1Uex5y5s6t5 + ex0y0s0t1Uex5y5s5t6 + ex0y0s0t1Uex5y6s6t6 + ex0y0s0t1Uex6y0s6t1 + ex0y0s0t1Uex6y1s6t2 + ex0y0s0t1Uex6y2s6t3 + ex0y0s0t1Uex6y3s6t4 + ex0y0s0t1Uex6y4s6t5 + ex0y0s0t1Uex6y5s6t6 - ex0y0s0t1SuperFlow = -1
+ + ex0y0s0t1FlowOnex5y5s6t5 + ex0y0s0t1FlowOnex6y4s6t5 - ex0y0s0t1Unx6y5 = 0
+ + ex0y0s0t1Uex0y0s1t0 + ex0y0s0t1Uex0y0s0t1 + ex0y0s0t1Uex0y1s1t1 + ex0y0s0t1Uex0y1s0t2 + ex0y0s0t1Uex0y2s1t2 + ex0y0s0t1Uex0y2s0t3 + ex0y0s0t1Uex0y3s1t3 + ex0y0s0t1Uex0y3s0t4 + ex0y0s0t1Uex0y4s1t4 + ex0y0s0t1Uex0y4s0t5 + ex0y0s0t1Uex0y5s1t5 + ex0y0s0t1Uex1y0s2t0 + ex0y0s0t1Uex1y0s1t1 + ex0y0s0t1Uex1y1s2t1 + ex0y0s0t1Uex1y1s1t2 + ex0y0s0t1Uex1y2s2t2 + ex0y0s0t1Uex1y2s1t3 + ex0y0s0t1Uex1y3s2t3 + ex0y0s0t1Uex1y3s1t4 + ex0y0s0t1Uex1y4s2t4 + ex0y0s0t1Uex1y4s1t5 + ex0y0s0t1Uex1y5s2t5 + ex0y0s0t1Uex2y0s3t0 + ex0y0s0t1Uex2y0s2t1 + ex0y0s0t1Uex2y1s3t1 + ex0y0s0t1Uex2y1s2t2 + ex0y0s0t1Uex2y2s3t2 + ex0y0s0t1Uex2y2s2t3 + ex0y0s0t1Uex2y3s3t3 + ex0y0s0t1Uex2y3s2t4 + ex0y0s0t1Uex2y4s3t4 + ex0y0s0t1Uex2y4s2t5 + ex0y0s0t1Uex2y5s3t5 + ex0y0s0t1Uex3y0s4t0 + ex0y0s0t1Uex3y0s3t1 + ex0y0s0t1Uex3y1s4t1 + ex0y0s0t1Uex3y1s3t2 + ex0y0s0t1Uex3y2s4t2 + ex0y0s0t1Uex3y2s3t3 + ex0y0s0t1Uex3y3s4t3 + ex0y0s0t1Uex3y3s3t4 + ex0y0s0t1Uex3y4s4t4 + ex0y0s0t1Uex3y4s3t5 + ex0y0s0t1Uex3y5s4t5 + ex0y0s0t1Uex4y0s5t0 + ex0y0s0t1Uex4y0s4t1 + ex0y0s0t1Uex4y1s5t1 + ex0y0s0t1Uex4y1s4t2 + ex0y0s0t1Uex4y2s5t2 + ex0y0s0t1Uex4y2s4t3 + ex0y0s0t1Uex4y3s5t3 + ex0y0s0t1Uex4y3s4t4 + ex0y0s0t1Uex4y4s5t4 + ex0y0s0t1Uex4y4s4t5 + ex0y0s0t1Uex4y5s5t5 + ex0y0s0t1Uex5y0s6t0 + ex0y0s0t1Uex5y0s5t1 + ex0y0s0t1Uex5y1s6t1 + ex0y0s0t1Uex5y1s5t2 + ex0y0s0t1Uex5y2s6t2 + ex0y0s0t1Uex5y2s5t3 + ex0y0s0t1Uex5y3s6t3 + ex0y0s0t1Uex5y3s5t4 + ex0y0s0t1Uex5y4s6t4 + ex0y0s0t1Uex5y4s5t5 + ex0y0s0t1Uex5y5s6t5 + ex0y0s0t1Uex6y0s6t1 + ex0y0s0t1Uex6y1s6t2 + ex0y0s0t1Uex6y2s6t3 + ex0y0s0t1Uex6y3s6t4 + ex0y0s0t1Uex6y4s6t5 - ex0y0s0t1SuperFlow = -1
 ex0y0s0t1Unx1y0 - 10000 nx0y0Hor >= -10000
 ex0y0s0t1Unx1y0 + 10000 nx0y0Hor <= 10000
 ex0y0s0t1Unx2y0 - 10000 nx0y0Hor >= -10000
@@ -1004,103 +908,91 @@ ex0y0s0t1Unx2y3 - 10000 nx0y0Ver >= -10000
 ex0y0s0t1Unx2y3 + 10000 nx0y0Ver <= 10000
 ex0y0s0t1Unx1y4 - 10000 nx0y0Ver >= -10000
 ex0y0s0t1Unx1y4 + 10000 nx0y0Ver <= 10000
- + ex0y1s1t1Uex0y5s0t6 + ex0y1s1t1Uex0y6s1t6 = 1
- + ex0y1s1t1Uex5y6s6t6 + ex0y1s1t1Uex6y5s6t6 = 1
+ + ex0y1s1t1Uex0y4s0t5 + ex0y1s1t1Uex0y5s1t5 = 1
+ + ex0y1s1t1Uex5y5s6t5 + ex0y1s1t1Uex6y4s6t5 = 1
  + ex0y1s1t1Uex0y0s1t0 + ex0y1s1t1Uex0y0s0t1 - 2 ex0y1s1t1Unx0y0 = 0
  + ex0y1s1t1Uex0y0s0t1 + ex0y1s1t1Uex0y1s1t1 + ex0y1s1t1Uex0y1s0t2 - 2 ex0y1s1t1Unx0y1 = 0
  + ex0y1s1t1Uex0y1s0t2 + ex0y1s1t1Uex0y2s1t2 + ex0y1s1t1Uex0y2s0t3 - 2 ex0y1s1t1Unx0y2 = 0
  + ex0y1s1t1Uex0y2s0t3 + ex0y1s1t1Uex0y3s1t3 + ex0y1s1t1Uex0y3s0t4 - 2 ex0y1s1t1Unx0y3 = 0
  + ex0y1s1t1Uex0y3s0t4 + ex0y1s1t1Uex0y4s1t4 + ex0y1s1t1Uex0y4s0t5 - 2 ex0y1s1t1Unx0y4 = 0
- + ex0y1s1t1Uex0y4s0t5 + ex0y1s1t1Uex0y5s1t5 + ex0y1s1t1Uex0y5s0t6 - 2 ex0y1s1t1Unx0y5 = 0
  + ex0y1s1t1Uex0y0s1t0 + ex0y1s1t1Uex1y0s2t0 + ex0y1s1t1Uex1y0s1t1 - 2 ex0y1s1t1Unx1y0 = 0
  + ex0y1s1t1Uex0y1s1t1 + ex0y1s1t1Uex1y0s1t1 + ex0y1s1t1Uex1y1s2t1 + ex0y1s1t1Uex1y1s1t2 - 2 ex0y1s1t1Unx1y1 = 0
  + ex0y1s1t1Uex0y2s1t2 + ex0y1s1t1Uex1y1s1t2 + ex0y1s1t1Uex1y2s2t2 + ex0y1s1t1Uex1y2s1t3 - 2 ex0y1s1t1Unx1y2 = 0
  + ex0y1s1t1Uex0y3s1t3 + ex0y1s1t1Uex1y2s1t3 + ex0y1s1t1Uex1y3s2t3 + ex0y1s1t1Uex1y3s1t4 - 2 ex0y1s1t1Unx1y3 = 0
  + ex0y1s1t1Uex0y4s1t4 + ex0y1s1t1Uex1y3s1t4 + ex0y1s1t1Uex1y4s2t4 + ex0y1s1t1Uex1y4s1t5 - 2 ex0y1s1t1Unx1y4 = 0
- + ex0y1s1t1Uex0y5s1t5 + ex0y1s1t1Uex1y4s1t5 + ex0y1s1t1Uex1y5s2t5 + ex0y1s1t1Uex1y5s1t6 - 2 ex0y1s1t1Unx1y5 = 0
- + ex0y1s1t1Uex0y6s1t6 + ex0y1s1t1Uex1y5s1t6 + ex0y1s1t1Uex1y6s2t6 - 2 ex0y1s1t1Unx1y6 = 0
+ + ex0y1s1t1Uex0y5s1t5 + ex0y1s1t1Uex1y4s1t5 + ex0y1s1t1Uex1y5s2t5 - 2 ex0y1s1t1Unx1y5 = 0
  + ex0y1s1t1Uex1y0s2t0 + ex0y1s1t1Uex2y0s3t0 + ex0y1s1t1Uex2y0s2t1 - 2 ex0y1s1t1Unx2y0 = 0
  + ex0y1s1t1Uex1y1s2t1 + ex0y1s1t1Uex2y0s2t1 + ex0y1s1t1Uex2y1s3t1 + ex0y1s1t1Uex2y1s2t2 - 2 ex0y1s1t1Unx2y1 = 0
  + ex0y1s1t1Uex1y2s2t2 + ex0y1s1t1Uex2y1s2t2 + ex0y1s1t1Uex2y2s3t2 + ex0y1s1t1Uex2y2s2t3 - 2 ex0y1s1t1Unx2y2 = 0
- + ex0y1s1t1Uex1y3s2t3 + ex0y1s1t1Uex2y2s2t3 + ex0y1s1t1Uex2y3s2t4 - 2 ex0y1s1t1Unx2y3 = 0
+ + ex0y1s1t1Uex1y3s2t3 + ex0y1s1t1Uex2y2s2t3 + ex0y1s1t1Uex2y3s3t3 + ex0y1s1t1Uex2y3s2t4 - 2 ex0y1s1t1Unx2y3 = 0
  + ex0y1s1t1Uex1y4s2t4 + ex0y1s1t1Uex2y3s2t4 + ex0y1s1t1Uex2y4s3t4 + ex0y1s1t1Uex2y4s2t5 - 2 ex0y1s1t1Unx2y4 = 0
- + ex0y1s1t1Uex1y5s2t5 + ex0y1s1t1Uex2y4s2t5 + ex0y1s1t1Uex2y5s3t5 + ex0y1s1t1Uex2y5s2t6 - 2 ex0y1s1t1Unx2y5 = 0
- + ex0y1s1t1Uex1y6s2t6 + ex0y1s1t1Uex2y5s2t6 + ex0y1s1t1Uex2y6s3t6 - 2 ex0y1s1t1Unx2y6 = 0
+ + ex0y1s1t1Uex1y5s2t5 + ex0y1s1t1Uex2y4s2t5 + ex0y1s1t1Uex2y5s3t5 - 2 ex0y1s1t1Unx2y5 = 0
  + ex0y1s1t1Uex2y0s3t0 + ex0y1s1t1Uex3y0s4t0 + ex0y1s1t1Uex3y0s3t1 - 2 ex0y1s1t1Unx3y0 = 0
  + ex0y1s1t1Uex2y1s3t1 + ex0y1s1t1Uex3y0s3t1 + ex0y1s1t1Uex3y1s4t1 + ex0y1s1t1Uex3y1s3t2 - 2 ex0y1s1t1Unx3y1 = 0
- + ex0y1s1t1Uex2y2s3t2 + ex0y1s1t1Uex3y1s3t2 + ex0y1s1t1Uex3y2s4t2 - 2 ex0y1s1t1Unx3y2 = 0
- + ex0y1s1t1Uex2y4s3t4 + ex0y1s1t1Uex3y4s4t4 + ex0y1s1t1Uex3y4s3t5 - 2 ex0y1s1t1Unx3y4 = 0
- + ex0y1s1t1Uex2y5s3t5 + ex0y1s1t1Uex3y4s3t5 + ex0y1s1t1Uex3y5s4t5 + ex0y1s1t1Uex3y5s3t6 - 2 ex0y1s1t1Unx3y5 = 0
- + ex0y1s1t1Uex2y6s3t6 + ex0y1s1t1Uex3y5s3t6 + ex0y1s1t1Uex3y6s4t6 - 2 ex0y1s1t1Unx3y6 = 0
+ + ex0y1s1t1Uex2y2s3t2 + ex0y1s1t1Uex3y1s3t2 + ex0y1s1t1Uex3y2s4t2 + ex0y1s1t1Uex3y2s3t3 - 2 ex0y1s1t1Unx3y2 = 0
+ + ex0y1s1t1Uex2y3s3t3 + ex0y1s1t1Uex3y2s3t3 + ex0y1s1t1Uex3y3s4t3 + ex0y1s1t1Uex3y3s3t4 - 2 ex0y1s1t1Unx3y3 = 0
+ + ex0y1s1t1Uex2y4s3t4 + ex0y1s1t1Uex3y3s3t4 + ex0y1s1t1Uex3y4s4t4 + ex0y1s1t1Uex3y4s3t5 - 2 ex0y1s1t1Unx3y4 = 0
+ + ex0y1s1t1Uex2y5s3t5 + ex0y1s1t1Uex3y4s3t5 + ex0y1s1t1Uex3y5s4t5 - 2 ex0y1s1t1Unx3y5 = 0
  + ex0y1s1t1Uex3y0s4t0 + ex0y1s1t1Uex4y0s5t0 + ex0y1s1t1Uex4y0s4t1 - 2 ex0y1s1t1Unx4y0 = 0
  + ex0y1s1t1Uex3y1s4t1 + ex0y1s1t1Uex4y0s4t1 + ex0y1s1t1Uex4y1s5t1 + ex0y1s1t1Uex4y1s4t2 - 2 ex0y1s1t1Unx4y1 = 0
  + ex0y1s1t1Uex3y2s4t2 + ex0y1s1t1Uex4y1s4t2 + ex0y1s1t1Uex4y2s5t2 + ex0y1s1t1Uex4y2s4t3 - 2 ex0y1s1t1Unx4y2 = 0
- + ex0y1s1t1Uex4y2s4t3 + ex0y1s1t1Uex4y3s5t3 + ex0y1s1t1Uex4y3s4t4 - 2 ex0y1s1t1Unx4y3 = 0
+ + ex0y1s1t1Uex3y3s4t3 + ex0y1s1t1Uex4y2s4t3 + ex0y1s1t1Uex4y3s5t3 + ex0y1s1t1Uex4y3s4t4 - 2 ex0y1s1t1Unx4y3 = 0
  + ex0y1s1t1Uex3y4s4t4 + ex0y1s1t1Uex4y3s4t4 + ex0y1s1t1Uex4y4s5t4 + ex0y1s1t1Uex4y4s4t5 - 2 ex0y1s1t1Unx4y4 = 0
- + ex0y1s1t1Uex3y5s4t5 + ex0y1s1t1Uex4y4s4t5 + ex0y1s1t1Uex4y5s5t5 + ex0y1s1t1Uex4y5s4t6 - 2 ex0y1s1t1Unx4y5 = 0
- + ex0y1s1t1Uex3y6s4t6 + ex0y1s1t1Uex4y5s4t6 + ex0y1s1t1Uex4y6s5t6 - 2 ex0y1s1t1Unx4y6 = 0
+ + ex0y1s1t1Uex3y5s4t5 + ex0y1s1t1Uex4y4s4t5 + ex0y1s1t1Uex4y5s5t5 - 2 ex0y1s1t1Unx4y5 = 0
  + ex0y1s1t1Uex4y0s5t0 + ex0y1s1t1Uex5y0s6t0 + ex0y1s1t1Uex5y0s5t1 - 2 ex0y1s1t1Unx5y0 = 0
  + ex0y1s1t1Uex4y1s5t1 + ex0y1s1t1Uex5y0s5t1 + ex0y1s1t1Uex5y1s6t1 + ex0y1s1t1Uex5y1s5t2 - 2 ex0y1s1t1Unx5y1 = 0
  + ex0y1s1t1Uex4y2s5t2 + ex0y1s1t1Uex5y1s5t2 + ex0y1s1t1Uex5y2s6t2 + ex0y1s1t1Uex5y2s5t3 - 2 ex0y1s1t1Unx5y2 = 0
  + ex0y1s1t1Uex4y3s5t3 + ex0y1s1t1Uex5y2s5t3 + ex0y1s1t1Uex5y3s6t3 + ex0y1s1t1Uex5y3s5t4 - 2 ex0y1s1t1Unx5y3 = 0
  + ex0y1s1t1Uex4y4s5t4 + ex0y1s1t1Uex5y3s5t4 + ex0y1s1t1Uex5y4s6t4 + ex0y1s1t1Uex5y4s5t5 - 2 ex0y1s1t1Unx5y4 = 0
- + ex0y1s1t1Uex4y5s5t5 + ex0y1s1t1Uex5y4s5t5 + ex0y1s1t1Uex5y5s6t5 + ex0y1s1t1Uex5y5s5t6 - 2 ex0y1s1t1Unx5y5 = 0
- + ex0y1s1t1Uex4y6s5t6 + ex0y1s1t1Uex5y5s5t6 + ex0y1s1t1Uex5y6s6t6 - 2 ex0y1s1t1Unx5y6 = 0
+ + ex0y1s1t1Uex4y5s5t5 + ex0y1s1t1Uex5y4s5t5 + ex0y1s1t1Uex5y5s6t5 - 2 ex0y1s1t1Unx5y5 = 0
  + ex0y1s1t1Uex5y0s6t0 + ex0y1s1t1Uex6y0s6t1 - 2 ex0y1s1t1Unx6y0 = 0
  + ex0y1s1t1Uex5y1s6t1 + ex0y1s1t1Uex6y0s6t1 + ex0y1s1t1Uex6y1s6t2 - 2 ex0y1s1t1Unx6y1 = 0
  + ex0y1s1t1Uex5y2s6t2 + ex0y1s1t1Uex6y1s6t2 + ex0y1s1t1Uex6y2s6t3 - 2 ex0y1s1t1Unx6y2 = 0
  + ex0y1s1t1Uex5y3s6t3 + ex0y1s1t1Uex6y2s6t3 + ex0y1s1t1Uex6y3s6t4 - 2 ex0y1s1t1Unx6y3 = 0
  + ex0y1s1t1Uex5y4s6t4 + ex0y1s1t1Uex6y3s6t4 + ex0y1s1t1Uex6y4s6t5 - 2 ex0y1s1t1Unx6y4 = 0
- + ex0y1s1t1Uex5y5s6t5 + ex0y1s1t1Uex6y4s6t5 + ex0y1s1t1Uex6y5s6t6 - 2 ex0y1s1t1Unx6y5 = 0
- + ex0y1s1t1FlowOnex0y5s0t6 - ex0y1s1t1FlowOnex0y6s1t6 + ex0y1s1t1SuperFlow = 1
+ + ex0y1s1t1FlowOnex0y4s0t5 - ex0y1s1t1FlowOnex0y5s1t5 + ex0y1s1t1SuperFlow = 1
  - ex0y1s1t1FlowOnex0y0s1t0 - ex0y1s1t1FlowOnex0y0s0t1 - ex0y1s1t1Unx0y0 = 0
  + ex0y1s1t1FlowOnex0y0s0t1 - ex0y1s1t1FlowOnex0y1s1t1 - ex0y1s1t1FlowOnex0y1s0t2 - ex0y1s1t1Unx0y1 = 0
  + ex0y1s1t1FlowOnex0y1s0t2 - ex0y1s1t1FlowOnex0y2s1t2 - ex0y1s1t1FlowOnex0y2s0t3 - ex0y1s1t1Unx0y2 = 0
  + ex0y1s1t1FlowOnex0y2s0t3 - ex0y1s1t1FlowOnex0y3s1t3 - ex0y1s1t1FlowOnex0y3s0t4 - ex0y1s1t1Unx0y3 = 0
  + ex0y1s1t1FlowOnex0y3s0t4 - ex0y1s1t1FlowOnex0y4s1t4 - ex0y1s1t1FlowOnex0y4s0t5 - ex0y1s1t1Unx0y4 = 0
- + ex0y1s1t1FlowOnex0y4s0t5 - ex0y1s1t1FlowOnex0y5s1t5 - ex0y1s1t1FlowOnex0y5s0t6 - ex0y1s1t1Unx0y5 = 0
  + ex0y1s1t1FlowOnex0y0s1t0 - ex0y1s1t1FlowOnex1y0s2t0 - ex0y1s1t1FlowOnex1y0s1t1 - ex0y1s1t1Unx1y0 = 0
  + ex0y1s1t1FlowOnex0y1s1t1 + ex0y1s1t1FlowOnex1y0s1t1 - ex0y1s1t1FlowOnex1y1s2t1 - ex0y1s1t1FlowOnex1y1s1t2 - ex0y1s1t1Unx1y1 = 0
  + ex0y1s1t1FlowOnex0y2s1t2 + ex0y1s1t1FlowOnex1y1s1t2 - ex0y1s1t1FlowOnex1y2s2t2 - ex0y1s1t1FlowOnex1y2s1t3 - ex0y1s1t1Unx1y2 = 0
  + ex0y1s1t1FlowOnex0y3s1t3 + ex0y1s1t1FlowOnex1y2s1t3 - ex0y1s1t1FlowOnex1y3s2t3 - ex0y1s1t1FlowOnex1y3s1t4 - ex0y1s1t1Unx1y3 = 0
  + ex0y1s1t1FlowOnex0y4s1t4 + ex0y1s1t1FlowOnex1y3s1t4 - ex0y1s1t1FlowOnex1y4s2t4 - ex0y1s1t1FlowOnex1y4s1t5 - ex0y1s1t1Unx1y4 = 0
- + ex0y1s1t1FlowOnex0y5s1t5 + ex0y1s1t1FlowOnex1y4s1t5 - ex0y1s1t1FlowOnex1y5s2t5 - ex0y1s1t1FlowOnex1y5s1t6 - ex0y1s1t1Unx1y5 = 0
- + ex0y1s1t1FlowOnex0y6s1t6 + ex0y1s1t1FlowOnex1y5s1t6 - ex0y1s1t1FlowOnex1y6s2t6 - ex0y1s1t1Unx1y6 = 0
+ + ex0y1s1t1FlowOnex0y5s1t5 + ex0y1s1t1FlowOnex1y4s1t5 - ex0y1s1t1FlowOnex1y5s2t5 - ex0y1s1t1Unx1y5 = 0
  + ex0y1s1t1FlowOnex1y0s2t0 - ex0y1s1t1FlowOnex2y0s3t0 - ex0y1s1t1FlowOnex2y0s2t1 - ex0y1s1t1Unx2y0 = 0
  + ex0y1s1t1FlowOnex1y1s2t1 + ex0y1s1t1FlowOnex2y0s2t1 - ex0y1s1t1FlowOnex2y1s3t1 - ex0y1s1t1FlowOnex2y1s2t2 - ex0y1s1t1Unx2y1 = 0
  + ex0y1s1t1FlowOnex1y2s2t2 + ex0y1s1t1FlowOnex2y1s2t2 - ex0y1s1t1FlowOnex2y2s3t2 - ex0y1s1t1FlowOnex2y2s2t3 - ex0y1s1t1Unx2y2 = 0
- + ex0y1s1t1FlowOnex1y3s2t3 + ex0y1s1t1FlowOnex2y2s2t3 - ex0y1s1t1FlowOnex2y3s2t4 - ex0y1s1t1Unx2y3 = 0
+ + ex0y1s1t1FlowOnex1y3s2t3 + ex0y1s1t1FlowOnex2y2s2t3 - ex0y1s1t1FlowOnex2y3s3t3 - ex0y1s1t1FlowOnex2y3s2t4 - ex0y1s1t1Unx2y3 = 0
  + ex0y1s1t1FlowOnex1y4s2t4 + ex0y1s1t1FlowOnex2y3s2t4 - ex0y1s1t1FlowOnex2y4s3t4 - ex0y1s1t1FlowOnex2y4s2t5 - ex0y1s1t1Unx2y4 = 0
- + ex0y1s1t1FlowOnex1y5s2t5 + ex0y1s1t1FlowOnex2y4s2t5 - ex0y1s1t1FlowOnex2y5s3t5 - ex0y1s1t1FlowOnex2y5s2t6 - ex0y1s1t1Unx2y5 = 0
- + ex0y1s1t1FlowOnex1y6s2t6 + ex0y1s1t1FlowOnex2y5s2t6 - ex0y1s1t1FlowOnex2y6s3t6 - ex0y1s1t1Unx2y6 = 0
+ + ex0y1s1t1FlowOnex1y5s2t5 + ex0y1s1t1FlowOnex2y4s2t5 - ex0y1s1t1FlowOnex2y5s3t5 - ex0y1s1t1Unx2y5 = 0
  + ex0y1s1t1FlowOnex2y0s3t0 - ex0y1s1t1FlowOnex3y0s4t0 - ex0y1s1t1FlowOnex3y0s3t1 - ex0y1s1t1Unx3y0 = 0
  + ex0y1s1t1FlowOnex2y1s3t1 + ex0y1s1t1FlowOnex3y0s3t1 - ex0y1s1t1FlowOnex3y1s4t1 - ex0y1s1t1FlowOnex3y1s3t2 - ex0y1s1t1Unx3y1 = 0
- + ex0y1s1t1FlowOnex2y2s3t2 + ex0y1s1t1FlowOnex3y1s3t2 - ex0y1s1t1FlowOnex3y2s4t2 - ex0y1s1t1Unx3y2 = 0
- + ex0y1s1t1FlowOnex2y4s3t4 - ex0y1s1t1FlowOnex3y4s4t4 - ex0y1s1t1FlowOnex3y4s3t5 - ex0y1s1t1Unx3y4 = 0
- + ex0y1s1t1FlowOnex2y5s3t5 + ex0y1s1t1FlowOnex3y4s3t5 - ex0y1s1t1FlowOnex3y5s4t5 - ex0y1s1t1FlowOnex3y5s3t6 - ex0y1s1t1Unx3y5 = 0
- + ex0y1s1t1FlowOnex2y6s3t6 + ex0y1s1t1FlowOnex3y5s3t6 - ex0y1s1t1FlowOnex3y6s4t6 - ex0y1s1t1Unx3y6 = 0
+ + ex0y1s1t1FlowOnex2y2s3t2 + ex0y1s1t1FlowOnex3y1s3t2 - ex0y1s1t1FlowOnex3y2s4t2 - ex0y1s1t1FlowOnex3y2s3t3 - ex0y1s1t1Unx3y2 = 0
+ + ex0y1s1t1FlowOnex2y3s3t3 + ex0y1s1t1FlowOnex3y2s3t3 - ex0y1s1t1FlowOnex3y3s4t3 - ex0y1s1t1FlowOnex3y3s3t4 - ex0y1s1t1Unx3y3 = 0
+ + ex0y1s1t1FlowOnex2y4s3t4 + ex0y1s1t1FlowOnex3y3s3t4 - ex0y1s1t1FlowOnex3y4s4t4 - ex0y1s1t1FlowOnex3y4s3t5 - ex0y1s1t1Unx3y4 = 0
+ + ex0y1s1t1FlowOnex2y5s3t5 + ex0y1s1t1FlowOnex3y4s3t5 - ex0y1s1t1FlowOnex3y5s4t5 - ex0y1s1t1Unx3y5 = 0
  + ex0y1s1t1FlowOnex3y0s4t0 - ex0y1s1t1FlowOnex4y0s5t0 - ex0y1s1t1FlowOnex4y0s4t1 - ex0y1s1t1Unx4y0 = 0
  + ex0y1s1t1FlowOnex3y1s4t1 + ex0y1s1t1FlowOnex4y0s4t1 - ex0y1s1t1FlowOnex4y1s5t1 - ex0y1s1t1FlowOnex4y1s4t2 - ex0y1s1t1Unx4y1 = 0
  + ex0y1s1t1FlowOnex3y2s4t2 + ex0y1s1t1FlowOnex4y1s4t2 - ex0y1s1t1FlowOnex4y2s5t2 - ex0y1s1t1FlowOnex4y2s4t3 - ex0y1s1t1Unx4y2 = 0
- + ex0y1s1t1FlowOnex4y2s4t3 - ex0y1s1t1FlowOnex4y3s5t3 - ex0y1s1t1FlowOnex4y3s4t4 - ex0y1s1t1Unx4y3 = 0
+ + ex0y1s1t1FlowOnex3y3s4t3 + ex0y1s1t1FlowOnex4y2s4t3 - ex0y1s1t1FlowOnex4y3s5t3 - ex0y1s1t1FlowOnex4y3s4t4 - ex0y1s1t1Unx4y3 = 0
  + ex0y1s1t1FlowOnex3y4s4t4 + ex0y1s1t1FlowOnex4y3s4t4 - ex0y1s1t1FlowOnex4y4s5t4 - ex0y1s1t1FlowOnex4y4s4t5 - ex0y1s1t1Unx4y4 = 0
- + ex0y1s1t1FlowOnex3y5s4t5 + ex0y1s1t1FlowOnex4y4s4t5 - ex0y1s1t1FlowOnex4y5s5t5 - ex0y1s1t1FlowOnex4y5s4t6 - ex0y1s1t1Unx4y5 = 0
- + ex0y1s1t1FlowOnex3y6s4t6 + ex0y1s1t1FlowOnex4y5s4t6 - ex0y1s1t1FlowOnex4y6s5t6 - ex0y1s1t1Unx4y6 = 0
+ + ex0y1s1t1FlowOnex3y5s4t5 + ex0y1s1t1FlowOnex4y4s4t5 - ex0y1s1t1FlowOnex4y5s5t5 - ex0y1s1t1Unx4y5 = 0
  + ex0y1s1t1FlowOnex4y0s5t0 - ex0y1s1t1FlowOnex5y0s6t0 - ex0y1s1t1FlowOnex5y0s5t1 - ex0y1s1t1Unx5y0 = 0
  + ex0y1s1t1FlowOnex4y1s5t1 + ex0y1s1t1FlowOnex5y0s5t1 - ex0y1s1t1FlowOnex5y1s6t1 - ex0y1s1t1FlowOnex5y1s5t2 - ex0y1s1t1Unx5y1 = 0
  + ex0y1s1t1FlowOnex4y2s5t2 + ex0y1s1t1FlowOnex5y1s5t2 - ex0y1s1t1FlowOnex5y2s6t2 - ex0y1s1t1FlowOnex5y2s5t3 - ex0y1s1t1Unx5y2 = 0
  + ex0y1s1t1FlowOnex4y3s5t3 + ex0y1s1t1FlowOnex5y2s5t3 - ex0y1s1t1FlowOnex5y3s6t3 - ex0y1s1t1FlowOnex5y3s5t4 - ex0y1s1t1Unx5y3 = 0
  + ex0y1s1t1FlowOnex4y4s5t4 + ex0y1s1t1FlowOnex5y3s5t4 - ex0y1s1t1FlowOnex5y4s6t4 - ex0y1s1t1FlowOnex5y4s5t5 - ex0y1s1t1Unx5y4 = 0
- + ex0y1s1t1FlowOnex4y5s5t5 + ex0y1s1t1FlowOnex5y4s5t5 - ex0y1s1t1FlowOnex5y5s6t5 - ex0y1s1t1FlowOnex5y5s5t6 - ex0y1s1t1Unx5y5 = 0
- + ex0y1s1t1FlowOnex4y6s5t6 + ex0y1s1t1FlowOnex5y5s5t6 - ex0y1s1t1FlowOnex5y6s6t6 - ex0y1s1t1Unx5y6 = 0
+ + ex0y1s1t1FlowOnex4y5s5t5 + ex0y1s1t1FlowOnex5y4s5t5 - ex0y1s1t1FlowOnex5y5s6t5 - ex0y1s1t1Unx5y5 = 0
  + ex0y1s1t1FlowOnex5y0s6t0 - ex0y1s1t1FlowOnex6y0s6t1 - ex0y1s1t1Unx6y0 = 0
  + ex0y1s1t1FlowOnex5y1s6t1 + ex0y1s1t1FlowOnex6y0s6t1 - ex0y1s1t1FlowOnex6y1s6t2 - ex0y1s1t1Unx6y1 = 0
  + ex0y1s1t1FlowOnex5y2s6t2 + ex0y1s1t1FlowOnex6y1s6t2 - ex0y1s1t1FlowOnex6y2s6t3 - ex0y1s1t1Unx6y2 = 0
  + ex0y1s1t1FlowOnex5y3s6t3 + ex0y1s1t1FlowOnex6y2s6t3 - ex0y1s1t1FlowOnex6y3s6t4 - ex0y1s1t1Unx6y3 = 0
  + ex0y1s1t1FlowOnex5y4s6t4 + ex0y1s1t1FlowOnex6y3s6t4 - ex0y1s1t1FlowOnex6y4s6t5 - ex0y1s1t1Unx6y4 = 0
- + ex0y1s1t1FlowOnex5y5s6t5 + ex0y1s1t1FlowOnex6y4s6t5 - ex0y1s1t1FlowOnex6y5s6t6 - ex0y1s1t1Unx6y5 = 0
- + ex0y1s1t1FlowOnex5y6s6t6 + ex0y1s1t1FlowOnex6y5s6t6 = 1
- + ex0y1s1t1Uex0y0s1t0 + ex0y1s1t1Uex0y0s0t1 + ex0y1s1t1Uex0y1s1t1 + ex0y1s1t1Uex0y1s0t2 + ex0y1s1t1Uex0y2s1t2 + ex0y1s1t1Uex0y2s0t3 + ex0y1s1t1Uex0y3s1t3 + ex0y1s1t1Uex0y3s0t4 + ex0y1s1t1Uex0y4s1t4 + ex0y1s1t1Uex0y4s0t5 + ex0y1s1t1Uex0y5s1t5 + ex0y1s1t1Uex0y5s0t6 + ex0y1s1t1Uex0y6s1t6 + ex0y1s1t1Uex1y0s2t0 + ex0y1s1t1Uex1y0s1t1 + ex0y1s1t1Uex1y1s2t1 + ex0y1s1t1Uex1y1s1t2 + ex0y1s1t1Uex1y2s2t2 + ex0y1s1t1Uex1y2s1t3 + ex0y1s1t1Uex1y3s2t3 + ex0y1s1t1Uex1y3s1t4 + ex0y1s1t1Uex1y4s2t4 + ex0y1s1t1Uex1y4s1t5 + ex0y1s1t1Uex1y5s2t5 + ex0y1s1t1Uex1y5s1t6 + ex0y1s1t1Uex1y6s2t6 + ex0y1s1t1Uex2y0s3t0 + ex0y1s1t1Uex2y0s2t1 + ex0y1s1t1Uex2y1s3t1 + ex0y1s1t1Uex2y1s2t2 + ex0y1s1t1Uex2y2s3t2 + ex0y1s1t1Uex2y2s2t3 + ex0y1s1t1Uex2y3s2t4 + ex0y1s1t1Uex2y4s3t4 + ex0y1s1t1Uex2y4s2t5 + ex0y1s1t1Uex2y5s3t5 + ex0y1s1t1Uex2y5s2t6 + ex0y1s1t1Uex2y6s3t6 + ex0y1s1t1Uex3y0s4t0 + ex0y1s1t1Uex3y0s3t1 + ex0y1s1t1Uex3y1s4t1 + ex0y1s1t1Uex3y1s3t2 + ex0y1s1t1Uex3y2s4t2 + ex0y1s1t1Uex3y4s4t4 + ex0y1s1t1Uex3y4s3t5 + ex0y1s1t1Uex3y5s4t5 + ex0y1s1t1Uex3y5s3t6 + ex0y1s1t1Uex3y6s4t6 + ex0y1s1t1Uex4y0s5t0 + ex0y1s1t1Uex4y0s4t1 + ex0y1s1t1Uex4y1s5t1 + ex0y1s1t1Uex4y1s4t2 + ex0y1s1t1Uex4y2s5t2 + ex0y1s1t1Uex4y2s4t3 + ex0y1s1t1Uex4y3s5t3 + ex0y1s1t1Uex4y3s4t4 + ex0y1s1t1Uex4y4s5t4 + ex0y1s1t1Uex4y4s4t5 + ex0y1s1t1Uex4y5s5t5 + ex0y1s1t1Uex4y5s4t6 + ex0y1s1t1Uex4y6s5t6 + ex0y1s1t1Uex5y0s6t0 + ex0y1s1t1Uex5y0s5t1 + ex0y1s1t1Uex5y1s6t1 + ex0y1s1t1Uex5y1s5t2 + ex0y1s1t1Uex5y2s6t2 + ex0y1s1t1Uex5y2s5t3 + ex0y1s1t1Uex5y3s6t3 + ex0y1s1t1Uex5y3s5t4 + ex0y1s1t1Uex5y4s6t4 + ex0y1s1t1Uex5y4s5t5 + ex0y1s1t1Uex5y5s6t5 + ex0y1s1t1Uex5y5s5t6 + ex0y1s1t1Uex5y6s6t6 + ex0y1s1t1Uex6y0s6t1 + ex0y1s1t1Uex6y1s6t2 + ex0y1s1t1Uex6y2s6t3 + ex0y1s1t1Uex6y3s6t4 + ex0y1s1t1Uex6y4s6t5 + ex0y1s1t1Uex6y5s6t6 - ex0y1s1t1SuperFlow = -1
+ + ex0y1s1t1FlowOnex5y5s6t5 + ex0y1s1t1FlowOnex6y4s6t5 = 1
+ + ex0y1s1t1Uex0y0s1t0 + ex0y1s1t1Uex0y0s0t1 + ex0y1s1t1Uex0y1s1t1 + ex0y1s1t1Uex0y1s0t2 + ex0y1s1t1Uex0y2s1t2 + ex0y1s1t1Uex0y2s0t3 + ex0y1s1t1Uex0y3s1t3 + ex0y1s1t1Uex0y3s0t4 + ex0y1s1t1Uex0y4s1t4 + ex0y1s1t1Uex0y4s0t5 + ex0y1s1t1Uex0y5s1t5 + ex0y1s1t1Uex1y0s2t0 + ex0y1s1t1Uex1y0s1t1 + ex0y1s1t1Uex1y1s2t1 + ex0y1s1t1Uex1y1s1t2 + ex0y1s1t1Uex1y2s2t2 + ex0y1s1t1Uex1y2s1t3 + ex0y1s1t1Uex1y3s2t3 + ex0y1s1t1Uex1y3s1t4 + ex0y1s1t1Uex1y4s2t4 + ex0y1s1t1Uex1y4s1t5 + ex0y1s1t1Uex1y5s2t5 + ex0y1s1t1Uex2y0s3t0 + ex0y1s1t1Uex2y0s2t1 + ex0y1s1t1Uex2y1s3t1 + ex0y1s1t1Uex2y1s2t2 + ex0y1s1t1Uex2y2s3t2 + ex0y1s1t1Uex2y2s2t3 + ex0y1s1t1Uex2y3s3t3 + ex0y1s1t1Uex2y3s2t4 + ex0y1s1t1Uex2y4s3t4 + ex0y1s1t1Uex2y4s2t5 + ex0y1s1t1Uex2y5s3t5 + ex0y1s1t1Uex3y0s4t0 + ex0y1s1t1Uex3y0s3t1 + ex0y1s1t1Uex3y1s4t1 + ex0y1s1t1Uex3y1s3t2 + ex0y1s1t1Uex3y2s4t2 + ex0y1s1t1Uex3y2s3t3 + ex0y1s1t1Uex3y3s4t3 + ex0y1s1t1Uex3y3s3t4 + ex0y1s1t1Uex3y4s4t4 + ex0y1s1t1Uex3y4s3t5 + ex0y1s1t1Uex3y5s4t5 + ex0y1s1t1Uex4y0s5t0 + ex0y1s1t1Uex4y0s4t1 + ex0y1s1t1Uex4y1s5t1 + ex0y1s1t1Uex4y1s4t2 + ex0y1s1t1Uex4y2s5t2 + ex0y1s1t1Uex4y2s4t3 + ex0y1s1t1Uex4y3s5t3 + ex0y1s1t1Uex4y3s4t4 + ex0y1s1t1Uex4y4s5t4 + ex0y1s1t1Uex4y4s4t5 + ex0y1s1t1Uex4y5s5t5 + ex0y1s1t1Uex5y0s6t0 + ex0y1s1t1Uex5y0s5t1 + ex0y1s1t1Uex5y1s6t1 + ex0y1s1t1Uex5y1s5t2 + ex0y1s1t1Uex5y2s6t2 + ex0y1s1t1Uex5y2s5t3 + ex0y1s1t1Uex5y3s6t3 + ex0y1s1t1Uex5y3s5t4 + ex0y1s1t1Uex5y4s6t4 + ex0y1s1t1Uex5y4s5t5 + ex0y1s1t1Uex5y5s6t5 + ex0y1s1t1Uex6y0s6t1 + ex0y1s1t1Uex6y1s6t2 + ex0y1s1t1Uex6y2s6t3 + ex0y1s1t1Uex6y3s6t4 + ex0y1s1t1Uex6y4s6t5 - ex0y1s1t1SuperFlow = -1
 ex0y1s1t1Unx1y0 - 10000 nx0y0Hor >= -10000
 ex0y1s1t1Unx1y0 + 10000 nx0y0Hor <= 10000
 ex0y1s1t1Unx2y0 - 10000 nx0y0Hor >= -10000
@@ -1146,102 +1038,90 @@ ex0y1s1t1Unx2y3 + 10000 nx0y0Ver <= 10000
 ex0y1s1t1Unx1y4 - 10000 nx0y0Ver >= -10000
 ex0y1s1t1Unx1y4 + 10000 nx0y0Ver <= 10000
  + ex1y0s1t1Uex5y0s6t0 + ex1y0s1t1Uex6y0s6t1 = 1
- + ex1y0s1t1Uex5y6s6t6 + ex1y0s1t1Uex6y5s6t6 = 1
+ + ex1y0s1t1Uex5y5s6t5 + ex1y0s1t1Uex6y4s6t5 = 1
  + ex1y0s1t1Uex0y0s1t0 + ex1y0s1t1Uex0y0s0t1 - 2 ex1y0s1t1Unx0y0 = 0
  + ex1y0s1t1Uex0y0s0t1 + ex1y0s1t1Uex0y1s1t1 + ex1y0s1t1Uex0y1s0t2 - 2 ex1y0s1t1Unx0y1 = 0
  + ex1y0s1t1Uex0y1s0t2 + ex1y0s1t1Uex0y2s1t2 + ex1y0s1t1Uex0y2s0t3 - 2 ex1y0s1t1Unx0y2 = 0
  + ex1y0s1t1Uex0y2s0t3 + ex1y0s1t1Uex0y3s1t3 + ex1y0s1t1Uex0y3s0t4 - 2 ex1y0s1t1Unx0y3 = 0
  + ex1y0s1t1Uex0y3s0t4 + ex1y0s1t1Uex0y4s1t4 + ex1y0s1t1Uex0y4s0t5 - 2 ex1y0s1t1Unx0y4 = 0
- + ex1y0s1t1Uex0y4s0t5 + ex1y0s1t1Uex0y5s1t5 + ex1y0s1t1Uex0y5s0t6 - 2 ex1y0s1t1Unx0y5 = 0
- + ex1y0s1t1Uex0y5s0t6 + ex1y0s1t1Uex0y6s1t6 - 2 ex1y0s1t1Unx0y6 = 0
+ + ex1y0s1t1Uex0y4s0t5 + ex1y0s1t1Uex0y5s1t5 - 2 ex1y0s1t1Unx0y5 = 0
  + ex1y0s1t1Uex0y0s1t0 + ex1y0s1t1Uex1y0s2t0 + ex1y0s1t1Uex1y0s1t1 - 2 ex1y0s1t1Unx1y0 = 0
  + ex1y0s1t1Uex0y1s1t1 + ex1y0s1t1Uex1y0s1t1 + ex1y0s1t1Uex1y1s2t1 + ex1y0s1t1Uex1y1s1t2 - 2 ex1y0s1t1Unx1y1 = 0
  + ex1y0s1t1Uex0y2s1t2 + ex1y0s1t1Uex1y1s1t2 + ex1y0s1t1Uex1y2s2t2 + ex1y0s1t1Uex1y2s1t3 - 2 ex1y0s1t1Unx1y2 = 0
  + ex1y0s1t1Uex0y3s1t3 + ex1y0s1t1Uex1y2s1t3 + ex1y0s1t1Uex1y3s2t3 + ex1y0s1t1Uex1y3s1t4 - 2 ex1y0s1t1Unx1y3 = 0
  + ex1y0s1t1Uex0y4s1t4 + ex1y0s1t1Uex1y3s1t4 + ex1y0s1t1Uex1y4s2t4 + ex1y0s1t1Uex1y4s1t5 - 2 ex1y0s1t1Unx1y4 = 0
- + ex1y0s1t1Uex0y5s1t5 + ex1y0s1t1Uex1y4s1t5 + ex1y0s1t1Uex1y5s2t5 + ex1y0s1t1Uex1y5s1t6 - 2 ex1y0s1t1Unx1y5 = 0
- + ex1y0s1t1Uex0y6s1t6 + ex1y0s1t1Uex1y5s1t6 + ex1y0s1t1Uex1y6s2t6 - 2 ex1y0s1t1Unx1y6 = 0
+ + ex1y0s1t1Uex0y5s1t5 + ex1y0s1t1Uex1y4s1t5 + ex1y0s1t1Uex1y5s2t5 - 2 ex1y0s1t1Unx1y5 = 0
  + ex1y0s1t1Uex1y0s2t0 + ex1y0s1t1Uex2y0s3t0 + ex1y0s1t1Uex2y0s2t1 - 2 ex1y0s1t1Unx2y0 = 0
  + ex1y0s1t1Uex1y1s2t1 + ex1y0s1t1Uex2y0s2t1 + ex1y0s1t1Uex2y1s3t1 + ex1y0s1t1Uex2y1s2t2 - 2 ex1y0s1t1Unx2y1 = 0
  + ex1y0s1t1Uex1y2s2t2 + ex1y0s1t1Uex2y1s2t2 + ex1y0s1t1Uex2y2s3t2 + ex1y0s1t1Uex2y2s2t3 - 2 ex1y0s1t1Unx2y2 = 0
- + ex1y0s1t1Uex1y3s2t3 + ex1y0s1t1Uex2y2s2t3 + ex1y0s1t1Uex2y3s2t4 - 2 ex1y0s1t1Unx2y3 = 0
+ + ex1y0s1t1Uex1y3s2t3 + ex1y0s1t1Uex2y2s2t3 + ex1y0s1t1Uex2y3s3t3 + ex1y0s1t1Uex2y3s2t4 - 2 ex1y0s1t1Unx2y3 = 0
  + ex1y0s1t1Uex1y4s2t4 + ex1y0s1t1Uex2y3s2t4 + ex1y0s1t1Uex2y4s3t4 + ex1y0s1t1Uex2y4s2t5 - 2 ex1y0s1t1Unx2y4 = 0
- + ex1y0s1t1Uex1y5s2t5 + ex1y0s1t1Uex2y4s2t5 + ex1y0s1t1Uex2y5s3t5 + ex1y0s1t1Uex2y5s2t6 - 2 ex1y0s1t1Unx2y5 = 0
- + ex1y0s1t1Uex1y6s2t6 + ex1y0s1t1Uex2y5s2t6 + ex1y0s1t1Uex2y6s3t6 - 2 ex1y0s1t1Unx2y6 = 0
+ + ex1y0s1t1Uex1y5s2t5 + ex1y0s1t1Uex2y4s2t5 + ex1y0s1t1Uex2y5s3t5 - 2 ex1y0s1t1Unx2y5 = 0
  + ex1y0s1t1Uex2y0s3t0 + ex1y0s1t1Uex3y0s4t0 + ex1y0s1t1Uex3y0s3t1 - 2 ex1y0s1t1Unx3y0 = 0
  + ex1y0s1t1Uex2y1s3t1 + ex1y0s1t1Uex3y0s3t1 + ex1y0s1t1Uex3y1s4t1 + ex1y0s1t1Uex3y1s3t2 - 2 ex1y0s1t1Unx3y1 = 0
- + ex1y0s1t1Uex2y2s3t2 + ex1y0s1t1Uex3y1s3t2 + ex1y0s1t1Uex3y2s4t2 - 2 ex1y0s1t1Unx3y2 = 0
- + ex1y0s1t1Uex2y4s3t4 + ex1y0s1t1Uex3y4s4t4 + ex1y0s1t1Uex3y4s3t5 - 2 ex1y0s1t1Unx3y4 = 0
- + ex1y0s1t1Uex2y5s3t5 + ex1y0s1t1Uex3y4s3t5 + ex1y0s1t1Uex3y5s4t5 + ex1y0s1t1Uex3y5s3t6 - 2 ex1y0s1t1Unx3y5 = 0
- + ex1y0s1t1Uex2y6s3t6 + ex1y0s1t1Uex3y5s3t6 + ex1y0s1t1Uex3y6s4t6 - 2 ex1y0s1t1Unx3y6 = 0
+ + ex1y0s1t1Uex2y2s3t2 + ex1y0s1t1Uex3y1s3t2 + ex1y0s1t1Uex3y2s4t2 + ex1y0s1t1Uex3y2s3t3 - 2 ex1y0s1t1Unx3y2 = 0
+ + ex1y0s1t1Uex2y3s3t3 + ex1y0s1t1Uex3y2s3t3 + ex1y0s1t1Uex3y3s4t3 + ex1y0s1t1Uex3y3s3t4 - 2 ex1y0s1t1Unx3y3 = 0
+ + ex1y0s1t1Uex2y4s3t4 + ex1y0s1t1Uex3y3s3t4 + ex1y0s1t1Uex3y4s4t4 + ex1y0s1t1Uex3y4s3t5 - 2 ex1y0s1t1Unx3y4 = 0
+ + ex1y0s1t1Uex2y5s3t5 + ex1y0s1t1Uex3y4s3t5 + ex1y0s1t1Uex3y5s4t5 - 2 ex1y0s1t1Unx3y5 = 0
  + ex1y0s1t1Uex3y0s4t0 + ex1y0s1t1Uex4y0s5t0 + ex1y0s1t1Uex4y0s4t1 - 2 ex1y0s1t1Unx4y0 = 0
  + ex1y0s1t1Uex3y1s4t1 + ex1y0s1t1Uex4y0s4t1 + ex1y0s1t1Uex4y1s5t1 + ex1y0s1t1Uex4y1s4t2 - 2 ex1y0s1t1Unx4y1 = 0
  + ex1y0s1t1Uex3y2s4t2 + ex1y0s1t1Uex4y1s4t2 + ex1y0s1t1Uex4y2s5t2 + ex1y0s1t1Uex4y2s4t3 - 2 ex1y0s1t1Unx4y2 = 0
- + ex1y0s1t1Uex4y2s4t3 + ex1y0s1t1Uex4y3s5t3 + ex1y0s1t1Uex4y3s4t4 - 2 ex1y0s1t1Unx4y3 = 0
+ + ex1y0s1t1Uex3y3s4t3 + ex1y0s1t1Uex4y2s4t3 + ex1y0s1t1Uex4y3s5t3 + ex1y0s1t1Uex4y3s4t4 - 2 ex1y0s1t1Unx4y3 = 0
  + ex1y0s1t1Uex3y4s4t4 + ex1y0s1t1Uex4y3s4t4 + ex1y0s1t1Uex4y4s5t4 + ex1y0s1t1Uex4y4s4t5 - 2 ex1y0s1t1Unx4y4 = 0
- + ex1y0s1t1Uex3y5s4t5 + ex1y0s1t1Uex4y4s4t5 + ex1y0s1t1Uex4y5s5t5 + ex1y0s1t1Uex4y5s4t6 - 2 ex1y0s1t1Unx4y5 = 0
- + ex1y0s1t1Uex3y6s4t6 + ex1y0s1t1Uex4y5s4t6 + ex1y0s1t1Uex4y6s5t6 - 2 ex1y0s1t1Unx4y6 = 0
+ + ex1y0s1t1Uex3y5s4t5 + ex1y0s1t1Uex4y4s4t5 + ex1y0s1t1Uex4y5s5t5 - 2 ex1y0s1t1Unx4y5 = 0
  + ex1y0s1t1Uex4y0s5t0 + ex1y0s1t1Uex5y0s6t0 + ex1y0s1t1Uex5y0s5t1 - 2 ex1y0s1t1Unx5y0 = 0
  + ex1y0s1t1Uex4y1s5t1 + ex1y0s1t1Uex5y0s5t1 + ex1y0s1t1Uex5y1s6t1 + ex1y0s1t1Uex5y1s5t2 - 2 ex1y0s1t1Unx5y1 = 0
  + ex1y0s1t1Uex4y2s5t2 + ex1y0s1t1Uex5y1s5t2 + ex1y0s1t1Uex5y2s6t2 + ex1y0s1t1Uex5y2s5t3 - 2 ex1y0s1t1Unx5y2 = 0
  + ex1y0s1t1Uex4y3s5t3 + ex1y0s1t1Uex5y2s5t3 + ex1y0s1t1Uex5y3s6t3 + ex1y0s1t1Uex5y3s5t4 - 2 ex1y0s1t1Unx5y3 = 0
  + ex1y0s1t1Uex4y4s5t4 + ex1y0s1t1Uex5y3s5t4 + ex1y0s1t1Uex5y4s6t4 + ex1y0s1t1Uex5y4s5t5 - 2 ex1y0s1t1Unx5y4 = 0
- + ex1y0s1t1Uex4y5s5t5 + ex1y0s1t1Uex5y4s5t5 + ex1y0s1t1Uex5y5s6t5 + ex1y0s1t1Uex5y5s5t6 - 2 ex1y0s1t1Unx5y5 = 0
- + ex1y0s1t1Uex4y6s5t6 + ex1y0s1t1Uex5y5s5t6 + ex1y0s1t1Uex5y6s6t6 - 2 ex1y0s1t1Unx5y6 = 0
+ + ex1y0s1t1Uex4y5s5t5 + ex1y0s1t1Uex5y4s5t5 + ex1y0s1t1Uex5y5s6t5 - 2 ex1y0s1t1Unx5y5 = 0
  + ex1y0s1t1Uex5y1s6t1 + ex1y0s1t1Uex6y0s6t1 + ex1y0s1t1Uex6y1s6t2 - 2 ex1y0s1t1Unx6y1 = 0
  + ex1y0s1t1Uex5y2s6t2 + ex1y0s1t1Uex6y1s6t2 + ex1y0s1t1Uex6y2s6t3 - 2 ex1y0s1t1Unx6y2 = 0
  + ex1y0s1t1Uex5y3s6t3 + ex1y0s1t1Uex6y2s6t3 + ex1y0s1t1Uex6y3s6t4 - 2 ex1y0s1t1Unx6y3 = 0
  + ex1y0s1t1Uex5y4s6t4 + ex1y0s1t1Uex6y3s6t4 + ex1y0s1t1Uex6y4s6t5 - 2 ex1y0s1t1Unx6y4 = 0
- + ex1y0s1t1Uex5y5s6t5 + ex1y0s1t1Uex6y4s6t5 + ex1y0s1t1Uex6y5s6t6 - 2 ex1y0s1t1Unx6y5 = 0
  + ex1y0s1t1FlowOnex5y0s6t0 - ex1y0s1t1FlowOnex6y0s6t1 + ex1y0s1t1SuperFlow = 1
  - ex1y0s1t1FlowOnex0y0s1t0 - ex1y0s1t1FlowOnex0y0s0t1 - ex1y0s1t1Unx0y0 = 0
  + ex1y0s1t1FlowOnex0y0s0t1 - ex1y0s1t1FlowOnex0y1s1t1 - ex1y0s1t1FlowOnex0y1s0t2 - ex1y0s1t1Unx0y1 = 0
  + ex1y0s1t1FlowOnex0y1s0t2 - ex1y0s1t1FlowOnex0y2s1t2 - ex1y0s1t1FlowOnex0y2s0t3 - ex1y0s1t1Unx0y2 = 0
  + ex1y0s1t1FlowOnex0y2s0t3 - ex1y0s1t1FlowOnex0y3s1t3 - ex1y0s1t1FlowOnex0y3s0t4 - ex1y0s1t1Unx0y3 = 0
  + ex1y0s1t1FlowOnex0y3s0t4 - ex1y0s1t1FlowOnex0y4s1t4 - ex1y0s1t1FlowOnex0y4s0t5 - ex1y0s1t1Unx0y4 = 0
- + ex1y0s1t1FlowOnex0y4s0t5 - ex1y0s1t1FlowOnex0y5s1t5 - ex1y0s1t1FlowOnex0y5s0t6 - ex1y0s1t1Unx0y5 = 0
- + ex1y0s1t1FlowOnex0y5s0t6 - ex1y0s1t1FlowOnex0y6s1t6 - ex1y0s1t1Unx0y6 = 0
+ + ex1y0s1t1FlowOnex0y4s0t5 - ex1y0s1t1FlowOnex0y5s1t5 - ex1y0s1t1Unx0y5 = 0
  + ex1y0s1t1FlowOnex0y0s1t0 - ex1y0s1t1FlowOnex1y0s2t0 - ex1y0s1t1FlowOnex1y0s1t1 - ex1y0s1t1Unx1y0 = 0
  + ex1y0s1t1FlowOnex0y1s1t1 + ex1y0s1t1FlowOnex1y0s1t1 - ex1y0s1t1FlowOnex1y1s2t1 - ex1y0s1t1FlowOnex1y1s1t2 - ex1y0s1t1Unx1y1 = 0
  + ex1y0s1t1FlowOnex0y2s1t2 + ex1y0s1t1FlowOnex1y1s1t2 - ex1y0s1t1FlowOnex1y2s2t2 - ex1y0s1t1FlowOnex1y2s1t3 - ex1y0s1t1Unx1y2 = 0
  + ex1y0s1t1FlowOnex0y3s1t3 + ex1y0s1t1FlowOnex1y2s1t3 - ex1y0s1t1FlowOnex1y3s2t3 - ex1y0s1t1FlowOnex1y3s1t4 - ex1y0s1t1Unx1y3 = 0
  + ex1y0s1t1FlowOnex0y4s1t4 + ex1y0s1t1FlowOnex1y3s1t4 - ex1y0s1t1FlowOnex1y4s2t4 - ex1y0s1t1FlowOnex1y4s1t5 - ex1y0s1t1Unx1y4 = 0
- + ex1y0s1t1FlowOnex0y5s1t5 + ex1y0s1t1FlowOnex1y4s1t5 - ex1y0s1t1FlowOnex1y5s2t5 - ex1y0s1t1FlowOnex1y5s1t6 - ex1y0s1t1Unx1y5 = 0
- + ex1y0s1t1FlowOnex0y6s1t6 + ex1y0s1t1FlowOnex1y5s1t6 - ex1y0s1t1FlowOnex1y6s2t6 - ex1y0s1t1Unx1y6 = 0
+ + ex1y0s1t1FlowOnex0y5s1t5 + ex1y0s1t1FlowOnex1y4s1t5 - ex1y0s1t1FlowOnex1y5s2t5 - ex1y0s1t1Unx1y5 = 0
  + ex1y0s1t1FlowOnex1y0s2t0 - ex1y0s1t1FlowOnex2y0s3t0 - ex1y0s1t1FlowOnex2y0s2t1 - ex1y0s1t1Unx2y0 = 0
  + ex1y0s1t1FlowOnex1y1s2t1 + ex1y0s1t1FlowOnex2y0s2t1 - ex1y0s1t1FlowOnex2y1s3t1 - ex1y0s1t1FlowOnex2y1s2t2 - ex1y0s1t1Unx2y1 = 0
  + ex1y0s1t1FlowOnex1y2s2t2 + ex1y0s1t1FlowOnex2y1s2t2 - ex1y0s1t1FlowOnex2y2s3t2 - ex1y0s1t1FlowOnex2y2s2t3 - ex1y0s1t1Unx2y2 = 0
- + ex1y0s1t1FlowOnex1y3s2t3 + ex1y0s1t1FlowOnex2y2s2t3 - ex1y0s1t1FlowOnex2y3s2t4 - ex1y0s1t1Unx2y3 = 0
+ + ex1y0s1t1FlowOnex1y3s2t3 + ex1y0s1t1FlowOnex2y2s2t3 - ex1y0s1t1FlowOnex2y3s3t3 - ex1y0s1t1FlowOnex2y3s2t4 - ex1y0s1t1Unx2y3 = 0
  + ex1y0s1t1FlowOnex1y4s2t4 + ex1y0s1t1FlowOnex2y3s2t4 - ex1y0s1t1FlowOnex2y4s3t4 - ex1y0s1t1FlowOnex2y4s2t5 - ex1y0s1t1Unx2y4 = 0
- + ex1y0s1t1FlowOnex1y5s2t5 + ex1y0s1t1FlowOnex2y4s2t5 - ex1y0s1t1FlowOnex2y5s3t5 - ex1y0s1t1FlowOnex2y5s2t6 - ex1y0s1t1Unx2y5 = 0
- + ex1y0s1t1FlowOnex1y6s2t6 + ex1y0s1t1FlowOnex2y5s2t6 - ex1y0s1t1FlowOnex2y6s3t6 - ex1y0s1t1Unx2y6 = 0
+ + ex1y0s1t1FlowOnex1y5s2t5 + ex1y0s1t1FlowOnex2y4s2t5 - ex1y0s1t1FlowOnex2y5s3t5 - ex1y0s1t1Unx2y5 = 0
  + ex1y0s1t1FlowOnex2y0s3t0 - ex1y0s1t1FlowOnex3y0s4t0 - ex1y0s1t1FlowOnex3y0s3t1 - ex1y0s1t1Unx3y0 = 0
  + ex1y0s1t1FlowOnex2y1s3t1 + ex1y0s1t1FlowOnex3y0s3t1 - ex1y0s1t1FlowOnex3y1s4t1 - ex1y0s1t1FlowOnex3y1s3t2 - ex1y0s1t1Unx3y1 = 0
- + ex1y0s1t1FlowOnex2y2s3t2 + ex1y0s1t1FlowOnex3y1s3t2 - ex1y0s1t1FlowOnex3y2s4t2 - ex1y0s1t1Unx3y2 = 0
- + ex1y0s1t1FlowOnex2y4s3t4 - ex1y0s1t1FlowOnex3y4s4t4 - ex1y0s1t1FlowOnex3y4s3t5 - ex1y0s1t1Unx3y4 = 0
- + ex1y0s1t1FlowOnex2y5s3t5 + ex1y0s1t1FlowOnex3y4s3t5 - ex1y0s1t1FlowOnex3y5s4t5 - ex1y0s1t1FlowOnex3y5s3t6 - ex1y0s1t1Unx3y5 = 0
- + ex1y0s1t1FlowOnex2y6s3t6 + ex1y0s1t1FlowOnex3y5s3t6 - ex1y0s1t1FlowOnex3y6s4t6 - ex1y0s1t1Unx3y6 = 0
+ + ex1y0s1t1FlowOnex2y2s3t2 + ex1y0s1t1FlowOnex3y1s3t2 - ex1y0s1t1FlowOnex3y2s4t2 - ex1y0s1t1FlowOnex3y2s3t3 - ex1y0s1t1Unx3y2 = 0
+ + ex1y0s1t1FlowOnex2y3s3t3 + ex1y0s1t1FlowOnex3y2s3t3 - ex1y0s1t1FlowOnex3y3s4t3 - ex1y0s1t1FlowOnex3y3s3t4 - ex1y0s1t1Unx3y3 = 0
+ + ex1y0s1t1FlowOnex2y4s3t4 + ex1y0s1t1FlowOnex3y3s3t4 - ex1y0s1t1FlowOnex3y4s4t4 - ex1y0s1t1FlowOnex3y4s3t5 - ex1y0s1t1Unx3y4 = 0
+ + ex1y0s1t1FlowOnex2y5s3t5 + ex1y0s1t1FlowOnex3y4s3t5 - ex1y0s1t1FlowOnex3y5s4t5 - ex1y0s1t1Unx3y5 = 0
  + ex1y0s1t1FlowOnex3y0s4t0 - ex1y0s1t1FlowOnex4y0s5t0 - ex1y0s1t1FlowOnex4y0s4t1 - ex1y0s1t1Unx4y0 = 0
  + ex1y0s1t1FlowOnex3y1s4t1 + ex1y0s1t1FlowOnex4y0s4t1 - ex1y0s1t1FlowOnex4y1s5t1 - ex1y0s1t1FlowOnex4y1s4t2 - ex1y0s1t1Unx4y1 = 0
  + ex1y0s1t1FlowOnex3y2s4t2 + ex1y0s1t1FlowOnex4y1s4t2 - ex1y0s1t1FlowOnex4y2s5t2 - ex1y0s1t1FlowOnex4y2s4t3 - ex1y0s1t1Unx4y2 = 0
- + ex1y0s1t1FlowOnex4y2s4t3 - ex1y0s1t1FlowOnex4y3s5t3 - ex1y0s1t1FlowOnex4y3s4t4 - ex1y0s1t1Unx4y3 = 0
+ + ex1y0s1t1FlowOnex3y3s4t3 + ex1y0s1t1FlowOnex4y2s4t3 - ex1y0s1t1FlowOnex4y3s5t3 - ex1y0s1t1FlowOnex4y3s4t4 - ex1y0s1t1Unx4y3 = 0
  + ex1y0s1t1FlowOnex3y4s4t4 + ex1y0s1t1FlowOnex4y3s4t4 - ex1y0s1t1FlowOnex4y4s5t4 - ex1y0s1t1FlowOnex4y4s4t5 - ex1y0s1t1Unx4y4 = 0
- + ex1y0s1t1FlowOnex3y5s4t5 + ex1y0s1t1FlowOnex4y4s4t5 - ex1y0s1t1FlowOnex4y5s5t5 - ex1y0s1t1FlowOnex4y5s4t6 - ex1y0s1t1Unx4y5 = 0
- + ex1y0s1t1FlowOnex3y6s4t6 + ex1y0s1t1FlowOnex4y5s4t6 - ex1y0s1t1FlowOnex4y6s5t6 - ex1y0s1t1Unx4y6 = 0
+ + ex1y0s1t1FlowOnex3y5s4t5 + ex1y0s1t1FlowOnex4y4s4t5 - ex1y0s1t1FlowOnex4y5s5t5 - ex1y0s1t1Unx4y5 = 0
  + ex1y0s1t1FlowOnex4y0s5t0 - ex1y0s1t1FlowOnex5y0s6t0 - ex1y0s1t1FlowOnex5y0s5t1 - ex1y0s1t1Unx5y0 = 0
  + ex1y0s1t1FlowOnex4y1s5t1 + ex1y0s1t1FlowOnex5y0s5t1 - ex1y0s1t1FlowOnex5y1s6t1 - ex1y0s1t1FlowOnex5y1s5t2 - ex1y0s1t1Unx5y1 = 0
  + ex1y0s1t1FlowOnex4y2s5t2 + ex1y0s1t1FlowOnex5y1s5t2 - ex1y0s1t1FlowOnex5y2s6t2 - ex1y0s1t1FlowOnex5y2s5t3 - ex1y0s1t1Unx5y2 = 0
  + ex1y0s1t1FlowOnex4y3s5t3 + ex1y0s1t1FlowOnex5y2s5t3 - ex1y0s1t1FlowOnex5y3s6t3 - ex1y0s1t1FlowOnex5y3s5t4 - ex1y0s1t1Unx5y3 = 0
  + ex1y0s1t1FlowOnex4y4s5t4 + ex1y0s1t1FlowOnex5y3s5t4 - ex1y0s1t1FlowOnex5y4s6t4 - ex1y0s1t1FlowOnex5y4s5t5 - ex1y0s1t1Unx5y4 = 0
- + ex1y0s1t1FlowOnex4y5s5t5 + ex1y0s1t1FlowOnex5y4s5t5 - ex1y0s1t1FlowOnex5y5s6t5 - ex1y0s1t1FlowOnex5y5s5t6 - ex1y0s1t1Unx5y5 = 0
- + ex1y0s1t1FlowOnex4y6s5t6 + ex1y0s1t1FlowOnex5y5s5t6 - ex1y0s1t1FlowOnex5y6s6t6 - ex1y0s1t1Unx5y6 = 0
+ + ex1y0s1t1FlowOnex4y5s5t5 + ex1y0s1t1FlowOnex5y4s5t5 - ex1y0s1t1FlowOnex5y5s6t5 - ex1y0s1t1Unx5y5 = 0
  + ex1y0s1t1FlowOnex5y1s6t1 + ex1y0s1t1FlowOnex6y0s6t1 - ex1y0s1t1FlowOnex6y1s6t2 - ex1y0s1t1Unx6y1 = 0
  + ex1y0s1t1FlowOnex5y2s6t2 + ex1y0s1t1FlowOnex6y1s6t2 - ex1y0s1t1FlowOnex6y2s6t3 - ex1y0s1t1Unx6y2 = 0
  + ex1y0s1t1FlowOnex5y3s6t3 + ex1y0s1t1FlowOnex6y2s6t3 - ex1y0s1t1FlowOnex6y3s6t4 - ex1y0s1t1Unx6y3 = 0
  + ex1y0s1t1FlowOnex5y4s6t4 + ex1y0s1t1FlowOnex6y3s6t4 - ex1y0s1t1FlowOnex6y4s6t5 - ex1y0s1t1Unx6y4 = 0
- + ex1y0s1t1FlowOnex5y5s6t5 + ex1y0s1t1FlowOnex6y4s6t5 - ex1y0s1t1FlowOnex6y5s6t6 - ex1y0s1t1Unx6y5 = 0
- + ex1y0s1t1FlowOnex5y6s6t6 + ex1y0s1t1FlowOnex6y5s6t6 = 1
- + ex1y0s1t1Uex0y0s1t0 + ex1y0s1t1Uex0y0s0t1 + ex1y0s1t1Uex0y1s1t1 + ex1y0s1t1Uex0y1s0t2 + ex1y0s1t1Uex0y2s1t2 + ex1y0s1t1Uex0y2s0t3 + ex1y0s1t1Uex0y3s1t3 + ex1y0s1t1Uex0y3s0t4 + ex1y0s1t1Uex0y4s1t4 + ex1y0s1t1Uex0y4s0t5 + ex1y0s1t1Uex0y5s1t5 + ex1y0s1t1Uex0y5s0t6 + ex1y0s1t1Uex0y6s1t6 + ex1y0s1t1Uex1y0s2t0 + ex1y0s1t1Uex1y0s1t1 + ex1y0s1t1Uex1y1s2t1 + ex1y0s1t1Uex1y1s1t2 + ex1y0s1t1Uex1y2s2t2 + ex1y0s1t1Uex1y2s1t3 + ex1y0s1t1Uex1y3s2t3 + ex1y0s1t1Uex1y3s1t4 + ex1y0s1t1Uex1y4s2t4 + ex1y0s1t1Uex1y4s1t5 + ex1y0s1t1Uex1y5s2t5 + ex1y0s1t1Uex1y5s1t6 + ex1y0s1t1Uex1y6s2t6 + ex1y0s1t1Uex2y0s3t0 + ex1y0s1t1Uex2y0s2t1 + ex1y0s1t1Uex2y1s3t1 + ex1y0s1t1Uex2y1s2t2 + ex1y0s1t1Uex2y2s3t2 + ex1y0s1t1Uex2y2s2t3 + ex1y0s1t1Uex2y3s2t4 + ex1y0s1t1Uex2y4s3t4 + ex1y0s1t1Uex2y4s2t5 + ex1y0s1t1Uex2y5s3t5 + ex1y0s1t1Uex2y5s2t6 + ex1y0s1t1Uex2y6s3t6 + ex1y0s1t1Uex3y0s4t0 + ex1y0s1t1Uex3y0s3t1 + ex1y0s1t1Uex3y1s4t1 + ex1y0s1t1Uex3y1s3t2 + ex1y0s1t1Uex3y2s4t2 + ex1y0s1t1Uex3y4s4t4 + ex1y0s1t1Uex3y4s3t5 + ex1y0s1t1Uex3y5s4t5 + ex1y0s1t1Uex3y5s3t6 + ex1y0s1t1Uex3y6s4t6 + ex1y0s1t1Uex4y0s5t0 + ex1y0s1t1Uex4y0s4t1 + ex1y0s1t1Uex4y1s5t1 + ex1y0s1t1Uex4y1s4t2 + ex1y0s1t1Uex4y2s5t2 + ex1y0s1t1Uex4y2s4t3 + ex1y0s1t1Uex4y3s5t3 + ex1y0s1t1Uex4y3s4t4 + ex1y0s1t1Uex4y4s5t4 + ex1y0s1t1Uex4y4s4t5 + ex1y0s1t1Uex4y5s5t5 + ex1y0s1t1Uex4y5s4t6 + ex1y0s1t1Uex4y6s5t6 + ex1y0s1t1Uex5y0s6t0 + ex1y0s1t1Uex5y0s5t1 + ex1y0s1t1Uex5y1s6t1 + ex1y0s1t1Uex5y1s5t2 + ex1y0s1t1Uex5y2s6t2 + ex1y0s1t1Uex5y2s5t3 + ex1y0s1t1Uex5y3s6t3 + ex1y0s1t1Uex5y3s5t4 + ex1y0s1t1Uex5y4s6t4 + ex1y0s1t1Uex5y4s5t5 + ex1y0s1t1Uex5y5s6t5 + ex1y0s1t1Uex5y5s5t6 + ex1y0s1t1Uex5y6s6t6 + ex1y0s1t1Uex6y0s6t1 + ex1y0s1t1Uex6y1s6t2 + ex1y0s1t1Uex6y2s6t3 + ex1y0s1t1Uex6y3s6t4 + ex1y0s1t1Uex6y4s6t5 + ex1y0s1t1Uex6y5s6t6 - ex1y0s1t1SuperFlow = -1
+ + ex1y0s1t1FlowOnex5y5s6t5 + ex1y0s1t1FlowOnex6y4s6t5 = 1
+ + ex1y0s1t1Uex0y0s1t0 + ex1y0s1t1Uex0y0s0t1 + ex1y0s1t1Uex0y1s1t1 + ex1y0s1t1Uex0y1s0t2 + ex1y0s1t1Uex0y2s1t2 + ex1y0s1t1Uex0y2s0t3 + ex1y0s1t1Uex0y3s1t3 + ex1y0s1t1Uex0y3s0t4 + ex1y0s1t1Uex0y4s1t4 + ex1y0s1t1Uex0y4s0t5 + ex1y0s1t1Uex0y5s1t5 + ex1y0s1t1Uex1y0s2t0 + ex1y0s1t1Uex1y0s1t1 + ex1y0s1t1Uex1y1s2t1 + ex1y0s1t1Uex1y1s1t2 + ex1y0s1t1Uex1y2s2t2 + ex1y0s1t1Uex1y2s1t3 + ex1y0s1t1Uex1y3s2t3 + ex1y0s1t1Uex1y3s1t4 + ex1y0s1t1Uex1y4s2t4 + ex1y0s1t1Uex1y4s1t5 + ex1y0s1t1Uex1y5s2t5 + ex1y0s1t1Uex2y0s3t0 + ex1y0s1t1Uex2y0s2t1 + ex1y0s1t1Uex2y1s3t1 + ex1y0s1t1Uex2y1s2t2 + ex1y0s1t1Uex2y2s3t2 + ex1y0s1t1Uex2y2s2t3 + ex1y0s1t1Uex2y3s3t3 + ex1y0s1t1Uex2y3s2t4 + ex1y0s1t1Uex2y4s3t4 + ex1y0s1t1Uex2y4s2t5 + ex1y0s1t1Uex2y5s3t5 + ex1y0s1t1Uex3y0s4t0 + ex1y0s1t1Uex3y0s3t1 + ex1y0s1t1Uex3y1s4t1 + ex1y0s1t1Uex3y1s3t2 + ex1y0s1t1Uex3y2s4t2 + ex1y0s1t1Uex3y2s3t3 + ex1y0s1t1Uex3y3s4t3 + ex1y0s1t1Uex3y3s3t4 + ex1y0s1t1Uex3y4s4t4 + ex1y0s1t1Uex3y4s3t5 + ex1y0s1t1Uex3y5s4t5 + ex1y0s1t1Uex4y0s5t0 + ex1y0s1t1Uex4y0s4t1 + ex1y0s1t1Uex4y1s5t1 + ex1y0s1t1Uex4y1s4t2 + ex1y0s1t1Uex4y2s5t2 + ex1y0s1t1Uex4y2s4t3 + ex1y0s1t1Uex4y3s5t3 + ex1y0s1t1Uex4y3s4t4 + ex1y0s1t1Uex4y4s5t4 + ex1y0s1t1Uex4y4s4t5 + ex1y0s1t1Uex4y5s5t5 + ex1y0s1t1Uex5y0s6t0 + ex1y0s1t1Uex5y0s5t1 + ex1y0s1t1Uex5y1s6t1 + ex1y0s1t1Uex5y1s5t2 + ex1y0s1t1Uex5y2s6t2 + ex1y0s1t1Uex5y2s5t3 + ex1y0s1t1Uex5y3s6t3 + ex1y0s1t1Uex5y3s5t4 + ex1y0s1t1Uex5y4s6t4 + ex1y0s1t1Uex5y4s5t5 + ex1y0s1t1Uex5y5s6t5 + ex1y0s1t1Uex6y0s6t1 + ex1y0s1t1Uex6y1s6t2 + ex1y0s1t1Uex6y2s6t3 + ex1y0s1t1Uex6y3s6t4 + ex1y0s1t1Uex6y4s6t5 - ex1y0s1t1SuperFlow = -1
 ex1y0s1t1Unx1y0 - 10000 nx0y0Hor >= -10000
 ex1y0s1t1Unx1y0 + 10000 nx0y0Hor <= 10000
 ex1y0s1t1Unx2y0 - 10000 nx0y0Hor >= -10000
@@ -1287,53 +1167,340 @@ ex1y0s1t1Unx2y3 + 10000 nx0y0Ver <= 10000
 ex1y0s1t1Unx1y4 - 10000 nx0y0Ver >= -10000
 ex1y0s1t1Unx1y4 + 10000 nx0y0Ver <= 10000
  + ex0y0s1t0Unx0y0 + ex0y0s0t1Unx0y0 + ex0y1s1t1Unx0y0 + ex1y0s1t1Unx0y0 <= 1
+ + ex0y0s1t0Unx0y1 + ex0y0s0t1Unx0y1 + ex0y1s1t1Unx0y1 + ex1y0s1t1Unx0y1 <= 1
  + ex0y0s1t0Unx0y2 + ex0y0s0t1Unx0y2 + ex0y1s1t1Unx0y2 + ex1y0s1t1Unx0y2 <= 1
  + ex0y0s1t0Unx0y3 + ex0y0s0t1Unx0y3 + ex0y1s1t1Unx0y3 + ex1y0s1t1Unx0y3 <= 1
  + ex0y0s1t0Unx0y4 + ex0y0s0t1Unx0y4 + ex0y1s1t1Unx0y4 + ex1y0s1t1Unx0y4 <= 1
  + ex0y0s1t0Unx0y5 + ex0y0s0t1Unx0y5 + ex0y1s1t1Unx0y5 + ex1y0s1t1Unx0y5 <= 1
- + ex0y0s1t0Unx0y6 + ex0y0s0t1Unx0y6 + ex0y1s1t1Unx0y6 + ex1y0s1t1Unx0y6 <= 1
+ + ex0y0s1t0Unx1y0 + ex0y0s0t1Unx1y0 + ex0y1s1t1Unx1y0 + ex1y0s1t1Unx1y0 <= 1
  + ex0y0s1t0Unx1y1 + ex0y0s0t1Unx1y1 + ex0y1s1t1Unx1y1 + ex1y0s1t1Unx1y1 <= 1
  + ex0y0s1t0Unx1y2 + ex0y0s0t1Unx1y2 + ex0y1s1t1Unx1y2 + ex1y0s1t1Unx1y2 <= 1
  + ex0y0s1t0Unx1y3 + ex0y0s0t1Unx1y3 + ex0y1s1t1Unx1y3 + ex1y0s1t1Unx1y3 <= 1
+ + ex0y0s1t0Unx1y4 + ex0y0s0t1Unx1y4 + ex0y1s1t1Unx1y4 + ex1y0s1t1Unx1y4 <= 1
  + ex0y0s1t0Unx1y5 + ex0y0s0t1Unx1y5 + ex0y1s1t1Unx1y5 + ex1y0s1t1Unx1y5 <= 1
- + ex0y0s1t0Unx1y6 + ex0y0s0t1Unx1y6 + ex0y1s1t1Unx1y6 + ex1y0s1t1Unx1y6 <= 1
  + ex0y0s1t0Unx2y0 + ex0y0s0t1Unx2y0 + ex0y1s1t1Unx2y0 + ex1y0s1t1Unx2y0 <= 1
  + ex0y0s1t0Unx2y1 + ex0y0s0t1Unx2y1 + ex0y1s1t1Unx2y1 + ex1y0s1t1Unx2y1 <= 1
  + ex0y0s1t0Unx2y2 + ex0y0s0t1Unx2y2 + ex0y1s1t1Unx2y2 + ex1y0s1t1Unx2y2 <= 1
  + ex0y0s1t0Unx2y3 + ex0y0s0t1Unx2y3 + ex0y1s1t1Unx2y3 + ex1y0s1t1Unx2y3 <= 1
  + ex0y0s1t0Unx2y4 + ex0y0s0t1Unx2y4 + ex0y1s1t1Unx2y4 + ex1y0s1t1Unx2y4 <= 1
  + ex0y0s1t0Unx2y5 + ex0y0s0t1Unx2y5 + ex0y1s1t1Unx2y5 + ex1y0s1t1Unx2y5 <= 1
- + ex0y0s1t0Unx2y6 + ex0y0s0t1Unx2y6 + ex0y1s1t1Unx2y6 + ex1y0s1t1Unx2y6 <= 1
  + ex0y0s1t0Unx3y0 + ex0y0s0t1Unx3y0 + ex0y1s1t1Unx3y0 + ex1y0s1t1Unx3y0 <= 1
  + ex0y0s1t0Unx3y1 + ex0y0s0t1Unx3y1 + ex0y1s1t1Unx3y1 + ex1y0s1t1Unx3y1 <= 1
  + ex0y0s1t0Unx3y2 + ex0y0s0t1Unx3y2 + ex0y1s1t1Unx3y2 + ex1y0s1t1Unx3y2 <= 1
- <= 1
+ + ex0y0s1t0Unx3y3 + ex0y0s0t1Unx3y3 + ex0y1s1t1Unx3y3 + ex1y0s1t1Unx3y3 <= 1
  + ex0y0s1t0Unx3y4 + ex0y0s0t1Unx3y4 + ex0y1s1t1Unx3y4 + ex1y0s1t1Unx3y4 <= 1
  + ex0y0s1t0Unx3y5 + ex0y0s0t1Unx3y5 + ex0y1s1t1Unx3y5 + ex1y0s1t1Unx3y5 <= 1
- + ex0y0s1t0Unx3y6 + ex0y0s0t1Unx3y6 + ex0y1s1t1Unx3y6 + ex1y0s1t1Unx3y6 <= 1
  + ex0y0s1t0Unx4y0 + ex0y0s0t1Unx4y0 + ex0y1s1t1Unx4y0 + ex1y0s1t1Unx4y0 <= 1
+ + ex0y0s1t0Unx4y1 + ex0y0s0t1Unx4y1 + ex0y1s1t1Unx4y1 + ex1y0s1t1Unx4y1 <= 1
  + ex0y0s1t0Unx4y2 + ex0y0s0t1Unx4y2 + ex0y1s1t1Unx4y2 + ex1y0s1t1Unx4y2 <= 1
  + ex0y0s1t0Unx4y3 + ex0y0s0t1Unx4y3 + ex0y1s1t1Unx4y3 + ex1y0s1t1Unx4y3 <= 1
  + ex0y0s1t0Unx4y4 + ex0y0s0t1Unx4y4 + ex0y1s1t1Unx4y4 + ex1y0s1t1Unx4y4 <= 1
  + ex0y0s1t0Unx4y5 + ex0y0s0t1Unx4y5 + ex0y1s1t1Unx4y5 + ex1y0s1t1Unx4y5 <= 1
- + ex0y0s1t0Unx4y6 + ex0y0s0t1Unx4y6 + ex0y1s1t1Unx4y6 + ex1y0s1t1Unx4y6 <= 1
  + ex0y0s1t0Unx5y0 + ex0y0s0t1Unx5y0 + ex0y1s1t1Unx5y0 + ex1y0s1t1Unx5y0 <= 1
  + ex0y0s1t0Unx5y1 + ex0y0s0t1Unx5y1 + ex0y1s1t1Unx5y1 + ex1y0s1t1Unx5y1 <= 1
  + ex0y0s1t0Unx5y2 + ex0y0s0t1Unx5y2 + ex0y1s1t1Unx5y2 + ex1y0s1t1Unx5y2 <= 1
  + ex0y0s1t0Unx5y3 + ex0y0s0t1Unx5y3 + ex0y1s1t1Unx5y3 + ex1y0s1t1Unx5y3 <= 1
  + ex0y0s1t0Unx5y4 + ex0y0s0t1Unx5y4 + ex0y1s1t1Unx5y4 + ex1y0s1t1Unx5y4 <= 1
  + ex0y0s1t0Unx5y5 + ex0y0s0t1Unx5y5 + ex0y1s1t1Unx5y5 + ex1y0s1t1Unx5y5 <= 1
- + ex0y0s1t0Unx5y6 + ex0y0s0t1Unx5y6 + ex0y1s1t1Unx5y6 + ex1y0s1t1Unx5y6 <= 1
  + ex0y0s1t0Unx6y0 + ex0y0s0t1Unx6y0 + ex0y1s1t1Unx6y0 + ex1y0s1t1Unx6y0 <= 1
  + ex0y0s1t0Unx6y1 + ex0y0s0t1Unx6y1 + ex0y1s1t1Unx6y1 + ex1y0s1t1Unx6y1 <= 1
  + ex0y0s1t0Unx6y2 + ex0y0s0t1Unx6y2 + ex0y1s1t1Unx6y2 + ex1y0s1t1Unx6y2 <= 1
  + ex0y0s1t0Unx6y3 + ex0y0s0t1Unx6y3 + ex0y1s1t1Unx6y3 + ex1y0s1t1Unx6y3 <= 1
  + ex0y0s1t0Unx6y4 + ex0y0s0t1Unx6y4 + ex0y1s1t1Unx6y4 + ex1y0s1t1Unx6y4 <= 1
  + ex0y0s1t0Unx6y5 + ex0y0s0t1Unx6y5 + ex0y1s1t1Unx6y5 + ex1y0s1t1Unx6y5 <= 1
- + ex0y0s1t0Unx6y6 + ex0y0s0t1Unx6y6 + ex0y1s1t1Unx6y6 + ex1y0s1t1Unx6y6 <= 1
- + ex0y0s1t0Uex0y0s1t0 + ex0y0s1t0Uex0y0s0t1 + ex0y0s1t0Uex0y1s1t1 + ex0y0s1t0Uex0y1s0t2 + ex0y0s1t0Uex0y2s1t2 + ex0y0s1t0Uex0y2s0t3 + ex0y0s1t0Uex0y3s1t3 + ex0y0s1t0Uex0y3s0t4 + ex0y0s1t0Uex0y4s1t4 + ex0y0s1t0Uex0y4s0t5 + ex0y0s1t0Uex0y5s1t5 + ex0y0s1t0Uex0y5s0t6 + ex0y0s1t0Uex0y6s1t6 + ex0y0s1t0Uex1y0s2t0 + ex0y0s1t0Uex1y0s1t1 + ex0y0s1t0Uex1y1s2t1 + ex0y0s1t0Uex1y1s1t2 + ex0y0s1t0Uex1y2s2t2 + ex0y0s1t0Uex1y2s1t3 + ex0y0s1t0Uex1y3s2t3 + ex0y0s1t0Uex1y3s1t4 + ex0y0s1t0Uex1y4s2t4 + ex0y0s1t0Uex1y4s1t5 + ex0y0s1t0Uex1y5s2t5 + ex0y0s1t0Uex1y5s1t6 + ex0y0s1t0Uex1y6s2t6 + ex0y0s1t0Uex2y0s3t0 + ex0y0s1t0Uex2y0s2t1 + ex0y0s1t0Uex2y1s3t1 + ex0y0s1t0Uex2y1s2t2 + ex0y0s1t0Uex2y2s3t2 + ex0y0s1t0Uex2y2s2t3 + ex0y0s1t0Uex2y3s2t4 + ex0y0s1t0Uex2y4s3t4 + ex0y0s1t0Uex2y4s2t5 + ex0y0s1t0Uex2y5s3t5 + ex0y0s1t0Uex2y5s2t6 + ex0y0s1t0Uex2y6s3t6 + ex0y0s1t0Uex3y0s4t0 + ex0y0s1t0Uex3y0s3t1 + ex0y0s1t0Uex3y1s4t1 + ex0y0s1t0Uex3y1s3t2 + ex0y0s1t0Uex3y2s4t2 + ex0y0s1t0Uex3y4s4t4 + ex0y0s1t0Uex3y4s3t5 + ex0y0s1t0Uex3y5s4t5 + ex0y0s1t0Uex3y5s3t6 + ex0y0s1t0Uex3y6s4t6 + ex0y0s1t0Uex4y0s5t0 + ex0y0s1t0Uex4y0s4t1 + ex0y0s1t0Uex4y1s5t1 + ex0y0s1t0Uex4y1s4t2 + ex0y0s1t0Uex4y2s5t2 + ex0y0s1t0Uex4y2s4t3 + ex0y0s1t0Uex4y3s5t3 + ex0y0s1t0Uex4y3s4t4 + ex0y0s1t0Uex4y4s5t4 + ex0y0s1t0Uex4y4s4t5 + ex0y0s1t0Uex4y5s5t5 + ex0y0s1t0Uex4y5s4t6 + ex0y0s1t0Uex4y6s5t6 + ex0y0s1t0Uex5y0s6t0 + ex0y0s1t0Uex5y0s5t1 + ex0y0s1t0Uex5y1s6t1 + ex0y0s1t0Uex5y1s5t2 + ex0y0s1t0Uex5y2s6t2 + ex0y0s1t0Uex5y2s5t3 + ex0y0s1t0Uex5y3s6t3 + ex0y0s1t0Uex5y3s5t4 + ex0y0s1t0Uex5y4s6t4 + ex0y0s1t0Uex5y4s5t5 + ex0y0s1t0Uex5y5s6t5 + ex0y0s1t0Uex5y5s5t6 + ex0y0s1t0Uex5y6s6t6 + ex0y0s1t0Uex6y0s6t1 + ex0y0s1t0Uex6y1s6t2 + ex0y0s1t0Uex6y2s6t3 + ex0y0s1t0Uex6y3s6t4 + ex0y0s1t0Uex6y4s6t5 + ex0y0s1t0Uex6y5s6t6 >= 5
- + ex0y0s0t1Uex0y0s1t0 + ex0y0s0t1Uex0y0s0t1 + ex0y0s0t1Uex0y1s1t1 + ex0y0s0t1Uex0y1s0t2 + ex0y0s0t1Uex0y2s1t2 + ex0y0s0t1Uex0y2s0t3 + ex0y0s0t1Uex0y3s1t3 + ex0y0s0t1Uex0y3s0t4 + ex0y0s0t1Uex0y4s1t4 + ex0y0s0t1Uex0y4s0t5 + ex0y0s0t1Uex0y5s1t5 + ex0y0s0t1Uex0y5s0t6 + ex0y0s0t1Uex0y6s1t6 + ex0y0s0t1Uex1y0s2t0 + ex0y0s0t1Uex1y0s1t1 + ex0y0s0t1Uex1y1s2t1 + ex0y0s0t1Uex1y1s1t2 + ex0y0s0t1Uex1y2s2t2 + ex0y0s0t1Uex1y2s1t3 + ex0y0s0t1Uex1y3s2t3 + ex0y0s0t1Uex1y3s1t4 + ex0y0s0t1Uex1y4s2t4 + ex0y0s0t1Uex1y4s1t5 + ex0y0s0t1Uex1y5s2t5 + ex0y0s0t1Uex1y5s1t6 + ex0y0s0t1Uex1y6s2t6 + ex0y0s0t1Uex2y0s3t0 + ex0y0s0t1Uex2y0s2t1 + ex0y0s0t1Uex2y1s3t1 + ex0y0s0t1Uex2y1s2t2 + ex0y0s0t1Uex2y2s3t2 + ex0y0s0t1Uex2y2s2t3 + ex0y0s0t1Uex2y3s2t4 + ex0y0s0t1Uex2y4s3t4 + ex0y0s0t1Uex2y4s2t5 + ex0y0s0t1Uex2y5s3t5 + ex0y0s0t1Uex2y5s2t6 + ex0y0s0t1Uex2y6s3t6 + ex0y0s0t1Uex3y0s4t0 + ex0y0s0t1Uex3y0s3t1 + ex0y0s0t1Uex3y1s4t1 + ex0y0s0t1Uex3y1s3t2 + ex0y0s0t1Uex3y2s4t2 + ex0y0s0t1Uex3y4s4t4 + ex0y0s0t1Uex3y4s3t5 + ex0y0s0t1Uex3y5s4t5 + ex0y0s0t1Uex3y5s3t6 + ex0y0s0t1Uex3y6s4t6 + ex0y0s0t1Uex4y0s5t0 + ex0y0s0t1Uex4y0s4t1 + ex0y0s0t1Uex4y1s5t1 + ex0y0s0t1Uex4y1s4t2 + ex0y0s0t1Uex4y2s5t2 + ex0y0s0t1Uex4y2s4t3 + ex0y0s0t1Uex4y3s5t3 + ex0y0s0t1Uex4y3s4t4 + ex0y0s0t1Uex4y4s5t4 + ex0y0s0t1Uex4y4s4t5 + ex0y0s0t1Uex4y5s5t5 + ex0y0s0t1Uex4y5s4t6 + ex0y0s0t1Uex4y6s5t6 + ex0y0s0t1Uex5y0s6t0 + ex0y0s0t1Uex5y0s5t1 + ex0y0s0t1Uex5y1s6t1 + ex0y0s0t1Uex5y1s5t2 + ex0y0s0t1Uex5y2s6t2 + ex0y0s0t1Uex5y2s5t3 + ex0y0s0t1Uex5y3s6t3 + ex0y0s0t1Uex5y3s5t4 + ex0y0s0t1Uex5y4s6t4 + ex0y0s0t1Uex5y4s5t5 + ex0y0s0t1Uex5y5s6t5 + ex0y0s0t1Uex5y5s5t6 + ex0y0s0t1Uex5y6s6t6 + ex0y0s0t1Uex6y0s6t1 + ex0y0s0t1Uex6y1s6t2 + ex0y0s0t1Uex6y2s6t3 + ex0y0s0t1Uex6y3s6t4 + ex0y0s0t1Uex6y4s6t5 + ex0y0s0t1Uex6y5s6t6 >= 5
- + ex1y0s1t1Uex0y0s1t0 + ex1y0s1t1Uex0y0s0t1 + ex1y0s1t1Uex0y1s1t1 + ex1y0s1t1Uex0y1s0t2 + ex1y0s1t1Uex0y2s1t2 + ex1y0s1t1Uex0y2s0t3 + ex1y0s1t1Uex0y3s1t3 + ex1y0s1t1Uex0y3s0t4 + ex1y0s1t1Uex0y4s1t4 + ex1y0s1t1Uex0y4s0t5 + ex1y0s1t1Uex0y5s1t5 + ex1y0s1t1Uex0y5s0t6 + ex1y0s1t1Uex0y6s1t6 + ex1y0s1t1Uex1y0s2t0 + ex1y0s1t1Uex1y0s1t1 + ex1y0s1t1Uex1y1s2t1 + ex1y0s1t1Uex1y1s1t2 + ex1y0s1t1Uex1y2s2t2 + ex1y0s1t1Uex1y2s1t3 + ex1y0s1t1Uex1y3s2t3 + ex1y0s1t1Uex1y3s1t4 + ex1y0s1t1Uex1y4s2t4 + ex1y0s1t1Uex1y4s1t5 + ex1y0s1t1Uex1y5s2t5 + ex1y0s1t1Uex1y5s1t6 + ex1y0s1t1Uex1y6s2t6 + ex1y0s1t1Uex2y0s3t0 + ex1y0s1t1Uex2y0s2t1 + ex1y0s1t1Uex2y1s3t1 + ex1y0s1t1Uex2y1s2t2 + ex1y0s1t1Uex2y2s3t2 + ex1y0s1t1Uex2y2s2t3 + ex1y0s1t1Uex2y3s2t4 + ex1y0s1t1Uex2y4s3t4 + ex1y0s1t1Uex2y4s2t5 + ex1y0s1t1Uex2y5s3t5 + ex1y0s1t1Uex2y5s2t6 + ex1y0s1t1Uex2y6s3t6 + ex1y0s1t1Uex3y0s4t0 + ex1y0s1t1Uex3y0s3t1 + ex1y0s1t1Uex3y1s4t1 + ex1y0s1t1Uex3y1s3t2 + ex1y0s1t1Uex3y2s4t2 + ex1y0s1t1Uex3y4s4t4 + ex1y0s1t1Uex3y4s3t5 + ex1y0s1t1Uex3y5s4t5 + ex1y0s1t1Uex3y5s3t6 + ex1y0s1t1Uex3y6s4t6 + ex1y0s1t1Uex4y0s5t0 + ex1y0s1t1Uex4y0s4t1 + ex1y0s1t1Uex4y1s5t1 + ex1y0s1t1Uex4y1s4t2 + ex1y0s1t1Uex4y2s5t2 + ex1y0s1t1Uex4y2s4t3 + ex1y0s1t1Uex4y3s5t3 + ex1y0s1t1Uex4y3s4t4 + ex1y0s1t1Uex4y4s5t4 + ex1y0s1t1Uex4y4s4t5 + ex1y0s1t1Uex4y5s5t5 + ex1y0s1t1Uex4y5s4t6 + ex1y0s1t1Uex4y6s5t6 + ex1y0s1t1Uex5y0s6t0 + ex1y0s1t1Uex5y0s5t1 + ex1y0s1t1Uex5y1s6t1 + ex1y0s1t1Uex5y1s5t2 + ex1y0s1t1Uex5y2s6t2 + ex1y0s1t1Uex5y2s5t3 + ex1y0s1t1Uex5y3s6t3 + ex1y0s1t1Uex5y3s5t4 + ex1y0s1t1Uex5y4s6t4 + ex1y0s1t1Uex5y4s5t5 + ex1y0s1t1Uex5y5s6t5 + ex1y0s1t1Uex5y5s5t6 + ex1y0s1t1Uex5y6s6t6 + ex1y0s1t1Uex6y0s6t1 + ex1y0s1t1Uex6y1s6t2 + ex1y0s1t1Uex6y2s6t3 + ex1y0s1t1Uex6y3s6t4 + ex1y0s1t1Uex6y4s6t5 + ex1y0s1t1Uex6y5s6t6 >= 5
+ + ex0y0s1t0Uex0y0s1t0 + ex0y0s1t0Uex0y0s0t1 + ex0y0s1t0Uex0y1s1t1 + ex0y0s1t0Uex0y1s0t2 + ex0y0s1t0Uex0y2s1t2 + ex0y0s1t0Uex0y2s0t3 + ex0y0s1t0Uex0y3s1t3 + ex0y0s1t0Uex0y3s0t4 + ex0y0s1t0Uex0y4s1t4 + ex0y0s1t0Uex0y4s0t5 + ex0y0s1t0Uex0y5s1t5 + ex0y0s1t0Uex1y0s2t0 + ex0y0s1t0Uex1y0s1t1 + ex0y0s1t0Uex1y1s2t1 + ex0y0s1t0Uex1y1s1t2 + ex0y0s1t0Uex1y2s2t2 + ex0y0s1t0Uex1y2s1t3 + ex0y0s1t0Uex1y3s2t3 + ex0y0s1t0Uex1y3s1t4 + ex0y0s1t0Uex1y4s2t4 + ex0y0s1t0Uex1y4s1t5 + ex0y0s1t0Uex1y5s2t5 + ex0y0s1t0Uex2y0s3t0 + ex0y0s1t0Uex2y0s2t1 + ex0y0s1t0Uex2y1s3t1 + ex0y0s1t0Uex2y1s2t2 + ex0y0s1t0Uex2y2s3t2 + ex0y0s1t0Uex2y2s2t3 + ex0y0s1t0Uex2y3s3t3 + ex0y0s1t0Uex2y3s2t4 + ex0y0s1t0Uex2y4s3t4 + ex0y0s1t0Uex2y4s2t5 + ex0y0s1t0Uex2y5s3t5 + ex0y0s1t0Uex3y0s4t0 + ex0y0s1t0Uex3y0s3t1 + ex0y0s1t0Uex3y1s4t1 + ex0y0s1t0Uex3y1s3t2 + ex0y0s1t0Uex3y2s4t2 + ex0y0s1t0Uex3y2s3t3 + ex0y0s1t0Uex3y3s4t3 + ex0y0s1t0Uex3y3s3t4 + ex0y0s1t0Uex3y4s4t4 + ex0y0s1t0Uex3y4s3t5 + ex0y0s1t0Uex3y5s4t5 + ex0y0s1t0Uex4y0s5t0 + ex0y0s1t0Uex4y0s4t1 + ex0y0s1t0Uex4y1s5t1 + ex0y0s1t0Uex4y1s4t2 + ex0y0s1t0Uex4y2s5t2 + ex0y0s1t0Uex4y2s4t3 + ex0y0s1t0Uex4y3s5t3 + ex0y0s1t0Uex4y3s4t4 + ex0y0s1t0Uex4y4s5t4 + ex0y0s1t0Uex4y4s4t5 + ex0y0s1t0Uex4y5s5t5 + ex0y0s1t0Uex5y0s6t0 + ex0y0s1t0Uex5y0s5t1 + ex0y0s1t0Uex5y1s6t1 + ex0y0s1t0Uex5y1s5t2 + ex0y0s1t0Uex5y2s6t2 + ex0y0s1t0Uex5y2s5t3 + ex0y0s1t0Uex5y3s6t3 + ex0y0s1t0Uex5y3s5t4 + ex0y0s1t0Uex5y4s6t4 + ex0y0s1t0Uex5y4s5t5 + ex0y0s1t0Uex5y5s6t5 + ex0y0s1t0Uex6y0s6t1 + ex0y0s1t0Uex6y1s6t2 + ex0y0s1t0Uex6y2s6t3 + ex0y0s1t0Uex6y3s6t4 + ex0y0s1t0Uex6y4s6t5 >= 5
+ + ex0y0s0t1Uex0y0s1t0 + ex0y0s0t1Uex0y0s0t1 + ex0y0s0t1Uex0y1s1t1 + ex0y0s0t1Uex0y1s0t2 + ex0y0s0t1Uex0y2s1t2 + ex0y0s0t1Uex0y2s0t3 + ex0y0s0t1Uex0y3s1t3 + ex0y0s0t1Uex0y3s0t4 + ex0y0s0t1Uex0y4s1t4 + ex0y0s0t1Uex0y4s0t5 + ex0y0s0t1Uex0y5s1t5 + ex0y0s0t1Uex1y0s2t0 + ex0y0s0t1Uex1y0s1t1 + ex0y0s0t1Uex1y1s2t1 + ex0y0s0t1Uex1y1s1t2 + ex0y0s0t1Uex1y2s2t2 + ex0y0s0t1Uex1y2s1t3 + ex0y0s0t1Uex1y3s2t3 + ex0y0s0t1Uex1y3s1t4 + ex0y0s0t1Uex1y4s2t4 + ex0y0s0t1Uex1y4s1t5 + ex0y0s0t1Uex1y5s2t5 + ex0y0s0t1Uex2y0s3t0 + ex0y0s0t1Uex2y0s2t1 + ex0y0s0t1Uex2y1s3t1 + ex0y0s0t1Uex2y1s2t2 + ex0y0s0t1Uex2y2s3t2 + ex0y0s0t1Uex2y2s2t3 + ex0y0s0t1Uex2y3s3t3 + ex0y0s0t1Uex2y3s2t4 + ex0y0s0t1Uex2y4s3t4 + ex0y0s0t1Uex2y4s2t5 + ex0y0s0t1Uex2y5s3t5 + ex0y0s0t1Uex3y0s4t0 + ex0y0s0t1Uex3y0s3t1 + ex0y0s0t1Uex3y1s4t1 + ex0y0s0t1Uex3y1s3t2 + ex0y0s0t1Uex3y2s4t2 + ex0y0s0t1Uex3y2s3t3 + ex0y0s0t1Uex3y3s4t3 + ex0y0s0t1Uex3y3s3t4 + ex0y0s0t1Uex3y4s4t4 + ex0y0s0t1Uex3y4s3t5 + ex0y0s0t1Uex3y5s4t5 + ex0y0s0t1Uex4y0s5t0 + ex0y0s0t1Uex4y0s4t1 + ex0y0s0t1Uex4y1s5t1 + ex0y0s0t1Uex4y1s4t2 + ex0y0s0t1Uex4y2s5t2 + ex0y0s0t1Uex4y2s4t3 + ex0y0s0t1Uex4y3s5t3 + ex0y0s0t1Uex4y3s4t4 + ex0y0s0t1Uex4y4s5t4 + ex0y0s0t1Uex4y4s4t5 + ex0y0s0t1Uex4y5s5t5 + ex0y0s0t1Uex5y0s6t0 + ex0y0s0t1Uex5y0s5t1 + ex0y0s0t1Uex5y1s6t1 + ex0y0s0t1Uex5y1s5t2 + ex0y0s0t1Uex5y2s6t2 + ex0y0s0t1Uex5y2s5t3 + ex0y0s0t1Uex5y3s6t3 + ex0y0s0t1Uex5y3s5t4 + ex0y0s0t1Uex5y4s6t4 + ex0y0s0t1Uex5y4s5t5 + ex0y0s0t1Uex5y5s6t5 + ex0y0s0t1Uex6y0s6t1 + ex0y0s0t1Uex6y1s6t2 + ex0y0s0t1Uex6y2s6t3 + ex0y0s0t1Uex6y3s6t4 + ex0y0s0t1Uex6y4s6t5 >= 5
+ + ex0y1s1t1Uex0y0s1t0 + ex0y1s1t1Uex0y0s0t1 + ex0y1s1t1Uex0y1s1t1 + ex0y1s1t1Uex0y1s0t2 + ex0y1s1t1Uex0y2s1t2 + ex0y1s1t1Uex0y2s0t3 + ex0y1s1t1Uex0y3s1t3 + ex0y1s1t1Uex0y3s0t4 + ex0y1s1t1Uex0y4s1t4 + ex0y1s1t1Uex0y4s0t5 + ex0y1s1t1Uex0y5s1t5 + ex0y1s1t1Uex1y0s2t0 + ex0y1s1t1Uex1y0s1t1 + ex0y1s1t1Uex1y1s2t1 + ex0y1s1t1Uex1y1s1t2 + ex0y1s1t1Uex1y2s2t2 + ex0y1s1t1Uex1y2s1t3 + ex0y1s1t1Uex1y3s2t3 + ex0y1s1t1Uex1y3s1t4 + ex0y1s1t1Uex1y4s2t4 + ex0y1s1t1Uex1y4s1t5 + ex0y1s1t1Uex1y5s2t5 + ex0y1s1t1Uex2y0s3t0 + ex0y1s1t1Uex2y0s2t1 + ex0y1s1t1Uex2y1s3t1 + ex0y1s1t1Uex2y1s2t2 + ex0y1s1t1Uex2y2s3t2 + ex0y1s1t1Uex2y2s2t3 + ex0y1s1t1Uex2y3s3t3 + ex0y1s1t1Uex2y3s2t4 + ex0y1s1t1Uex2y4s3t4 + ex0y1s1t1Uex2y4s2t5 + ex0y1s1t1Uex2y5s3t5 + ex0y1s1t1Uex3y0s4t0 + ex0y1s1t1Uex3y0s3t1 + ex0y1s1t1Uex3y1s4t1 + ex0y1s1t1Uex3y1s3t2 + ex0y1s1t1Uex3y2s4t2 + ex0y1s1t1Uex3y2s3t3 + ex0y1s1t1Uex3y3s4t3 + ex0y1s1t1Uex3y3s3t4 + ex0y1s1t1Uex3y4s4t4 + ex0y1s1t1Uex3y4s3t5 + ex0y1s1t1Uex3y5s4t5 + ex0y1s1t1Uex4y0s5t0 + ex0y1s1t1Uex4y0s4t1 + ex0y1s1t1Uex4y1s5t1 + ex0y1s1t1Uex4y1s4t2 + ex0y1s1t1Uex4y2s5t2 + ex0y1s1t1Uex4y2s4t3 + ex0y1s1t1Uex4y3s5t3 + ex0y1s1t1Uex4y3s4t4 + ex0y1s1t1Uex4y4s5t4 + ex0y1s1t1Uex4y4s4t5 + ex0y1s1t1Uex4y5s5t5 + ex0y1s1t1Uex5y0s6t0 + ex0y1s1t1Uex5y0s5t1 + ex0y1s1t1Uex5y1s6t1 + ex0y1s1t1Uex5y1s5t2 + ex0y1s1t1Uex5y2s6t2 + ex0y1s1t1Uex5y2s5t3 + ex0y1s1t1Uex5y3s6t3 + ex0y1s1t1Uex5y3s5t4 + ex0y1s1t1Uex5y4s6t4 + ex0y1s1t1Uex5y4s5t5 + ex0y1s1t1Uex5y5s6t5 + ex0y1s1t1Uex6y0s6t1 + ex0y1s1t1Uex6y1s6t2 + ex0y1s1t1Uex6y2s6t3 + ex0y1s1t1Uex6y3s6t4 + ex0y1s1t1Uex6y4s6t5 >= 5
+ + ex1y0s1t1Uex0y0s1t0 + ex1y0s1t1Uex0y0s0t1 + ex1y0s1t1Uex0y1s1t1 + ex1y0s1t1Uex0y1s0t2 + ex1y0s1t1Uex0y2s1t2 + ex1y0s1t1Uex0y2s0t3 + ex1y0s1t1Uex0y3s1t3 + ex1y0s1t1Uex0y3s0t4 + ex1y0s1t1Uex0y4s1t4 + ex1y0s1t1Uex0y4s0t5 + ex1y0s1t1Uex0y5s1t5 + ex1y0s1t1Uex1y0s2t0 + ex1y0s1t1Uex1y0s1t1 + ex1y0s1t1Uex1y1s2t1 + ex1y0s1t1Uex1y1s1t2 + ex1y0s1t1Uex1y2s2t2 + ex1y0s1t1Uex1y2s1t3 + ex1y0s1t1Uex1y3s2t3 + ex1y0s1t1Uex1y3s1t4 + ex1y0s1t1Uex1y4s2t4 + ex1y0s1t1Uex1y4s1t5 + ex1y0s1t1Uex1y5s2t5 + ex1y0s1t1Uex2y0s3t0 + ex1y0s1t1Uex2y0s2t1 + ex1y0s1t1Uex2y1s3t1 + ex1y0s1t1Uex2y1s2t2 + ex1y0s1t1Uex2y2s3t2 + ex1y0s1t1Uex2y2s2t3 + ex1y0s1t1Uex2y3s3t3 + ex1y0s1t1Uex2y3s2t4 + ex1y0s1t1Uex2y4s3t4 + ex1y0s1t1Uex2y4s2t5 + ex1y0s1t1Uex2y5s3t5 + ex1y0s1t1Uex3y0s4t0 + ex1y0s1t1Uex3y0s3t1 + ex1y0s1t1Uex3y1s4t1 + ex1y0s1t1Uex3y1s3t2 + ex1y0s1t1Uex3y2s4t2 + ex1y0s1t1Uex3y2s3t3 + ex1y0s1t1Uex3y3s4t3 + ex1y0s1t1Uex3y3s3t4 + ex1y0s1t1Uex3y4s4t4 + ex1y0s1t1Uex3y4s3t5 + ex1y0s1t1Uex3y5s4t5 + ex1y0s1t1Uex4y0s5t0 + ex1y0s1t1Uex4y0s4t1 + ex1y0s1t1Uex4y1s5t1 + ex1y0s1t1Uex4y1s4t2 + ex1y0s1t1Uex4y2s5t2 + ex1y0s1t1Uex4y2s4t3 + ex1y0s1t1Uex4y3s5t3 + ex1y0s1t1Uex4y3s4t4 + ex1y0s1t1Uex4y4s5t4 + ex1y0s1t1Uex4y4s4t5 + ex1y0s1t1Uex4y5s5t5 + ex1y0s1t1Uex5y0s6t0 + ex1y0s1t1Uex5y0s5t1 + ex1y0s1t1Uex5y1s6t1 + ex1y0s1t1Uex5y1s5t2 + ex1y0s1t1Uex5y2s6t2 + ex1y0s1t1Uex5y2s5t3 + ex1y0s1t1Uex5y3s6t3 + ex1y0s1t1Uex5y3s5t4 + ex1y0s1t1Uex5y4s6t4 + ex1y0s1t1Uex5y4s5t5 + ex1y0s1t1Uex5y5s6t5 + ex1y0s1t1Uex6y0s6t1 + ex1y0s1t1Uex6y1s6t2 + ex1y0s1t1Uex6y2s6t3 + ex1y0s1t1Uex6y3s6t4 + ex1y0s1t1Uex6y4s6t5 >= 5
+Bounds
+-10000 <= ex0y0s1t0FlowOnex0y0s1t0 <= 10000
+-10000 <= ex0y0s1t0FlowOnex0y0s0t1 <= 10000
+-10000 <= ex0y0s1t0FlowOnex0y1s1t1 <= 10000
+-10000 <= ex0y0s1t0FlowOnex0y1s0t2 <= 10000
+-10000 <= ex0y0s1t0FlowOnex0y2s1t2 <= 10000
+-10000 <= ex0y0s1t0FlowOnex0y2s0t3 <= 10000
+-10000 <= ex0y0s1t0FlowOnex0y3s1t3 <= 10000
+-10000 <= ex0y0s1t0FlowOnex0y3s0t4 <= 10000
+-10000 <= ex0y0s1t0FlowOnex0y4s1t4 <= 10000
+-10000 <= ex0y0s1t0FlowOnex0y4s0t5 <= 10000
+-10000 <= ex0y0s1t0FlowOnex0y5s1t5 <= 10000
+-10000 <= ex0y0s1t0FlowOnex1y0s2t0 <= 10000
+-10000 <= ex0y0s1t0FlowOnex1y0s1t1 <= 10000
+-10000 <= ex0y0s1t0FlowOnex1y1s2t1 <= 10000
+-10000 <= ex0y0s1t0FlowOnex1y1s1t2 <= 10000
+-10000 <= ex0y0s1t0FlowOnex1y2s2t2 <= 10000
+-10000 <= ex0y0s1t0FlowOnex1y2s1t3 <= 10000
+-10000 <= ex0y0s1t0FlowOnex1y3s2t3 <= 10000
+-10000 <= ex0y0s1t0FlowOnex1y3s1t4 <= 10000
+-10000 <= ex0y0s1t0FlowOnex1y4s2t4 <= 10000
+-10000 <= ex0y0s1t0FlowOnex1y4s1t5 <= 10000
+-10000 <= ex0y0s1t0FlowOnex1y5s2t5 <= 10000
+-10000 <= ex0y0s1t0FlowOnex2y0s3t0 <= 10000
+-10000 <= ex0y0s1t0FlowOnex2y0s2t1 <= 10000
+-10000 <= ex0y0s1t0FlowOnex2y1s3t1 <= 10000
+-10000 <= ex0y0s1t0FlowOnex2y1s2t2 <= 10000
+-10000 <= ex0y0s1t0FlowOnex2y2s3t2 <= 10000
+-10000 <= ex0y0s1t0FlowOnex2y2s2t3 <= 10000
+-10000 <= ex0y0s1t0FlowOnex2y3s3t3 <= 10000
+-10000 <= ex0y0s1t0FlowOnex2y3s2t4 <= 10000
+-10000 <= ex0y0s1t0FlowOnex2y4s3t4 <= 10000
+-10000 <= ex0y0s1t0FlowOnex2y4s2t5 <= 10000
+-10000 <= ex0y0s1t0FlowOnex2y5s3t5 <= 10000
+-10000 <= ex0y0s1t0FlowOnex3y0s4t0 <= 10000
+-10000 <= ex0y0s1t0FlowOnex3y0s3t1 <= 10000
+-10000 <= ex0y0s1t0FlowOnex3y1s4t1 <= 10000
+-10000 <= ex0y0s1t0FlowOnex3y1s3t2 <= 10000
+-10000 <= ex0y0s1t0FlowOnex3y2s4t2 <= 10000
+-10000 <= ex0y0s1t0FlowOnex3y2s3t3 <= 10000
+-10000 <= ex0y0s1t0FlowOnex3y3s4t3 <= 10000
+-10000 <= ex0y0s1t0FlowOnex3y3s3t4 <= 10000
+-10000 <= ex0y0s1t0FlowOnex3y4s4t4 <= 10000
+-10000 <= ex0y0s1t0FlowOnex3y4s3t5 <= 10000
+-10000 <= ex0y0s1t0FlowOnex3y5s4t5 <= 10000
+-10000 <= ex0y0s1t0FlowOnex4y0s5t0 <= 10000
+-10000 <= ex0y0s1t0FlowOnex4y0s4t1 <= 10000
+-10000 <= ex0y0s1t0FlowOnex4y1s5t1 <= 10000
+-10000 <= ex0y0s1t0FlowOnex4y1s4t2 <= 10000
+-10000 <= ex0y0s1t0FlowOnex4y2s5t2 <= 10000
+-10000 <= ex0y0s1t0FlowOnex4y2s4t3 <= 10000
+-10000 <= ex0y0s1t0FlowOnex4y3s5t3 <= 10000
+-10000 <= ex0y0s1t0FlowOnex4y3s4t4 <= 10000
+-10000 <= ex0y0s1t0FlowOnex4y4s5t4 <= 10000
+-10000 <= ex0y0s1t0FlowOnex4y4s4t5 <= 10000
+-10000 <= ex0y0s1t0FlowOnex4y5s5t5 <= 10000
+-10000 <= ex0y0s1t0FlowOnex5y0s6t0 <= 10000
+-10000 <= ex0y0s1t0FlowOnex5y0s5t1 <= 10000
+-10000 <= ex0y0s1t0FlowOnex5y1s6t1 <= 10000
+-10000 <= ex0y0s1t0FlowOnex5y1s5t2 <= 10000
+-10000 <= ex0y0s1t0FlowOnex5y2s6t2 <= 10000
+-10000 <= ex0y0s1t0FlowOnex5y2s5t3 <= 10000
+-10000 <= ex0y0s1t0FlowOnex5y3s6t3 <= 10000
+-10000 <= ex0y0s1t0FlowOnex5y3s5t4 <= 10000
+-10000 <= ex0y0s1t0FlowOnex5y4s6t4 <= 10000
+-10000 <= ex0y0s1t0FlowOnex5y4s5t5 <= 10000
+-10000 <= ex0y0s1t0FlowOnex5y5s6t5 <= 10000
+-10000 <= ex0y0s1t0FlowOnex6y0s6t1 <= 10000
+-10000 <= ex0y0s1t0FlowOnex6y1s6t2 <= 10000
+-10000 <= ex0y0s1t0FlowOnex6y2s6t3 <= 10000
+-10000 <= ex0y0s1t0FlowOnex6y3s6t4 <= 10000
+-10000 <= ex0y0s1t0FlowOnex6y4s6t5 <= 10000
+-10000 <= ex0y0s0t1FlowOnex0y0s1t0 <= 10000
+-10000 <= ex0y0s0t1FlowOnex0y0s0t1 <= 10000
+-10000 <= ex0y0s0t1FlowOnex0y1s1t1 <= 10000
+-10000 <= ex0y0s0t1FlowOnex0y1s0t2 <= 10000
+-10000 <= ex0y0s0t1FlowOnex0y2s1t2 <= 10000
+-10000 <= ex0y0s0t1FlowOnex0y2s0t3 <= 10000
+-10000 <= ex0y0s0t1FlowOnex0y3s1t3 <= 10000
+-10000 <= ex0y0s0t1FlowOnex0y3s0t4 <= 10000
+-10000 <= ex0y0s0t1FlowOnex0y4s1t4 <= 10000
+-10000 <= ex0y0s0t1FlowOnex0y4s0t5 <= 10000
+-10000 <= ex0y0s0t1FlowOnex0y5s1t5 <= 10000
+-10000 <= ex0y0s0t1FlowOnex1y0s2t0 <= 10000
+-10000 <= ex0y0s0t1FlowOnex1y0s1t1 <= 10000
+-10000 <= ex0y0s0t1FlowOnex1y1s2t1 <= 10000
+-10000 <= ex0y0s0t1FlowOnex1y1s1t2 <= 10000
+-10000 <= ex0y0s0t1FlowOnex1y2s2t2 <= 10000
+-10000 <= ex0y0s0t1FlowOnex1y2s1t3 <= 10000
+-10000 <= ex0y0s0t1FlowOnex1y3s2t3 <= 10000
+-10000 <= ex0y0s0t1FlowOnex1y3s1t4 <= 10000
+-10000 <= ex0y0s0t1FlowOnex1y4s2t4 <= 10000
+-10000 <= ex0y0s0t1FlowOnex1y4s1t5 <= 10000
+-10000 <= ex0y0s0t1FlowOnex1y5s2t5 <= 10000
+-10000 <= ex0y0s0t1FlowOnex2y0s3t0 <= 10000
+-10000 <= ex0y0s0t1FlowOnex2y0s2t1 <= 10000
+-10000 <= ex0y0s0t1FlowOnex2y1s3t1 <= 10000
+-10000 <= ex0y0s0t1FlowOnex2y1s2t2 <= 10000
+-10000 <= ex0y0s0t1FlowOnex2y2s3t2 <= 10000
+-10000 <= ex0y0s0t1FlowOnex2y2s2t3 <= 10000
+-10000 <= ex0y0s0t1FlowOnex2y3s3t3 <= 10000
+-10000 <= ex0y0s0t1FlowOnex2y3s2t4 <= 10000
+-10000 <= ex0y0s0t1FlowOnex2y4s3t4 <= 10000
+-10000 <= ex0y0s0t1FlowOnex2y4s2t5 <= 10000
+-10000 <= ex0y0s0t1FlowOnex2y5s3t5 <= 10000
+-10000 <= ex0y0s0t1FlowOnex3y0s4t0 <= 10000
+-10000 <= ex0y0s0t1FlowOnex3y0s3t1 <= 10000
+-10000 <= ex0y0s0t1FlowOnex3y1s4t1 <= 10000
+-10000 <= ex0y0s0t1FlowOnex3y1s3t2 <= 10000
+-10000 <= ex0y0s0t1FlowOnex3y2s4t2 <= 10000
+-10000 <= ex0y0s0t1FlowOnex3y2s3t3 <= 10000
+-10000 <= ex0y0s0t1FlowOnex3y3s4t3 <= 10000
+-10000 <= ex0y0s0t1FlowOnex3y3s3t4 <= 10000
+-10000 <= ex0y0s0t1FlowOnex3y4s4t4 <= 10000
+-10000 <= ex0y0s0t1FlowOnex3y4s3t5 <= 10000
+-10000 <= ex0y0s0t1FlowOnex3y5s4t5 <= 10000
+-10000 <= ex0y0s0t1FlowOnex4y0s5t0 <= 10000
+-10000 <= ex0y0s0t1FlowOnex4y0s4t1 <= 10000
+-10000 <= ex0y0s0t1FlowOnex4y1s5t1 <= 10000
+-10000 <= ex0y0s0t1FlowOnex4y1s4t2 <= 10000
+-10000 <= ex0y0s0t1FlowOnex4y2s5t2 <= 10000
+-10000 <= ex0y0s0t1FlowOnex4y2s4t3 <= 10000
+-10000 <= ex0y0s0t1FlowOnex4y3s5t3 <= 10000
+-10000 <= ex0y0s0t1FlowOnex4y3s4t4 <= 10000
+-10000 <= ex0y0s0t1FlowOnex4y4s5t4 <= 10000
+-10000 <= ex0y0s0t1FlowOnex4y4s4t5 <= 10000
+-10000 <= ex0y0s0t1FlowOnex4y5s5t5 <= 10000
+-10000 <= ex0y0s0t1FlowOnex5y0s6t0 <= 10000
+-10000 <= ex0y0s0t1FlowOnex5y0s5t1 <= 10000
+-10000 <= ex0y0s0t1FlowOnex5y1s6t1 <= 10000
+-10000 <= ex0y0s0t1FlowOnex5y1s5t2 <= 10000
+-10000 <= ex0y0s0t1FlowOnex5y2s6t2 <= 10000
+-10000 <= ex0y0s0t1FlowOnex5y2s5t3 <= 10000
+-10000 <= ex0y0s0t1FlowOnex5y3s6t3 <= 10000
+-10000 <= ex0y0s0t1FlowOnex5y3s5t4 <= 10000
+-10000 <= ex0y0s0t1FlowOnex5y4s6t4 <= 10000
+-10000 <= ex0y0s0t1FlowOnex5y4s5t5 <= 10000
+-10000 <= ex0y0s0t1FlowOnex5y5s6t5 <= 10000
+-10000 <= ex0y0s0t1FlowOnex6y0s6t1 <= 10000
+-10000 <= ex0y0s0t1FlowOnex6y1s6t2 <= 10000
+-10000 <= ex0y0s0t1FlowOnex6y2s6t3 <= 10000
+-10000 <= ex0y0s0t1FlowOnex6y3s6t4 <= 10000
+-10000 <= ex0y0s0t1FlowOnex6y4s6t5 <= 10000
+-10000 <= ex0y1s1t1FlowOnex0y0s1t0 <= 10000
+-10000 <= ex0y1s1t1FlowOnex0y0s0t1 <= 10000
+-10000 <= ex0y1s1t1FlowOnex0y1s1t1 <= 10000
+-10000 <= ex0y1s1t1FlowOnex0y1s0t2 <= 10000
+-10000 <= ex0y1s1t1FlowOnex0y2s1t2 <= 10000
+-10000 <= ex0y1s1t1FlowOnex0y2s0t3 <= 10000
+-10000 <= ex0y1s1t1FlowOnex0y3s1t3 <= 10000
+-10000 <= ex0y1s1t1FlowOnex0y3s0t4 <= 10000
+-10000 <= ex0y1s1t1FlowOnex0y4s1t4 <= 10000
+-10000 <= ex0y1s1t1FlowOnex0y4s0t5 <= 10000
+-10000 <= ex0y1s1t1FlowOnex0y5s1t5 <= 10000
+-10000 <= ex0y1s1t1FlowOnex1y0s2t0 <= 10000
+-10000 <= ex0y1s1t1FlowOnex1y0s1t1 <= 10000
+-10000 <= ex0y1s1t1FlowOnex1y1s2t1 <= 10000
+-10000 <= ex0y1s1t1FlowOnex1y1s1t2 <= 10000
+-10000 <= ex0y1s1t1FlowOnex1y2s2t2 <= 10000
+-10000 <= ex0y1s1t1FlowOnex1y2s1t3 <= 10000
+-10000 <= ex0y1s1t1FlowOnex1y3s2t3 <= 10000
+-10000 <= ex0y1s1t1FlowOnex1y3s1t4 <= 10000
+-10000 <= ex0y1s1t1FlowOnex1y4s2t4 <= 10000
+-10000 <= ex0y1s1t1FlowOnex1y4s1t5 <= 10000
+-10000 <= ex0y1s1t1FlowOnex1y5s2t5 <= 10000
+-10000 <= ex0y1s1t1FlowOnex2y0s3t0 <= 10000
+-10000 <= ex0y1s1t1FlowOnex2y0s2t1 <= 10000
+-10000 <= ex0y1s1t1FlowOnex2y1s3t1 <= 10000
+-10000 <= ex0y1s1t1FlowOnex2y1s2t2 <= 10000
+-10000 <= ex0y1s1t1FlowOnex2y2s3t2 <= 10000
+-10000 <= ex0y1s1t1FlowOnex2y2s2t3 <= 10000
+-10000 <= ex0y1s1t1FlowOnex2y3s3t3 <= 10000
+-10000 <= ex0y1s1t1FlowOnex2y3s2t4 <= 10000
+-10000 <= ex0y1s1t1FlowOnex2y4s3t4 <= 10000
+-10000 <= ex0y1s1t1FlowOnex2y4s2t5 <= 10000
+-10000 <= ex0y1s1t1FlowOnex2y5s3t5 <= 10000
+-10000 <= ex0y1s1t1FlowOnex3y0s4t0 <= 10000
+-10000 <= ex0y1s1t1FlowOnex3y0s3t1 <= 10000
+-10000 <= ex0y1s1t1FlowOnex3y1s4t1 <= 10000
+-10000 <= ex0y1s1t1FlowOnex3y1s3t2 <= 10000
+-10000 <= ex0y1s1t1FlowOnex3y2s4t2 <= 10000
+-10000 <= ex0y1s1t1FlowOnex3y2s3t3 <= 10000
+-10000 <= ex0y1s1t1FlowOnex3y3s4t3 <= 10000
+-10000 <= ex0y1s1t1FlowOnex3y3s3t4 <= 10000
+-10000 <= ex0y1s1t1FlowOnex3y4s4t4 <= 10000
+-10000 <= ex0y1s1t1FlowOnex3y4s3t5 <= 10000
+-10000 <= ex0y1s1t1FlowOnex3y5s4t5 <= 10000
+-10000 <= ex0y1s1t1FlowOnex4y0s5t0 <= 10000
+-10000 <= ex0y1s1t1FlowOnex4y0s4t1 <= 10000
+-10000 <= ex0y1s1t1FlowOnex4y1s5t1 <= 10000
+-10000 <= ex0y1s1t1FlowOnex4y1s4t2 <= 10000
+-10000 <= ex0y1s1t1FlowOnex4y2s5t2 <= 10000
+-10000 <= ex0y1s1t1FlowOnex4y2s4t3 <= 10000
+-10000 <= ex0y1s1t1FlowOnex4y3s5t3 <= 10000
+-10000 <= ex0y1s1t1FlowOnex4y3s4t4 <= 10000
+-10000 <= ex0y1s1t1FlowOnex4y4s5t4 <= 10000
+-10000 <= ex0y1s1t1FlowOnex4y4s4t5 <= 10000
+-10000 <= ex0y1s1t1FlowOnex4y5s5t5 <= 10000
+-10000 <= ex0y1s1t1FlowOnex5y0s6t0 <= 10000
+-10000 <= ex0y1s1t1FlowOnex5y0s5t1 <= 10000
+-10000 <= ex0y1s1t1FlowOnex5y1s6t1 <= 10000
+-10000 <= ex0y1s1t1FlowOnex5y1s5t2 <= 10000
+-10000 <= ex0y1s1t1FlowOnex5y2s6t2 <= 10000
+-10000 <= ex0y1s1t1FlowOnex5y2s5t3 <= 10000
+-10000 <= ex0y1s1t1FlowOnex5y3s6t3 <= 10000
+-10000 <= ex0y1s1t1FlowOnex5y3s5t4 <= 10000
+-10000 <= ex0y1s1t1FlowOnex5y4s6t4 <= 10000
+-10000 <= ex0y1s1t1FlowOnex5y4s5t5 <= 10000
+-10000 <= ex0y1s1t1FlowOnex5y5s6t5 <= 10000
+-10000 <= ex0y1s1t1FlowOnex6y0s6t1 <= 10000
+-10000 <= ex0y1s1t1FlowOnex6y1s6t2 <= 10000
+-10000 <= ex0y1s1t1FlowOnex6y2s6t3 <= 10000
+-10000 <= ex0y1s1t1FlowOnex6y3s6t4 <= 10000
+-10000 <= ex0y1s1t1FlowOnex6y4s6t5 <= 10000
+-10000 <= ex1y0s1t1FlowOnex0y0s1t0 <= 10000
+-10000 <= ex1y0s1t1FlowOnex0y0s0t1 <= 10000
+-10000 <= ex1y0s1t1FlowOnex0y1s1t1 <= 10000
+-10000 <= ex1y0s1t1FlowOnex0y1s0t2 <= 10000
+-10000 <= ex1y0s1t1FlowOnex0y2s1t2 <= 10000
+-10000 <= ex1y0s1t1FlowOnex0y2s0t3 <= 10000
+-10000 <= ex1y0s1t1FlowOnex0y3s1t3 <= 10000
+-10000 <= ex1y0s1t1FlowOnex0y3s0t4 <= 10000
+-10000 <= ex1y0s1t1FlowOnex0y4s1t4 <= 10000
+-10000 <= ex1y0s1t1FlowOnex0y4s0t5 <= 10000
+-10000 <= ex1y0s1t1FlowOnex0y5s1t5 <= 10000
+-10000 <= ex1y0s1t1FlowOnex1y0s2t0 <= 10000
+-10000 <= ex1y0s1t1FlowOnex1y0s1t1 <= 10000
+-10000 <= ex1y0s1t1FlowOnex1y1s2t1 <= 10000
+-10000 <= ex1y0s1t1FlowOnex1y1s1t2 <= 10000
+-10000 <= ex1y0s1t1FlowOnex1y2s2t2 <= 10000
+-10000 <= ex1y0s1t1FlowOnex1y2s1t3 <= 10000
+-10000 <= ex1y0s1t1FlowOnex1y3s2t3 <= 10000
+-10000 <= ex1y0s1t1FlowOnex1y3s1t4 <= 10000
+-10000 <= ex1y0s1t1FlowOnex1y4s2t4 <= 10000
+-10000 <= ex1y0s1t1FlowOnex1y4s1t5 <= 10000
+-10000 <= ex1y0s1t1FlowOnex1y5s2t5 <= 10000
+-10000 <= ex1y0s1t1FlowOnex2y0s3t0 <= 10000
+-10000 <= ex1y0s1t1FlowOnex2y0s2t1 <= 10000
+-10000 <= ex1y0s1t1FlowOnex2y1s3t1 <= 10000
+-10000 <= ex1y0s1t1FlowOnex2y1s2t2 <= 10000
+-10000 <= ex1y0s1t1FlowOnex2y2s3t2 <= 10000
+-10000 <= ex1y0s1t1FlowOnex2y2s2t3 <= 10000
+-10000 <= ex1y0s1t1FlowOnex2y3s3t3 <= 10000
+-10000 <= ex1y0s1t1FlowOnex2y3s2t4 <= 10000
+-10000 <= ex1y0s1t1FlowOnex2y4s3t4 <= 10000
+-10000 <= ex1y0s1t1FlowOnex2y4s2t5 <= 10000
+-10000 <= ex1y0s1t1FlowOnex2y5s3t5 <= 10000
+-10000 <= ex1y0s1t1FlowOnex3y0s4t0 <= 10000
+-10000 <= ex1y0s1t1FlowOnex3y0s3t1 <= 10000
+-10000 <= ex1y0s1t1FlowOnex3y1s4t1 <= 10000
+-10000 <= ex1y0s1t1FlowOnex3y1s3t2 <= 10000
+-10000 <= ex1y0s1t1FlowOnex3y2s4t2 <= 10000
+-10000 <= ex1y0s1t1FlowOnex3y2s3t3 <= 10000
+-10000 <= ex1y0s1t1FlowOnex3y3s4t3 <= 10000
+-10000 <= ex1y0s1t1FlowOnex3y3s3t4 <= 10000
+-10000 <= ex1y0s1t1FlowOnex3y4s4t4 <= 10000
+-10000 <= ex1y0s1t1FlowOnex3y4s3t5 <= 10000
+-10000 <= ex1y0s1t1FlowOnex3y5s4t5 <= 10000
+-10000 <= ex1y0s1t1FlowOnex4y0s5t0 <= 10000
+-10000 <= ex1y0s1t1FlowOnex4y0s4t1 <= 10000
+-10000 <= ex1y0s1t1FlowOnex4y1s5t1 <= 10000
+-10000 <= ex1y0s1t1FlowOnex4y1s4t2 <= 10000
+-10000 <= ex1y0s1t1FlowOnex4y2s5t2 <= 10000
+-10000 <= ex1y0s1t1FlowOnex4y2s4t3 <= 10000
+-10000 <= ex1y0s1t1FlowOnex4y3s5t3 <= 10000
+-10000 <= ex1y0s1t1FlowOnex4y3s4t4 <= 10000
+-10000 <= ex1y0s1t1FlowOnex4y4s5t4 <= 10000
+-10000 <= ex1y0s1t1FlowOnex4y4s4t5 <= 10000
+-10000 <= ex1y0s1t1FlowOnex4y5s5t5 <= 10000
+-10000 <= ex1y0s1t1FlowOnex5y0s6t0 <= 10000
+-10000 <= ex1y0s1t1FlowOnex5y0s5t1 <= 10000
+-10000 <= ex1y0s1t1FlowOnex5y1s6t1 <= 10000
+-10000 <= ex1y0s1t1FlowOnex5y1s5t2 <= 10000
+-10000 <= ex1y0s1t1FlowOnex5y2s6t2 <= 10000
+-10000 <= ex1y0s1t1FlowOnex5y2s5t3 <= 10000
+-10000 <= ex1y0s1t1FlowOnex5y3s6t3 <= 10000
+-10000 <= ex1y0s1t1FlowOnex5y3s5t4 <= 10000
+-10000 <= ex1y0s1t1FlowOnex5y4s6t4 <= 10000
+-10000 <= ex1y0s1t1FlowOnex5y4s5t5 <= 10000
+-10000 <= ex1y0s1t1FlowOnex5y5s6t5 <= 10000
+-10000 <= ex1y0s1t1FlowOnex6y0s6t1 <= 10000
+-10000 <= ex1y0s1t1FlowOnex6y1s6t2 <= 10000
+-10000 <= ex1y0s1t1FlowOnex6y2s6t3 <= 10000
+-10000 <= ex1y0s1t1FlowOnex6y3s6t4 <= 10000
+-10000 <= ex1y0s1t1FlowOnex6y4s6t5 <= 10000
+-10000 <= ex0y0s1t0SuperFlow <= 10000
+-10000 <= ex0y0s0t1SuperFlow <= 10000
+-10000 <= ex0y1s1t1SuperFlow <= 10000
+-10000 <= ex1y0s1t1SuperFlow <= 10000
 Binaries
 ex0y0s1t0Uex0y0s1t0
 ex0y0s1t0Uex0y0s0t1
@@ -1346,8 +1513,6 @@ ex0y0s1t0Uex0y3s0t4
 ex0y0s1t0Uex0y4s1t4
 ex0y0s1t0Uex0y4s0t5
 ex0y0s1t0Uex0y5s1t5
-ex0y0s1t0Uex0y5s0t6
-ex0y0s1t0Uex0y6s1t6
 ex0y0s1t0Uex1y0s2t0
 ex0y0s1t0Uex1y0s1t1
 ex0y0s1t0Uex1y1s2t1
@@ -1359,30 +1524,28 @@ ex0y0s1t0Uex1y3s1t4
 ex0y0s1t0Uex1y4s2t4
 ex0y0s1t0Uex1y4s1t5
 ex0y0s1t0Uex1y5s2t5
-ex0y0s1t0Uex1y5s1t6
-ex0y0s1t0Uex1y6s2t6
 ex0y0s1t0Uex2y0s3t0
 ex0y0s1t0Uex2y0s2t1
 ex0y0s1t0Uex2y1s3t1
 ex0y0s1t0Uex2y1s2t2
 ex0y0s1t0Uex2y2s3t2
 ex0y0s1t0Uex2y2s2t3
+ex0y0s1t0Uex2y3s3t3
 ex0y0s1t0Uex2y3s2t4
 ex0y0s1t0Uex2y4s3t4
 ex0y0s1t0Uex2y4s2t5
 ex0y0s1t0Uex2y5s3t5
-ex0y0s1t0Uex2y5s2t6
-ex0y0s1t0Uex2y6s3t6
 ex0y0s1t0Uex3y0s4t0
 ex0y0s1t0Uex3y0s3t1
 ex0y0s1t0Uex3y1s4t1
 ex0y0s1t0Uex3y1s3t2
 ex0y0s1t0Uex3y2s4t2
+ex0y0s1t0Uex3y2s3t3
+ex0y0s1t0Uex3y3s4t3
+ex0y0s1t0Uex3y3s3t4
 ex0y0s1t0Uex3y4s4t4
 ex0y0s1t0Uex3y4s3t5
 ex0y0s1t0Uex3y5s4t5
-ex0y0s1t0Uex3y5s3t6
-ex0y0s1t0Uex3y6s4t6
 ex0y0s1t0Uex4y0s5t0
 ex0y0s1t0Uex4y0s4t1
 ex0y0s1t0Uex4y1s5t1
@@ -1394,8 +1557,6 @@ ex0y0s1t0Uex4y3s4t4
 ex0y0s1t0Uex4y4s5t4
 ex0y0s1t0Uex4y4s4t5
 ex0y0s1t0Uex4y5s5t5
-ex0y0s1t0Uex4y5s4t6
-ex0y0s1t0Uex4y6s5t6
 ex0y0s1t0Uex5y0s6t0
 ex0y0s1t0Uex5y0s5t1
 ex0y0s1t0Uex5y1s6t1
@@ -1407,62 +1568,53 @@ ex0y0s1t0Uex5y3s5t4
 ex0y0s1t0Uex5y4s6t4
 ex0y0s1t0Uex5y4s5t5
 ex0y0s1t0Uex5y5s6t5
-ex0y0s1t0Uex5y5s5t6
-ex0y0s1t0Uex5y6s6t6
 ex0y0s1t0Uex6y0s6t1
 ex0y0s1t0Uex6y1s6t2
 ex0y0s1t0Uex6y2s6t3
 ex0y0s1t0Uex6y3s6t4
 ex0y0s1t0Uex6y4s6t5
-ex0y0s1t0Uex6y5s6t6
 ex0y0s1t0Unx0y0
 ex0y0s1t0Unx0y1
 ex0y0s1t0Unx0y2
 ex0y0s1t0Unx0y3
 ex0y0s1t0Unx0y4
 ex0y0s1t0Unx0y5
-ex0y0s1t0Unx0y6
 ex0y0s1t0Unx1y0
 ex0y0s1t0Unx1y1
 ex0y0s1t0Unx1y2
 ex0y0s1t0Unx1y3
 ex0y0s1t0Unx1y4
 ex0y0s1t0Unx1y5
-ex0y0s1t0Unx1y6
 ex0y0s1t0Unx2y0
 ex0y0s1t0Unx2y1
 ex0y0s1t0Unx2y2
 ex0y0s1t0Unx2y3
 ex0y0s1t0Unx2y4
 ex0y0s1t0Unx2y5
-ex0y0s1t0Unx2y6
 ex0y0s1t0Unx3y0
 ex0y0s1t0Unx3y1
 ex0y0s1t0Unx3y2
+ex0y0s1t0Unx3y3
 ex0y0s1t0Unx3y4
 ex0y0s1t0Unx3y5
-ex0y0s1t0Unx3y6
 ex0y0s1t0Unx4y0
 ex0y0s1t0Unx4y1
 ex0y0s1t0Unx4y2
 ex0y0s1t0Unx4y3
 ex0y0s1t0Unx4y4
 ex0y0s1t0Unx4y5
-ex0y0s1t0Unx4y6
 ex0y0s1t0Unx5y0
 ex0y0s1t0Unx5y1
 ex0y0s1t0Unx5y2
 ex0y0s1t0Unx5y3
 ex0y0s1t0Unx5y4
 ex0y0s1t0Unx5y5
-ex0y0s1t0Unx5y6
 ex0y0s1t0Unx6y0
 ex0y0s1t0Unx6y1
 ex0y0s1t0Unx6y2
 ex0y0s1t0Unx6y3
 ex0y0s1t0Unx6y4
 ex0y0s1t0Unx6y5
-ex0y0s1t0Unx6y6
 ex0y0s0t1Uex0y0s1t0
 ex0y0s0t1Uex0y0s0t1
 ex0y0s0t1Uex0y1s1t1
@@ -1474,8 +1626,6 @@ ex0y0s0t1Uex0y3s0t4
 ex0y0s0t1Uex0y4s1t4
 ex0y0s0t1Uex0y4s0t5
 ex0y0s0t1Uex0y5s1t5
-ex0y0s0t1Uex0y5s0t6
-ex0y0s0t1Uex0y6s1t6
 ex0y0s0t1Uex1y0s2t0
 ex0y0s0t1Uex1y0s1t1
 ex0y0s0t1Uex1y1s2t1
@@ -1487,30 +1637,28 @@ ex0y0s0t1Uex1y3s1t4
 ex0y0s0t1Uex1y4s2t4
 ex0y0s0t1Uex1y4s1t5
 ex0y0s0t1Uex1y5s2t5
-ex0y0s0t1Uex1y5s1t6
-ex0y0s0t1Uex1y6s2t6
 ex0y0s0t1Uex2y0s3t0
 ex0y0s0t1Uex2y0s2t1
 ex0y0s0t1Uex2y1s3t1
 ex0y0s0t1Uex2y1s2t2
 ex0y0s0t1Uex2y2s3t2
 ex0y0s0t1Uex2y2s2t3
+ex0y0s0t1Uex2y3s3t3
 ex0y0s0t1Uex2y3s2t4
 ex0y0s0t1Uex2y4s3t4
 ex0y0s0t1Uex2y4s2t5
 ex0y0s0t1Uex2y5s3t5
-ex0y0s0t1Uex2y5s2t6
-ex0y0s0t1Uex2y6s3t6
 ex0y0s0t1Uex3y0s4t0
 ex0y0s0t1Uex3y0s3t1
 ex0y0s0t1Uex3y1s4t1
 ex0y0s0t1Uex3y1s3t2
 ex0y0s0t1Uex3y2s4t2
+ex0y0s0t1Uex3y2s3t3
+ex0y0s0t1Uex3y3s4t3
+ex0y0s0t1Uex3y3s3t4
 ex0y0s0t1Uex3y4s4t4
 ex0y0s0t1Uex3y4s3t5
 ex0y0s0t1Uex3y5s4t5
-ex0y0s0t1Uex3y5s3t6
-ex0y0s0t1Uex3y6s4t6
 ex0y0s0t1Uex4y0s5t0
 ex0y0s0t1Uex4y0s4t1
 ex0y0s0t1Uex4y1s5t1
@@ -1522,8 +1670,6 @@ ex0y0s0t1Uex4y3s4t4
 ex0y0s0t1Uex4y4s5t4
 ex0y0s0t1Uex4y4s4t5
 ex0y0s0t1Uex4y5s5t5
-ex0y0s0t1Uex4y5s4t6
-ex0y0s0t1Uex4y6s5t6
 ex0y0s0t1Uex5y0s6t0
 ex0y0s0t1Uex5y0s5t1
 ex0y0s0t1Uex5y1s6t1
@@ -1535,62 +1681,53 @@ ex0y0s0t1Uex5y3s5t4
 ex0y0s0t1Uex5y4s6t4
 ex0y0s0t1Uex5y4s5t5
 ex0y0s0t1Uex5y5s6t5
-ex0y0s0t1Uex5y5s5t6
-ex0y0s0t1Uex5y6s6t6
 ex0y0s0t1Uex6y0s6t1
 ex0y0s0t1Uex6y1s6t2
 ex0y0s0t1Uex6y2s6t3
 ex0y0s0t1Uex6y3s6t4
 ex0y0s0t1Uex6y4s6t5
-ex0y0s0t1Uex6y5s6t6
 ex0y0s0t1Unx0y0
 ex0y0s0t1Unx0y1
 ex0y0s0t1Unx0y2
 ex0y0s0t1Unx0y3
 ex0y0s0t1Unx0y4
 ex0y0s0t1Unx0y5
-ex0y0s0t1Unx0y6
 ex0y0s0t1Unx1y0
 ex0y0s0t1Unx1y1
 ex0y0s0t1Unx1y2
 ex0y0s0t1Unx1y3
 ex0y0s0t1Unx1y4
 ex0y0s0t1Unx1y5
-ex0y0s0t1Unx1y6
 ex0y0s0t1Unx2y0
 ex0y0s0t1Unx2y1
 ex0y0s0t1Unx2y2
 ex0y0s0t1Unx2y3
 ex0y0s0t1Unx2y4
 ex0y0s0t1Unx2y5
-ex0y0s0t1Unx2y6
 ex0y0s0t1Unx3y0
 ex0y0s0t1Unx3y1
 ex0y0s0t1Unx3y2
+ex0y0s0t1Unx3y3
 ex0y0s0t1Unx3y4
 ex0y0s0t1Unx3y5
-ex0y0s0t1Unx3y6
 ex0y0s0t1Unx4y0
 ex0y0s0t1Unx4y1
 ex0y0s0t1Unx4y2
 ex0y0s0t1Unx4y3
 ex0y0s0t1Unx4y4
 ex0y0s0t1Unx4y5
-ex0y0s0t1Unx4y6
 ex0y0s0t1Unx5y0
 ex0y0s0t1Unx5y1
 ex0y0s0t1Unx5y2
 ex0y0s0t1Unx5y3
 ex0y0s0t1Unx5y4
 ex0y0s0t1Unx5y5
-ex0y0s0t1Unx5y6
 ex0y0s0t1Unx6y0
 ex0y0s0t1Unx6y1
 ex0y0s0t1Unx6y2
 ex0y0s0t1Unx6y3
 ex0y0s0t1Unx6y4
 ex0y0s0t1Unx6y5
-ex0y0s0t1Unx6y6
 ex0y1s1t1Uex0y0s1t0
 ex0y1s1t1Uex0y0s0t1
 ex0y1s1t1Uex0y1s1t1
@@ -1602,8 +1739,6 @@ ex0y1s1t1Uex0y3s0t4
 ex0y1s1t1Uex0y4s1t4
 ex0y1s1t1Uex0y4s0t5
 ex0y1s1t1Uex0y5s1t5
-ex0y1s1t1Uex0y5s0t6
-ex0y1s1t1Uex0y6s1t6
 ex0y1s1t1Uex1y0s2t0
 ex0y1s1t1Uex1y0s1t1
 ex0y1s1t1Uex1y1s2t1
@@ -1615,30 +1750,28 @@ ex0y1s1t1Uex1y3s1t4
 ex0y1s1t1Uex1y4s2t4
 ex0y1s1t1Uex1y4s1t5
 ex0y1s1t1Uex1y5s2t5
-ex0y1s1t1Uex1y5s1t6
-ex0y1s1t1Uex1y6s2t6
 ex0y1s1t1Uex2y0s3t0
 ex0y1s1t1Uex2y0s2t1
 ex0y1s1t1Uex2y1s3t1
 ex0y1s1t1Uex2y1s2t2
 ex0y1s1t1Uex2y2s3t2
 ex0y1s1t1Uex2y2s2t3
+ex0y1s1t1Uex2y3s3t3
 ex0y1s1t1Uex2y3s2t4
 ex0y1s1t1Uex2y4s3t4
 ex0y1s1t1Uex2y4s2t5
 ex0y1s1t1Uex2y5s3t5
-ex0y1s1t1Uex2y5s2t6
-ex0y1s1t1Uex2y6s3t6
 ex0y1s1t1Uex3y0s4t0
 ex0y1s1t1Uex3y0s3t1
 ex0y1s1t1Uex3y1s4t1
 ex0y1s1t1Uex3y1s3t2
 ex0y1s1t1Uex3y2s4t2
+ex0y1s1t1Uex3y2s3t3
+ex0y1s1t1Uex3y3s4t3
+ex0y1s1t1Uex3y3s3t4
 ex0y1s1t1Uex3y4s4t4
 ex0y1s1t1Uex3y4s3t5
 ex0y1s1t1Uex3y5s4t5
-ex0y1s1t1Uex3y5s3t6
-ex0y1s1t1Uex3y6s4t6
 ex0y1s1t1Uex4y0s5t0
 ex0y1s1t1Uex4y0s4t1
 ex0y1s1t1Uex4y1s5t1
@@ -1650,8 +1783,6 @@ ex0y1s1t1Uex4y3s4t4
 ex0y1s1t1Uex4y4s5t4
 ex0y1s1t1Uex4y4s4t5
 ex0y1s1t1Uex4y5s5t5
-ex0y1s1t1Uex4y5s4t6
-ex0y1s1t1Uex4y6s5t6
 ex0y1s1t1Uex5y0s6t0
 ex0y1s1t1Uex5y0s5t1
 ex0y1s1t1Uex5y1s6t1
@@ -1663,62 +1794,53 @@ ex0y1s1t1Uex5y3s5t4
 ex0y1s1t1Uex5y4s6t4
 ex0y1s1t1Uex5y4s5t5
 ex0y1s1t1Uex5y5s6t5
-ex0y1s1t1Uex5y5s5t6
-ex0y1s1t1Uex5y6s6t6
 ex0y1s1t1Uex6y0s6t1
 ex0y1s1t1Uex6y1s6t2
 ex0y1s1t1Uex6y2s6t3
 ex0y1s1t1Uex6y3s6t4
 ex0y1s1t1Uex6y4s6t5
-ex0y1s1t1Uex6y5s6t6
 ex0y1s1t1Unx0y0
 ex0y1s1t1Unx0y1
 ex0y1s1t1Unx0y2
 ex0y1s1t1Unx0y3
 ex0y1s1t1Unx0y4
 ex0y1s1t1Unx0y5
-ex0y1s1t1Unx0y6
 ex0y1s1t1Unx1y0
 ex0y1s1t1Unx1y1
 ex0y1s1t1Unx1y2
 ex0y1s1t1Unx1y3
 ex0y1s1t1Unx1y4
 ex0y1s1t1Unx1y5
-ex0y1s1t1Unx1y6
 ex0y1s1t1Unx2y0
 ex0y1s1t1Unx2y1
 ex0y1s1t1Unx2y2
 ex0y1s1t1Unx2y3
 ex0y1s1t1Unx2y4
 ex0y1s1t1Unx2y5
-ex0y1s1t1Unx2y6
 ex0y1s1t1Unx3y0
 ex0y1s1t1Unx3y1
 ex0y1s1t1Unx3y2
+ex0y1s1t1Unx3y3
 ex0y1s1t1Unx3y4
 ex0y1s1t1Unx3y5
-ex0y1s1t1Unx3y6
 ex0y1s1t1Unx4y0
 ex0y1s1t1Unx4y1
 ex0y1s1t1Unx4y2
 ex0y1s1t1Unx4y3
 ex0y1s1t1Unx4y4
 ex0y1s1t1Unx4y5
-ex0y1s1t1Unx4y6
 ex0y1s1t1Unx5y0
 ex0y1s1t1Unx5y1
 ex0y1s1t1Unx5y2
 ex0y1s1t1Unx5y3
 ex0y1s1t1Unx5y4
 ex0y1s1t1Unx5y5
-ex0y1s1t1Unx5y6
 ex0y1s1t1Unx6y0
 ex0y1s1t1Unx6y1
 ex0y1s1t1Unx6y2
 ex0y1s1t1Unx6y3
 ex0y1s1t1Unx6y4
 ex0y1s1t1Unx6y5
-ex0y1s1t1Unx6y6
 ex1y0s1t1Uex0y0s1t0
 ex1y0s1t1Uex0y0s0t1
 ex1y0s1t1Uex0y1s1t1
@@ -1730,8 +1852,6 @@ ex1y0s1t1Uex0y3s0t4
 ex1y0s1t1Uex0y4s1t4
 ex1y0s1t1Uex0y4s0t5
 ex1y0s1t1Uex0y5s1t5
-ex1y0s1t1Uex0y5s0t6
-ex1y0s1t1Uex0y6s1t6
 ex1y0s1t1Uex1y0s2t0
 ex1y0s1t1Uex1y0s1t1
 ex1y0s1t1Uex1y1s2t1
@@ -1743,30 +1863,28 @@ ex1y0s1t1Uex1y3s1t4
 ex1y0s1t1Uex1y4s2t4
 ex1y0s1t1Uex1y4s1t5
 ex1y0s1t1Uex1y5s2t5
-ex1y0s1t1Uex1y5s1t6
-ex1y0s1t1Uex1y6s2t6
 ex1y0s1t1Uex2y0s3t0
 ex1y0s1t1Uex2y0s2t1
 ex1y0s1t1Uex2y1s3t1
 ex1y0s1t1Uex2y1s2t2
 ex1y0s1t1Uex2y2s3t2
 ex1y0s1t1Uex2y2s2t3
+ex1y0s1t1Uex2y3s3t3
 ex1y0s1t1Uex2y3s2t4
 ex1y0s1t1Uex2y4s3t4
 ex1y0s1t1Uex2y4s2t5
 ex1y0s1t1Uex2y5s3t5
-ex1y0s1t1Uex2y5s2t6
-ex1y0s1t1Uex2y6s3t6
 ex1y0s1t1Uex3y0s4t0
 ex1y0s1t1Uex3y0s3t1
 ex1y0s1t1Uex3y1s4t1
 ex1y0s1t1Uex3y1s3t2
 ex1y0s1t1Uex3y2s4t2
+ex1y0s1t1Uex3y2s3t3
+ex1y0s1t1Uex3y3s4t3
+ex1y0s1t1Uex3y3s3t4
 ex1y0s1t1Uex3y4s4t4
 ex1y0s1t1Uex3y4s3t5
 ex1y0s1t1Uex3y5s4t5
-ex1y0s1t1Uex3y5s3t6
-ex1y0s1t1Uex3y6s4t6
 ex1y0s1t1Uex4y0s5t0
 ex1y0s1t1Uex4y0s4t1
 ex1y0s1t1Uex4y1s5t1
@@ -1778,8 +1896,6 @@ ex1y0s1t1Uex4y3s4t4
 ex1y0s1t1Uex4y4s5t4
 ex1y0s1t1Uex4y4s4t5
 ex1y0s1t1Uex4y5s5t5
-ex1y0s1t1Uex4y5s4t6
-ex1y0s1t1Uex4y6s5t6
 ex1y0s1t1Uex5y0s6t0
 ex1y0s1t1Uex5y0s5t1
 ex1y0s1t1Uex5y1s6t1
@@ -1791,62 +1907,53 @@ ex1y0s1t1Uex5y3s5t4
 ex1y0s1t1Uex5y4s6t4
 ex1y0s1t1Uex5y4s5t5
 ex1y0s1t1Uex5y5s6t5
-ex1y0s1t1Uex5y5s5t6
-ex1y0s1t1Uex5y6s6t6
 ex1y0s1t1Uex6y0s6t1
 ex1y0s1t1Uex6y1s6t2
 ex1y0s1t1Uex6y2s6t3
 ex1y0s1t1Uex6y3s6t4
 ex1y0s1t1Uex6y4s6t5
-ex1y0s1t1Uex6y5s6t6
 ex1y0s1t1Unx0y0
 ex1y0s1t1Unx0y1
 ex1y0s1t1Unx0y2
 ex1y0s1t1Unx0y3
 ex1y0s1t1Unx0y4
 ex1y0s1t1Unx0y5
-ex1y0s1t1Unx0y6
 ex1y0s1t1Unx1y0
 ex1y0s1t1Unx1y1
 ex1y0s1t1Unx1y2
 ex1y0s1t1Unx1y3
 ex1y0s1t1Unx1y4
 ex1y0s1t1Unx1y5
-ex1y0s1t1Unx1y6
 ex1y0s1t1Unx2y0
 ex1y0s1t1Unx2y1
 ex1y0s1t1Unx2y2
 ex1y0s1t1Unx2y3
 ex1y0s1t1Unx2y4
 ex1y0s1t1Unx2y5
-ex1y0s1t1Unx2y6
 ex1y0s1t1Unx3y0
 ex1y0s1t1Unx3y1
 ex1y0s1t1Unx3y2
+ex1y0s1t1Unx3y3
 ex1y0s1t1Unx3y4
 ex1y0s1t1Unx3y5
-ex1y0s1t1Unx3y6
 ex1y0s1t1Unx4y0
 ex1y0s1t1Unx4y1
 ex1y0s1t1Unx4y2
 ex1y0s1t1Unx4y3
 ex1y0s1t1Unx4y4
 ex1y0s1t1Unx4y5
-ex1y0s1t1Unx4y6
 ex1y0s1t1Unx5y0
 ex1y0s1t1Unx5y1
 ex1y0s1t1Unx5y2
 ex1y0s1t1Unx5y3
 ex1y0s1t1Unx5y4
 ex1y0s1t1Unx5y5
-ex1y0s1t1Unx5y6
 ex1y0s1t1Unx6y0
 ex1y0s1t1Unx6y1
 ex1y0s1t1Unx6y2
 ex1y0s1t1Unx6y3
 ex1y0s1t1Unx6y4
 ex1y0s1t1Unx6y5
-ex1y0s1t1Unx6y6
 nx0y0Hor
 nx0y0Ver
 ex0y0s1t0Unx0y0Port0
@@ -1865,8 +1972,6 @@ ex0y0s1t0FlowOnex0y3s0t4
 ex0y0s1t0FlowOnex0y4s1t4
 ex0y0s1t0FlowOnex0y4s0t5
 ex0y0s1t0FlowOnex0y5s1t5
-ex0y0s1t0FlowOnex0y5s0t6
-ex0y0s1t0FlowOnex0y6s1t6
 ex0y0s1t0FlowOnex1y0s2t0
 ex0y0s1t0FlowOnex1y0s1t1
 ex0y0s1t0FlowOnex1y1s2t1
@@ -1878,30 +1983,28 @@ ex0y0s1t0FlowOnex1y3s1t4
 ex0y0s1t0FlowOnex1y4s2t4
 ex0y0s1t0FlowOnex1y4s1t5
 ex0y0s1t0FlowOnex1y5s2t5
-ex0y0s1t0FlowOnex1y5s1t6
-ex0y0s1t0FlowOnex1y6s2t6
 ex0y0s1t0FlowOnex2y0s3t0
 ex0y0s1t0FlowOnex2y0s2t1
 ex0y0s1t0FlowOnex2y1s3t1
 ex0y0s1t0FlowOnex2y1s2t2
 ex0y0s1t0FlowOnex2y2s3t2
 ex0y0s1t0FlowOnex2y2s2t3
+ex0y0s1t0FlowOnex2y3s3t3
 ex0y0s1t0FlowOnex2y3s2t4
 ex0y0s1t0FlowOnex2y4s3t4
 ex0y0s1t0FlowOnex2y4s2t5
 ex0y0s1t0FlowOnex2y5s3t5
-ex0y0s1t0FlowOnex2y5s2t6
-ex0y0s1t0FlowOnex2y6s3t6
 ex0y0s1t0FlowOnex3y0s4t0
 ex0y0s1t0FlowOnex3y0s3t1
 ex0y0s1t0FlowOnex3y1s4t1
 ex0y0s1t0FlowOnex3y1s3t2
 ex0y0s1t0FlowOnex3y2s4t2
+ex0y0s1t0FlowOnex3y2s3t3
+ex0y0s1t0FlowOnex3y3s4t3
+ex0y0s1t0FlowOnex3y3s3t4
 ex0y0s1t0FlowOnex3y4s4t4
 ex0y0s1t0FlowOnex3y4s3t5
 ex0y0s1t0FlowOnex3y5s4t5
-ex0y0s1t0FlowOnex3y5s3t6
-ex0y0s1t0FlowOnex3y6s4t6
 ex0y0s1t0FlowOnex4y0s5t0
 ex0y0s1t0FlowOnex4y0s4t1
 ex0y0s1t0FlowOnex4y1s5t1
@@ -1913,8 +2016,6 @@ ex0y0s1t0FlowOnex4y3s4t4
 ex0y0s1t0FlowOnex4y4s5t4
 ex0y0s1t0FlowOnex4y4s4t5
 ex0y0s1t0FlowOnex4y5s5t5
-ex0y0s1t0FlowOnex4y5s4t6
-ex0y0s1t0FlowOnex4y6s5t6
 ex0y0s1t0FlowOnex5y0s6t0
 ex0y0s1t0FlowOnex5y0s5t1
 ex0y0s1t0FlowOnex5y1s6t1
@@ -1926,14 +2027,11 @@ ex0y0s1t0FlowOnex5y3s5t4
 ex0y0s1t0FlowOnex5y4s6t4
 ex0y0s1t0FlowOnex5y4s5t5
 ex0y0s1t0FlowOnex5y5s6t5
-ex0y0s1t0FlowOnex5y5s5t6
-ex0y0s1t0FlowOnex5y6s6t6
 ex0y0s1t0FlowOnex6y0s6t1
 ex0y0s1t0FlowOnex6y1s6t2
 ex0y0s1t0FlowOnex6y2s6t3
 ex0y0s1t0FlowOnex6y3s6t4
 ex0y0s1t0FlowOnex6y4s6t5
-ex0y0s1t0FlowOnex6y5s6t6
 ex0y0s0t1FlowOnex0y0s1t0
 ex0y0s0t1FlowOnex0y0s0t1
 ex0y0s0t1FlowOnex0y1s1t1
@@ -1945,8 +2043,6 @@ ex0y0s0t1FlowOnex0y3s0t4
 ex0y0s0t1FlowOnex0y4s1t4
 ex0y0s0t1FlowOnex0y4s0t5
 ex0y0s0t1FlowOnex0y5s1t5
-ex0y0s0t1FlowOnex0y5s0t6
-ex0y0s0t1FlowOnex0y6s1t6
 ex0y0s0t1FlowOnex1y0s2t0
 ex0y0s0t1FlowOnex1y0s1t1
 ex0y0s0t1FlowOnex1y1s2t1
@@ -1958,30 +2054,28 @@ ex0y0s0t1FlowOnex1y3s1t4
 ex0y0s0t1FlowOnex1y4s2t4
 ex0y0s0t1FlowOnex1y4s1t5
 ex0y0s0t1FlowOnex1y5s2t5
-ex0y0s0t1FlowOnex1y5s1t6
-ex0y0s0t1FlowOnex1y6s2t6
 ex0y0s0t1FlowOnex2y0s3t0
 ex0y0s0t1FlowOnex2y0s2t1
 ex0y0s0t1FlowOnex2y1s3t1
 ex0y0s0t1FlowOnex2y1s2t2
 ex0y0s0t1FlowOnex2y2s3t2
 ex0y0s0t1FlowOnex2y2s2t3
+ex0y0s0t1FlowOnex2y3s3t3
 ex0y0s0t1FlowOnex2y3s2t4
 ex0y0s0t1FlowOnex2y4s3t4
 ex0y0s0t1FlowOnex2y4s2t5
 ex0y0s0t1FlowOnex2y5s3t5
-ex0y0s0t1FlowOnex2y5s2t6
-ex0y0s0t1FlowOnex2y6s3t6
 ex0y0s0t1FlowOnex3y0s4t0
 ex0y0s0t1FlowOnex3y0s3t1
 ex0y0s0t1FlowOnex3y1s4t1
 ex0y0s0t1FlowOnex3y1s3t2
 ex0y0s0t1FlowOnex3y2s4t2
+ex0y0s0t1FlowOnex3y2s3t3
+ex0y0s0t1FlowOnex3y3s4t3
+ex0y0s0t1FlowOnex3y3s3t4
 ex0y0s0t1FlowOnex3y4s4t4
 ex0y0s0t1FlowOnex3y4s3t5
 ex0y0s0t1FlowOnex3y5s4t5
-ex0y0s0t1FlowOnex3y5s3t6
-ex0y0s0t1FlowOnex3y6s4t6
 ex0y0s0t1FlowOnex4y0s5t0
 ex0y0s0t1FlowOnex4y0s4t1
 ex0y0s0t1FlowOnex4y1s5t1
@@ -1993,8 +2087,6 @@ ex0y0s0t1FlowOnex4y3s4t4
 ex0y0s0t1FlowOnex4y4s5t4
 ex0y0s0t1FlowOnex4y4s4t5
 ex0y0s0t1FlowOnex4y5s5t5
-ex0y0s0t1FlowOnex4y5s4t6
-ex0y0s0t1FlowOnex4y6s5t6
 ex0y0s0t1FlowOnex5y0s6t0
 ex0y0s0t1FlowOnex5y0s5t1
 ex0y0s0t1FlowOnex5y1s6t1
@@ -2006,14 +2098,11 @@ ex0y0s0t1FlowOnex5y3s5t4
 ex0y0s0t1FlowOnex5y4s6t4
 ex0y0s0t1FlowOnex5y4s5t5
 ex0y0s0t1FlowOnex5y5s6t5
-ex0y0s0t1FlowOnex5y5s5t6
-ex0y0s0t1FlowOnex5y6s6t6
 ex0y0s0t1FlowOnex6y0s6t1
 ex0y0s0t1FlowOnex6y1s6t2
 ex0y0s0t1FlowOnex6y2s6t3
 ex0y0s0t1FlowOnex6y3s6t4
 ex0y0s0t1FlowOnex6y4s6t5
-ex0y0s0t1FlowOnex6y5s6t6
 ex0y1s1t1FlowOnex0y0s1t0
 ex0y1s1t1FlowOnex0y0s0t1
 ex0y1s1t1FlowOnex0y1s1t1
@@ -2025,8 +2114,6 @@ ex0y1s1t1FlowOnex0y3s0t4
 ex0y1s1t1FlowOnex0y4s1t4
 ex0y1s1t1FlowOnex0y4s0t5
 ex0y1s1t1FlowOnex0y5s1t5
-ex0y1s1t1FlowOnex0y5s0t6
-ex0y1s1t1FlowOnex0y6s1t6
 ex0y1s1t1FlowOnex1y0s2t0
 ex0y1s1t1FlowOnex1y0s1t1
 ex0y1s1t1FlowOnex1y1s2t1
@@ -2038,30 +2125,28 @@ ex0y1s1t1FlowOnex1y3s1t4
 ex0y1s1t1FlowOnex1y4s2t4
 ex0y1s1t1FlowOnex1y4s1t5
 ex0y1s1t1FlowOnex1y5s2t5
-ex0y1s1t1FlowOnex1y5s1t6
-ex0y1s1t1FlowOnex1y6s2t6
 ex0y1s1t1FlowOnex2y0s3t0
 ex0y1s1t1FlowOnex2y0s2t1
 ex0y1s1t1FlowOnex2y1s3t1
 ex0y1s1t1FlowOnex2y1s2t2
 ex0y1s1t1FlowOnex2y2s3t2
 ex0y1s1t1FlowOnex2y2s2t3
+ex0y1s1t1FlowOnex2y3s3t3
 ex0y1s1t1FlowOnex2y3s2t4
 ex0y1s1t1FlowOnex2y4s3t4
 ex0y1s1t1FlowOnex2y4s2t5
 ex0y1s1t1FlowOnex2y5s3t5
-ex0y1s1t1FlowOnex2y5s2t6
-ex0y1s1t1FlowOnex2y6s3t6
 ex0y1s1t1FlowOnex3y0s4t0
 ex0y1s1t1FlowOnex3y0s3t1
 ex0y1s1t1FlowOnex3y1s4t1
 ex0y1s1t1FlowOnex3y1s3t2
 ex0y1s1t1FlowOnex3y2s4t2
+ex0y1s1t1FlowOnex3y2s3t3
+ex0y1s1t1FlowOnex3y3s4t3
+ex0y1s1t1FlowOnex3y3s3t4
 ex0y1s1t1FlowOnex3y4s4t4
 ex0y1s1t1FlowOnex3y4s3t5
 ex0y1s1t1FlowOnex3y5s4t5
-ex0y1s1t1FlowOnex3y5s3t6
-ex0y1s1t1FlowOnex3y6s4t6
 ex0y1s1t1FlowOnex4y0s5t0
 ex0y1s1t1FlowOnex4y0s4t1
 ex0y1s1t1FlowOnex4y1s5t1
@@ -2073,8 +2158,6 @@ ex0y1s1t1FlowOnex4y3s4t4
 ex0y1s1t1FlowOnex4y4s5t4
 ex0y1s1t1FlowOnex4y4s4t5
 ex0y1s1t1FlowOnex4y5s5t5
-ex0y1s1t1FlowOnex4y5s4t6
-ex0y1s1t1FlowOnex4y6s5t6
 ex0y1s1t1FlowOnex5y0s6t0
 ex0y1s1t1FlowOnex5y0s5t1
 ex0y1s1t1FlowOnex5y1s6t1
@@ -2086,14 +2169,11 @@ ex0y1s1t1FlowOnex5y3s5t4
 ex0y1s1t1FlowOnex5y4s6t4
 ex0y1s1t1FlowOnex5y4s5t5
 ex0y1s1t1FlowOnex5y5s6t5
-ex0y1s1t1FlowOnex5y5s5t6
-ex0y1s1t1FlowOnex5y6s6t6
 ex0y1s1t1FlowOnex6y0s6t1
 ex0y1s1t1FlowOnex6y1s6t2
 ex0y1s1t1FlowOnex6y2s6t3
 ex0y1s1t1FlowOnex6y3s6t4
 ex0y1s1t1FlowOnex6y4s6t5
-ex0y1s1t1FlowOnex6y5s6t6
 ex1y0s1t1FlowOnex0y0s1t0
 ex1y0s1t1FlowOnex0y0s0t1
 ex1y0s1t1FlowOnex0y1s1t1
@@ -2105,8 +2185,6 @@ ex1y0s1t1FlowOnex0y3s0t4
 ex1y0s1t1FlowOnex0y4s1t4
 ex1y0s1t1FlowOnex0y4s0t5
 ex1y0s1t1FlowOnex0y5s1t5
-ex1y0s1t1FlowOnex0y5s0t6
-ex1y0s1t1FlowOnex0y6s1t6
 ex1y0s1t1FlowOnex1y0s2t0
 ex1y0s1t1FlowOnex1y0s1t1
 ex1y0s1t1FlowOnex1y1s2t1
@@ -2118,30 +2196,28 @@ ex1y0s1t1FlowOnex1y3s1t4
 ex1y0s1t1FlowOnex1y4s2t4
 ex1y0s1t1FlowOnex1y4s1t5
 ex1y0s1t1FlowOnex1y5s2t5
-ex1y0s1t1FlowOnex1y5s1t6
-ex1y0s1t1FlowOnex1y6s2t6
 ex1y0s1t1FlowOnex2y0s3t0
 ex1y0s1t1FlowOnex2y0s2t1
 ex1y0s1t1FlowOnex2y1s3t1
 ex1y0s1t1FlowOnex2y1s2t2
 ex1y0s1t1FlowOnex2y2s3t2
 ex1y0s1t1FlowOnex2y2s2t3
+ex1y0s1t1FlowOnex2y3s3t3
 ex1y0s1t1FlowOnex2y3s2t4
 ex1y0s1t1FlowOnex2y4s3t4
 ex1y0s1t1FlowOnex2y4s2t5
 ex1y0s1t1FlowOnex2y5s3t5
-ex1y0s1t1FlowOnex2y5s2t6
-ex1y0s1t1FlowOnex2y6s3t6
 ex1y0s1t1FlowOnex3y0s4t0
 ex1y0s1t1FlowOnex3y0s3t1
 ex1y0s1t1FlowOnex3y1s4t1
 ex1y0s1t1FlowOnex3y1s3t2
 ex1y0s1t1FlowOnex3y2s4t2
+ex1y0s1t1FlowOnex3y2s3t3
+ex1y0s1t1FlowOnex3y3s4t3
+ex1y0s1t1FlowOnex3y3s3t4
 ex1y0s1t1FlowOnex3y4s4t4
 ex1y0s1t1FlowOnex3y4s3t5
 ex1y0s1t1FlowOnex3y5s4t5
-ex1y0s1t1FlowOnex3y5s3t6
-ex1y0s1t1FlowOnex3y6s4t6
 ex1y0s1t1FlowOnex4y0s5t0
 ex1y0s1t1FlowOnex4y0s4t1
 ex1y0s1t1FlowOnex4y1s5t1
@@ -2153,8 +2229,6 @@ ex1y0s1t1FlowOnex4y3s4t4
 ex1y0s1t1FlowOnex4y4s5t4
 ex1y0s1t1FlowOnex4y4s4t5
 ex1y0s1t1FlowOnex4y5s5t5
-ex1y0s1t1FlowOnex4y5s4t6
-ex1y0s1t1FlowOnex4y6s5t6
 ex1y0s1t1FlowOnex5y0s6t0
 ex1y0s1t1FlowOnex5y0s5t1
 ex1y0s1t1FlowOnex5y1s6t1
@@ -2166,14 +2240,11 @@ ex1y0s1t1FlowOnex5y3s5t4
 ex1y0s1t1FlowOnex5y4s6t4
 ex1y0s1t1FlowOnex5y4s5t5
 ex1y0s1t1FlowOnex5y5s6t5
-ex1y0s1t1FlowOnex5y5s5t6
-ex1y0s1t1FlowOnex5y6s6t6
 ex1y0s1t1FlowOnex6y0s6t1
 ex1y0s1t1FlowOnex6y1s6t2
 ex1y0s1t1FlowOnex6y2s6t3
 ex1y0s1t1FlowOnex6y3s6t4
 ex1y0s1t1FlowOnex6y4s6t5
-ex1y0s1t1FlowOnex6y5s6t6
 ex0y0s1t0SuperFlow
 ex0y0s0t1SuperFlow
 ex0y1s1t1SuperFlow
