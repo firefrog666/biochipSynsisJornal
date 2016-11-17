@@ -51,13 +51,17 @@ int main(int   argc,
 #define physicalDesgin 1
 
 #if physicalDesgin
-	Grid inputGrid(2,2);
+	Grid inputGrid(4,4);
 	/*for(Edge_ptr e:inputGrid.edges){
 		e->isStorage = false;
 	}*/
 	//inputGrid.edges[5]->isStorage =false;
 	//inputGrid.edges[2]->isStorage = false;
 	inputGrid.nodes[0]->isDev = true;
+	for(Node_ptr n:inputGrid.nodes){
+		if(n->x == 1 && n->y == 1)
+			n->isDev = true;
+	}
 	//inputGrid.nodes[4]->isDev = true;
 	//inputGrid.nodes[7]->isDev = true;
 

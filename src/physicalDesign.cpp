@@ -1083,7 +1083,7 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 
 					}
 
-		/*		//flow to no circle
+				//flow to no circle
 				string flowOnOneNode = "";
 				Node_ptr superNode = node1Outgrid;
 
@@ -1124,49 +1124,49 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 						}
 					}
 
-					if( n== n0Port0Ver){
-						//if use n0Port0Ver then pathusenode = 0 flow = 1
-						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode +  a(" + ") + a(M) + a(" ") + a(N0Ver) + a(" + ") + a(M) + a(" ") + a(pathUseN0Port0)+(" <= ") + a(2*M + 1));
-						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode +  a(" - ") + a(M) + a(" ") + a(N0Ver) + a(" - ") + a(M) + a(" ") + a(pathUseN0Port0)+(" >= ") + a(-2*M + 1));
+					if( n== n1Port0Ver){
+						//if use n1Port0Ver then pathusenode = 0 flow = 1
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode +  a(" + ") + a(M) + a(" ") + a(N1Ver) + a(" + ") + a(M) + a(" ") + a(pathUseN1Port0)+(" <= ") + a(2*M + 1));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode +  a(" - ") + a(M) + a(" ") + a(N1Ver) + a(" - ") + a(M) + a(" ") + a(pathUseN1Port0)+(" >= ") + a(-2*M + 1));
 						// else pathusenode = 1	 flow = 0
-						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(N0Ver) +a(" >= ") + a(0));
-						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(N0Ver) + a(" <= ") + a(0));
-						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(pathUseN0Port0) +a(" >= ") + a(0));
-						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(pathUseN0Port0) + a(" <= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(N1Ver) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(N1Ver) + a(" <= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(pathUseN1Port0) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(pathUseN1Port0) + a(" <= ") + a(0));
 
 
 										}
-					else if(n== n0Port1Ver){
-						//if use n0Port0Ver then pathusenode = 0 flow = 1
-						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode +  a(" + ") + a(M) + a(" ") + a(N0Ver) + a(" + ") + a(M) + a(" ") + a(pathUseN0Port1)+(" <= ") + a(2*M + 1));
-						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode +  a(" - ") + a(M) + a(" ") + a(N0Ver) + a(" - ") + a(M) + a(" ") + a(pathUseN0Port1)+(" >= ") + a(-2*M + 1));
+					else if(n== n1Port1Ver){
+						//if use n1Port0Ver then pathusenode = 0 flow = 1
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode +  a(" + ") + a(M) + a(" ") + a(N1Ver) + a(" + ") + a(M) + a(" ") + a(pathUseN1Port1)+(" <= ") + a(2*M + 1));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode +  a(" - ") + a(M) + a(" ") + a(N1Ver) + a(" - ") + a(M) + a(" ") + a(pathUseN1Port1)+(" >= ") + a(-2*M + 1));
 						// else pathusenode = 1	 flow = 0
-						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(N0Ver) +a(" >= ") + a(0));
-						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(N0Ver) + a(" <= ") + a(0));
-						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(pathUseN0Port1) +a(" >= ") + a(0));
-						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(pathUseN0Port1) + a(" <= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(N1Ver) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(N1Ver) + a(" <= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(pathUseN1Port1) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(pathUseN1Port1) + a(" <= ") + a(0));
 
 					}
-					else if(n == n0Port0Hor){
-						//if use n0Port0Ver then pathusenode = 0 flow = 1
-						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode +  a(" + ") + a(M) + a(" ") + a(N0Hor) + a(" + ") + a(M) + a(" ") + a(pathUseN0Port0)+(" <= ") + a(2*M + 1));
-						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode +  a(" - ") + a(M) + a(" ") + a(N0Hor) + a(" - ") + a(M) + a(" ") + a(pathUseN0Port0)+(" >= ") + a(-2*M + 1));
+					else if(n == n1Port0Hor){
+						//if use n1Port0Ver then pathusenode = 0 flow = 1
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode +  a(" + ") + a(M) + a(" ") + a(N1Hor) + a(" + ") + a(M) + a(" ") + a(pathUseN1Port0)+(" <= ") + a(2*M + 1));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode +  a(" - ") + a(M) + a(" ") + a(N1Hor) + a(" - ") + a(M) + a(" ") + a(pathUseN1Port0)+(" >= ") + a(-2*M + 1));
 						// else pathusenode = 1	 flow = 0
-						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(N0Hor) +a(" >= ") + a(0));
-						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(N0Hor) + a(" <= ") + a(0));
-						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(pathUseN0Port0) +a(" >= ") + a(0));
-						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(pathUseN0Port0) + a(" <= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(N1Hor) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(N1Hor) + a(" <= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(pathUseN1Port0) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(pathUseN1Port0) + a(" <= ") + a(0));
 
 					}
-					else if(n == n0Port1Hor){
-						//if use n0Port0Ver then pathusenode = 0 flow = 1
-						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode +  a(" + ") + a(M) + a(" ") + a(N0Hor) + a(" + ") + a(M) + a(" ") + a(pathUseN0Port1)+(" <= ") + a(2*M + 1));
-						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode +  a(" - ") + a(M) + a(" ") + a(N0Hor) + a(" - ") + a(M) + a(" ") + a(pathUseN0Port1)+(" >= ") + a(-2*M + 1));
+					else if(n == n1Port1Hor){
+						//if use n1Port0Ver then pathusenode = 0 flow = 1
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode +  a(" + ") + a(M) + a(" ") + a(N1Hor) + a(" + ") + a(M) + a(" ") + a(pathUseN1Port1)+(" <= ") + a(2*M + 1));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode +  a(" - ") + a(M) + a(" ") + a(N1Hor) + a(" - ") + a(M) + a(" ") + a(pathUseN1Port1)+(" >= ") + a(-2*M + 1));
 						// else pathusenode = 1	 flow = 0
-						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(N0Hor) +a(" >= ") + a(0));
-						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(N0Hor) + a(" <= ") + a(0));
-						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(pathUseN0Port1) +a(" >= ") + a(0));
-						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(pathUseN0Port1) + a(" <= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(N1Hor) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(N1Hor) + a(" <= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(pathUseN1Port1) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(pathUseN1Port1) + a(" <= ") + a(0));
 
 					}
 					else{
@@ -1182,7 +1182,7 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 					edgeNumber +=a(" + ") + edgeUseEdge(path,e);
 				}
 				constraint.push_back(edgeNumber + a(" - ") + flowFromSuper + a(" = -1"));
-				//flow no circle end*/
+				//flow no circle end
 
 			}
 			else if(n0->isDev && n1->isDev){
@@ -1432,6 +1432,106 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 						}
 
 					}
+
+			/*	//flow to no circle
+				string flowOnOneNode = "";
+
+
+				for(Edge_ptr e:superNode->adjEdgesList){
+					if(!ifContainEdge(pathLegitEdges,e))
+						continue;
+					string flowEdge = flowOnEdge(path,e);
+
+					if(flowComeInNode(e,superNode)){
+						flowOnOneNode += a(" + ")  + flowEdge;
+					}
+					else{
+						flowOnOneNode += a(" - ") + flowEdge;
+					}
+				}
+				constraint.push_back(flowOnOneNode + a(" + ") + flowFromSuper + a(" = 1"));
+
+
+				for(Node_ptr n:outputGrid.nodes){
+					if(!ifContainNode(pathLegitNodes,n))
+						continue;
+
+
+					string pathUseNode = edgeUseNode(path,n);
+					flowOnOneNode = "";
+
+					for(Edge_ptr e:n->adjEdgesList){
+						if(!ifContainEdge(pathLegitEdges,e))
+							continue;
+						string flowEdge = flowOnEdge(path,e);
+
+						if(flowComeInNode(e,n)){
+							flowOnOneNode += a(" + ")  + flowEdge;
+						}
+						else{
+							flowOnOneNode += a(" - ") + flowEdge;
+						}
+					}
+
+					if( n== n1Port0Ver){
+						//if use n1Port0Ver then pathusenode = 0 flow = 1
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode +  a(" + ") + a(M) + a(" ") + a(N1Ver) + a(" + ") + a(M) + a(" ") + a(pathUseN1Port0)+(" <= ") + a(2*M + 1));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode +  a(" - ") + a(M) + a(" ") + a(N1Ver) + a(" - ") + a(M) + a(" ") + a(pathUseN1Port0)+(" >= ") + a(-2*M + 1));
+						// else pathusenode = 1	 flow = 0
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(N1Ver) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(N1Ver) + a(" <= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(pathUseN1Port0) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(pathUseN1Port0) + a(" <= ") + a(0));
+
+
+										}
+					else if(n== n1Port1Ver){
+						//if use n1Port0Ver then pathusenode = 0 flow = 1
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode +  a(" + ") + a(M) + a(" ") + a(N1Ver) + a(" + ") + a(M) + a(" ") + a(pathUseN1Port1)+(" <= ") + a(2*M + 1));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode +  a(" - ") + a(M) + a(" ") + a(N1Ver) + a(" - ") + a(M) + a(" ") + a(pathUseN1Port1)+(" >= ") + a(-2*M + 1));
+						// else pathusenode = 1	 flow = 0
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(N1Ver) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(N1Ver) + a(" <= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(pathUseN1Port1) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(pathUseN1Port1) + a(" <= ") + a(0));
+
+					}
+					else if(n == n1Port0Hor){
+						//if use n1Port0Ver then pathusenode = 0 flow = 1
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode +  a(" + ") + a(M) + a(" ") + a(N1Hor) + a(" + ") + a(M) + a(" ") + a(pathUseN1Port0)+(" <= ") + a(2*M + 1));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode +  a(" - ") + a(M) + a(" ") + a(N1Hor) + a(" - ") + a(M) + a(" ") + a(pathUseN1Port0)+(" >= ") + a(-2*M + 1));
+						// else pathusenode = 1	 flow = 0
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(N1Hor) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(N1Hor) + a(" <= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(pathUseN1Port0) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(pathUseN1Port0) + a(" <= ") + a(0));
+
+					}
+					else if(n == n1Port1Hor){
+						//if use n1Port0Ver then pathusenode = 0 flow = 1
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode +  a(" + ") + a(M) + a(" ") + a(N1Hor) + a(" + ") + a(M) + a(" ") + a(pathUseN1Port1)+(" <= ") + a(2*M + 1));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode +  a(" - ") + a(M) + a(" ") + a(N1Hor) + a(" - ") + a(M) + a(" ") + a(pathUseN1Port1)+(" >= ") + a(-2*M + 1));
+						// else pathusenode = 1	 flow = 0
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(N1Hor) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(N1Hor) + a(" <= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(pathUseN1Port1) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(pathUseN1Port1) + a(" <= ") + a(0));
+
+					}
+					else{
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" = 0"));
+					}
+
+
+				}
+
+				//all superFlow = edgeNumber + 1
+				string edgeNumber = "";
+				for(Edge_ptr e:pathLegitEdges){
+					edgeNumber +=a(" + ") + edgeUseEdge(path,e);
+				}
+				constraint.push_back(edgeNumber + a(" - ") + flowFromSuper + a(" = -1"));
+				//flow no circle end*/
 
 
 			}
@@ -2719,47 +2819,31 @@ void PhysicalDesign::genILP(){
 	//set rank of each square
 
 
-#if 0
-
-	squaresInput[0]->minX = 5;
-	squaresInput[0]->minY = 5;
-	inputGrid.getNode(0,0)->isDev = true;
-	Grid g(6,6);
-	outputGrid = g;
-	Grid squareG = getGridFromSquare(squaresInput[0]);
-	boost::shared_ptr<phyDev> pD(new phyDev());
-	pD->vertical = false;
-	pD->horizontal = true;
-	pD->setGrid(squareG);
-	pD->setDevCenterofGrid(2,1);
-	pD->setNodesOffsetFromCenter();
-	pD->setNodesInGrid();
-
-
-	phyDevs.push_back(pD);
-	nodesDev[inputGrid.getNode(0,0)] = pD;
-
-
-
-	setTime(60);
-	setGap(0.1);
-	pathSquareWithDev();
-	writeToFile("squareILP.lp");
-	ILPresults = ILP("squareILP.lp");
-	writeGraphFile();
-	return;
-#endif
 
 // 3*3 input grid, each grid has each individual
 #if 1
-	hashInputSquare[hash2Int(0,0)]->minY = 5;
 	hashInputSquare[hash2Int(0,0)]->minX = 6;
-/*	hashInputSquare[hash2Int(0,0)]->minX = 6;
-	hashInputSquare[hash2Int(0,1)]->minY = 6;
-	hashInputSquare[hash2Int(1,0)]->minX = 6;
-	hashInputSquare[hash2Int(1,0)]->minY = 6;
-	hashInputSquare[hash2Int(1,1)]->minX = 6;
-	hashInputSquare[hash2Int(1,1)]->minY = 6;*/
+	hashInputSquare[hash2Int(0,0)]->minY = 5;
+	hashInputSquare[hash2Int(0,1)]->minX = 6;
+	hashInputSquare[hash2Int(0,1)]->minY = 5;
+	hashInputSquare[hash2Int(0,0)]->minX = 6;
+	hashInputSquare[hash2Int(0,0)]->minY = 5;
+	hashInputSquare[hash2Int(0,2)]->minX = 6;
+	hashInputSquare[hash2Int(0,2)]->minY = 4;
+
+	hashInputSquare[hash2Int(1,0)]->minX = 4;
+	hashInputSquare[hash2Int(1,0)]->minY = 5;
+	hashInputSquare[hash2Int(1,1)]->minX = 4;
+	hashInputSquare[hash2Int(1,1)]->minY = 5;
+	hashInputSquare[hash2Int(1,2)]->minX = 4;
+	hashInputSquare[hash2Int(1,2)]->minY = 4;
+
+	hashInputSquare[hash2Int(2,0)]->minX = 4;
+	hashInputSquare[hash2Int(2,0)]->minY = 5;
+	hashInputSquare[hash2Int(2,1)]->minX = 4;
+	hashInputSquare[hash2Int(2,1)]->minY = 5;
+	hashInputSquare[hash2Int(2,2)]->minX = 4;
+	hashInputSquare[hash2Int(2,2)]->minY = 4;
 
 	int outputGridX = 0;
 	cout << " inputGrid size X "<<inputGrid.sizeX << endl;
@@ -2793,7 +2877,7 @@ void PhysicalDesign::genILP(){
 		}
 	}
 
-	setTime(60);
+	setTime(3600);
 	setGap(0.1);
 	pathSquareFixCrossDev();
 	writeToFile("squareILP.lp");
