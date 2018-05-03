@@ -11,8 +11,7 @@
 #include <boost/shared_ptr.hpp>
 
 
-typedef boost::shared_ptr<Node> Node_ptr;
-typedef boost::shared_ptr<Edge> Edge_ptr;
+
 
 #define STORESIZE 5
 using namespace std;
@@ -103,17 +102,17 @@ public:
 		edges= g.getEdgesByNodes(nodes);
 		port0Node = g.getNode(port0offsite[0]+centerX,port0offsite[1]+centerY);
 		port1Node = g.getNode(port1offsite[0]+centerX,port1offsite[1]+centerY);
-
+		center = g.getNode(centerX,centerY);
 
 	}
 public:
-	vector<Edge_ptr> edges;
-	vector<Node_ptr> nodes;
-	Node_ptr center;
+	vector<Edge*> edges;
+	vector<Node*> nodes;
+	Node* center;
 	vector<int> port0offsite;
 	vector<int> port1offsite;
-	Node_ptr port0Node;
-	Node_ptr port1Node;
+	Node* port0Node;
+	Node* port1Node;
 	int centerX = 0;
 	int centerY = 0;
 	vector<int> nodesOffsiteFromCenter;
@@ -128,10 +127,14 @@ public:
 class Square{
 public:
 	Square(){
-
+		minX = 0;
+		minY = 0;
+		getCornerPos();
 	}
 	Square(const Grid& g){
-
+		minX = 0;
+		minY = 0;
+		getCornerPos();
 	}
 
 	void getMinXY(){
@@ -150,11 +153,11 @@ public:
 	}
 
 	void getCornerPos(){
-		left = 10000;
+		/*left = 10000;
 		down = 10000;
 		right = 0;
 		up = 0;
-		for(Node_ptr node:nodes){
+		for(Node* node:nodes){
 			int x = node->x;
 			int y = node->y;
 
@@ -168,7 +171,7 @@ public:
 
 			if(y >= up)
 				up = y;
-		}
+		}*/
 	}
 
 public:
@@ -178,8 +181,8 @@ public:
 	int minX,minY;
 	int rowNum;
 	int columnNum;
-	vector<Node_ptr> nodes;
-	vector<Edge_ptr> edges;
+	vector<Node*> nodes;
+	vector<Edge*> edges;
 	Grid grid;
 	map<int,int> rowRank;
 	map<int,int> columnRank;
@@ -215,9 +218,9 @@ public:
 	vector<Pd_ptr> phyDevs;
 	vector<Pd_ptr> verPhyDevs;
 	vector<Pd_ptr> horPhyDevs;
-	map<Node_ptr,Pd_ptr> nodesDev;
-	map<Node_ptr,Pd_ptr> nodesVerDev;
-	map<Node_ptr,Pd_ptr> nodesHorDev;
+	map<Node*,Pd_ptr> nodesDev;
+	map<Node*,Pd_ptr> nodesVerDev;
+	map<Node*,Pd_ptr> nodesHorDev;
 
 	//for
 
@@ -240,22 +243,23 @@ public:
 	void pathSquareWithDev();
 	void pathSquareFixCrossDev();
 	void writeGraphFile();
-	vector<int> setDeviceLocation(Node_ptr devNodeInputgrid);
+	void trueGraph();
+	vector<int> setDeviceLocation(Node* devNodeInputgrid);
 
-	vector<Node_ptr> availebleNodes(const vector<Sqr_ptr>& squares);
-	vector<Edge_ptr> availebleEdges(const vector<Sqr_ptr>& squares);
-	vector<Edge_ptr> getLegitEdges(Edge_ptr e); //all the legit edges from output grid a path from a input grid can hold
-	vector<Node_ptr> getLegitNodes(Edge_ptr e);//all the legit nodes from output grid a path from a input grid can hold
-	vector<Node_ptr> getLegitNodesForDev(Node_ptr devNode);
-	vector<Node_ptr> devLegitNodes(const vector<Sqr_ptr>& squares);
+	vector<Node*> availebleNodes(const vector<Sqr_ptr>& squares);
+	vector<Edge*> availebleEdges(const vector<Sqr_ptr>& squares);
+	vector<Edge*> getLegitEdges(Edge* e); //all the legit edges from output grid a path from a input grid can hold
+	vector<Node*> getLegitNodes(Edge* e);//all the legit nodes from output grid a path from a input grid can hold
+	vector<Node*> getLegitNodesForDev(Node* devNode);
+	vector<Node*> devLegitNodes(const vector<Sqr_ptr>& squares);
 
 	vector<int> squareLocOutputgrid(Sqr_ptr square);
-	vector<Sqr_ptr> getLegitSquareInOutputGrid(Edge_ptr e);
-	vector<Sqr_ptr> getSquareOutputGridContainNode(Node_ptr node);
-	vector<Sqr_ptr> getSquareInputGridContainNode(Node_ptr node);
-	vector<int> nodeLocInOutputgrid(Node_ptr node);
+	vector<Sqr_ptr> getLegitSquareInOutputGrid(Edge* e);
+	vector<Sqr_ptr> getSquareOutputGridContainNode(Node* node);
+	vector<Sqr_ptr> getSquareInputGridContainNode(Node* node);
+	vector<int> nodeLocInOutputgrid(Node* node);
 
-	void setDevPos(Node_ptr inputDevNode);
+	void setDevPos(Node* inputDevNode);
 	void writeToFile(string fileName);
 	void setRowColumnRank();
 

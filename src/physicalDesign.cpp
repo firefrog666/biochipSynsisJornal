@@ -13,7 +13,7 @@
 #include "../header/Node.h"
 #include "../header/writeILP.h"
 #include "../header/physicalDesign.h"
-
+#include "../header/draw.h"
 
 #include <stdlib.h>
 #include <vector>
@@ -24,6 +24,7 @@
 #include <string>
 #include <sstream>
 #include "../header/ILP.h"
+#include "../header/Algorithm.h"
 
 
 
@@ -38,9 +39,8 @@ using namespace std;
 
 #endif
 #define NODESOFFSITE 2
-typedef boost::shared_ptr<Node> Node_ptr;
-typedef boost::shared_ptr<Edge> Edge_ptr;
-typedef boost::shared_ptr<phyDev>  Pd_ptr;
+
+
 
 string a(int i){
 	stringstream ss;
@@ -58,7 +58,7 @@ string a(string s){
 	return ss.str();
 }
 
-__inline__ bool flowComeInNode(Edge_ptr flow,Node_ptr node){
+__inline__ bool flowComeInNode(Edge* flow,Node* node){
 	bool result = true;
 	if(flow->x == node->x && flow->y == node->y)
 		return false;
@@ -66,75 +66,75 @@ __inline__ bool flowComeInNode(Edge_ptr flow,Node_ptr node){
 
 }
 
-__inline__ string nodeName(Node_ptr n){
+__inline__ string nodeName(Node* n){
 	return a("n") + a("x") +a(n->x)+ a("y") + a(n->y);
 }
-__inline__ string edgeName(Edge_ptr e){
+__inline__ string edgeName(Edge* e){
 	return a("e") + a("x") +a(e->x)+ a("y") + a(e->y)+ a("s") +a(e->s)+ a("t") + a(e->t);
 }
 
-__inline__ string devHor(Node_ptr devNode){
+__inline__ string devHor(Node* devNode){
 	return nodeName(devNode) + a("Hor");
 }
 
-__inline__ string devVer(Node_ptr devNode){
+__inline__ string devVer(Node* devNode){
 	return nodeName(devNode)+a("Ver");
 }
 
-__inline__ string pathSuperFlow(Edge_ptr path){
+__inline__ string pathSuperFlow(Edge* path){
 	return edgeName(path) + a("SuperFlow");
 }
-__inline__ string pathUseVerDev(Edge_ptr path, Node_ptr devNode){
+__inline__ string pathUseVerDev(Edge* path, Node* devNode){
 	return edgeName(path) + a("U") +nodeName(devNode) + a("VerDev");
 }
 
-__inline__ string pathUseHorDev(Edge_ptr path, Node_ptr devNode){
+__inline__ string pathUseHorDev(Edge* path, Node* devNode){
 	return edgeName(path) + a("U") +nodeName(devNode) + a("HorDev");
 }
 
-__inline__ string pathUseDevPort0(Edge_ptr path, Node_ptr devNode){
+__inline__ string pathUseDevPort0(Edge* path, Node* devNode){
 	return edgeName(path) + a("U")+ nodeName(devNode) + a("Port0");
 }
 
-__inline__ string pathUseDevPort1(Edge_ptr path, Node_ptr devNode){
+__inline__ string pathUseDevPort1(Edge* path, Node* devNode){
 	return edgeName(path) + a("U")+ nodeName(devNode) + a("Port1");
 }
 
 
-__inline__ string nodeBNode(Node_ptr nFrom, Node_ptr nTo){
+__inline__ string nodeBNode(Node* nFrom, Node* nTo){
 	return  nodeName(nFrom) + a("B") + nodeName(nTo);
 }
 
 
-__inline__ string edgeUseEdge(Edge_ptr eFrom, Edge_ptr eTo){
+__inline__ string edgeUseEdge(Edge* eFrom, Edge* eTo){
 	return  edgeName(eFrom) + a("U") + edgeName(eTo);
 }
-__inline__ string edgeUseNode(Edge_ptr eFrom, Node_ptr nTo){
+__inline__ string edgeUseNode(Edge* eFrom, Node* nTo){
 	return  edgeName(eFrom) + a("U") + nodeName(nTo);
 }
-__inline__ string  flowOnEdge(Edge_ptr path, Edge_ptr edge){
+__inline__ string  flowOnEdge(Edge* path, Edge* edge){
 	return edgeName(path) + a("FlowOn") + edgeName(edge);
 }
 
-__inline__ string edgeStartNode(Edge_ptr eFrom, Node_ptr nTo){
+__inline__ string edgeStartNode(Edge* eFrom, Node* nTo){
 	return  edgeName(eFrom) + a("S") + nodeName(nTo);
 }
-__inline__ string edgeEndNode(Edge_ptr eFrom, Node_ptr nTo){
+__inline__ string edgeEndNode(Edge* eFrom, Node* nTo){
 	return  edgeName(eFrom) + a("E") + nodeName(nTo);
 }
 
-__inline__ string nodeUseNode(Node_ptr inputNode, Node_ptr outputNode){
+__inline__ string nodeUseNode(Node* inputNode, Node* outputNode){
 	return nodeName(inputNode) + a("U") + nodeName(outputNode);
 }
 __inline__ int hash2Int(int i, int j){
 	return i * 100 + j;
 }
 
-__inline__ int getDistance(Node_ptr n0,Node_ptr n1){
+__inline__ int getDistance(Node* n0,Node* n1){
 	return (n0->x-n1->x)*(n0->x-n1->x)+(n0->y-n1->y)*(n0->y-n1->y);
 }
-bool ifContainNode(vector<Node_ptr>& v, Node_ptr n){
-	for(Node_ptr t:v){
+bool ifContainNode(vector<Node*>& v, Node* n){
+	for(Node* t:v){
 		if(n == t)
 			return true;
 	}
@@ -146,9 +146,9 @@ void PhysicalDesign::nodeBindSqaure(){
 
 }
 
-bool ifContainEdge(const vector<Edge_ptr> edgesV, Edge_ptr edge){
+bool ifContainEdge(const vector<Edge*> edgesV, Edge* edge){
 
-	for(Edge_ptr e:edgesV){
+	for(Edge* e:edgesV){
 		if(e->x == edge->x && e->y == edge->y && e->s == edge->s && e->t == edge->t)
 			return true;
 	}
@@ -158,8 +158,8 @@ bool ifContainEdge(const vector<Edge_ptr> edgesV, Edge_ptr edge){
 
 
 Grid PhysicalDesign::getGridFromSquare(Sqr_ptr sqr){
-	Node_ptr node0 = sqr->nodes[0];
-	Node_ptr node2 = sqr->nodes[2];
+	Node* node0 = sqr->nodes[0];
+	Node* node2 = sqr->nodes[2];
 
 	int x = nodeLocInOutputgrid(node0).at(0);
 	int y = nodeLocInOutputgrid(node0).at(1);
@@ -175,8 +175,8 @@ Grid PhysicalDesign::getGridFromSquare(Sqr_ptr sqr){
 	vector<Sqr_ptr> sqrs;
 	sqrs.push_back(sqr);
 
-	vector<Node_ptr> nodes = availebleNodes(sqrs);
-	vector<Edge_ptr> edges = availebleEdges(sqrs);
+	vector<Node*> nodes = availebleNodes(sqrs);
+	vector<Edge*> edges = availebleEdges(sqrs);
 	g.nodes = nodes;
 	g.edges = edges;
 	return g;
@@ -187,7 +187,7 @@ Grid PhysicalDesign::getGridFromSquare(Sqr_ptr sqr){
 }
 
 
-vector<int> PhysicalDesign::setDeviceLocation(Node_ptr devNodeInputgrid){
+vector<int> PhysicalDesign::setDeviceLocation(Node* devNodeInputgrid){
 	vector<int> result;
 	//if on the corner
 	int nodeBelongToSquares = 0;
@@ -235,7 +235,7 @@ vector<int> PhysicalDesign::setDeviceLocation(Node_ptr devNodeInputgrid){
 
 	return result;
 }
-vector<int> PhysicalDesign::nodeLocInOutputgrid(Node_ptr nodeInputGrid){
+vector<int> PhysicalDesign::nodeLocInOutputgrid(Node* nodeInputGrid){
 	vector<int> result;
 	int xOutGrid = 0;
 	int yOutGrid = 0;
@@ -245,13 +245,19 @@ vector<int> PhysicalDesign::nodeLocInOutputgrid(Node_ptr nodeInputGrid){
 	for(int i = 0; i < nodeInputGrid->y; i++){
 			//find a square in this row
 			Sqr_ptr sqrThisRow;
+			bool findSqr = false;
 			for(Sqr_ptr sqr:squaresInput){
 				if(sqr->rowNum == i){
+					findSqr = true;
 					sqrThisRow = sqr;
 					break;
 				}
 			}
-			int height = sqrThisRow->minY;
+			int height = 0;
+
+			if(findSqr)
+				height = sqrThisRow->minY;
+
 			yOutGrid += height;
 
 		}
@@ -259,13 +265,18 @@ vector<int> PhysicalDesign::nodeLocInOutputgrid(Node_ptr nodeInputGrid){
 	for(int j = 0; j < nodeInputGrid->x; j++){
 			//find a square in this row
 			Sqr_ptr sqrThisCol;
+			bool findSqr = false;
 			for(Sqr_ptr sqr:squaresInput){
 				if(sqr->columnNum == j){
 					sqrThisCol = sqr;
+					findSqr = true;
 					break;
 				}
 			}
-			int width = sqrThisCol->minX;
+			int width = 0;
+			if(findSqr)
+				width = sqrThisCol->minX;
+
 			xOutGrid += width;
 		}
 	result.push_back(xOutGrid);
@@ -280,13 +291,17 @@ vector<int> PhysicalDesign::squareLocOutputgrid(Sqr_ptr square){
 	for(int i = 0; i < square->rowNum; i++){
 		//find a square in this row
 		Sqr_ptr sqrThisRow;
+		bool findSqr = false;
 		for(Sqr_ptr sqr:squaresInput){
 			if(sqr->rowNum == i){
+				findSqr = true;
 				sqrThisRow = sqr;
 				break;
 			}
 		}
-		int height = sqrThisRow->minY;
+		int height = 0;
+		if(findSqr)
+			height = sqrThisRow->minY;
 		yOutGrid += height;
 
 	}
@@ -294,13 +309,17 @@ vector<int> PhysicalDesign::squareLocOutputgrid(Sqr_ptr square){
 	for(int j = 0; j < square->columnNum; j++){
 			//find a square in this row
 			Sqr_ptr sqrThisCol;
+			bool findSqr = false;
 			for(Sqr_ptr sqr:squaresInput){
 				if(sqr->columnNum == j){
+					findSqr = true;
 					sqrThisCol = sqr;
 					break;
 				}
 			}
-			int width = sqrThisCol->minX;
+			int width = 0;
+			if(findSqr)
+				width = sqrThisCol->minX;
 			xOutGrid += width;
 
 		}
@@ -313,15 +332,15 @@ vector<int> PhysicalDesign::squareLocOutputgrid(Sqr_ptr square){
 	return result;
 }
 
-vector<Edge_ptr> PhysicalDesign::availebleEdges(const vector<Sqr_ptr>& squares){
-	vector<Edge_ptr> result;
+vector<Edge*> PhysicalDesign::availebleEdges(const vector<Sqr_ptr>& squares){
+	vector<Edge*> result;
 	for(Sqr_ptr sqr:squares){
 		vector<int> loc = squareLocOutputgrid(sqr);
 		int x = loc[0];
 		int y = loc[1];
 		int s = loc[2];
 		int t = loc[3];
-		for(Edge_ptr e:outputGrid.edges){
+		for(Edge* e:outputGrid.edges){
 			if((e->x >= x && e->x <=s
 				&& e->s>=x && e->s <=s
 				&& e->y>=y && e->y <= t
@@ -346,7 +365,7 @@ vector<Edge_ptr> PhysicalDesign::availebleEdges(const vector<Sqr_ptr>& squares){
 				}*/
 
 				for(Pd_ptr pd: phyDevs){
-					for(Node_ptr n:pd->nodes){
+					for(Node* n:pd->nodes){
 						if(n == pd->port0Node || n == pd->port1Node)
 							continue;
 						if(find(n->adjEdgesList.begin(),n->adjEdgesList.end(),e)!=n->adjEdgesList.end()){
@@ -370,15 +389,15 @@ vector<Edge_ptr> PhysicalDesign::availebleEdges(const vector<Sqr_ptr>& squares){
 }
 
 //where are device can be put
-vector<Node_ptr> PhysicalDesign::devLegitNodes(const vector<Sqr_ptr>& squares){
-	vector<Node_ptr> result;
+vector<Node*> PhysicalDesign::devLegitNodes(const vector<Sqr_ptr>& squares){
+	vector<Node*> result;
 	for(Sqr_ptr sqr:squares){
 		vector<int> loc = squareLocOutputgrid(sqr);
 		int x = loc[0];
 		int y = loc[1];
 		int s = loc[2];
 		int t = loc[3];
-		for(Node_ptr n:outputGrid.nodes){
+		for(Node* n:outputGrid.nodes){
 			if(n->x == x || n->x ==s
 				|| n->y==y || n->y == t){
 
@@ -403,15 +422,15 @@ vector<Node_ptr> PhysicalDesign::devLegitNodes(const vector<Sqr_ptr>& squares){
 	return result;
 }
 
-vector<Node_ptr> PhysicalDesign::availebleNodes(const vector<Sqr_ptr>& squares){
-	vector<Node_ptr> result;
+vector<Node*> PhysicalDesign::availebleNodes(const vector<Sqr_ptr>& squares){
+	vector<Node*> result;
 	for(Sqr_ptr sqr:squares){
 		vector<int> loc = squareLocOutputgrid(sqr);
 		int x = loc[0];
 		int y = loc[1];
 		int s = loc[2];
 		int t = loc[3];
-		for(Node_ptr n:outputGrid.nodes){
+		for(Node* n:outputGrid.nodes){
 			if((n->x >= x && n->x <=s
 				&& n->y>=y && n->y <= t)
 					&&((n->x <= x+NODESOFFSITE || n->x >= s-NODESOFFSITE) || (n->y <= y+NODESOFFSITE || n->y >= t-NODESOFFSITE))
@@ -440,7 +459,7 @@ vector<Node_ptr> PhysicalDesign::availebleNodes(const vector<Sqr_ptr>& squares){
 	return result;
 }
 
-vector<Sqr_ptr> PhysicalDesign::getSquareOutputGridContainNode(Node_ptr node){
+vector<Sqr_ptr> PhysicalDesign::getSquareOutputGridContainNode(Node* node){
 	vector<Sqr_ptr> result;
 	for(Sqr_ptr sqr:squaresInput){
 		//if(find(sqr->edges.begin(),sqr->edges.end(),e) != sqr->edges.end()){
@@ -451,7 +470,7 @@ vector<Sqr_ptr> PhysicalDesign::getSquareOutputGridContainNode(Node_ptr node){
 	return result;
 }
 
-vector<Sqr_ptr> PhysicalDesign::getSquareInputGridContainNode(Node_ptr node){
+vector<Sqr_ptr> PhysicalDesign::getSquareInputGridContainNode(Node* node){
 	vector<Sqr_ptr> result;
 	for(Sqr_ptr sqr:squaresInput){
 		//if(find(sqr->edges.begin(),sqr->edges.end(),e) != sqr->edges.end()){
@@ -462,30 +481,30 @@ vector<Sqr_ptr> PhysicalDesign::getSquareInputGridContainNode(Node_ptr node){
 	return result;
 }
 
-vector<Node_ptr> PhysicalDesign::getLegitNodesForDev(Node_ptr devNode){
-	vector<Node_ptr> result;
+vector<Node*> PhysicalDesign::getLegitNodesForDev(Node* devNode){
+	vector<Node*> result;
 		vector<Sqr_ptr> sqrsContainNode = getSquareInputGridContainNode(devNode);
 		result = devLegitNodes(sqrsContainNode);
 		return result;
 }
 
 
-vector<Edge_ptr> PhysicalDesign::getLegitEdges(Edge_ptr edge){
-	vector<Edge_ptr> result;
+vector<Edge*> PhysicalDesign::getLegitEdges(Edge* edge){
+	vector<Edge*> result;
 	vector<Sqr_ptr> sqrsContainE = getLegitSquareInOutputGrid(edge);
 	result = availebleEdges(sqrsContainE);
 	return result;
 }
 
-vector<Node_ptr> PhysicalDesign::getLegitNodes(Edge_ptr edge){
-	vector<Node_ptr> result;
+vector<Node*> PhysicalDesign::getLegitNodes(Edge* edge){
+	vector<Node*> result;
 	vector<Sqr_ptr> sqrsContainE = getLegitSquareInOutputGrid(edge);
 	result = availebleNodes(sqrsContainE);
 	return result;
 }
 
-bool ifContain(vector<Edge_ptr>& v, Edge_ptr e){
-	for(Edge_ptr t:v){
+bool ifContain(vector<Edge*>& v, Edge* e){
+	for(Edge* t:v){
 		if(e == t)
 			return true;
 	}
@@ -496,7 +515,7 @@ bool ifContain(vector<Edge_ptr>& v, Edge_ptr e){
 
 
 //a collection of sqrs which contain e
-vector<Sqr_ptr> PhysicalDesign::getLegitSquareInOutputGrid(Edge_ptr e){
+vector<Sqr_ptr> PhysicalDesign::getLegitSquareInOutputGrid(Edge* e){
 	vector<Sqr_ptr> result;
 	for(Sqr_ptr sqr:squaresInput){
 		//if(find(sqr->edges.begin(),sqr->edges.end(),e) != sqr->edges.end()){
@@ -508,8 +527,8 @@ vector<Sqr_ptr> PhysicalDesign::getLegitSquareInOutputGrid(Edge_ptr e){
 }
 
 void PhysicalDesign::pathSquareFixCrossDev(){
-	for(Edge_ptr path:inputGrid.edges){
-		for(Edge_ptr eTo:getLegitEdges(path)){
+	for(Edge* path:inputGrid.edges){
+		for(Edge* eTo:getLegitEdges(path)){
 			string pathUseE = edgeUseEdge(path,eTo);
 			varName.push_back(pathUseE); varType.push_back("1");
 			string flowEdge = flowOnEdge(path,eTo);
@@ -521,7 +540,7 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 
 		}
 
-		for(Node_ptr nTo:getLegitNodes(path)){
+		for(Node* nTo:getLegitNodes(path)){
 			string pathUseNode = edgeUseNode(path,nTo);
 			//cout<< "path " << path->x << path->y << path->s << path->t<<" availe nodes are" << nTo->x << nTo->y<<endl;
 			varName.push_back(pathUseNode); varType.push_back("1");
@@ -529,19 +548,19 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 
 
 
-		/*for(Node_ptr nTo:getLegitNodes(path)){
+		/*for(Node* nTo:getLegitNodes(path)){
 			string pathStartNode = edgeStartNode(path,nTo);
 			varName.push_back(pathStartNode); varType.push_back("1");
 		}
 
-		for(Node_ptr nTo:getLegitNodes(path)){
+		for(Node* nTo:getLegitNodes(path)){
 			string pathEndNode = edgeEndNode(path,nTo);
 			varName.push_back(pathEndNode); varType.push_back("1");
 		}*/
 	}
 
 	//decide awre devices are ver or hor
-	for(Node_ptr n:inputGrid.nodes){
+	for(Node* n:inputGrid.nodes){
 		if(!n->isDev)
 			continue;
 
@@ -551,22 +570,116 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 		varName.push_back(devIsVer); varType.push_back("1");
 		constraint.push_back(devIsVer + a(" + ") + devIsHor + a(" = 1"));
 	}
-	for(Edge_ptr path:inputGrid.edges){
-			Node_ptr n0 = inputGrid.hashNodes.at(Node::hash2Int(path->x,path->y));
-			Node_ptr n1 = inputGrid.hashNodes.at(Node::hash2Int(path->s,path->t));
+
+	//any two devices cannot overlap
+	for(Node* n0:inputGrid.nodes){
+		if(!n0->isDev)
+			continue;
+		string dev0IsHor = devHor(n0);
+		string dev0IsVer = devVer(n0);
+		Pd_ptr d0Ver = nodesVerDev[n0];
+		Pd_ptr d0Hor = nodesHorDev[n0];
+		for(Node* n1:inputGrid.nodes){
+			if(n1 == n0)
+				continue;
+
+			if(!n1->isDev)
+				continue;
+
+			string dev1IsHor = devHor(n1);
+			string dev1IsVer = devVer(n1);
+			Pd_ptr d1Ver = nodesVerDev[n1];
+			Pd_ptr d1Hor = nodesHorDev[n1];
+			//n0 ver n1 ver
+			bool n0VerOverlapn1Ver =false;
+			for(Node* dev0Node:d0Ver->nodes){
+				for(Node* dev1Node:d1Ver->nodes){
+					if(dev0Node == dev1Node){
+						n0VerOverlapn1Ver = true;
+						break;
+					}
+				}
+
+				if(n0VerOverlapn1Ver)
+					break;
+			}
+			if(n0VerOverlapn1Ver){
+				constraint.push_back(dev0IsVer + a(" + ") + dev1IsVer + a(" <= 1"));
+			}
+			//n0 ver n1 hor
+			bool n0VerOverlapn1Hor=false;
+			for(Node* dev0Node:d0Ver->nodes){
+				for(Node* dev1Node:d1Hor->nodes){
+					if(dev0Node == dev1Node){
+						n0VerOverlapn1Hor= true;
+						break;
+					}
+				}
+
+				if(n0VerOverlapn1Hor)
+					break;
+			}
+			if(n0VerOverlapn1Hor){
+				constraint.push_back(dev0IsVer + a(" + ") + dev1IsHor+ a(" <= 1"));
+			}
+			//n0 hor n1 ver
+			bool n0HorOverlapn1Ver =false;
+			for(Node* dev0Node:d0Hor->nodes){
+				for(Node* dev1Node:d1Ver->nodes){
+					if(dev0Node == dev1Node){
+						n0HorOverlapn1Ver = true;
+						break;
+					}
+				}
+
+				if(n0HorOverlapn1Ver)
+					break;
+			}
+			if(n0HorOverlapn1Ver){
+				constraint.push_back(dev0IsHor+ a(" + ") + dev1IsVer + a(" <= 1"));
+			}
+			//n0 hor n1 hor
+			bool n0HorOverlapn1Hor=false;
+			for(Node* dev0Node:d0Hor->nodes){
+				for(Node* dev1Node:d1Hor->nodes){
+					if(dev0Node == dev1Node){
+						n0HorOverlapn1Hor= true;
+						break;
+					}
+				}
+
+				if(n0HorOverlapn1Hor)
+					break;
+			}
+			if(n0HorOverlapn1Hor){
+				constraint.push_back(dev0IsHor+ a(" + ") + dev1IsHor+ a(" <= 1"));
+			}
+
+			if(n0HorOverlapn1Hor && n0VerOverlapn1Hor && n0HorOverlapn1Ver && n0VerOverlapn1Ver){
+				cout << "two devices are always overlapped" << endl;
+				exit(0);
+			}
+
+
+		}
+	}
+
+	for(Edge* path:inputGrid.edges){
+			Node* n0 = inputGrid.hashNodes.at(algo::hash2Int(path->x,path->y));
+			Node* n1 = inputGrid.hashNodes.at(algo::hash2Int(path->s,path->t));
 
 			string flowFromSuper = pathSuperFlow(path);
 			varName.push_back(flowFromSuper); varType.push_back("0");
 
-			vector<Edge_ptr> pathLegitEdges = getLegitEdges(path);
-			vector<Node_ptr> pathLegitNodes = getLegitNodes(path);
-			for(Node_ptr nTo:pathLegitNodes){
+			vector<Edge*> pathLegitEdges = getLegitEdges(path);
+			vector<Node*> pathLegitNodes = getLegitNodes(path);
+			for(Node* nTo:pathLegitNodes){
 				cout<< "path " << path->x << path->y << path->s << path->t<<" availe nodes are" << nTo->x << nTo->y<<endl;
 			}
-			for(Edge_ptr legtE : getLegitEdges(path)){
+			for(Edge* legtE : getLegitEdges(path)){
 				cout<<" legit e " << "x" << legtE->x << "y" << legtE->y<< "s" <<legtE->s << "t" << legtE->t<<endl;
 			}
-			//vector<Node_ptr> pathLegitNodes = getLegitNodes(path);
+			//vector<Node*> pathLegitNodes = getLegitNodes(path);
 			if(!n0->isDev && !n1->isDev){
 
 
@@ -576,14 +689,14 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 				cout << "n0Loc[1] " << n0Loc[1] << endl;
 				cout << "n1Loc[0] " <<  n1Loc[0] << endl;
 				cout << "n1Loc[1] " <<  n1Loc[1] << endl;
-				Node_ptr node0Outgrid = outputGrid.getNode(n0Loc[0],n0Loc[1]);
-				Node_ptr node1Outgrid = outputGrid.getNode(n1Loc[0],n1Loc[1]);
+				Node* node0Outgrid = outputGrid.getNode(n0Loc[0],n0Loc[1]);
+				Node* node1Outgrid = outputGrid.getNode(n1Loc[0],n1Loc[1]);
 
 
 				//path must start n0 and end with n1
 				string edgeAroudN0Used = "";
-				vector<Edge_ptr> legitEdges = getLegitEdges(path);
-				for(Edge_ptr eTo:node0Outgrid->adjEdgesList){
+				vector<Edge*> legitEdges = getLegitEdges(path);
+				for(Edge* eTo:node0Outgrid->adjEdgesList){
 					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
 							continue;
 					string eBindE= edgeUseEdge(path,eTo);
@@ -593,7 +706,7 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 				constraint.push_back(edgeAroudN0Used + (" = 1"));
 
 				string edgeAroudN1Used = "";
-				for(Edge_ptr eTo:node1Outgrid->adjEdgesList){
+				for(Edge* eTo:node1Outgrid->adjEdgesList){
 					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
 							continue;
 					string eBindE = edgeUseEdge(path,eTo);
@@ -603,12 +716,12 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 				constraint.push_back(edgeAroudN1Used + (" = 1"));
 
 				//must be a simple path
-				for(Node_ptr nTo:getLegitNodes(path)){
+				for(Node* nTo:getLegitNodes(path)){
 					if(nTo == node0Outgrid || nTo == node1Outgrid)
 						continue;
 					string eUseNode = edgeUseNode(path,nTo);
 					string edgeAroudUsed = "";
-					for(Edge_ptr eTo:nTo->adjEdgesList){
+					for(Edge* eTo:nTo->adjEdgesList){
 						//eTo must be a legit Edge
 						if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
 							continue;
@@ -624,9 +737,9 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 
 				//flow to no circle
 				string flowOnOneNode = "";
-				Node_ptr superNode = node0Outgrid;
+				Node* superNode = node0Outgrid;
 
-				for(Edge_ptr e:superNode->adjEdgesList){
+				for(Edge* e:superNode->adjEdgesList){
 					if(!ifContainEdge(pathLegitEdges,e))
 						continue;
 					string flowEdge = flowOnEdge(path,e);
@@ -641,7 +754,7 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 				constraint.push_back(flowOnOneNode + a(" + ") + flowFromSuper + a(" = 1"));
 
 
-				for(Node_ptr n:outputGrid.nodes){
+				for(Node* n:outputGrid.nodes){
 					if(!ifContainNode(pathLegitNodes,n))
 						continue;
 					string pathUseNode = edgeUseNode(path,n);
@@ -649,7 +762,7 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 						continue;
 					flowOnOneNode = "";
 
-					for(Edge_ptr e:n->adjEdgesList){
+					for(Edge* e:n->adjEdgesList){
 						if(!ifContainEdge(pathLegitEdges,e))
 							continue;
 						string flowEdge = flowOnEdge(path,e);
@@ -669,7 +782,7 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 
 				//all superFlow = edgeNumber + 1
 				string edgeNumber = "";
-				for(Edge_ptr e:pathLegitEdges){
+				for(Edge* e:pathLegitEdges){
 					edgeNumber +=a(" + ") + edgeUseEdge(path,e);
 				}
 				constraint.push_back(edgeNumber + a(" - ") + flowFromSuper + a(" = -1"));
@@ -683,16 +796,16 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 				cout << "n0Loc[1] " << n0Loc[1] << endl;
 				cout << "n1Loc[0] " <<  n1Loc[0] << endl;
 				cout << "n1Loc[1] " <<  n1Loc[1] << endl;
-				Node_ptr node1Outgrid = outputGrid.getNode(n1Loc[0],n1Loc[1]);
+				Node* node1Outgrid = outputGrid.getNode(n1Loc[0],n1Loc[1]);
 
 				Pd_ptr verPd = nodesVerDev[n0];
 				Pd_ptr horPd = nodesHorDev[n0];
 
-				Node_ptr n0Port0Ver = verPd->port0Node;
-				Node_ptr n0Port1Ver = verPd->port1Node;
+				Node* n0Port0Ver = verPd->port0Node;
+				Node* n0Port1Ver = verPd->port1Node;
 
-				Node_ptr n0Port0Hor = horPd->port0Node;
-				Node_ptr n0Port1Hor = horPd->port1Node;
+				Node* n0Port0Hor = horPd->port0Node;
+				Node* n0Port1Hor = horPd->port1Node;
 
 				string N0Ver = devVer(n0);
 				string N0Hor = devHor(n0);
@@ -706,8 +819,8 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 				//path must start n0 and end with n1
 				string edgeAroudUsed = "";
 
-				vector<Edge_ptr> legitEdges = getLegitEdges(path);
-				for(Edge_ptr eTo:n0Port0Ver->adjEdgesList){
+				vector<Edge*> legitEdges = getLegitEdges(path);
+				for(Edge* eTo:n0Port0Ver->adjEdgesList){
 					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
 							continue;
 					string eBindE= edgeUseEdge(path,eTo);
@@ -722,7 +835,7 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 				//path must start n0 and end with n1
 				edgeAroudUsed = "";
 
-				for(Edge_ptr eTo:n0Port0Hor->adjEdgesList){
+				for(Edge* eTo:n0Port0Hor->adjEdgesList){
 					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
 							continue;
 					string eBindE= edgeUseEdge(path,eTo);
@@ -735,7 +848,7 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 
 				edgeAroudUsed = "";
 
-				for(Edge_ptr eTo:n0Port1Ver->adjEdgesList){
+				for(Edge* eTo:n0Port1Ver->adjEdgesList){
 					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
 							continue;
 					string eBindE= edgeUseEdge(path,eTo);
@@ -748,7 +861,7 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 
 				edgeAroudUsed = "";
 
-				for(Edge_ptr eTo:n0Port1Hor->adjEdgesList){
+				for(Edge* eTo:n0Port1Hor->adjEdgesList){
 					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
 							continue;
 					string eBindE= edgeUseEdge(path,eTo);
@@ -764,7 +877,7 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 
 
 				string edgeAroudN1Used = "";
-				for(Edge_ptr eTo:node1Outgrid->adjEdgesList){
+				for(Edge* eTo:node1Outgrid->adjEdgesList){
 					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
 							continue;
 					string eBindE = edgeUseEdge(path,eTo);
@@ -774,13 +887,13 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 				constraint.push_back(edgeAroudN1Used + (" = 1"));
 
 				//must be a simple path
-				for(Node_ptr nTo:getLegitNodes(path)){
+				for(Node* nTo:getLegitNodes(path)){
 					if(nTo == node1Outgrid)
 						continue;
 
 					string eUseNode = edgeUseNode(path,nTo);
 					string edgeAroudUsed = "";
-					for(Edge_ptr eTo:nTo->adjEdgesList){
+					for(Edge* eTo:nTo->adjEdgesList){
 						//eTo must be a legit Edge
 						if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
 							continue;
@@ -829,9 +942,9 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 
 				//flow to no circle
 				string flowOnOneNode = "";
-				Node_ptr superNode = node1Outgrid;
+				Node* superNode = node1Outgrid;
 
-				for(Edge_ptr e:superNode->adjEdgesList){
+				for(Edge* e:superNode->adjEdgesList){
 					if(!ifContainEdge(pathLegitEdges,e))
 						continue;
 					string flowEdge = flowOnEdge(path,e);
@@ -846,7 +959,7 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 				constraint.push_back(flowOnOneNode + a(" + ") + flowFromSuper + a(" = 1"));
 
 
-				for(Node_ptr n:outputGrid.nodes){
+				for(Node* n:outputGrid.nodes){
 					if(!ifContainNode(pathLegitNodes,n))
 						continue;
 					if(n == superNode)
@@ -855,7 +968,7 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 					string pathUseNode = edgeUseNode(path,n);
 					flowOnOneNode = "";
 
-					for(Edge_ptr e:n->adjEdgesList){
+					for(Edge* e:n->adjEdgesList){
 						if(!ifContainEdge(pathLegitEdges,e))
 							continue;
 						string flowEdge = flowOnEdge(path,e);
@@ -923,7 +1036,7 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 				//all superFlow = edgeNumber + 1
 
 				string edgeNumber = "";
-				for(Edge_ptr e:pathLegitEdges){
+				for(Edge* e:pathLegitEdges){
 					edgeNumber +=a(" + ") + edgeUseEdge(path,e);
 				}
 				constraint.push_back(edgeNumber + a(" - ") + flowFromSuper + a(" = -1"));
@@ -939,16 +1052,16 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 				cout << "n1Loc[1] " << n1Loc[1] << endl;
 				cout << "n0Loc[0] " <<  n0Loc[0] << endl;
 				cout << "n0Loc[1] " <<  n0Loc[1] << endl;
-				Node_ptr node1Outgrid = outputGrid.getNode(n0Loc[0],n0Loc[1]);
+				Node* node1Outgrid = outputGrid.getNode(n0Loc[0],n0Loc[1]);
 
 				Pd_ptr verPd = nodesVerDev[n1];
 				Pd_ptr horPd = nodesHorDev[n1];
 
-				Node_ptr n1Port0Ver = verPd->port0Node;
-				Node_ptr n1Port1Ver = verPd->port1Node;
+				Node* n1Port0Ver = verPd->port0Node;
+				Node* n1Port1Ver = verPd->port1Node;
 
-				Node_ptr n1Port0Hor = horPd->port0Node;
-				Node_ptr n1Port1Hor = horPd->port1Node;
+				Node* n1Port0Hor = horPd->port0Node;
+				Node* n1Port1Hor = horPd->port1Node;
 
 				string N1Ver = devVer(n1);
 				string N1Hor = devHor(n1);
@@ -962,8 +1075,8 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 				//path must start n1 and end with n0
 				string edgeAroudUsed = "";
 
-				vector<Edge_ptr> legitEdges = getLegitEdges(path);
-				for(Edge_ptr eTo:n1Port0Ver->adjEdgesList){
+				vector<Edge*> legitEdges = getLegitEdges(path);
+				for(Edge* eTo:n1Port0Ver->adjEdgesList){
 					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
 							continue;
 					string eBindE= edgeUseEdge(path,eTo);
@@ -978,7 +1091,7 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 				//path must start n1 and end with n0
 				edgeAroudUsed = "";
 
-				for(Edge_ptr eTo:n1Port0Hor->adjEdgesList){
+				for(Edge* eTo:n1Port0Hor->adjEdgesList){
 					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
 							continue;
 					string eBindE= edgeUseEdge(path,eTo);
@@ -991,7 +1104,7 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 
 				edgeAroudUsed = "";
 
-				for(Edge_ptr eTo:n1Port1Ver->adjEdgesList){
+				for(Edge* eTo:n1Port1Ver->adjEdgesList){
 					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
 							continue;
 					string eBindE= edgeUseEdge(path,eTo);
@@ -1004,7 +1117,7 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 
 				edgeAroudUsed = "";
 
-				for(Edge_ptr eTo:n1Port1Hor->adjEdgesList){
+				for(Edge* eTo:n1Port1Hor->adjEdgesList){
 					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
 							continue;
 					string eBindE= edgeUseEdge(path,eTo);
@@ -1020,7 +1133,7 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 
 
 				string edgeAroudN1Used = "";
-				for(Edge_ptr eTo:node1Outgrid->adjEdgesList){
+				for(Edge* eTo:node1Outgrid->adjEdgesList){
 					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
 							continue;
 					string eBindE = edgeUseEdge(path,eTo);
@@ -1030,13 +1143,13 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 				constraint.push_back(edgeAroudN1Used + (" = 1"));
 
 				//must be a simple path
-				for(Node_ptr nTo:getLegitNodes(path)){
+				for(Node* nTo:getLegitNodes(path)){
 					if(nTo == node1Outgrid)
 						continue;
 
 					string eUseNode = edgeUseNode(path,nTo);
 					string edgeAroudUsed = "";
-					for(Edge_ptr eTo:nTo->adjEdgesList){
+					for(Edge* eTo:nTo->adjEdgesList){
 						//eTo must be a legit Edge
 						if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
 							continue;
@@ -1085,9 +1198,9 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 
 				//flow to no circle
 				string flowOnOneNode = "";
-				Node_ptr superNode = node1Outgrid;
+				Node* superNode = node1Outgrid;
 
-				for(Edge_ptr e:superNode->adjEdgesList){
+				for(Edge* e:superNode->adjEdgesList){
 					if(!ifContainEdge(pathLegitEdges,e))
 						continue;
 					string flowEdge = flowOnEdge(path,e);
@@ -1102,7 +1215,7 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 				constraint.push_back(flowOnOneNode + a(" + ") + flowFromSuper + a(" = 1"));
 
 
-				for(Node_ptr n:outputGrid.nodes){
+				for(Node* n:outputGrid.nodes){
 					if(!ifContainNode(pathLegitNodes,n))
 						continue;
 					if(n == superNode)
@@ -1111,7 +1224,7 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 					string pathUseNode = edgeUseNode(path,n);
 					flowOnOneNode = "";
 
-					for(Edge_ptr e:n->adjEdgesList){
+					for(Edge* e:n->adjEdgesList){
 						if(!ifContainEdge(pathLegitEdges,e))
 							continue;
 						string flowEdge = flowOnEdge(path,e);
@@ -1178,7 +1291,7 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 
 				//all superFlow = edgeNumber + 1
 				string edgeNumber = "";
-				for(Edge_ptr e:pathLegitEdges){
+				for(Edge* e:pathLegitEdges){
 					edgeNumber +=a(" + ") + edgeUseEdge(path,e);
 				}
 				constraint.push_back(edgeNumber + a(" - ") + flowFromSuper + a(" = -1"));
@@ -1192,16 +1305,16 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 				cout << "n1Loc[1] " << n1Loc[1] << endl;
 				cout << "n0Loc[0] " <<  n0Loc[0] << endl;
 				cout << "n0Loc[1] " <<  n0Loc[1] << endl;
-				Node_ptr node1Outgrid = outputGrid.getNode(n0Loc[0],n0Loc[1]);
+				Node* node1Outgrid = outputGrid.getNode(n0Loc[0],n0Loc[1]);
 
 				Pd_ptr verPd0 = nodesVerDev[n0];
 				Pd_ptr horPd0 = nodesHorDev[n0];
 
-				Node_ptr n0Port0Ver = verPd0->port0Node;
-				Node_ptr n0Port1Ver = verPd0->port1Node;
+				Node* n0Port0Ver = verPd0->port0Node;
+				Node* n0Port1Ver = verPd0->port1Node;
 
-				Node_ptr n0Port0Hor = horPd0->port0Node;
-				Node_ptr n0Port1Hor = horPd0->port1Node;
+				Node* n0Port0Hor = horPd0->port0Node;
+				Node* n0Port1Hor = horPd0->port1Node;
 
 				string N0Ver = devVer(n0);
 				string N0Hor = devHor(n0);
@@ -1215,11 +1328,11 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 				Pd_ptr verPd1 = nodesVerDev[n1];
 				Pd_ptr horPd1 = nodesHorDev[n1];
 
-				Node_ptr n1Port0Ver = verPd1->port0Node;
-				Node_ptr n1Port1Ver = verPd1->port1Node;
+				Node* n1Port0Ver = verPd1->port0Node;
+				Node* n1Port1Ver = verPd1->port1Node;
 
-				Node_ptr n1Port0Hor = horPd1->port0Node;
-				Node_ptr n1Port1Hor = horPd1->port1Node;
+				Node* n1Port0Hor = horPd1->port0Node;
+				Node* n1Port1Hor = horPd1->port1Node;
 
 				string N1Ver = devVer(n1);
 				string N1Hor = devHor(n1);
@@ -1233,8 +1346,8 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 				//path must start n0 and end with n1
 				string edgeAroudUsed = "";
 
-				vector<Edge_ptr> legitEdges = getLegitEdges(path);
-				for(Edge_ptr eTo:n0Port0Ver->adjEdgesList){
+				vector<Edge*> legitEdges = getLegitEdges(path);
+				for(Edge* eTo:n0Port0Ver->adjEdgesList){
 					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
 							continue;
 					string eBindE= edgeUseEdge(path,eTo);
@@ -1249,7 +1362,7 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 				//path must start n0 and end with n1
 				edgeAroudUsed = "";
 
-				for(Edge_ptr eTo:n0Port0Hor->adjEdgesList){
+				for(Edge* eTo:n0Port0Hor->adjEdgesList){
 					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
 							continue;
 					string eBindE= edgeUseEdge(path,eTo);
@@ -1262,7 +1375,7 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 
 				edgeAroudUsed = "";
 
-				for(Edge_ptr eTo:n0Port1Ver->adjEdgesList){
+				for(Edge* eTo:n0Port1Ver->adjEdgesList){
 					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
 							continue;
 					string eBindE= edgeUseEdge(path,eTo);
@@ -1275,7 +1388,7 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 
 				edgeAroudUsed = "";
 
-				for(Edge_ptr eTo:n0Port1Hor->adjEdgesList){
+				for(Edge* eTo:n0Port1Hor->adjEdgesList){
 					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
 							continue;
 					string eBindE= edgeUseEdge(path,eTo);
@@ -1292,7 +1405,7 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 				//path must start n1 and end with n0
 				edgeAroudUsed = "";
 
-				for(Edge_ptr eTo:n1Port0Ver->adjEdgesList){
+				for(Edge* eTo:n1Port0Ver->adjEdgesList){
 					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
 							continue;
 					string eBindE= edgeUseEdge(path,eTo);
@@ -1307,7 +1420,7 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 				//path must start n1 and end with n0
 				edgeAroudUsed = "";
 
-				for(Edge_ptr eTo:n1Port0Hor->adjEdgesList){
+				for(Edge* eTo:n1Port0Hor->adjEdgesList){
 					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
 							continue;
 					string eBindE= edgeUseEdge(path,eTo);
@@ -1320,7 +1433,7 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 
 				edgeAroudUsed = "";
 
-				for(Edge_ptr eTo:n1Port1Ver->adjEdgesList){
+				for(Edge* eTo:n1Port1Ver->adjEdgesList){
 					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
 							continue;
 					string eBindE= edgeUseEdge(path,eTo);
@@ -1333,7 +1446,7 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 
 				edgeAroudUsed = "";
 
-				for(Edge_ptr eTo:n1Port1Hor->adjEdgesList){
+				for(Edge* eTo:n1Port1Hor->adjEdgesList){
 					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
 							continue;
 					string eBindE= edgeUseEdge(path,eTo);
@@ -1348,11 +1461,11 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 
 
 				//must be a simple path
-				for(Node_ptr nTo:getLegitNodes(path)){
+				for(Node* nTo:getLegitNodes(path)){
 
 					string eUseNode = edgeUseNode(path,nTo);
 					string edgeAroudUsed = "";
-					for(Edge_ptr eTo:nTo->adjEdgesList){
+					for(Edge* eTo:nTo->adjEdgesList){
 						//eTo must be a legit Edge
 						if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
 							continue;
@@ -1433,11 +1546,11 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 
 					}
 
-			/*	//flow to no circle
+				//flow to no circle
 				string flowOnOneNode = "";
 
 
-				for(Edge_ptr e:superNode->adjEdgesList){
+				/*for(Edge* e:superNode->adjEdgesList){
 					if(!ifContainEdge(pathLegitEdges,e))
 						continue;
 					string flowEdge = flowOnEdge(path,e);
@@ -1448,11 +1561,11 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 					else{
 						flowOnOneNode += a(" - ") + flowEdge;
 					}
-				}
 				constraint.push_back(flowOnOneNode + a(" + ") + flowFromSuper + a(" = 1"));
+				}*/
 
 
-				for(Node_ptr n:outputGrid.nodes){
+				for(Node* n:outputGrid.nodes){
 					if(!ifContainNode(pathLegitNodes,n))
 						continue;
 
@@ -1460,7 +1573,7 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 					string pathUseNode = edgeUseNode(path,n);
 					flowOnOneNode = "";
 
-					for(Edge_ptr e:n->adjEdgesList){
+					for(Edge* e:n->adjEdgesList){
 						if(!ifContainEdge(pathLegitEdges,e))
 							continue;
 						string flowEdge = flowOnEdge(path,e);
@@ -1472,8 +1585,52 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 							flowOnOneNode += a(" - ") + flowEdge;
 						}
 					}
+					if( n== n0Port0Ver){
+						//if use n0Port0Ver then pathusenode = 0 flow = 1
+						constraint.push_back(flowOnOneNode +  a(" + ") + flowFromSuper+  a(" + ") + a(M) + a(" ") + a(N0Ver) + a(" + ") + a(M) + a(" ") + a(pathUseN0Port0)+(" <= ") + a(2*M + 1));
+						constraint.push_back(flowOnOneNode +   a(" + ") + flowFromSuper+a(" - ") + a(M) + a(" ") + a(N0Ver) + a(" - ") + a(M) + a(" ") + a(pathUseN0Port0)+(" >= ") + a(-2*M + 1));
+						// else pathusenode = 1	 flow = 0
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(N0Ver) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode+ a(" - ") + a(M) + a(" ") + a(N0Ver) + a(" <= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode+ a(" + ") + a(M) + a(" ") + a(pathUseN0Port0) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode+ a(" - ") + a(M) + a(" ") + a(pathUseN0Port0) + a(" <= ") + a(0));
 
-					if( n== n1Port0Ver){
+
+										}
+					else if(n== n0Port1Ver){
+						//if use n0Port0Ver then pathusenode = 0 flow = 1
+						constraint.push_back(flowOnOneNode +   a(" + ") + flowFromSuper+a(" + ") + a(M) + a(" ") + a(N0Ver) + a(" + ") + a(M) + a(" ") + a(pathUseN0Port1)+(" <= ") + a(2*M + 1));
+						constraint.push_back(flowOnOneNode +   a(" + ") + flowFromSuper+a(" - ") + a(M) + a(" ") + a(N0Ver) + a(" - ") + a(M) + a(" ") + a(pathUseN0Port1)+(" >= ") + a(-2*M + 1));
+						// else pathusenode = 1	 flow = 0
+						constraint.push_back(flowOnOneNode+ a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(N0Ver) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode+ a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(N0Ver) + a(" <= ") + a(0));
+						constraint.push_back(flowOnOneNode+ a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(pathUseN0Port1) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode+ a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(pathUseN0Port1) + a(" <= ") + a(0));
+
+					}
+					else if(n == n0Port0Hor){
+						//if use n0Port0Ver then pathusenode = 0 flow = 1
+						constraint.push_back(flowOnOneNode +   a(" + ") + flowFromSuper+a(" + ") + a(M) + a(" ") + a(N0Hor) + a(" + ") + a(M) + a(" ") + a(pathUseN0Port0)+(" <= ") + a(2*M + 1));
+						constraint.push_back(flowOnOneNode +  a(" + ") + flowFromSuper+ a(" - ") + a(M) + a(" ") + a(N0Hor) + a(" - ") + a(M) + a(" ") + a(pathUseN0Port0)+(" >= ") + a(-2*M + 1));
+						// else pathusenode = 1	 flow = 0
+						constraint.push_back(flowOnOneNode+ a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(N0Hor) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode+ a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(N0Hor) + a(" <= ") + a(0));
+						constraint.push_back(flowOnOneNode+ a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(pathUseN0Port0) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode+ a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(pathUseN0Port0) + a(" <= ") + a(0));
+
+					}
+					else if(n == n0Port1Hor){
+						//if use n0Port0Ver then pathusenode = 0 flow = 1
+						constraint.push_back(flowOnOneNode +   a(" + ") + flowFromSuper+a(" + ") + a(M) + a(" ") + a(N0Hor) + a(" + ") + a(M) + a(" ") + a(pathUseN0Port1)+(" <= ") + a(2*M + 1));
+						constraint.push_back(flowOnOneNode +   a(" + ") + flowFromSuper+a(" - ") + a(M) + a(" ") + a(N0Hor) + a(" - ") + a(M) + a(" ") + a(pathUseN0Port1)+(" >= ") + a(-2*M + 1));
+						// else pathusenode = 1	 flow = 0
+						constraint.push_back(flowOnOneNode+ a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(N0Hor) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode+ a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(N0Hor) + a(" <= ") + a(0));
+						constraint.push_back(flowOnOneNode+ a(" - ") + pathUseNode + a(" + ") + a(M) + a(" ") + a(pathUseN0Port1) +a(" >= ") + a(0));
+						constraint.push_back(flowOnOneNode+ a(" - ") + pathUseNode + a(" - ") + a(M) + a(" ") + a(pathUseN0Port1) + a(" <= ") + a(0));
+
+					}
+					else if( n== n1Port0Ver){
 						//if use n1Port0Ver then pathusenode = 0 flow = 1
 						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode +  a(" + ") + a(M) + a(" ") + a(N1Ver) + a(" + ") + a(M) + a(" ") + a(pathUseN1Port0)+(" <= ") + a(2*M + 1));
 						constraint.push_back(flowOnOneNode + a(" - ") + pathUseNode +  a(" - ") + a(M) + a(" ") + a(N1Ver) + a(" - ") + a(M) + a(" ") + a(pathUseN1Port0)+(" >= ") + a(-2*M + 1));
@@ -1527,11 +1684,11 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 
 				//all superFlow = edgeNumber + 1
 				string edgeNumber = "";
-				for(Edge_ptr e:pathLegitEdges){
+				for(Edge* e:pathLegitEdges){
 					edgeNumber +=a(" + ") + edgeUseEdge(path,e);
 				}
 				constraint.push_back(edgeNumber + a(" - ") + flowFromSuper + a(" = -1"));
-				//flow no circle end*/
+				//flow no circle end
 
 
 			}
@@ -1539,7 +1696,7 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 
 			//path cannot tress pass any dev
 			//path cannot use any node in side a dev
-			for(Node_ptr dev:inputGrid.nodes){
+			for(Node* dev:inputGrid.nodes){
 				if(!dev->isDev)
 					continue;
 
@@ -1547,10 +1704,10 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 				Pd_ptr verDev = nodesVerDev[dev];
 				string devIsHor = devHor(dev);
 				string devIsVer = devVer(dev);
-				vector<Node_ptr> horDevNodes = horDev->nodes;
-				vector<Node_ptr> verDevNodes = verDev->nodes;
+				vector<Node*> horDevNodes = horDev->nodes;
+				vector<Node*> verDevNodes = verDev->nodes;
 
-				for(Node_ptr horDevNode:horDevNodes){
+				for(Node* horDevNode:horDevNodes){
 					if(!ifContainNode(pathLegitNodes,horDevNode))
 						continue;
 
@@ -1563,7 +1720,7 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 				}
 
 
-				for(Node_ptr verDevNode:verDevNodes){
+				for(Node* verDevNode:verDevNodes){
 					if(!ifContainNode(pathLegitNodes,verDevNode))
 						continue;
 
@@ -1581,15 +1738,15 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 			}
 
 			/*	//edge number = node number -1
-				vector<Edge_ptr> legitEdges = getLegitEdges(path);
+				vector<Edge*> legitEdges = getLegitEdges(path);
 				string alledge = "";
-				for(Edge_ptr e:legitEdges){
+				for(Edge* e:legitEdges){
 					alledge += a(" - ")+ edgeName(e);
 				}
 
-				vector<Node_ptr> legitNodes = getLegitNodes(path);
+				vector<Node*> legitNodes = getLegitNodes(path);
 				string allnode = "";
-				for(Node_ptr n:legitNodes){
+				for(Node* n:legitNodes){
 					allnode += a(" + ") + nodeName(n);
 				}
 
@@ -1600,13 +1757,13 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 
 
 	//one node can only be used in one path
-	for(Node_ptr nTo:outputGrid.nodes){
+	for(Node* nTo:outputGrid.nodes){
 
 
 		/*bool isDevNode = false;
 		for(Pd_ptr pd:verPhyDevs){
-			Node_ptr port0 = pd->port0Node;
-			Node_ptr port1 = pd->port1Node;
+			Node* port0 = pd->port0Node;
+			Node* port1 = pd->port1Node;
 			if(port0 == nTo){
 				isDevNode = true;
 				break;
@@ -1618,8 +1775,8 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 
 		}
 		for(Pd_ptr pd:horPhyDevs){
-			Node_ptr port0 = pd->port0Node;
-			Node_ptr port1 = pd->port1Node;
+			Node* port0 = pd->port0Node;
+			Node* port1 = pd->port1Node;
 			if(port0 == nTo){
 				isDevNode = true;
 				break;
@@ -1635,10 +1792,10 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 			continue;*/
 
 		string nodeUsedInAllE = "";
-		for(Edge_ptr path:inputGrid.edges){
+		for(Edge* path:inputGrid.edges){
 			vector<Sqr_ptr> sqrsContainE = getLegitSquareInOutputGrid(path);
-			vector<Edge_ptr> legitEdges = availebleEdges(sqrsContainE);
-			vector<Node_ptr> legitNodes = availebleNodes(sqrsContainE);
+			vector<Edge*> legitEdges = availebleEdges(sqrsContainE);
+			vector<Node*> legitNodes = availebleNodes(sqrsContainE);
 			//if path's legit nodes doesnt contain nTo; continue
 			if(!ifContainNode(legitNodes,nTo))
 					continue;
@@ -1658,19 +1815,19 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 /*	//no small loop
 	for(int i = 0; i<= outputGrid.sizeX-2; i++){
 		for(int j = 0; j<=outputGrid.sizeY-2;j++){
-			Node_ptr n0 = outputGrid.getNode(i,j);
-			Node_ptr n1 = outputGrid.getNode(i,j+1);
-			Node_ptr n2 = outputGrid.getNode(i+1,j+1);
-			Node_ptr n3 = outputGrid.getNode(i+1,j);
+			Node* n0 = outputGrid.getNode(i,j);
+			Node* n1 = outputGrid.getNode(i,j+1);
+			Node* n2 = outputGrid.getNode(i+1,j+1);
+			Node* n3 = outputGrid.getNode(i+1,j);
 
-			Edge_ptr e0 = outputGrid.getEdge(i,j,i,j+1);
-			Edge_ptr e1 = outputGrid.getEdge(i,j+1,i+1,j+1);
-			Edge_ptr e2 = outputGrid.getEdge(i+1,j,i+1,j+1);
-			Edge_ptr e3 = outputGrid.getEdge(i,j,i+1,j);
+			Edge* e0 = outputGrid.getEdge(i,j,i,j+1);
+			Edge* e1 = outputGrid.getEdge(i,j+1,i+1,j+1);
+			Edge* e2 = outputGrid.getEdge(i+1,j,i+1,j+1);
+			Edge* e3 = outputGrid.getEdge(i,j,i+1,j);
 
-			for(Edge_ptr path:inputGrid.edges){
-				vector<Node_ptr> pathLNodes = getLegitNodes(path);
-				vector<Edge_ptr> pathLEdges = getLegitEdges(path);
+			for(Edge* path:inputGrid.edges){
+				vector<Node*> pathLNodes = getLegitNodes(path);
+				vector<Edge*> pathLEdges = getLegitEdges(path);
 				if(!ifContainNode(pathLNodes,n0))
 					continue;
 				if(!ifContainNode(pathLNodes,n1))
@@ -1701,12 +1858,12 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 	}*/
 
 	/*//one Edge can only be used in one path
-	for(Edge_ptr eTo:outputGrid.edges){
+	for(Edge* eTo:outputGrid.edges){
 
 		bool legitEdge = false;
 
-		for(Edge_ptr path:inputGrid.edges){
-			vector<Edge_ptr> pathLegitEdges = getLegitEdges(path);
+		for(Edge* path:inputGrid.edges){
+			vector<Edge*> pathLegitEdges = getLegitEdges(path);
 			if(ifContain(pathLegitEdges,eTo)){
 				legitEdge = true;
 				break;
@@ -1717,8 +1874,8 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 			continue;
 
 		string pathsUseEdge= "";
-		for(Edge_ptr path:inputGrid.edges){
-			vector<Edge_ptr> pathLegitEdges = getLegitEdges(path);
+		for(Edge* path:inputGrid.edges){
+			vector<Edge*> pathLegitEdges = getLegitEdges(path);
 			if(!ifContain(pathLegitEdges,eTo))
 				continue;
 			string pathUseEdge= edgeUseEdge(path,eTo);
@@ -1729,13 +1886,13 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 
 
 	//path is longer than storage
-	for(Edge_ptr path:inputGrid.edges){
+	for(Edge* path:inputGrid.edges){
 		if(!path->isStorage)
 			continue;
 		string str = "";
 		vector<Sqr_ptr> sqrsContainE = getLegitSquareInOutputGrid(path);
-		vector<Edge_ptr> legitEdges = availebleEdges(sqrsContainE);
-		for(Edge_ptr eTo:legitEdges){
+		vector<Edge*> legitEdges = availebleEdges(sqrsContainE);
+		for(Edge* eTo:legitEdges){
 			string eBindE= edgeUseEdge(path,eTo);
 			str+= a(" + ") + a(eBindE);
 		}
@@ -1744,32 +1901,32 @@ void PhysicalDesign::pathSquareFixCrossDev(){
 	}
 
 	//OBJ
-/*	OBJ.push_back("Minimize");
+	OBJ.push_back("Minimize");
 	string str = "";
-	for(Edge_ptr path:inputGrid.edges){
+	for(Edge* path:inputGrid.edges){
 
 			vector<Sqr_ptr> sqrsContainE = getLegitSquareInOutputGrid(path);
-			vector<Edge_ptr> legitEdges = availebleEdges(sqrsContainE);
-			for(Edge_ptr eTo:legitEdges){
+			vector<Edge*> legitEdges = availebleEdges(sqrsContainE);
+			for(Edge* eTo:legitEdges){
 				string eBindE= edgeUseEdge(path,eTo);
 				str+= a(" + ") + a(eBindE);
 			}
 	}
-	OBJ.push_back(str);*/
+	OBJ.push_back(str);
 }
 
 void PhysicalDesign::pathSquare(){
 
 
-	for(Edge_ptr path:inputGrid.edges){
+	for(Edge* path:inputGrid.edges){
 
 
-		for(Edge_ptr eTo:getLegitEdges(path)){
+		for(Edge* eTo:getLegitEdges(path)){
 			string eBindE = edgeUseEdge(path,eTo);
 			varName.push_back(eBindE); varType.push_back("1");
 		}
 
-		for(Node_ptr nTo:getLegitNodes(path)){
+		for(Node* nTo:getLegitNodes(path)){
 			string pathUseNode = edgeUseNode(path,nTo);
 			varName.push_back(pathUseNode); varType.push_back("1");
 		}
@@ -1777,9 +1934,9 @@ void PhysicalDesign::pathSquare(){
 
 
 
-	for(Edge_ptr path:inputGrid.edges){
-			Node_ptr n0 = inputGrid.hashNodes.at(Node::hash2Int(path->x,path->y));
-			Node_ptr n1 = inputGrid.hashNodes.at(Node::hash2Int(path->s,path->t));
+	for(Edge* path:inputGrid.edges){
+			Node* n0 = inputGrid.hashNodes.at(algo::hash2Int(path->x,path->y));
+			Node* n1 = inputGrid.hashNodes.at(algo::hash2Int(path->s,path->t));
 			cout << "n0" << n0->x << " " <<n0->y<<endl ;
 			cout << "n1" << n1->x << " " << n1->y << endl;
 
@@ -1789,13 +1946,13 @@ void PhysicalDesign::pathSquare(){
 			cout << "n0Loc[1] " << n0Loc[1] << endl;
 			cout << "n1Loc[0] " <<  n1Loc[0] << endl;
 			cout << "n1Loc[1] " <<  n1Loc[1] << endl;
-			Node_ptr node0Outgrid = outputGrid.getNode(n0Loc[0],n0Loc[1]);
-			Node_ptr node1Outgrid = outputGrid.getNode(n1Loc[0],n1Loc[1]);
+			Node* node0Outgrid = outputGrid.getNode(n0Loc[0],n0Loc[1]);
+			Node* node1Outgrid = outputGrid.getNode(n1Loc[0],n1Loc[1]);
 
 			//path must start n0 and end with n1
 			string edgeAroudN0Used = "";
-			vector<Edge_ptr> legitEdges = getLegitEdges(path);
-			for(Edge_ptr eTo:node0Outgrid->adjEdgesList){
+			vector<Edge*> legitEdges = getLegitEdges(path);
+			for(Edge* eTo:node0Outgrid->adjEdgesList){
 				if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
 						continue;
 				string eBindE= edgeUseEdge(path,eTo);
@@ -1805,7 +1962,7 @@ void PhysicalDesign::pathSquare(){
 			constraint.push_back(edgeAroudN0Used + (" = 1"));
 
 			string edgeAroudN1Used = "";
-			for(Edge_ptr eTo:node1Outgrid->adjEdgesList){
+			for(Edge* eTo:node1Outgrid->adjEdgesList){
 				if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
 						continue;
 				string eBindE = edgeUseEdge(path,eTo);
@@ -1815,12 +1972,12 @@ void PhysicalDesign::pathSquare(){
 			constraint.push_back(edgeAroudN1Used + (" = 1"));
 
 			//must be a simple path
-			for(Node_ptr nTo:getLegitNodes(path)){
+			for(Node* nTo:getLegitNodes(path)){
 				if(nTo == node0Outgrid || nTo == node1Outgrid)
 					continue;
 				string eUseNode = edgeUseNode(path,nTo);
 				string edgeAroudUsed = "";
-				for(Edge_ptr eTo:nTo->adjEdgesList){
+				for(Edge* eTo:nTo->adjEdgesList){
 					//eTo must be a legit Edge
 					if(find(legitEdges.begin(),legitEdges.end(),eTo) == legitEdges.end())
 						continue;
@@ -1837,14 +1994,14 @@ void PhysicalDesign::pathSquare(){
 	}// for path must start n0 and end with n1z
 
 	//one node can only be used in one path
-	for(Node_ptr nTo:outputGrid.nodes){
+	for(Node* nTo:outputGrid.nodes){
 
 
 		string nodeUsedInAllE = "";
-		for(Edge_ptr path:inputGrid.edges){
+		for(Edge* path:inputGrid.edges){
 			vector<Sqr_ptr> sqrsContainE = getLegitSquareInOutputGrid(path);
-			vector<Edge_ptr> legitEdges = availebleEdges(sqrsContainE);
-			vector<Node_ptr> legitNodes = availebleNodes(sqrsContainE);
+			vector<Edge*> legitEdges = availebleEdges(sqrsContainE);
+			vector<Node*> legitNodes = availebleNodes(sqrsContainE);
 			//if path's legit nodes doesnt contain nTo; continue
 			if(find(legitNodes.begin(),legitNodes.end(),nTo) == legitNodes.end())
 				continue;
@@ -1859,13 +2016,13 @@ void PhysicalDesign::pathSquare(){
 
 
 	//path is longer than storage
-	for(Edge_ptr path:inputGrid.edges){
+	for(Edge* path:inputGrid.edges){
 		if(!path->isStorage)
 			continue;
 		string str = "";
 		vector<Sqr_ptr> sqrsContainE = getLegitSquareInOutputGrid(path);
-		vector<Edge_ptr> legitEdges = availebleEdges(sqrsContainE);
-		for(Edge_ptr eTo:legitEdges){
+		vector<Edge*> legitEdges = availebleEdges(sqrsContainE);
+		for(Edge* eTo:legitEdges){
 			string eBindE= edgeUseEdge(path,eTo);
 			str+= a(" + ") + a(eBindE);
 		}
@@ -1876,11 +2033,11 @@ void PhysicalDesign::pathSquare(){
 	//OBJ
 	OBJ.push_back("Minimize");
 	string str = "";
-	for(Edge_ptr path:inputGrid.edges){
+	for(Edge* path:inputGrid.edges){
 
 			vector<Sqr_ptr> sqrsContainE = getLegitSquareInOutputGrid(path);
-			vector<Edge_ptr> legitEdges = availebleEdges(sqrsContainE);
-			for(Edge_ptr eTo:legitEdges){
+			vector<Edge*> legitEdges = availebleEdges(sqrsContainE);
+			for(Edge* eTo:legitEdges){
 				string eBindE= edgeUseEdge(path,eTo);
 				str+= a(" + ") + a(eBindE);
 			}
@@ -1893,26 +2050,26 @@ void PhysicalDesign::pathSquare(){
 void PhysicalDesign::pathSquareWithDev(){
 
 
-	for(Edge_ptr path:inputGrid.edges){
+	for(Edge* path:inputGrid.edges){
 
 
-		for(Edge_ptr eTo:getLegitEdges(path)){
+		for(Edge* eTo:getLegitEdges(path)){
 			string eBindE = edgeUseEdge(path,eTo);
 			varName.push_back(eBindE); varType.push_back("1");
 		}
 
-		for(Node_ptr nTo:getLegitNodes(path)){
+		for(Node* nTo:getLegitNodes(path)){
 			string pathUseNode = edgeUseNode(path,nTo);
 			varName.push_back(pathUseNode); varType.push_back("1");
 		}
 
 
-		/*for(Node_ptr nTo:getLegitNodes(path)){
+		/*for(Node* nTo:getLegitNodes(path)){
 			string pathStartNode = edgeStartNode(path,nTo);
 			varName.push_back(pathStartNode); varType.push_back("1");
 		}
 
-		for(Node_ptr nTo:getLegitNodes(path)){
+		for(Node* nTo:getLegitNodes(path)){
 			string pathEndNode = edgeEndNode(path,nTo);
 			varName.push_back(pathEndNode); varType.push_back("1");
 		}*/
@@ -1920,21 +2077,21 @@ void PhysicalDesign::pathSquareWithDev(){
 
 
 
-	for(Edge_ptr path:inputGrid.edges){
-			Node_ptr n0 = inputGrid.hashNodes.at(Node::hash2Int(path->x,path->y));
-			Node_ptr n1 = inputGrid.hashNodes.at(Node::hash2Int(path->s,path->t));
-			Node_ptr node0Outgrid;
-			Node_ptr node1Outgrid;
+	for(Edge* path:inputGrid.edges){
+			Node* n0 = inputGrid.hashNodes.at(algo::hash2Int(path->x,path->y));
+			Node* n1 = inputGrid.hashNodes.at(algo::hash2Int(path->s,path->t));
+			Node* node0Outgrid;
+			Node* node1Outgrid;
 
-			vector<Edge_ptr> pathLegitEdges = getLegitEdges(path);
-			for(Edge_ptr legtE : getLegitEdges(path)){
+			vector<Edge*> pathLegitEdges = getLegitEdges(path);
+			for(Edge* legtE : getLegitEdges(path)){
 				cout<<" legit e " << "x" << legtE->x << "y" << legtE->y<< "s" <<legtE->s << "t" << legtE->t<<endl;
 			}
-			vector<Node_ptr> pathLegitNodes = getLegitNodes(path);
+			vector<Node*> pathLegitNodes = getLegitNodes(path);
 			if(!n0->isDev && !n1->isDev){
 				//n1 use one node
 				string n0useOneNode ="";
-				for(Node_ptr nTo:getLegitNodesForDev(n0)){
+				for(Node* nTo:getLegitNodesForDev(n0)){
 					string n0UseNto = nodeUseNode(n0,nTo);
 					varName.push_back(n0UseNto);varType.push_back("1");
 					n0useOneNode += a(" + ") + n0UseNto;
@@ -1945,7 +2102,7 @@ void PhysicalDesign::pathSquareWithDev(){
 
 				//n1 use one node
 				string n1useOneNode ="";
-				for(Node_ptr nTo:getLegitNodesForDev(n1)){
+				for(Node* nTo:getLegitNodesForDev(n1)){
 					string n1UseNto = nodeUseNode(n1,nTo);
 					varName.push_back(n1UseNto);varType.push_back("1");
 					n1useOneNode += a(" + ") + n1UseNto;
@@ -1958,10 +2115,10 @@ void PhysicalDesign::pathSquareWithDev(){
 				//path must start n0 and end with n1
 
 				//if n0 use nTo
-				for(Node_ptr nTo:getLegitNodesForDev(n0)){
+				for(Node* nTo:getLegitNodesForDev(n0)){
 					string n0UseNto = nodeUseNode(n0,nTo);
 					string edgeAroudNToUsed = "";
-					for(Edge_ptr eTo:nTo->adjEdgesList){
+					for(Edge* eTo:nTo->adjEdgesList){
 						if(eTo->x == 1 && eTo->y == 2 && eTo->s == 1 && eTo->t == 3){
 							cout << "got ya" << endl;
 						}
@@ -1976,10 +2133,10 @@ void PhysicalDesign::pathSquareWithDev(){
 				}
 
 				//if n1 use nTo
-				for(Node_ptr nTo:getLegitNodesForDev(n1)){
+				for(Node* nTo:getLegitNodesForDev(n1)){
 					string n1UseNto = nodeUseNode(n1,nTo);
 					string edgeAroudNToUsed = "";
-					for(Edge_ptr eTo:nTo->adjEdgesList){
+					for(Edge* eTo:nTo->adjEdgesList){
 						if(!ifContain(pathLegitEdges,eTo))
 							continue;
 						string eBindE= edgeUseEdge(path,eTo);
@@ -1993,9 +2150,9 @@ void PhysicalDesign::pathSquareWithDev(){
 
 
 				//must be a simple path
-				vector<Node_ptr> n0LegitNodes = getLegitNodesForDev(n0);
-				vector<Node_ptr> n1LegitNodes = getLegitNodesForDev(n1);
-				for(Node_ptr nTo:getLegitNodes(path)){
+				vector<Node*> n0LegitNodes = getLegitNodesForDev(n0);
+				vector<Node*> n1LegitNodes = getLegitNodesForDev(n1);
+				for(Node* nTo:getLegitNodes(path)){
 					bool nToMayN0 = false;
 					bool nToMayN1 = false;
 					if(ifContainNode(n0LegitNodes,nTo) ){
@@ -2011,7 +2168,7 @@ void PhysicalDesign::pathSquareWithDev(){
 						string n0UseNto = nodeUseNode(n0,nTo);
 						string eUseNode = edgeUseNode(path,nTo);
 						string edgeAroudUsed = "";
-						for(Edge_ptr eTo:nTo->adjEdgesList){
+						for(Edge* eTo:nTo->adjEdgesList){
 							//eTo must be a legit Edge
 							if(!ifContain(pathLegitEdges,eTo))
 								continue;
@@ -2031,7 +2188,7 @@ void PhysicalDesign::pathSquareWithDev(){
 						string n1UseNto = nodeUseNode(n1,nTo);
 						string eUseNode = edgeUseNode(path,nTo);
 						string edgeAroudUsed = "";
-						for(Edge_ptr eTo:nTo->adjEdgesList){
+						for(Edge* eTo:nTo->adjEdgesList){
 							//eTo must be a legit Edge
 							if(!ifContain(pathLegitEdges,eTo))
 								continue;
@@ -2051,7 +2208,7 @@ void PhysicalDesign::pathSquareWithDev(){
 						string n1UseNto = nodeUseNode(n1,nTo);
 						string eUseNode = edgeUseNode(path,nTo);
 						string edgeAroudUsed = "";
-						for(Edge_ptr eTo:nTo->adjEdgesList){
+						for(Edge* eTo:nTo->adjEdgesList){
 							//eTo must be a legit Edge
 							if(!ifContain(pathLegitEdges,eTo))
 								continue;
@@ -2070,7 +2227,7 @@ void PhysicalDesign::pathSquareWithDev(){
 
 						string eUseNode = edgeUseNode(path,nTo);
 						string edgeAroudUsed = "";
-						for(Edge_ptr eTo:nTo->adjEdgesList){
+						for(Edge* eTo:nTo->adjEdgesList){
 							//eTo must be a legit Edge
 							if(!ifContain(pathLegitEdges,eTo))
 								continue;
@@ -2091,11 +2248,11 @@ void PhysicalDesign::pathSquareWithDev(){
 			}
 
 			else if (n0->isDev && !n1->isDev){
-				vector<Node_ptr> n1LegitNodes = getLegitNodesForDev(n1);
+				vector<Node*> n1LegitNodes = getLegitNodesForDev(n1);
 				//path use port 0 or port 1
 				Pd_ptr pd = nodesDev[n0];
-				Node_ptr port0 = pd->port0Node;
-				Node_ptr port1 = pd->port1Node;
+				Node* port0 = pd->port0Node;
+				Node* port1 = pd->port1Node;
 
 				string pathEndPort0 = edgeEndNode(path,port0);
 				varName.push_back(pathEndPort0);varType.push_back("1");
@@ -2107,7 +2264,7 @@ void PhysicalDesign::pathSquareWithDev(){
 
 				//n1 use one node
 				string n1useOneNode ="";
-				for(Node_ptr nTo:n1LegitNodes){
+				for(Node* nTo:n1LegitNodes){
 					string n1UseNto = nodeUseNode(n1,nTo);
 					varName.push_back(n1UseNto);varType.push_back("1");
 					n1useOneNode += a(" + ") + n1UseNto;
@@ -2119,7 +2276,7 @@ void PhysicalDesign::pathSquareWithDev(){
 
 				//end with port0 or port1
 				string edgeAroudPort0Used = "";
-				for(Edge_ptr eTo:port0->adjEdgesList){
+				for(Edge* eTo:port0->adjEdgesList){
 					if(!ifContain(pathLegitEdges,eTo))
 						continue;
 					string eBindE= edgeUseEdge(path,eTo);
@@ -2136,7 +2293,7 @@ void PhysicalDesign::pathSquareWithDev(){
 
 
 				string edgeAroudPort1Used = "";
-				for(Edge_ptr eTo:port1->adjEdgesList){
+				for(Edge* eTo:port1->adjEdgesList){
 					if(!ifContain(pathLegitEdges,eTo))
 						continue;
 					string eBindE= edgeUseEdge(path,eTo);
@@ -2151,10 +2308,10 @@ void PhysicalDesign::pathSquareWithDev(){
 				constraint.push_back(edgeAroudPort1Used + a(" + ") + a(M) + a(" ") + a(pathEndPort0) + a(" <= ") + a(+M));
 
 				//if use nTo
-				for(Node_ptr nTo:n1LegitNodes){
+				for(Node* nTo:n1LegitNodes){
 					string n1UseNto = nodeUseNode(n1,nTo);
 					string edgeAroudNToUsed = "";
-					for(Edge_ptr eTo:nTo->adjEdgesList){
+					for(Edge* eTo:nTo->adjEdgesList){
 						if(eTo->x == 1 && eTo->y == 2 && eTo->s == 1 && eTo->t == 3){
 							cout << "got ya" << endl;
 						}
@@ -2170,7 +2327,7 @@ void PhysicalDesign::pathSquareWithDev(){
 
 
 				//must be a simple path
-				for(Node_ptr nTo:getLegitNodes(path)){
+				for(Node* nTo:getLegitNodes(path)){
 					if(nTo == port0 || nTo == port1)
 						continue;
 
@@ -2185,7 +2342,7 @@ void PhysicalDesign::pathSquareWithDev(){
 						string n1UseNto = nodeUseNode(n1,nTo);
 						string eUseNode = edgeUseNode(path,nTo);
 						string edgeAroudUsed = "";
-						for(Edge_ptr eTo:nTo->adjEdgesList){
+						for(Edge* eTo:nTo->adjEdgesList){
 							//eTo must be a legit Edge
 							if(!ifContain(pathLegitEdges,eTo))
 								continue;
@@ -2203,7 +2360,7 @@ void PhysicalDesign::pathSquareWithDev(){
 					else{
 						string eUseNode = edgeUseNode(path,nTo);
 						string edgeAroudUsed = "";
-						for(Edge_ptr eTo:nTo->adjEdgesList){
+						for(Edge* eTo:nTo->adjEdgesList){
 							//eTo must be a legit Edge
 							if(!ifContain(pathLegitEdges,eTo))
 								continue;
@@ -2225,11 +2382,11 @@ void PhysicalDesign::pathSquareWithDev(){
 
 			}
 			else if (!n0->isDev && n1->isDev){
-				vector<Node_ptr> n0LegitNodes = getLegitNodesForDev(n0);
+				vector<Node*> n0LegitNodes = getLegitNodesForDev(n0);
 				//path use port 0 or port 1
 				Pd_ptr pd = nodesDev[n1];
-				Node_ptr port0 = pd->port0Node;
-				Node_ptr port1 = pd->port1Node;
+				Node* port0 = pd->port0Node;
+				Node* port1 = pd->port1Node;
 
 				string pathEndPort0 = edgeEndNode(path,port0);
 				varName.push_back(pathEndPort0);varType.push_back("1");
@@ -2241,7 +2398,7 @@ void PhysicalDesign::pathSquareWithDev(){
 
 				//n0 use one node
 				string n0useOneNode ="";
-				for(Node_ptr nTo:n0LegitNodes){
+				for(Node* nTo:n0LegitNodes){
 					string n0UseNto = nodeUseNode(n0,nTo);
 					varName.push_back(n0UseNto);varType.push_back("1");
 					n0useOneNode += a(" + ") + n0UseNto;
@@ -2253,7 +2410,7 @@ void PhysicalDesign::pathSquareWithDev(){
 
 				//end with port0 or port1
 				string edgeAroudPort0Used = "";
-				for(Edge_ptr eTo:port0->adjEdgesList){
+				for(Edge* eTo:port0->adjEdgesList){
 					if(!ifContain(pathLegitEdges,eTo))
 						continue;
 					string eBindE= edgeUseEdge(path,eTo);
@@ -2270,7 +2427,7 @@ void PhysicalDesign::pathSquareWithDev(){
 
 
 				string edgeAroudPort1Used = "";
-				for(Edge_ptr eTo:port1->adjEdgesList){
+				for(Edge* eTo:port1->adjEdgesList){
 					if(!ifContain(pathLegitEdges,eTo))
 						continue;
 					string eBindE= edgeUseEdge(path,eTo);
@@ -2285,10 +2442,10 @@ void PhysicalDesign::pathSquareWithDev(){
 				constraint.push_back(edgeAroudPort1Used + a(" + ") + a(M) + a(" ") + a(pathEndPort0) + a(" <= ") + a(+M));
 
 				//if use nTo
-				for(Node_ptr nTo:n0LegitNodes){
+				for(Node* nTo:n0LegitNodes){
 					string n0UseNto = nodeUseNode(n0,nTo);
 					string edgeAroudNToUsed = "";
-					for(Edge_ptr eTo:nTo->adjEdgesList){
+					for(Edge* eTo:nTo->adjEdgesList){
 						if(eTo->x == 1 && eTo->y == 2 && eTo->s == 1 && eTo->t == 3){
 							cout << "got ya" << endl;
 						}
@@ -2304,7 +2461,7 @@ void PhysicalDesign::pathSquareWithDev(){
 
 
 				//must be a simple path
-				for(Node_ptr nTo:getLegitNodes(path)){
+				for(Node* nTo:getLegitNodes(path)){
 					if(nTo == port0 || nTo == port1)
 						continue;
 
@@ -2319,7 +2476,7 @@ void PhysicalDesign::pathSquareWithDev(){
 						string n0UseNto = nodeUseNode(n0,nTo);
 						string eUseNode = edgeUseNode(path,nTo);
 						string edgeAroudUsed = "";
-						for(Edge_ptr eTo:nTo->adjEdgesList){
+						for(Edge* eTo:nTo->adjEdgesList){
 							//eTo must be a legit Edge
 							if(!ifContain(pathLegitEdges,eTo))
 								continue;
@@ -2337,7 +2494,7 @@ void PhysicalDesign::pathSquareWithDev(){
 					else{
 						string eUseNode = edgeUseNode(path,nTo);
 						string edgeAroudUsed = "";
-						for(Edge_ptr eTo:nTo->adjEdgesList){
+						for(Edge* eTo:nTo->adjEdgesList){
 							//eTo must be a legit Edge
 							if(!ifContain(pathLegitEdges,eTo))
 								continue;
@@ -2360,13 +2517,13 @@ void PhysicalDesign::pathSquareWithDev(){
 	}// for path must start n0 and end with n1z
 
 	//one node can only be used in one path
-	for(Node_ptr nTo:outputGrid.nodes){
+	for(Node* nTo:outputGrid.nodes){
 
 
 		bool isDevNode = false;
 		for(Pd_ptr pd:phyDevs){
-			Node_ptr port0 = pd->port0Node;
-			Node_ptr port1 = pd->port1Node;
+			Node* port0 = pd->port0Node;
+			Node* port1 = pd->port1Node;
 			if(port0 == nTo){
 				isDevNode = true;
 				break;
@@ -2382,10 +2539,10 @@ void PhysicalDesign::pathSquareWithDev(){
 			continue;
 
 		string nodeUsedInAllE = "";
-		for(Edge_ptr path:inputGrid.edges){
+		for(Edge* path:inputGrid.edges){
 			vector<Sqr_ptr> sqrsContainE = getLegitSquareInOutputGrid(path);
-			vector<Edge_ptr> legitEdges = availebleEdges(sqrsContainE);
-			vector<Node_ptr> legitNodes = availebleNodes(sqrsContainE);
+			vector<Edge*> legitEdges = availebleEdges(sqrsContainE);
+			vector<Node*> legitNodes = availebleNodes(sqrsContainE);
 			//if path's legit nodes doesnt contain nTo; continue
 			if(find(legitNodes.begin(),legitNodes.end(),nTo) == legitNodes.end())
 				continue;
@@ -2403,19 +2560,19 @@ void PhysicalDesign::pathSquareWithDev(){
 
 	for(int i = 0; i<= outputGrid.sizeX-2; i++){
 		for(int j = 0; j<=outputGrid.sizeY-2;j++){
-			Node_ptr n0 = outputGrid.getNode(i,j);
-			Node_ptr n1 = outputGrid.getNode(i,j+1);
-			Node_ptr n2 = outputGrid.getNode(i+1,j+1);
-			Node_ptr n3 = outputGrid.getNode(i+1,j);
+			Node* n0 = outputGrid.getNode(i,j);
+			Node* n1 = outputGrid.getNode(i,j+1);
+			Node* n2 = outputGrid.getNode(i+1,j+1);
+			Node* n3 = outputGrid.getNode(i+1,j);
 
-			Edge_ptr e0 = outputGrid.getEdge(i,j,i,j+1);
-			Edge_ptr e1 = outputGrid.getEdge(i,j+1,i+1,j+1);
-			Edge_ptr e2 = outputGrid.getEdge(i+1,j,i+1,j+1);
-			Edge_ptr e3 = outputGrid.getEdge(i,j,i+1,j);
+			Edge* e0 = outputGrid.getEdge(i,j,i,j+1);
+			Edge* e1 = outputGrid.getEdge(i,j+1,i+1,j+1);
+			Edge* e2 = outputGrid.getEdge(i+1,j,i+1,j+1);
+			Edge* e3 = outputGrid.getEdge(i,j,i+1,j);
 
-			for(Edge_ptr path:inputGrid.edges){
-				vector<Node_ptr> pathLNodes = getLegitNodes(path);
-				vector<Edge_ptr> pathLEdges = getLegitEdges(path);
+			for(Edge* path:inputGrid.edges){
+				vector<Node*> pathLNodes = getLegitNodes(path);
+				vector<Edge*> pathLEdges = getLegitEdges(path);
 				if(!ifContainNode(pathLNodes,n0))
 					continue;
 				if(!ifContainNode(pathLNodes,n1))
@@ -2448,12 +2605,12 @@ void PhysicalDesign::pathSquareWithDev(){
 	}
 
 	/*//one Edge can only be used in one path
-	for(Edge_ptr eTo:outputGrid.edges){
+	for(Edge* eTo:outputGrid.edges){
 
 		bool legitEdge = false;
 
-		for(Edge_ptr path:inputGrid.edges){
-			vector<Edge_ptr> pathLegitEdges = getLegitEdges(path);
+		for(Edge* path:inputGrid.edges){
+			vector<Edge*> pathLegitEdges = getLegitEdges(path);
 			if(ifContain(pathLegitEdges,eTo)){
 				legitEdge = true;
 				break;
@@ -2464,8 +2621,8 @@ void PhysicalDesign::pathSquareWithDev(){
 			continue;
 
 		string pathsUseEdge= "";
-		for(Edge_ptr path:inputGrid.edges){
-			vector<Edge_ptr> pathLegitEdges = getLegitEdges(path);
+		for(Edge* path:inputGrid.edges){
+			vector<Edge*> pathLegitEdges = getLegitEdges(path);
 			if(!ifContain(pathLegitEdges,eTo))
 				continue;
 			string pathUseEdge= edgeUseEdge(path,eTo);
@@ -2476,13 +2633,13 @@ void PhysicalDesign::pathSquareWithDev(){
 
 
 	//path is longer than storage
-	for(Edge_ptr path:inputGrid.edges){
+	for(Edge* path:inputGrid.edges){
 		if(!path->isStorage)
 			continue;
 		string str = "";
 		vector<Sqr_ptr> sqrsContainE = getLegitSquareInOutputGrid(path);
-		vector<Edge_ptr> legitEdges = availebleEdges(sqrsContainE);
-		for(Edge_ptr eTo:legitEdges){
+		vector<Edge*> legitEdges = availebleEdges(sqrsContainE);
+		for(Edge* eTo:legitEdges){
 			string eBindE= edgeUseEdge(path,eTo);
 			str+= a(" + ") + a(eBindE);
 		}
@@ -2493,11 +2650,11 @@ void PhysicalDesign::pathSquareWithDev(){
 	//OBJ
 	OBJ.push_back("Minimize");
 	string str = "";
-	for(Edge_ptr path:inputGrid.edges){
+	for(Edge* path:inputGrid.edges){
 
 			vector<Sqr_ptr> sqrsContainE = getLegitSquareInOutputGrid(path);
-			vector<Edge_ptr> legitEdges = availebleEdges(sqrsContainE);
-			for(Edge_ptr eTo:legitEdges){
+			vector<Edge*> legitEdges = availebleEdges(sqrsContainE);
+			for(Edge* eTo:legitEdges){
 				string eBindE= edgeUseEdge(path,eTo);
 				str+= a(" + ") + a(eBindE);
 			}
@@ -2508,18 +2665,18 @@ void PhysicalDesign::pathSquareWithDev(){
 
 
 void PhysicalDesign::nodeBind(){
-	for(Node_ptr nFrom:inputGrid.nodes){
-		for(Node_ptr nTo:outputGrid.nodes){
+	for(Node* nFrom:inputGrid.nodes){
+		for(Node* nTo:outputGrid.nodes){
 			string nodeBindNode = nodeBNode(nFrom,nTo);
 			varName.push_back(nodeBindNode);varType.push_back("1");
 		}
 	}
 
 	//one device binds to one node
-	for(Node_ptr nFrom:inputGrid.nodes){
+	for(Node* nFrom:inputGrid.nodes){
 		string str = "";
 
-		for(Node_ptr nTo:outputGrid.nodes){
+		for(Node* nTo:outputGrid.nodes){
 			string nodeBindNode = nodeBNode(nFrom,nTo);
 			str+= a(" + ") + a(nodeBindNode);
 
@@ -2529,9 +2686,9 @@ void PhysicalDesign::nodeBind(){
 	}
 
 	//one node bind at most one dev
-	for(Node_ptr nTo:outputGrid.nodes){
+	for(Node* nTo:outputGrid.nodes){
 		string str = "";
-		for(Node_ptr nFrom:inputGrid.nodes){
+		for(Node* nFrom:inputGrid.nodes){
 			string nodeBindNode = nodeBNode(nFrom,nTo);
 
 
@@ -2544,14 +2701,14 @@ void PhysicalDesign::nodeBind(){
 }
 
 void PhysicalDesign::paths(){
-	for(Edge_ptr eFrom:inputGrid.edges){
-		for(Edge_ptr eTo:outputGrid.edges){
+	for(Edge* eFrom:inputGrid.edges){
+		for(Edge* eTo:outputGrid.edges){
 			string eBindE = edgeUseEdge(eFrom,eTo);
 			varName.push_back(eBindE); varType.push_back("1");
 		}
 
 
-		for(Node_ptr nTo:outputGrid.nodes){
+		for(Node* nTo:outputGrid.nodes){
 			string eUseNode = edgeUseNode(eFrom,nTo);
 			varName.push_back(eUseNode); varType.push_back("1");
 		}
@@ -2561,12 +2718,12 @@ void PhysicalDesign::paths(){
 
 
 	//path must start n0 and end with n1z
-	for(Edge_ptr eFrom:inputGrid.edges){
-		Node_ptr n0 = inputGrid.hashNodes.at(Node::hash2Int(eFrom->x,eFrom->y));
-		Node_ptr n1 = inputGrid.hashNodes.at(Node::hash2Int(eFrom->s,eFrom->t));
+	for(Edge* eFrom:inputGrid.edges){
+		Node* n0 = inputGrid.hashNodes.at(algo::hash2Int(eFrom->x,eFrom->y));
+		Node* n1 = inputGrid.hashNodes.at(algo::hash2Int(eFrom->s,eFrom->t));
 
 		//if n0 or n1 is bind to a node, edge aroud it must be used
-		for(Node_ptr nTo:outputGrid.nodes){
+		for(Node* nTo:outputGrid.nodes){
 			string n0BindN = nodeBNode(n0,nTo);
 			string n1BindN =  nodeBNode(n1,nTo);
 
@@ -2575,7 +2732,7 @@ void PhysicalDesign::paths(){
 			// edge0 + edge1 + edge2 + edge3 + M(1-fatherB) >= 1
 			//edge0 + edge1 + edge2 + edge 3 - M(1-fatherB) <= 1
 			string edgeAroudFUsed = "";
-			for(Edge_ptr eTo:nTo->adjEdgesList){
+			for(Edge* eTo:nTo->adjEdgesList){
 				string eBindE= edgeUseEdge(eFrom,eTo);
 				edgeAroudFUsed += a(" + ") + eBindE;
 			}
@@ -2586,7 +2743,7 @@ void PhysicalDesign::paths(){
 			// edge0 + edge1 + edge2 + edge3 + M(1-fatherB) >= 1
 			//edge0 + edge1 + edge2 + edge 3 - M(1-fatherB) <= 1
 			string edgeAroudaUsed = "";
-			for(Edge_ptr eTo:nTo->adjEdgesList){
+			for(Edge* eTo:nTo->adjEdgesList){
 				string eBindE= edgeUseEdge(eFrom,eTo);
 				edgeAroudaUsed += a(" + ") + eBindE;
 			}
@@ -2596,14 +2753,14 @@ void PhysicalDesign::paths(){
 
 			//for device other father and son, if this device bind to node, edge around it cannot be used
 
-			for(Node_ptr otherN:inputGrid.nodes){
+			for(Node* otherN:inputGrid.nodes){
 				if(otherN == n0 || otherN == n1)
 					continue;
 
 				string  otherNBindN = nodeBNode(otherN,nTo);
 
 				string edgeAroudDUsed = "";
-				for(Edge_ptr eTo:nTo->adjEdgesList){
+				for(Edge* eTo:nTo->adjEdgesList){
 					string eBindE= edgeUseEdge(eFrom,eTo);
 					edgeAroudDUsed += a(" + ") + eBindE;
 				}
@@ -2622,13 +2779,13 @@ void PhysicalDesign::paths(){
 
 
 	// must be a simple path
-	for(Edge_ptr eFrom:inputGrid.edges){
+	for(Edge* eFrom:inputGrid.edges){
 
-		Node_ptr n0 = inputGrid.hashNodes.at(Node::hash2Int(eFrom->x,eFrom->y));
-		Node_ptr n1 = inputGrid.hashNodes.at(Node::hash2Int(eFrom->s,eFrom->t));
+		Node* n0 = inputGrid.hashNodes.at(algo::hash2Int(eFrom->x,eFrom->y));
+		Node* n1 = inputGrid.hashNodes.at(algo::hash2Int(eFrom->s,eFrom->t));
 
 
-		for(Node_ptr nTo:outputGrid.nodes){
+		for(Node* nTo:outputGrid.nodes){
 			string eUseNode = edgeUseNode(eFrom,nTo);
 
 
@@ -2636,7 +2793,7 @@ void PhysicalDesign::paths(){
 			string n1BindN =  nodeBNode(n1,nTo);
 
 			string edgeAroudUsed = "";
-			for(Edge_ptr eTo:nTo->adjEdgesList){
+			for(Edge* eTo:nTo->adjEdgesList){
 				string eBindE= edgeUseEdge(eFrom,eTo);
 
 				edgeAroudUsed += a(" + ") + eBindE;
@@ -2660,9 +2817,9 @@ void PhysicalDesign::paths(){
 
 
 	//one node can only be used in one path
-	for(Node_ptr nTo:outputGrid.nodes){
+	for(Node* nTo:outputGrid.nodes){
 		string nodeUsedInAllE = "";
-		for(Edge_ptr eFrom:inputGrid.edges){
+		for(Edge* eFrom:inputGrid.edges){
 			string eUseNode = edgeUseNode(eFrom,nTo);
 			nodeUsedInAllE += a(" + ") +eUseNode;
 		}
@@ -2670,11 +2827,11 @@ void PhysicalDesign::paths(){
 	}
 
 	//path is longer than storage
-	for(Edge_ptr eFrom:inputGrid.edges){
+	for(Edge* eFrom:inputGrid.edges){
 		if(!eFrom->isStorage)
 			continue;
 		string str = "";
-		for(Edge_ptr eTo:outputGrid.edges){
+		for(Edge* eTo:outputGrid.edges){
 			string eBindE= edgeUseEdge(eFrom,eTo);
 			str+= a(" + ") + a(eBindE);
 		}
@@ -2688,7 +2845,7 @@ void PhysicalDesign::paths(){
 
 
 
-void PhysicalDesign::setDevPos(Node_ptr inputDevNode){
+void PhysicalDesign::setDevPos(Node* inputDevNode){
 	vector<int> outputNodePos = nodeLocInOutputgrid(inputDevNode);
 	int outX = outputNodePos.at(0);
 	int outY = outputNodePos.at(1);
@@ -2822,11 +2979,154 @@ void PhysicalDesign::genILP(){
 
 // 3*3 input grid, each grid has each individual
 #if 1
-	hashInputSquare[hash2Int(0,0)]->minX = 6;
+	/*// 7 ops
+			for(int j = 0; j <= 0; j++){
+				hashInputSquare[hash2Int(0,j)]->minX = 4;
+			}
+			for(int j = 0; j <= 1; j++){
+				hashInputSquare[hash2Int(1,j)]->minX = 4;
+			}
+
+
+			for(int i = 0; i <= 0; i++){
+				hashInputSquare[hash2Int(i,0)]->minY= 4;
+			}
+*/
+
+
+
+		// 12 ops
+		/*for(int j = 0; j <= 0; j++){
+			hashInputSquare[hash2Int(0,j)]->minX = 7;
+		}
+		for(int j = 0; j <= 0; j++){
+			hashInputSquare[hash2Int(1,j)]->minX = 7;
+		}
+
+		for(int i = 0; i <= 1; i++){
+			hashInputSquare[hash2Int(i,0)]->minY= 5;
+		}*/
+
+
+		/*for(int i = 0; i <= 2; i++){
+			hashInputSquare[hash2Int(0,0)]->minX = 7;
+		}*/
+		// 30 ops
+		for(int j = 0; j <= 1; j++){
+			hashInputSquare[hash2Int(0,j)]->minX = 4;
+		}
+		for(int j = 0; j <= 1; j++){
+			hashInputSquare[hash2Int(1,j)]->minX = 4;
+		}
+
+		for(int j = 0; j <= 1; j++){
+			hashInputSquare[hash2Int(2,j)]->minX = 5;
+		}
+
+		for(int i = 0; i <= 2; i++){
+			hashInputSquare[hash2Int(i,0)]->minY= 4;
+		}
+		for(int i = 0; i <= 2; i++){
+			hashInputSquare[hash2Int(i,1)]->minY= 4;
+		}
+
+		/*for(int i = 0; i <= 2; i++){
+			hashInputSquare[hash2Int(0,0)]->minX = 7;
+		}*/
+	// 55 ops
+	/*	for(int j = 0; j <= 2; j++){
+			hashInputSquare[hash2Int(0,j)]->minX = 3;
+		}
+		for(int j = 0; j <= 2; j++){
+			hashInputSquare[hash2Int(1,j)]->minX = 3;
+		}
+
+		for(int j = 0; j <= 2; j++){
+			hashInputSquare[hash2Int(2,j)]->minX = 5;
+		}
+
+
+
+		for(int i = 0; i <= 2; i++){
+			hashInputSquare[hash2Int(i,0)]->minY= 5;
+		}
+		for(int i = 0; i <= 2; i++){
+			hashInputSquare[hash2Int(i,1)]->minY= 4;
+		}
+		for(int i = 0; i <= 2; i++){
+			hashInputSquare[hash2Int(i,2)]->minY= 4;
+		}*/
+
+		/*for(int i = 0; i <= 2; i++){
+			hashInputSquare[hash2Int(0,0)]->minX = 7;
+		}*/
+		/*//70
+		for(int j = 0; j <= 2; j++){
+				hashInputSquare[hash2Int(0,j)]->minX = 4;
+			}
+			for(int j = 0; j <= 2; j++){
+				hashInputSquare[hash2Int(1,j)]->minX = 3;
+			}
+
+			for(int j = 0; j <= 2; j++){
+				hashInputSquare[hash2Int(2,j)]->minX = 4;
+			}
+
+
+
+			for(int i = 0; i <= 2; i++){
+				hashInputSquare[hash2Int(i,0)]->minY= 5;
+			}
+			for(int i = 0; i <= 2; i++){
+				hashInputSquare[hash2Int(i,1)]->minY= 3;
+			}
+			for(int i = 0; i <= 2; i++){
+				hashInputSquare[hash2Int(i,2)]->minY= 4;
+			}*/
+
+			/*for(int i = 0; i <= 2; i++){
+				hashInputSquare[hash2Int(0,0)]->minX = 7;
+			}*/
+		//100
+		/*for(int j = 0; j <= 2; j++){
+			hashInputSquare[hash2Int(0,j)]->minX = 3;
+		}
+		for(int j = 0; j <= 2; j++){
+			hashInputSquare[hash2Int(1,j)]->minX = 4;
+		}
+
+		for(int j = 0; j <= 2; j++){
+			hashInputSquare[hash2Int(2,j)]->minX = 4;
+		}
+		for(int j = 0; j <= 2; j++){
+			hashInputSquare[hash2Int(3,j)]->minX = 4;
+		}
+
+
+
+		for(int i = 0; i <= 2; i++){
+			hashInputSquare[hash2Int(i,0)]->minY= 4;
+		}
+		for(int i = 0; i <= 2; i++){
+			hashInputSquare[hash2Int(i,1)]->minY= 4;
+		}
+		for(int i = 0; i <= 2; i++){
+			hashInputSquare[hash2Int(i,2)]->minY= 4;
+		}
+		for(int i = 0; i <= 2; i++){
+			hashInputSquare[hash2Int(i,3)]->minY= 4;
+		}*/
+
+			/*for(int i = 0; i <= 2; i++){
+				hashInputSquare[hash2Int(0,0)]->minX = 7;
+			}*/
+
+
+	/*hashInputSquare[hash2Int(0,0)]->minX = 7;
 	hashInputSquare[hash2Int(0,0)]->minY = 5;
-	hashInputSquare[hash2Int(0,1)]->minX = 6;
-	hashInputSquare[hash2Int(0,1)]->minY = 5;
-	hashInputSquare[hash2Int(0,0)]->minX = 6;
+	hashInputSquare[hash2Int(1,0)]->minX = 4;
+	hashInputSquare[hash2Int(1,0)]->minY = 5;*/
+	/*hashInputSquare[hash2Int(0,0)]->minX = 6;
 	hashInputSquare[hash2Int(0,0)]->minY = 5;
 	hashInputSquare[hash2Int(0,2)]->minX = 6;
 	hashInputSquare[hash2Int(0,2)]->minY = 4;
@@ -2844,23 +3144,20 @@ void PhysicalDesign::genILP(){
 	hashInputSquare[hash2Int(2,1)]->minY = 5;
 	hashInputSquare[hash2Int(2,2)]->minX = 4;
 	hashInputSquare[hash2Int(2,2)]->minY = 4;
-
+*/
 	int outputGridX = 0;
 	cout << " inputGrid size X "<<inputGrid.sizeX << endl;
 	int index = 0;
-	for(int i = 0; i <= inputGrid.sizeX -2 ;i++){
+	for(int i = inputGrid.left; i <= inputGrid.right-1 ;i++){
 		//chose a square on row 0
 		//cout <<"i is "<< index << endl;
-		int temp = hash2Int(index,0);
-		cout <<"hash is "<< hash2Int(index,0) <<  endl;
-		cout << "hashInputSquare minx is "<<hashInputSquare[temp]->minX <<endl;
-		Sqr_ptr sqr = hashInputSquare[hash2Int(index,0)];
+		Sqr_ptr sqr = hashInputSquare[hash2Int(i,inputGrid.down)];
 		outputGridX += sqr->minX;
 	}
 	int outputGridY = 0;
-	for(int j = 0; j <= inputGrid.sizeY-2;j++){
+	for(int j = inputGrid.down; j <= inputGrid.up-1;j++){
 		//chose a square on row 0
-		Sqr_ptr sqr = hashInputSquare[hash2Int(0,j)];
+		Sqr_ptr sqr = hashInputSquare[hash2Int(inputGrid.left,j)];
 		outputGridY += sqr->minY;
 	}
 
@@ -2871,7 +3168,7 @@ void PhysicalDesign::genILP(){
 	cout << "im here" << endl;
 
 	//set device position in output grid;
-	for(Node_ptr n:(inputGrid.nodes)){
+	for(Node* n:(inputGrid.nodes)){
 		if(n->isDev){
 			setDevPos(n);
 		}
@@ -2882,6 +3179,7 @@ void PhysicalDesign::genILP(){
 	pathSquareFixCrossDev();
 	writeToFile("squareILP.lp");
 	ILPresults = ILP("squareILP.lp");
+	trueGraph();
 	writeGraphFile();
 	return;
 #endif
@@ -2935,13 +3233,156 @@ void PhysicalDesign::writeToFile(string fileName){
 
 }
 
+void PhysicalDesign::trueGraph(){
+	Draw draw;
+	//draw devices
+	for(Node* n:inputGrid.nodes){
+		if(!n->isDev)
+			continue;
+		cout << "im dev and ";
+		n->printMyself();
+		bool usePort0 = false;
+		bool usePort1 = false;
+		for(Edge* path:inputGrid.edges){
+			string susePort0 = pathUseDevPort0(path,n);
+
+			usePort0 = ILPresults[susePort0];
+			if(usePort0){
+				path->printMyself();
+				cout << "using port0" << endl;
+				break;
+			}
+
+		}
+
+		for(Edge* path:inputGrid.edges){
+			string susePort1 = pathUseDevPort1(path,n);
+
+			usePort1 = ILPresults[susePort1];
+			if(usePort1){
+				path->printMyself();
+				cout << "using port0"<<endl;
+				break;
+			}
+
+		}
+		Pd_ptr pd;
+		//see if dev is hor
+		string devIsHor = devHor(n);
+		string devIsVer = devVer(n);
+
+		int dHor = ILPresults[devIsHor];
+		int dVer = ILPresults[devIsVer];
+		if(dHor == 1){
+			pd = nodesHorDev[n];
+		}
+		else if(dVer == 1){
+			pd = nodesVerDev[n];
+		}
+
+		Node* center = pd->center;
+		Node* port0 = pd->port0Node;
+		Node* port1 = pd->port1Node;
+
+		bool full = true;
+		draw.drawDeivice(center->x,center->y,1,full,port0->x,port0->y,port1->x,port1->y,usePort0,usePort1);
+
+	}
+
+	//draw channels
+	bool noDrawLeftValve = false;
+	bool noDrawRightValve = false;
+	bool drawLeftValve =true;
+	bool drawRightValve = true;
+
+	for(Edge* path:inputGrid.edges){
+			for(Edge* e:outputGrid.edges){
+				string pathUseEdge = edgeUseEdge(path,e);
+				int edgeUsedValue = ILPresults[pathUseEdge];
+				if(edgeUsedValue == 0)
+					continue;
+				/*path->printMyself();
+				cout << "used at now ? "<<path->isUsedAtMoment << endl;
+				cout << "painting " ;
+				e->printMyself();*/
+
+
+				e->isUsedAtMoment = path->isUsedAtMoment;
+				Node* leftNode = outputGrid.getNode(e->x,e->y);
+				Node* rightNode = outputGrid.getNode(e->s,e->t);
+				drawLeftValve = false;
+				drawRightValve = false;
+				for(Node* n:inputGrid.nodes){
+						if(!n->isDev)
+							continue;
+
+						Pd_ptr pd;
+						//see if dev is hor
+						string devIsHor = devHor(n);
+						string devIsVer = devVer(n);
+
+						int dHor = ILPresults[devIsHor];
+						int dVer = ILPresults[devIsVer];
+						if(dHor == 1){
+							pd = nodesHorDev[n];
+						}
+						else if(dVer == 1){
+							pd = nodesVerDev[n];
+						}
+
+						Node* center = pd->center;
+						Node* port0 = pd->port0Node;
+						Node* port1 = pd->port1Node;
+
+
+
+						if(leftNode == port1|| leftNode == port0)
+							drawLeftValve = true;
+
+						if(rightNode == port0 || rightNode == port1)
+							drawRightValve = true;
+
+					}
+
+				for(Edge* p:inputGrid.edges){
+					Node* inputNode0 = inputGrid.getNode(p->x,p->y);
+					Node* inputNode1 = inputGrid.getNode(p->s,p->t);
+
+					if(!inputNode0->isDev){
+						vector<int> loc0 = nodeLocInOutputgrid(inputNode0);
+						Node* outNode0 =  outputGrid.getNode(loc0[0],loc0[1]);
+						if(leftNode == outNode0)
+							drawLeftValve = true;
+
+						if(rightNode == outNode0 )
+							drawRightValve = true;
+					}
+
+					if(!inputNode1->isDev){
+						vector<int> loc1 = nodeLocInOutputgrid(inputNode1);
+						Node* outNode1 =  outputGrid.getNode(loc1[0],loc1[1]);
+						if(leftNode == outNode1)
+							drawLeftValve = true;
+
+						if(rightNode == outNode1 )
+							drawRightValve = true;
+					}
+
+				}
+
+				draw.drawChannel(e->x,e->y,e->s,e->t,e->isUsedAtMoment,drawLeftValve,drawRightValve);
+			}
+	}
+
+}
+
 void PhysicalDesign::writeGraphFile(){
 	ofstream file;
 	file.open("edgesPhyDesign.txt");
 	ofstream edgeInfo;
 	int cCount = 0;
-	for(Edge_ptr path:inputGrid.edges){
-			for(Edge_ptr e:outputGrid.edges){
+	for(Edge* path:inputGrid.edges){
+			for(Edge* e:outputGrid.edges){
 				string pathUseEdge = edgeUseEdge(path,e);
 				int edgeUsedValue = ILPresults[pathUseEdge];
 				if(edgeUsedValue == 0)
@@ -2959,7 +3400,7 @@ void PhysicalDesign::writeGraphFile(){
 	}
 	for(Pd_ptr pd:phyDevs){
 
-		for(Edge_ptr e:pd->edges){
+		for(Edge* e:pd->edges){
 			file << e->x << endl;
 			file << e->y << endl;
 			file << e->s << endl;
@@ -2968,7 +3409,7 @@ void PhysicalDesign::writeGraphFile(){
 
 	}
 
-	for(Node_ptr devNode:inputGrid.nodes){
+	for(Node* devNode:inputGrid.nodes){
 		if(!devNode->isDev)
 			continue;
 
@@ -2980,7 +3421,7 @@ void PhysicalDesign::writeGraphFile(){
 		int devHorValue = ILPresults[devIsHor];
 
 		if(devHorValue == 1){
-			for(Edge_ptr e:horDev->edges){
+			for(Edge* e:horDev->edges){
 				file << e->x << endl;
 				file << e->y << endl;
 				file << e->s << endl;
@@ -2988,7 +3429,7 @@ void PhysicalDesign::writeGraphFile(){
 			}
 		}
 		else{
-			for(Edge_ptr e:verDev->edges){
+			for(Edge* e:verDev->edges){
 				file << e->x << endl;
 				file << e->y << endl;
 				file << e->s << endl;
@@ -3005,10 +3446,10 @@ void PhysicalDesign::writeGraphFile(){
 	file.open("nodePhyDesign.txt");
 
 
-	for(Node_ptr n:inputGrid.nodes){
+	for(Node* n:inputGrid.nodes){
 		if(n->isDev)
 				continue;
-		for(Node_ptr nTo:outputGrid.nodes){
+		for(Node* nTo:outputGrid.nodes){
 			string nodeUNode = nodeUseNode(n,nTo);
 			int edgeUsedValue = ILPresults[nodeUNode];
 			if(edgeUsedValue == 0)
@@ -3023,8 +3464,8 @@ void PhysicalDesign::writeGraphFile(){
 
 	}
 	for(Pd_ptr pd:phyDevs){
-		Node_ptr n0 = pd->port0Node;
-		Node_ptr n1 = pd->port1Node;
+		Node* n0 = pd->port0Node;
+		Node* n1 = pd->port1Node;
 		file<<n0->x << endl;
 		file << n0 ->y << endl;
 		file<< n1->x << endl;
@@ -3042,51 +3483,54 @@ void PhysicalDesign::fromGridToSqaures(){
 
 
 
-	for(int i = 0; i <= inputGrid.sizeX -2; i++ ){
-		for(int j = 0; j <= inputGrid.sizeY -2; j++){
+	for(int i = inputGrid.left; i <= inputGrid.right-1; i++ ){
+		for(int j = inputGrid.down; j <= inputGrid.up-1; j++){
 			Sqr_ptr sqr(new Square());
-			squaresInput.push_back(sqr);
-			hashInputSquare[hash2Int(i,j)] = sqr;
-			sqr->rowNum = j;
+
 			sqr->columnNum = i;
+			sqr->rowNum = j;
+			sqr->left = i;
+			sqr->right = i + 1;
+			sqr->down = j;
+			sqr->up = j+1;
 
-			Node_ptr n0 = inputGrid.getNode(i,j);
-			Node_ptr n1 = inputGrid.getNode(i+1,j);
-			Node_ptr n2 = inputGrid.getNode(i+1,j+1);
-			Node_ptr n3 = inputGrid.getNode(i,j+1);
 
-			sqr->nodes.push_back(n0);
-			sqr->nodes.push_back(n1);
-			sqr->nodes.push_back(n2);
-			sqr->nodes.push_back(n3);
+			cout << "this is a  good sign" << endl;
 
-			Edge_ptr e0 = inputGrid.getEdge(i,j,i+1,j);
-			Edge_ptr e1 = inputGrid.getEdge(i+1,j,i+1,j+1);
-			Edge_ptr e2 = inputGrid.getEdge(i,j+1,i+1,j+1);
-			Edge_ptr e3 = inputGrid.getEdge(i,j,i,j+1);
+			for(Node* n:inputGrid.nodes){
+				if(n->x >= i && n->x <= i + 1 && n->y >= j && n->y <= j+1)
+					sqr->nodes.push_back(n);
+			}
 
-			sqr->edges.push_back(e0);
-			sqr->edges.push_back(e1);
-			sqr->edges.push_back(e2);
-			sqr->edges.push_back(e3);
 
-			sqr->setMinXY(STORAGESIZE,STORAGESIZE);
+
+			for(Edge* e:inputGrid.edges){
+				if(e->x >= i && e->x <= i + 1&& e->y >= j && e->y <= j + 1 &&
+						e->s >= i && e->s <=i+1 && e->t >= j && e->t <= j+1
+				){
+					cout << "sqr" << i << j << "is adding edge" ;
+					e->printMyself();
+					sqr->edges.push_back(e);
+				}
+			}
+
+
+			sqr->setMinXY(STORAGESIZE + 2,STORAGESIZE + 2);
 			inputGrid.sqaureRankX[hash2Int(i,j)] = STORAGESIZE;
 			cout << inputGrid.sqaureRankX[hash2Int(i,j)] << endl;
 			inputGrid.sqaureRankY[hash2Int(i,j)] = STORAGESIZE;
-
+			squaresInput.push_back(sqr);
+			hashInputSquare[hash2Int(i,j)] = sqr;
 		}
 	}
 
-	for(int i = 0; i <= inputGrid.sizeX -2; i++ ){
-			for(int j = 0; j <= inputGrid.sizeY -2; j++){
-
+	for(int i = inputGrid.left; i <= inputGrid.right-1; i++ ){
+		for(int j = inputGrid.down; j <= inputGrid.up-1; j++){
 				Sqr_ptr sqr = hashInputSquare[hash2Int(i,j)];
 				cout << "sqr " << i << j << " size x is " << sqr->minX;
 				cout << "sqr " << i << j << " size y is " << sqr->minY;
-
-			}
 		}
+	}
 
 
 }

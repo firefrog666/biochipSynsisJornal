@@ -3,6 +3,7 @@
 
 #include "../header/device.h"
 #include "../header/channel.h"
+#include "../header/Algorithm.h"
 #include <vector>
 #include <algorithm>
 #include <boost/shared_ptr.hpp>
@@ -16,32 +17,33 @@
 #include <map>
 
 
-typedef boost::shared_ptr<Op> Op_ptr;
-typedef boost::shared_ptr<Device> Dev_ptr;
-typedef boost::shared_ptr<Channel> Ch_ptr;
+
+
+
 using namespace std;
+
 
 class ListAlgorithm{
 
 
 
 private:
-	vector<Op_ptr> priorityList;
-	vector<Dev_ptr> availableDevices;
-	vector<string> ILP;
+	vector<Op*> priorityList;
+	vector<Device*> availableDevices;
+	vector<string> constraints;
 	vector<string> OBJ;
 	vector<string> varName;
 	vector<string> varType;
 
 	int opCount = 0;
 public:
-	vector<Op_ptr> ops;
-	vector<Dev_ptr> devices;
-	vector<Ch_ptr> channels;
+	vector<Op*> ops;
+	vector<Device*> devices;
+	vector<Channel*> channels;
 
-	vector<Op_ptr> concise_ops;
-	vector<Dev_ptr> concise_devs;
-	vector<Ch_ptr> concise_channels;
+	vector<Op*> concise_ops;
+	vector<Device*> concise_devs;
+	vector<Channel*> concise_channels;
 	vector<int> channels_count;
 
 
@@ -63,10 +65,15 @@ public:
     void readFromXml(const char* xmlFilename);
     void readFromSolver(map<string,int> const & input);
     void writeTimeline();
+    void howManyStore();
 
 	void getConciseSeq();
     void listAlgorithm();
     void genILP();
+
+    void oldVersion();
+
+
 
 
 

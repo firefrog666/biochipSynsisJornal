@@ -57,7 +57,7 @@ ILP(char* argv)
     GRBEnv env = GRBEnv();
     GRBModel model = GRBModel(env, argv);
     //model.getEnv().set(GRB_DoubleParam_IntFeasTol,1e-6);
-   model.getEnv().set(GRB_DoubleParam_Heuristics,0.95);
+   //model.getEnv().set(GRB_DoubleParam_Heuristics,0.95);
     model.getEnv().set(GRB_DoubleParam_TimeLimit,timeMax);
     model.getEnv().set(GRB_DoubleParam_MIPGap, ilpGap);
     vars = model.getVars();
@@ -101,7 +101,7 @@ ILP(char* argv)
           	  	varNames << varName << "\n";
           	  	varResults << varName << "     "<< results[varName] << "\n";
 
-          	  	cout << vars[i].get(GRB_StringAttr_VarName) << " " << vars[i].get(GRB_DoubleAttr_X) << endl;
+          	  	//cout << vars[i].get(GRB_StringAttr_VarName) << " " << vars[i].get(GRB_DoubleAttr_X) << endl;
 
             }
 
@@ -134,7 +134,7 @@ ILP(char* argv)
          	  	string varName = vars[i].get(GRB_StringAttr_VarName);
          	  	results[varName] = vars[i].get(GRB_DoubleAttr_X);
 
-         	  	cout << vars[i].get(GRB_StringAttr_VarName) << " " << vars[i].get(GRB_DoubleAttr_X) << endl;
+         	  	//cout << vars[i].get(GRB_StringAttr_VarName) << " " << vars[i].get(GRB_DoubleAttr_X) << endl;
 
            }
            ofstream varNames;

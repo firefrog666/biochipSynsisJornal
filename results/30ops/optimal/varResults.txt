@@ -1,1696 +1,1696 @@
-ex0y0s1t0U = 0
-ex0y0s0t1U = 0
-ex0y1s1t1U = 0
-ex0y1s0t2U = 0
-ex0y2s1t2U = 1
-ex0y2s0t3U = 0
-ex0y3s1t3U = 0
-ex1y0s2t0U = 0
-ex1y0s1t1U = 0
-ex1y1s2t1U = 1
-ex1y1s1t2U = 1
-ex1y2s2t2U = 1
-ex1y2s1t3U = 0
-ex1y3s2t3U = 0
-ex2y0s3t0U = 0
-ex2y0s2t1U = 0
-ex2y1s3t1U = 1
-ex2y1s2t2U = 1
-ex2y2s3t2U = 1
-ex2y2s2t3U = 1
-ex2y3s3t3U = 0
-ex3y0s3t1U = 0
-ex3y1s3t2U = 0
-ex3y2s3t3U = 0
-d1Bindnx0y0 = 0
-d1Bindnx0y1 = 0
-d1Bindnx0y2 = 0
-d1Bindnx0y3 = 0
-d1Bindnx1y0 = 0
-d1Bindnx1y1 = 0
-d1Bindnx1y2 = 0
-d1Bindnx1y3 = 0
-d1Bindnx2y0 = 0
-d1Bindnx2y1 = 0
-d1Bindnx2y2 = 0
-d1Bindnx2y3 = 1
-d1Bindnx3y0 = 0
-d1Bindnx3y1 = 0
-d1Bindnx3y2 = 0
-d1Bindnx3y3 = 0
-d4Bindnx0y0 = 0
-d4Bindnx0y1 = 0
-d4Bindnx0y2 = 0
-d4Bindnx0y3 = 0
-d4Bindnx1y0 = 0
-d4Bindnx1y1 = 1
-d4Bindnx1y2 = 0
-d4Bindnx1y3 = 0
-d4Bindnx2y0 = 0
-d4Bindnx2y1 = 0
-d4Bindnx2y2 = 0
-d4Bindnx2y3 = 0
-d4Bindnx3y0 = 0
-d4Bindnx3y1 = 0
-d4Bindnx3y2 = 0
-d4Bindnx3y3 = 0
-d2Bindnx0y0 = 0
-d2Bindnx0y1 = 0
-d2Bindnx0y2 = 0
-d2Bindnx0y3 = 0
-d2Bindnx1y0 = 0
-d2Bindnx1y1 = 0
-d2Bindnx1y2 = 0
-d2Bindnx1y3 = 0
-d2Bindnx2y0 = 0
-d2Bindnx2y1 = 0
-d2Bindnx2y2 = 0
-d2Bindnx2y3 = 0
-d2Bindnx3y0 = 0
-d2Bindnx3y1 = 0
-d2Bindnx3y2 = 1
-d2Bindnx3y3 = 0
-d3Bindnx0y0 = 0
-d3Bindnx0y1 = 0
-d3Bindnx0y2 = 1
-d3Bindnx0y3 = 0
-d3Bindnx1y0 = 0
-d3Bindnx1y1 = 0
-d3Bindnx1y2 = 0
-d3Bindnx1y3 = 0
-d3Bindnx2y0 = 0
-d3Bindnx2y1 = 0
-d3Bindnx2y2 = 0
-d3Bindnx2y3 = 0
-d3Bindnx3y0 = 0
-d3Bindnx3y1 = 0
-d3Bindnx3y2 = 0
-d3Bindnx3y3 = 0
-d5Bindnx0y0 = 0
-d5Bindnx0y1 = 0
-d5Bindnx0y2 = 0
-d5Bindnx0y3 = 0
-d5Bindnx1y0 = 0
-d5Bindnx1y1 = 0
-d5Bindnx1y2 = 0
-d5Bindnx1y3 = 0
-d5Bindnx2y0 = 0
-d5Bindnx2y1 = 0
-d5Bindnx2y2 = 0
-d5Bindnx2y3 = 0
-d5Bindnx3y0 = 0
-d5Bindnx3y1 = 1
-d5Bindnx3y2 = 0
-d5Bindnx3y3 = 0
-co1o12Uex0y0s1t0 = 0
-co1o12Uex0y0s0t1 = 0
-co1o12Uex0y1s1t1 = 0
-co1o12Uex0y1s0t2 = 0
-co1o12Uex0y2s1t2 = 0
-co1o12Uex0y2s0t3 = 0
-co1o12Uex0y3s1t3 = 0
-co1o12Uex1y0s2t0 = 0
-co1o12Uex1y0s1t1 = 0
-co1o12Uex1y1s2t1 = 0
-co1o12Uex1y1s1t2 = 0
-co1o12Uex1y2s2t2 = 0
-co1o12Uex1y2s1t3 = 0
-co1o12Uex1y3s2t3 = 0
-co1o12Uex2y0s3t0 = 0
-co1o12Uex2y0s2t1 = 0
-co1o12Uex2y1s3t1 = 0
-co1o12Uex2y1s2t2 = 0
-co1o12Uex2y2s3t2 = 1
-co1o12Uex2y2s2t3 = 1
-co1o12Uex2y3s3t3 = 0
-co1o12Uex3y0s3t1 = 0
-co1o12Uex3y1s3t2 = 0
-co1o12Uex3y2s3t3 = 0
-co3o14Uex0y0s1t0 = 0
-co3o14Uex0y0s0t1 = 0
-co3o14Uex0y1s1t1 = 0
-co3o14Uex0y1s0t2 = 0
-co3o14Uex0y2s1t2 = 0
-co3o14Uex0y2s0t3 = 0
-co3o14Uex0y3s1t3 = 0
-co3o14Uex1y0s2t0 = 0
-co3o14Uex1y0s1t1 = 0
-co3o14Uex1y1s2t1 = 1
-co3o14Uex1y1s1t2 = 0
-co3o14Uex1y2s2t2 = 0
-co3o14Uex1y2s1t3 = 0
-co3o14Uex1y3s2t3 = 0
-co3o14Uex2y0s3t0 = 0
-co3o14Uex2y0s2t1 = 0
-co3o14Uex2y1s3t1 = 0
-co3o14Uex2y1s2t2 = 1
-co3o14Uex2y2s3t2 = 1
-co3o14Uex2y2s2t3 = 0
-co3o14Uex2y3s3t3 = 0
-co3o14Uex3y0s3t1 = 0
-co3o14Uex3y1s3t2 = 0
-co3o14Uex3y2s3t3 = 0
-co4o14Uex0y0s1t0 = 0
-co4o14Uex0y0s0t1 = 0
-co4o14Uex0y1s1t1 = 0
-co4o14Uex0y1s0t2 = 0
-co4o14Uex0y2s1t2 = 1
-co4o14Uex0y2s0t3 = 0
-co4o14Uex0y3s1t3 = 0
-co4o14Uex1y0s2t0 = 0
-co4o14Uex1y0s1t1 = 0
-co4o14Uex1y1s2t1 = 0
-co4o14Uex1y1s1t2 = 1
-co4o14Uex1y2s2t2 = 0
-co4o14Uex1y2s1t3 = 0
-co4o14Uex1y3s2t3 = 0
-co4o14Uex2y0s3t0 = 0
-co4o14Uex2y0s2t1 = 0
-co4o14Uex2y1s3t1 = 0
-co4o14Uex2y1s2t2 = 0
-co4o14Uex2y2s3t2 = 0
-co4o14Uex2y2s2t3 = 0
-co4o14Uex2y3s3t3 = 0
-co4o14Uex3y0s3t1 = 0
-co4o14Uex3y1s3t2 = 0
-co4o14Uex3y2s3t3 = 0
-co5o15Uex0y0s1t0 = 0
-co5o15Uex0y0s0t1 = 0
-co5o15Uex0y1s1t1 = 0
-co5o15Uex0y1s0t2 = 0
-co5o15Uex0y2s1t2 = 1
-co5o15Uex0y2s0t3 = 0
-co5o15Uex0y3s1t3 = 0
-co5o15Uex1y0s2t0 = 0
-co5o15Uex1y0s1t1 = 0
-co5o15Uex1y1s2t1 = 0
-co5o15Uex1y1s1t2 = 1
-co5o15Uex1y2s2t2 = 0
-co5o15Uex1y2s1t3 = 0
-co5o15Uex1y3s2t3 = 0
-co5o15Uex2y0s3t0 = 0
-co5o15Uex2y0s2t1 = 0
-co5o15Uex2y1s3t1 = 0
-co5o15Uex2y1s2t2 = 0
-co5o15Uex2y2s3t2 = 0
-co5o15Uex2y2s2t3 = 0
-co5o15Uex2y3s3t3 = 0
-co5o15Uex3y0s3t1 = 0
-co5o15Uex3y1s3t2 = 0
-co5o15Uex3y2s3t3 = 0
-co6o16Uex0y0s1t0 = 0
-co6o16Uex0y0s0t1 = 0
-co6o16Uex0y1s1t1 = 0
-co6o16Uex0y1s0t2 = 0
-co6o16Uex0y2s1t2 = 1
-co6o16Uex0y2s0t3 = 0
-co6o16Uex0y3s1t3 = 0
-co6o16Uex1y0s2t0 = 0
-co6o16Uex1y0s1t1 = 0
-co6o16Uex1y1s2t1 = 0
-co6o16Uex1y1s1t2 = 1
-co6o16Uex1y2s2t2 = 0
-co6o16Uex1y2s1t3 = 0
-co6o16Uex1y3s2t3 = 0
-co6o16Uex2y0s3t0 = 0
-co6o16Uex2y0s2t1 = 0
-co6o16Uex2y1s3t1 = 0
-co6o16Uex2y1s2t2 = 0
-co6o16Uex2y2s3t2 = 0
-co6o16Uex2y2s2t3 = 0
-co6o16Uex2y3s3t3 = 0
-co6o16Uex3y0s3t1 = 0
-co6o16Uex3y1s3t2 = 0
-co6o16Uex3y2s3t3 = 0
-co7o16Uex0y0s1t0 = 0
-co7o16Uex0y0s0t1 = 0
-co7o16Uex0y1s1t1 = 0
-co7o16Uex0y1s0t2 = 0
-co7o16Uex0y2s1t2 = 0
-co7o16Uex0y2s0t3 = 0
-co7o16Uex0y3s1t3 = 0
-co7o16Uex1y0s2t0 = 0
-co7o16Uex1y0s1t1 = 0
-co7o16Uex1y1s2t1 = 0
-co7o16Uex1y1s1t2 = 1
-co7o16Uex1y2s2t2 = 1
-co7o16Uex1y2s1t3 = 0
-co7o16Uex1y3s2t3 = 0
-co7o16Uex2y0s3t0 = 0
-co7o16Uex2y0s2t1 = 0
-co7o16Uex2y1s3t1 = 0
-co7o16Uex2y1s2t2 = 0
-co7o16Uex2y2s3t2 = 0
-co7o16Uex2y2s2t3 = 1
-co7o16Uex2y3s3t3 = 0
-co7o16Uex3y0s3t1 = 0
-co7o16Uex3y1s3t2 = 0
-co7o16Uex3y2s3t3 = 0
-co8o17Uex0y0s1t0 = 0
-co8o17Uex0y0s0t1 = 0
-co8o17Uex0y1s1t1 = 0
-co8o17Uex0y1s0t2 = 0
-co8o17Uex0y2s1t2 = 0
-co8o17Uex0y2s0t3 = 0
-co8o17Uex0y3s1t3 = 0
-co8o17Uex1y0s2t0 = 0
-co8o17Uex1y0s1t1 = 0
-co8o17Uex1y1s2t1 = 1
-co8o17Uex1y1s1t2 = 0
-co8o17Uex1y2s2t2 = 0
-co8o17Uex1y2s1t3 = 0
-co8o17Uex1y3s2t3 = 0
-co8o17Uex2y0s3t0 = 0
-co8o17Uex2y0s2t1 = 0
-co8o17Uex2y1s3t1 = 0
-co8o17Uex2y1s2t2 = 1
-co8o17Uex2y2s3t2 = 1
-co8o17Uex2y2s2t3 = 0
-co8o17Uex2y3s3t3 = 0
-co8o17Uex3y0s3t1 = 0
-co8o17Uex3y1s3t2 = 0
-co8o17Uex3y2s3t3 = 0
-co10o18Uex0y0s1t0 = 0
-co10o18Uex0y0s0t1 = 0
-co10o18Uex0y1s1t1 = 0
-co10o18Uex0y1s0t2 = 0
-co10o18Uex0y2s1t2 = 0
-co10o18Uex0y2s0t3 = 0
-co10o18Uex0y3s1t3 = 0
-co10o18Uex1y0s2t0 = 0
-co10o18Uex1y0s1t1 = 0
-co10o18Uex1y1s2t1 = 1
-co10o18Uex1y1s1t2 = 0
-co10o18Uex1y2s2t2 = 0
-co10o18Uex1y2s1t3 = 0
-co10o18Uex1y3s2t3 = 0
-co10o18Uex2y0s3t0 = 0
-co10o18Uex2y0s2t1 = 0
-co10o18Uex2y1s3t1 = 0
-co10o18Uex2y1s2t2 = 1
-co10o18Uex2y2s3t2 = 1
-co10o18Uex2y2s2t3 = 0
-co10o18Uex2y3s3t3 = 0
-co10o18Uex3y0s3t1 = 0
-co10o18Uex3y1s3t2 = 0
-co10o18Uex3y2s3t3 = 0
-co11o19Uex0y0s1t0 = 0
-co11o19Uex0y0s0t1 = 0
-co11o19Uex0y1s1t1 = 0
-co11o19Uex0y1s0t2 = 0
-co11o19Uex0y2s1t2 = 0
-co11o19Uex0y2s0t3 = 0
-co11o19Uex0y3s1t3 = 0
-co11o19Uex1y0s2t0 = 0
-co11o19Uex1y0s1t1 = 0
-co11o19Uex1y1s2t1 = 0
-co11o19Uex1y1s1t2 = 0
-co11o19Uex1y2s2t2 = 0
-co11o19Uex1y2s1t3 = 0
-co11o19Uex1y3s2t3 = 0
-co11o19Uex2y0s3t0 = 0
-co11o19Uex2y0s2t1 = 0
-co11o19Uex2y1s3t1 = 1
-co11o19Uex2y1s2t2 = 1
-co11o19Uex2y2s3t2 = 0
-co11o19Uex2y2s2t3 = 1
-co11o19Uex2y3s3t3 = 0
-co11o19Uex3y0s3t1 = 0
-co11o19Uex3y1s3t2 = 0
-co11o19Uex3y2s3t3 = 0
-co12o20Uex0y0s1t0 = 0
-co12o20Uex0y0s0t1 = 0
-co12o20Uex0y1s1t1 = 0
-co12o20Uex0y1s0t2 = 0
-co12o20Uex0y2s1t2 = 0
-co12o20Uex0y2s0t3 = 0
-co12o20Uex0y3s1t3 = 0
-co12o20Uex1y0s2t0 = 0
-co12o20Uex1y0s1t1 = 0
-co12o20Uex1y1s2t1 = 0
-co12o20Uex1y1s1t2 = 0
-co12o20Uex1y2s2t2 = 0
-co12o20Uex1y2s1t3 = 0
-co12o20Uex1y3s2t3 = 0
-co12o20Uex2y0s3t0 = 0
-co12o20Uex2y0s2t1 = 0
-co12o20Uex2y1s3t1 = 0
-co12o20Uex2y1s2t2 = 0
-co12o20Uex2y2s3t2 = 1
-co12o20Uex2y2s2t3 = 1
-co12o20Uex2y3s3t3 = 0
-co12o20Uex3y0s3t1 = 0
-co12o20Uex3y1s3t2 = 0
-co12o20Uex3y2s3t3 = 0
-co13o20Uex0y0s1t0 = 0
-co13o20Uex0y0s0t1 = 0
-co13o20Uex0y1s1t1 = 0
-co13o20Uex0y1s0t2 = 0
-co13o20Uex0y2s1t2 = 1
-co13o20Uex0y2s0t3 = 0
-co13o20Uex0y3s1t3 = 0
-co13o20Uex1y0s2t0 = 0
-co13o20Uex1y0s1t1 = 0
-co13o20Uex1y1s2t1 = 0
-co13o20Uex1y1s1t2 = 0
-co13o20Uex1y2s2t2 = 1
-co13o20Uex1y2s1t3 = 0
-co13o20Uex1y3s2t3 = 0
-co13o20Uex2y0s3t0 = 0
-co13o20Uex2y0s2t1 = 0
-co13o20Uex2y1s3t1 = 0
-co13o20Uex2y1s2t2 = 0
-co13o20Uex2y2s3t2 = 0
-co13o20Uex2y2s2t3 = 1
-co13o20Uex2y3s3t3 = 0
-co13o20Uex3y0s3t1 = 0
-co13o20Uex3y1s3t2 = 0
-co13o20Uex3y2s3t3 = 0
-co14o21Uex0y0s1t0 = 0
-co14o21Uex0y0s0t1 = 0
-co14o21Uex0y1s1t1 = 0
-co14o21Uex0y1s0t2 = 0
-co14o21Uex0y2s1t2 = 0
-co14o21Uex0y2s0t3 = 0
-co14o21Uex0y3s1t3 = 0
-co14o21Uex1y0s2t0 = 0
-co14o21Uex1y0s1t1 = 0
-co14o21Uex1y1s2t1 = 1
-co14o21Uex1y1s1t2 = 0
-co14o21Uex1y2s2t2 = 0
-co14o21Uex1y2s1t3 = 0
-co14o21Uex1y3s2t3 = 0
-co14o21Uex2y0s3t0 = 0
-co14o21Uex2y0s2t1 = 0
-co14o21Uex2y1s3t1 = 1
-co14o21Uex2y1s2t2 = 0
-co14o21Uex2y2s3t2 = 0
-co14o21Uex2y2s2t3 = 0
-co14o21Uex2y3s3t3 = 0
-co14o21Uex3y0s3t1 = 0
-co14o21Uex3y1s3t2 = 0
-co14o21Uex3y2s3t3 = 0
-co15o22Uex0y0s1t0 = 0
-co15o22Uex0y0s0t1 = 0
-co15o22Uex0y1s1t1 = 0
-co15o22Uex0y1s0t2 = 0
-co15o22Uex0y2s1t2 = 1
-co15o22Uex0y2s0t3 = 0
-co15o22Uex0y3s1t3 = 0
-co15o22Uex1y0s2t0 = 0
-co15o22Uex1y0s1t1 = 0
-co15o22Uex1y1s2t1 = 0
-co15o22Uex1y1s1t2 = 0
-co15o22Uex1y2s2t2 = 1
-co15o22Uex1y2s1t3 = 0
-co15o22Uex1y3s2t3 = 0
-co15o22Uex2y0s3t0 = 0
-co15o22Uex2y0s2t1 = 0
-co15o22Uex2y1s3t1 = 0
-co15o22Uex2y1s2t2 = 0
-co15o22Uex2y2s3t2 = 0
-co15o22Uex2y2s2t3 = 1
-co15o22Uex2y3s3t3 = 0
-co15o22Uex3y0s3t1 = 0
-co15o22Uex3y1s3t2 = 0
-co15o22Uex3y2s3t3 = 0
-co16o23Uex0y0s1t0 = 0
-co16o23Uex0y0s0t1 = 0
-co16o23Uex0y1s1t1 = 0
-co16o23Uex0y1s0t2 = 0
-co16o23Uex0y2s1t2 = 0
-co16o23Uex0y2s0t3 = 0
-co16o23Uex0y3s1t3 = 0
-co16o23Uex1y0s2t0 = 0
-co16o23Uex1y0s1t1 = 0
-co16o23Uex1y1s2t1 = 1
-co16o23Uex1y1s1t2 = 0
-co16o23Uex1y2s2t2 = 0
-co16o23Uex1y2s1t3 = 0
-co16o23Uex1y3s2t3 = 0
-co16o23Uex2y0s3t0 = 0
-co16o23Uex2y0s2t1 = 0
-co16o23Uex2y1s3t1 = 0
-co16o23Uex2y1s2t2 = 1
-co16o23Uex2y2s3t2 = 0
-co16o23Uex2y2s2t3 = 1
-co16o23Uex2y3s3t3 = 0
-co16o23Uex3y0s3t1 = 0
-co16o23Uex3y1s3t2 = 0
-co16o23Uex3y2s3t3 = 0
-co18o24Uex0y0s1t0 = 0
-co18o24Uex0y0s0t1 = 0
-co18o24Uex0y1s1t1 = 0
-co18o24Uex0y1s0t2 = 0
-co18o24Uex0y2s1t2 = 0
-co18o24Uex0y2s0t3 = 0
-co18o24Uex0y3s1t3 = 0
-co18o24Uex1y0s2t0 = 0
-co18o24Uex1y0s1t1 = 0
-co18o24Uex1y1s2t1 = 1
-co18o24Uex1y1s1t2 = 0
-co18o24Uex1y2s2t2 = 0
-co18o24Uex1y2s1t3 = 0
-co18o24Uex1y3s2t3 = 0
-co18o24Uex2y0s3t0 = 0
-co18o24Uex2y0s2t1 = 0
-co18o24Uex2y1s3t1 = 0
-co18o24Uex2y1s2t2 = 1
-co18o24Uex2y2s3t2 = 1
-co18o24Uex2y2s2t3 = 0
-co18o24Uex2y3s3t3 = 0
-co18o24Uex3y0s3t1 = 0
-co18o24Uex3y1s3t2 = 0
-co18o24Uex3y2s3t3 = 0
-co19o24Uex0y0s1t0 = 0
-co19o24Uex0y0s0t1 = 0
-co19o24Uex0y1s1t1 = 0
-co19o24Uex0y1s0t2 = 0
-co19o24Uex0y2s1t2 = 0
-co19o24Uex0y2s0t3 = 0
-co19o24Uex0y3s1t3 = 0
-co19o24Uex1y0s2t0 = 0
-co19o24Uex1y0s1t1 = 0
-co19o24Uex1y1s2t1 = 0
-co19o24Uex1y1s1t2 = 0
-co19o24Uex1y2s2t2 = 0
-co19o24Uex1y2s1t3 = 0
-co19o24Uex1y3s2t3 = 0
-co19o24Uex2y0s3t0 = 0
-co19o24Uex2y0s2t1 = 0
-co19o24Uex2y1s3t1 = 1
-co19o24Uex2y1s2t2 = 1
-co19o24Uex2y2s3t2 = 1
-co19o24Uex2y2s2t3 = 0
-co19o24Uex2y3s3t3 = 0
-co19o24Uex3y0s3t1 = 0
-co19o24Uex3y1s3t2 = 0
-co19o24Uex3y2s3t3 = 0
-co20o25Uex0y0s1t0 = 0
-co20o25Uex0y0s0t1 = 0
-co20o25Uex0y1s1t1 = 0
-co20o25Uex0y1s0t2 = 0
-co20o25Uex0y2s1t2 = 0
-co20o25Uex0y2s0t3 = 0
-co20o25Uex0y3s1t3 = 0
-co20o25Uex1y0s2t0 = 0
-co20o25Uex1y0s1t1 = 0
-co20o25Uex1y1s2t1 = 0
-co20o25Uex1y1s1t2 = 0
-co20o25Uex1y2s2t2 = 0
-co20o25Uex1y2s1t3 = 0
-co20o25Uex1y3s2t3 = 0
-co20o25Uex2y0s3t0 = 0
-co20o25Uex2y0s2t1 = 0
-co20o25Uex2y1s3t1 = 0
-co20o25Uex2y1s2t2 = 0
-co20o25Uex2y2s3t2 = 1
-co20o25Uex2y2s2t3 = 1
-co20o25Uex2y3s3t3 = 0
-co20o25Uex3y0s3t1 = 0
-co20o25Uex3y1s3t2 = 0
-co20o25Uex3y2s3t3 = 0
-co21o25Uex0y0s1t0 = 0
-co21o25Uex0y0s0t1 = 0
-co21o25Uex0y1s1t1 = 0
-co21o25Uex0y1s0t2 = 0
-co21o25Uex0y2s1t2 = 0
-co21o25Uex0y2s0t3 = 0
-co21o25Uex0y3s1t3 = 0
-co21o25Uex1y0s2t0 = 0
-co21o25Uex1y0s1t1 = 0
-co21o25Uex1y1s2t1 = 0
-co21o25Uex1y1s1t2 = 0
-co21o25Uex1y2s2t2 = 0
-co21o25Uex1y2s1t3 = 0
-co21o25Uex1y3s2t3 = 0
-co21o25Uex2y0s3t0 = 0
-co21o25Uex2y0s2t1 = 0
-co21o25Uex2y1s3t1 = 1
-co21o25Uex2y1s2t2 = 1
-co21o25Uex2y2s3t2 = 1
-co21o25Uex2y2s2t3 = 0
-co21o25Uex2y3s3t3 = 0
-co21o25Uex3y0s3t1 = 0
-co21o25Uex3y1s3t2 = 0
-co21o25Uex3y2s3t3 = 0
-co22o26Uex0y0s1t0 = 0
-co22o26Uex0y0s0t1 = 0
-co22o26Uex0y1s1t1 = 0
-co22o26Uex0y1s0t2 = 0
-co22o26Uex0y2s1t2 = 0
-co22o26Uex0y2s0t3 = 0
-co22o26Uex0y3s1t3 = 0
-co22o26Uex1y0s2t0 = 0
-co22o26Uex1y0s1t1 = 0
-co22o26Uex1y1s2t1 = 1
-co22o26Uex1y1s1t2 = 0
-co22o26Uex1y2s2t2 = 0
-co22o26Uex1y2s1t3 = 0
-co22o26Uex1y3s2t3 = 0
-co22o26Uex2y0s3t0 = 0
-co22o26Uex2y0s2t1 = 0
-co22o26Uex2y1s3t1 = 0
-co22o26Uex2y1s2t2 = 1
-co22o26Uex2y2s3t2 = 0
-co22o26Uex2y2s2t3 = 1
-co22o26Uex2y3s3t3 = 0
-co22o26Uex3y0s3t1 = 0
-co22o26Uex3y1s3t2 = 0
-co22o26Uex3y2s3t3 = 0
-co23o26Uex0y0s1t0 = 0
-co23o26Uex0y0s0t1 = 0
-co23o26Uex0y1s1t1 = 0
-co23o26Uex0y1s0t2 = 0
-co23o26Uex0y2s1t2 = 0
-co23o26Uex0y2s0t3 = 0
-co23o26Uex0y3s1t3 = 0
-co23o26Uex1y0s2t0 = 0
-co23o26Uex1y0s1t1 = 0
-co23o26Uex1y1s2t1 = 1
-co23o26Uex1y1s1t2 = 0
-co23o26Uex1y2s2t2 = 0
-co23o26Uex1y2s1t3 = 0
-co23o26Uex1y3s2t3 = 0
-co23o26Uex2y0s3t0 = 0
-co23o26Uex2y0s2t1 = 0
-co23o26Uex2y1s3t1 = 0
-co23o26Uex2y1s2t2 = 1
-co23o26Uex2y2s3t2 = 0
-co23o26Uex2y2s2t3 = 1
-co23o26Uex2y3s3t3 = 0
-co23o26Uex3y0s3t1 = 0
-co23o26Uex3y1s3t2 = 0
-co23o26Uex3y2s3t3 = 0
-co24o27Uex0y0s1t0 = 0
-co24o27Uex0y0s0t1 = 0
-co24o27Uex0y1s1t1 = 0
-co24o27Uex0y1s0t2 = 0
-co24o27Uex0y2s1t2 = 0
-co24o27Uex0y2s0t3 = 0
-co24o27Uex0y3s1t3 = 0
-co24o27Uex1y0s2t0 = 0
-co24o27Uex1y0s1t1 = 0
-co24o27Uex1y1s2t1 = 1
-co24o27Uex1y1s1t2 = 0
-co24o27Uex1y2s2t2 = 0
-co24o27Uex1y2s1t3 = 0
-co24o27Uex1y3s2t3 = 0
-co24o27Uex2y0s3t0 = 0
-co24o27Uex2y0s2t1 = 0
-co24o27Uex2y1s3t1 = 0
-co24o27Uex2y1s2t2 = 1
-co24o27Uex2y2s3t2 = 1
-co24o27Uex2y2s2t3 = 0
-co24o27Uex2y3s3t3 = 0
-co24o27Uex3y0s3t1 = 0
-co24o27Uex3y1s3t2 = 0
-co24o27Uex3y2s3t3 = 0
-co25o28Uex0y0s1t0 = 0
-co25o28Uex0y0s0t1 = 0
-co25o28Uex0y1s1t1 = 0
-co25o28Uex0y1s0t2 = 0
-co25o28Uex0y2s1t2 = 0
-co25o28Uex0y2s0t3 = 0
-co25o28Uex0y3s1t3 = 0
-co25o28Uex1y0s2t0 = 0
-co25o28Uex1y0s1t1 = 0
-co25o28Uex1y1s2t1 = 0
-co25o28Uex1y1s1t2 = 0
-co25o28Uex1y2s2t2 = 0
-co25o28Uex1y2s1t3 = 0
-co25o28Uex1y3s2t3 = 0
-co25o28Uex2y0s3t0 = 0
-co25o28Uex2y0s2t1 = 0
-co25o28Uex2y1s3t1 = 0
-co25o28Uex2y1s2t2 = 0
-co25o28Uex2y2s3t2 = 1
-co25o28Uex2y2s2t3 = 1
-co25o28Uex2y3s3t3 = 0
-co25o28Uex3y0s3t1 = 0
-co25o28Uex3y1s3t2 = 0
-co25o28Uex3y2s3t3 = 0
-co26o28Uex0y0s1t0 = 0
-co26o28Uex0y0s0t1 = 0
-co26o28Uex0y1s1t1 = 0
-co26o28Uex0y1s0t2 = 0
-co26o28Uex0y2s1t2 = 0
-co26o28Uex0y2s0t3 = 0
-co26o28Uex0y3s1t3 = 0
-co26o28Uex1y0s2t0 = 0
-co26o28Uex1y0s1t1 = 0
-co26o28Uex1y1s2t1 = 1
-co26o28Uex1y1s1t2 = 0
-co26o28Uex1y2s2t2 = 0
-co26o28Uex1y2s1t3 = 0
-co26o28Uex1y3s2t3 = 0
-co26o28Uex2y0s3t0 = 0
-co26o28Uex2y0s2t1 = 0
-co26o28Uex2y1s3t1 = 0
-co26o28Uex2y1s2t2 = 1
-co26o28Uex2y2s3t2 = 0
-co26o28Uex2y2s2t3 = 1
-co26o28Uex2y3s3t3 = 0
-co26o28Uex3y0s3t1 = 0
-co26o28Uex3y1s3t2 = 0
-co26o28Uex3y2s3t3 = 0
-co28o29Uex0y0s1t0 = 0
-co28o29Uex0y0s0t1 = 0
-co28o29Uex0y1s1t1 = 0
-co28o29Uex0y1s0t2 = 0
-co28o29Uex0y2s1t2 = 0
-co28o29Uex0y2s0t3 = 0
-co28o29Uex0y3s1t3 = 0
-co28o29Uex1y0s2t0 = 0
-co28o29Uex1y0s1t1 = 0
-co28o29Uex1y1s2t1 = 0
-co28o29Uex1y1s1t2 = 0
-co28o29Uex1y2s2t2 = 0
-co28o29Uex1y2s1t3 = 0
-co28o29Uex1y3s2t3 = 0
-co28o29Uex2y0s3t0 = 0
-co28o29Uex2y0s2t1 = 0
-co28o29Uex2y1s3t1 = 0
-co28o29Uex2y1s2t2 = 0
-co28o29Uex2y2s3t2 = 1
-co28o29Uex2y2s2t3 = 1
-co28o29Uex2y3s3t3 = 0
-co28o29Uex3y0s3t1 = 0
-co28o29Uex3y1s3t2 = 0
-co28o29Uex3y2s3t3 = 0
-co27o29Uex0y0s1t0 = 0
-co27o29Uex0y0s0t1 = 0
-co27o29Uex0y1s1t1 = 0
-co27o29Uex0y1s0t2 = 0
-co27o29Uex0y2s1t2 = 0
-co27o29Uex0y2s0t3 = 0
-co27o29Uex0y3s1t3 = 0
-co27o29Uex1y0s2t0 = 0
-co27o29Uex1y0s1t1 = 0
-co27o29Uex1y1s2t1 = 1
-co27o29Uex1y1s1t2 = 0
-co27o29Uex1y2s2t2 = 0
-co27o29Uex1y2s1t3 = 0
-co27o29Uex1y3s2t3 = 0
-co27o29Uex2y0s3t0 = 0
-co27o29Uex2y0s2t1 = 0
-co27o29Uex2y1s3t1 = 0
-co27o29Uex2y1s2t2 = 1
-co27o29Uex2y2s3t2 = 1
-co27o29Uex2y2s2t3 = 0
-co27o29Uex2y3s3t3 = 0
-co27o29Uex3y0s3t1 = 0
-co27o29Uex3y1s3t2 = 0
-co27o29Uex3y2s3t3 = 0
-co29o30Uex0y0s1t0 = 0
-co29o30Uex0y0s0t1 = 0
-co29o30Uex0y1s1t1 = 0
-co29o30Uex0y1s0t2 = 0
-co29o30Uex0y2s1t2 = 0
-co29o30Uex0y2s0t3 = 0
-co29o30Uex0y3s1t3 = 0
-co29o30Uex1y0s2t0 = 0
-co29o30Uex1y0s1t1 = 0
-co29o30Uex1y1s2t1 = 0
-co29o30Uex1y1s1t2 = 0
-co29o30Uex1y2s2t2 = 0
-co29o30Uex1y2s1t3 = 0
-co29o30Uex1y3s2t3 = 0
-co29o30Uex2y0s3t0 = 0
-co29o30Uex2y0s2t1 = 0
-co29o30Uex2y1s3t1 = 1
-co29o30Uex2y1s2t2 = 1
-co29o30Uex2y2s3t2 = 1
-co29o30Uex2y2s2t3 = 0
-co29o30Uex2y3s3t3 = 0
-co29o30Uex3y0s3t1 = 0
-co29o30Uex3y1s3t2 = 0
-co29o30Uex3y2s3t3 = 0
-co1o12Unx0y0 = 0
-co1o12Unx0y1 = 0
-co1o12Unx0y2 = 0
-co1o12Unx0y3 = 0
-co1o12Unx1y0 = 0
-co1o12Unx1y1 = 0
-co1o12Unx1y2 = 0
-co1o12Unx1y3 = 0
-co1o12Unx2y0 = 0
-co1o12Unx2y1 = 0
-co1o12Unx2y2 = 1
-co1o12Unx2y3 = 0
-co1o12Unx3y0 = 0
-co1o12Unx3y1 = 0
-co1o12Unx3y2 = 0
-co1o12Unx3y3 = 0
-co3o14Unx0y0 = 0
-co3o14Unx0y1 = 0
-co3o14Unx0y2 = 0
-co3o14Unx0y3 = 0
-co3o14Unx1y0 = 0
-co3o14Unx1y1 = 0
-co3o14Unx1y2 = 0
-co3o14Unx1y3 = 0
-co3o14Unx2y0 = 0
-co3o14Unx2y1 = 1
-co3o14Unx2y2 = 1
-co3o14Unx2y3 = 0
-co3o14Unx3y0 = 0
-co3o14Unx3y1 = 0
-co3o14Unx3y2 = 0
-co3o14Unx3y3 = 0
-co4o14Unx0y0 = 0
-co4o14Unx0y1 = 0
-co4o14Unx0y2 = 0
-co4o14Unx0y3 = 0
-co4o14Unx1y0 = 0
-co4o14Unx1y1 = 0
-co4o14Unx1y2 = 1
-co4o14Unx1y3 = 0
-co4o14Unx2y0 = 0
-co4o14Unx2y1 = 0
-co4o14Unx2y2 = 0
-co4o14Unx2y3 = 0
-co4o14Unx3y0 = 0
-co4o14Unx3y1 = 0
-co4o14Unx3y2 = 0
-co4o14Unx3y3 = 0
-co5o15Unx0y0 = 0
-co5o15Unx0y1 = 0
-co5o15Unx0y2 = 0
-co5o15Unx0y3 = 0
-co5o15Unx1y0 = 0
-co5o15Unx1y1 = 0
-co5o15Unx1y2 = 1
-co5o15Unx1y3 = 0
-co5o15Unx2y0 = 0
-co5o15Unx2y1 = 0
-co5o15Unx2y2 = 0
-co5o15Unx2y3 = 0
-co5o15Unx3y0 = 0
-co5o15Unx3y1 = 0
-co5o15Unx3y2 = 0
-co5o15Unx3y3 = 0
-co6o16Unx0y0 = 0
-co6o16Unx0y1 = 0
-co6o16Unx0y2 = 0
-co6o16Unx0y3 = 0
-co6o16Unx1y0 = 0
-co6o16Unx1y1 = 1
-co6o16Unx1y2 = 1
-co6o16Unx1y3 = 0
-co6o16Unx2y0 = 0
-co6o16Unx2y1 = 0
-co6o16Unx2y2 = 0
-co6o16Unx2y3 = 0
-co6o16Unx3y0 = 0
-co6o16Unx3y1 = 0
-co6o16Unx3y2 = 0
-co6o16Unx3y3 = 0
-co7o16Unx0y0 = 0
-co7o16Unx0y1 = 0
-co7o16Unx0y2 = 0
-co7o16Unx0y3 = 0
-co7o16Unx1y0 = 0
-co7o16Unx1y1 = 0
-co7o16Unx1y2 = 1
-co7o16Unx1y3 = 0
-co7o16Unx2y0 = 0
-co7o16Unx2y1 = 0
-co7o16Unx2y2 = 1
-co7o16Unx2y3 = 0
-co7o16Unx3y0 = 0
-co7o16Unx3y1 = 0
-co7o16Unx3y2 = 0
-co7o16Unx3y3 = 0
-co8o17Unx0y0 = 0
-co8o17Unx0y1 = 0
-co8o17Unx0y2 = 0
-co8o17Unx0y3 = 0
-co8o17Unx1y0 = 0
-co8o17Unx1y1 = 0
-co8o17Unx1y2 = 0
-co8o17Unx1y3 = 0
-co8o17Unx2y0 = 0
-co8o17Unx2y1 = 1
-co8o17Unx2y2 = 1
-co8o17Unx2y3 = 0
-co8o17Unx3y0 = 0
-co8o17Unx3y1 = 0
-co8o17Unx3y2 = 0
-co8o17Unx3y3 = 0
-co10o18Unx0y0 = 0
-co10o18Unx0y1 = 0
-co10o18Unx0y2 = 0
-co10o18Unx0y3 = 0
-co10o18Unx1y0 = 0
-co10o18Unx1y1 = 0
-co10o18Unx1y2 = 0
-co10o18Unx1y3 = 0
-co10o18Unx2y0 = 0
-co10o18Unx2y1 = 1
-co10o18Unx2y2 = 1
-co10o18Unx2y3 = 0
-co10o18Unx3y0 = 0
-co10o18Unx3y1 = 0
-co10o18Unx3y2 = 0
-co10o18Unx3y3 = 0
-co11o19Unx0y0 = 0
-co11o19Unx0y1 = 0
-co11o19Unx0y2 = 0
-co11o19Unx0y3 = 0
-co11o19Unx1y0 = 0
-co11o19Unx1y1 = 0
-co11o19Unx1y2 = 0
-co11o19Unx1y3 = 0
-co11o19Unx2y0 = 0
-co11o19Unx2y1 = 1
-co11o19Unx2y2 = 1
-co11o19Unx2y3 = 0
-co11o19Unx3y0 = 0
-co11o19Unx3y1 = 0
-co11o19Unx3y2 = 0
-co11o19Unx3y3 = 0
-co12o20Unx0y0 = 0
-co12o20Unx0y1 = 0
-co12o20Unx0y2 = 0
-co12o20Unx0y3 = 0
-co12o20Unx1y0 = 0
-co12o20Unx1y1 = 0
-co12o20Unx1y2 = 0
-co12o20Unx1y3 = 0
-co12o20Unx2y0 = 0
-co12o20Unx2y1 = 0
-co12o20Unx2y2 = 1
-co12o20Unx2y3 = 0
-co12o20Unx3y0 = 0
-co12o20Unx3y1 = 0
-co12o20Unx3y2 = 0
-co12o20Unx3y3 = 0
-co13o20Unx0y0 = 0
-co13o20Unx0y1 = 0
-co13o20Unx0y2 = 0
-co13o20Unx0y3 = 0
-co13o20Unx1y0 = 0
-co13o20Unx1y1 = 0
-co13o20Unx1y2 = 1
-co13o20Unx1y3 = 0
-co13o20Unx2y0 = 0
-co13o20Unx2y1 = 0
-co13o20Unx2y2 = 1
-co13o20Unx2y3 = 0
-co13o20Unx3y0 = 0
-co13o20Unx3y1 = 0
-co13o20Unx3y2 = 0
-co13o20Unx3y3 = 0
-co14o21Unx0y0 = 0
-co14o21Unx0y1 = 0
-co14o21Unx0y2 = 0
-co14o21Unx0y3 = 0
-co14o21Unx1y0 = 0
-co14o21Unx1y1 = 1
-co14o21Unx1y2 = 0
-co14o21Unx1y3 = 0
-co14o21Unx2y0 = 0
-co14o21Unx2y1 = 1
-co14o21Unx2y2 = 0
-co14o21Unx2y3 = 0
-co14o21Unx3y0 = 0
-co14o21Unx3y1 = 0
-co14o21Unx3y2 = 0
-co14o21Unx3y3 = 0
-co15o22Unx0y0 = 0
-co15o22Unx0y1 = 0
-co15o22Unx0y2 = 0
-co15o22Unx0y3 = 0
-co15o22Unx1y0 = 0
-co15o22Unx1y1 = 0
-co15o22Unx1y2 = 1
-co15o22Unx1y3 = 0
-co15o22Unx2y0 = 0
-co15o22Unx2y1 = 0
-co15o22Unx2y2 = 1
-co15o22Unx2y3 = 0
-co15o22Unx3y0 = 0
-co15o22Unx3y1 = 0
-co15o22Unx3y2 = 0
-co15o22Unx3y3 = 0
-co16o23Unx0y0 = 0
-co16o23Unx0y1 = 0
-co16o23Unx0y2 = 0
-co16o23Unx0y3 = 0
-co16o23Unx1y0 = 0
-co16o23Unx1y1 = 0
-co16o23Unx1y2 = 0
-co16o23Unx1y3 = 0
-co16o23Unx2y0 = 0
-co16o23Unx2y1 = 1
-co16o23Unx2y2 = 1
-co16o23Unx2y3 = 0
-co16o23Unx3y0 = 0
-co16o23Unx3y1 = 0
-co16o23Unx3y2 = 0
-co16o23Unx3y3 = 0
-co18o24Unx0y0 = 0
-co18o24Unx0y1 = 0
-co18o24Unx0y2 = 0
-co18o24Unx0y3 = 0
-co18o24Unx1y0 = 0
-co18o24Unx1y1 = 0
-co18o24Unx1y2 = 0
-co18o24Unx1y3 = 0
-co18o24Unx2y0 = 0
-co18o24Unx2y1 = 1
-co18o24Unx2y2 = 1
-co18o24Unx2y3 = 0
-co18o24Unx3y0 = 0
-co18o24Unx3y1 = 0
-co18o24Unx3y2 = 0
-co18o24Unx3y3 = 0
-co19o24Unx0y0 = 0
-co19o24Unx0y1 = 0
-co19o24Unx0y2 = 0
-co19o24Unx0y3 = 0
-co19o24Unx1y0 = 0
-co19o24Unx1y1 = 0
-co19o24Unx1y2 = 0
-co19o24Unx1y3 = 0
-co19o24Unx2y0 = 0
-co19o24Unx2y1 = 1
-co19o24Unx2y2 = 1
-co19o24Unx2y3 = 0
-co19o24Unx3y0 = 0
-co19o24Unx3y1 = 0
-co19o24Unx3y2 = 0
-co19o24Unx3y3 = 0
-co20o25Unx0y0 = 0
-co20o25Unx0y1 = 0
-co20o25Unx0y2 = 0
-co20o25Unx0y3 = 0
-co20o25Unx1y0 = 0
-co20o25Unx1y1 = 0
-co20o25Unx1y2 = 0
-co20o25Unx1y3 = 0
-co20o25Unx2y0 = 0
-co20o25Unx2y1 = 0
-co20o25Unx2y2 = 1
-co20o25Unx2y3 = 0
-co20o25Unx3y0 = 0
-co20o25Unx3y1 = 0
-co20o25Unx3y2 = 0
-co20o25Unx3y3 = 0
-co21o25Unx0y0 = 0
-co21o25Unx0y1 = 0
-co21o25Unx0y2 = 0
-co21o25Unx0y3 = 0
-co21o25Unx1y0 = 0
-co21o25Unx1y1 = 0
-co21o25Unx1y2 = 0
-co21o25Unx1y3 = 0
-co21o25Unx2y0 = 0
-co21o25Unx2y1 = 1
-co21o25Unx2y2 = 1
-co21o25Unx2y3 = 0
-co21o25Unx3y0 = 0
-co21o25Unx3y1 = 0
-co21o25Unx3y2 = 0
-co21o25Unx3y3 = 0
-co22o26Unx0y0 = 0
-co22o26Unx0y1 = 0
-co22o26Unx0y2 = 0
-co22o26Unx0y3 = 0
-co22o26Unx1y0 = 0
-co22o26Unx1y1 = 0
-co22o26Unx1y2 = 0
-co22o26Unx1y3 = 0
-co22o26Unx2y0 = 0
-co22o26Unx2y1 = 1
-co22o26Unx2y2 = 1
-co22o26Unx2y3 = 0
-co22o26Unx3y0 = 0
-co22o26Unx3y1 = 0
-co22o26Unx3y2 = 0
-co22o26Unx3y3 = 0
-co23o26Unx0y0 = 0
-co23o26Unx0y1 = 0
-co23o26Unx0y2 = 0
-co23o26Unx0y3 = 0
-co23o26Unx1y0 = 0
-co23o26Unx1y1 = 0
-co23o26Unx1y2 = 0
-co23o26Unx1y3 = 0
-co23o26Unx2y0 = 0
-co23o26Unx2y1 = 1
-co23o26Unx2y2 = 1
-co23o26Unx2y3 = 0
-co23o26Unx3y0 = 0
-co23o26Unx3y1 = 0
-co23o26Unx3y2 = 0
-co23o26Unx3y3 = 0
-co24o27Unx0y0 = 0
-co24o27Unx0y1 = 0
-co24o27Unx0y2 = 0
-co24o27Unx0y3 = 0
-co24o27Unx1y0 = 0
-co24o27Unx1y1 = 0
-co24o27Unx1y2 = 0
-co24o27Unx1y3 = 0
-co24o27Unx2y0 = 0
-co24o27Unx2y1 = 1
-co24o27Unx2y2 = 1
-co24o27Unx2y3 = 0
-co24o27Unx3y0 = 0
-co24o27Unx3y1 = 0
-co24o27Unx3y2 = 0
-co24o27Unx3y3 = 0
-co25o28Unx0y0 = 0
-co25o28Unx0y1 = 0
-co25o28Unx0y2 = 0
-co25o28Unx0y3 = 0
-co25o28Unx1y0 = 0
-co25o28Unx1y1 = 0
-co25o28Unx1y2 = 0
-co25o28Unx1y3 = 0
-co25o28Unx2y0 = 0
-co25o28Unx2y1 = 0
-co25o28Unx2y2 = 1
-co25o28Unx2y3 = 0
-co25o28Unx3y0 = 0
-co25o28Unx3y1 = 0
-co25o28Unx3y2 = 0
-co25o28Unx3y3 = 0
-co26o28Unx0y0 = 0
-co26o28Unx0y1 = 0
-co26o28Unx0y2 = 0
-co26o28Unx0y3 = 0
-co26o28Unx1y0 = 0
-co26o28Unx1y1 = 0
-co26o28Unx1y2 = 0
-co26o28Unx1y3 = 0
-co26o28Unx2y0 = 0
-co26o28Unx2y1 = 1
-co26o28Unx2y2 = 1
-co26o28Unx2y3 = 0
-co26o28Unx3y0 = 0
-co26o28Unx3y1 = 0
-co26o28Unx3y2 = 0
-co26o28Unx3y3 = 0
-co28o29Unx0y0 = 0
-co28o29Unx0y1 = 0
-co28o29Unx0y2 = 0
-co28o29Unx0y3 = 0
-co28o29Unx1y0 = 0
-co28o29Unx1y1 = 0
-co28o29Unx1y2 = 0
-co28o29Unx1y3 = 0
-co28o29Unx2y0 = 0
-co28o29Unx2y1 = 0
-co28o29Unx2y2 = 1
-co28o29Unx2y3 = 0
-co28o29Unx3y0 = 0
-co28o29Unx3y1 = 0
-co28o29Unx3y2 = 0
-co28o29Unx3y3 = 0
-co27o29Unx0y0 = 0
-co27o29Unx0y1 = 0
-co27o29Unx0y2 = 0
-co27o29Unx0y3 = 0
-co27o29Unx1y0 = 0
-co27o29Unx1y1 = 0
-co27o29Unx1y2 = 0
-co27o29Unx1y3 = 0
-co27o29Unx2y0 = 0
-co27o29Unx2y1 = 1
-co27o29Unx2y2 = 1
-co27o29Unx2y3 = 0
-co27o29Unx3y0 = 0
-co27o29Unx3y1 = 0
-co27o29Unx3y2 = 0
-co27o29Unx3y3 = 0
-co29o30Unx0y0 = 0
-co29o30Unx0y1 = 0
-co29o30Unx0y2 = 0
-co29o30Unx0y3 = 0
-co29o30Unx1y0 = 0
-co29o30Unx1y1 = 0
-co29o30Unx1y2 = 0
-co29o30Unx1y3 = 0
-co29o30Unx2y0 = 0
-co29o30Unx2y1 = 1
-co29o30Unx2y2 = 1
-co29o30Unx2y3 = 0
-co29o30Unx3y0 = 0
-co29o30Unx3y1 = 0
-co29o30Unx3y2 = 0
-co29o30Unx3y3 = 0
-co2o13SSnx0y0 = 0
-co2o13SSnx0y1 = 0
-co2o13SSnx0y2 = 0
-co2o13SSnx0y3 = 0
-co2o13SSnx1y0 = 0
-co2o13SSnx1y1 = 0
-co2o13SSnx1y2 = 0
-co2o13SSnx1y3 = 0
-co2o13SSnx2y0 = 0
-co2o13SSnx2y1 = 0
-co2o13SSnx2y2 = 1
-co2o13SSnx2y3 = 0
-co2o13SSnx3y0 = 0
-co2o13SSnx3y1 = 0
-co2o13SSnx3y2 = 0
-co2o13SSnx3y3 = 0
-co2o13SEnx0y0 = 0
-co2o13SEnx0y1 = 0
-co2o13SEnx0y2 = 0
-co2o13SEnx0y3 = 0
-co2o13SEnx1y0 = 0
-co2o13SEnx1y1 = 0
-co2o13SEnx1y2 = 1
-co2o13SEnx1y3 = 0
-co2o13SEnx2y0 = 0
-co2o13SEnx2y1 = 0
-co2o13SEnx2y2 = 0
-co2o13SEnx2y3 = 0
-co2o13SEnx3y0 = 0
-co2o13SEnx3y1 = 0
-co2o13SEnx3y2 = 0
-co2o13SEnx3y3 = 0
-co9o17SSnx0y0 = 0
-co9o17SSnx0y1 = 0
-co9o17SSnx0y2 = 0
-co9o17SSnx0y3 = 0
-co9o17SSnx1y0 = 0
-co9o17SSnx1y1 = 0
-co9o17SSnx1y2 = 0
-co9o17SSnx1y3 = 0
-co9o17SSnx2y0 = 0
-co9o17SSnx2y1 = 0
-co9o17SSnx2y2 = 1
-co9o17SSnx2y3 = 0
-co9o17SSnx3y0 = 0
-co9o17SSnx3y1 = 0
-co9o17SSnx3y2 = 0
-co9o17SSnx3y3 = 0
-co9o17SEnx0y0 = 0
-co9o17SEnx0y1 = 0
-co9o17SEnx0y2 = 0
-co9o17SEnx0y3 = 0
-co9o17SEnx1y0 = 0
-co9o17SEnx1y1 = 0
-co9o17SEnx1y2 = 0
-co9o17SEnx1y3 = 0
-co9o17SEnx2y0 = 0
-co9o17SEnx2y1 = 1
-co9o17SEnx2y2 = 0
-co9o17SEnx2y3 = 0
-co9o17SEnx3y0 = 0
-co9o17SEnx3y1 = 0
-co9o17SEnx3y2 = 0
-co9o17SEnx3y3 = 0
-co17o23SSnx0y0 = 0
-co17o23SSnx0y1 = 0
-co17o23SSnx0y2 = 0
-co17o23SSnx0y3 = 0
-co17o23SSnx1y0 = 0
-co17o23SSnx1y1 = 0
-co17o23SSnx1y2 = 0
-co17o23SSnx1y3 = 0
-co17o23SSnx2y0 = 0
-co17o23SSnx2y1 = 1
-co17o23SSnx2y2 = 0
-co17o23SSnx2y3 = 0
-co17o23SSnx3y0 = 0
-co17o23SSnx3y1 = 0
-co17o23SSnx3y2 = 0
-co17o23SSnx3y3 = 0
-co17o23SEnx0y0 = 0
-co17o23SEnx0y1 = 0
-co17o23SEnx0y2 = 0
-co17o23SEnx0y3 = 0
-co17o23SEnx1y0 = 0
-co17o23SEnx1y1 = 0
-co17o23SEnx1y2 = 0
-co17o23SEnx1y3 = 0
-co17o23SEnx2y0 = 0
-co17o23SEnx2y1 = 0
-co17o23SEnx2y2 = 1
-co17o23SEnx2y3 = 0
-co17o23SEnx3y0 = 0
-co17o23SEnx3y1 = 0
-co17o23SEnx3y2 = 0
-co17o23SEnx3y3 = 0
-fo2o13Uex0y0s1t0 = 0
-fo2o13Uex0y0s0t1 = 0
-fo2o13Unx0y0 = 0
-fo2o13Uex0y1s1t1 = 0
-fo2o13Uex0y1s0t2 = 0
-fo2o13Unx0y1 = 0
-fo2o13Uex0y2s1t2 = 0
-fo2o13Uex0y2s0t3 = 0
-fo2o13Unx0y2 = 0
-fo2o13Uex0y3s1t3 = 0
-fo2o13Unx0y3 = 0
-fo2o13Uex1y0s2t0 = 0
-fo2o13Uex1y0s1t1 = 0
-fo2o13Unx1y0 = 0
-fo2o13Uex1y1s2t1 = 1
-fo2o13Uex1y1s1t2 = 0
-fo2o13Unx1y1 = 1
-fo2o13Uex1y2s2t2 = 1
-fo2o13Uex1y2s1t3 = 0
-fo2o13Unx1y2 = 0
-fo2o13Uex1y3s2t3 = 0
-fo2o13Unx1y3 = 0
-fo2o13Uex2y0s3t0 = 0
-fo2o13Uex2y0s2t1 = 0
-fo2o13Unx2y0 = 0
-fo2o13Uex2y1s3t1 = 0
-fo2o13Uex2y1s2t2 = 1
-fo2o13Unx2y1 = 1
-fo2o13Uex2y2s3t2 = 0
-fo2o13Uex2y2s2t3 = 0
-fo2o13Unx2y2 = 1
-fo2o13Uex2y3s3t3 = 0
-fo2o13Unx2y3 = 0
-fo2o13Uex3y0s3t1 = 0
-fo2o13Unx3y0 = 0
-fo2o13Uex3y1s3t2 = 0
-fo2o13Unx3y1 = 0
-fo2o13Uex3y2s3t3 = 0
-fo2o13Unx3y2 = 0
-fo2o13Unx3y3 = 0
-co2o13SSNfo2o13Unx0y0 = 0
-co2o13SSNfo2o13Unx0y1 = 0
-co2o13SSNfo2o13Unx0y2 = 0
-co2o13SSNfo2o13Unx0y3 = 0
-co2o13SSNfo2o13Unx1y0 = 0
-co2o13SSNfo2o13Unx1y1 = 0
-co2o13SSNfo2o13Unx1y2 = 0
-co2o13SSNfo2o13Unx1y3 = 0
-co2o13SSNfo2o13Unx2y0 = 0
-co2o13SSNfo2o13Unx2y1 = 0
-co2o13SSNfo2o13Unx2y2 = 1
-co2o13SSNfo2o13Unx2y3 = 0
-co2o13SSNfo2o13Unx3y0 = 0
-co2o13SSNfo2o13Unx3y1 = 0
-co2o13SSNfo2o13Unx3y2 = 0
-co2o13SSNfo2o13Unx3y3 = 0
-fo9o17Uex0y0s1t0 = 0
-fo9o17Uex0y0s0t1 = 0
-fo9o17Unx0y0 = 0
-fo9o17Uex0y1s1t1 = 0
-fo9o17Uex0y1s0t2 = 0
-fo9o17Unx0y1 = 0
-fo9o17Uex0y2s1t2 = 0
-fo9o17Uex0y2s0t3 = 0
-fo9o17Unx0y2 = 0
-fo9o17Uex0y3s1t3 = 0
-fo9o17Unx0y3 = 0
-fo9o17Uex1y0s2t0 = 0
-fo9o17Uex1y0s1t1 = 0
-fo9o17Unx1y0 = 0
-fo9o17Uex1y1s2t1 = 0
-fo9o17Uex1y1s1t2 = 0
-fo9o17Unx1y1 = 0
-fo9o17Uex1y2s2t2 = 0
-fo9o17Uex1y2s1t3 = 0
-fo9o17Unx1y2 = 0
-fo9o17Uex1y3s2t3 = 0
-fo9o17Unx1y3 = 0
-fo9o17Uex2y0s3t0 = 0
-fo9o17Uex2y0s2t1 = 0
-fo9o17Unx2y0 = 0
-fo9o17Uex2y1s3t1 = 0
-fo9o17Uex2y1s2t2 = 1
-fo9o17Unx2y1 = 1
-fo9o17Uex2y2s3t2 = 0
-fo9o17Uex2y2s2t3 = 1
-fo9o17Unx2y2 = 1
-fo9o17Uex2y3s3t3 = 0
-fo9o17Unx2y3 = 0
-fo9o17Uex3y0s3t1 = 0
-fo9o17Unx3y0 = 0
-fo9o17Uex3y1s3t2 = 0
-fo9o17Unx3y1 = 0
-fo9o17Uex3y2s3t3 = 0
-fo9o17Unx3y2 = 0
-fo9o17Unx3y3 = 0
-co9o17SSNfo9o17Unx0y0 = 0
-co9o17SSNfo9o17Unx0y1 = 0
-co9o17SSNfo9o17Unx0y2 = 0
-co9o17SSNfo9o17Unx0y3 = 0
-co9o17SSNfo9o17Unx1y0 = 0
-co9o17SSNfo9o17Unx1y1 = 0
-co9o17SSNfo9o17Unx1y2 = 0
-co9o17SSNfo9o17Unx1y3 = 0
-co9o17SSNfo9o17Unx2y0 = 0
-co9o17SSNfo9o17Unx2y1 = 0
-co9o17SSNfo9o17Unx2y2 = 1
-co9o17SSNfo9o17Unx2y3 = 0
-co9o17SSNfo9o17Unx3y0 = 0
-co9o17SSNfo9o17Unx3y1 = 0
-co9o17SSNfo9o17Unx3y2 = 0
-co9o17SSNfo9o17Unx3y3 = 0
-fo17o23Uex0y0s1t0 = 0
-fo17o23Uex0y0s0t1 = 0
-fo17o23Unx0y0 = 0
-fo17o23Uex0y1s1t1 = 0
-fo17o23Uex0y1s0t2 = 0
-fo17o23Unx0y1 = 0
-fo17o23Uex0y2s1t2 = 0
-fo17o23Uex0y2s0t3 = 0
-fo17o23Unx0y2 = 0
-fo17o23Uex0y3s1t3 = 0
-fo17o23Unx0y3 = 0
-fo17o23Uex1y0s2t0 = 0
-fo17o23Uex1y0s1t1 = 0
-fo17o23Unx1y0 = 0
-fo17o23Uex1y1s2t1 = 1
-fo17o23Uex1y1s1t2 = 0
-fo17o23Unx1y1 = 1
-fo17o23Uex1y2s2t2 = 0
-fo17o23Uex1y2s1t3 = 0
-fo17o23Unx1y2 = 0
-fo17o23Uex1y3s2t3 = 0
-fo17o23Unx1y3 = 0
-fo17o23Uex2y0s3t0 = 0
-fo17o23Uex2y0s2t1 = 0
-fo17o23Unx2y0 = 0
-fo17o23Uex2y1s3t1 = 0
-fo17o23Uex2y1s2t2 = 1
-fo17o23Unx2y1 = 1
-fo17o23Uex2y2s3t2 = 0
-fo17o23Uex2y2s2t3 = 0
-fo17o23Unx2y2 = 1
-fo17o23Uex2y3s3t3 = 0
-fo17o23Unx2y3 = 0
-fo17o23Uex3y0s3t1 = 0
-fo17o23Unx3y0 = 0
-fo17o23Uex3y1s3t2 = 0
-fo17o23Unx3y1 = 0
-fo17o23Uex3y2s3t3 = 0
-fo17o23Unx3y2 = 0
-fo17o23Unx3y3 = 0
-co17o23SSNfo17o23Unx0y0 = 0
-co17o23SSNfo17o23Unx0y1 = 0
-co17o23SSNfo17o23Unx0y2 = 0
-co17o23SSNfo17o23Unx0y3 = 0
-co17o23SSNfo17o23Unx1y0 = 0
-co17o23SSNfo17o23Unx1y1 = 0
-co17o23SSNfo17o23Unx1y2 = 0
-co17o23SSNfo17o23Unx1y3 = 0
-co17o23SSNfo17o23Unx2y0 = 0
-co17o23SSNfo17o23Unx2y1 = 1
-co17o23SSNfo17o23Unx2y2 = 0
-co17o23SSNfo17o23Unx2y3 = 0
-co17o23SSNfo17o23Unx3y0 = 0
-co17o23SSNfo17o23Unx3y1 = 0
-co17o23SSNfo17o23Unx3y2 = 0
-co17o23SSNfo17o23Unx3y3 = 0
-lo2o13Uex0y0s1t0 = 0
-lo2o13Uex0y0s0t1 = 0
-lo2o13Unx0y0 = 0
-lo2o13Uex0y1s1t1 = 0
-lo2o13Uex0y1s0t2 = 0
-lo2o13Unx0y1 = 0
-lo2o13Uex0y2s1t2 = 1
-lo2o13Uex0y2s0t3 = 0
-lo2o13Unx0y2 = 0
-lo2o13Uex0y3s1t3 = 0
-lo2o13Unx0y3 = 0
-lo2o13Uex1y0s2t0 = 0
-lo2o13Uex1y0s1t1 = 0
-lo2o13Unx1y0 = 0
-lo2o13Uex1y1s2t1 = 0
-lo2o13Uex1y1s1t2 = 0
-lo2o13Unx1y1 = 0
-lo2o13Uex1y2s2t2 = 1
-lo2o13Uex1y2s1t3 = 0
-lo2o13Unx1y2 = 1
-lo2o13Uex1y3s2t3 = 0
-lo2o13Unx1y3 = 0
-lo2o13Uex2y0s3t0 = 0
-lo2o13Uex2y0s2t1 = 0
-lo2o13Unx2y0 = 0
-lo2o13Uex2y1s3t1 = 0
-lo2o13Uex2y1s2t2 = 0
-lo2o13Unx2y1 = 0
-lo2o13Uex2y2s3t2 = 0
-lo2o13Uex2y2s2t3 = 0
-lo2o13Unx2y2 = 0
-lo2o13Uex2y3s3t3 = 0
-lo2o13Unx2y3 = 0
-lo2o13Uex3y0s3t1 = 0
-lo2o13Unx3y0 = 0
-lo2o13Uex3y1s3t2 = 0
-lo2o13Unx3y1 = 0
-lo2o13Uex3y2s3t3 = 0
-lo2o13Unx3y2 = 0
-lo2o13Unx3y3 = 0
-co2o13SENlo2o13Unx0y0 = 0
-co2o13SENlo2o13Unx0y1 = 0
-co2o13SENlo2o13Unx0y2 = 0
-co2o13SENlo2o13Unx0y3 = 0
-co2o13SENlo2o13Unx1y0 = 0
-co2o13SENlo2o13Unx1y1 = 0
-co2o13SENlo2o13Unx1y2 = 1
-co2o13SENlo2o13Unx1y3 = 0
-co2o13SENlo2o13Unx2y0 = 0
-co2o13SENlo2o13Unx2y1 = 0
-co2o13SENlo2o13Unx2y2 = 0
-co2o13SENlo2o13Unx2y3 = 0
-co2o13SENlo2o13Unx3y0 = 0
-co2o13SENlo2o13Unx3y1 = 0
-co2o13SENlo2o13Unx3y2 = 0
-co2o13SENlo2o13Unx3y3 = 0
-lo9o17Uex0y0s1t0 = 0
-lo9o17Uex0y0s0t1 = 0
-lo9o17Unx0y0 = 0
-lo9o17Uex0y1s1t1 = 0
-lo9o17Uex0y1s0t2 = 0
-lo9o17Unx0y1 = 0
-lo9o17Uex0y2s1t2 = 0
-lo9o17Uex0y2s0t3 = 0
-lo9o17Unx0y2 = 0
-lo9o17Uex0y3s1t3 = 0
-lo9o17Unx0y3 = 0
-lo9o17Uex1y0s2t0 = 0
-lo9o17Uex1y0s1t1 = 0
-lo9o17Unx1y0 = 0
-lo9o17Uex1y1s2t1 = 1
-lo9o17Uex1y1s1t2 = 0
-lo9o17Unx1y1 = 1
-lo9o17Uex1y2s2t2 = 0
-lo9o17Uex1y2s1t3 = 0
-lo9o17Unx1y2 = 0
-lo9o17Uex1y3s2t3 = 0
-lo9o17Unx1y3 = 0
-lo9o17Uex2y0s3t0 = 0
-lo9o17Uex2y0s2t1 = 0
-lo9o17Unx2y0 = 0
-lo9o17Uex2y1s3t1 = 0
-lo9o17Uex2y1s2t2 = 1
-lo9o17Unx2y1 = 1
-lo9o17Uex2y2s3t2 = 0
-lo9o17Uex2y2s2t3 = 0
-lo9o17Unx2y2 = 0
-lo9o17Uex2y3s3t3 = 0
-lo9o17Unx2y3 = 0
-lo9o17Uex3y0s3t1 = 0
-lo9o17Unx3y0 = 0
-lo9o17Uex3y1s3t2 = 0
-lo9o17Unx3y1 = 0
-lo9o17Uex3y2s3t3 = 0
-lo9o17Unx3y2 = 0
-lo9o17Unx3y3 = 0
-co9o17SENlo9o17Unx0y0 = 0
-co9o17SENlo9o17Unx0y1 = 0
-co9o17SENlo9o17Unx0y2 = 0
-co9o17SENlo9o17Unx0y3 = 0
-co9o17SENlo9o17Unx1y0 = 0
-co9o17SENlo9o17Unx1y1 = 0
-co9o17SENlo9o17Unx1y2 = 0
-co9o17SENlo9o17Unx1y3 = 0
-co9o17SENlo9o17Unx2y0 = 0
-co9o17SENlo9o17Unx2y1 = 1
-co9o17SENlo9o17Unx2y2 = 0
-co9o17SENlo9o17Unx2y3 = 0
-co9o17SENlo9o17Unx3y0 = 0
-co9o17SENlo9o17Unx3y1 = 0
-co9o17SENlo9o17Unx3y2 = 0
-co9o17SENlo9o17Unx3y3 = 0
-lo17o23Uex0y0s1t0 = 0
-lo17o23Uex0y0s0t1 = 0
-lo17o23Unx0y0 = 0
-lo17o23Uex0y1s1t1 = 0
-lo17o23Uex0y1s0t2 = 0
-lo17o23Unx0y1 = 0
-lo17o23Uex0y2s1t2 = 0
-lo17o23Uex0y2s0t3 = 0
-lo17o23Unx0y2 = 0
-lo17o23Uex0y3s1t3 = 0
-lo17o23Unx0y3 = 0
-lo17o23Uex1y0s2t0 = 0
-lo17o23Uex1y0s1t1 = 0
-lo17o23Unx1y0 = 0
-lo17o23Uex1y1s2t1 = 0
-lo17o23Uex1y1s1t2 = 0
-lo17o23Unx1y1 = 0
-lo17o23Uex1y2s2t2 = 0
-lo17o23Uex1y2s1t3 = 0
-lo17o23Unx1y2 = 0
-lo17o23Uex1y3s2t3 = 0
-lo17o23Unx1y3 = 0
-lo17o23Uex2y0s3t0 = 0
-lo17o23Uex2y0s2t1 = 0
-lo17o23Unx2y0 = 0
-lo17o23Uex2y1s3t1 = 0
-lo17o23Uex2y1s2t2 = 1
-lo17o23Unx2y1 = 0
-lo17o23Uex2y2s3t2 = 0
-lo17o23Uex2y2s2t3 = 1
-lo17o23Unx2y2 = 1
-lo17o23Uex2y3s3t3 = 0
-lo17o23Unx2y3 = 0
-lo17o23Uex3y0s3t1 = 0
-lo17o23Unx3y0 = 0
-lo17o23Uex3y1s3t2 = 0
-lo17o23Unx3y1 = 0
-lo17o23Uex3y2s3t3 = 0
-lo17o23Unx3y2 = 0
-lo17o23Unx3y3 = 0
-co17o23SENlo17o23Unx0y0 = 0
-co17o23SENlo17o23Unx0y1 = 0
-co17o23SENlo17o23Unx0y2 = 0
-co17o23SENlo17o23Unx0y3 = 0
-co17o23SENlo17o23Unx1y0 = 0
-co17o23SENlo17o23Unx1y1 = 0
-co17o23SENlo17o23Unx1y2 = 0
-co17o23SENlo17o23Unx1y3 = 0
-co17o23SENlo17o23Unx2y0 = 0
-co17o23SENlo17o23Unx2y1 = 0
-co17o23SENlo17o23Unx2y2 = 1
-co17o23SENlo17o23Unx2y3 = 0
-co17o23SENlo17o23Unx3y0 = 0
-co17o23SENlo17o23Unx3y1 = 0
-co17o23SENlo17o23Unx3y2 = 0
-co17o23SENlo17o23Unx3y3 = 0
-so2o13Uex0y0s1t0 = 0
-so2o13Uex0y0s0t1 = 0
-so2o13Uex0y1s1t1 = 0
-so2o13Uex0y1s0t2 = 0
-so2o13Uex0y2s1t2 = 0
-so2o13Uex0y2s0t3 = 0
-so2o13Uex0y3s1t3 = 0
-so2o13Uex1y0s2t0 = 0
-so2o13Uex1y0s1t1 = 0
-so2o13Uex1y1s2t1 = 0
-so2o13Uex1y1s1t2 = 0
-so2o13Uex1y2s2t2 = 1
-so2o13Uex1y2s1t3 = 0
-so2o13Uex1y3s2t3 = 0
-so2o13Uex2y0s3t0 = 0
-so2o13Uex2y0s2t1 = 0
-so2o13Uex2y1s3t1 = 0
-so2o13Uex2y1s2t2 = 0
-so2o13Uex2y2s3t2 = 0
-so2o13Uex2y2s2t3 = 0
-so2o13Uex2y3s3t3 = 0
-so2o13Uex3y0s3t1 = 0
-so2o13Uex3y1s3t2 = 0
-so2o13Uex3y2s3t3 = 0
-so9o17Uex0y0s1t0 = 0
-so9o17Uex0y0s0t1 = 0
-so9o17Uex0y1s1t1 = 0
-so9o17Uex0y1s0t2 = 0
-so9o17Uex0y2s1t2 = 0
-so9o17Uex0y2s0t3 = 0
-so9o17Uex0y3s1t3 = 0
-so9o17Uex1y0s2t0 = 0
-so9o17Uex1y0s1t1 = 0
-so9o17Uex1y1s2t1 = 0
-so9o17Uex1y1s1t2 = 0
-so9o17Uex1y2s2t2 = 0
-so9o17Uex1y2s1t3 = 0
-so9o17Uex1y3s2t3 = 0
-so9o17Uex2y0s3t0 = 0
-so9o17Uex2y0s2t1 = 0
-so9o17Uex2y1s3t1 = 0
-so9o17Uex2y1s2t2 = 1
-so9o17Uex2y2s3t2 = 0
-so9o17Uex2y2s2t3 = 0
-so9o17Uex2y3s3t3 = 0
-so9o17Uex3y0s3t1 = 0
-so9o17Uex3y1s3t2 = 0
-so9o17Uex3y2s3t3 = 0
-so17o23Uex0y0s1t0 = 0
-so17o23Uex0y0s0t1 = 0
-so17o23Uex0y1s1t1 = 0
-so17o23Uex0y1s0t2 = 0
-so17o23Uex0y2s1t2 = 0
-so17o23Uex0y2s0t3 = 0
-so17o23Uex0y3s1t3 = 0
-so17o23Uex1y0s2t0 = 0
-so17o23Uex1y0s1t1 = 0
-so17o23Uex1y1s2t1 = 0
-so17o23Uex1y1s1t2 = 0
-so17o23Uex1y2s2t2 = 0
-so17o23Uex1y2s1t3 = 0
-so17o23Uex1y3s2t3 = 0
-so17o23Uex2y0s3t0 = 0
-so17o23Uex2y0s2t1 = 0
-so17o23Uex2y1s3t1 = 0
-so17o23Uex2y1s2t2 = 1
-so17o23Uex2y2s3t2 = 0
-so17o23Uex2y2s2t3 = 0
-so17o23Uex2y3s3t3 = 0
-so17o23Uex3y0s3t1 = 0
-so17o23Uex3y1s3t2 = 0
-so17o23Uex3y2s3t3 = 0
-so2o13Unx0y0 = 0
-so2o13Unx0y1 = 0
-so2o13Unx0y2 = 0
-so2o13Unx0y3 = 0
-so2o13Unx1y0 = 0
-so2o13Unx1y1 = 0
-so2o13Unx1y2 = 0
-so2o13Unx1y3 = 0
-so2o13Unx2y0 = 0
-so2o13Unx2y1 = 0
-so2o13Unx2y2 = 0
-so2o13Unx2y3 = 0
-so2o13Unx3y0 = 0
-so2o13Unx3y1 = 0
-so2o13Unx3y2 = 0
-so2o13Unx3y3 = 0
-so17o23Unx0y0 = 0
-so17o23Unx0y1 = 0
-so17o23Unx0y2 = 0
-so17o23Unx0y3 = 0
-so17o23Unx1y0 = 0
-so17o23Unx1y1 = 0
-so17o23Unx1y2 = 0
-so17o23Unx1y3 = 0
-so17o23Unx2y0 = 0
-so17o23Unx2y1 = 0
-so17o23Unx2y2 = 0
-so17o23Unx2y3 = 0
-so17o23Unx3y0 = 0
-so17o23Unx3y1 = 0
-so17o23Unx3y2 = 0
-so17o23Unx3y3 = 0
-so9o17Unx0y0 = 0
-so9o17Unx0y1 = 0
-so9o17Unx0y2 = 0
-so9o17Unx0y3 = 0
-so9o17Unx1y0 = 0
-so9o17Unx1y1 = 0
-so9o17Unx1y2 = 0
-so9o17Unx1y3 = 0
-so9o17Unx2y0 = 0
-so9o17Unx2y1 = 0
-so9o17Unx2y2 = 0
-so9o17Unx2y3 = 0
-so9o17Unx3y0 = 0
-so9o17Unx3y1 = 0
-so9o17Unx3y2 = 0
-so9o17Unx3y3 = 0
+ex0y0s1t0U      0
+ex0y0s0t1U      0
+ex0y1s1t1U      0
+ex0y1s0t2U      0
+ex0y2s1t2U      1
+ex0y2s0t3U      0
+ex0y3s1t3U      0
+ex1y0s2t0U      0
+ex1y0s1t1U      0
+ex1y1s2t1U      1
+ex1y1s1t2U      1
+ex1y2s2t2U      1
+ex1y2s1t3U      0
+ex1y3s2t3U      0
+ex2y0s3t0U      0
+ex2y0s2t1U      0
+ex2y1s3t1U      1
+ex2y1s2t2U      1
+ex2y2s3t2U      1
+ex2y2s2t3U      1
+ex2y3s3t3U      0
+ex3y0s3t1U      0
+ex3y1s3t2U      0
+ex3y2s3t3U      0
+d1Bindnx0y0      0
+d1Bindnx0y1      0
+d1Bindnx0y2      0
+d1Bindnx0y3      0
+d1Bindnx1y0      0
+d1Bindnx1y1      0
+d1Bindnx1y2      0
+d1Bindnx1y3      0
+d1Bindnx2y0      0
+d1Bindnx2y1      0
+d1Bindnx2y2      0
+d1Bindnx2y3      1
+d1Bindnx3y0      0
+d1Bindnx3y1      0
+d1Bindnx3y2      0
+d1Bindnx3y3      0
+d4Bindnx0y0      0
+d4Bindnx0y1      0
+d4Bindnx0y2      0
+d4Bindnx0y3      0
+d4Bindnx1y0      0
+d4Bindnx1y1      1
+d4Bindnx1y2      0
+d4Bindnx1y3      0
+d4Bindnx2y0      0
+d4Bindnx2y1      0
+d4Bindnx2y2      0
+d4Bindnx2y3      0
+d4Bindnx3y0      0
+d4Bindnx3y1      0
+d4Bindnx3y2      0
+d4Bindnx3y3      0
+d2Bindnx0y0      0
+d2Bindnx0y1      0
+d2Bindnx0y2      0
+d2Bindnx0y3      0
+d2Bindnx1y0      0
+d2Bindnx1y1      0
+d2Bindnx1y2      0
+d2Bindnx1y3      0
+d2Bindnx2y0      0
+d2Bindnx2y1      0
+d2Bindnx2y2      0
+d2Bindnx2y3      0
+d2Bindnx3y0      0
+d2Bindnx3y1      0
+d2Bindnx3y2      1
+d2Bindnx3y3      0
+d3Bindnx0y0      0
+d3Bindnx0y1      0
+d3Bindnx0y2      1
+d3Bindnx0y3      0
+d3Bindnx1y0      0
+d3Bindnx1y1      0
+d3Bindnx1y2      0
+d3Bindnx1y3      0
+d3Bindnx2y0      0
+d3Bindnx2y1      0
+d3Bindnx2y2      0
+d3Bindnx2y3      0
+d3Bindnx3y0      0
+d3Bindnx3y1      0
+d3Bindnx3y2      0
+d3Bindnx3y3      0
+d5Bindnx0y0      0
+d5Bindnx0y1      0
+d5Bindnx0y2      0
+d5Bindnx0y3      0
+d5Bindnx1y0      0
+d5Bindnx1y1      0
+d5Bindnx1y2      0
+d5Bindnx1y3      0
+d5Bindnx2y0      0
+d5Bindnx2y1      0
+d5Bindnx2y2      0
+d5Bindnx2y3      0
+d5Bindnx3y0      0
+d5Bindnx3y1      1
+d5Bindnx3y2      0
+d5Bindnx3y3      0
+co1o12Uex0y0s1t0      0
+co1o12Uex0y0s0t1      0
+co1o12Uex0y1s1t1      0
+co1o12Uex0y1s0t2      0
+co1o12Uex0y2s1t2      0
+co1o12Uex0y2s0t3      0
+co1o12Uex0y3s1t3      0
+co1o12Uex1y0s2t0      0
+co1o12Uex1y0s1t1      0
+co1o12Uex1y1s2t1      0
+co1o12Uex1y1s1t2      0
+co1o12Uex1y2s2t2      0
+co1o12Uex1y2s1t3      0
+co1o12Uex1y3s2t3      0
+co1o12Uex2y0s3t0      0
+co1o12Uex2y0s2t1      0
+co1o12Uex2y1s3t1      0
+co1o12Uex2y1s2t2      0
+co1o12Uex2y2s3t2      1
+co1o12Uex2y2s2t3      1
+co1o12Uex2y3s3t3      0
+co1o12Uex3y0s3t1      0
+co1o12Uex3y1s3t2      0
+co1o12Uex3y2s3t3      0
+co3o14Uex0y0s1t0      0
+co3o14Uex0y0s0t1      0
+co3o14Uex0y1s1t1      0
+co3o14Uex0y1s0t2      0
+co3o14Uex0y2s1t2      0
+co3o14Uex0y2s0t3      0
+co3o14Uex0y3s1t3      0
+co3o14Uex1y0s2t0      0
+co3o14Uex1y0s1t1      0
+co3o14Uex1y1s2t1      1
+co3o14Uex1y1s1t2      0
+co3o14Uex1y2s2t2      0
+co3o14Uex1y2s1t3      0
+co3o14Uex1y3s2t3      0
+co3o14Uex2y0s3t0      0
+co3o14Uex2y0s2t1      0
+co3o14Uex2y1s3t1      0
+co3o14Uex2y1s2t2      1
+co3o14Uex2y2s3t2      1
+co3o14Uex2y2s2t3      0
+co3o14Uex2y3s3t3      0
+co3o14Uex3y0s3t1      0
+co3o14Uex3y1s3t2      0
+co3o14Uex3y2s3t3      0
+co4o14Uex0y0s1t0      0
+co4o14Uex0y0s0t1      0
+co4o14Uex0y1s1t1      0
+co4o14Uex0y1s0t2      0
+co4o14Uex0y2s1t2      1
+co4o14Uex0y2s0t3      0
+co4o14Uex0y3s1t3      0
+co4o14Uex1y0s2t0      0
+co4o14Uex1y0s1t1      0
+co4o14Uex1y1s2t1      0
+co4o14Uex1y1s1t2      1
+co4o14Uex1y2s2t2      0
+co4o14Uex1y2s1t3      0
+co4o14Uex1y3s2t3      0
+co4o14Uex2y0s3t0      0
+co4o14Uex2y0s2t1      0
+co4o14Uex2y1s3t1      0
+co4o14Uex2y1s2t2      0
+co4o14Uex2y2s3t2      0
+co4o14Uex2y2s2t3      0
+co4o14Uex2y3s3t3      0
+co4o14Uex3y0s3t1      0
+co4o14Uex3y1s3t2      0
+co4o14Uex3y2s3t3      0
+co5o15Uex0y0s1t0      0
+co5o15Uex0y0s0t1      0
+co5o15Uex0y1s1t1      0
+co5o15Uex0y1s0t2      0
+co5o15Uex0y2s1t2      1
+co5o15Uex0y2s0t3      0
+co5o15Uex0y3s1t3      0
+co5o15Uex1y0s2t0      0
+co5o15Uex1y0s1t1      0
+co5o15Uex1y1s2t1      0
+co5o15Uex1y1s1t2      1
+co5o15Uex1y2s2t2      0
+co5o15Uex1y2s1t3      0
+co5o15Uex1y3s2t3      0
+co5o15Uex2y0s3t0      0
+co5o15Uex2y0s2t1      0
+co5o15Uex2y1s3t1      0
+co5o15Uex2y1s2t2      0
+co5o15Uex2y2s3t2      0
+co5o15Uex2y2s2t3      0
+co5o15Uex2y3s3t3      0
+co5o15Uex3y0s3t1      0
+co5o15Uex3y1s3t2      0
+co5o15Uex3y2s3t3      0
+co6o16Uex0y0s1t0      0
+co6o16Uex0y0s0t1      0
+co6o16Uex0y1s1t1      0
+co6o16Uex0y1s0t2      0
+co6o16Uex0y2s1t2      1
+co6o16Uex0y2s0t3      0
+co6o16Uex0y3s1t3      0
+co6o16Uex1y0s2t0      0
+co6o16Uex1y0s1t1      0
+co6o16Uex1y1s2t1      0
+co6o16Uex1y1s1t2      1
+co6o16Uex1y2s2t2      0
+co6o16Uex1y2s1t3      0
+co6o16Uex1y3s2t3      0
+co6o16Uex2y0s3t0      0
+co6o16Uex2y0s2t1      0
+co6o16Uex2y1s3t1      0
+co6o16Uex2y1s2t2      0
+co6o16Uex2y2s3t2      0
+co6o16Uex2y2s2t3      0
+co6o16Uex2y3s3t3      0
+co6o16Uex3y0s3t1      0
+co6o16Uex3y1s3t2      0
+co6o16Uex3y2s3t3      0
+co7o16Uex0y0s1t0      0
+co7o16Uex0y0s0t1      0
+co7o16Uex0y1s1t1      0
+co7o16Uex0y1s0t2      0
+co7o16Uex0y2s1t2      0
+co7o16Uex0y2s0t3      0
+co7o16Uex0y3s1t3      0
+co7o16Uex1y0s2t0      0
+co7o16Uex1y0s1t1      0
+co7o16Uex1y1s2t1      0
+co7o16Uex1y1s1t2      1
+co7o16Uex1y2s2t2      1
+co7o16Uex1y2s1t3      0
+co7o16Uex1y3s2t3      0
+co7o16Uex2y0s3t0      0
+co7o16Uex2y0s2t1      0
+co7o16Uex2y1s3t1      0
+co7o16Uex2y1s2t2      0
+co7o16Uex2y2s3t2      0
+co7o16Uex2y2s2t3      1
+co7o16Uex2y3s3t3      0
+co7o16Uex3y0s3t1      0
+co7o16Uex3y1s3t2      0
+co7o16Uex3y2s3t3      0
+co8o17Uex0y0s1t0      0
+co8o17Uex0y0s0t1      0
+co8o17Uex0y1s1t1      0
+co8o17Uex0y1s0t2      0
+co8o17Uex0y2s1t2      0
+co8o17Uex0y2s0t3      0
+co8o17Uex0y3s1t3      0
+co8o17Uex1y0s2t0      0
+co8o17Uex1y0s1t1      0
+co8o17Uex1y1s2t1      1
+co8o17Uex1y1s1t2      0
+co8o17Uex1y2s2t2      0
+co8o17Uex1y2s1t3      0
+co8o17Uex1y3s2t3      0
+co8o17Uex2y0s3t0      0
+co8o17Uex2y0s2t1      0
+co8o17Uex2y1s3t1      0
+co8o17Uex2y1s2t2      1
+co8o17Uex2y2s3t2      1
+co8o17Uex2y2s2t3      0
+co8o17Uex2y3s3t3      0
+co8o17Uex3y0s3t1      0
+co8o17Uex3y1s3t2      0
+co8o17Uex3y2s3t3      0
+co10o18Uex0y0s1t0      0
+co10o18Uex0y0s0t1      0
+co10o18Uex0y1s1t1      0
+co10o18Uex0y1s0t2      0
+co10o18Uex0y2s1t2      0
+co10o18Uex0y2s0t3      0
+co10o18Uex0y3s1t3      0
+co10o18Uex1y0s2t0      0
+co10o18Uex1y0s1t1      0
+co10o18Uex1y1s2t1      1
+co10o18Uex1y1s1t2      0
+co10o18Uex1y2s2t2      0
+co10o18Uex1y2s1t3      0
+co10o18Uex1y3s2t3      0
+co10o18Uex2y0s3t0      0
+co10o18Uex2y0s2t1      0
+co10o18Uex2y1s3t1      0
+co10o18Uex2y1s2t2      1
+co10o18Uex2y2s3t2      1
+co10o18Uex2y2s2t3      0
+co10o18Uex2y3s3t3      0
+co10o18Uex3y0s3t1      0
+co10o18Uex3y1s3t2      0
+co10o18Uex3y2s3t3      0
+co11o19Uex0y0s1t0      0
+co11o19Uex0y0s0t1      0
+co11o19Uex0y1s1t1      0
+co11o19Uex0y1s0t2      0
+co11o19Uex0y2s1t2      0
+co11o19Uex0y2s0t3      0
+co11o19Uex0y3s1t3      0
+co11o19Uex1y0s2t0      0
+co11o19Uex1y0s1t1      0
+co11o19Uex1y1s2t1      0
+co11o19Uex1y1s1t2      0
+co11o19Uex1y2s2t2      0
+co11o19Uex1y2s1t3      0
+co11o19Uex1y3s2t3      0
+co11o19Uex2y0s3t0      0
+co11o19Uex2y0s2t1      0
+co11o19Uex2y1s3t1      1
+co11o19Uex2y1s2t2      1
+co11o19Uex2y2s3t2      0
+co11o19Uex2y2s2t3      1
+co11o19Uex2y3s3t3      0
+co11o19Uex3y0s3t1      0
+co11o19Uex3y1s3t2      0
+co11o19Uex3y2s3t3      0
+co12o20Uex0y0s1t0      0
+co12o20Uex0y0s0t1      0
+co12o20Uex0y1s1t1      0
+co12o20Uex0y1s0t2      0
+co12o20Uex0y2s1t2      0
+co12o20Uex0y2s0t3      0
+co12o20Uex0y3s1t3      0
+co12o20Uex1y0s2t0      0
+co12o20Uex1y0s1t1      0
+co12o20Uex1y1s2t1      0
+co12o20Uex1y1s1t2      0
+co12o20Uex1y2s2t2      0
+co12o20Uex1y2s1t3      0
+co12o20Uex1y3s2t3      0
+co12o20Uex2y0s3t0      0
+co12o20Uex2y0s2t1      0
+co12o20Uex2y1s3t1      0
+co12o20Uex2y1s2t2      0
+co12o20Uex2y2s3t2      1
+co12o20Uex2y2s2t3      1
+co12o20Uex2y3s3t3      0
+co12o20Uex3y0s3t1      0
+co12o20Uex3y1s3t2      0
+co12o20Uex3y2s3t3      0
+co13o20Uex0y0s1t0      0
+co13o20Uex0y0s0t1      0
+co13o20Uex0y1s1t1      0
+co13o20Uex0y1s0t2      0
+co13o20Uex0y2s1t2      1
+co13o20Uex0y2s0t3      0
+co13o20Uex0y3s1t3      0
+co13o20Uex1y0s2t0      0
+co13o20Uex1y0s1t1      0
+co13o20Uex1y1s2t1      0
+co13o20Uex1y1s1t2      0
+co13o20Uex1y2s2t2      1
+co13o20Uex1y2s1t3      0
+co13o20Uex1y3s2t3      0
+co13o20Uex2y0s3t0      0
+co13o20Uex2y0s2t1      0
+co13o20Uex2y1s3t1      0
+co13o20Uex2y1s2t2      0
+co13o20Uex2y2s3t2      0
+co13o20Uex2y2s2t3      1
+co13o20Uex2y3s3t3      0
+co13o20Uex3y0s3t1      0
+co13o20Uex3y1s3t2      0
+co13o20Uex3y2s3t3      0
+co14o21Uex0y0s1t0      0
+co14o21Uex0y0s0t1      0
+co14o21Uex0y1s1t1      0
+co14o21Uex0y1s0t2      0
+co14o21Uex0y2s1t2      0
+co14o21Uex0y2s0t3      0
+co14o21Uex0y3s1t3      0
+co14o21Uex1y0s2t0      0
+co14o21Uex1y0s1t1      0
+co14o21Uex1y1s2t1      1
+co14o21Uex1y1s1t2      0
+co14o21Uex1y2s2t2      0
+co14o21Uex1y2s1t3      0
+co14o21Uex1y3s2t3      0
+co14o21Uex2y0s3t0      0
+co14o21Uex2y0s2t1      0
+co14o21Uex2y1s3t1      1
+co14o21Uex2y1s2t2      0
+co14o21Uex2y2s3t2      0
+co14o21Uex2y2s2t3      0
+co14o21Uex2y3s3t3      0
+co14o21Uex3y0s3t1      0
+co14o21Uex3y1s3t2      0
+co14o21Uex3y2s3t3      0
+co15o22Uex0y0s1t0      0
+co15o22Uex0y0s0t1      0
+co15o22Uex0y1s1t1      0
+co15o22Uex0y1s0t2      0
+co15o22Uex0y2s1t2      1
+co15o22Uex0y2s0t3      0
+co15o22Uex0y3s1t3      0
+co15o22Uex1y0s2t0      0
+co15o22Uex1y0s1t1      0
+co15o22Uex1y1s2t1      0
+co15o22Uex1y1s1t2      0
+co15o22Uex1y2s2t2      1
+co15o22Uex1y2s1t3      0
+co15o22Uex1y3s2t3      0
+co15o22Uex2y0s3t0      0
+co15o22Uex2y0s2t1      0
+co15o22Uex2y1s3t1      0
+co15o22Uex2y1s2t2      0
+co15o22Uex2y2s3t2      0
+co15o22Uex2y2s2t3      1
+co15o22Uex2y3s3t3      0
+co15o22Uex3y0s3t1      0
+co15o22Uex3y1s3t2      0
+co15o22Uex3y2s3t3      0
+co16o23Uex0y0s1t0      0
+co16o23Uex0y0s0t1      0
+co16o23Uex0y1s1t1      0
+co16o23Uex0y1s0t2      0
+co16o23Uex0y2s1t2      0
+co16o23Uex0y2s0t3      0
+co16o23Uex0y3s1t3      0
+co16o23Uex1y0s2t0      0
+co16o23Uex1y0s1t1      0
+co16o23Uex1y1s2t1      1
+co16o23Uex1y1s1t2      0
+co16o23Uex1y2s2t2      0
+co16o23Uex1y2s1t3      0
+co16o23Uex1y3s2t3      0
+co16o23Uex2y0s3t0      0
+co16o23Uex2y0s2t1      0
+co16o23Uex2y1s3t1      0
+co16o23Uex2y1s2t2      1
+co16o23Uex2y2s3t2      0
+co16o23Uex2y2s2t3      1
+co16o23Uex2y3s3t3      0
+co16o23Uex3y0s3t1      0
+co16o23Uex3y1s3t2      0
+co16o23Uex3y2s3t3      0
+co18o24Uex0y0s1t0      0
+co18o24Uex0y0s0t1      0
+co18o24Uex0y1s1t1      0
+co18o24Uex0y1s0t2      0
+co18o24Uex0y2s1t2      0
+co18o24Uex0y2s0t3      0
+co18o24Uex0y3s1t3      0
+co18o24Uex1y0s2t0      0
+co18o24Uex1y0s1t1      0
+co18o24Uex1y1s2t1      1
+co18o24Uex1y1s1t2      0
+co18o24Uex1y2s2t2      0
+co18o24Uex1y2s1t3      0
+co18o24Uex1y3s2t3      0
+co18o24Uex2y0s3t0      0
+co18o24Uex2y0s2t1      0
+co18o24Uex2y1s3t1      0
+co18o24Uex2y1s2t2      1
+co18o24Uex2y2s3t2      1
+co18o24Uex2y2s2t3      0
+co18o24Uex2y3s3t3      0
+co18o24Uex3y0s3t1      0
+co18o24Uex3y1s3t2      0
+co18o24Uex3y2s3t3      0
+co19o24Uex0y0s1t0      0
+co19o24Uex0y0s0t1      0
+co19o24Uex0y1s1t1      0
+co19o24Uex0y1s0t2      0
+co19o24Uex0y2s1t2      0
+co19o24Uex0y2s0t3      0
+co19o24Uex0y3s1t3      0
+co19o24Uex1y0s2t0      0
+co19o24Uex1y0s1t1      0
+co19o24Uex1y1s2t1      0
+co19o24Uex1y1s1t2      0
+co19o24Uex1y2s2t2      0
+co19o24Uex1y2s1t3      0
+co19o24Uex1y3s2t3      0
+co19o24Uex2y0s3t0      0
+co19o24Uex2y0s2t1      0
+co19o24Uex2y1s3t1      1
+co19o24Uex2y1s2t2      1
+co19o24Uex2y2s3t2      1
+co19o24Uex2y2s2t3      0
+co19o24Uex2y3s3t3      0
+co19o24Uex3y0s3t1      0
+co19o24Uex3y1s3t2      0
+co19o24Uex3y2s3t3      0
+co20o25Uex0y0s1t0      0
+co20o25Uex0y0s0t1      0
+co20o25Uex0y1s1t1      0
+co20o25Uex0y1s0t2      0
+co20o25Uex0y2s1t2      0
+co20o25Uex0y2s0t3      0
+co20o25Uex0y3s1t3      0
+co20o25Uex1y0s2t0      0
+co20o25Uex1y0s1t1      0
+co20o25Uex1y1s2t1      0
+co20o25Uex1y1s1t2      0
+co20o25Uex1y2s2t2      0
+co20o25Uex1y2s1t3      0
+co20o25Uex1y3s2t3      0
+co20o25Uex2y0s3t0      0
+co20o25Uex2y0s2t1      0
+co20o25Uex2y1s3t1      0
+co20o25Uex2y1s2t2      0
+co20o25Uex2y2s3t2      1
+co20o25Uex2y2s2t3      1
+co20o25Uex2y3s3t3      0
+co20o25Uex3y0s3t1      0
+co20o25Uex3y1s3t2      0
+co20o25Uex3y2s3t3      0
+co21o25Uex0y0s1t0      0
+co21o25Uex0y0s0t1      0
+co21o25Uex0y1s1t1      0
+co21o25Uex0y1s0t2      0
+co21o25Uex0y2s1t2      0
+co21o25Uex0y2s0t3      0
+co21o25Uex0y3s1t3      0
+co21o25Uex1y0s2t0      0
+co21o25Uex1y0s1t1      0
+co21o25Uex1y1s2t1      0
+co21o25Uex1y1s1t2      0
+co21o25Uex1y2s2t2      0
+co21o25Uex1y2s1t3      0
+co21o25Uex1y3s2t3      0
+co21o25Uex2y0s3t0      0
+co21o25Uex2y0s2t1      0
+co21o25Uex2y1s3t1      1
+co21o25Uex2y1s2t2      1
+co21o25Uex2y2s3t2      1
+co21o25Uex2y2s2t3      0
+co21o25Uex2y3s3t3      0
+co21o25Uex3y0s3t1      0
+co21o25Uex3y1s3t2      0
+co21o25Uex3y2s3t3      0
+co22o26Uex0y0s1t0      0
+co22o26Uex0y0s0t1      0
+co22o26Uex0y1s1t1      0
+co22o26Uex0y1s0t2      0
+co22o26Uex0y2s1t2      0
+co22o26Uex0y2s0t3      0
+co22o26Uex0y3s1t3      0
+co22o26Uex1y0s2t0      0
+co22o26Uex1y0s1t1      0
+co22o26Uex1y1s2t1      1
+co22o26Uex1y1s1t2      0
+co22o26Uex1y2s2t2      0
+co22o26Uex1y2s1t3      0
+co22o26Uex1y3s2t3      0
+co22o26Uex2y0s3t0      0
+co22o26Uex2y0s2t1      0
+co22o26Uex2y1s3t1      0
+co22o26Uex2y1s2t2      1
+co22o26Uex2y2s3t2      0
+co22o26Uex2y2s2t3      1
+co22o26Uex2y3s3t3      0
+co22o26Uex3y0s3t1      0
+co22o26Uex3y1s3t2      0
+co22o26Uex3y2s3t3      0
+co23o26Uex0y0s1t0      0
+co23o26Uex0y0s0t1      0
+co23o26Uex0y1s1t1      0
+co23o26Uex0y1s0t2      0
+co23o26Uex0y2s1t2      0
+co23o26Uex0y2s0t3      0
+co23o26Uex0y3s1t3      0
+co23o26Uex1y0s2t0      0
+co23o26Uex1y0s1t1      0
+co23o26Uex1y1s2t1      1
+co23o26Uex1y1s1t2      0
+co23o26Uex1y2s2t2      0
+co23o26Uex1y2s1t3      0
+co23o26Uex1y3s2t3      0
+co23o26Uex2y0s3t0      0
+co23o26Uex2y0s2t1      0
+co23o26Uex2y1s3t1      0
+co23o26Uex2y1s2t2      1
+co23o26Uex2y2s3t2      0
+co23o26Uex2y2s2t3      1
+co23o26Uex2y3s3t3      0
+co23o26Uex3y0s3t1      0
+co23o26Uex3y1s3t2      0
+co23o26Uex3y2s3t3      0
+co24o27Uex0y0s1t0      0
+co24o27Uex0y0s0t1      0
+co24o27Uex0y1s1t1      0
+co24o27Uex0y1s0t2      0
+co24o27Uex0y2s1t2      0
+co24o27Uex0y2s0t3      0
+co24o27Uex0y3s1t3      0
+co24o27Uex1y0s2t0      0
+co24o27Uex1y0s1t1      0
+co24o27Uex1y1s2t1      1
+co24o27Uex1y1s1t2      0
+co24o27Uex1y2s2t2      0
+co24o27Uex1y2s1t3      0
+co24o27Uex1y3s2t3      0
+co24o27Uex2y0s3t0      0
+co24o27Uex2y0s2t1      0
+co24o27Uex2y1s3t1      0
+co24o27Uex2y1s2t2      1
+co24o27Uex2y2s3t2      1
+co24o27Uex2y2s2t3      0
+co24o27Uex2y3s3t3      0
+co24o27Uex3y0s3t1      0
+co24o27Uex3y1s3t2      0
+co24o27Uex3y2s3t3      0
+co25o28Uex0y0s1t0      0
+co25o28Uex0y0s0t1      0
+co25o28Uex0y1s1t1      0
+co25o28Uex0y1s0t2      0
+co25o28Uex0y2s1t2      0
+co25o28Uex0y2s0t3      0
+co25o28Uex0y3s1t3      0
+co25o28Uex1y0s2t0      0
+co25o28Uex1y0s1t1      0
+co25o28Uex1y1s2t1      0
+co25o28Uex1y1s1t2      0
+co25o28Uex1y2s2t2      0
+co25o28Uex1y2s1t3      0
+co25o28Uex1y3s2t3      0
+co25o28Uex2y0s3t0      0
+co25o28Uex2y0s2t1      0
+co25o28Uex2y1s3t1      0
+co25o28Uex2y1s2t2      0
+co25o28Uex2y2s3t2      1
+co25o28Uex2y2s2t3      1
+co25o28Uex2y3s3t3      0
+co25o28Uex3y0s3t1      0
+co25o28Uex3y1s3t2      0
+co25o28Uex3y2s3t3      0
+co26o28Uex0y0s1t0      0
+co26o28Uex0y0s0t1      0
+co26o28Uex0y1s1t1      0
+co26o28Uex0y1s0t2      0
+co26o28Uex0y2s1t2      0
+co26o28Uex0y2s0t3      0
+co26o28Uex0y3s1t3      0
+co26o28Uex1y0s2t0      0
+co26o28Uex1y0s1t1      0
+co26o28Uex1y1s2t1      1
+co26o28Uex1y1s1t2      0
+co26o28Uex1y2s2t2      0
+co26o28Uex1y2s1t3      0
+co26o28Uex1y3s2t3      0
+co26o28Uex2y0s3t0      0
+co26o28Uex2y0s2t1      0
+co26o28Uex2y1s3t1      0
+co26o28Uex2y1s2t2      1
+co26o28Uex2y2s3t2      0
+co26o28Uex2y2s2t3      1
+co26o28Uex2y3s3t3      0
+co26o28Uex3y0s3t1      0
+co26o28Uex3y1s3t2      0
+co26o28Uex3y2s3t3      0
+co28o29Uex0y0s1t0      0
+co28o29Uex0y0s0t1      0
+co28o29Uex0y1s1t1      0
+co28o29Uex0y1s0t2      0
+co28o29Uex0y2s1t2      0
+co28o29Uex0y2s0t3      0
+co28o29Uex0y3s1t3      0
+co28o29Uex1y0s2t0      0
+co28o29Uex1y0s1t1      0
+co28o29Uex1y1s2t1      0
+co28o29Uex1y1s1t2      0
+co28o29Uex1y2s2t2      0
+co28o29Uex1y2s1t3      0
+co28o29Uex1y3s2t3      0
+co28o29Uex2y0s3t0      0
+co28o29Uex2y0s2t1      0
+co28o29Uex2y1s3t1      0
+co28o29Uex2y1s2t2      0
+co28o29Uex2y2s3t2      1
+co28o29Uex2y2s2t3      1
+co28o29Uex2y3s3t3      0
+co28o29Uex3y0s3t1      0
+co28o29Uex3y1s3t2      0
+co28o29Uex3y2s3t3      0
+co27o29Uex0y0s1t0      0
+co27o29Uex0y0s0t1      0
+co27o29Uex0y1s1t1      0
+co27o29Uex0y1s0t2      0
+co27o29Uex0y2s1t2      0
+co27o29Uex0y2s0t3      0
+co27o29Uex0y3s1t3      0
+co27o29Uex1y0s2t0      0
+co27o29Uex1y0s1t1      0
+co27o29Uex1y1s2t1      1
+co27o29Uex1y1s1t2      0
+co27o29Uex1y2s2t2      0
+co27o29Uex1y2s1t3      0
+co27o29Uex1y3s2t3      0
+co27o29Uex2y0s3t0      0
+co27o29Uex2y0s2t1      0
+co27o29Uex2y1s3t1      0
+co27o29Uex2y1s2t2      1
+co27o29Uex2y2s3t2      1
+co27o29Uex2y2s2t3      0
+co27o29Uex2y3s3t3      0
+co27o29Uex3y0s3t1      0
+co27o29Uex3y1s3t2      0
+co27o29Uex3y2s3t3      0
+co29o30Uex0y0s1t0      0
+co29o30Uex0y0s0t1      0
+co29o30Uex0y1s1t1      0
+co29o30Uex0y1s0t2      0
+co29o30Uex0y2s1t2      0
+co29o30Uex0y2s0t3      0
+co29o30Uex0y3s1t3      0
+co29o30Uex1y0s2t0      0
+co29o30Uex1y0s1t1      0
+co29o30Uex1y1s2t1      0
+co29o30Uex1y1s1t2      0
+co29o30Uex1y2s2t2      0
+co29o30Uex1y2s1t3      0
+co29o30Uex1y3s2t3      0
+co29o30Uex2y0s3t0      0
+co29o30Uex2y0s2t1      0
+co29o30Uex2y1s3t1      1
+co29o30Uex2y1s2t2      1
+co29o30Uex2y2s3t2      1
+co29o30Uex2y2s2t3      0
+co29o30Uex2y3s3t3      0
+co29o30Uex3y0s3t1      0
+co29o30Uex3y1s3t2      0
+co29o30Uex3y2s3t3      0
+co1o12Unx0y0      0
+co1o12Unx0y1      0
+co1o12Unx0y2      0
+co1o12Unx0y3      0
+co1o12Unx1y0      0
+co1o12Unx1y1      0
+co1o12Unx1y2      0
+co1o12Unx1y3      0
+co1o12Unx2y0      0
+co1o12Unx2y1      0
+co1o12Unx2y2      1
+co1o12Unx2y3      0
+co1o12Unx3y0      0
+co1o12Unx3y1      0
+co1o12Unx3y2      0
+co1o12Unx3y3      0
+co3o14Unx0y0      0
+co3o14Unx0y1      0
+co3o14Unx0y2      0
+co3o14Unx0y3      0
+co3o14Unx1y0      0
+co3o14Unx1y1      0
+co3o14Unx1y2      0
+co3o14Unx1y3      0
+co3o14Unx2y0      0
+co3o14Unx2y1      1
+co3o14Unx2y2      1
+co3o14Unx2y3      0
+co3o14Unx3y0      0
+co3o14Unx3y1      0
+co3o14Unx3y2      0
+co3o14Unx3y3      0
+co4o14Unx0y0      0
+co4o14Unx0y1      0
+co4o14Unx0y2      0
+co4o14Unx0y3      0
+co4o14Unx1y0      0
+co4o14Unx1y1      0
+co4o14Unx1y2      1
+co4o14Unx1y3      0
+co4o14Unx2y0      0
+co4o14Unx2y1      0
+co4o14Unx2y2      0
+co4o14Unx2y3      0
+co4o14Unx3y0      0
+co4o14Unx3y1      0
+co4o14Unx3y2      0
+co4o14Unx3y3      0
+co5o15Unx0y0      0
+co5o15Unx0y1      0
+co5o15Unx0y2      0
+co5o15Unx0y3      0
+co5o15Unx1y0      0
+co5o15Unx1y1      0
+co5o15Unx1y2      1
+co5o15Unx1y3      0
+co5o15Unx2y0      0
+co5o15Unx2y1      0
+co5o15Unx2y2      0
+co5o15Unx2y3      0
+co5o15Unx3y0      0
+co5o15Unx3y1      0
+co5o15Unx3y2      0
+co5o15Unx3y3      0
+co6o16Unx0y0      0
+co6o16Unx0y1      0
+co6o16Unx0y2      0
+co6o16Unx0y3      0
+co6o16Unx1y0      0
+co6o16Unx1y1      1
+co6o16Unx1y2      1
+co6o16Unx1y3      0
+co6o16Unx2y0      0
+co6o16Unx2y1      0
+co6o16Unx2y2      0
+co6o16Unx2y3      0
+co6o16Unx3y0      0
+co6o16Unx3y1      0
+co6o16Unx3y2      0
+co6o16Unx3y3      0
+co7o16Unx0y0      0
+co7o16Unx0y1      0
+co7o16Unx0y2      0
+co7o16Unx0y3      0
+co7o16Unx1y0      0
+co7o16Unx1y1      0
+co7o16Unx1y2      1
+co7o16Unx1y3      0
+co7o16Unx2y0      0
+co7o16Unx2y1      0
+co7o16Unx2y2      1
+co7o16Unx2y3      0
+co7o16Unx3y0      0
+co7o16Unx3y1      0
+co7o16Unx3y2      0
+co7o16Unx3y3      0
+co8o17Unx0y0      0
+co8o17Unx0y1      0
+co8o17Unx0y2      0
+co8o17Unx0y3      0
+co8o17Unx1y0      0
+co8o17Unx1y1      0
+co8o17Unx1y2      0
+co8o17Unx1y3      0
+co8o17Unx2y0      0
+co8o17Unx2y1      1
+co8o17Unx2y2      1
+co8o17Unx2y3      0
+co8o17Unx3y0      0
+co8o17Unx3y1      0
+co8o17Unx3y2      0
+co8o17Unx3y3      0
+co10o18Unx0y0      0
+co10o18Unx0y1      0
+co10o18Unx0y2      0
+co10o18Unx0y3      0
+co10o18Unx1y0      0
+co10o18Unx1y1      0
+co10o18Unx1y2      0
+co10o18Unx1y3      0
+co10o18Unx2y0      0
+co10o18Unx2y1      1
+co10o18Unx2y2      1
+co10o18Unx2y3      0
+co10o18Unx3y0      0
+co10o18Unx3y1      0
+co10o18Unx3y2      0
+co10o18Unx3y3      0
+co11o19Unx0y0      0
+co11o19Unx0y1      0
+co11o19Unx0y2      0
+co11o19Unx0y3      0
+co11o19Unx1y0      0
+co11o19Unx1y1      0
+co11o19Unx1y2      0
+co11o19Unx1y3      0
+co11o19Unx2y0      0
+co11o19Unx2y1      1
+co11o19Unx2y2      1
+co11o19Unx2y3      0
+co11o19Unx3y0      0
+co11o19Unx3y1      0
+co11o19Unx3y2      0
+co11o19Unx3y3      0
+co12o20Unx0y0      0
+co12o20Unx0y1      0
+co12o20Unx0y2      0
+co12o20Unx0y3      0
+co12o20Unx1y0      0
+co12o20Unx1y1      0
+co12o20Unx1y2      0
+co12o20Unx1y3      0
+co12o20Unx2y0      0
+co12o20Unx2y1      0
+co12o20Unx2y2      1
+co12o20Unx2y3      0
+co12o20Unx3y0      0
+co12o20Unx3y1      0
+co12o20Unx3y2      0
+co12o20Unx3y3      0
+co13o20Unx0y0      0
+co13o20Unx0y1      0
+co13o20Unx0y2      0
+co13o20Unx0y3      0
+co13o20Unx1y0      0
+co13o20Unx1y1      0
+co13o20Unx1y2      1
+co13o20Unx1y3      0
+co13o20Unx2y0      0
+co13o20Unx2y1      0
+co13o20Unx2y2      1
+co13o20Unx2y3      0
+co13o20Unx3y0      0
+co13o20Unx3y1      0
+co13o20Unx3y2      0
+co13o20Unx3y3      0
+co14o21Unx0y0      0
+co14o21Unx0y1      0
+co14o21Unx0y2      0
+co14o21Unx0y3      0
+co14o21Unx1y0      0
+co14o21Unx1y1      1
+co14o21Unx1y2      0
+co14o21Unx1y3      0
+co14o21Unx2y0      0
+co14o21Unx2y1      1
+co14o21Unx2y2      0
+co14o21Unx2y3      0
+co14o21Unx3y0      0
+co14o21Unx3y1      0
+co14o21Unx3y2      0
+co14o21Unx3y3      0
+co15o22Unx0y0      0
+co15o22Unx0y1      0
+co15o22Unx0y2      0
+co15o22Unx0y3      0
+co15o22Unx1y0      0
+co15o22Unx1y1      0
+co15o22Unx1y2      1
+co15o22Unx1y3      0
+co15o22Unx2y0      0
+co15o22Unx2y1      0
+co15o22Unx2y2      1
+co15o22Unx2y3      0
+co15o22Unx3y0      0
+co15o22Unx3y1      0
+co15o22Unx3y2      0
+co15o22Unx3y3      0
+co16o23Unx0y0      0
+co16o23Unx0y1      0
+co16o23Unx0y2      0
+co16o23Unx0y3      0
+co16o23Unx1y0      0
+co16o23Unx1y1      0
+co16o23Unx1y2      0
+co16o23Unx1y3      0
+co16o23Unx2y0      0
+co16o23Unx2y1      1
+co16o23Unx2y2      1
+co16o23Unx2y3      0
+co16o23Unx3y0      0
+co16o23Unx3y1      0
+co16o23Unx3y2      0
+co16o23Unx3y3      0
+co18o24Unx0y0      0
+co18o24Unx0y1      0
+co18o24Unx0y2      0
+co18o24Unx0y3      0
+co18o24Unx1y0      0
+co18o24Unx1y1      0
+co18o24Unx1y2      0
+co18o24Unx1y3      0
+co18o24Unx2y0      0
+co18o24Unx2y1      1
+co18o24Unx2y2      1
+co18o24Unx2y3      0
+co18o24Unx3y0      0
+co18o24Unx3y1      0
+co18o24Unx3y2      0
+co18o24Unx3y3      0
+co19o24Unx0y0      0
+co19o24Unx0y1      0
+co19o24Unx0y2      0
+co19o24Unx0y3      0
+co19o24Unx1y0      0
+co19o24Unx1y1      0
+co19o24Unx1y2      0
+co19o24Unx1y3      0
+co19o24Unx2y0      0
+co19o24Unx2y1      1
+co19o24Unx2y2      1
+co19o24Unx2y3      0
+co19o24Unx3y0      0
+co19o24Unx3y1      0
+co19o24Unx3y2      0
+co19o24Unx3y3      0
+co20o25Unx0y0      0
+co20o25Unx0y1      0
+co20o25Unx0y2      0
+co20o25Unx0y3      0
+co20o25Unx1y0      0
+co20o25Unx1y1      0
+co20o25Unx1y2      0
+co20o25Unx1y3      0
+co20o25Unx2y0      0
+co20o25Unx2y1      0
+co20o25Unx2y2      1
+co20o25Unx2y3      0
+co20o25Unx3y0      0
+co20o25Unx3y1      0
+co20o25Unx3y2      0
+co20o25Unx3y3      0
+co21o25Unx0y0      0
+co21o25Unx0y1      0
+co21o25Unx0y2      0
+co21o25Unx0y3      0
+co21o25Unx1y0      0
+co21o25Unx1y1      0
+co21o25Unx1y2      0
+co21o25Unx1y3      0
+co21o25Unx2y0      0
+co21o25Unx2y1      1
+co21o25Unx2y2      1
+co21o25Unx2y3      0
+co21o25Unx3y0      0
+co21o25Unx3y1      0
+co21o25Unx3y2      0
+co21o25Unx3y3      0
+co22o26Unx0y0      0
+co22o26Unx0y1      0
+co22o26Unx0y2      0
+co22o26Unx0y3      0
+co22o26Unx1y0      0
+co22o26Unx1y1      0
+co22o26Unx1y2      0
+co22o26Unx1y3      0
+co22o26Unx2y0      0
+co22o26Unx2y1      1
+co22o26Unx2y2      1
+co22o26Unx2y3      0
+co22o26Unx3y0      0
+co22o26Unx3y1      0
+co22o26Unx3y2      0
+co22o26Unx3y3      0
+co23o26Unx0y0      0
+co23o26Unx0y1      0
+co23o26Unx0y2      0
+co23o26Unx0y3      0
+co23o26Unx1y0      0
+co23o26Unx1y1      0
+co23o26Unx1y2      0
+co23o26Unx1y3      0
+co23o26Unx2y0      0
+co23o26Unx2y1      1
+co23o26Unx2y2      1
+co23o26Unx2y3      0
+co23o26Unx3y0      0
+co23o26Unx3y1      0
+co23o26Unx3y2      0
+co23o26Unx3y3      0
+co24o27Unx0y0      0
+co24o27Unx0y1      0
+co24o27Unx0y2      0
+co24o27Unx0y3      0
+co24o27Unx1y0      0
+co24o27Unx1y1      0
+co24o27Unx1y2      0
+co24o27Unx1y3      0
+co24o27Unx2y0      0
+co24o27Unx2y1      1
+co24o27Unx2y2      1
+co24o27Unx2y3      0
+co24o27Unx3y0      0
+co24o27Unx3y1      0
+co24o27Unx3y2      0
+co24o27Unx3y3      0
+co25o28Unx0y0      0
+co25o28Unx0y1      0
+co25o28Unx0y2      0
+co25o28Unx0y3      0
+co25o28Unx1y0      0
+co25o28Unx1y1      0
+co25o28Unx1y2      0
+co25o28Unx1y3      0
+co25o28Unx2y0      0
+co25o28Unx2y1      0
+co25o28Unx2y2      1
+co25o28Unx2y3      0
+co25o28Unx3y0      0
+co25o28Unx3y1      0
+co25o28Unx3y2      0
+co25o28Unx3y3      0
+co26o28Unx0y0      0
+co26o28Unx0y1      0
+co26o28Unx0y2      0
+co26o28Unx0y3      0
+co26o28Unx1y0      0
+co26o28Unx1y1      0
+co26o28Unx1y2      0
+co26o28Unx1y3      0
+co26o28Unx2y0      0
+co26o28Unx2y1      1
+co26o28Unx2y2      1
+co26o28Unx2y3      0
+co26o28Unx3y0      0
+co26o28Unx3y1      0
+co26o28Unx3y2      0
+co26o28Unx3y3      0
+co28o29Unx0y0      0
+co28o29Unx0y1      0
+co28o29Unx0y2      0
+co28o29Unx0y3      0
+co28o29Unx1y0      0
+co28o29Unx1y1      0
+co28o29Unx1y2      0
+co28o29Unx1y3      0
+co28o29Unx2y0      0
+co28o29Unx2y1      0
+co28o29Unx2y2      1
+co28o29Unx2y3      0
+co28o29Unx3y0      0
+co28o29Unx3y1      0
+co28o29Unx3y2      0
+co28o29Unx3y3      0
+co27o29Unx0y0      0
+co27o29Unx0y1      0
+co27o29Unx0y2      0
+co27o29Unx0y3      0
+co27o29Unx1y0      0
+co27o29Unx1y1      0
+co27o29Unx1y2      0
+co27o29Unx1y3      0
+co27o29Unx2y0      0
+co27o29Unx2y1      1
+co27o29Unx2y2      1
+co27o29Unx2y3      0
+co27o29Unx3y0      0
+co27o29Unx3y1      0
+co27o29Unx3y2      0
+co27o29Unx3y3      0
+co29o30Unx0y0      0
+co29o30Unx0y1      0
+co29o30Unx0y2      0
+co29o30Unx0y3      0
+co29o30Unx1y0      0
+co29o30Unx1y1      0
+co29o30Unx1y2      0
+co29o30Unx1y3      0
+co29o30Unx2y0      0
+co29o30Unx2y1      1
+co29o30Unx2y2      1
+co29o30Unx2y3      0
+co29o30Unx3y0      0
+co29o30Unx3y1      0
+co29o30Unx3y2      0
+co29o30Unx3y3      0
+co2o13SSnx0y0      0
+co2o13SSnx0y1      0
+co2o13SSnx0y2      0
+co2o13SSnx0y3      0
+co2o13SSnx1y0      0
+co2o13SSnx1y1      0
+co2o13SSnx1y2      0
+co2o13SSnx1y3      0
+co2o13SSnx2y0      0
+co2o13SSnx2y1      0
+co2o13SSnx2y2      1
+co2o13SSnx2y3      0
+co2o13SSnx3y0      0
+co2o13SSnx3y1      0
+co2o13SSnx3y2      0
+co2o13SSnx3y3      0
+co2o13SEnx0y0      0
+co2o13SEnx0y1      0
+co2o13SEnx0y2      0
+co2o13SEnx0y3      0
+co2o13SEnx1y0      0
+co2o13SEnx1y1      0
+co2o13SEnx1y2      1
+co2o13SEnx1y3      0
+co2o13SEnx2y0      0
+co2o13SEnx2y1      0
+co2o13SEnx2y2      0
+co2o13SEnx2y3      0
+co2o13SEnx3y0      0
+co2o13SEnx3y1      0
+co2o13SEnx3y2      0
+co2o13SEnx3y3      0
+co9o17SSnx0y0      0
+co9o17SSnx0y1      0
+co9o17SSnx0y2      0
+co9o17SSnx0y3      0
+co9o17SSnx1y0      0
+co9o17SSnx1y1      0
+co9o17SSnx1y2      0
+co9o17SSnx1y3      0
+co9o17SSnx2y0      0
+co9o17SSnx2y1      0
+co9o17SSnx2y2      1
+co9o17SSnx2y3      0
+co9o17SSnx3y0      0
+co9o17SSnx3y1      0
+co9o17SSnx3y2      0
+co9o17SSnx3y3      0
+co9o17SEnx0y0      0
+co9o17SEnx0y1      0
+co9o17SEnx0y2      0
+co9o17SEnx0y3      0
+co9o17SEnx1y0      0
+co9o17SEnx1y1      0
+co9o17SEnx1y2      0
+co9o17SEnx1y3      0
+co9o17SEnx2y0      0
+co9o17SEnx2y1      1
+co9o17SEnx2y2      0
+co9o17SEnx2y3      0
+co9o17SEnx3y0      0
+co9o17SEnx3y1      0
+co9o17SEnx3y2      0
+co9o17SEnx3y3      0
+co17o23SSnx0y0      0
+co17o23SSnx0y1      0
+co17o23SSnx0y2      0
+co17o23SSnx0y3      0
+co17o23SSnx1y0      0
+co17o23SSnx1y1      0
+co17o23SSnx1y2      0
+co17o23SSnx1y3      0
+co17o23SSnx2y0      0
+co17o23SSnx2y1      1
+co17o23SSnx2y2      0
+co17o23SSnx2y3      0
+co17o23SSnx3y0      0
+co17o23SSnx3y1      0
+co17o23SSnx3y2      0
+co17o23SSnx3y3      0
+co17o23SEnx0y0      0
+co17o23SEnx0y1      0
+co17o23SEnx0y2      0
+co17o23SEnx0y3      0
+co17o23SEnx1y0      0
+co17o23SEnx1y1      0
+co17o23SEnx1y2      0
+co17o23SEnx1y3      0
+co17o23SEnx2y0      0
+co17o23SEnx2y1      0
+co17o23SEnx2y2      1
+co17o23SEnx2y3      0
+co17o23SEnx3y0      0
+co17o23SEnx3y1      0
+co17o23SEnx3y2      0
+co17o23SEnx3y3      0
+fo2o13Uex0y0s1t0      0
+fo2o13Uex0y0s0t1      0
+fo2o13Unx0y0      0
+fo2o13Uex0y1s1t1      0
+fo2o13Uex0y1s0t2      0
+fo2o13Unx0y1      0
+fo2o13Uex0y2s1t2      0
+fo2o13Uex0y2s0t3      0
+fo2o13Unx0y2      0
+fo2o13Uex0y3s1t3      0
+fo2o13Unx0y3      0
+fo2o13Uex1y0s2t0      0
+fo2o13Uex1y0s1t1      0
+fo2o13Unx1y0      0
+fo2o13Uex1y1s2t1      1
+fo2o13Uex1y1s1t2      0
+fo2o13Unx1y1      1
+fo2o13Uex1y2s2t2      1
+fo2o13Uex1y2s1t3      0
+fo2o13Unx1y2      0
+fo2o13Uex1y3s2t3      0
+fo2o13Unx1y3      0
+fo2o13Uex2y0s3t0      0
+fo2o13Uex2y0s2t1      0
+fo2o13Unx2y0      0
+fo2o13Uex2y1s3t1      0
+fo2o13Uex2y1s2t2      1
+fo2o13Unx2y1      1
+fo2o13Uex2y2s3t2      0
+fo2o13Uex2y2s2t3      0
+fo2o13Unx2y2      1
+fo2o13Uex2y3s3t3      0
+fo2o13Unx2y3      0
+fo2o13Uex3y0s3t1      0
+fo2o13Unx3y0      0
+fo2o13Uex3y1s3t2      0
+fo2o13Unx3y1      0
+fo2o13Uex3y2s3t3      0
+fo2o13Unx3y2      0
+fo2o13Unx3y3      0
+co2o13SSNfo2o13Unx0y0      0
+co2o13SSNfo2o13Unx0y1      0
+co2o13SSNfo2o13Unx0y2      0
+co2o13SSNfo2o13Unx0y3      0
+co2o13SSNfo2o13Unx1y0      0
+co2o13SSNfo2o13Unx1y1      0
+co2o13SSNfo2o13Unx1y2      0
+co2o13SSNfo2o13Unx1y3      0
+co2o13SSNfo2o13Unx2y0      0
+co2o13SSNfo2o13Unx2y1      0
+co2o13SSNfo2o13Unx2y2      1
+co2o13SSNfo2o13Unx2y3      0
+co2o13SSNfo2o13Unx3y0      0
+co2o13SSNfo2o13Unx3y1      0
+co2o13SSNfo2o13Unx3y2      0
+co2o13SSNfo2o13Unx3y3      0
+fo9o17Uex0y0s1t0      0
+fo9o17Uex0y0s0t1      0
+fo9o17Unx0y0      0
+fo9o17Uex0y1s1t1      0
+fo9o17Uex0y1s0t2      0
+fo9o17Unx0y1      0
+fo9o17Uex0y2s1t2      0
+fo9o17Uex0y2s0t3      0
+fo9o17Unx0y2      0
+fo9o17Uex0y3s1t3      0
+fo9o17Unx0y3      0
+fo9o17Uex1y0s2t0      0
+fo9o17Uex1y0s1t1      0
+fo9o17Unx1y0      0
+fo9o17Uex1y1s2t1      0
+fo9o17Uex1y1s1t2      0
+fo9o17Unx1y1      0
+fo9o17Uex1y2s2t2      0
+fo9o17Uex1y2s1t3      0
+fo9o17Unx1y2      0
+fo9o17Uex1y3s2t3      0
+fo9o17Unx1y3      0
+fo9o17Uex2y0s3t0      0
+fo9o17Uex2y0s2t1      0
+fo9o17Unx2y0      0
+fo9o17Uex2y1s3t1      0
+fo9o17Uex2y1s2t2      1
+fo9o17Unx2y1      1
+fo9o17Uex2y2s3t2      0
+fo9o17Uex2y2s2t3      1
+fo9o17Unx2y2      1
+fo9o17Uex2y3s3t3      0
+fo9o17Unx2y3      0
+fo9o17Uex3y0s3t1      0
+fo9o17Unx3y0      0
+fo9o17Uex3y1s3t2      0
+fo9o17Unx3y1      0
+fo9o17Uex3y2s3t3      0
+fo9o17Unx3y2      0
+fo9o17Unx3y3      0
+co9o17SSNfo9o17Unx0y0      0
+co9o17SSNfo9o17Unx0y1      0
+co9o17SSNfo9o17Unx0y2      0
+co9o17SSNfo9o17Unx0y3      0
+co9o17SSNfo9o17Unx1y0      0
+co9o17SSNfo9o17Unx1y1      0
+co9o17SSNfo9o17Unx1y2      0
+co9o17SSNfo9o17Unx1y3      0
+co9o17SSNfo9o17Unx2y0      0
+co9o17SSNfo9o17Unx2y1      0
+co9o17SSNfo9o17Unx2y2      1
+co9o17SSNfo9o17Unx2y3      0
+co9o17SSNfo9o17Unx3y0      0
+co9o17SSNfo9o17Unx3y1      0
+co9o17SSNfo9o17Unx3y2      0
+co9o17SSNfo9o17Unx3y3      0
+fo17o23Uex0y0s1t0      0
+fo17o23Uex0y0s0t1      0
+fo17o23Unx0y0      0
+fo17o23Uex0y1s1t1      0
+fo17o23Uex0y1s0t2      0
+fo17o23Unx0y1      0
+fo17o23Uex0y2s1t2      0
+fo17o23Uex0y2s0t3      0
+fo17o23Unx0y2      0
+fo17o23Uex0y3s1t3      0
+fo17o23Unx0y3      0
+fo17o23Uex1y0s2t0      0
+fo17o23Uex1y0s1t1      0
+fo17o23Unx1y0      0
+fo17o23Uex1y1s2t1      1
+fo17o23Uex1y1s1t2      0
+fo17o23Unx1y1      1
+fo17o23Uex1y2s2t2      0
+fo17o23Uex1y2s1t3      0
+fo17o23Unx1y2      0
+fo17o23Uex1y3s2t3      0
+fo17o23Unx1y3      0
+fo17o23Uex2y0s3t0      0
+fo17o23Uex2y0s2t1      0
+fo17o23Unx2y0      0
+fo17o23Uex2y1s3t1      0
+fo17o23Uex2y1s2t2      1
+fo17o23Unx2y1      1
+fo17o23Uex2y2s3t2      0
+fo17o23Uex2y2s2t3      0
+fo17o23Unx2y2      1
+fo17o23Uex2y3s3t3      0
+fo17o23Unx2y3      0
+fo17o23Uex3y0s3t1      0
+fo17o23Unx3y0      0
+fo17o23Uex3y1s3t2      0
+fo17o23Unx3y1      0
+fo17o23Uex3y2s3t3      0
+fo17o23Unx3y2      0
+fo17o23Unx3y3      0
+co17o23SSNfo17o23Unx0y0      0
+co17o23SSNfo17o23Unx0y1      0
+co17o23SSNfo17o23Unx0y2      0
+co17o23SSNfo17o23Unx0y3      0
+co17o23SSNfo17o23Unx1y0      0
+co17o23SSNfo17o23Unx1y1      0
+co17o23SSNfo17o23Unx1y2      0
+co17o23SSNfo17o23Unx1y3      0
+co17o23SSNfo17o23Unx2y0      0
+co17o23SSNfo17o23Unx2y1      1
+co17o23SSNfo17o23Unx2y2      0
+co17o23SSNfo17o23Unx2y3      0
+co17o23SSNfo17o23Unx3y0      0
+co17o23SSNfo17o23Unx3y1      0
+co17o23SSNfo17o23Unx3y2      0
+co17o23SSNfo17o23Unx3y3      0
+lo2o13Uex0y0s1t0      0
+lo2o13Uex0y0s0t1      0
+lo2o13Unx0y0      0
+lo2o13Uex0y1s1t1      0
+lo2o13Uex0y1s0t2      0
+lo2o13Unx0y1      0
+lo2o13Uex0y2s1t2      1
+lo2o13Uex0y2s0t3      0
+lo2o13Unx0y2      0
+lo2o13Uex0y3s1t3      0
+lo2o13Unx0y3      0
+lo2o13Uex1y0s2t0      0
+lo2o13Uex1y0s1t1      0
+lo2o13Unx1y0      0
+lo2o13Uex1y1s2t1      0
+lo2o13Uex1y1s1t2      0
+lo2o13Unx1y1      0
+lo2o13Uex1y2s2t2      1
+lo2o13Uex1y2s1t3      0
+lo2o13Unx1y2      1
+lo2o13Uex1y3s2t3      0
+lo2o13Unx1y3      0
+lo2o13Uex2y0s3t0      0
+lo2o13Uex2y0s2t1      0
+lo2o13Unx2y0      0
+lo2o13Uex2y1s3t1      0
+lo2o13Uex2y1s2t2      0
+lo2o13Unx2y1      0
+lo2o13Uex2y2s3t2      0
+lo2o13Uex2y2s2t3      0
+lo2o13Unx2y2      0
+lo2o13Uex2y3s3t3      0
+lo2o13Unx2y3      0
+lo2o13Uex3y0s3t1      0
+lo2o13Unx3y0      0
+lo2o13Uex3y1s3t2      0
+lo2o13Unx3y1      0
+lo2o13Uex3y2s3t3      0
+lo2o13Unx3y2      0
+lo2o13Unx3y3      0
+co2o13SENlo2o13Unx0y0      0
+co2o13SENlo2o13Unx0y1      0
+co2o13SENlo2o13Unx0y2      0
+co2o13SENlo2o13Unx0y3      0
+co2o13SENlo2o13Unx1y0      0
+co2o13SENlo2o13Unx1y1      0
+co2o13SENlo2o13Unx1y2      1
+co2o13SENlo2o13Unx1y3      0
+co2o13SENlo2o13Unx2y0      0
+co2o13SENlo2o13Unx2y1      0
+co2o13SENlo2o13Unx2y2      0
+co2o13SENlo2o13Unx2y3      0
+co2o13SENlo2o13Unx3y0      0
+co2o13SENlo2o13Unx3y1      0
+co2o13SENlo2o13Unx3y2      0
+co2o13SENlo2o13Unx3y3      0
+lo9o17Uex0y0s1t0      0
+lo9o17Uex0y0s0t1      0
+lo9o17Unx0y0      0
+lo9o17Uex0y1s1t1      0
+lo9o17Uex0y1s0t2      0
+lo9o17Unx0y1      0
+lo9o17Uex0y2s1t2      0
+lo9o17Uex0y2s0t3      0
+lo9o17Unx0y2      0
+lo9o17Uex0y3s1t3      0
+lo9o17Unx0y3      0
+lo9o17Uex1y0s2t0      0
+lo9o17Uex1y0s1t1      0
+lo9o17Unx1y0      0
+lo9o17Uex1y1s2t1      1
+lo9o17Uex1y1s1t2      0
+lo9o17Unx1y1      1
+lo9o17Uex1y2s2t2      0
+lo9o17Uex1y2s1t3      0
+lo9o17Unx1y2      0
+lo9o17Uex1y3s2t3      0
+lo9o17Unx1y3      0
+lo9o17Uex2y0s3t0      0
+lo9o17Uex2y0s2t1      0
+lo9o17Unx2y0      0
+lo9o17Uex2y1s3t1      0
+lo9o17Uex2y1s2t2      1
+lo9o17Unx2y1      1
+lo9o17Uex2y2s3t2      0
+lo9o17Uex2y2s2t3      0
+lo9o17Unx2y2      0
+lo9o17Uex2y3s3t3      0
+lo9o17Unx2y3      0
+lo9o17Uex3y0s3t1      0
+lo9o17Unx3y0      0
+lo9o17Uex3y1s3t2      0
+lo9o17Unx3y1      0
+lo9o17Uex3y2s3t3      0
+lo9o17Unx3y2      0
+lo9o17Unx3y3      0
+co9o17SENlo9o17Unx0y0      0
+co9o17SENlo9o17Unx0y1      0
+co9o17SENlo9o17Unx0y2      0
+co9o17SENlo9o17Unx0y3      0
+co9o17SENlo9o17Unx1y0      0
+co9o17SENlo9o17Unx1y1      0
+co9o17SENlo9o17Unx1y2      0
+co9o17SENlo9o17Unx1y3      0
+co9o17SENlo9o17Unx2y0      0
+co9o17SENlo9o17Unx2y1      1
+co9o17SENlo9o17Unx2y2      0
+co9o17SENlo9o17Unx2y3      0
+co9o17SENlo9o17Unx3y0      0
+co9o17SENlo9o17Unx3y1      0
+co9o17SENlo9o17Unx3y2      0
+co9o17SENlo9o17Unx3y3      0
+lo17o23Uex0y0s1t0      0
+lo17o23Uex0y0s0t1      0
+lo17o23Unx0y0      0
+lo17o23Uex0y1s1t1      0
+lo17o23Uex0y1s0t2      0
+lo17o23Unx0y1      0
+lo17o23Uex0y2s1t2      0
+lo17o23Uex0y2s0t3      0
+lo17o23Unx0y2      0
+lo17o23Uex0y3s1t3      0
+lo17o23Unx0y3      0
+lo17o23Uex1y0s2t0      0
+lo17o23Uex1y0s1t1      0
+lo17o23Unx1y0      0
+lo17o23Uex1y1s2t1      0
+lo17o23Uex1y1s1t2      0
+lo17o23Unx1y1      0
+lo17o23Uex1y2s2t2      0
+lo17o23Uex1y2s1t3      0
+lo17o23Unx1y2      0
+lo17o23Uex1y3s2t3      0
+lo17o23Unx1y3      0
+lo17o23Uex2y0s3t0      0
+lo17o23Uex2y0s2t1      0
+lo17o23Unx2y0      0
+lo17o23Uex2y1s3t1      0
+lo17o23Uex2y1s2t2      1
+lo17o23Unx2y1      0
+lo17o23Uex2y2s3t2      0
+lo17o23Uex2y2s2t3      1
+lo17o23Unx2y2      1
+lo17o23Uex2y3s3t3      0
+lo17o23Unx2y3      0
+lo17o23Uex3y0s3t1      0
+lo17o23Unx3y0      0
+lo17o23Uex3y1s3t2      0
+lo17o23Unx3y1      0
+lo17o23Uex3y2s3t3      0
+lo17o23Unx3y2      0
+lo17o23Unx3y3      0
+co17o23SENlo17o23Unx0y0      0
+co17o23SENlo17o23Unx0y1      0
+co17o23SENlo17o23Unx0y2      0
+co17o23SENlo17o23Unx0y3      0
+co17o23SENlo17o23Unx1y0      0
+co17o23SENlo17o23Unx1y1      0
+co17o23SENlo17o23Unx1y2      0
+co17o23SENlo17o23Unx1y3      0
+co17o23SENlo17o23Unx2y0      0
+co17o23SENlo17o23Unx2y1      0
+co17o23SENlo17o23Unx2y2      1
+co17o23SENlo17o23Unx2y3      0
+co17o23SENlo17o23Unx3y0      0
+co17o23SENlo17o23Unx3y1      0
+co17o23SENlo17o23Unx3y2      0
+co17o23SENlo17o23Unx3y3      0
+so2o13Uex0y0s1t0      0
+so2o13Uex0y0s0t1      0
+so2o13Uex0y1s1t1      0
+so2o13Uex0y1s0t2      0
+so2o13Uex0y2s1t2      0
+so2o13Uex0y2s0t3      0
+so2o13Uex0y3s1t3      0
+so2o13Uex1y0s2t0      0
+so2o13Uex1y0s1t1      0
+so2o13Uex1y1s2t1      0
+so2o13Uex1y1s1t2      0
+so2o13Uex1y2s2t2      1
+so2o13Uex1y2s1t3      0
+so2o13Uex1y3s2t3      0
+so2o13Uex2y0s3t0      0
+so2o13Uex2y0s2t1      0
+so2o13Uex2y1s3t1      0
+so2o13Uex2y1s2t2      0
+so2o13Uex2y2s3t2      0
+so2o13Uex2y2s2t3      0
+so2o13Uex2y3s3t3      0
+so2o13Uex3y0s3t1      0
+so2o13Uex3y1s3t2      0
+so2o13Uex3y2s3t3      0
+so9o17Uex0y0s1t0      0
+so9o17Uex0y0s0t1      0
+so9o17Uex0y1s1t1      0
+so9o17Uex0y1s0t2      0
+so9o17Uex0y2s1t2      0
+so9o17Uex0y2s0t3      0
+so9o17Uex0y3s1t3      0
+so9o17Uex1y0s2t0      0
+so9o17Uex1y0s1t1      0
+so9o17Uex1y1s2t1      0
+so9o17Uex1y1s1t2      0
+so9o17Uex1y2s2t2      0
+so9o17Uex1y2s1t3      0
+so9o17Uex1y3s2t3      0
+so9o17Uex2y0s3t0      0
+so9o17Uex2y0s2t1      0
+so9o17Uex2y1s3t1      0
+so9o17Uex2y1s2t2      1
+so9o17Uex2y2s3t2      0
+so9o17Uex2y2s2t3      0
+so9o17Uex2y3s3t3      0
+so9o17Uex3y0s3t1      0
+so9o17Uex3y1s3t2      0
+so9o17Uex3y2s3t3      0
+so17o23Uex0y0s1t0      0
+so17o23Uex0y0s0t1      0
+so17o23Uex0y1s1t1      0
+so17o23Uex0y1s0t2      0
+so17o23Uex0y2s1t2      0
+so17o23Uex0y2s0t3      0
+so17o23Uex0y3s1t3      0
+so17o23Uex1y0s2t0      0
+so17o23Uex1y0s1t1      0
+so17o23Uex1y1s2t1      0
+so17o23Uex1y1s1t2      0
+so17o23Uex1y2s2t2      0
+so17o23Uex1y2s1t3      0
+so17o23Uex1y3s2t3      0
+so17o23Uex2y0s3t0      0
+so17o23Uex2y0s2t1      0
+so17o23Uex2y1s3t1      0
+so17o23Uex2y1s2t2      1
+so17o23Uex2y2s3t2      0
+so17o23Uex2y2s2t3      0
+so17o23Uex2y3s3t3      0
+so17o23Uex3y0s3t1      0
+so17o23Uex3y1s3t2      0
+so17o23Uex3y2s3t3      0
+so2o13Unx0y0      0
+so2o13Unx0y1      0
+so2o13Unx0y2      0
+so2o13Unx0y3      0
+so2o13Unx1y0      0
+so2o13Unx1y1      0
+so2o13Unx1y2      0
+so2o13Unx1y3      0
+so2o13Unx2y0      0
+so2o13Unx2y1      0
+so2o13Unx2y2      0
+so2o13Unx2y3      0
+so2o13Unx3y0      0
+so2o13Unx3y1      0
+so2o13Unx3y2      0
+so2o13Unx3y3      0
+so17o23Unx0y0      0
+so17o23Unx0y1      0
+so17o23Unx0y2      0
+so17o23Unx0y3      0
+so17o23Unx1y0      0
+so17o23Unx1y1      0
+so17o23Unx1y2      0
+so17o23Unx1y3      0
+so17o23Unx2y0      0
+so17o23Unx2y1      0
+so17o23Unx2y2      0
+so17o23Unx2y3      0
+so17o23Unx3y0      0
+so17o23Unx3y1      0
+so17o23Unx3y2      0
+so17o23Unx3y3      0
+so9o17Unx0y0      0
+so9o17Unx0y1      0
+so9o17Unx0y2      0
+so9o17Unx0y3      0
+so9o17Unx1y0      0
+so9o17Unx1y1      0
+so9o17Unx1y2      0
+so9o17Unx1y3      0
+so9o17Unx2y0      0
+so9o17Unx2y1      0
+so9o17Unx2y2      0
+so9o17Unx2y3      0
+so9o17Unx3y0      0
+so9o17Unx3y1      0
+so9o17Unx3y2      0
+so9o17Unx3y3      0

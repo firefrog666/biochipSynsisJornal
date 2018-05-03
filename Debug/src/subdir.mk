@@ -4,6 +4,7 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../src/Algorithm.cpp \
 ../src/ILP.cpp \
 ../src/ListAlgorithm.cpp \
 ../src/main.cpp \
@@ -13,6 +14,7 @@ CPP_SRCS += \
 ../src/randomSeq.cpp 
 
 OBJS += \
+./src/Algorithm.o \
 ./src/ILP.o \
 ./src/ListAlgorithm.o \
 ./src/main.o \
@@ -22,6 +24,7 @@ OBJS += \
 ./src/randomSeq.o 
 
 CPP_DEPS += \
+./src/Algorithm.d \
 ./src/ILP.d \
 ./src/ListAlgorithm.d \
 ./src/main.d \

@@ -6,8 +6,6 @@
 #include <algorithm>
 #include <boost/shared_ptr.hpp>
 
-typedef boost::shared_ptr<Op> Op_ptr;
-typedef boost::shared_ptr<Device> Dev_ptr;
 
 using namespace std;
 
@@ -21,13 +19,13 @@ class RandomSeq{
     int devCount = 0;
 
 private:
-	vector<Op_ptr> priorityList;
-	vector<Dev_ptr> availableDevices;
+	vector<Op*> priorityList;
+	vector<Device*> availableDevices;
 public:
-	vector<Op_ptr> ops;
+	vector<Op*> ops;
 	vector<int> opsLayer;
 	vector<int> opsIdInThisLayer;
-	vector<Dev_ptr> devices;
+	vector<Device*> devices;
 
 
 
@@ -36,9 +34,9 @@ private:
 	void addOneOp();
 
 
-	Op_ptr genRandomOp();
-	Dev_ptr genRandomDev();
-	Dev_ptr genDev(operationType type);
+	Op* genRandomOp();
+	Device* genRandomDev();
+	Device* genDev(operationType type);
 
 
 

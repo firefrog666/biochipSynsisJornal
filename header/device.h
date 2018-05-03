@@ -3,11 +3,12 @@
 
 #include <string>
 #include <vector>
-#include <boost/shared_ptr.hpp>
+//#include "../header/channel.h"
 
 
 
-#include <boost/shared_ptr.hpp>
+
+
 
 class Channel;
 class Op;
@@ -54,9 +55,9 @@ public:
 	operationType type;
 	bool injectingSth;
 	bool ejectingSth;
-	boost::shared_ptr<Op> runningOp;
-	boost::shared_ptr<Channel> injectingChannel;
-	boost::shared_ptr<Channel> ejectingChannel;
+	Op* runningOp;
+	Channel* injectingChannel;
+	Channel* ejectingChannel;
 	bool injecting;
 	bool ejecting;
 	bool isRunning;
@@ -90,10 +91,10 @@ public:
 
 };
 
-typedef boost::shared_ptr<Device> Dev_ptr;
+
 //Operation in a sequence graph
 class Op {
-	typedef boost::shared_ptr<Op> Op_ptr;
+
 public:
 	Op(){
 		startTime = 0;
@@ -125,18 +126,26 @@ public:
 				return false;
 
 		}
+
+
+		void delay(int time){
+			startTime = startTime + time;
+			endTime = endTime + time;
+			injecTime = injecTime + time;
+			ejectTime = ejectTime + time;
+		}
 public:
     bool done; //if all
     bool running;//if an operation is running
 
 	operationType type;
 	string name;
-	Dev_ptr bindDevice;
-	vector<Op_ptr> parents;
-	vector<Op_ptr> children;
+	Device* bindDevice;
+	vector<Op*> parents;
+	vector<Op*> children;
 	int duration;
 	int injecTime; //when to first inject liquid
-	int ejectTime; // when to eject Time
+	int ejectTime; // when to finish eject Time
 	int startTime;
 	int endTime;
 	int parentSize;

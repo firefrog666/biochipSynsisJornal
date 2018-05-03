@@ -4,5 +4,5 @@
 
 USER_OBJS :=
 
-LIBS := -l/home/ga63quk/workspace/gurobi605/linux64/lib/gurobi_c++ -l/home/ga63quk/workspace/gurobi605/linux64/lib/gurobi60
+LIBS := -L/home/ga63quk/workspace/gurobi605/linux64/lib/ -lgurobi_c++ -lgurobi60
 

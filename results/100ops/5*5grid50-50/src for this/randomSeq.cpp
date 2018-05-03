@@ -31,8 +31,8 @@
 
 #define TRANSTIME 10
 using namespace std;
-typedef boost::shared_ptr<Op> Op_ptr;
-typedef boost::shared_ptr<Device> Dev_ptr;
+typedef boost::shared_ptr<Op> Op*;
+typedef boost::shared_ptr<Device> Device*;
 
 string toS(int i){
 	stringstream ss;
@@ -50,8 +50,8 @@ string toS(string s){
 	return ss.str();
 }
 
-Op_ptr RandomSeq::genRandomOp(){
-	Op_ptr op(new Op);
+Op* RandomSeq::genRandomOp(){
+	Op* op(new Op);
 	op->name = "o" + toS(opCount);
 	opCount++;
 	op->duration = 40;
@@ -70,8 +70,8 @@ Op_ptr RandomSeq::genRandomOp(){
 
 }
 
-Dev_ptr RandomSeq::genDev(operationType type){
-	Dev_ptr dev(new Device);
+Device* RandomSeq::genDev(operationType type){
+	Device* dev(new Device);
 	dev->name = "d" + toS(devCount);
 	devCount++;
 
@@ -84,8 +84,8 @@ Dev_ptr RandomSeq::genDev(operationType type){
 
 }
 
-Dev_ptr RandomSeq::genRandomDev(){
-	Dev_ptr dev(new Device);
+Device* RandomSeq::genRandomDev(){
+	Device* dev(new Device);
 	dev->name = "d" + toS(devCount);
 	devCount++;
 
@@ -102,15 +102,15 @@ void RandomSeq::genDevs(int num){
 
 		operationType type = static_cast<operationType>(i%(operationType::last-1));
 
-		Dev_ptr dev = genDev(type);
+		Device* dev = genDev(type);
 		devices.push_back(dev);
 
-		/*Dev_ptr dev = genRandomDev();
+		/*Device* dev = genRandomDev();
 		devices.push_back(dev);*/
 	}
 }
 void RandomSeq::addOneOp(){
-	Op_ptr op = genRandomOp();
+	Op* op = genRandomOp();
 	if(ops.size() == 0){
 		ops.push_back(op);
 		return;
@@ -121,7 +121,7 @@ void RandomSeq::addOneOp(){
 	for(int i = 0; i < parentSize; i++){
 		//always choose a father
 		if(i == 0){
-			for(Op_ptr child:ops){
+			for(Op* child:ops){
 				if(child->parents.size() < parentSize){
 					child->parents.push_back(op);
 					op->children.push_back(child);
@@ -135,7 +135,7 @@ void RandomSeq::addOneOp(){
 		int decide = rand()%2;
 		// find a father, always find your previous father's sibling
 		if(decide == 1){
-			for(Op_ptr child:ops){
+			for(Op* child:ops){
 				if(child->parents.size() < parentSize){
 					child->parents.push_back(op);
 					op->children.push_back(child);
@@ -153,18 +153,18 @@ void RandomSeq::addOneOp(){
 
 void RandomSeq::genSeqByLayer(const vector<int>& opNumEachLayer){
 
-	vector<Op_ptr> opsTemp;
+	vector<Op*> opsTemp;
 	vector<int> opsLayerTemp;
 	vector<int> opsIdInThisLayerTemp;
-	vector<Op_ptr> lastLayer;
-	vector<Op_ptr> thisLayer;
+	vector<Op*> lastLayer;
+	vector<Op*> thisLayer;
 	int idOFOneLayer = 0;
 	for(int layer = 0; layer < opNumEachLayer.size();layer++){
 		idOFOneLayer = 0;
 		int opNum = opNumEachLayer.at(layer);
 		if(layer == 0){
 			for(int opId = 0; opId < opNum; opId++){
-				Op_ptr op = genRandomOp();
+				Op* op = genRandomOp();
 				opsTemp.push_back(op);
 				opsLayerTemp.push_back(layer);
 				opsIdInThisLayerTemp.push_back(idOFOneLayer);idOFOneLayer++;
@@ -178,7 +178,7 @@ void RandomSeq::genSeqByLayer(const vector<int>& opNumEachLayer){
 		thisLayer.clear();
 
 		for(int opId = 0; opId < opNum; opId++){
-			Op_ptr op = genRandomOp();
+			Op* op = genRandomOp();
 
 			//for each anchor
 			int randomParentSize;
@@ -203,7 +203,7 @@ void RandomSeq::genSeqByLayer(const vector<int>& opNumEachLayer){
 
 
 				for(int fatherId = initFatherId; fatherId < lastLayer.size();fatherId++){
-					Op_ptr father = lastLayer.at(fatherId);
+					Op* father = lastLayer.at(fatherId);
 
 					//match
 					if(father->children.size() < (rand()%2+1)/*father->childSize*/){
@@ -230,7 +230,7 @@ void RandomSeq::genSeqByLayer(const vector<int>& opNumEachLayer){
 
 	//discard alone ops
 	for(int i = 0; i < opsTemp.size(); i++){
-		Op_ptr op = opsTemp.at(i);
+		Op* op = opsTemp.at(i);
 		int opLayer = opsLayerTemp.at(i);
 		int opIdThisLayer = opsIdInThisLayerTemp.at(i);
 
@@ -261,7 +261,7 @@ void RandomSeq::drawOps(){
 	file.open("operations.txt");
 
 	for(int i = 0; i < ops.size(); i++){
-		Op_ptr op = ops.at(i);
+		Op* op = ops.at(i);
 		int opLayer = opsLayer.at(i);
 		int opIdThisLayer = opsIdInThisLayer.at(i);
 
@@ -282,7 +282,7 @@ void RandomSeq::drawOps(){
 
 	file.open("arrows.txt");
 	for(int i = 0; i < ops.size(); i++){
-		Op_ptr op = ops.at(i);
+		Op* op = ops.at(i);
 		int opLayer = opsLayer.at(i);
 		int opIdThisLayer = opsIdInThisLayer.at(i);
 
@@ -290,7 +290,7 @@ void RandomSeq::drawOps(){
 		int arrowStartHor =  radius + opIdThisLayer * (radius + opsSpace);
 
 		for(int j = 0; j < op->children.size();j++){
-			Op_ptr child = op->children.at(j);
+			Op* child = op->children.at(j);
 			int childId;
 
 			//find child

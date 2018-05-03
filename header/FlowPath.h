@@ -9,9 +9,7 @@ using namespace std;
 
 #ifndef SHAREDPTR
 #define SHAREDPTR
-typedef boost::shared_ptr<Op> Op_ptr;
-typedef boost::shared_ptr<Device> Dev_ptr;
-typedef boost::shared_ptr<Channel> Channel_ptr;
+
 
 #endif
 
@@ -21,7 +19,7 @@ typedef boost::shared_ptr<Channel> Channel_ptr;
 
 class FlowPath : public Channel{
 public:
-	Channel_ptr linkedChannel;
+	Channel* linkedChannel;
 	bool	linkedStorage = false;
 
 };

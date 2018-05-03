@@ -1,4 +1,4 @@
-/*
+ /*
  * ListAlgorithm.cpp
  *
  *  Created on: Aug 14, 2016
@@ -24,9 +24,7 @@
 #define TRANSTIME 10
 #define M 10000
 using namespace std;
-typedef boost::shared_ptr<Op> Op_ptr;
-typedef boost::shared_ptr<Device> Dev_ptr;
-typedef boost::shared_ptr<Channel> Ch_ptr;
+
 
 #ifndef SSTRING
 #define SSTRING
@@ -49,7 +47,7 @@ string s(string s){
 void ListAlgorithm::readFromSolver(map<string,int> const & input){
 
 
-	for(Op_ptr op:ops){
+	for(Op* op:ops){
 		string opName = op->name;
 		string opStart = opName + s("Start");
 		string opFinish = opName + s("Finish");
@@ -59,7 +57,7 @@ void ListAlgorithm::readFromSolver(map<string,int> const & input){
 		op->endTime = input.at(opFinish);
 		op->injecTime = input.at(opInj);
 		op->ejectTime = input.at(opEj);
-		for(Dev_ptr dev:devices){
+		for(Device* dev:devices){
 			string opBindDev = op->name + s("Bind") + dev->name;
 			int bind = input.at(opBindDev);
 			if(bind == 0){
@@ -69,7 +67,7 @@ void ListAlgorithm::readFromSolver(map<string,int> const & input){
 		}
 	}
 
-	for(Ch_ptr c:channels){
+	for(Channel* c:channels){
 		string cName = c->name;
 		string cStart = c->name + s("Start");
 		string cFinish = c->name + s("Finish");
@@ -86,26 +84,91 @@ void ListAlgorithm::readFromSolver(map<string,int> const & input){
 
 }
 
+void ListAlgorithm::howManyStore(){
+	int storeNum = 0;
+	for(Channel* c:channels){
+		if(c->endTime - c->startTime > TRANSTIME){
+			storeNum++;
+		}
+	}
+
+	cout << "store number is " << storeNum << endl;
+}
+
 void ListAlgorithm::writeTimeline(){
 	ofstream file;
 		file.open("timeline.txt");
 
-		for(Ch_ptr c:channels){
-			Op_ptr f = c->fatherOp;
-			Op_ptr son = c->childOp;
+		for(Channel* c:channels){
+			Op* f = c->fatherOp;
+			Op* son = c->childOp;
 
 			file<< c->name << " "  << c->startTime << " " << c->endTime << " " << c->fatherOp->name << " " << c->childOp->name << endl;
 
 		}
-		for(Op_ptr op:ops){
+		for(Op* op:ops){
 			file << op->name << " " << op->injecTime << " " << op->startTime << " " << op->endTime << " " << op->ejectTime << " " << op->bindDevice->name << endl;
 		}
+
+		//concurrunt store
+		int extraTime = 0;
+
+		for(int i = 0; i<=channels.size()-2;i++ ){
+			Channel* c0 = channels.at(i);
+
+			if(c0->endTime - c0->startTime <= TRANSTIME)
+				continue;
+
+			for(int j = i+1; j<=channels.size()-1;j++ ){
+				Channel* c1 = channels.at(j);
+
+				if(c1->endTime - c1->startTime <= TRANSTIME)
+					continue;
+
+				if(c0->startTime - c1->startTime >= 0){
+					if(c0->startTime - c1->startTime <= TRANSTIME){
+					cout << c0->name << "start " << c0->startTime << " end " << c0->endTime << " " << c1->name << "start " << c1->startTime << " end " << c1->endTime  << endl;
+						extraTime+= TRANSTIME;
+
+					}
+				}
+
+				else if(c0->startTime - c1->startTime < 0){
+					if(c0->startTime - c1->startTime >= -TRANSTIME){
+						extraTime+= TRANSTIME;
+					cout << c0->name << "start " << c0->startTime << " end " << c0->endTime <<  " " <<c1->name << "start " << c1->startTime << " end " << c1->endTime  << endl;
+
+					}
+				}
+
+				if(c0->endTime - c1->endTime >= 0){
+					if(c0->endTime - c1->endTime <= TRANSTIME){
+
+						extraTime+= TRANSTIME;
+					cout << c0->name << "start " << c0->startTime << " end " << c0->endTime <<  " " <<c1->name << "start " << c1->startTime << " end " << c1->endTime  << endl;
+					}
+				}
+
+				else if(c0->endTime - c1->endTime > 0){
+					if(c0->endTime - c1->endTime >= -TRANSTIME){
+
+					cout << c0->name << "start " << c0->startTime << " end " << c0->endTime <<  " " <<c1->name << "start " << c1->startTime << " end " << c1->endTime  << endl;
+						extraTime+= TRANSTIME;
+					}
+
+				}
+
+			}
+		}
+		file << "extraTime " << extraTime << endl;
 		file.close();
+
+
 }
 
 void ListAlgorithm::outerMemilpConstraint(){
 	//create var
-		for(Op_ptr op:ops){
+		for(Op* op:ops){
 			string opName = op->name;
 			string opStart = opName + s("Start");
 			string opFinish = opName + s("Finish");
@@ -116,7 +179,7 @@ void ListAlgorithm::outerMemilpConstraint(){
 			varName.push_back(opInj);varType.push_back("2");
 			varName.push_back(opEj);varType.push_back("2");
 			//if op bind to dev
-			for(Dev_ptr dev:devices){
+			for(Device* dev:devices){
 				string devName = dev->name;
 				string opBindDev = opName + s("Bind") + devName;
 				varName.push_back(opBindDev);varType.push_back("1");
@@ -126,9 +189,9 @@ void ListAlgorithm::outerMemilpConstraint(){
 		}
 
 		//create channels
-		for(Op_ptr child:ops){
-			for(Op_ptr parent:child->parents){
-				Ch_ptr c(new Channel);
+		for(Op* child:ops){
+			for(Op* parent:child->parents){
+				Channel* c(new Channel);
 				channels.push_back(c);
 				c->name = s("c") + parent->name + child->name;
 				string cStart = c->name + s("Start");
@@ -142,31 +205,31 @@ void ListAlgorithm::outerMemilpConstraint(){
 
 		//ops finsh -begin >= duration
 		//ops after his parent
-		for(Op_ptr op:ops){
+		for(Op* op:ops){
 			string opStart = op->name + s("Start");
 			string opFinish = op->name + s("Finish");
 
-			ILP.push_back(opFinish + s(" - ") + opStart + s(" >= ") +s(op->duration));
+			constraints.push_back(opFinish + s(" - ") + opStart + s(" >= ") +s(op->duration));
 		}
 
-		for(Op_ptr op:ops){
+		for(Op* op:ops){
 			string opName = op->name;
 			string opStart = opName + s("Start");
 			string opFinish = opName + s("Finish");
 			string opInj = opName + s("Inj");
 			string opEj = opName + s("Ej");
-			ILP.push_back(opInj + s(" - ") + opStart + s(" <= 0"));
-			ILP.push_back(opEj + s(" - ") + opFinish + s(" >= 0"));
+			constraints.push_back(opInj + s(" - ") + opStart + s(" <= 0"));
+			constraints.push_back(opEj + s(" - ") + opFinish + s(" >= 0"));
 
 		}
 
 		//ops after his parent
-		for(Op_ptr child:ops){
+		for(Op* child:ops){
 			string childStart = child->name + s("Start");
 			string childFinish = child->name + s("Finish");
 			string childInj = child->name + s("Inj");
 			string childEj = child->name + s("Ej");
-			for(Op_ptr parent:child->parents){
+			for(Op* parent:child->parents){
 				string parentStart = parent->name +s("Start");
 				string parentFinish = parent->name + s("Finish");
 				string parentInj = parent->name + s("Inj");
@@ -175,20 +238,20 @@ void ListAlgorithm::outerMemilpConstraint(){
 				string cStart = cName + s("Start");
 				string cFinish = cName+ s("Finish");
 				//channel start after parent end and channel before
-				ILP.push_back(cStart + s(" - ") + parentFinish + s(" >= 0"));
-				ILP.push_back(childStart + s(" - ") + cFinish + s(" >= 0"));
+				constraints.push_back(cStart + s(" - ") + parentFinish + s(" >= 0"));
+				constraints.push_back(childStart + s(" - ") + cFinish + s(" >= 0"));
 				//child op inject before each channel finish
-				ILP.push_back(childInj + s(" - ") + cFinish + s(" <= ") +s(-TRANSTIME));
+				constraints.push_back(childInj + s(" - ") + cFinish + s(" <= ") +s(-TRANSTIME));
 				//father op eject after each channel start
-				ILP.push_back(parentEj + s(" - ") + cStart + s(" >= ") + s(TRANSTIME));
+				constraints.push_back(parentEj + s(" - ") + cStart + s(" >= ") + s(TRANSTIME));
 			}
 		}
 
 
 		//if several channel meets on the same operation, they must queue
-		for(Op_ptr child:ops){
-			for(Op_ptr father0:child->parents){
-				for(Op_ptr father1:child->parents){
+		for(Op* child:ops){
+			for(Op* father0:child->parents){
+				for(Op* father1:child->parents){
 
 
 					if(father0 == father1)
@@ -205,10 +268,10 @@ void ListAlgorithm::outerMemilpConstraint(){
 					string c0Beforec1 = c0Name + s("BF") + c1Name;
 					varName.push_back(c0Beforec1); varType.push_back("1");
 					//if c0bc1 = 0 then c0f - c1f <= -trantime
-					ILP.push_back(c0Finish + s(" - ") + c1Finish + s(" - ") + s(M) + s(" ") + c0Beforec1 +s(" <= ") + s(-TRANSTIME));
+					constraints.push_back(c0Finish + s(" - ") + c1Finish + s(" - ") + s(M) + s(" ") + c0Beforec1 +s(" <= ") + s(-TRANSTIME));
 					//if c0bc1 = 1 then c0f-c1f >= transtime
 					//c0f - c1f + (1-c0b1f)M >= transtime
-					ILP.push_back(c0Finish + s(" - ") + c1Finish + s(" - ") + s(M) + s(" ") + c0Beforec1 +s(" >= ") + s(TRANSTIME-M));
+					constraints.push_back(c0Finish + s(" - ") + c1Finish + s(" - ") + s(M) + s(" ") + c0Beforec1 +s(" >= ") + s(TRANSTIME-M));
 
 
 				}
@@ -216,14 +279,14 @@ void ListAlgorithm::outerMemilpConstraint(){
 		}
 
 		//if  channels stores or from on the same operation, they must queue
-		for(Ch_ptr c0:channels){
+		for(Channel* c0:channels){
 			string c0Name = s("c") + c0->fatherOp->name + c0->childOp->name;
 			string c0Start = c0Name + s("Start");
 			string c0Finish = c0Name+ s("Finish");
 			//if c0Finish - c1Start > Trans
 
 
-			for(Ch_ptr c1:channels){
+			for(Channel* c1:channels){
 				if (c0 == c1)
 					continue;
 
@@ -236,10 +299,10 @@ void ListAlgorithm::outerMemilpConstraint(){
 					string c0Beforec1 = c0Name + s("BF") + c1Name;
 					varName.push_back(c0Beforec1); varType.push_back("1");
 					//if c0bc1 = 0 then c0f - c1f <= trantime
-					ILP.push_back(c0Finish + s(" - ") + c1Finish + s(" - ") + s(M) + s(" ") + c0Beforec1 +s(" <= ") + s(-TRANSTIME));
+					constraints.push_back(c0Finish + s(" - ") + c1Finish + s(" - ") + s(M) + s(" ") + c0Beforec1 +s(" <= ") + s(-TRANSTIME));
 					//if c0bc1 = 1 then c0f-c1f >= transtime
 					//c0f - c1f + (1-c0b1f)M >= transtime
-					ILP.push_back(c0Finish + s(" - ") + c1Finish + s(" - ") + s(M) + s(" ") + c0Beforec1 +s(" >= ") + s(TRANSTIME-M));
+					constraints.push_back(c0Finish + s(" - ") + c1Finish + s(" - ") + s(M) + s(" ") + c0Beforec1 +s(" >= ") + s(TRANSTIME-M));
 
 
 				}
@@ -249,16 +312,16 @@ void ListAlgorithm::outerMemilpConstraint(){
 
 		//if operation runs on the same device, channel start time = channel end time
 		// or channel time > transtime
-		for(Ch_ptr c:channels){
+		for(Channel* c:channels){
 			string channelStartEndSame  = c->name + s("SES");
 			varName.push_back(channelStartEndSame);varType.push_back("1");
 
-			Op_ptr father = c->fatherOp;
-			Op_ptr son = c->childOp;
+			Op* father = c->fatherOp;
+			Op* son = c->childOp;
 			string cStart = c->name + s("Start");
 			string cFinish = c->name + s("Finish");
 
-			for(Dev_ptr dev:devices){
+			for(Device* dev:devices){
 
 				string channelStartEndSameDev = c->name +s("SES") + dev->name;
 				varName.push_back(channelStartEndSameDev);varType.push_back("1");
@@ -269,35 +332,35 @@ void ListAlgorithm::outerMemilpConstraint(){
 
 				//if child = 0 and parent = 0 then sameDev = 0
 				//if child = 1 or parent = 1 then sameDev = 1
-				ILP.push_back( channelStartEndSameDev+ s(" - ")+ s(M) + s(" ") + childBindDev+ s(" - ") + s(M) + s(" ") + parentBindDev + s(" <= 0"));
-				ILP.push_back( channelStartEndSameDev+ s(" + ") + s(M) + s(" ") + childBindDev+ s(" + ") + s(M) + s(" ") + parentBindDev + s(" >= 0"));
-				ILP.push_back(channelStartEndSameDev + s(" - ") + childBindDev + s(" >= 0"));
-				ILP.push_back(channelStartEndSameDev + s(" - ") + parentBindDev + s(" >= 0"));
+				constraints.push_back( channelStartEndSameDev+ s(" - ")+ s(M) + s(" ") + childBindDev+ s(" - ") + s(M) + s(" ") + parentBindDev + s(" <= 0"));
+				constraints.push_back( channelStartEndSameDev+ s(" + ") + s(M) + s(" ") + childBindDev+ s(" + ") + s(M) + s(" ") + parentBindDev + s(" >= 0"));
+				constraints.push_back(channelStartEndSameDev + s(" - ") + childBindDev + s(" >= 0"));
+				constraints.push_back(channelStartEndSameDev + s(" - ") + parentBindDev + s(" >= 0"));
 
 			}
 			//if dev1 = 0 or dev2 = 0 then same = 0
 			//if dev1 =1 and dev2 =1 then same = 1
 			string allDevSamePlus = "";
 			string allDevSameMinus = "";
-			for(Dev_ptr dev:devices){
+			for(Device* dev:devices){
 				string channelStartEndSameDev = c->name +s("SES") + dev->name;
-				ILP.push_back(channelStartEndSame + s(" - ") + channelStartEndSameDev + s(" <= 0"));
+				constraints.push_back(channelStartEndSame + s(" - ") + channelStartEndSameDev + s(" <= 0"));
 				allDevSamePlus += s(" + ") + s(M) + s(" ") + s(channelStartEndSameDev);
 				allDevSameMinus += s(" - ") + s(M) + s(" ") + s(channelStartEndSameDev);
 			}
-			ILP.push_back(channelStartEndSame + allDevSameMinus + s(" >= ") + s(1 - M * devices.size()));
-			ILP.push_back(channelStartEndSame + allDevSamePlus + s(" <= ") + s(1+ M * devices.size()));
+			constraints.push_back(channelStartEndSame + allDevSameMinus + s(" >= ") + s(1 - M * devices.size()));
+			constraints.push_back(channelStartEndSame + allDevSamePlus + s(" <= ") + s(1+ M * devices.size()));
 
 			// if channelStartEndSame = 0 then channel start = end
 
-			ILP.push_back(cFinish + s(" - ") + cStart + s(" - ")+ s(M) + s(" ") + channelStartEndSame + s(" <= 0"));
-			ILP.push_back(cFinish + s(" - ") + cStart + s(" + ") + s(M) + s(" ") + channelStartEndSame + s( " >= 0"));
+			constraints.push_back(cFinish + s(" - ") + cStart + s(" - ")+ s(M) + s(" ") + channelStartEndSame + s(" <= 0"));
+			constraints.push_back(cFinish + s(" - ") + cStart + s(" + ") + s(M) + s(" ") + channelStartEndSame + s( " >= 0"));
 
 			// if channelSatartEndSame = 1 then channel end - start > transtime
 			// end - start + (1-s) M  >= trasTime ----> end - start -Ms >= trasTime-M
 
 
-			ILP.push_back(cFinish + s(" - ") + cStart + s(" - ")+ s(M) + s(" ") + channelStartEndSame + s(" >= ")+ s(TRANSTIME - M));
+			constraints.push_back(cFinish + s(" - ") + cStart + s(" - ")+ s(M) + s(" ") + channelStartEndSame + s(" >= ")+ s(TRANSTIME - M));
 			//ILP.push_back(cFinish + s(" - ") + cStart + s(" + ") + s(M) + s(" ") + channelStartEndSame + s( " <= ") + s(TRANSTIME + M));
 
 
@@ -309,35 +372,35 @@ void ListAlgorithm::outerMemilpConstraint(){
 
 
 		//dev op type match
-		for(Op_ptr op:ops){
+		for(Op* op:ops){
 			string bindTo1Dev = "";
 			int devCount = 0;
-			for(Dev_ptr dev:devices){
+			for(Device* dev:devices){
 				string opBindDev = op->name + s("Bind") + dev->name;
 				bindTo1Dev += s(" + ") + opBindDev;
 				devCount ++;
 
 				if(op->type != dev->type){
-					ILP.push_back(opBindDev + s(" = 1"));
+					constraints.push_back(opBindDev + s(" = 1"));
 				}
 			}
 
-			ILP.push_back(bindTo1Dev + s(" = ") + s(devCount-1));
+			constraints.push_back(bindTo1Dev + s(" = ") + s(devCount-1));
 
 		}
 
 		//when 2 ops bind to 1 dev, they must seprate
 
-		for(Dev_ptr dev:devices){
+		for(Device* dev:devices){
 			string devName = dev->name;
 			for(int i = 0; i < ops.size();i++){
-				Op_ptr op0 = ops.at(i);
+				Op* op0 = ops.at(i);
 
 				string op0Inj = op0->name + s("Inj");
 				string op0Ej = op0->name + s("Ej");
 				for(int j = 0; j < i; j++){
 
-					Op_ptr op1 = ops.at(j);
+					Op* op1 = ops.at(j);
 
 
 
@@ -358,24 +421,24 @@ void ListAlgorithm::outerMemilpConstraint(){
 					//if op0bind == 0 and op1bind == 0 then op1before = 0 or op1befor 0
 
 					//if op0before = 0 then op1start - op1finish >= trans
-					ILP.push_back(op1Inj + s(" - ") + op0Ej + s(" + ") +s(M) + s(" ") + op0BeforeOp1 + s(" >= ") + s(0));
+					constraints.push_back(op1Inj + s(" - ") + op0Ej + s(" + ") +s(M) + s(" ") + op0BeforeOp1 + s(" >= ") + s(0));
 
 
 					//if op1before = 0 then op0start - op10Finish >= trans
-					ILP.push_back(op0Inj + s(" - ") + op1Ej + s(" + ") + s(M) + s(" ") + op1BeforeOp0 + s(" >= ") + s(0)) ;
+					constraints.push_back(op0Inj + s(" - ") + op1Ej + s(" + ") + s(M) + s(" ") + op1BeforeOp0 + s(" >= ") + s(0)) ;
 
 					// op0Bind = 1 or op1Bind = 1 or op0b = 0 or op1b = 0
 					//(1-op0) + (1-op1) + op0b + op1b <=3; -op0 - op1 + op0b + op1b <= 1
-					ILP.push_back(s(" - ") + op0BindDev + s(" - ") + op1BindDev + s(" + ") + op0BeforeOp1 + s(" + ") + op1BeforeOp0+ s(" <= 1"));
+					constraints.push_back(s(" - ") + op0BindDev + s(" - ") + op1BindDev + s(" + ") + op0BeforeOp1 + s(" + ") + op1BeforeOp0+ s(" <= 1"));
 
 				}
 			}
 		}
 
 		/*//for a parent and a child, they must use different devices
-		for(Op_ptr child:ops){
-			for(Op_ptr parent:child->parents){
-				for(Dev_ptr dev:devices){
+		for(Op* child:ops){
+			for(Op* parent:child->parents){
+				for(Device* dev:devices){
 					string childBindDev = child->name + s("Bind") + dev->name;
 					string parentBindDev = parent->name + s("Bind") + dev->name;
 
@@ -386,9 +449,9 @@ void ListAlgorithm::outerMemilpConstraint(){
 		}*/
 }
 
-void ListAlgorithm::ilpConstraint(){
+void ListAlgorithm::oldVersion(){
 	//create var
-	for(Op_ptr op:ops){
+	for(Op* op:ops){
 		string opName = op->name;
 		string opStart = opName + s("Start");
 		string opFinish = opName + s("Finish");
@@ -399,7 +462,7 @@ void ListAlgorithm::ilpConstraint(){
 		varName.push_back(opInj);varType.push_back("2");
 		varName.push_back(opEj);varType.push_back("2");
 		//if op bind to dev
-		for(Dev_ptr dev:devices){
+		for(Device* dev:devices){
 			string devName = dev->name;
 			string opBindDev = opName + s("Bind") + devName;
 			varName.push_back(opBindDev);varType.push_back("1");
@@ -409,9 +472,9 @@ void ListAlgorithm::ilpConstraint(){
 	}
 
 	//create channels
-	for(Op_ptr child:ops){
-		for(Op_ptr parent:child->parents){
-			Ch_ptr c(new Channel);
+	for(Op* child:ops){
+		for(Op* parent:child->parents){
+			Channel* c(new Channel);
 			channels.push_back(c);
 			c->name = s("c") + parent->name + child->name;
 			string cStart = c->name + s("Start");
@@ -425,31 +488,31 @@ void ListAlgorithm::ilpConstraint(){
 
 	//ops finsh -begin >= duration
 	//ops after his parent
-	for(Op_ptr op:ops){
+	for(Op* op:ops){
 		string opStart = op->name + s("Start");
 		string opFinish = op->name + s("Finish");
 
-		ILP.push_back(opFinish + s(" - ") + opStart + s(" >= ") +s(op->duration));
+		constraints.push_back(opFinish + s(" - ") + opStart + s(" >= ") +s(op->duration));
 	}
 
-	for(Op_ptr op:ops){
+	for(Op* op:ops){
 		string opName = op->name;
 		string opStart = opName + s("Start");
 		string opFinish = opName + s("Finish");
 		string opInj = opName + s("Inj");
 		string opEj = opName + s("Ej");
-		ILP.push_back(opInj + s(" - ") + opStart + s(" <= 0"));
-		ILP.push_back(opEj + s(" - ") + opFinish + s(" >= 0"));
+		constraints.push_back(opInj + s(" - ") + opStart + s(" <= 0"));
+		constraints.push_back(opEj + s(" - ") + opFinish + s(" >= 0"));
 
 	}
 
 	//ops after his parent
-	for(Op_ptr child:ops){
+	for(Op* child:ops){
 		string childStart = child->name + s("Start");
 		string childFinish = child->name + s("Finish");
 		string childInj = child->name + s("Inj");
 		string childEj = child->name + s("Ej");
-		for(Op_ptr parent:child->parents){
+		for(Op* parent:child->parents){
 			string parentStart = parent->name +s("Start");
 			string parentFinish = parent->name + s("Finish");
 			string parentInj = parent->name + s("Inj");
@@ -458,20 +521,20 @@ void ListAlgorithm::ilpConstraint(){
 			string cStart = cName + s("Start");
 			string cFinish = cName+ s("Finish");
 			//channel start after parent end and channel before
-			ILP.push_back(cStart + s(" - ") + parentFinish + s(" >= 0"));
-			ILP.push_back(childStart + s(" - ") + cFinish + s(" >= 0"));
+			constraints.push_back(cStart + s(" - ") + parentFinish + s(" >= 0"));
+			constraints.push_back(childStart + s(" - ") + cFinish + s(" >= 0"));
 			//child op inject before each channel finish
-			ILP.push_back(childInj + s(" - ") + cFinish + s(" <= ") +s(-TRANSTIME));
+			constraints.push_back(childInj + s(" - ") + cFinish + s(" <= ") +s(-TRANSTIME));
 			//father op eject after each channel start
-			ILP.push_back(parentEj + s(" - ") + cStart + s(" >= ") + s(TRANSTIME));
+			constraints.push_back(parentEj + s(" - ") + cStart + s(" >= ") + s(TRANSTIME));
 		}
 	}
 
 
 	//if several channel meets on the same operation, they must queue
-	for(Op_ptr child:ops){
-		for(Op_ptr father0:child->parents){
-			for(Op_ptr father1:child->parents){
+	for(Op* child:ops){
+		for(Op* father0:child->parents){
+			for(Op* father1:child->parents){
 
 
 				if(father0 == father1)
@@ -488,10 +551,10 @@ void ListAlgorithm::ilpConstraint(){
 				string c0Beforec1 = c0Name + s("BF") + c1Name;
 				varName.push_back(c0Beforec1); varType.push_back("1");
 				//if c0bc1 = 0 then c0f - c1f <= trantime
-				ILP.push_back(c0Finish + s(" - ") + c1Finish + s(" - ") + s(M) + s(" ") + c0Beforec1 +s(" <= ") + s(-TRANSTIME));
+				constraints.push_back(c0Finish + s(" - ") + c1Finish + s(" - ") + s(M) + s(" ") + c0Beforec1 +s(" <= ") + s(-TRANSTIME));
 				//if c0bc1 = 1 then c0f-c1f >= transtime
 				//c0f - c1f + (1-c0b1f)M >= transtime
-				ILP.push_back(c0Finish + s(" - ") + c1Finish + s(" - ") + s(M) + s(" ") + c0Beforec1 +s(" >= ") + s(TRANSTIME-M));
+				constraints.push_back(c0Finish + s(" - ") + c1Finish + s(" - ") + s(M) + s(" ") + c0Beforec1 +s(" >= ") + s(TRANSTIME-M));
 
 
 			}
@@ -501,16 +564,16 @@ void ListAlgorithm::ilpConstraint(){
 
 	//if operation runs on the same device, channel start time = channel end time
 	// or channel time > transtime
-	for(Ch_ptr c:channels){
+	for(Channel* c:channels){
 		string channelStartEndSame  = c->name + s("SES");
 		varName.push_back(channelStartEndSame);varType.push_back("1");
 
-		Op_ptr father = c->fatherOp;
-		Op_ptr son = c->childOp;
+		Op* father = c->fatherOp;
+		Op* son = c->childOp;
 		string cStart = c->name + s("Start");
 		string cFinish = c->name + s("Finish");
 
-		for(Dev_ptr dev:devices){
+		for(Device* dev:devices){
 
 			string channelStartEndSameDev = c->name +s("SES") + dev->name;
 			varName.push_back(channelStartEndSameDev);varType.push_back("1");
@@ -521,35 +584,35 @@ void ListAlgorithm::ilpConstraint(){
 
 			//if child = 0 and parent = 0 then sameDev = 0
 			//if child = 1 or parent = 1 then sameDev = 1
-			ILP.push_back( channelStartEndSameDev+ s(" - ")+ s(M) + s(" ") + childBindDev+ s(" - ") + s(M) + s(" ") + parentBindDev + s(" <= 0"));
-			ILP.push_back( channelStartEndSameDev+ s(" + ") + s(M) + s(" ") + childBindDev+ s(" + ") + s(M) + s(" ") + parentBindDev + s(" >= 0"));
-			ILP.push_back(channelStartEndSameDev + s(" - ") + childBindDev + s(" >= 0"));
-			ILP.push_back(channelStartEndSameDev + s(" - ") + parentBindDev + s(" >= 0"));
+			constraints.push_back( channelStartEndSameDev+ s(" - ")+ s(M) + s(" ") + childBindDev+ s(" - ") + s(M) + s(" ") + parentBindDev + s(" <= 0"));
+			constraints.push_back( channelStartEndSameDev+ s(" + ") + s(M) + s(" ") + childBindDev+ s(" + ") + s(M) + s(" ") + parentBindDev + s(" >= 0"));
+			constraints.push_back(channelStartEndSameDev + s(" - ") + childBindDev + s(" >= 0"));
+			constraints.push_back(channelStartEndSameDev + s(" - ") + parentBindDev + s(" >= 0"));
 
 		}
 		//if dev1 = 0 or dev2 = 0 then same = 0
 		//if dev1 =1 and dev2 =1 then same = 1
 		string allDevSamePlus = "";
 		string allDevSameMinus = "";
-		for(Dev_ptr dev:devices){
+		for(Device* dev:devices){
 			string channelStartEndSameDev = c->name +s("SES") + dev->name;
-			ILP.push_back(channelStartEndSame + s(" - ") + channelStartEndSameDev + s(" <= 0"));
+			constraints.push_back(channelStartEndSame + s(" - ") + channelStartEndSameDev + s(" <= 0"));
 			allDevSamePlus += s(" + ") + s(M) + s(" ") + s(channelStartEndSameDev);
 			allDevSameMinus += s(" - ") + s(M) + s(" ") + s(channelStartEndSameDev);
 		}
-		ILP.push_back(channelStartEndSame + allDevSameMinus + s(" >= ") + s(1 - M * devices.size()));
-		ILP.push_back(channelStartEndSame + allDevSamePlus + s(" <= ") + s(1+ M * devices.size()));
+		constraints.push_back(channelStartEndSame + allDevSameMinus + s(" >= ") + s(1 - M * devices.size()));
+		constraints.push_back(channelStartEndSame + allDevSamePlus + s(" <= ") + s(1+ M * devices.size()));
 
 		// if channelStartEndSame = 0 then channel start = end
 
-		ILP.push_back(cFinish + s(" - ") + cStart + s(" - ")+ s(M) + s(" ") + channelStartEndSame + s(" <= 0"));
-		ILP.push_back(cFinish + s(" - ") + cStart + s(" + ") + s(M) + s(" ") + channelStartEndSame + s( " >= 0"));
+		constraints.push_back(cFinish + s(" - ") + cStart + s(" - ")+ s(M) + s(" ") + channelStartEndSame + s(" <= 0"));
+		constraints.push_back(cFinish + s(" - ") + cStart + s(" + ") + s(M) + s(" ") + channelStartEndSame + s( " >= 0"));
 
 		// if channelSatartEndSame = 1 then channel end - start > transtime
 		// end - start + (1-s) M  >= trasTime ----> end - start -Ms >= trasTime-M
 
 
-		ILP.push_back(cFinish + s(" - ") + cStart + s(" - ")+ s(M) + s(" ") + channelStartEndSame + s(" >= ")+ s(TRANSTIME - M));
+		constraints.push_back(cFinish + s(" - ") + cStart + s(" - ")+ s(M) + s(" ") + channelStartEndSame + s(" >= ")+ s(TRANSTIME - M));
 		//ILP.push_back(cFinish + s(" - ") + cStart + s(" + ") + s(M) + s(" ") + channelStartEndSame + s( " <= ") + s(TRANSTIME + M));
 
 
@@ -561,35 +624,35 @@ void ListAlgorithm::ilpConstraint(){
 
 
 	//dev op type match
-	for(Op_ptr op:ops){
+	for(Op* op:ops){
 		string bindTo1Dev = "";
 		int devCount = 0;
-		for(Dev_ptr dev:devices){
+		for(Device* dev:devices){
 			string opBindDev = op->name + s("Bind") + dev->name;
 			bindTo1Dev += s(" + ") + opBindDev;
 			devCount ++;
 
 			if(op->type != dev->type){
-				ILP.push_back(opBindDev + s(" = 1"));
+				constraints.push_back(opBindDev + s(" = 1"));
 			}
 		}
 
-		ILP.push_back(bindTo1Dev + s(" = ") + s(devCount-1));
+		constraints.push_back(bindTo1Dev + s(" = ") + s(devCount-1));
 
 	}
 
 	//when 2 ops bind to 1 dev, they must seprate
 
-	for(Dev_ptr dev:devices){
+	for(Device* dev:devices){
 		string devName = dev->name;
 		for(int i = 0; i < ops.size();i++){
-			Op_ptr op0 = ops.at(i);
+			Op* op0 = ops.at(i);
 
 			string op0Inj = op0->name + s("Inj");
 			string op0Ej = op0->name + s("Ej");
 			for(int j = 0; j < i; j++){
 
-				Op_ptr op1 = ops.at(j);
+				Op* op1 = ops.at(j);
 
 
 
@@ -610,24 +673,24 @@ void ListAlgorithm::ilpConstraint(){
 				//if op0bind == 0 and op1bind == 0 then op1before = 0 or op1befor 0
 
 				//if op0before = 0 then op1start - op1finish >= trans
-				ILP.push_back(op1Inj + s(" - ") + op0Ej + s(" + ") +s(M) + s(" ") + op0BeforeOp1 + s(" >= ") + s(0));
+				constraints.push_back(op1Inj + s(" - ") + op0Ej + s(" + ") +s(M) + s(" ") + op0BeforeOp1 + s(" >= ") + s(0));
 
 
 				//if op1before = 0 then op0start - op10Finish >= trans
-				ILP.push_back(op0Inj + s(" - ") + op1Ej + s(" + ") + s(M) + s(" ") + op1BeforeOp0 + s(" >= ") + s(0)) ;
+				constraints.push_back(op0Inj + s(" - ") + op1Ej + s(" + ") + s(M) + s(" ") + op1BeforeOp0 + s(" >= ") + s(0)) ;
 
 				// op0Bind = 1 or op1Bind = 1 or op0b = 0 or op1b = 0
 				//(1-op0) + (1-op1) + op0b + op1b <=3; -op0 - op1 + op0b + op1b <= 1
-				ILP.push_back(s(" - ") + op0BindDev + s(" - ") + op1BindDev + s(" + ") + op0BeforeOp1 + s(" + ") + op1BeforeOp0+ s(" <= 1"));
+				constraints.push_back(s(" - ") + op0BindDev + s(" - ") + op1BindDev + s(" + ") + op0BeforeOp1 + s(" + ") + op1BeforeOp0+ s(" <= 1"));
 
 			}
 		}
 	}
 
 	/*//for a parent and a child, they must use different devices
-	for(Op_ptr child:ops){
-		for(Op_ptr parent:child->parents){
-			for(Dev_ptr dev:devices){
+	for(Op* child:ops){
+		for(Op* parent:child->parents){
+			for(Device* dev:devices){
 				string childBindDev = child->name + s("Bind") + dev->name;
 				string parentBindDev = parent->name + s("Bind") + dev->name;
 
@@ -643,9 +706,9 @@ void ListAlgorithm::ilpObj(){
 	string obj = "";
 	string maxTime = "maxTime";
 	varName.push_back(maxTime); varType.push_back("2");
-	for(Op_ptr op:ops){
+	for(Op* op:ops){
 		string opFinish = op->name + s("Finish");
-		ILP.push_back(maxTime + s(" - ")  + opFinish + s(" >= 0"));
+		constraints.push_back(maxTime + s(" - ")  + opFinish + s(" >= 0"));
 	}
 	obj +=  s(" ") + maxTime;
 	//ILP.push_back(maxTime + s(" = 580")); //30
@@ -658,7 +721,7 @@ void ListAlgorithm::ilpObj(){
 
 	/*string maxChannelTime = s("maxChannelTime");
 	varName.push_back(maxChannelTime); varType.push_back("0");
-	for(Ch_ptr c:channels){
+	for(Channel* c:channels){
 		string cStart = c->name + s("Start");
 		string cFinish = c->name + s("Finish");
 		ILP.push_back(maxChannelTime + s(" - ") + cFinish + s(" + ") + cStart + s(" >= 0"));
@@ -666,7 +729,7 @@ void ListAlgorithm::ilpObj(){
 	obj +=  s(" + ") + maxChannelTime;*/
 #define optchannel 1
 #if optchannel
-	for(Ch_ptr c:channels){
+	for(Channel* c:channels){
 		string cStart = c->name + s("Start");
 		string cFinish = c->name + s("Finish");
 		obj+= s(" + ") + cFinish + s(" - ")  + cStart;
@@ -712,7 +775,7 @@ void ListAlgorithm::readResultFromFile(){
 void ListAlgorithm::writeToFile(){
 	writeILP write;
 	write.writeOBJ(OBJ,"seq.lp");
-	write.writeConstraint(ILP,"seq.lp");
+	write.writeConstraint(constraints,"seq.lp");
 
 
 	write.writeVarNames(varName,varType,"seq.lp");
@@ -724,17 +787,17 @@ void ListAlgorithm::writeToFile(){
 
 void ListAlgorithm::getConciseSeq(){
 	cout << "getConciseSeq" << endl;
-	for(Op_ptr op:ops){
-		for(Op_ptr father:op->parents){
+	for(Op* op:ops){
+		for(Op* father:op->parents){
 			bool channelExsit = false;
-			Dev_ptr father_dev = father->bindDevice;
-			Dev_ptr child_dev = op->bindDevice;
+			Device* father_dev = father->bindDevice;
+			Device* child_dev = op->bindDevice;
 
 			//find existed channel
 			for(int i = 0; i< concise_channels.size();i++){
 				if(concise_channels.size()==0)
 					continue;
-				Ch_ptr ch = concise_channels.at(i);
+				Channel* ch = concise_channels.at(i);
 				if((ch->fatherOp->bindDevice == father_dev && ch->childOp->bindDevice == child_dev) ||
 						(ch->fatherOp->bindDevice == child_dev && ch->childOp->bindDevice == father_dev)){
 
@@ -750,7 +813,7 @@ void ListAlgorithm::getConciseSeq(){
 			}
 
 			if(!channelExsit){
-				Ch_ptr newCh(new Channel());
+				Channel* newCh(new Channel());
 				newCh->fatherOp = father;
 				newCh->childOp = op;
 				newCh->name = s("c") + father_dev->name + child_dev->name;
@@ -767,18 +830,18 @@ void ListAlgorithm::getConciseSeq(){
 	}
 
 	for(int i  = 0; i < concise_channels.size();i++){
-		Ch_ptr ch = concise_channels.at(i);
-		Op_ptr father = ch->fatherOp;
-		Op_ptr son = ch->childOp;
-		Dev_ptr father_dev = father->bindDevice;
-		Dev_ptr son_dev = son ->bindDevice;
+		Channel* ch = concise_channels.at(i);
+		Op* father = ch->fatherOp;
+		Op* son = ch->childOp;
+		Device* father_dev = father->bindDevice;
+		Device* son_dev = son ->bindDevice;
 
 		bool fatherOpExist = false;
 		bool sonOpExist = false;
 		bool fatherDevExist =false;
 		bool sonDevExist =false;
 
-		for(Op_ptr op:concise_ops){
+		for(Op* op:concise_ops){
 			if(op->name == father->name){
 				fatherOpExist = true;
 				break;
@@ -786,7 +849,7 @@ void ListAlgorithm::getConciseSeq(){
 		}
 
 
-		for(Op_ptr op:concise_ops){
+		for(Op* op:concise_ops){
 			if(op->name == son->name){
 				sonOpExist = true;
 				break;
@@ -794,7 +857,7 @@ void ListAlgorithm::getConciseSeq(){
 		}
 
 
-		for(Dev_ptr dev:concise_devs){
+		for(Device* dev:concise_devs){
 			if(dev->name == father_dev->name){
 				fatherDevExist = true;
 				break;
@@ -802,7 +865,7 @@ void ListAlgorithm::getConciseSeq(){
 		}
 
 
-		for(Dev_ptr dev:concise_devs){
+		for(Device* dev:concise_devs){
 			if(dev->name == son_dev->name){
 				sonDevExist = true;
 				break;
@@ -834,15 +897,15 @@ void ListAlgorithm::getConciseSeq(){
 
 void ListAlgorithm::listAlgorithm(){
 
-	Op_ptr nullOp(new Op);
-	Ch_ptr nullCh(new Channel);
+	Op* nullOp(new Op);
+	Channel* nullCh(new Channel);
 
-	for(Op_ptr op:ops){
+	for(Op* op:ops){
 		op->running = false;
 		op->done = false;
 	}
 
-	for(Dev_ptr dev:devices){
+	for(Device* dev:devices){
 		dev->availeble = true;
 		dev->injecting = false;
 		dev->isRunning = false;
@@ -854,11 +917,11 @@ void ListAlgorithm::listAlgorithm(){
 
 	}
 
-	map<string,Ch_ptr> channelByName;
+	map<string,Channel*> channelByName;
 	//create channels
-	for(Op_ptr child:ops){
-		for(Op_ptr parent:child->parents){
-			Ch_ptr c(new Channel);
+	for(Op* child:ops){
+		for(Op* parent:child->parents){
+			Channel* c(new Channel);
 			channels.push_back(c);
 			c->name = s("c") + parent->name + child->name;
 			cout << c->name << endl;
@@ -873,10 +936,10 @@ void ListAlgorithm::listAlgorithm(){
 	}
 
 
-	map<Dev_ptr,Op_ptr> opOnDev;
-	vector<Op_ptr> finishedOps;
-	map<Dev_ptr,vector<Ch_ptr>> injectedC;
-	map<Dev_ptr,vector<Ch_ptr>> ejectedC;
+	map<Device*,Op*> opOnDev;
+	vector<Op*> finishedOps;
+	map<Device*,vector<Channel*>> injectedC;
+	map<Device*,vector<Channel*>> ejectedC;
 
 
 
@@ -888,7 +951,7 @@ void ListAlgorithm::listAlgorithm(){
 		if(t == 465)
 			cout  << "stop" << endl;
  		//if device's operation is end
-		for(Dev_ptr d:devices){
+		for(Device* d:devices){
 			cout << "time is " << t << endl;
 			if(d->availeble)
 				cout << d->name << "  is availeble" << endl;
@@ -910,10 +973,10 @@ void ListAlgorithm::listAlgorithm(){
 				opOnDev[d] = nullOp;
 				injectedC[d].clear();
 				ejectedC[d].clear();
-				Op_ptr chosenOp = nullOp;
+				Op* chosenOp = nullOp;
 				int longestStoreTime = 0;
 				//choose an op to run
-				for(Op_ptr op:ops){
+				for(Op* op:ops){
 					if(op->running)
 						continue;
 					if(op->done)
@@ -922,9 +985,9 @@ void ListAlgorithm::listAlgorithm(){
 						continue;
 
 					bool allParentChannelReady = true;
-					for(Op_ptr father:op->parents){
+					for(Op* father:op->parents){
 						string cName = s("c") + father->name + op->name;
-						Ch_ptr c = channelByName[cName];
+						Channel* c = channelByName[cName];
 						if(c->startTime > t)
 							allParentChannelReady = false;
 
@@ -939,9 +1002,9 @@ void ListAlgorithm::listAlgorithm(){
 
 					//when op not running, not done and all father channel ready
 					//choose the operation with longest storage
-					for(Op_ptr father:op->parents){
+					for(Op* father:op->parents){
 						string cName = s("c") + father->name + op->name;
-						Ch_ptr c = channelByName[cName];
+						Channel* c = channelByName[cName];
 
 						int storageTime = t - c->startTime;
 						if(storageTime > longestStoreTime){
@@ -976,7 +1039,7 @@ void ListAlgorithm::listAlgorithm(){
 			}
 
 			if(d->injecting){
-				Op_ptr op = opOnDev[d];
+				Op* op = opOnDev[d];
 
 				if(d->injectingSth){
 					if(t - d->injectingChannel->injectTime == TRANSTIME){
@@ -999,12 +1062,12 @@ void ListAlgorithm::listAlgorithm(){
 					op->startTime = t;
 				}
 				//choose a c from all c's to come in
-				Ch_ptr chosenC = nullCh;
+				Channel* chosenC = nullCh;
 
 				int longestStoreTime = 0;
-				for(Op_ptr father:op->parents){
+				for(Op* father:op->parents){
 					string cName = s("c") + father->name + op->name;
-					Ch_ptr c = channelByName[cName];
+					Channel* c = channelByName[cName];
 					//already injected
 					if(find(injectedC[d].begin(),injectedC[d].end(),c) != injectedC[d].end())
 						continue;
@@ -1025,7 +1088,7 @@ void ListAlgorithm::listAlgorithm(){
 			}
 
 			if(d->isRunning){
-				Op_ptr op = opOnDev[d];
+				Op* op = opOnDev[d];
 				if(t - d->startTime == op->duration){
 					d->isRunning = false;
 					d->ejecting = true;
@@ -1037,7 +1100,7 @@ void ListAlgorithm::listAlgorithm(){
 			}
 
 			if(d->ejecting){
-				Op_ptr op = opOnDev[d];
+				Op* op = opOnDev[d];
 				int longestStoreTime = 0;
 
 				if(d->ejectingSth){
@@ -1069,11 +1132,11 @@ void ListAlgorithm::listAlgorithm(){
 
 
 				//choose a c from all c's to go out
-				Ch_ptr chosenC = nullCh;
+				Channel* chosenC = nullCh;
 
-				for(Op_ptr child:op->children){
+				for(Op* child:op->children){
 					string cName = s("c") + op->name+ child->name;
-					Ch_ptr c = channelByName[cName];
+					Channel* c = channelByName[cName];
 					//already injected
 					if(find(ejectedC[d].begin(),ejectedC[d].end(),c) != ejectedC[d].end())
 						continue;
@@ -1101,7 +1164,7 @@ void ListAlgorithm::listAlgorithm(){
 }
 
 void ListAlgorithm::genILP(){
-	ilpConstraint();
+	oldVersion();
 	ilpObj();
 	writeToFile();
 
@@ -1125,7 +1188,7 @@ void ListAlgorithm::readFromXml(const char* xmlFilename){
 	{
 		if( strcmp(operation_node->name(), "operation") != 0)
 			continue;
-		Op_ptr operation(new Op);
+		Op* operation(new Op);
 		operation->name = operation_node->first_attribute("name")->value();
 		string sduration = operation_node->first_attribute("duration")->value();
 
@@ -1163,7 +1226,7 @@ void ListAlgorithm::readFromXml(const char* xmlFilename){
 
 		if( strcmp(device_node->name(), "device") != 0)
 					continue;
-		Dev_ptr device(new Device);
+		Device* device(new Device);
 		device->name = device_node->first_attribute("name")->value();
 		string sx = device_node->first_attribute("x")->value();
 		string sy = device_node->first_attribute("y")->value();
@@ -1203,31 +1266,32 @@ void ListAlgorithm::readFromXml(const char* xmlFilename){
 	{
 		if( strcmp(operation_node->name(), "operation") != 0)
 					continue;
-		vector<Op_ptr>::iterator it;
+		vector<Op*>::iterator it;
 		string name = operation_node->first_attribute("name")->value();
-		it = find_if(ops.begin(),ops.end(), [&name](const Op_ptr obj) {return obj->name == name;});
+		it = find_if(ops.begin(),ops.end(), [&name](const Op* obj) {return obj->name == name;});
 
-		Op_ptr operation = *it;
+		Op* operation = *it;
 
 
 		for(rapidxml::xml_node<>* childNode = operation_node->first_node();childNode;childNode = childNode->next_sibling()){
 			string childNodeName = childNode->name();
 			if(childNodeName == "child"){
 				name = childNode->first_attribute("name")->value();
-				it = find_if(ops.begin(),ops.end(), [&name](const Op_ptr& obj) {return obj->name == name;});
-				Op_ptr childOperation = *it;
+				it = find_if(ops.begin(),ops.end(), [&name](const Op* obj) {return obj->name == name;});
+				Op* childOperation = *it;
 				operation->children.push_back(childOperation);
 			}
 			if(childNodeName == "parent"){
 				name = childNode->first_attribute("name")->value();
-				it = find_if(ops.begin(),ops.end(), [&name](const Op_ptr& obj) {return obj->name == name;});
-				Op_ptr parentOperation = *it;
+				it = find_if(ops.begin(),ops.end(), [&name](const Op* obj) {return obj->name == name;});
+				Op* parentOperation = *it;
 				operation->parents.push_back(parentOperation);
 			}
 
 		}
 	}
 }
+
 
 
 

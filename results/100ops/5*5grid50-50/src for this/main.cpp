@@ -29,8 +29,8 @@
 
 using namespace std;
 
-typedef boost::shared_ptr<Node> Node_ptr;
-typedef boost::shared_ptr<Edge> Edge_ptr;
+typedef boost::shared_ptr<Node> Node*;
+typedef boost::shared_ptr<Edge> Edge*;
 
 int main(int   argc,
 	     char *argv[]) {
@@ -52,7 +52,7 @@ int main(int   argc,
 
 #if physicalDesgin
 	Grid inputGrid(2,2);
-	/*for(Edge_ptr e:inputGrid.edges){
+	/*for(Edge* e:inputGrid.edges){
 		e->isStorage = false;
 	}*/
 	inputGrid.edges[2]->isStorage = false;

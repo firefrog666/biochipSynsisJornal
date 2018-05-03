@@ -68,7 +68,7 @@ string S(string s){
 __inline__ string getNodeName(Node_ptr n){
 	return S("n") + S("x") +S(n->x)+ S("y") + S(n->y);
 }
-__inline__ string getEdgeName(Edge_ptr e){
+__inline__ string getEdgeName(Edge* e){
 	return S("e") + S("x") +S(e->x)+ S("y") + S(e->y)+ S("s") +S(e->s)+ S("t") + S(e->t);
 }
 
@@ -294,7 +294,7 @@ void Plate::writeGraphFile(int pathNumber){
 	ofstream file;
 	file.open("edges.txt");
 	int flag = 0;
-	for(Edge_ptr e:g.edges){
+	for(Edge* e:g.edges){
 		string edgeUsed = getEdgeName(e) + S("U");
 		int edgeUsedValue = ILPResults[edgeUsed];
 		if(edgeUsedValue == 0)
@@ -619,7 +619,7 @@ void Plate::channelStartEnd(){
 		if(c->isStore)
 			continue;
 		string str = "";
-		for(Edge_ptr e:g.edges){
+		for(Edge* e:g.edges){
 			string eName = getEdgeName(e);
 			string cUsedEdge = S(c->name) +S("U")+S(eName);
 			varName.push_back(cUsedEdge);varType.push_back("1");
@@ -648,7 +648,7 @@ void Plate::channelStartEnd(){
 			// edge0 + edge1 + edge2 + edge3 + M(1-fatherB) >= 1
 			//edge0 + edge1 + edge2 + edge 3 - M(1-fatherB) <= 1
 			string edgeAroudFUsed = "";
-			for(Edge_ptr e:n->adjEdgesList){
+			for(Edge* e:n->adjEdgesList){
 				string eName = getEdgeName(e);
 				string cUsedEdge = S(c->name) +S("U")+S(eName);
 				edgeAroudFUsed += S(" + ") + cUsedEdge;
@@ -660,7 +660,7 @@ void Plate::channelStartEnd(){
 			// edge0 + edge1 + edge2 + edge3 + M(1-fatherB) >= 1
 			//edge0 + edge1 + edge2 + edge 3 - M(1-fatherB) <= 1
 			string edgeAroudSUsed = "";
-			for(Edge_ptr e:n->adjEdgesList){
+			for(Edge* e:n->adjEdgesList){
 				string eName = getEdgeName(e);
 				string cUsedEdge = S(c->name) +S("U")+S(eName);
 				edgeAroudSUsed += S(" + ") + cUsedEdge;
@@ -678,7 +678,7 @@ void Plate::channelStartEnd(){
 				string dBindN = S(d->name) + S("Bind") + S(nName);
 
 				string edgeAroudDUsed = "";
-				for(Edge_ptr e:n->adjEdgesList){
+				for(Edge* e:n->adjEdgesList){
 					string eName = getEdgeName(e);
 					string cUsedEdge = S(c->name) +S("U")+S(eName);
 					edgeAroudDUsed += S(" + ") + cUsedEdge;
@@ -721,7 +721,7 @@ void Plate::channelSimplePath(){
 			string sonBindN = S(son->name) + S("Bind") + S(nName);
 
 			string edgeAroudUsed = "";
-			for(Edge_ptr e:n->adjEdgesList){
+			for(Edge* e:n->adjEdgesList){
 				string eName = getEdgeName(e);
 				string cUsedEdge = S(c->name) +S("U")+S(eName);
 				edgeAroudUsed += S(" + ") + cUsedEdge;
@@ -744,7 +744,7 @@ void Plate::channelFirstStoreLast(){
 		if(!c->isStore)
 			continue;
 		string storedEdge = "";
-		for(Edge_ptr e:g.edges){
+		for(Edge* e:g.edges){
 			string eName = getEdgeName(e);
 			string cFirstEdge = S(c->name) + S("F") +(eName);
 			string cLastEdge = S(c->name) + S("L") + S(eName);
@@ -799,7 +799,7 @@ void Plate::channelFirstStoreLast(){
 			string fatherBindN = S(father->name) + S("Bind") + S(nName);
 
 			string edgeAroudUsedF = "";
-			for(Edge_ptr e:n->adjEdgesList){
+			for(Edge* e:n->adjEdgesList){
 				string eName = getEdgeName(e);
 				string cFirstEdge = S(c->name) +S("F")+S(eName);
 				edgeAroudUsedF += S(" + ") + cFirstEdge;
@@ -817,7 +817,7 @@ void Plate::channelFirstStoreLast(){
 			// edge0 + edge1 + edge2 + edge3 + M(1-fatherB) >= 1
 			//edge0 + edge1 + edge2 + edge 3 - M(1-fatherB) <= 1
 			string edgeAroudFUsed = "";
-			for(Edge_ptr e:n->adjEdgesList){
+			for(Edge* e:n->adjEdgesList){
 				string eName = getEdgeName(e);
 				string cFirstEdge = S(c->name) +S("F")+S(eName);
 				edgeAroudFUsed += S(" + ") + cFirstEdge;
@@ -829,7 +829,7 @@ void Plate::channelFirstStoreLast(){
 			// edge0 + edge1 + edge2 + edge3 + M(1-storeStart) >= 1
 			//edge0 + edge1 + edge2 + edge 3 - M(1-storeStart) <= 1
 			string edgeAroudSUsed = "";
-			for(Edge_ptr e:n->adjEdgesList){
+			for(Edge* e:n->adjEdgesList){
 				string eName = getEdgeName(e);
 				string cFirstEdge = S(c->name) +S("F")+S(eName);
 				edgeAroudSUsed += S(" + ") + cFirstEdge;
@@ -847,7 +847,7 @@ void Plate::channelFirstStoreLast(){
 				string dBindN = S(d->name) + S("Bind") + S(nName);
 
 				string edgeAroudDUsedF = "";
-				for(Edge_ptr e:n->adjEdgesList){
+				for(Edge* e:n->adjEdgesList){
 					string eName = getEdgeName(e);
 					string cFirstEdge = S(c->name) +S("F")+S(eName);
 					edgeAroudDUsedF += S(" + ") + cFirstEdge;
@@ -878,7 +878,7 @@ void Plate::channelFirstStoreLast(){
 			string sonBindN = S(son->name) + S("Bind") + S(nName);
 
 			string edgeAroudUsedSon = "";
-			for(Edge_ptr e:n->adjEdgesList){
+			for(Edge* e:n->adjEdgesList){
 				string eName = getEdgeName(e);
 				string cLastEdge = S(c->name) +S("L")+S(eName);
 				edgeAroudUsedSon += S(" + ") + cLastEdge;
@@ -896,7 +896,7 @@ void Plate::channelFirstStoreLast(){
 			// edge0 + edge1 + edge2 + edge3 + M(1-fatherB) >= 1
 			//edge0 + edge1 + edge2 + edge 3 - M(1-fatherB) <= 1
 			string edgeAroudSonDevUsed = "";
-			for(Edge_ptr e:n->adjEdgesList){
+			for(Edge* e:n->adjEdgesList){
 				string eName = getEdgeName(e);
 				string cLastEdge = S(c->name) +S("L")+S(eName);
 				edgeAroudSonDevUsed += S(" + ") + cLastEdge;
@@ -909,7 +909,7 @@ void Plate::channelFirstStoreLast(){
 			// edge0 + edge1 + edge2 + edge3 + M(1-storeEnd) >= 1
 			//edge0 + edge1 + edge2 + edge 3 - M(1-storeEnd) <= 1
 			string edgeAroudStoreEndUsed = "";
-			for(Edge_ptr e:n->adjEdgesList){
+			for(Edge* e:n->adjEdgesList){
 				string eName = getEdgeName(e);
 				string cLastEdge = S(c->name) +S("L")+S(eName);
 				edgeAroudStoreEndUsed += S(" + ") + cLastEdge;
@@ -927,7 +927,7 @@ void Plate::channelFirstStoreLast(){
 				string dBindN = S(d->name) + S("Bind") + S(nName);
 
 				string edgeAroudDUsed = "";
-				for(Edge_ptr e:n->adjEdgesList){
+				for(Edge* e:n->adjEdgesList){
 					string eName = getEdgeName(e);
 					string cLastEdge = S(c->name) +S("L")+S(eName);
 					edgeAroudDUsed += S(" + ") + cLastEdge;
@@ -949,7 +949,7 @@ void Plate::channelFirstStoreLast(){
 		if(!c->isStore)
 			continue;
 
-		for(Edge_ptr e:g.edges){
+		for(Edge* e:g.edges){
 			string cStoredEdge = S(c->name) + S("S") + getEdgeName(e);
 			Node_ptr n0 = g.hashNodes[Node::hash2Int(e->x,e->y)];
 			Node_ptr n1 = g.hashNodes[Node::hash2Int(e->s,e->t)];
@@ -1000,7 +1000,7 @@ void Plate::channelTimeConfict(){
 				}
 
 				//and they dont share edge
-				for(Edge_ptr e:g.edges){
+				for(Edge* e:g.edges){
 					string c1UsedEdge = c1->name + S("U") + getEdgeName(e);
 					string c2UsedEdge = c2->name + S("U") + getEdgeName(e);
 					ILP.push_back(c1UsedEdge + S(" + ") + c2UsedEdge + S(" <= 1"));
@@ -1026,7 +1026,7 @@ void Plate::channelTimeConfict(){
 						}
 
 						//and they dont share edge
-						for(Edge_ptr e:g.edges){
+						for(Edge* e:g.edges){
 							string c1FUsedEdge = c1->name + S("F") + getEdgeName(e);
 							string c2UsedEdge = c2->name + S("U") + getEdgeName(e);
 							ILP.push_back(c1FUsedEdge + S(" + ") + c2UsedEdge + S(" <= 1"));
@@ -1041,7 +1041,7 @@ void Plate::channelTimeConfict(){
 								break;
 							}
 						}
-						for(Edge_ptr e:g.edges){
+						for(Edge* e:g.edges){
 							string c1StoredEdge = S(c1->name) + S("S") + getEdgeName(e);
 							string c2UsedEdge = S(c2->name) + S("U") + getEdgeName(e);
 							ILP.push_back(c1StoredEdge + S(" + ") + c2UsedEdge + S(" <= 1"));
@@ -1064,7 +1064,7 @@ void Plate::channelTimeConfict(){
 						}
 
 						//and they dont share edge
-						for(Edge_ptr e:g.edges){
+						for(Edge* e:g.edges){
 							string c1LUsedEdge = c1->name + S("L") + getEdgeName(e);
 							string c2UsedEdge = c2->name + S("U") + getEdgeName(e);
 							ILP.push_back(c1LUsedEdge + S(" + ") + c2UsedEdge + S(" <= 1"));
@@ -1092,7 +1092,7 @@ void Plate::channelTimeConfict(){
 							ILP.push_back(nodeUsedInFirstc2+ S(" + ") + nodeUsedInc1 + S(" <= 1 "));
 						}
 						//and they dont share edge
-						for(Edge_ptr e:g.edges){
+						for(Edge* e:g.edges){
 							string c1UsedEdge = c1->name + S("U") + getEdgeName(e);
 							string c2FUsedEdge = c2->name + S("F") + getEdgeName(e);
 							ILP.push_back(c1UsedEdge + S(" + ") + c2FUsedEdge + S(" <= 1"));
@@ -1101,7 +1101,7 @@ void Plate::channelTimeConfict(){
 					}
 					//c2 store conflict with c1
 					if(!(c2->storageStart >= c1->endTime || c2->storageEnd <= c1->startTime)){
-						for(Edge_ptr e:g.edges){
+						for(Edge* e:g.edges){
 							string c2StoredEdge = S(c2->name) + S("S") + getEdgeName(e);
 							string c1UsedEdge = S(c1->name) + S("U") + getEdgeName(e);
 							ILP.push_back(c2StoredEdge + S(" + ") + c1UsedEdge + S(" <= 1"));
@@ -1117,7 +1117,7 @@ void Plate::channelTimeConfict(){
 							ILP.push_back(nodeUsedInLastc2+ S(" + ") + nodeUsedInc1 + S(" <= 1 "));
 						}
 						//and they dont share edge
-						for(Edge_ptr e:g.edges){
+						for(Edge* e:g.edges){
 							string c1UsedEdge = c1->name + S("U") + getEdgeName(e);
 							string c2LsedEdge = c2->name + S("L") + getEdgeName(e);
 							ILP.push_back(c1UsedEdge + S(" + ") + c2LsedEdge + S(" <= 1"));
@@ -1136,7 +1136,7 @@ void Plate::channelTimeConfict(){
 					}
 
 					//and they dont share edge
-					for(Edge_ptr e:g.edges){
+					for(Edge* e:g.edges){
 						string c1FUsedEdge = c1->name + S("F") + getEdgeName(e);
 						string c2FUsedEdge = c2->name + S("F") + getEdgeName(e);
 						ILP.push_back(c1FUsedEdge + S(" + ") + c2FUsedEdge + S(" <= 1"));
@@ -1145,7 +1145,7 @@ void Plate::channelTimeConfict(){
 				}
 				//c1 f conflict with c2 storage
 				if(!(c1->startTime >= c2->storageEnd|| c1->storageStart <= c2->storageStart )){
-					for(Edge_ptr e:g.edges){
+					for(Edge* e:g.edges){
 						string c1FirstEdge = S(c1->name) + S("F") + getEdgeName(e);
 						string c2StorageEdge = S(c2->name) + S("S") + getEdgeName(e);
 						ILP.push_back(c1FirstEdge + S(" + ") + c2StorageEdge + S(" <= 1"));
@@ -1159,7 +1159,7 @@ void Plate::channelTimeConfict(){
 						ILP.push_back(nodeUsedInLastc2+ S(" + ") + nodeUsedInFirstc1 + S(" <= 1 "));
 					}
 					//and they dont share edge
-					for(Edge_ptr e:g.edges){
+					for(Edge* e:g.edges){
 						string c1FUsedEdge = c1->name + S("F") + getEdgeName(e);
 						string c2LUsedEdge = c2->name + S("L") + getEdgeName(e);
 						ILP.push_back(c1FUsedEdge + S(" + ") + c2LUsedEdge + S(" <= 1"));
@@ -1169,7 +1169,7 @@ void Plate::channelTimeConfict(){
 
 				//c1 storage conflict with c2 f
 				if(!(c1->storageStart >= c2->storageStart|| c1->storageEnd <= c2->startTime)){
-					for(Edge_ptr e:g.edges){
+					for(Edge* e:g.edges){
 						string c1StorageEdge = S(c1->name) + S("S") + getEdgeName(e);
 						string c2FirstEdge = S(c2->name) + S("F") + getEdgeName(e);
 						ILP.push_back(c2FirstEdge + S(" + ") + c1StorageEdge + S(" <= 1"));
@@ -1177,7 +1177,7 @@ void Plate::channelTimeConfict(){
 				}
 				//c1 storage conflict with c2 storage
 				if(!(c1->storageStart >= c2->storageEnd|| c1->storageEnd <= c2->storageStart)){
-					for(Edge_ptr e:g.edges){
+					for(Edge* e:g.edges){
 						string c1StorageEdge = S(c1->name) + S("S") + getEdgeName(e);
 						string c2StorageEdge = S(c2->name) + S("S") + getEdgeName(e);
 						ILP.push_back(c2StorageEdge+ S(" + ") + c1StorageEdge + S(" <= 1"));
@@ -1185,7 +1185,7 @@ void Plate::channelTimeConfict(){
 				}
 				//c1 storage conflict with c2 L
 				if(!(c1->storageStart >= c2->endTime|| c1->storageEnd <= c2->storageEnd)){
-					for(Edge_ptr e:g.edges){
+					for(Edge* e:g.edges){
 						string c1StorageEdge = S(c1->name) + S("S") + getEdgeName(e);
 						string c2LastEdge = S(c2->name) + S("L") + getEdgeName(e);
 						ILP.push_back(c2LastEdge+ S(" + ") + c1StorageEdge + S(" <= 1"));
@@ -1201,7 +1201,7 @@ void Plate::channelTimeConfict(){
 						ILP.push_back(nodeUsedInFirstc2+ S(" + ") + nodeUsedInLastc1 + S(" <= 1 "));
 					}
 					//and they dont share edge
-					for(Edge_ptr e:g.edges){
+					for(Edge* e:g.edges){
 						string c1LUsedEdge = c1->name + S("L") + getEdgeName(e);
 						string c2FUsedEdge = c2->name + S("F") + getEdgeName(e);
 						ILP.push_back(c1LUsedEdge + S(" + ") + c2FUsedEdge + S(" <= 1"));
@@ -1210,7 +1210,7 @@ void Plate::channelTimeConfict(){
 				}
 				//c1 L conflict with c2 storage
 				if(!(c1->storageEnd >= c2->storageEnd|| c1->endTime <= c2->storageStart )){
-					for(Edge_ptr e:g.edges){
+					for(Edge* e:g.edges){
 						string c1LastEdge = S(c1->name) + S("L") + getEdgeName(e);
 						string c2StorageEdge = S(c2->name) + S("S") + getEdgeName(e);
 						ILP.push_back(c1LastEdge + S(" + ") + c2StorageEdge + S(" <= 1"));
@@ -1224,7 +1224,7 @@ void Plate::channelTimeConfict(){
 						ILP.push_back(nodeUsedInLastc2+ S(" + ") + nodeUsedInLastc1 + S(" <= 1 "));
 					}
 					//and they dont share edge
-					for(Edge_ptr e:g.edges){
+					for(Edge* e:g.edges){
 						string c1LUsedEdge = c1->name + S("L") + getEdgeName(e);
 						string c2LsedEdge = c2->name + S("L") + getEdgeName(e);
 						ILP.push_back(c1LUsedEdge + S(" + ") + c2LsedEdge + S(" <= 1"));
@@ -1242,7 +1242,7 @@ void Plate::channelTimeConfict(){
 void Plate::objective(){
 	string objective = "";
 
-	for(Edge_ptr e:g.edges){
+	for(Edge* e:g.edges){
 		string eName = getEdgeName(e);
 		string eUsed = getEdgeName(e) + S("U");
 		varName.push_back(eUsed);varType.push_back("1");
